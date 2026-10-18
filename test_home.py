@@ -24,8 +24,8 @@ class T(unittest.TestCase):
 
     def test_every_live_name_present_with_date(self):
         h = home.render("en", live("Claude", "Gemini"))
-        self.assertIn("<li>Claude<small>Tested 16 Oct 2026</small></li>", h)
-        self.assertIn("<li>Gemini<small>Tested 16 Oct 2026</small></li>", h)
+        self.assertIn("Claude<small>Tested 16 Oct 2026</small></span></li>", h)
+        self.assertIn("Gemini<small>Tested 16 Oct 2026</small></span></li>", h)
         self.assertIn("Why several assistants?", h)
 
     def test_single_engine_has_no_several_faq(self):
