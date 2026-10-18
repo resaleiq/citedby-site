@@ -291,7 +291,7 @@ def render_home(lang):  # the assistant list is read on every request: a stale t
     return home.render(lang, home.live_engines(engines_file())).encode()
 
 
-PAGE_ROUTES = {"/pricing": "pricing", "/faq": "faq", "/thanks": "thanks", "/data": "data"}  # shared-shell pages (RES-1335); /thanks is the app's when proxy.py forwards it
+PAGE_ROUTES = {"/pricing": "pricing", "/faq": "faq", "/thanks": "thanks"}  # shared-shell pages (RES-1335); /thanks is the app's when proxy.py forwards it
 
 
 def render_page(name):
@@ -305,7 +305,7 @@ def landing_html(s):
     if os.environ.get("CITEDBY_TRIAL") == "1": return _re.sub(r"<!--/?T-->", "", _re.sub(r"<!--N-->.*?<!--/N-->", "", s, flags=_re.S))
     return _re.sub(r"<!--/?N-->", "", _re.sub(r"<!--T-->.*?<!--/T-->", "", s, flags=_re.S))
 
-LAUNCH_REDIRECTS = {"/fr": "/", "/nl": "/", "/pricing": "/#pricing", "/faq": "/#faq", "/sample-audit": "/", "/check": "/", "/fr/check": "/", "/nl/check": "/", "/fixpack": "/#fixpack", "/fix-pack": "/#fixpack"}
+LAUNCH_REDIRECTS = {"/fr": "/", "/nl": "/", "/pricing": "/#pricing", "/faq": "/#faq", "/sample-audit": "/", "/check": "/", "/partners": "/", "/fr/check": "/", "/nl/check": "/", "/fixpack": "/#fixpack", "/fix-pack": "/#fixpack"}
 ROUTES = {"/check": "check.html", "/fr/check": "fr/check.html", "/nl/check": "nl/check.html",
           "/legal": "legal.html", "/privacy": "privacy.html"}
 CSP = ("default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'; connect-src 'self'; "
