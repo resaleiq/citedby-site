@@ -8,7 +8,7 @@ from build_day0_summary import summary
 NOW = datetime.datetime.now(datetime.timezone.utc)
 ENG = [{"name": n, "route": "API", "tested": NOW} for n in ("Claude Haiku 4.5", "GPT-5 mini", "Perplexity Sonar", "Grok 4.3", "Mistral Medium 3.1", "DeepSeek V4.1 Flash", "Qwen 3.7 Flash", "Gemini 3.5 Flash-Lite", "Llama 4 Scout")]
 PAGES = {"/": home.render("en", ENG), "/fr": home.render("fr", ENG), "/pricing": pages.pricing(ENG), "/faq": pages.faq(ENG), "/thanks": pages.thanks()}
-DATA = open(os.path.join(sys_path, "public", "data.html"), encoding="utf-8").read()
+DATA = pages.data()
 
 
 def block(h, tag): return re.search(r"<%s[ >].*?</%s>" % (tag, tag), h, re.S).group(0)

@@ -221,7 +221,7 @@ def engines_html(lang, engines):
         return f'<section class="engsec"><div class="wrap"><p class="engnone" id="engines">{E(t["eng_none"])}</p></div></section>'
     day = max(e["tested"] for e in engines)
     n = NUM[lang].get(len(engines), str(len(engines)))
-    lis = "".join(f'<li>{E(e["name"])}<small>{E(t["eng_one"].format(date=fmt_date(e["tested"], lang)))}</small></li>' for e in engines)
+    lis = "".join(f'<li><span class="chip" aria-hidden="true">{E(e["name"][:1])}</span><span class="en">{E(e["name"])}<small>{E(t["eng_one"].format(date=fmt_date(e["tested"], lang)))}</small></span></li>' for e in engines)
     return (f'<section class="engsec" aria-labelledby="eng-h"><div class="wrap"><h2 id="eng-h">{E(t["eng_h"].format(n=n))}</h2>'
             f'<p class="sub"><time datetime="{day.isoformat(timespec="minutes")}">{E(t["eng_sub"].format(date=fmt_date(day, lang)))}</time></p>'
             f'<ul class="eng9" id="engines">{lis}</ul></div></section>')
