@@ -131,7 +131,7 @@ T = {
   ogt="Who do AI assistants name instead of your shop?", ogd="Paste your site address. We ask AI assistants what your buyers ask and show who they name instead of you.",
   h1="Is an AI assistant sending your customers to a competitor?",
   lede="CitedBy is an AI visibility audit for online shops, not a citation tool: we ask AI assistants the questions your buyers ask, in their language, and count who gets named. Then we fix what keeps your shop out of the answers and count again 30 days later.",
-  f_label="Your website address", f_ph="example-shop.eu", go="Scan my site, free", micro="No email, no card. Result in about 2 minutes.",
+  f_label="Your website address", f_ph="example-shop.eu", go="Scan my site, free", micro="No email, no card. Result in about 2 minutes.", badge="Delivered in 7 days or the €390 is refunded.", badge_l="Read the terms.",
   more="Change market, language or what you sell", mk="Market", lg="Language", sl="What you sell", sl_ph="e.g. coffee beans", auto="Read from my site",
   countries=(("BE", "Belgium"), ("FR", "France"), ("NL", "Netherlands"), ("DE", "Germany"), ("ES", "Spain"), ("IE", "Ireland"), ("GB", "United Kingdom")),
   langs=(("fr", "Français"), ("nl", "Nederlands"), ("de", "Deutsch"), ("en", "English"), ("es", "Español")),
@@ -280,9 +280,10 @@ def render(lang, engines):
     d = shell.day0()
     base = "/instant" if lang == "en" else "/fr/instant"
     opts = lambda rows: f'<option value="">{E(t["auto"])}</option>' + "".join(f'<option value="{v}">{E(n)}</option>' for v, n in rows)
+    badge = (f'<p class="gbadge">{E(t["badge"])} <a href="/refund">{E(t["badge_l"])}</a></p>' if t.get("badge") else "")
     form = (f'<form class="scan" action="{base}" method="get" aria-label="{E(t["go"])}"><label for="site">{E(t["f_label"])}</label>'
             f'<div class="row"><input id="site" name="domain" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="{E(t["f_ph"])}" required>'
-            f'<button class="btn" type="submit">{E(t["go"])}</button></div><p class="micro">{E(t["micro"])}</p>'
+            f'<button class="btn" type="submit">{E(t["go"])}</button></div><p class="micro">{E(t["micro"])}</p>{badge}'
             f'<details><summary>{E(t["more"])}</summary><div class="opts"><div><label for="mk">{E(t["mk"])}</label><select id="mk" name="country">{opts(t["countries"])}</select></div>'
             f'<div><label for="lg">{E(t["lg"])}</label><select id="lg" name="lang">{opts(t["langs"])}</select></div>'
             f'<div><label for="sl">{E(t["sl"])}</label><input id="sl" name="what" type="text" maxlength="60" placeholder="{E(t["sl_ph"])}" autocomplete="off"></div></div></details></form>')
