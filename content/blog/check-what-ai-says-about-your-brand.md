@@ -16,7 +16,7 @@ answer: To check what ChatGPT says about your brand, ask it 20 prompts in four g
 
 ## What to prepare
 
-You need a free account on each assistant you care about, a spreadsheet, and about an hour. Open a new chat for every prompt so earlier answers do not colour the next one, and turn web search on if the assistant offers it, because our own audits run with it on and an answer built from live pages can differ from one without. Write down which assistant, which setting and the date. Answers change between runs, which is why every prompt gets asked twice.
+You need a free account on each assistant you care about, a spreadsheet, and about an hour. Open a new chat for every prompt so earlier answers do not colour the next one, and turn web search on if the assistant offers it, because an answer built from live pages can differ from one without. Write down which assistant, which setting and the date. Answers change between runs, which is why every prompt gets asked twice.
 
 Fill the brackets with your own words: `[category]` is what you sell (for example "specialty coffee beans"), `[country]` is where you ship, `[brand]` is your shop name and `[rival]` is a shop you compete with.
 
@@ -77,7 +77,7 @@ Do not round up. A shop named in 1 of 2 runs is named in 1 of 2 runs, not "recom
 
 ## What a result can look like
 
-This is the shape of a real result. In one audit we ran, a Belgian online coffee roaster was named in 1 of 16 answers and linked in none, while the most-named competitor shop appeared in 14 of 16. The audit asked 8 buyer questions twice, in French, through Claude's API with web search on, on 15 October 2026. It is one assistant in one market, not a general rate ([sample audit](/sample-audit)).
+This is the shape of a real result. In one audit we ran, a Belgian online coffee roaster was named in 1 of 16 answers and linked in none, while the most-named competitor shop appeared in 14 of 16. The test asked 8 buyer questions twice, in French, on 15 October 2026. It covers one assistant in one market, not a general rate.
 
 ![Three bars out of 16 answers: audited shop named 1, audited shop linked 0, most-named competitor 14](/blog/img/sample-named-chart.svg "Data from the sample audit, run 15 Oct 2026, shop anonymised.")
 
