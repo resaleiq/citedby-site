@@ -24,8 +24,8 @@ class T(unittest.TestCase):
 
     def test_every_live_name_present_with_date(self):
         h = home.render("en", live("Claude", "Gemini"))
-        self.assertIn("<b>Claude and Gemini</b>", h)
-        self.assertIn("16 Oct 2026", h)
+        self.assertIn("Claude<small>Tested 16 Oct 2026</small></span></li>", h)
+        self.assertIn("Gemini<small>Tested 16 Oct 2026</small></span></li>", h)
         self.assertIn("Why several assistants?", h)
 
     def test_single_engine_has_no_several_faq(self):
@@ -64,26 +64,48 @@ class T(unittest.TestCase):
         self.assertIn("We are connecting assistants", h)
         self.assertNotIn("buy.stripe.com/3cI8wHgJK4q9atr9Y98N200", h)
         self.assertNotIn('"price": "390"', h)
-        self.assertIn('href="/check"', h)
+        self.assertIn('action="/instant"', h)
 
-    def test_prices_and_guarantees(self):
+    def test_guarantee_text_kept_and_no_monthly(self):
         h = home.render("en", live("Claude"))
-        for s in ("€390", "€149", "buy.stripe.com/3cI8wHgJK4q9atr9Y98N200", "Late changes, full refund.", "No rise at day 30"):
-            self.assertIn(s, h)
-        f = home.render("fr", live("Claude"))
-        for s in ("390 €", "149 €"):
-            self.assertIn(s, f)
+        for s in ("What exactly do you guarantee?", "Late changes, full refund.", "No rise at day 30"):
+            self.assertIn(s, pages_faq())
+        for lang in ("en", "fr"):
+            for h in (home.render(lang, live("Claude")), pages_faq()):
+                self.assertNotIn("149", h); self.assertNotIn("Monthly", h)
+
+    def test_what_you_sell_uses_the_field_instant_reads(self):
+        # RES-1421: /instant prefills category_text, not "what"; the home field must use that name
+        for lang in ("en", "fr"):
+            h = home.render(lang, live("Claude"))
+            self.assertIn('id="sl" name="category_text"', h)
+            self.assertNotIn('name="what"', h)
+            self.assertNotIn("Read from my site", h); self.assertNotIn("Lu sur mon site", h)
 
     def test_no_retired_blocks(self):
         h = home.render("en", live("Claude"))
         for s in ("127", "Logged-out", "logged-out"):
             self.assertNotIn(s, h)
 
-    def test_sample_numbers_match_data(self):
-        s = json.load(open(os.path.join(os.path.dirname(__file__), "data", "sample.json")))
+    def test_steps_are_the_spec_wording(self):
         h = home.render("en", live("Claude"))
-        self.assertIn(f"Named in {s['named']} of {s['answers']} answers. Linked in {s['linked']}.", h)
-        self.assertNotIn("corica", h.lower())
+        for s in ("Paste your website address.", "We ask the AI assistants what your buyers ask.", "You get a dated report.", "put to the assistant listed on this page, twice each, today."):
+            self.assertIn(s, h)
+
+    def test_step2_count_follows_the_engine_row(self):
+        rows = [{"name": f"E{i}", "route": "", "tested": datetime.datetime.now(datetime.timezone.utc)} for i in range(9)]
+        for lang, word in (("en", "the nine assistants listed"), ("fr", "neuf assistants listés")):
+            self.assertIn(word, home.render(lang, rows))
+            self.assertIn(word.replace("nine", "two").replace("neuf", "deux"), home.render(lang, rows[:2]))
+            h0 = home.render(lang, [])
+            self.assertNotIn("nine", h0.split("hsteps")[1].split("</ol>")[0]); self.assertNotIn("neuf", h0.split("hsteps")[1].split("</ol>")[0])
+
+    def test_no_third_party_sample(self):
+        self.assertNotIn("roaster", home.render("en", live("Claude")).lower())
+
+def pages_faq():
+    import pages
+    return pages.faq(live("Claude", "Gemini"))
 
 if __name__ == "__main__":
     unittest.main()

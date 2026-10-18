@@ -7,7 +7,7 @@ import base64, hashlib, hmac, html, json, mimetypes, os, re, sqlite3, threading,
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 
-import analytics, doorcheck, home, proxy, safefetch
+import analytics, doorcheck, home, pages, proxy, safefetch
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CONSENT_VERSION = "2026-10-15.v1"
@@ -288,7 +288,15 @@ HOME_ROUTES = {"/": "en", "/fr": "fr"}
 
 
 def render_home(lang):  # the assistant list is read on every request: a stale test date drops the engine from the page
-    return home.render(lang, home.live_engines(engines_file()), asset_ver("style.css"), asset_ver("check.css")).encode()
+    return home.render(lang, home.live_engines(engines_file())).encode()
+
+
+PAGE_ROUTES = {"/pricing": "pricing", "/faq": "faq", "/thanks": "thanks", "/data": "data"}  # shared-shell pages (RES-1335); /thanks is the app's when proxy.py forwards it
+
+
+def render_page(name):
+    eng = home.live_engines(engines_file())
+    return (pages.thanks() if name == "thanks" else pages.data() if name == "data" else getattr(pages, name)(eng)).encode()
 
 
 ROUTES = {"/check": "check.html", "/fr/check": "fr/check.html", "/nl/check": "nl/check.html",
@@ -334,6 +342,8 @@ class H(BaseHTTPRequestHandler):
             return self.out(301, b"", extra={"Location": "/data"})
         if path in HOME_ROUTES:
             return self.out(200, render_home(HOME_ROUTES[path]))
+        if path in PAGE_ROUTES:
+            return self.out(200, render_page(PAGE_ROUTES[path]))
         rel = ROUTES.get(path) or path.lstrip("/")
         base = os.path.realpath(SITE_DIR)
         full = os.path.realpath(os.path.join(base, rel))
