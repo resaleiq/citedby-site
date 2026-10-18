@@ -305,7 +305,7 @@ def landing_html(s):
     if os.environ.get("CITEDBY_TRIAL") == "1": return _re.sub(r"<!--/?T-->", "", _re.sub(r"<!--N-->.*?<!--/N-->", "", s, flags=_re.S))
     return _re.sub(r"<!--/?N-->", "", _re.sub(r"<!--T-->.*?<!--/T-->", "", s, flags=_re.S))
 
-LAUNCH_REDIRECTS = {"/fr": "/", "/nl": "/", "/pricing": "/#pricing", "/faq": "/#faq", "/data": "/", "/sample-audit": "/", "/check": "/", "/fr/check": "/", "/nl/check": "/", "/about": "/", "/partners": "/"}
+LAUNCH_REDIRECTS = {"/fr": "/", "/nl": "/", "/pricing": "/#pricing", "/faq": "/#faq", "/data": "/", "/sample-audit": "/", "/check": "/", "/fr/check": "/", "/nl/check": "/", "/about": "/", "/partners": "/", "/fixpack": "/#fixpack", "/fix-pack": "/#fixpack"}
 ROUTES = {"/check": "check.html", "/fr/check": "fr/check.html", "/nl/check": "nl/check.html",
           "/legal": "legal.html", "/privacy": "privacy.html"}
 CSP = ("default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'; connect-src 'self'; "
