@@ -81,8 +81,16 @@ class T(unittest.TestCase):
 
     def test_steps_are_the_spec_wording(self):
         h = home.render("en", live("Claude"))
-        for s in ("Paste your website address.", "We ask the AI assistants what your buyers ask.", "You get a dated report.", "put to the nine assistants listed on this page, twice each, today."):
+        for s in ("Paste your website address.", "We ask the AI assistants what your buyers ask.", "You get a dated report.", "put to the assistant listed on this page, twice each, today."):
             self.assertIn(s, h)
+
+    def test_step2_count_follows_the_engine_row(self):
+        rows = [{"name": f"E{i}", "route": "", "tested": datetime.datetime.now(datetime.timezone.utc)} for i in range(9)]
+        for lang, word in (("en", "the nine assistants listed"), ("fr", "neuf assistants listés")):
+            self.assertIn(word, home.render(lang, rows))
+            self.assertIn(word.replace("nine", "two").replace("neuf", "deux"), home.render(lang, rows[:2]))
+            h0 = home.render(lang, [])
+            self.assertNotIn("nine", h0.split("hsteps")[1].split("</ol>")[0]); self.assertNotIn("neuf", h0.split("hsteps")[1].split("</ol>")[0])
 
     def test_no_third_party_sample(self):
         self.assertNotIn("roaster", home.render("en", live("Claude")).lower())

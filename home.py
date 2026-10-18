@@ -137,7 +137,7 @@ T = {
   langs=(("fr", "Français"), ("nl", "Nederlands"), ("de", "Deutsch"), ("en", "English"), ("es", "Español")),
   steps_label="How it works",
   steps=(("Paste your website address.", "One field. No signup, no email."),
-         ("We ask the AI assistants what your buyers ask.", "Real buyer questions, in your language, put to the nine assistants listed on this page, twice each, today."),
+         ("We ask the AI assistants what your buyers ask.", "Real buyer questions, in your language, put to {assistants}, twice each, today."),
          ("You get a dated report.", "Who the assistants name instead of you, whether what they say about you is true, and what to change first. Share it, print it, run it again.")),
   sheet_h="Audit · citedby.eu", sheet_tag="Our own site, day 0", sheet_day="DAY 0 · {date}", sheet_cap="category answers name CitedBy",
   d30_h="DAY 30", d30="Empty until the changes are live and recounted. Nothing shown before it exists.", cited_h="Pages cited instead (of {a} answers)",
@@ -169,7 +169,7 @@ T = {
   langs=(("fr", "Français"), ("nl", "Nederlands"), ("de", "Deutsch"), ("en", "English"), ("es", "Español")),
   steps_label="Comment ça marche",
   steps=(("Collez l'adresse de votre site.", "Un seul champ. Sans inscription, sans e-mail."),
-         ("Nous posons aux assistants IA les questions de vos acheteurs.", "De vraies questions d'acheteurs, dans votre langue, posées aux neuf assistants listés sur cette page, deux fois chacune, aujourd'hui."),
+         ("Nous posons aux assistants IA les questions de vos acheteurs.", "De vraies questions d'acheteurs, dans votre langue, posées à {assistants}, deux fois chacune, aujourd'hui."),
          ("Vous recevez un rapport daté.", "Qui les assistants citent à votre place, si ce qu'ils disent de vous est vrai, et quoi changer en premier. Partagez-le, imprimez-le, relancez-le.")),
   sheet_h="Audit · citedby.eu", sheet_tag="Notre propre site, jour 0", sheet_day="JOUR 0 · {date}", sheet_cap="réponses de catégorie citent CitedBy",
   d30_h="JOUR 30", d30="Vide tant que les changements ne sont pas en ligne et recomptés. Rien n'est affiché avant.", cited_h="Pages citées à la place (sur {a} réponses)",
@@ -200,8 +200,17 @@ def eline_plain(t, day, names, lang):
     return t["engines"].format(date=fmt_date(day, lang), names=join_names(names, lang))
 
 
-def steps_html(t):
-    return "".join(f"<li><span><b>{E(h)}</b>{E(b)}</span></li>" for h, b in t["steps"])
+def assistants_phrase(lang, n):
+    """Step 2's claim, built from the same live list as the engine row: it cannot name a number the row does not show."""
+    w = NUM[lang].get(n, str(n))
+    if lang == "fr":
+        return "l'assistant listé sur cette page" if n == 1 else f"{w} assistants listés sur cette page" if n else "les assistants IA que nous connectons"
+    return "the assistant listed on this page" if n == 1 else f"the {w} assistants listed on this page" if n else "the AI assistants we are connecting"
+
+
+def steps_html(t, lang, engines):
+    ph = assistants_phrase(lang, len(engines))
+    return "".join(f"<li><span><b>{E(h)}</b>{E(b.replace('{assistants}', ph))}</span></li>" for h, b in t["steps"])
 
 
 def faq_items(lang, engines):
@@ -293,7 +302,7 @@ def render(lang, engines):
     prices_lnk = "/pricing"
     main = f'''<section class="hero on-navy" id="scan"><div class="wrap"><div class="cols"><div class="lcol"><h1>{E(t["h1"])}</h1><p class="lede">{E(t["lede"])}</p>
 {form}
-<ol class="hsteps" aria-label="{E(t["steps_label"])}">{steps_html(t)}</ol></div><div class="rcol">{sheet_html(lang, d)}{art_caption(lang, d)}</div></div></div></section>
+<ol class="hsteps" aria-label="{E(t["steps_label"])}">{steps_html(t, lang, engines)}</ol></div><div class="rcol">{sheet_html(lang, d)}{art_caption(lang, d)}</div></div></div></section>
 {engines_html(lang, engines)}
 {proof_html(lang, d)}
 <section class="band" id="prices"><div class="wrap"><div class="offers"><h2>{E(t["offers_h"])}</h2><div><p>{E(t["offers"])}</p><a class="btn sec" href="{prices_lnk}">{E(t["prices"])}</a></div></div></div></section>
