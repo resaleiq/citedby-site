@@ -49,7 +49,7 @@ def join_names(names, lang):
 
 T = {
  "en": dict(
-  path="/", other="/fr", skip="Skip to content", home="CitedBy home", nav=("Free check", "Sample audit", "Prices", "FAQ"),
+  path="/", other="/fr", skip="Skip to content", home="CitedBy home", nav=("Free scan", "Sample audit", "Prices", "FAQ"),
   title="CitedBy: who do AI assistants name instead of your shop?",
   desc="We ask AI assistants your buyers' questions, count who gets named, fix your pages and count again at day 30. Free check, then a Fix Pack at €390, paid once.",
   ogt="Who do AI assistants name instead of your shop?", ogd="Free check of your shop. Fix Pack €390 paid once, with a recount at day 30.",
@@ -200,6 +200,7 @@ def render(lang, engines, css_ver="", check_css_ver=""):
     alts = '<link rel="alternate" hreflang="en" href="https://citedby.eu/"><link rel="alternate" hreflang="fr" href="https://citedby.eu/fr"><link rel="alternate" hreflang="x-default" href="https://citedby.eu/">'
     switch = " / ".join(f'<a href="{p}" hreflang="{l}" lang="{l}"{" aria-current=\"page\"" if l == lang else ""}>{l.upper()}</a>' for l, p in (("en", "/"), ("fr", "/fr")))
     chk = "/check" if lang == "en" else "/fr/check"
+    free_go, free_txt = ("/instant", t["go_scan"]) if lang == "en" else (chk, t["go"])
     # /instant is English only until RES-1130: FR keeps the crawler check as its primary
     pri, pri_txt = ("/instant", t["go_scan"]) if lang == "en" else (chk, t["go"])
     sec = f'<a class="link" href="{chk}">{E(t["go_quick"])}</a>' if lang == "en" else ""
@@ -227,7 +228,7 @@ def render(lang, engines, css_ver="", check_css_ver=""):
 <script type="application/ld+json">{ld_json}</script>
 </head><body>
 <a class="skip" href="#main">{E(t["skip"])}</a>
-<header class="top"><a class="logo" href="{t["path"]}" aria-label="{E(t["home"])}"><svg class="mark" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true" focusable="false"><rect width="32" height="32" fill="#0F1B2D"/><path d="M9 10h14M9 16h14M9 22h8" stroke="#fff" stroke-width="3"/><rect x="20" y="19" width="6" height="6" fill="#2F6BFF"/></svg><span>CitedBy</span></a><div class="hnav"><nav aria-label="Main"><a class="k" href="{chk}">{E(t["nav"][0])}</a><a href="/sample-audit">{E(t["nav"][1])}</a><a class="k" href="#prices">{E(t["nav"][2])}</a><a href="#faq">{E(t["nav"][3])}</a></nav><span class="lsw" aria-label="Language">{switch}</span></div></header>
+<header class="top"><a class="logo" href="{t["path"]}" aria-label="{E(t["home"])}"><svg class="mark" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true" focusable="false"><rect width="32" height="32" fill="#0F1B2D"/><path d="M9 10h14M9 16h14M9 22h8" stroke="#fff" stroke-width="3"/><rect x="20" y="19" width="6" height="6" fill="#2F6BFF"/></svg><span>CitedBy</span></a><div class="hnav"><nav aria-label="Main"><a class="k" href="{free_go}">{E(t["nav"][0])}</a><a href="/sample-audit">{E(t["nav"][1])}</a><a class="k" href="#prices">{E(t["nav"][2])}</a><a href="#faq">{E(t["nav"][3])}</a></nav><span class="lsw" aria-label="Language">{switch}</span></div></header>
 
 <main id="main" class="page">
 <section class="sec hero">
@@ -261,7 +262,7 @@ def render(lang, engines, css_ver="", check_css_ver=""):
 
 <div class="row"><div><h3>{E(t["fc_h"])}</h3>
 <ul>{li(t["fc"])}</ul></div>
-<div class="buy"><div class="price">{"€0" if lang == "en" else "0 €"}</div><a class="btn g" href="{chk}">{E(t["go"])}</a></div></div>
+<div class="buy"><div class="price">{"€0" if lang == "en" else "0 €"}</div><a class="btn g" href="{free_go}">{E(free_txt)}</a></div></div>
 
 <div class="row"><div><h3>{E(t["mo_h"])}</h3>
 <ul>{li(t["mo"])}</ul></div>
