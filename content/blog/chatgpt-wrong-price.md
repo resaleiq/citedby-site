@@ -54,9 +54,9 @@ OpenAI says a robots.txt change can take about 24 hours to reach its search craw
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-18 | ChatGPT, search on | What does [product] from [shop] cost? | | | |
 
-## Can the free check find this?
+## Can the audit find this?
 
-The free check in the box above does not read prices. It tests whether AI crawlers can reach your page and read your product data at all. If your price page is blocked or empty to a crawler, no fix to the price can help, so run it first. The CitedBy audit compares what assistants say about your shop, including price, shipping and discontinued items, with what your own site says.
+The CitedBy audit crawls your pages and tests whether AI crawlers can reach them and read your product data. If your price page is blocked or empty to a crawler, no fix to the price can help, so test that first.
 
 ## FAQ
 
@@ -78,4 +78,4 @@ Yes, when it is stale. Google says markup and feed price should match the landin
 - [OpenAI: crawlers and user agents](https://developers.openai.com/api/docs/bots)
 - [Google Merchant Center: inaccurate price due to feed and landing page mismatch](https://support.google.com/merchants/answer/9773429)
 - [r/ecommerce, 22 September 2026: ChatGPT recommends a discontinued bundle at the old price](https://old.reddit.com/comments/1wnbg86/)
-- [CitedBy free check, method note](https://citedby.eu/check)
+- [CitedBy site audit](https://citedby.eu/)

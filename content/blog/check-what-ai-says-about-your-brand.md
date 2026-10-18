@@ -90,7 +90,7 @@ This is the shape of a real result. In one audit we ran, a Belgian online coffee
 
 ## The faster way
 
-Twenty prompts across five assistants is 200 manual runs. CitedBy asks the questions your buyers ask in your market, twice each, and lists who is named and linked. The scan is free and needs no account.
+Twenty prompts across five assistants is 200 manual runs. CitedBy asks the questions your buyers ask in your market, twice each, and lists who is named and linked. The audit starts at €9.
 
 ## FAQ
 

@@ -44,7 +44,7 @@ If you add one, keep it short: your name, one sentence on what you sell and wher
 
 ## What to do instead first
 
-1. Run the free check in the box above. It tests whether AI crawlers can fetch your page and read it, and it reports whether an llms.txt exists as a hygiene item, without treating it as a ranking factor.
+1. Audit your site with the box above (from €9). It tests whether AI crawlers can fetch your page and read it, and it reports whether an llms.txt exists as a hygiene item, without treating it as a ranking factor.
 2. Put price, shipping and returns in the page text, not only in images or scripts.
 3. Ask an assistant 20 buyer questions twice each and log who gets named ([the method](/blog/check-what-ai-says-about-your-brand)).
 
@@ -69,4 +69,4 @@ No. robots.txt tells crawlers what they may fetch. llms.txt is a proposed summar
 - [Search Engine Journal: SE Ranking study of about 300,000 domains, 20 November 2025](https://www.searchenginejournal.com/llms-txt-shows-no-clear-effect-on-ai-citations-based-on-300k-domains/561542/)
 - [Google Search Central: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
 - [OpenAI: crawlers and user agents](https://developers.openai.com/api/docs/bots)
-- [CitedBy free check, method note](https://citedby.eu/check)
+- [CitedBy site audit](https://citedby.eu/)

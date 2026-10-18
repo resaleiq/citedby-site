@@ -45,11 +45,11 @@ So the honest answer to "is it just SEO?" is: the base is shared, and the part t
 | Pages are not indexed, or the site is slow or empty without JavaScript | SEO basics | Nothing else works if crawlers cannot read the page |
 | You rank, but pages bury price, shipping and returns | AEO fixes | Direct facts are what an assistant can quote |
 | You rank and answer well, but buyers ask an assistant and rivals get named | GEO audit | This is the question only asking the assistant can answer |
-| You are not sure | The free check, then 20 prompts by hand | The check shows crawler access in about 10 seconds, the prompts show what is said |
+| You are not sure | An audit, then 20 prompts by hand | The audit shows crawler access on every page, the prompts show what is said |
 
 ## A five-step order of work
 
-1. Run the free check in the box above and fix any crawler that is blocked or any page that is empty to a crawler.
+1. Audit your site with the box above (from €9) and fix any crawler that is blocked or any page that is empty to a crawler.
 2. Make sure price, shipping, returns and a short description sit in the HTML text, not only in images or scripts.
 3. Add a short answer and a FAQ to your top three pages, written in your buyers' own words.
 4. Ask an assistant 20 buyer questions twice each and log who gets named ([the 20-prompt method](/blog/check-what-ai-says-about-your-brand)).
@@ -67,10 +67,10 @@ AEO is about making a page easy to quote as an answer. GEO is about whether an a
 Google says you do not need new machine-readable files or AI text files to appear in its AI features. We cover the evidence for other assistants in a separate guide on llms.txt.
 
 ### Which audit should I buy first?
-Fix crawl access and basic facts first, since those are free to check. Buy a GEO audit when you want to know who gets named when buyers ask, and ask the seller what prompts it runs and how often.
+Fix crawl access and basic facts first, since you can check those yourself. Buy a GEO audit when you want to know who gets named when buyers ask, and ask the seller what prompts it runs and how often.
 
 ## Sources
 
 - [Google Search Central: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
 - [OpenAI: crawlers and user agents](https://developers.openai.com/api/docs/bots)
-- [CitedBy free check, method note](https://citedby.eu/check)
+- [CitedBy site audit](https://citedby.eu/)
