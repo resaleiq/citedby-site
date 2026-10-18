@@ -299,6 +299,7 @@ def render_page(name):
     return (pages.thanks() if name == "thanks" else pages.data() if name == "data" else getattr(pages, name)(eng)).encode()
 
 
+LAUNCH_REDIRECTS = {"/fr": "/", "/nl": "/", "/pricing": "/#pricing", "/faq": "/#faq", "/data": "/", "/sample-audit": "/", "/check": "/", "/fr/check": "/", "/nl/check": "/"}
 ROUTES = {"/check": "check.html", "/fr/check": "fr/check.html", "/nl/check": "nl/check.html",
           "/legal": "legal.html", "/privacy": "privacy.html"}
 CSP = ("default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'; connect-src 'self'; "
@@ -325,7 +326,7 @@ class H(BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(body)))
         cache = "no-store"
         if code == 200 and not self.path.startswith(("/api/", "/health", "/deploy-id")):
-            cache = "public, max-age=604800" if self.path.split("?")[0].endswith((".css", ".js", ".svg", ".png", ".ico", ".woff2")) else "public, max-age=300"
+            cache = "public, max-age=604800" if self.path.split("?")[0].endswith((".css", ".js", ".svg", ".png", ".ico", ".woff2")) and not self.path.startswith(("/saas.", "/landing.", "/sample.")) else "public, max-age=300"
         self.send_header("Cache-Control", cache)
         self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
@@ -338,6 +339,11 @@ class H(BaseHTTPRequestHandler):
             self.wfile.write(body)
 
     def static(self, path):
+        if path in LAUNCH_REDIRECTS:  # RES-1496: the old shop-scan pages are retired; their paths lead to the new landing
+            return self.out(301, b"", extra={"Location": LAUNCH_REDIRECTS[path]})
+        if path == "/":
+            with open(os.path.join(SITE_DIR, "landing.html"), "rb") as f:
+                return self.out(200, f.read())
         if path == "/data/":
             return self.out(301, b"", extra={"Location": "/data"})
         if path in HOME_ROUTES:

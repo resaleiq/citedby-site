@@ -7,8 +7,8 @@ from urllib.parse import urlparse
 
 UPSTREAM = os.environ.get("APP_UPSTREAM", "").rstrip("/")
 ROUTES = {
-    "GET": re.compile(r"/((fr|nl)/instant|instant|plans|thanks|dashboard|account|report/[A-Za-z0-9_-]{20,64}|r/[A-Za-z0-9_-]{16,64}(\.csv)?|start/[A-Za-z0-9_-]{20,64}|api/account/export|api/guess|api/grade|ci|ci/ai-crawler-check\.sh|grade|api/snapshot/(\d+|[A-Za-z0-9_-]{16,64})|signin|api/me|api/audits|api/audit/[A-Za-z0-9_]{3,40}(/(pages|page|pdf|issue/[a-z0-9_]{2,60}))?|api/site|api/share/[A-Za-z0-9_]{3,40}|r/audit/[A-Za-z0-9_]{3,40}|login/[A-Za-z0-9_-]{20,64}|recount/[A-Za-z0-9_-]{20,64})"),
-    "POST": re.compile(r"/(api/audit|api/audit/[A-Za-z0-9_]{3,40}/recrawl|api/snapshot|api/stripe/webhook|api/fixpack/intake|api/account/(link|delete)|api/portal|api/checkout|login/[A-Za-z0-9_-]{20,64})"),
+    "GET": re.compile(r"/((fr|nl)/instant|instant|plans|thanks|dashboard|account|report/[A-Za-z0-9_-]{20,64}|r/[A-Za-z0-9_-]{16,64}(\.csv)?|start/[A-Za-z0-9_-]{20,64}|api/account/export|api/guess|api/grade|ci|ci/ai-crawler-check\.sh|grade|api/snapshot/(\d+|[A-Za-z0-9_-]{16,64})|signin|logout|api/me|api/projects|api/audits(/[A-Za-z0-9_]{3,40}(/(pages|page))?)?|api/audit/[A-Za-z0-9_]{3,40}(/(pages|page|pdf|issue/[a-z0-9_]{2,60}))?|api/site|api/share/[A-Za-z0-9_]{3,40}|r/audit/[A-Za-z0-9_]{3,40}|login/[A-Za-z0-9_-]{20,64}|recount/[A-Za-z0-9_-]{20,64})"),
+    "POST": re.compile(r"/(api/audits|api/audit|api/audit/[A-Za-z0-9_]{3,40}/recrawl|api/snapshot|api/stripe/webhook|api/fixpack/intake|api/account/(link|delete)|api/portal|api/checkout|login/[A-Za-z0-9_-]{20,64})"),
 }
 PASS = ("Content-Type", "Cache-Control", "Set-Cookie", "Location", "Referrer-Policy", "Content-Security-Policy")
 _H = {"t": 0.0, "u": "", "v": None}
