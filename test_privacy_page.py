@@ -17,5 +17,5 @@ def test_privacy_does_not_overclaim_the_export():
 
 
 def test_privacy_names_every_recipient_with_country_and_safeguard():
-    for needle in ("Stripe", "Resend", "Anthropic", "OpenRouter", "Hetzner", "Standard Contractual Clauses", "Finland"):
+    for needle in ("Stripe", "Resend", "Anthropic", "OpenRouter", "PostHog", "Forward Email", "Gmail", "Hetzner", "Standard Contractual Clauses", "Finland"):
         assert needle in P, needle
