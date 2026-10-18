@@ -189,7 +189,7 @@ def render(lang, engines, css_ver="", check_css_ver=""):
     faq_html = "".join(f"<details><summary>{E(q)}</summary><p>{E(a)}</p></details>" for q, a in faq)
     steps = "".join(f"<li><div><b>{E(h)}</b>{E(b)}</div></li>" for h, b in t["steps"])
     ld = {"@context": "https://schema.org", "@type": "Service", "name": t["svc"], "serviceType": t["svc_type"],
-          "provider": {"@type": "Organization", "name": "CitedBy", "url": "https://citedby.eu"}, "areaServed": "EU", "inLanguage": t["locale"],
+          "provider": {"@type": "Organization", "name": "CitedBy", "url": "https://citedby.eu", "disambiguatingDescription": "Not citedby.co or citedby.ai, and not an academic citation tool."}, "areaServed": "EU", "inLanguage": t["locale"],
           "offers": [{"@type": "Offer", "name": t["free_offer"], "price": "0", "priceCurrency": "EUR", "url": f"https://citedby.eu{t['path']}#prices"}]
           + ([{"@type": "Offer", "name": t["fp_offer"], "price": "390", "priceCurrency": "EUR", "url": FIX_URL}] if live else [])
           + [{"@type": "Offer", "name": "CitedBy Monthly", "price": "149", "priceCurrency": "EUR", "url": f"https://citedby.eu{t['path']}#prices",
