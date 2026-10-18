@@ -106,7 +106,7 @@ T = {
   svc="CitedBy: AI assistant visibility audit and fixes", svc_type="AI search visibility for online shops", free_offer="Free check", fp_offer="Fix Pack (paid once)", locale="en",
  ),
  "fr": dict(
-  path="/fr", other="/", skip="Aller au contenu", home="Accueil CitedBy", nav=("Test gratuit", "Exemple d'audit", "Tarifs", "FAQ"),
+  path="/fr", other="/", skip="Aller au contenu", home="Accueil CitedBy", nav=("Scan gratuit", "Exemple d'audit", "Tarifs", "FAQ"),
   title="CitedBy : qui les IA citent-elles à votre place ?",
   desc="Nous posons aux assistants IA les questions de vos acheteurs, comptons qui est cité, corrigeons vos pages. Test gratuit, puis Fix Pack à 390 €, payé une fois.",
   ogt="Qui les assistants IA citent-ils à la place de votre boutique ?", ogd="Test gratuit de votre boutique. Fix Pack à 390 € payé une fois, avec un recomptage à 30 jours.",
@@ -115,8 +115,8 @@ T = {
   lede="CitedBy est un audit de visibilité IA pour boutiques en ligne, pas un outil de citations : nous posons aux assistants IA les questions de vos acheteurs, dans leur langue, et nous comptons qui est cité. Puis nous corrigeons ce qui vous écarte des réponses et nous recomptons 30 jours plus tard.",
   engines="Assistants mesurés le {date} : {names}. Chacun par une API, recherche web activée.",
   engines_none="Nous connectons des assistants. Écrivez-nous avant d'acheter.",
-  go="Tester ma boutique, gratuitement", sample_link="Lire un exemple de mini-audit",
-  micro="Le test prend environ 10 secondes, sans e-mail. Vous voulez le mini-audit de 16 réponses ? Laissez votre e-mail après le test ; il arrive sous 2 jours ouvrés.",
+  go="Tester ma boutique, gratuitement", go_scan="Scanner mon site, gratuitement", go_quick="Ou le test express de 10 secondes d'abord", sample_link="Lire un exemple de mini-audit",
+  micro="Neuf assistants IA, environ une minute, sans e-mail ni carte.",
   s_bar="La boutique en ligne d'un torréfacteur belge", s_big="Cité dans {n} réponse sur {a}. Lien vers son site dans {l}.",
   s_sub="{assistant} a répondu à {q} questions d'acheteurs en français, chacune posée deux fois. Le torréfacteur a été cité une fois et son site n'a jamais été lié.",
   s_h="Qui l'assistant cite à votre place", s_q="Un acheteur demande (en français)", s_n="Cités à sa place", s_t="Cette boutique",
@@ -200,10 +200,10 @@ def render(lang, engines, css_ver="", check_css_ver=""):
     alts = '<link rel="alternate" hreflang="en" href="https://citedby.eu/"><link rel="alternate" hreflang="fr" href="https://citedby.eu/fr"><link rel="alternate" hreflang="x-default" href="https://citedby.eu/">'
     switch = " / ".join(f'<a href="{p}" hreflang="{l}" lang="{l}"{" aria-current=\"page\"" if l == lang else ""}>{l.upper()}</a>' for l, p in (("en", "/"), ("fr", "/fr")))
     chk = "/check" if lang == "en" else "/fr/check"
-    free_go, free_txt = ("/instant", t["go_scan"]) if lang == "en" else (chk, t["go"])
-    # /instant is English only until RES-1130: FR keeps the crawler check as its primary
-    pri, pri_txt = ("/instant", t["go_scan"]) if lang == "en" else (chk, t["go"])
-    sec = f'<a class="link" href="{chk}">{E(t["go_quick"])}</a>' if lang == "en" else ""
+    inst = "/instant" if lang == "en" else "/fr/instant"
+    free_go, free_txt = (inst, t["go_scan"])
+    pri, pri_txt = (inst, t["go_scan"])
+    sec = f'<a class="link" href="{chk}">{E(t["go_quick"])}</a>'
     L = {"en": ("Sample audit", "Named", "Linked", "Top competitor", "of", "answers", "Real audit of a Belgian coffee roaster, run on "), "fr": ("Audit exemple", "Nommée", "Liée", "Concurrent le plus cité", "sur", "réponses", "Audit réel d'un torréfacteur belge, réalisé sur ")}[lang]
     tot = s["answers"]
     card = (f'<aside class="auditcard" aria-label="{E(L[0])}"><p class="ac-h"><b>{E(L[0])}</b> · {E(sdate)}</p>'
