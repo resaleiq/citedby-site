@@ -14,3 +14,8 @@ def test_privacy_does_not_overclaim_the_export():
     html = open("public/privacy.html", encoding="utf-8").read()
     assert "export everything we hold" not in html
     assert "export your account data" in html
+
+
+def test_privacy_names_every_recipient_with_country_and_safeguard():
+    for needle in ("Stripe", "Resend", "Anthropic", "OpenRouter", "Hetzner", "Standard Contractual Clauses", "Finland"):
+        assert needle in P, needle
