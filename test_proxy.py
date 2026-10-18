@@ -5,13 +5,14 @@ import proxy
 
 SEEN = []
 SIG = []
+ACCEPT = []
 
 class Stub(BaseHTTPRequestHandler):
     def log_message(self, *a): pass
     def _do(self):
         n = int(self.headers.get("Content-Length") or 0)
         SEEN.append((self.command, self.path, self.headers.get("X-Forwarded-For"), self.headers.get("Cookie"), self.rfile.read(n)))
-        SIG.append(self.headers.get("Stripe-Signature"))
+        SIG.append(self.headers.get("Stripe-Signature")); ACCEPT.append(self.headers.get("Accept"))
         if self.path.startswith("/health"):
             b = b'{"status":"ok","deploy":"abc1234","db":"ok","ok":true}'
         else:
@@ -59,6 +60,10 @@ class T(unittest.TestCase):
         self.get("/account", headers={"Cookie": "ci_session=abc", "X-Forwarded-For": "1.1.1.1, 2.2.2.2"})
         m, path, xff, ck, _ = SEEN[0]
         self.assertEqual(xff, "203.0.113.9"); self.assertEqual(ck, "ci_session=abc")
+
+    def test_accept_header_is_forwarded(self):  # RES-1595: the app returns the HTML /account (or 303 to /signin) only for Accept: text/html
+        ACCEPT.clear(); self.get("/account", headers={"Accept": "text/html,application/xhtml+xml"})
+        self.assertEqual(ACCEPT[0], "text/html,application/xhtml+xml")
 
     def test_response_headers_are_filtered_and_robots_blocked(self):
         s, b, h = self.get("/plans")
