@@ -362,7 +362,7 @@ def render(lang, engines):
              f'<p class="gbadge">{E(t["sec"])}</p></div>')
     form = (f'<form class="scan" action="{base}" method="get" aria-label="{E(t["go"])}"><label for="site">{E(t["f_label"])}</label>'
             f'<div class="row"><input id="site" name="domain" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="{E(t["f_ph"])}" required>'
-            f'<button class="btn" type="submit">{E(t["go"])}</button></div><p class="micro">{E(t["micro"])}</p>{badge}'
+            f'<button class="btn" type="submit" data-cta="primary" data-cta-id="hero">{E(t["go"])}</button></div><p class="micro">{E(t["micro"])}</p>{badge}'
             f'<details><summary>{E(t["more"])}</summary><div class="opts"><div><label for="mk">{E(t["mk"])}</label><select id="mk" name="country">{opts(t["countries"])}</select></div>'
             f'<div><label for="lg">{E(t["lg"])}</label><select id="lg" name="lang">{opts(t["langs"])}</select></div>'
             f'<div><label for="sl">{E(t["sl"])}</label><input id="sl" name="category_text" type="text" maxlength="60" placeholder="{E(t["sl_ph"])}" autocomplete="off"></div></div></details></form>')
