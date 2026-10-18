@@ -133,7 +133,7 @@ class SSRF(unittest.TestCase):
         srv = HTTPServer(("127.0.0.1", 0), h); sc = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER); sc.load_cert_chain(crt, key)
         srv.socket = sc.wrap_socket(srv.socket, server_side=True)
         threading.Thread(target=srv.serve_forever, daemon=True).start(); port = srv.server_port
-        cc = ssl.create_default_context(); cc.check_hostname = False; cc.load_verify_locations(crt)
+        cc = ssl.create_default_context(); cc.check_hostname = False; cc.verify_flags &= ~ssl.VERIFY_X509_STRICT; cc.load_verify_locations(crt)  # Python 3.13+ rejects the self-signed test cert under X509_STRICT
         orig, orig_parse, orig_ctx = safefetch.addr_ok, safefetch.parse, safefetch.CTX
         safefetch.addr_ok = lambda ip: True; safefetch.CTX = cc
         safefetch.parse = lambda u: (safefetch.urlsplit(u), port)
