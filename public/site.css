@@ -53,7 +53,7 @@ p{margin:0 0 var(--g4);max-width:66ch}
 /* ---- controls ---- */
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:var(--g3) var(--g5);background:var(--action);color:var(--on-action);border:2px solid var(--navy);border-radius:0;font:600 17px/1.2 var(--sans);text-decoration:none;cursor:pointer;text-align:center}
 .btn:hover{background:var(--action-hot)}
-.on-navy .btn{border-color:var(--action)}.on-navy .btn:hover{border-color:var(--action-hot)}
+.on-navy .btn:not(.sec){color:var(--on-action)}.on-navy .btn{border-color:var(--action)}.on-navy .btn:hover{border-color:var(--action-hot)}
 .btn.sec{background:transparent;color:var(--navy);border-color:var(--navy)}.btn.sec:hover{background:var(--navy);color:#fff}
 .on-navy .btn.sec{color:#E8EDF4;border-color:#E8EDF4}.on-navy .btn.sec:hover{background:#E8EDF4;color:var(--navy)}
 .link{font:400 17px var(--sans);display:inline-flex;align-items:center;min-height:44px}
