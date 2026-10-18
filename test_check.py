@@ -322,6 +322,15 @@ class Health(unittest.TestCase):
                 server.DEPLOY_ID = v; code, _, d = self.get("/deploy-id"); self.assertEqual((code, d["deploy_id"]), (200, v))
         finally: server.DEPLOY_ID = orig
 
+    def test_health_and_deploy_id_agree_and_label_both_containers(self):
+        orig, oh = server.DEPLOY_ID, server.proxy.app_health
+        try:
+            server.DEPLOY_ID = "site1234"; server.proxy.app_health = lambda: {"status": "ok", "deploy": "app5678"}
+            _, _, h = self.get("/health"); _, _, d = self.get("/deploy-id")
+            self.assertEqual((h["deploy_id"], h["app"]["deploy"]), ("site1234", "app5678"))
+            self.assertEqual((d["deploy_id"], d["app_deploy_id"]), (h["deploy_id"], h["app"]["deploy"]))
+        finally: server.DEPLOY_ID, server.proxy.app_health = orig, oh
+
 
 class Parsing(unittest.TestCase):
     def test_productgroup_variant(self):

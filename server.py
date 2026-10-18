@@ -365,10 +365,14 @@ class H(BaseHTTPRequestHandler):
                 ok = False
             body = {"status": "ok" if ok else "error", "db": "ok" if ok else "error", "time": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
             app = proxy.app_health()  # the app's own status and deploy id; its failure never fails the site
+            body["deploy_id"] = DEPLOY_ID  # this site container; app.deploy is the separate app container (RES-1280)
             if app: body["app"] = app
             return self.out(200 if ok else 503, json.dumps(body).encode(), "application/json")
         if u.path == "/deploy-id":
-            return self.out(200, json.dumps({"deploy_id": DEPLOY_ID}).encode(), "application/json")
+            out = {"deploy_id": DEPLOY_ID}  # site container
+            app = proxy.app_health()
+            if app: out["app_deploy_id"] = app.get("deploy")  # app container, same value as /health app.deploy
+            return self.out(200, json.dumps(out).encode(), "application/json")
         if u.path == "/healthz":
             return self.out(200, b'{"ok":true}', "application/json")
         if u.path == "/api/confirm":
