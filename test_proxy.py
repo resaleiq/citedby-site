@@ -106,3 +106,8 @@ class RouteTable(unittest.TestCase):
             self.assertTrue(p.fullmatch(path), path)
         for path in ("/api/audits/../x", "/api/audits/a_k3j2h1/other", "/admin"):
             self.assertFalse(g.fullmatch(path), path)
+
+
+def test_trial_cancel_paths_are_forwarded():
+    p = "/trial/cancel/sub_1ABC.deadbeefdeadbeefdeadbeef"
+    assert proxy.ROUTES["GET"].fullmatch(p) and proxy.ROUTES["POST"].fullmatch(p)
