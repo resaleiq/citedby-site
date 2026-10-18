@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="t d">
+<title id="t">What each audit checks</title><desc id="d">A grid of six checks against three audits. Crawl access and page content are shared by all three; ranking is SEO only; answer format is AEO and GEO; naming in AI answers is GEO only.</desc>
+<rect width="1200" height="560" fill="#fff"/>
+<g font-family="system-ui,Arial,sans-serif" fill="#0F1B2D">
+<text x="60" y="60" font-size="28" font-weight="600">What each audit checks (our reading, not a standard)</text>
+<g font-size="22" font-weight="600"><text x="700" y="120" text-anchor="middle">SEO</text><text x="860" y="120" text-anchor="middle">AEO</text><text x="1020" y="120" text-anchor="middle">GEO</text></g>
+<g font-size="21">
+<text x="60" y="172">Crawlers can fetch the page</text><text x="60" y="232">Content is in the raw HTML</text><text x="60" y="292">Rank in search results</text><text x="60" y="352">Direct, quotable answers</text><text x="60" y="412">Facts match your site</text><text x="60" y="472">Named in AI answers to buyers</text></g>
+<g stroke="#D5DCE6" stroke-width="2"><path d="M60 192h1020M60 252h1020M60 312h1020M60 372h1020M60 432h1020"/></g>
+<g font-size="26" font-weight="700" fill="#1F4FD8" text-anchor="middle">
+<text x="700" y="174">✓</text><text x="860" y="174">✓</text><text x="1020" y="174">✓</text>
+<text x="700" y="234">✓</text><text x="860" y="234">✓</text><text x="1020" y="234">✓</text>
+<text x="700" y="294">✓</text>
+<text x="860" y="354">✓</text><text x="1020" y="354">✓</text>
+<text x="1020" y="414">✓</text>
+<text x="1020" y="474">✓</text></g>
+</g>
+<text x="60" y="530" font-family="system-ui,Arial,sans-serif" font-size="18" fill="#556070">The three terms have no official definition. This grid is how CitedBy uses them.</text>
+</svg>
