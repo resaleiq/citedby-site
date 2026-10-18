@@ -299,6 +299,12 @@ def render_page(name):
     return (pages.thanks() if name == "thanks" else pages.data() if name == "data" else getattr(pages, name)(eng)).encode()
 
 
+def landing_html(s):
+    """Trial wording (blocks <!--T-->..<!--/T-->) only when CITEDBY_TRIAL=1; the no-trial wording (<!--N-->) otherwise. Same markers as the app's landing."""
+    import re as _re
+    if os.environ.get("CITEDBY_TRIAL") == "1": return _re.sub(r"<!--/?T-->", "", _re.sub(r"<!--N-->.*?<!--/N-->", "", s, flags=_re.S))
+    return _re.sub(r"<!--/?N-->", "", _re.sub(r"<!--T-->.*?<!--/T-->", "", s, flags=_re.S))
+
 LAUNCH_REDIRECTS = {"/fr": "/", "/nl": "/", "/pricing": "/#pricing", "/faq": "/#faq", "/data": "/", "/sample-audit": "/", "/check": "/", "/fr/check": "/", "/nl/check": "/"}
 ROUTES = {"/check": "check.html", "/fr/check": "fr/check.html", "/nl/check": "nl/check.html",
           "/legal": "legal.html", "/privacy": "privacy.html"}
@@ -342,8 +348,8 @@ class H(BaseHTTPRequestHandler):
         if path in LAUNCH_REDIRECTS:  # RES-1496: the old shop-scan pages are retired; their paths lead to the new landing
             return self.out(301, b"", extra={"Location": LAUNCH_REDIRECTS[path]})
         if path == "/":
-            with open(os.path.join(SITE_DIR, "landing.html"), "rb") as f:
-                return self.out(200, f.read())
+            with open(os.path.join(SITE_DIR, "landing.html"), encoding="utf-8") as f:
+                return self.out(200, landing_html(f.read()).encode())
         if path == "/data/":
             return self.out(301, b"", extra={"Location": "/data"})
         if path in HOME_ROUTES:
