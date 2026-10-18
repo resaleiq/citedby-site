@@ -356,7 +356,7 @@ def render(lang, engines):
     day = max((e["tested"] for e in engines), default=None)
     names = [e["name"] for e in engines]
     d = shell.day0()
-    base = "/instant" if lang == "en" else "/fr/instant"
+    base = "/grade" if lang == "en" else "/grade"
     opts = lambda rows: f'<option value="">{E(t["auto"])}</option>' + "".join(f'<option value="{v}">{E(n)}</option>' for v, n in rows)
     badge = (f'<div class="gline"><p class="gbadge">{E(t["g_btn"])} <a href="/refund">{E(t["g_link"])}</a></p>'
              f'<p class="gbadge">{E(t["sec"])}</p></div>')
