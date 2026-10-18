@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+<title id="t">Can ChatGPT read my website?</title><desc id="d">Three gates between a shop page and an AI assistant: robots.txt, the page text, and structured data.</desc>
+<rect width="1200" height="630" fill="#EEF2F7"/><rect x="0" y="0" width="1200" height="12" fill="#0F1B2D"/>
+<text x="72" y="130" font-family="Georgia,'Times New Roman',serif" font-size="64" font-weight="600" fill="#0F1B2D">Can ChatGPT read</text>
+<text x="72" y="204" font-family="Georgia,'Times New Roman',serif" font-size="64" font-weight="600" fill="#0F1B2D">my website?</text>
+<text x="72" y="262" font-family="system-ui,Arial,sans-serif" font-size="26" fill="#556070">Three gates, checked in about 10 seconds</text>
+<g font-family="system-ui,Arial,sans-serif" font-size="24" fill="#0F1B2D">
+<rect x="72" y="330" width="300" height="190" fill="#fff" stroke="#0F1B2D" stroke-width="3"/><text x="96" y="378" font-size="44" font-weight="600" fill="#1F4FD8">1</text><text x="96" y="428" font-weight="600">robots.txt</text><text x="96" y="462" font-size="20" fill="#556070">Is the crawler let in?</text>
+<rect x="450" y="330" width="300" height="190" fill="#fff" stroke="#0F1B2D" stroke-width="3"/><text x="474" y="378" font-size="44" font-weight="600" fill="#1F4FD8">2</text><text x="474" y="428" font-weight="600">Page text</text><text x="474" y="462" font-size="20" fill="#556070">Is it in the HTML?</text>
+<rect x="828" y="330" width="300" height="190" fill="#fff" stroke="#0F1B2D" stroke-width="3"/><text x="852" y="378" font-size="44" font-weight="600" fill="#1F4FD8">3</text><text x="852" y="428" font-weight="600">Structured data</text><text x="852" y="462" font-size="20" fill="#556070">Who, what, what price?</text>
+</g>
+<path d="M376 425h70M754 425h70" stroke="#0F1B2D" stroke-width="3" fill="none"/><path d="M438 417l10 8-10 8M816 417l10 8-10 8" stroke="#0F1B2D" stroke-width="3" fill="none"/>
+<text x="72" y="590" font-family="system-ui,Arial,sans-serif" font-size="22" fill="#0F1B2D" font-weight="600">CitedBy · citedby.eu</text>
+</svg>
