@@ -300,7 +300,7 @@ def render(lang, engines):
     if live:
         ld[1]["description"] = eline_plain(t, day, names, lang)
     alts = '<link rel="alternate" hreflang="en" href="https://citedby.eu/"><link rel="alternate" hreflang="fr" href="https://citedby.eu/fr"><link rel="alternate" hreflang="x-default" href="https://citedby.eu/">'
-    behind = f'<section id="behind" class="sect"><div class="wrap"><h2>{E(t["behind_h"])}</h2><p>{E(t["behind"])} <a href="/legal">{E(t["legal"])}</a>.</p></div></section>'
+    behind = f'<section id="behind" class="tintband behind"><div class="wrap qgrid"><div class="qh"><span class="eyebrow-bar"></span><h2>{E(t["behind_h"])}</h2></div><p>{E(t["behind"])} <a href="/legal">{E(t["legal"])}</a>.</p></div></section>'
     prices_lnk = "/pricing"
     main = f'''<section class="hero on-navy" id="scan"><div class="wrap"><div class="cols"><div class="lcol"><h1>{E(t["h1"])}</h1><p class="lede">{E(t["lede"])}</p>
 {form}
@@ -308,7 +308,7 @@ def render(lang, engines):
 {engines_html(lang, engines)}
 {proof_html(lang, d)}
 <section class="band" id="prices"><div class="wrap"><div class="offers"><h2>{E(t["offers_h"])}</h2><div><p>{E(t["offers"])}</p><a class="btn sec" href="{prices_lnk}">{E(t["prices"])}</a></div></div></div></section>
-<section class="sect" id="faq"><div class="wrap"><h2 class="h2b">{E(t["faq_h"])}</h2><div class="faq">{details(faq_n, first_open=True)}</div>{faq_more}</div></section>
+<section class="sect qsec" id="faq"><div class="wrap qgrid"><div class="qh"><span class="eyebrow-bar"></span><h2 class="h2b">{E(t["faq_h"])}</h2>{faq_more}</div><div class="faq">{details(faq_n, first_open=True)}</div></div></section>
 {behind}
-<section class="sect"><div class="wrap"><h2>{E(t["end_h"])}</h2><p><a class="btn sec" href="{base}">{E(t["go"])}</a></p></div></section>'''
+<section class="endband on-navy"><div class="wrap"><h2>{E(t["end_h"])}</h2><p><a class="btn" href="{base}">{E(t["go"])}</a></p></div></section>'''
     return shell.document(lang, t["title"], t["desc"], t["path"], main, ld=ld, og_title=t["ogt"], og_desc=t["ogd"], current=None, alts=alts)

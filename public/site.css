@@ -74,7 +74,7 @@ input::placeholder{color:var(--muted);opacity:1}
 .scan input::placeholder{color:#9AA6B8}
 .scan input:hover{border-color:#E8EDF4}.scan input:focus{border-color:#FFB400;box-shadow:0 0 0 3px rgba(255,180,0,.35);outline:none}
 .scan .micro{font:400 14px/1.5 var(--sans);color:#C9D2DF;margin:var(--g3) 0 0}
-.scan .gline{display:flex;flex-wrap:wrap;gap:0 var(--g3)}.scan .gbadge{display:inline-block;font:500 14px/1.5 var(--sans);color:#E8EDF4;border:1px solid #7C8BA3;border-radius:8px;padding:var(--g2) var(--g3);margin:var(--g3) 0 0}.scan .gbadge a{color:#FFB400;text-decoration:underline;text-underline-offset:3px}
+.scan .gline{display:grid;gap:0;margin-top:var(--g2)}.scan .gbadge{position:relative;font:400 14px/1.5 var(--sans);color:#C9D2DF;border:0;padding:0 0 0 18px;margin:var(--g2) 0 0;max-width:none}.scan .gbadge::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;background:#4FD1C5}.scan .gbadge a{color:#FFB400;text-decoration:underline;text-underline-offset:3px}
 .scan details{margin-top:var(--g2);font:400 15px/1.5 var(--sans)}
 .scan summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:600;text-decoration:underline;text-underline-offset:4px}
 .scan .opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--g3);padding:var(--g3) 0 var(--g2)}
@@ -209,3 +209,14 @@ input::placeholder{color:var(--muted);opacity:1}
 /* /data index on the shared shell */
 .dlist{padding-top:var(--g6);padding-bottom:var(--g7)}.dlist h2{font-size:28px;margin:var(--g6) 0 var(--g3);padding-top:var(--g4);border-top:3px solid var(--navy)}
 .dlist ul{font:400 17px/1.55 var(--sans);padding-left:20px;max-width:56em}.dlist li{margin:0 0 var(--g2)}.dlist .src{font-size:14px;color:var(--muted)}
+
+/* RES-1432: below-the-fold home sections */
+.qsec{background:#fff}.qgrid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:var(--g5) var(--g7);align-items:start}
+.qgrid .qh{min-width:0}.qgrid .qh .h2b{max-width:8em}.qsec .faq{max-width:none}
+.qsec .faq details{border-top:1px solid var(--rule);padding:0 var(--g2)}.qsec .faq details[open]{background:var(--wash);border-top:3px solid var(--navy)}
+.qsec .faq summary{font-size:18px;min-height:64px}.qsec .faq details p{padding:0 var(--g2)}
+.behind{padding:var(--g8) 0}.behind p{font-size:20px;margin:0;max-width:44em}.behind h2{font-size:34px}
+.endband{padding:var(--g9) 0;border-top:3px solid var(--signal)}.endband h2{font-size:48px;max-width:16em;margin-bottom:var(--g5)}.endband p{margin:0}
+.endband .btn{min-height:56px;padding:0 var(--g7);font-size:18px}
+@media (max-width:900px){.qgrid{grid-template-columns:1fr}.qgrid .qh .h2b{max-width:none}}
+@media (max-width:640px){.endband{padding:var(--g8) 0}.endband h2{font-size:32px}.endband .btn{width:100%;padding:0 var(--g4)}.behind p{font-size:18px}}
