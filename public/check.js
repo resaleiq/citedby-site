@@ -86,4 +86,5 @@
       } else fail(T["e_" + b.error] || T.e_net);
     }).catch(function () { fail(T.e_net); }).then(function () { busy = false; $("f-go").disabled = false; });
   });
+  try { var pu = new URLSearchParams(location.search).get("url"); if (pu && pu.length < 300 && $("f-url")) { $("f-url").value = pu; $("f-url").focus(); } } catch (e) {}  // RES-1478: blog widget prefill
 })();
