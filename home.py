@@ -310,5 +310,5 @@ def render(lang, engines):
 <section class="band" id="prices"><div class="wrap"><div class="offers"><h2>{E(t["offers_h"])}</h2><div><p>{E(t["offers"])}</p><a class="btn sec" href="{prices_lnk}">{E(t["prices"])}</a></div></div></div></section>
 <section class="sect qsec" id="faq"><div class="wrap qgrid"><div class="qh"><span class="eyebrow-bar"></span><h2 class="h2b">{E(t["faq_h"])}</h2>{faq_more}</div><div class="faq">{details(faq_n, first_open=True)}</div></div></section>
 {behind}
-<section class="endband on-navy"><div class="wrap"><h2>{E(t["end_h"])}</h2><p><a class="btn" href="{base}">{E(t["go"])}</a></p></div></section>'''
+<section class="endband on-navy"><div class="wrap"><h2>{E(t["end_h"])}</h2><p><a class="btn sec" href="{base}">{E(t["go"])}</a></p></div></section>'''
     return shell.document(lang, t["title"], t["desc"], t["path"], main, ld=ld, og_title=t["ogt"], og_desc=t["ogd"], current=None, alts=alts)

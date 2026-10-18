@@ -26,7 +26,6 @@ p{margin:0 0 var(--g4);max-width:66ch}
 .skip{position:absolute;left:-999px;top:0}.skip:focus{left:var(--g4);top:var(--g4);background:#fff;color:var(--navy);padding:var(--g2) var(--g4);z-index:9}
 .on-navy{--ink:#E8EDF4;--text:#E8EDF4;--muted:#9AA6B8;--correction:#FF8A92;--line-ui:#7C8BA3;--focus:#FFB400;--rule:#2A374D;background:var(--navy);color:#E8EDF4}
 .on-navy a{color:#E8EDF4}
-.on-navy a.btn{color:var(--on-action)}
 
 /* ---- shell: header, proof strip, footer (one component, shell.py) ---- */
 .mast{background:var(--navy);border-bottom:1px solid #2A374D}
@@ -218,6 +217,7 @@ input::placeholder{color:var(--muted);opacity:1}
 .qsec .faq summary{font-size:18px;min-height:64px}.qsec .faq details p{padding:0 var(--g2)}
 .behind{padding:var(--g8) 0}.behind p{font-size:20px;margin:0;max-width:44em}.behind h2{font-size:34px}
 .endband{padding:var(--g9) 0;border-top:3px solid var(--signal)}.endband h2{font-size:48px;max-width:16em;margin-bottom:var(--g5)}.endband p{margin:0}
+.endband .btn.sec{background:#E8EDF4;color:var(--navy);border-color:#E8EDF4}.endband .btn.sec:hover{background:#fff;border-color:#fff;color:var(--navy)}
 .endband .btn{min-height:56px;padding:0 var(--g7);font-size:18px}
 @media (max-width:900px){.qgrid{grid-template-columns:1fr}.qgrid .qh .h2b{max-width:none}}
 @media (max-width:640px){.endband{padding:var(--g8) 0}.endband h2{font-size:32px}.endband .btn{width:100%;padding:0 var(--g4)}.behind p{font-size:18px}}
