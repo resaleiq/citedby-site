@@ -24,3 +24,5 @@
 .idx .cards{list-style:none;padding:0;display:grid;gap:var(--s6)}.idx .cards a{display:block;text-decoration:none;border-top:3px solid var(--navy);padding-top:var(--s3)}
 .idx .cards b{display:block;font:600 24px/1.2 var(--serif);color:var(--navy)}.idx .cards span{display:block;margin:var(--s2) 0}.idx .cards time{font:400 14px var(--sans);color:var(--muted)}
 @media(max-width:640px){.art{padding:var(--s6) var(--s4) var(--s12)}}
+.art pre{background:var(--wash);border-left:4px solid var(--navy);padding:var(--s4) var(--s6);margin:0 0 var(--s6);overflow-x:auto;font:400 15px/1.55 var(--mono)}
+.art pre code{font:inherit;background:none;padding:0;white-space:pre}

@@ -55,6 +55,11 @@ def render_body(body, fm, loc, state):
         ln = lines[i]
         if not ln.strip():
             flush_para(buf); buf = []; i += 1; continue
+        if ln.startswith("```"):
+            flush_para(buf); buf = []; i += 1; code = []
+            while i < len(lines) and not lines[i].startswith("```"):
+                code.append(lines[i]); i += 1
+            i += 1; out.append("<pre><code>%s</code></pre>" % E("\n".join(code), quote=False)); continue
         m = re.match(r"(#{2,3}) (.+)", ln)
         if m:
             flush_para(buf); buf = []
