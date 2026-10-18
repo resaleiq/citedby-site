@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+<title id="t">What does ChatGPT say about your brand?</title><desc id="d">Twenty prompts in four groups of five: the brand itself, the category, comparisons and facts. Each is run twice and logged.</desc>
+<rect width="1200" height="630" fill="#EEF2F7"/><rect width="1200" height="12" fill="#0F1B2D"/>
+<text x="72" y="130" font-family="Georgia,&apos;Times New Roman&apos;,serif" font-size="64" font-weight="600" fill="#0F1B2D">What does ChatGPT say</text><text x="72" y="204" font-family="Georgia,&apos;Times New Roman&apos;,serif" font-size="64" font-weight="600" fill="#0F1B2D">about your brand?</text>
+<text x="72" y="262" font-family="system-ui,Arial,sans-serif" font-size="26" fill="#556070">20 prompts, run twice, logged in one sheet</text>
+<g font-family="system-ui,Arial,sans-serif" fill="#0F1B2D"><g stroke="#0F1B2D" stroke-width="3" fill="#fff"><rect x="72" y="320" width="246" height="200"/><rect x="354" y="320" width="246" height="200"/><rect x="636" y="320" width="246" height="200"/><rect x="918" y="320" width="210" height="200"/></g>
+<g font-size="64" font-weight="600" fill="#1F4FD8"><text x="94" y="392">5</text><text x="376" y="392">5</text><text x="658" y="392">5</text><text x="940" y="392">5</text></g>
+<g font-size="24" font-weight="600"><text x="94" y="440">Your brand</text><text x="376" y="440">Your category</text><text x="658" y="440">Comparisons</text><text x="940" y="440">Facts</text></g>
+<g font-size="19" fill="#556070"><text x="94" y="474">Does it know you?</text><text x="376" y="474">Are you named?</text><text x="658" y="474">Who beats you?</text><text x="940" y="474">Is it right?</text></g>
+<text x="72" y="590" font-size="22" font-weight="600">CitedBy · citedby.eu</text></g></svg>

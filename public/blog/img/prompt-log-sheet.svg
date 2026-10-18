@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="t d">
+<title id="t">The log sheet: one row per prompt and run</title><desc id="d">Columns: prompt number, run 1 or 2, named you yes or no, linked you yes or no, other shops named, facts wrong. Two example rows are filled with the words example.</desc>
+<rect width="1200" height="520" fill="#fff"/>
+<g font-family="system-ui,Arial,sans-serif" fill="#0F1B2D"><text x="48" y="50" font-size="26" font-weight="600">Log sheet: one row per prompt and run</text>
+<g stroke="#0F1B2D" stroke-width="2" fill="none"><rect x="48" y="80" width="1104" height="48" fill="#EEF2F7"/><path d="M48 176H1152M48 224H1152M48 272H1152M48 320H1152M48 368H1152"/><path d="M130 80V416M230 80V416M360 80V416M490 80V416M900 80V416"/><rect x="48" y="80" width="1104" height="336"/></g>
+<g font-size="16" font-weight="600"><text x="62" y="110">Prompt</text><text x="144" y="110">Run</text><text x="244" y="110">Named you?</text><text x="374" y="110">Linked you?</text><text x="504" y="110">Other shops named</text><text x="914" y="110">Facts wrong</text></g>
+<g font-size="16" fill="#556070"><text x="62" y="160">P06</text><text x="144" y="160">1</text><text x="244" y="160">no</text><text x="374" y="160">no</text><text x="504" y="160">Example Shop A, Example Shop B</text><text x="914" y="160">n/a</text>
+<text x="62" y="208">P06</text><text x="144" y="208">2</text><text x="244" y="208">no</text><text x="374" y="208">no</text><text x="504" y="208">Example Shop A</text><text x="914" y="208">n/a</text>
+<text x="62" y="256">P16</text><text x="144" y="256">1</text><text x="244" y="256">yes</text><text x="374" y="256">yes</text><text x="504" y="256">none</text><text x="914" y="256">price is old</text></g>
+<text x="48" y="456" font-size="17" fill="#556070">Count "named" when your name or domain appears in the answer text or its links.</text>
+<text x="48" y="482" font-size="17" fill="#556070">Rows above are invented examples that show the format, not results.</text></g></svg>

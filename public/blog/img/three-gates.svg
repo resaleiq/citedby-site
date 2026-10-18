@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+<title id="t">Where an AI crawler can be stopped</title><desc id="d">A request from an AI crawler passes robots.txt, then the page response, then the page content. Each step lists what the free check tests and what it does not.</desc>
+<rect width="1200" height="630" fill="#fff"/>
+<g font-family="system-ui,Arial,sans-serif" fill="#0F1B2D">
+<text x="60" y="64" font-size="28" font-weight="600">Where an AI crawler can be stopped</text>
+<g stroke="#0F1B2D" stroke-width="3" fill="#EEF2F7"><rect x="60" y="110" width="320" height="400"/><rect x="440" y="110" width="320" height="400"/><rect x="820" y="110" width="320" height="400"/></g>
+<g font-size="24" font-weight="600"><text x="84" y="156">1 robots.txt</text><text x="464" y="156">2 Page response</text><text x="844" y="156">3 Page content</text></g>
+<g font-size="19"><text x="84" y="206">Rules per crawler name</text><text x="84" y="236" font-weight="600" fill="#1F4FD8">Free check: tested</text><text x="84" y="268" font-size="17" fill="#556070">OAI-SearchBot, GPTBot,</text><text x="84" y="292" font-size="17" fill="#556070">PerplexityBot, Google-Extended,</text><text x="84" y="316" font-size="17" fill="#556070">Bingbot</text>
+<text x="464" y="206">Server, CDN or firewall</text><text x="464" y="236" font-weight="600" fill="#B3121F">Not tested by the free check</text><text x="464" y="268" font-size="17" fill="#556070">A firewall can answer 403 to a</text><text x="464" y="292" font-size="17" fill="#556070">crawler even if robots.txt allows it.</text><text x="464" y="316" font-size="17" fill="#556070">Check your server logs.</text>
+<text x="844" y="206">Text and data in the HTML</text><text x="844" y="236" font-weight="600" fill="#1F4FD8">Free check: tested</text><text x="844" y="268" font-size="17" fill="#556070">Words in the raw HTML, plus</text><text x="844" y="292" font-size="17" fill="#556070">Organization and Product data</text><text x="844" y="316" font-size="17" fill="#556070">(JSON-LD)</text></g>
+</g>
+<path d="M384 310h52M764 310h52" stroke="#0F1B2D" stroke-width="3"/><path d="M428 302l10 8-10 8M808 302l10 8-10 8" stroke="#0F1B2D" stroke-width="3" fill="none"/>
+<text x="60" y="570" font-family="system-ui,Arial,sans-serif" font-size="18" fill="#556070">Method: plain HTTP fetch, no JavaScript. Source: citedby.eu/check.</text>
+</svg>
