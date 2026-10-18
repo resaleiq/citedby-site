@@ -111,3 +111,8 @@ class RouteTable(unittest.TestCase):
             self.assertTrue(p.fullmatch(path), path)
         for path in ("/api/audits/../x", "/api/audits/a_k3j2h1/other", "/admin"):
             self.assertFalse(g.fullmatch(path), path)
+
+def test_auth_routes_are_forwarded_res1641():
+    import proxy
+    for p in ("/forgot", "/reset/" + "a" * 30, "/auth/google", "/auth/google/callback"): assert proxy.ROUTES["GET"].fullmatch(p), p
+    for p in ("/api/auth/signup", "/api/auth/login", "/api/auth/forgot", "/api/auth/reset"): assert proxy.ROUTES["POST"].fullmatch(p), p
