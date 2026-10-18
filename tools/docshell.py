@@ -12,7 +12,7 @@ TOPBAR = ('<a class="sr" href="#main">Skip to content</a>\n'
           '<nav aria-label="Main"><a class="opt" href="/#checks">What we check</a><a href="/plans">Pricing</a><a href="/blog">Guides</a><a class="opt" href="/data">Data</a></nav>'
           '<a class="signin" href="/signin?next=%2Fapp.html">Sign in</a><a class="btn sm go" href="/app.html#/new">Audit a site</a></div></header>')
 FOOTER = ('<footer><div class="w"><span>© 2026 CitedBy · <a href="mailto:hello@citedby.eu">hello@citedby.eu</a></span>'
-          '<a href="/plans">Pricing</a><a href="/blog">Guides</a><a href="/data">Data</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a>'
+          '<a href="/plans">Pricing</a><a href="/blog">Guides</a><a href="/data">Data</a><a href="/methodology">Method</a><a href="/about">About</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a>'
           '<a href="/refund">Refunds</a><a href="/contact">Contact</a><a href="/legal">Legal notice</a></div></footer>')
 
 
@@ -37,7 +37,7 @@ def transform(h):
     return h
 
 
-TARGETS = ["terms", "refund", "privacy", "legal", "contact", "bot", "ai-visibility-audit", "blog/*", "guides/*", "data/*"]
+TARGETS = ["about", "methodology", "terms", "refund", "privacy", "legal", "contact", "bot", "ai-visibility-audit", "blog/*", "guides/*", "data/*"]
 
 
 def main():
