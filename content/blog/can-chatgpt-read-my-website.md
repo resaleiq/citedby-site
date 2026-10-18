@@ -1,4 +1,4 @@
-title: Can ChatGPT read my website? A 10-second check for shop owners
+title: Can ChatGPT read my website? What decides it
 h1: Can ChatGPT read my website?
 description: Three things decide whether ChatGPT and other AI assistants can read your shop: robots.txt, the text in your HTML, and structured data. How to check each.
 slug: can-chatgpt-read-my-website
