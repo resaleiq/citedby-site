@@ -43,7 +43,7 @@ def pricing(engines):
         + '<p class="pgroup">Offer 2 · recount it yourself</p>'
         + _rung("Starter", "One site watched, recount every month", ["1 site, 1 market and language", "Monthly recount, before and after"], PRICES["starter"], "per month", "Tell me when it opens", tell("Starter"), "Payments open soon.")
         + _rung("Plus", "Weekly recount, 2 more competitors tracked", ["Everything in Starter", "Weekly recount", "2 more tracked competitors"], PRICES["plus"], "per month", "Tell me when it opens", tell("Plus"), "Payments open soon.")
-        + '<p class="pgroup">Offer 4 · for agencies <span>(price not final)</span></p>'
+        + '<p class="pgroup">Offer 4 · for agencies <span>(starting prices, confirmed with the first agencies)</span></p>'
         + _rung("Agency Kit", "Snapshots and leads, no recount per client", ["10 white-label client reports a month", "Embeddable result widget", "No recurring recount per client"], PRICES["kit"], "per month", "Ask about Agency Kit", ask("Agency Kit"))
         + _rung("Agency Workspace", "10 clients watched, with timelines", ["Everything in Kit", "10 clients watched with timelines", "About €24.90 per client"], PRICES["workspace"], "per month", "Ask about Workspace", ask("Agency Workspace")))
     main = (f'<section class="pagehead on-navy"><div class="wrap"><h1>{E(t["offers_h"])}</h1><p class="lede">{E(t["offers"])}</p></div></section>'
