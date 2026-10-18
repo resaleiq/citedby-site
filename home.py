@@ -150,6 +150,13 @@ T = {
   st1="category answers that name CitedBy", st2="answers that link citedby.eu", st3="answers kept, {date}, raw text in the CSV",
   card_h="Pages the assistants cited for these questions instead", card_note="Number of the {a} category answers that linked the page.",
   own_note="<b>Own site, not a customer result.</b> No customer card exists yet, so none is shown.",
+  shot_url="citedby.eu/r/3Nc5CV4EtpZVBw90ck-nJg", shot_alt="A real result page: caffevergnano named in 0 of 2 answers by Claude Haiku 4.5, and the coffee businesses named instead.",
+  shot_tag="REAL SCAN", shot_cap="A scan we ran on 18 Oct 2026 of a third-party coffee shop (test run, not a customer: 2 answers from 1 assistant, the free daily limit was reached). <a href=\"/r/3Nc5CV4EtpZVBw90ck-nJg\">Open the live page</a>.",
+  st4="answers to “What is CitedBy?” described the right thing (hand-read). The other {n} described another company or product type", of8=" of ",
+  two_h="Two answers to “What is CitedBy (citedby.eu)?”", two_a="Called a German service", two_b="Could not find the site", two_run="{e}, run {r}",
+  rows_h="What a result looks like when it is not zero", rows_p="Every assistant gets one row. Teal means it named the shop, red means it did not, and the count sits beside the word. Your report keeps the date, so a recount next month is a comparison, not a new number.",
+  rows_k="Teal fill: the assistant named the shop. Red edge: it did not. Each row also carries an icon and a word, so colour is never the only signal. Figures here are a layout sample, not a measurement.",
+  rows_t="How to read a row", rows_s="SAMPLE", rows_a="Assistant A", rows_b="Assistant B", rows_ls="layout sample", rows_y="Named", rows_n="Not named",
   offers_h="Four offers. Every price in euros, before you scan.", offers="Start with the free count. Pay for a recount, for the changes made, or for client reports.", prices="See the prices",
   faq_h="Questions", faq_all="All questions", behind_h_key="behind_h",
   end_h="See where you stand, free",
@@ -182,6 +189,13 @@ T = {
   st1="réponses de catégorie qui citent CitedBy", st2="réponses qui renvoient vers citedby.eu", st3="réponses conservées, {date}, texte brut dans le CSV",
   card_h="Pages citées à la place par les assistants pour ces questions", card_note="Nombre des {a} réponses de catégorie qui renvoyaient vers la page.",
   own_note="<b>Notre propre site, pas un résultat client.</b> Aucun résultat client n'existe encore, donc aucun n'est affiché.",
+  shot_url="citedby.eu/r/3Nc5CV4EtpZVBw90ck-nJg", shot_alt="Une vraie page de résultat : caffevergnano cité dans 0 réponse sur 2 par Claude Haiku 4.5, et les entreprises de café citées à sa place.",
+  shot_tag="VRAI SCAN", shot_cap="Un scan réalisé le 18 oct. 2026 sur un café tiers (test, pas un client : 2 réponses d'un assistant, la limite gratuite du jour était atteinte). <a href=\"/r/3Nc5CV4EtpZVBw90ck-nJg\">Ouvrir la page en ligne</a>.",
+  st4="réponses à « Qu'est-ce que CitedBy ? » décrivaient la bonne chose (lues à la main). Les {n} autres décrivaient une autre société ou un autre type de produit", of8=" sur ",
+  two_h="Deux réponses à « What is CitedBy (citedby.eu)? »", two_a="Prise pour un service allemand", two_b="Site introuvable", two_run="{e}, essai {r}",
+  rows_h="À quoi ressemble un résultat qui n'est pas zéro", rows_p="Chaque assistant a une ligne. Le vert signifie qu'il a cité la boutique, le rouge qu'il ne l'a pas fait, et le compte est à côté du mot. Votre rapport garde la date : un recomptage le mois prochain est une comparaison, pas un nouveau chiffre.",
+  rows_k="Fond vert : l'assistant a cité la boutique. Bord rouge : non. Chaque ligne porte aussi une icône et un mot, la couleur n'est jamais le seul signal. Les chiffres ici sont un exemple de mise en page, pas une mesure.",
+  rows_t="Comment lire une ligne", rows_s="EXEMPLE", rows_a="Assistant A", rows_b="Assistant B", rows_ls="exemple de mise en page", rows_y="Cité", rows_n="Non cité",
   offers_h="Quatre offres. Chaque prix en euros, avant de tester.", offers="Commencez par le décompte gratuit. Payez pour un recomptage, pour les changements faits ou pour des rapports clients.", prices="Voir les tarifs",
   faq_h="Questions", faq_all="Toutes les questions",
   end_h="Voyez où vous en êtes, gratuitement",
@@ -194,6 +208,11 @@ for _l in T:
     # "How fast?" quotes a 2-working-day mini-audit, which contradicts the one time sentence on these pages (about 2 minutes): left off until the GM rewrites it.
     T[_l]["faq"] = [(q, a) for q, a in T[_l]["faq"] if q not in ("How fast?", "En combien de temps ?")]
 HOME_FAQ_N = 5
+# Hand-read entity labels of the day-0 audit (REPORT-citedby.eu.md, RES-1228): 4 of 8 "What is CitedBy?" answers described the right thing.
+ENTITY = (4, 8)
+# Verbatim from public/data/day0-citedby-eu.csv (question q0).
+QUOTES = (("two_a", "Perplexity Sonar", 1, "CitedBy (citedby.eu / citedby.de) is a German AI visibility audit service that tests how often and how well…"),
+          ("two_b", "GPT-5 mini", 2, "I couldn't find an active site at citedby.eu; CitedBy (the platforms operating at citedby.co / citedby.co.uk and citedby.ai) is a SaaS that monitors…"))
 
 
 def eline_plain(t, day, names, lang):
@@ -263,13 +282,37 @@ def proof_html(lang, d):
     how = t["how_run"].format(k=len(d["assistants"]), names=join_names(d["assistants"], lang), q=d["questions"], r=runs, kept=d["kept"], cq=d["category_questions"], a=d["answers"])
     of = " of " if lang == "en" else " sur "
     rows = "".join(f'<tr><td>{E(h)}</td><td class="n">{n}</td></tr>' for h, n in d["cited"])
+    of8 = t["of8"]
+    ic = '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="1" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 6l8 8M14 6l-8 8" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>'
+    two = "".join(f'<p class="flag">{ic}{E(t[k])}</p><div class="quote"><small>{E(t["two_run"].format(e=e, r=r))}</small>“{E(q)}”</div>' for k, e, r, q in QUOTES)
     return (f'<section class="tintband" id="proof" aria-labelledby="proof-h"><div class="wrap"><span class="eyebrow-bar"></span><h2 class="h2b" id="proof-h">{E(h)}</h2>'
             f'<p class="how">{how} <a class="csvl" href="{t["csv_href"]}" download>{E(t["csv"].format(kept=d["kept"]))}</a></p>'
-            f'<div class="stats"><div><div class="stat-n bad">{d["named"]}<small>{of}{d["answers"]}</small></div><div class="stat-l">{E(t["st1"])}</div></div>'
+            f'<div class="stats s4"><div><div class="stat-n bad">{d["named"]}<small>{of}{d["answers"]}</small></div><div class="stat-l">{E(t["st1"])}</div></div>'
             f'<div><div class="stat-n bad">{d["linked"]}</div><div class="stat-l">{E(t["st2"])}</div></div>'
+            f'<div><div class="stat-n">{ENTITY[0]}<small>{of8}{ENTITY[1]}</small></div><div class="stat-l">{E(t["st4"].format(n=ENTITY[1] - ENTITY[0]))}</div></div>'
             f'<div><div class="stat-n">{d["kept"]}</div><div class="stat-l">{E(t["st3"].format(date=dt))}</div></div></div>'
-            f'<div class="card"><h3>{E(t["card_h"])}</h3><table class="top-t"><tbody>{rows}</tbody></table><p class="proofmeta">{E(t["card_note"].format(a=d["answers"]))}</p></div>'
+            f'<div class="cols2"><div class="card"><h3>{E(t["two_h"])}</h3>{two}</div>'
+            f'<div class="card"><h3>{E(t["card_h"])}</h3><table class="top-t"><tbody>{rows}</tbody></table><p class="proofmeta">{E(t["card_note"].format(a=d["answers"]))}</p></div></div>'
             f'<p class="proofmeta">{t["own_note"]}</p></div></section>')
+
+
+def shot_html(lang):
+    """Hero artefact: a real result page, captured from the live /r/ page (RES-1459)."""
+    t = T[lang]
+    return (f'<figure class="shotwin crop"><div class="bar2"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="url">{E(t["shot_url"])}</span></div>'
+            f'<picture><source media="(max-width:760px)" srcset="/img/result-390.jpg"><img src="/img/result-1440.jpg" alt="{E(t["shot_alt"])}" width="680" height="760" decoding="async"></picture></figure>'
+            f'<p class="shotcap"><span class="own">{E(t["shot_tag"])}</span>{t["shot_cap"]}</p>')
+
+
+def rows_html(lang):
+    t = T[lang]
+    ic_y = '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="1" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>'
+    ic_n = '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="1" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 6l8 8M14 6l-8 8" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>'
+    return (f'<section class="band" id="rows"><div class="wrap"><h2 class="h2b">{E(t["rows_h"])}</h2><div class="cols2"><div><p class="lede" style="max-width:30em">{E(t["rows_p"])}</p>'
+            f'<p><a class="btn sec" href="/pricing">{E(t["prices"])}</a></p></div><div class="lg"><h3>{E(t["rows_t"])} <span class="smp">{E(t["rows_s"])}</span></h3>'
+            f'<div class="arow yes">{ic_y}<span class="nm">{E(t["rows_a"])}<small>{E(t["rows_ls"])}</small></span><span class="st">{E(t["rows_y"])}</span><span class="ct">7 / 12</span></div>'
+            f'<div class="arow no">{ic_n}<span class="nm">{E(t["rows_b"])}<small>{E(t["rows_ls"])}</small></span><span class="st">{E(t["rows_n"])}</span><span class="ct">0 / 12</span></div>'
+            f'<p class="k">{E(t["rows_k"])}</p></div></div></div></section>')
 
 
 def render(lang, engines):
@@ -304,9 +347,10 @@ def render(lang, engines):
     prices_lnk = "/pricing"
     main = f'''<section class="hero on-navy" id="scan"><div class="wrap"><div class="cols"><div class="lcol"><h1>{E(t["h1"])}</h1><p class="lede">{E(t["lede"])}</p>
 {form}
-<ol class="hsteps" aria-label="{E(t["steps_label"])}">{steps_html(t, lang, engines)}</ol></div><div class="rcol">{sheet_html(lang, d)}{art_caption(lang, d)}</div></div></div></section>
+<ol class="hsteps" aria-label="{E(t["steps_label"])}">{steps_html(t, lang, engines)}</ol></div><div class="rcol">{shot_html(lang)}</div></div></div></section>
 {engines_html(lang, engines)}
 {proof_html(lang, d)}
+{rows_html(lang)}
 <section class="band" id="prices"><div class="wrap"><div class="offers"><h2>{E(t["offers_h"])}</h2><div><p>{E(t["offers"])}</p><a class="btn sec" href="{prices_lnk}">{E(t["prices"])}</a></div></div></div></section>
 <section class="sect qsec" id="faq"><div class="wrap qgrid"><div class="qh"><span class="eyebrow-bar"></span><h2 class="h2b">{E(t["faq_h"])}</h2>{faq_more}</div><div class="faq">{details(faq_n, first_open=True)}</div></div></section>
 {behind}
