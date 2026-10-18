@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="t d">
+<title id="t">Requests to llms.txt files, Ahrefs study, May 2026</title><desc id="d">Of the files that were valid llms.txt, 97 percent received zero requests and 3 percent received any. Of the requests that did arrive, 19.5 percent came from named AI tools.</desc>
+<rect width="1200" height="520" fill="#fff"/>
+<g font-family="system-ui,Arial,sans-serif" fill="#0F1B2D">
+<text x="60" y="60" font-size="28" font-weight="600">Who reads llms.txt? Ahrefs, 137,210 domains, May 2026</text>
+<text x="60" y="130" font-size="21" font-weight="600">Valid llms.txt files: requests in the month</text>
+<rect x="60" y="150" width="1080" height="56" fill="#EEF2F7" stroke="#0F1B2D" stroke-width="2"/><rect x="60" y="150" width="1048" height="56" fill="#0F1B2D"/><rect x="1108" y="150" width="32" height="56" fill="#1F4FD8"/>
+<text x="80" y="187" font-size="22" fill="#fff" font-weight="600">97% zero requests</text><text x="1140" y="236" font-size="19" text-anchor="end" fill="#1F4FD8" font-weight="600">3% any request</text>
+<text x="60" y="320" font-size="21" font-weight="600">Requests that did arrive: share from named AI tools</text>
+<rect x="60" y="340" width="1080" height="56" fill="#EEF2F7" stroke="#0F1B2D" stroke-width="2"/><rect x="60" y="340" width="211" height="56" fill="#1F4FD8"/>
+<text x="80" y="377" font-size="22" fill="#fff" font-weight="600">19.5%</text><text x="290" y="377" font-size="20" fill="#556070">The rest: SEO audit tools, unknown bots, general crawlers</text></g>
+<text x="60" y="470" font-family="system-ui,Arial,sans-serif" font-size="18" fill="#556070">Source: Ahrefs, ahrefs.com/blog/llmstxt-study. Shares as reported by Ahrefs.</text>
+</svg>
