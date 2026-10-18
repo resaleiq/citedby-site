@@ -132,7 +132,7 @@ T = {
   h1="Is an AI assistant sending your customers to a competitor?",
   lede="CitedBy is an AI visibility audit for online shops, not a citation tool: we ask AI assistants the questions your buyers ask, in their language, and count who gets named. Then we fix what keeps your shop out of the answers and count again 30 days later.",
   f_label="Your website address", f_ph="example-shop.eu", go="Scan my site, free", micro="No email, no card. Result in about 2 minutes.", badge="Delivered in 7 days or the €390 is refunded.", badge_l="Read the terms.",
-  more="Change market, language or what you sell", mk="Market", lg="Language", sl="What you sell", sl_ph="e.g. coffee beans", auto="Read from my site",
+  more="Change market, language or what you sell", mk="Market", lg="Language", sl="What you sell", sl_ph="e.g. coffee beans", auto="Default",
   countries=(("BE", "Belgium"), ("FR", "France"), ("NL", "Netherlands"), ("DE", "Germany"), ("ES", "Spain"), ("IE", "Ireland"), ("GB", "United Kingdom")),
   langs=(("fr", "Français"), ("nl", "Nederlands"), ("de", "Deutsch"), ("en", "English"), ("es", "Español")),
   steps_label="How it works",
@@ -164,7 +164,7 @@ T = {
   h1="Un assistant IA envoie-t-il vos clients chez un concurrent ?",
   lede="CitedBy est un audit de visibilité IA pour boutiques en ligne, pas un outil de citations : nous posons aux assistants IA les questions de vos acheteurs, dans leur langue, et nous comptons qui est cité. Puis nous corrigeons ce qui vous écarte des réponses et nous recomptons 30 jours plus tard.",
   f_label="L'adresse de votre site", f_ph="exemple-boutique.fr", go="Tester ma boutique, gratuitement", micro="Sans e-mail, sans carte. Résultat en environ 2 minutes.",
-  more="Changer de marché, de langue ou de ce que vous vendez", mk="Marché", lg="Langue", sl="Ce que vous vendez", sl_ph="p. ex. café en grains", auto="Lu sur mon site",
+  more="Changer de marché, de langue ou de ce que vous vendez", mk="Marché", lg="Langue", sl="Ce que vous vendez", sl_ph="p. ex. café en grains", auto="Par défaut",
   countries=(("FR", "France"), ("BE", "Belgique"), ("NL", "Pays-Bas"), ("DE", "Allemagne"), ("ES", "Espagne"), ("IE", "Irlande"), ("GB", "Royaume-Uni")),
   langs=(("fr", "Français"), ("nl", "Nederlands"), ("de", "Deutsch"), ("en", "English"), ("es", "Español")),
   steps_label="Comment ça marche",
@@ -286,7 +286,7 @@ def render(lang, engines):
             f'<button class="btn" type="submit">{E(t["go"])}</button></div><p class="micro">{E(t["micro"])}</p>{badge}'
             f'<details><summary>{E(t["more"])}</summary><div class="opts"><div><label for="mk">{E(t["mk"])}</label><select id="mk" name="country">{opts(t["countries"])}</select></div>'
             f'<div><label for="lg">{E(t["lg"])}</label><select id="lg" name="lang">{opts(t["langs"])}</select></div>'
-            f'<div><label for="sl">{E(t["sl"])}</label><input id="sl" name="what" type="text" maxlength="60" placeholder="{E(t["sl_ph"])}" autocomplete="off"></div></div></details></form>')
+            f'<div><label for="sl">{E(t["sl"])}</label><input id="sl" name="category_text" type="text" maxlength="60" placeholder="{E(t["sl_ph"])}" autocomplete="off"></div></div></details></form>')
     items = faq_items(lang, engines)
     faq_n = items[:HOME_FAQ_N + (1 if len(engines) >= 2 else 0)] if lang == "en" else items
     faq_more = f'<p><a class="link" href="/faq">{E(t["faq_all"])}</a></p>' if lang == "en" else ""

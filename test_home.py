@@ -74,6 +74,14 @@ class T(unittest.TestCase):
             for h in (home.render(lang, live("Claude")), pages_faq()):
                 self.assertNotIn("149", h); self.assertNotIn("Monthly", h)
 
+    def test_what_you_sell_uses_the_field_instant_reads(self):
+        # RES-1421: /instant prefills category_text, not "what"; the home field must use that name
+        for lang in ("en", "fr"):
+            h = home.render(lang, live("Claude"))
+            self.assertIn('id="sl" name="category_text"', h)
+            self.assertNotIn('name="what"', h)
+            self.assertNotIn("Read from my site", h); self.assertNotIn("Lu sur mon site", h)
+
     def test_no_retired_blocks(self):
         h = home.render("en", live("Claude"))
         for s in ("127", "Logged-out", "logged-out"):
