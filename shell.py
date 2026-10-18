@@ -59,8 +59,7 @@ def header(lang="en", current=None):
         strip = f'<span>Cité dans <b class="big">{d["named"]} réponse sur {d["answers"]}</b> (questions de catégorie). Compté le {E(day0_date(lang))}, {len(d["assistants"])} assistants.</span>'
     return (f'<a class="skip" href="#main">{E(t["skip"])}</a>\n'
             f'<header class="mast on-navy"><div class="wrap"><a class="brand" href="{t["path"]}" aria-label="{E(t["home"])}"><img src="/brand/citedby-lockup-v4-reverse.svg" alt="CitedBy" width="160" height="32"></a>'
-            f'<nav class="nav" aria-label="{E(t["main"])}">{links}<span class="lang" role="group" aria-label="{E(t["langlabel"])}">{sw}</span></nav></div></header>\n'
-            f'<aside class="pstrip" aria-label="{E(t["own"].capitalize())}"><div class="wrap"><span class="own">{E(t["own"])}</span>{strip}<a href="{t["proof_href"]}">{E(t["proof_link"])}</a></div></aside>')
+            f'<nav class="nav" aria-label="{E(t["main"])}">{links}<span class="lang" role="group" aria-label="{E(t["langlabel"])}">{sw}</span></nav></div></header>\n')
 
 
 def footer(lang="en"):

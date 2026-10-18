@@ -35,8 +35,8 @@ def pricing(engines):
                f'<p class="guar">{E(t["g_btn"])} <a href="/refund">{E(t["g_link"])}</a></p></div>'
                f'<div class="kcb"><ul class="two"><li>40 questions, each asked twice, on every assistant we list</li><li>Competitor map: who is named instead of you</li>'
                f'<li>Changes made within 7 days of access, or ready-to-paste files</li><li>Day-30 recount, raw answers as CSV</li></ul>'
-               f'<p style="margin:0"><a href="/#proof">Read the count we ran on ourselves first</a></p></div></div>'
-               f'<figure class="pic" style="margin:0">{home.sheet_html("en", d)}<figcaption class="sheetcap">What the report looks like, filled with our own day-0 numbers. Not a customer result.</figcaption></figure></section>')
+               f'</div></div>'
+               f'<div class="pic" style="margin:0">{home.sample_html("en")}</div></section>')
     rungs = (
         '<p class="pgroup">Offer 1 · find out</p>'
         + _rung("Free scan", "One site, one snapshot", ["The full count on screen, who is named instead", "No card, no email"], PRICES["free"], "free", "Scan my site, free", "/instant")

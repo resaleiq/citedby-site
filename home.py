@@ -152,6 +152,15 @@ T = {
   own_note="<b>Own site, not a customer result.</b> No customer card exists yet, so none is shown.",
   shot_url="citedby.eu/r/3Nc5CV4EtpZVBw90ck-nJg", shot_alt="A real result page: caffevergnano named in 0 of 2 answers by Claude Haiku 4.5, and the coffee businesses named instead.",
   shot_tag="REAL SCAN", shot_cap="A scan we ran on 18 Oct 2026 of a third-party coffee shop (test run, not a customer: 2 answers from 1 assistant, the free daily limit was reached). <a href=\"/r/3Nc5CV4EtpZVBw90ck-nJg\">Open the live page</a>.",
+  sr_url='citedby.eu · Sample report',
+  sr_tag='SAMPLE REPORT',
+  sr_h='Café Joyeux · specialty coffee beans, France',
+  sr_big=' of 8',
+  sr_cap='answers named Café Joyeux',
+  sr_row='Claude Haiku 4.5, web search on',
+  sr_named='Named',
+  sr_rival='Named instead, across the same 8 answers',
+  sr_cap2='Real answers from a scan run on 18 Oct 2026 for a well-known French coffee brand. One assistant is shown here; your report covers every assistant we measure. Not a customer result.',
   st4="answers to “What is CitedBy?” described the right thing (hand-read). The other {n} described another company or product type", of8=" of ",
   two_h="Two answers to “What is CitedBy (citedby.eu)?”", two_a="Called a German service", two_b="Could not find the site", two_run="{e}, run {r}",
   rows_h="What a result looks like when it is not zero", rows_p="Every assistant gets one row. Teal means it named the shop, red means it did not, and the count sits beside the word. Your report keeps the date, so a recount next month is a comparison, not a new number.",
@@ -191,6 +200,15 @@ T = {
   own_note="<b>Notre propre site, pas un résultat client.</b> Aucun résultat client n'existe encore, donc aucun n'est affiché.",
   shot_url="citedby.eu/r/3Nc5CV4EtpZVBw90ck-nJg", shot_alt="Une vraie page de résultat : caffevergnano cité dans 0 réponse sur 2 par Claude Haiku 4.5, et les entreprises de café citées à sa place.",
   shot_tag="VRAI SCAN", shot_cap="Un scan réalisé le 18 oct. 2026 sur un café tiers (test, pas un client : 2 réponses d'un assistant, la limite gratuite du jour était atteinte). <a href=\"/r/3Nc5CV4EtpZVBw90ck-nJg\">Ouvrir la page en ligne</a>.",
+  sr_url='citedby.eu · Exemple de rapport',
+  sr_tag='EXEMPLE DE RAPPORT',
+  sr_h='Café Joyeux · café de spécialité en grains, France',
+  sr_big=' sur 8',
+  sr_cap='réponses citent Café Joyeux',
+  sr_row='Claude Haiku 4.5, recherche web activée',
+  sr_named='Cité',
+  sr_rival='Cités à la place, dans les mêmes 8 réponses',
+  sr_cap2="Vraies réponses d'un scan réalisé le 18 oct. 2026 pour une marque française de café connue. Un seul assistant est montré ici ; votre rapport couvre chaque assistant que nous mesurons. Pas un résultat client.",
   st4="réponses à « Qu'est-ce que CitedBy ? » décrivaient la bonne chose (lues à la main). Les {n} autres décrivaient une autre société ou un autre type de produit", of8=" sur ",
   two_h="Deux réponses à « What is CitedBy (citedby.eu)? »", two_a="Prise pour un service allemand", two_b="Site introuvable", two_run="{e}, essai {r}",
   rows_h="À quoi ressemble un résultat qui n'est pas zéro", rows_p="Chaque assistant a une ligne. Le vert signifie qu'il a cité la boutique, le rouge qu'il ne l'a pas fait, et le compte est à côté du mot. Votre rapport garde la date : un recomptage le mois prochain est une comparaison, pas un nouveau chiffre.",
@@ -210,6 +228,9 @@ for _l in T:
 HOME_FAQ_N = 5
 # Hand-read entity labels of the day-0 audit (REPORT-citedby.eu.md, RES-1228): 4 of 8 "What is CitedBy?" answers described the right thing.
 ENTITY = (4, 8)
+# Real run 18 Oct 2026, Claude Haiku 4.5 with web search, 8 French specialty-coffee buyer questions: Café Joyeux named in 3, rivals counted by core.shop_counts.
+SAMPLE_NAMED = 3
+SAMPLE_RIVALS = (("Coffee-Webstore", 4), ("Terres de Café", 3), ("Grain de Café", 3), ("Malongo", 2))
 # Verbatim from public/data/day0-citedby-eu.csv (question q0).
 QUOTES = (("two_a", "Perplexity Sonar", 1, "CitedBy (citedby.eu / citedby.de) is a German AI visibility audit service that tests how often and how well…"),
           ("two_b", "GPT-5 mini", 2, "I couldn't find an active site at citedby.eu; CitedBy (the platforms operating at citedby.co / citedby.co.uk and citedby.ai) is a SaaS that monitors…"))
@@ -296,6 +317,20 @@ def proof_html(lang, d):
             f'<p class="proofmeta">{t["own_note"]}</p></div></section>')
 
 
+def sample_html(lang):
+    """Hero artefact: a real, labelled sample report for a well-known brand (RES-1459 step 1). Figures from one Claude Haiku 4.5 run, 18 Oct 2026."""
+    t = T[lang]
+    top = SAMPLE_RIVALS[0][1]
+    bars = "".join(f'<li><span>{E(n)}</span><span class="bx"><i style="width:{k / top * 100:.0f}%"></i></span><span class="c">{k}</span></li>' for n, k in SAMPLE_RIVALS)
+    ic = '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="1" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>'
+    return (f'<figure class="shotwin sample"><div class="bar2"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="url">{E(t["sr_url"])}</span></div>'
+            f'<div class="sb"><p class="kick"><span class="smp">{E(t["sr_tag"])}</span></p><h2 class="srh">{E(t["sr_h"])}</h2>'
+            f'<p class="big">{SAMPLE_NAMED}<small>{E(t["sr_big"])}</small></p><p class="cap1">{E(t["sr_cap"])}</p>'
+            f'<div class="arow yes">{ic}<span class="nm">{E(t["sr_row"])}</span><span class="st">{E(t["sr_named"])}</span><span class="ct">{SAMPLE_NAMED} / 8</span></div>'
+            f'<p class="h3">{E(t["sr_rival"])}</p><ul class="nbars">{bars}</ul></div></figure>'
+            f'<p class="shotcap">{E(t["sr_cap2"])}</p>')
+
+
 def shot_html(lang):
     """Hero artefact: a real result page, captured from the live /r/ page (RES-1459)."""
     t = T[lang]
@@ -347,10 +382,8 @@ def render(lang, engines):
     prices_lnk = "/pricing"
     main = f'''<section class="hero on-navy" id="scan"><div class="wrap"><div class="cols"><div class="lcol"><h1>{E(t["h1"])}</h1><p class="lede">{E(t["lede"])}</p>
 {form}
-<ol class="hsteps" aria-label="{E(t["steps_label"])}">{steps_html(t, lang, engines)}</ol></div><div class="rcol">{shot_html(lang)}</div></div></div></section>
+<ol class="hsteps" aria-label="{E(t["steps_label"])}">{steps_html(t, lang, engines)}</ol></div><div class="rcol">{sample_html(lang)}</div></div></div></section>
 {engines_html(lang, engines)}
-{proof_html(lang, d)}
-{rows_html(lang)}
 <section class="band" id="prices"><div class="wrap"><div class="offers"><h2>{E(t["offers_h"])}</h2><div><p>{E(t["offers"])}</p><a class="btn sec" href="{prices_lnk}">{E(t["prices"])}</a></div></div></div></section>
 <section class="sect qsec" id="faq"><div class="wrap qgrid"><div class="qh"><span class="eyebrow-bar"></span><h2 class="h2b">{E(t["faq_h"])}</h2>{faq_more}</div><div class="faq">{details(faq_n, first_open=True)}</div></div></section>
 {behind}

@@ -243,3 +243,10 @@ input::placeholder{color:var(--muted);opacity:1}
 .arow.no{background:#fff;color:var(--text);border:2px solid var(--correction);border-left-width:8px;padding-left:10px}.arow.no .st{color:var(--correction)}
 @media (max-width:900px){.cols2{grid-template-columns:1fr}.stats.s4{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.stats.s4{grid-template-columns:1fr}.shotwin.crop{max-height:440px}.arow{grid-template-columns:24px minmax(0,1fr) auto;padding:10px 12px}.arow .st{grid-column:2;grid-row:2;font-size:13px}.arow .ct{grid-column:3;grid-row:1/3}.arow.no{padding-left:8px}}
+/* RES-1459 step 1: sample report card in the hero */
+.shotwin.sample{max-height:none;overflow:visible}.shotwin.sample::after{display:none}
+.shotwin.sample .sb{padding:20px 24px 12px;color:#1E2633}
+.shotwin.sample .srh{font:600 20px/1.25 var(--serif);margin:8px 0 12px;color:#1E2633}
+.shotwin.sample .big{font:600 56px/1 var(--serif);margin:0;color:var(--navy)}.shotwin.sample .big small{font-size:24px}
+.shotwin.sample .cap1{margin:4px 0 16px;color:#3A4658}.shotwin.sample .h3{font:600 14px/1.3 var(--sans);margin:20px 0 6px;color:#1E2633}
+.shotwin.sample .smp{border:1px dashed currentColor;color:#3A4658}

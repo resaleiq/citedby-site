@@ -26,10 +26,10 @@ def test_day0_numbers_equal_the_csv():
     s = summary()
     assert (s["named"], s["answers"], s["kept"], s["linked"]) == (0, 48, 72, 0)
     assert s == {k: (v if k != "cited" else [list(x) for x in v]) for k, v in shell.day0().items()} or json.dumps(s) == json.dumps(shell.day0())
-    h = PAGES["/"]
-    assert 'href="/data/day0-citedby-eu.csv"' in h and "Read the 72 answers" in h
-    for host, n in s["cited"]:
-        assert f"<td>{host}</td><td class=\"n\">{n}</td>" in h
+    # RES-1459 step 1 (founder 18 Oct): the self-audit never leads a page. The numbers stay on /data only.
+    for p, h in PAGES.items():
+        if p != "/data":
+            assert "OUR OWN SITE" not in h and "0 of 48" not in h and "audited ourselves" not in h and 'href="/#proof"' not in h, p
 
 
 def test_nine_names_with_date():
