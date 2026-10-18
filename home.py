@@ -77,7 +77,7 @@ KEEP = {'en': {'faq': [('Which assistants do you check?',
         'behind': 'CitedBy is a small independent service run from Spain. We sell the fixes, which is why every audit lists the sites each assistant linked in each try: you can check our count '
                   'yourself.',
         'legal': 'Legal notice',
-        'g_btn': 'Changes live in 7 days or the €390 is refunded. You do not have to ask.',
+        'g_btn': 'Audit + Fix delivered in 7 days, or the €390 is refunded.', 'g_link': 'Read the terms.',
         'fc': ['16 answers about your category, in your language', 'Who is named instead of you', 'What the assistants say about you by name', '2 to 3 fixes, checked against your site']},
  'fr': {'faq': [('Quels assistants vérifiez-vous ?',
                  "Ceux que nous pouvons interroger par une API, recherche web activée, le jour de votre commande. La liste de notre page d'accueil est cette liste, avec sa date. Nous ne pilotons pas "
@@ -116,7 +116,7 @@ KEEP = {'en': {'faq': [('Which assistants do you check?',
         'behind': "CitedBy est un petit service indépendant exploité depuis l'Espagne. Nous vendons les corrections, c'est pourquoi chaque audit liste les sites que chaque assistant a liés à chaque "
                   'essai : vous pouvez vérifier notre compte vous-même.',
         'legal': 'Mentions légales',
-        'g_btn': 'Changements en ligne sous 7 jours, sinon les 390 € vous sont remboursés. Sans rien demander.',
+        'g_btn': 'Audit + Correction livrés en 7 jours, sinon les 390 € sont remboursés.', 'g_link': 'Lire les conditions.',
         'fc': ['16 réponses sur votre catégorie, dans votre langue',
                'Qui est cité à votre place',
                'Ce que les assistants disent de vous quand on les interroge par votre nom',
@@ -130,8 +130,8 @@ T = {
   desc="We ask AI assistants your buyers' questions and count who gets named. Free scan, no email. Then the changes made for you, paid once at €390, and a recount at day 30.",
   ogt="Who do AI assistants name instead of your shop?", ogd="Paste your site address. We ask AI assistants what your buyers ask and show who they name instead of you.",
   h1="Is an AI assistant sending your customers to a competitor?",
-  lede="CitedBy is an AI visibility audit for online shops, not a citation tool: we ask AI assistants the questions your buyers ask, in their language, and count who gets named. Then we fix what keeps your shop out of the answers and count again 30 days later.",
-  f_label="Your website address", f_ph="example-shop.eu", go="Scan my site, free", micro="No email, no card. Result in about 2 minutes.", badge="Delivered in 7 days or the €390 is refunded.", badge_l="Read the terms.",
+  lede="We ask AI assistants your buyers\' questions, in their language, and count who gets named instead of you. Then we fix it and count again after 30 days.",
+  f_label="Your website address", f_ph="example-shop.eu", go="Scan my site, free", micro="No email, no card. Result in about 2 minutes.", sec="We read public pages only. We never log in to your shop.", 
   more="Change market, language or what you sell", mk="Market", lg="Language", sl="What you sell", sl_ph="e.g. coffee beans", auto="Default",
   countries=(("BE", "Belgium"), ("FR", "France"), ("NL", "Netherlands"), ("DE", "Germany"), ("ES", "Spain"), ("IE", "Ireland"), ("GB", "United Kingdom")),
   langs=(("fr", "Français"), ("nl", "Nederlands"), ("de", "Deutsch"), ("en", "English"), ("es", "Español")),
@@ -162,8 +162,8 @@ T = {
   desc="Nous posons aux assistants IA les questions de vos acheteurs et comptons qui est cité. Scan gratuit, sans e-mail. Puis les changements faits pour vous, payés une fois 390 €, et un recomptage à 30 jours.",
   ogt="Qui les assistants IA citent-ils à la place de votre boutique ?", ogd="Collez l'adresse de votre site. Nous posons aux assistants IA les questions de vos acheteurs et montrons qui ils citent à votre place.",
   h1="Un assistant IA envoie-t-il vos clients chez un concurrent ?",
-  lede="CitedBy est un audit de visibilité IA pour boutiques en ligne, pas un outil de citations : nous posons aux assistants IA les questions de vos acheteurs, dans leur langue, et nous comptons qui est cité. Puis nous corrigeons ce qui vous écarte des réponses et nous recomptons 30 jours plus tard.",
-  f_label="L'adresse de votre site", f_ph="exemple-boutique.fr", go="Tester ma boutique, gratuitement", micro="Sans e-mail, sans carte. Résultat en environ 2 minutes.",
+  lede="Nous posons aux assistants IA les questions de vos acheteurs, dans leur langue, et comptons qui est cité à votre place. Puis nous corrigeons et recomptons 30 jours plus tard.",
+  f_label="L'adresse de votre site", f_ph="exemple-boutique.fr", go="Tester ma boutique, gratuitement", micro="Sans e-mail, sans carte. Résultat en environ 2 minutes.", sec="Nous lisons uniquement les pages publiques. Nous ne nous connectons jamais à votre boutique.",
   more="Changer de marché, de langue ou de ce que vous vendez", mk="Marché", lg="Langue", sl="Ce que vous vendez", sl_ph="p. ex. café en grains", auto="Par défaut",
   countries=(("FR", "France"), ("BE", "Belgique"), ("NL", "Pays-Bas"), ("DE", "Allemagne"), ("ES", "Espagne"), ("IE", "Irlande"), ("GB", "Royaume-Uni")),
   langs=(("fr", "Français"), ("nl", "Nederlands"), ("de", "Deutsch"), ("en", "English"), ("es", "Español")),
@@ -280,7 +280,8 @@ def render(lang, engines):
     d = shell.day0()
     base = "/instant" if lang == "en" else "/fr/instant"
     opts = lambda rows: f'<option value="">{E(t["auto"])}</option>' + "".join(f'<option value="{v}">{E(n)}</option>' for v, n in rows)
-    badge = (f'<p class="gbadge">{E(t["badge"])} <a href="/refund">{E(t["badge_l"])}</a></p>' if t.get("badge") else "")
+    badge = (f'<div class="gline"><p class="gbadge">{E(t["g_btn"])} <a href="/refund">{E(t["g_link"])}</a></p>'
+             f'<p class="gbadge">{E(t["sec"])}</p></div>')
     form = (f'<form class="scan" action="{base}" method="get" aria-label="{E(t["go"])}"><label for="site">{E(t["f_label"])}</label>'
             f'<div class="row"><input id="site" name="domain" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="{E(t["f_ph"])}" required>'
             f'<button class="btn" type="submit">{E(t["go"])}</button></div><p class="micro">{E(t["micro"])}</p>{badge}'

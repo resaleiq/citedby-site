@@ -32,7 +32,7 @@ def pricing(engines):
     ask = lambda n: MAIL + quote(f"About {n}")
     keycard = (f'<section class="keycard" aria-labelledby="af"><div class="kl"><div><p class="pgroup" style="margin:0 0 var(--g2)">Offer 3 · have it done for you</p><h2 id="af">Audit + Fix</h2>'
                f'<p class="sub">The Fix Pack: changes made for you, counted twice</p><div class="price">{eur(PRICES["fix"])}<small>paid once</small></div>{buy}'
-               f'<p class="guar">{E(t["g_btn"])}</p></div>'
+               f'<p class="guar">{E(t["g_btn"])} <a href="/refund">{E(t["g_link"])}</a></p></div>'
                f'<div class="kcb"><ul class="two"><li>40 questions, each asked twice, on every assistant we list</li><li>Competitor map: who is named instead of you</li>'
                f'<li>Changes made within 7 days of access, or ready-to-paste files</li><li>Day-30 recount, raw answers as CSV</li></ul>'
                f'<p style="margin:0"><a href="/#proof">Read the count we ran on ourselves first</a></p></div></div>'
@@ -63,7 +63,7 @@ def faq(engines):
     items = faq_list(engines)
     ld = [{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en",
            "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in items]}]
-    main = (f'<section class="pagehead on-navy"><div class="wrap"><h1>Straight answers before you scan or pay</h1></div></section>'
+    main = (f'<section class="pagehead on-navy"><div class="wrap"><h1>Straight answers before you scan or pay</h1><p class="lede">{E(t["g_btn"])} <a href="/refund">{E(t["g_link"])}</a></p></div></section>'
             f'<section class="sect" style="border-top:0"><div class="wrap"><div class="faq">{home.details(items, first_open=True)}</div></div></section>'
             f'<section class="endcta band"><div class="wrap"><h2>{E(t["end_h"])}</h2><p class="lede">{E(t["micro"])}</p><p><a class="btn" href="/instant">{E(t["go"])}</a></p></div></section>')
     return shell.document("en", "FAQ: CitedBy", "Answers about which assistants CitedBy asks, how the count works, what the Fix Pack includes and what happens after you pay.", "/faq", main, ld=ld, current="/faq")
