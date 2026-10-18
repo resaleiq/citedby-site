@@ -1,0 +1,37 @@
+{
+ "date": "2026-10-17",
+ "named": 0,
+ "answers": 48,
+ "kept": 72,
+ "linked": 0,
+ "assistants": [
+  "Claude Haiku 4.5",
+  "GPT-5 mini",
+  "Perplexity Sonar",
+  "Gemini 3.5 Flash-Lite"
+ ],
+ "questions": 9,
+ "category_questions": 6,
+ "cited": [
+  [
+   "blog.hubspot.com",
+   9
+  ],
+  [
+   "searchengineland.com",
+   8
+  ],
+  [
+   "semrush.com",
+   8
+  ],
+  [
+   "visible.seranking.com",
+   7
+  ],
+  [
+   "ismybrandinai.com",
+   5
+  ]
+ ]
+}
