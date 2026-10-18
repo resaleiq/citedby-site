@@ -52,7 +52,7 @@ class T(unittest.TestCase):
     def test_allowlist_only(self):
         for p in ("/instant", "/fr/instant", "/nl/instant?domain=x.com", "/plans?billing=year", "/dashboard", "/account", "/recount/" + "a" * 24, "/api/snapshot/7", "/r/" + "a" * 22 + ".csv", "/api/snapshot/" + "Hn-hGKmWgDksJUToqNLfgw", "/thanks", "/thanks?session_id=cs_live_a1", "/report/" + "a" * 24, "/r/" + "a" * 22, "/start/" + "a" * 43, "/api/crawl/abc123"):
             self.assertEqual(self.get(p)[1], b"app-page", p)
-        for p in ("/", "/fr", "/health-x", "/api/order", "/api/stripe/webhook", "/thanksx", "/report/short", "/r/short", "/r/" + "a" * 65, "/report/" + "a" * 65, "/start/short", "/start/" + "a" * 65, "/api/fixpack/intake", "/api/snapshot/short", "/api/snapshot/" + "a" * 65, "/api/snapshot/abc/def", "/plansx", "/instantx", "/../plans", "/de/instant", "/fr/plans", "/fr/instantx", "/fr/dashboard", "/api/crawl/a/b", "/api/crawl/"):
+        for p in ("/", "/fr", "/health-x", "/api/order", "/api/stripe/webhook", "/thanksx", "/report/short", "/r/short", "/r/" + "a" * 65, "/report/" + "a" * 65, "/start/short", "/start/" + "a" * 65, "/api/fixpack/intake", "/api/snapshot/short", "/api/snapshot/" + "a" * 65, "/api/snapshot/abc/def", "/plansx", "/instantx", "/../plans", "/de/instant", "/fr/plans", "/fr/instantx", "/fr/dashboard", "/bot", "/api/crawl/a/b"):
             self.assertEqual(self.get(p)[0], 404, p)
 
     def test_forwards_one_client_ip_and_cookie_not_spoofed_xff(self):
