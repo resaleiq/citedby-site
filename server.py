@@ -291,12 +291,12 @@ def render_home(lang):  # the assistant list is read on every request: a stale t
     return home.render(lang, home.live_engines(engines_file())).encode()
 
 
-PAGE_ROUTES = {"/pricing": "pricing", "/faq": "faq", "/thanks": "thanks"}  # shared-shell pages (RES-1335); /thanks is the app's when proxy.py forwards it
+PAGE_ROUTES = {"/pricing": "pricing", "/faq": "faq", "/thanks": "thanks", "/data": "data"}  # shared-shell pages (RES-1335); /thanks is the app's when proxy.py forwards it
 
 
 def render_page(name):
     eng = home.live_engines(engines_file())
-    return (pages.thanks() if name == "thanks" else getattr(pages, name)(eng)).encode()
+    return (pages.thanks() if name == "thanks" else pages.data() if name == "data" else getattr(pages, name)(eng)).encode()
 
 
 ROUTES = {"/check": "check.html", "/fr/check": "fr/check.html", "/nl/check": "nl/check.html",

@@ -30,13 +30,13 @@ def pricing(engines):
            else f'<a class="btn" href="/instant">{E(t["go"])}</a>')
     tell = lambda n: MAIL + quote(f"Tell me when {n} opens")
     ask = lambda n: MAIL + quote(f"About {n}")
-    keycard = (f'<section class="keycard" aria-labelledby="af"><div><p class="pgroup" style="margin:0 0 var(--g2)">Offer 3 · have it done for you</p><h2 id="af">Audit + Fix</h2>'
+    keycard = (f'<section class="keycard" aria-labelledby="af"><div class="kl"><div><p class="pgroup" style="margin:0 0 var(--g2)">Offer 3 · have it done for you</p><h2 id="af">Audit + Fix</h2>'
                f'<p class="sub">The Fix Pack: changes made for you, counted twice</p><div class="price">{eur(PRICES["fix"])}<small>paid once</small></div>{buy}'
                f'<p class="guar">{E(t["g_btn"])}</p></div>'
-               f'<figure class="pic" style="margin:0">{home.sheet_html("en", d)}<figcaption class="sheetcap">What the report looks like, filled with our own day-0 numbers. Not a customer result.</figcaption></figure>'
                f'<div class="kcb"><ul class="two"><li>40 questions, each asked twice, on every assistant we list</li><li>Competitor map: who is named instead of you</li>'
                f'<li>Changes made within 7 days of access, or ready-to-paste files</li><li>Day-30 recount, raw answers as CSV</li></ul>'
-               f'<p style="margin:0"><a href="/#proof">Read the count we ran on ourselves first</a></p></div></section>')
+               f'<p style="margin:0"><a href="/#proof">Read the count we ran on ourselves first</a></p></div></div>'
+               f'<figure class="pic" style="margin:0">{home.sheet_html("en", d)}<figcaption class="sheetcap">What the report looks like, filled with our own day-0 numbers. Not a customer result.</figcaption></figure></section>')
     rungs = (
         '<p class="pgroup">Offer 1 · find out</p>'
         + _rung("Free scan", "One site, one snapshot", ["The full count on screen, who is named instead", "No card, no email"], PRICES["free"], "free", "Scan my site, free", "/instant")
@@ -59,11 +59,13 @@ def faq_list(engines):
 
 
 def faq(engines):
+    t = home.T["en"]
     items = faq_list(engines)
     ld = [{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en",
            "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in items]}]
-    main = (f'<section class="pagehead on-navy"><div class="wrap"><h1>Questions</h1></div></section>'
-            f'<section class="sect" style="border-top:0"><div class="wrap"><div class="faq">{home.details(items, first_open=True)}</div></div></section>')
+    main = (f'<section class="pagehead on-navy"><div class="wrap"><h1>Straight answers before you scan or pay</h1></div></section>'
+            f'<section class="sect" style="border-top:0"><div class="wrap"><div class="faq">{home.details(items, first_open=True)}</div></div></section>'
+            f'<section class="endcta band"><div class="wrap"><h2>{E(t["end_h"])}</h2><p class="lede">{E(t["micro"])}</p><p><a class="btn" href="/instant">{E(t["go"])}</a></p></div></section>')
     return shell.document("en", "FAQ: CitedBy", "Answers about which assistants CitedBy asks, how the count works, what the Fix Pack includes and what happens after you pay.", "/faq", main, ld=ld, current="/faq")
 
 
@@ -71,3 +73,24 @@ def thanks():
     main = ('<section class="plain"><div class="wrap"><h1>Payment received</h1>'
             '<p>Thanks, we are running your audit. The report and a private link are emailed to the address you gave, usually within 15 minutes. If nothing arrives, check your spam folder.</p></div></section>')
     return shell.document("en", "Payment received: CitedBy", "Payment received.", "/thanks", main, robots="noindex")
+
+
+def data():
+    """/data index on the shared shell (was a static file on the old stylesheet)."""
+    t = home.T["en"]
+    ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": DATA_TITLE, "url": "https://citedby.eu/data", "inLanguage": "en",
+           "hasPart": [{"@type": "Dataset", "name": n, "url": "https://citedby.eu" + h} for h, n, _ in DATA_ROWS]}]
+    study = '<li><a href="/data/study-buyer-questions-claude">64 Claude answers to 32 buyer questions in 2 EU niches: who gets linked</a></li>'
+    rows = "".join(f'<li><a href="{h}" hreflang="{l}">{E(n)}</a> <span class="src">({E(m)})</span></li>' for h, n, (l, m) in [(h, n, (m.split(",")[0].lower(), m)) for h, n, m in DATA_ROWS])
+    main = (f'<section class="pagehead on-navy"><div class="wrap"><h1>Who Claude links when buyers ask where to shop</h1>'
+            f'<p class="lede">Dated counts from our own runs of Claude (Anthropic API, web search on): which shop sites appear in the answers to buyer questions, by niche and country. Every page shows the questions, the method and the raw counts. One assistant only.</p></div></section>'
+            f'<div class="wrap dlist"><section><h2>Study</h2><ul>{study}</ul></section><section><h2>By niche and country</h2><ul>{rows}</ul></section></div>'
+            f'<section class="endcta band"><div class="wrap"><h2>Want the same count for your shop?</h2><p class="lede">{E(t["micro"])}</p><p><a class="btn" href="/instant">{E(t["go"])}</a></p></div></section>')
+    return shell.document("en", "CitedBy data: who Claude links when buyers ask where to shop", "Dated counts from our runs of Claude with web search: which shop sites get linked for buyer questions, by niche and country.", "/data", main, ld=ld, current="/data")
+
+
+DATA_TITLE = "CitedBy data: who Claude links when buyers ask where to shop"
+DATA_ROWS = [("/data/the-france", "Quelles boutiques Claude cite pour acheter du thé en ligne en France", "FR, 16 answers, 18 Oct 2026"),
+             ("/data/cafe-france", "Quelles boutiques Claude cite pour acheter du café en grains en ligne en France", "FR, 16 answers, 18 Oct 2026"),
+             ("/data/cafe-belgique", "Quelles boutiques Claude cite pour acheter du café en grains en ligne en Belgique", "FR, 16 answers, 18 Oct 2026"),
+             ("/data/koffie-belgie", "Welke webshops Claude linkt voor koffiebonen kopen in België", "NL, 16 answers, 18 Oct 2026")]
