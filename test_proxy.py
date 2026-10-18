@@ -100,7 +100,7 @@ if __name__ == "__main__": unittest.main()
 class RouteTable(unittest.TestCase):
     def test_launch_routes_are_forwarded(self):
         g, p = proxy.ROUTES["GET"], proxy.ROUTES["POST"]
-        for path in ("/signin", "/logout", "/api/me", "/api/projects", "/api/audits", "/api/audits/a_k3j2h1", "/api/audits/a_k3j2h1/pages", "/api/audits/a_k3j2h1/page", "/api/audit/a_k3j2h1/pdf", "/r/audit/a_k3j2h1", "/plans"):
+        for path in ("/signin", "/logout", "/api/me", "/api/projects", "/api/audits", "/api/audits/a_k3j2h1", "/api/audits/a_k3j2h1/pages", "/api/audits/a_k3j2h1/page", "/api/audit/a_k3j2h1/pdf", "/r/audit/a_k3j2h1", "/plans", "/app.html", "/saas.js", "/saas.css", "/sample.js"):
             self.assertTrue(g.fullmatch(path), path)
         for path in ("/api/audits", "/api/audit", "/api/audit/a_k3j2h1/recrawl", "/api/checkout"):
             self.assertTrue(p.fullmatch(path), path)
