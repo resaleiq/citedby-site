@@ -26,3 +26,5 @@
 @media(max-width:640px){.art{padding:var(--s6) var(--s4) var(--s12)}}
 .art pre{background:var(--wash);border-left:4px solid var(--navy);padding:var(--s4) var(--s6);margin:0 0 var(--s6);overflow-x:auto;font:400 15px/1.55 var(--mono)}
 .art pre code{font:inherit;background:none;padding:0;white-space:pre}
+.art td:last-child{color:var(--text);font-weight:400;white-space:normal}.art th:last-child{white-space:normal}
+.art td,.art th{padding:var(--s2) var(--s3) var(--s2) 0;vertical-align:top;border-bottom:1px solid var(--rule)}
