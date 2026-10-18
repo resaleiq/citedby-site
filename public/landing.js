@@ -1,4 +1,0 @@
-(()=>{const{h,ring,sev}=window.CB,a=CB_SAMPLE.audit,s=document.getElementById('shot');
-s.append(h('div',{style:'display:flex;gap:20px;align-items:center;flex-wrap:wrap'},ring(a.score,120),h('div',null,h('b',{style:'font:600 22px Newsreader,serif;color:#0F1B2D'},'AI-readiness '+a.score+' / 100'),h('div',{class:'mut small'},a.pages+' pages checked'),h('div',{style:'display:flex;gap:8px;margin-top:8px;flex-wrap:wrap'},sev('high'),h('b',null,a.issues.high),sev('medium'),h('b',null,a.issues.medium)))));
-a.fixes.slice(0,4).forEach(f=>s.append(h('div',{class:'fix',style:'padding:10px 0'},sev(f.severity),h('b',null,f.title),h('span',{class:'small mut'},f.pages+' pages'))))})();
-document.querySelectorAll('form.urlf').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();location.href='/app.html?host='+encodeURIComponent(f.url.value)+'&go=1#/new'}));
