@@ -64,7 +64,7 @@ class T(unittest.TestCase):
         self.assertIn("We are connecting assistants", h)
         self.assertNotIn("buy.stripe.com/3cI8wHgJK4q9atr9Y98N200", h)
         self.assertNotIn('"price": "390"', h)
-        self.assertIn('action="/instant"', h)
+        self.assertIn('action="/grade"', h)
 
     def test_guarantee_text_kept_and_no_monthly(self):
         h = home.render("en", live("Claude"))

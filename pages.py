@@ -27,7 +27,7 @@ def pricing(engines):
     d = shell.day0()
     live = bool(engines)
     buy = (f'<a class="btn" href="{home.FIX_URL}" rel="noopener">Buy Audit + Fix, {eur(PRICES["fix"])}</a>' if live
-           else f'<a class="btn" href="/instant">{E(t["go"])}</a>')
+           else f'<a class="btn" href="/grade">{E(t["go"])}</a>')
     tell = lambda n: MAIL + quote(f"Tell me when {n} opens")
     ask = lambda n: MAIL + quote(f"About {n}")
     keycard = (f'<section class="keycard" aria-labelledby="af"><div class="kl"><div><p class="pgroup" style="margin:0 0 var(--g2)">Offer 3 · have it done for you</p><h2 id="af">Audit + Fix</h2>'
@@ -39,7 +39,7 @@ def pricing(engines):
                f'<div class="pic" style="margin:0">{home.sample_html("en")}</div></section>')
     rungs = (
         '<p class="pgroup">Offer 1 · find out</p>'
-        + _rung("Free scan", "One site, one snapshot", ["The full count on screen, who is named instead", "No card, no email"], PRICES["free"], "free", "Scan my site, free", "/instant")
+        + _rung("Free scan", "One site, one snapshot", ["The full count on screen, who is named instead", "No card, no email"], PRICES["free"], "free", "Scan my site, free", "/grade")
         + '<p class="pgroup">Offer 2 · recount it yourself</p>'
         + _rung("Starter", "One site watched, recount every month", ["1 site, 1 market and language", "Monthly recount, before and after"], PRICES["starter"], "per month", "Tell me when it opens", tell("Starter"), "Payments open soon.")
         + _rung("Plus", "Weekly recount, 2 more competitors tracked", ["Everything in Starter", "Weekly recount", "2 more tracked competitors"], PRICES["plus"], "per month", "Tell me when it opens", tell("Plus"), "Payments open soon.")
@@ -65,7 +65,7 @@ def faq(engines):
            "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in items]}]
     main = (f'<section class="pagehead on-navy"><div class="wrap"><h1>Straight answers before you scan or pay</h1><p class="lede">{E(t["g_btn"])} <a href="/refund">{E(t["g_link"])}</a></p></div></section>'
             f'<section class="sect" style="border-top:0"><div class="wrap"><div class="faq">{home.details(items, first_open=True)}</div></div></section>'
-            f'<section class="endcta band"><div class="wrap"><h2>{E(t["end_h"])}</h2><p class="lede">{E(t["micro"])}</p><p><a class="btn" href="/instant">{E(t["go"])}</a></p></div></section>')
+            f'<section class="endcta band"><div class="wrap"><h2>{E(t["end_h"])}</h2><p class="lede">{E(t["micro"])}</p><p><a class="btn" href="/grade">{E(t["go"])}</a></p></div></section>')
     return shell.document("en", "FAQ: CitedBy", "Answers about which assistants CitedBy asks, how the count works, what the Fix Pack includes and what happens after you pay.", "/faq", main, ld=ld, current="/faq")
 
 
@@ -85,7 +85,7 @@ def data():
     main = (f'<section class="pagehead on-navy"><div class="wrap"><h1>Who Claude links when buyers ask where to shop</h1>'
             f'<p class="lede">Dated counts from our own runs of Claude (Anthropic API, web search on): which shop sites appear in the answers to buyer questions, by niche and country. Every page shows the questions, the method and the raw counts. One assistant only.</p></div></section>'
             f'<div class="wrap dlist"><section><h2>Study</h2><ul>{study}</ul></section><section><h2>By niche and country</h2><ul>{rows}</ul></section></div>'
-            f'<section class="endcta band"><div class="wrap"><h2>Want the same count for your shop?</h2><p class="lede">{E(t["micro"])}</p><p><a class="btn" href="/instant">{E(t["go"])}</a></p></div></section>')
+            f'<section class="endcta band"><div class="wrap"><h2>Want the same count for your shop?</h2><p class="lede">{E(t["micro"])}</p><p><a class="btn" href="/grade">{E(t["go"])}</a></p></div></section>')
     return shell.document("en", "CitedBy data: who Claude links when buyers ask where to shop", "Dated counts from our runs of Claude with web search: which shop sites get linked for buyer questions, by niche and country.", "/data", main, ld=ld, current="/data")
 
 
