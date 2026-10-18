@@ -1,21 +1,16 @@
 # CitedBy
 
-> CitedBy checks what AI assistants answer when a buyer asks about an online shop's category, then fixes what keeps the shop out of the answer. Service for EU online shops, run from Spain. Not citedby.co or citedby.ai (different companies); the only domain is citedby.eu. Free mini-audit; Fix Pack €390 paid once; CitedBy Monthly €149 per month.
+> CitedBy is a website audit for search in the age of ChatGPT, Perplexity and Google AI answers. Enter a URL: CitedBy crawls every page, checks it against a list of checks (AI-crawler access, readable content, llms.txt, schema, titles and headings, internal links, answer-first content) and gives a graded report with a ready-to-paste fix for each issue. Plans: Single audit 9 EUR once (up to 100 pages), Starter 19 EUR/month, Pro 49 EUR/month, Agency 99 EUR/month; 14-day money-back guarantee. Fix Pack 390 EUR once: CitedBy applies the fixes. Service from Spain. Not citedby.co or citedby.ai (different companies); the only domain is citedby.eu.
 
 ## Pages
-- [Home, prices and guarantees](https://citedby.eu/): what we do, prices, FAQ
-- [Free check](https://citedby.eu/check): paste a shop URL and see in about 10 seconds which AI crawlers the site lets in and what a plain page fetch finds, with a fix for each problem; no email needed. From there you can ask for the free 16-answer mini-audit by email (also /fr/check, /nl/check)
-- [AI visibility audit guide](https://citedby.eu/ai-visibility-audit): what a GEO/AEO audit checks for an online shop and how to run a basic one yourself
-- [Sample audit](https://citedby.eu/sample-audit): an anonymised mini-audit of a Belgian coffee roaster, run 15 Oct 2026 through the Claude API with web search: the sites linked in each of 16 answers, whether the shop is named, and the fixes
-- [Guides](https://citedby.eu/blog): how AI assistants find, read and name online shops, with a free check in each guide
-- [Data by niche](https://citedby.eu/data): who ChatGPT linked, question by question, with method and CSV
-
-- [How to check whether AI assistants recommend your shop](https://citedby.eu/guides/check-if-ai-recommends-your-shop): manual 10-minute method and the free scan
-- [AI visibility tools compared](https://citedby.eu/guides/ai-visibility-tools-compared): what they cost and do
+- [Home, checks, pricing and FAQ](https://citedby.eu/)
+- [Free CI check for AI crawlers](https://citedby.eu/ci): a shell script and GitHub Action that fail a deploy when GPTBot, ClaudeBot or PerplexityBot see an empty or blocked page
+- [Guides and articles](https://citedby.eu/blog): how AI assistants find and read websites
+- [AI visibility audit guide](https://citedby.eu/ai-visibility-audit): what such an audit checks
+- [Data by niche](https://citedby.eu/data/study-buyer-questions-claude): published study with method and CSV
 
 ## Terms
 - [Terms of service](https://citedby.eu/terms)
 - [Refunds and guarantees](https://citedby.eu/refund)
-- [About](https://citedby.eu/about)
 - [Legal notice](https://citedby.eu/legal)
 - [Privacy](https://citedby.eu/privacy)
