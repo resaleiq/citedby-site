@@ -10,6 +10,8 @@ Article file = front matter, a blank line, then a small markdown subset:
   Body: ## / ### headings, paragraphs, - lists, 1. lists, | tables, ![alt](/blog/img/x.svg "caption") figures, ## FAQ (### question + answer), ## Sources (list).
 Ads: ADS_ENABLED stays False until the CEO switches a cluster on (needs real traffic and an EU consent banner); never on /check, price or checkout pages."""
 import datetime, glob, hashlib, html, json, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import docshell
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 PUB, SRC = os.path.join(ROOT, "public"), os.path.join(ROOT, "content", "blog")
 SITE, E = "https://citedby.eu", html.escape
@@ -116,7 +118,7 @@ def shell(loc, title, desc, canon, alts, og, jsonld, main, extra_head=""):
     t = UI[loc]
     ld = "".join('<script type="application/ld+json">%s</script>' % json.dumps(j, ensure_ascii=False).replace("</", "<\\/") for j in jsonld)
     alt = "".join('<link rel="alternate" hreflang="%s" href="%s%s">' % (l, SITE, p) for l, p in alts)
-    return f'''<!doctype html>
+    return docshell.transform(f'''<!doctype html>
 <html lang="{loc}"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(title)}</title>
@@ -133,7 +135,7 @@ def shell(loc, title, desc, canon, alts, og, jsonld, main, extra_head=""):
 {main}
 <footer><span>© 2026 CitedBy. hello@citedby.eu</span><span><a href="/terms">Terms</a> &nbsp; <a href="/refund">Refunds</a> &nbsp; <a href="/about">About</a> &nbsp; <a href="/legal">{E(t["legal"])}</a> &nbsp; <a href="/privacy">{E(t["privacy"])}</a></span></footer>
 </body></html>
-'''
+''')
 
 def build_article(fm, body, arts):
     loc, slug = fm["locale"], fm["slug"]
