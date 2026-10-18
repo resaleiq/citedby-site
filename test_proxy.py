@@ -50,9 +50,9 @@ class T(unittest.TestCase):
         self.assertEqual(self.get("/plans")[0], 404); self.assertEqual(SEEN, [])
 
     def test_allowlist_only(self):
-        for p in ("/instant", "/fr/instant", "/nl/instant?domain=x.com", "/plans?billing=year", "/dashboard", "/account", "/recount/" + "a" * 24, "/api/snapshot/7", "/r/" + "a" * 22 + ".csv", "/api/snapshot/" + "Hn-hGKmWgDksJUToqNLfgw", "/thanks", "/thanks?session_id=cs_live_a1", "/report/" + "a" * 24, "/r/" + "a" * 22, "/start/" + "a" * 43):
+        for p in ("/instant", "/fr/instant", "/nl/instant?domain=x.com", "/plans?billing=year", "/dashboard", "/account", "/recount/" + "a" * 24, "/api/snapshot/7", "/r/" + "a" * 22 + ".csv", "/api/snapshot/" + "Hn-hGKmWgDksJUToqNLfgw", "/thanks", "/thanks?session_id=cs_live_a1", "/report/" + "a" * 24, "/r/" + "a" * 22, "/start/" + "a" * 43, "/api/crawl/abc123"):
             self.assertEqual(self.get(p)[1], b"app-page", p)
-        for p in ("/", "/fr", "/health-x", "/api/order", "/api/stripe/webhook", "/thanksx", "/report/short", "/r/short", "/r/" + "a" * 65, "/report/" + "a" * 65, "/start/short", "/start/" + "a" * 65, "/api/fixpack/intake", "/api/snapshot/short", "/api/snapshot/" + "a" * 65, "/api/snapshot/abc/def", "/plansx", "/instantx", "/../plans", "/de/instant", "/fr/plans", "/fr/instantx", "/fr/dashboard"):
+        for p in ("/", "/fr", "/health-x", "/api/order", "/api/stripe/webhook", "/thanksx", "/report/short", "/r/short", "/r/" + "a" * 65, "/report/" + "a" * 65, "/start/short", "/start/" + "a" * 65, "/api/fixpack/intake", "/api/snapshot/short", "/api/snapshot/" + "a" * 65, "/api/snapshot/abc/def", "/plansx", "/instantx", "/../plans", "/de/instant", "/fr/plans", "/fr/instantx", "/fr/dashboard", "/bot", "/api/crawl/a/b"):
             self.assertEqual(self.get(p)[0], 404, p)
 
     def test_forwards_one_client_ip_and_cookie_not_spoofed_xff(self):
@@ -100,7 +100,7 @@ if __name__ == "__main__": unittest.main()
 class RouteTable(unittest.TestCase):
     def test_launch_routes_are_forwarded(self):
         g, p = proxy.ROUTES["GET"], proxy.ROUTES["POST"]
-        for path in ("/signin", "/logout", "/api/me", "/api/projects", "/api/audits", "/api/audits/a_k3j2h1", "/api/audits/a_k3j2h1/pages", "/api/audits/a_k3j2h1/page", "/api/audit/a_k3j2h1/pdf", "/r/audit/a_k3j2h1", "/plans", "/app.html", "/saas.js", "/saas.css", "/sample.js", "/landing.js", "/bot", "/sample"):
+        for path in ("/signin", "/logout", "/api/me", "/api/projects", "/api/audits", "/api/audits/a_k3j2h1", "/api/audits/a_k3j2h1/pages", "/api/audits/a_k3j2h1/page", "/api/audit/a_k3j2h1/pdf", "/r/audit/a_k3j2h1", "/plans", "/app.html", "/saas.js", "/saas.css", "/sample.js", "/landing.js", "/sample"):
             self.assertTrue(g.fullmatch(path), path)
         for path in ("/api/audits", "/api/audit", "/api/audit/a_k3j2h1/recrawl", "/api/checkout"):
             self.assertTrue(p.fullmatch(path), path)
