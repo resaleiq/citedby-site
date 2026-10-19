@@ -91,11 +91,7 @@ def data():
 
 
 DATA_TITLE = "CitedBy data: who Claude links when buyers ask where to shop"
-DATA_ROWS = [("/data/the-france", "Quelles boutiques Claude cite pour acheter du thé en ligne en France", "FR, Claude, 16 answers, 18 Oct 2026"),
-             ("/data/cafe-france", "Quelles boutiques Claude cite pour acheter du café en grains en ligne en France", "FR, Claude, 16 answers, 18 Oct 2026"),
-             ("/data/cafe-belgique", "Quelles boutiques Claude cite pour acheter du café en grains en ligne en Belgique", "FR, Claude, 16 answers, 18 Oct 2026"),
-             ("/data/koffie-belgie", "Welke webshops Claude linkt voor koffiebonen kopen in België", "NL, Claude, 16 answers, 18 Oct 2026"),
-             ("/data/coffee-ireland", "Coffee beans in Ireland: which roasters ChatGPT names", "EN, ChatGPT"),
+DATA_ROWS = [
              ("/data/matelas-france", "Matelas en ligne en France : les marques que ChatGPT cite", "FR, ChatGPT"),
              ("/data/complements-alimentaires-france", "Compléments alimentaires en France : les marques que ChatGPT cite", "FR, ChatGPT"),
              ("/data/complements-beaute-france", "Compléments beauté et collagène : les marques que ChatGPT cite", "FR, ChatGPT")]

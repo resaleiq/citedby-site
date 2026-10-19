@@ -75,12 +75,6 @@ Fill the brackets with your own words: `[category]` is what you sell (for exampl
 
 Do not round up. A shop named in 1 of 2 runs is named in 1 of 2 runs, not "recommended".
 
-## What a result can look like
-
-This is the shape of a real result. In one audit we ran, a Belgian online coffee roaster was named in 1 of 16 answers and linked in none, while the most-named competitor shop appeared in 14 of 16. The test asked 8 buyer questions twice, in French, on 15 October 2026. It covers one assistant in one market, not a general rate.
-
-![Three bars out of 16 answers: audited shop named 1, audited shop linked 0, most-named competitor 14](/blog/img/sample-named-chart.svg "Data from the sample audit, run 15 Oct 2026, shop anonymised.")
-
 ## What to do with your log
 
 - **Named in few group B answers:** the assistant does not connect your shop to your category. Look at which pages it links for those answers; they are the pages it trusts.

@@ -265,14 +265,16 @@ class Api(unittest.TestCase):
             self.assertEqual(self.get_status(self.base + p), 404, p)
 
     def test_data_pages_routing(self):
-        for p in ("/data", "/data/cafe-france", "/data/study-chatgpt-buyer-questions", "/data/cafe-france.csv", "/data/citedby-study-2026-10.pdf"):
+        for p in ("/data", "/data/matelas-france", "/data/study-chatgpt-buyer-questions", "/data/matelas-france.csv", "/data/citedby-study-2026-10.pdf"):
             self.assertEqual(self.get_status(self.base + p), 200, p)
         class NoRedirect(urllib.request.HTTPRedirectHandler):
             def redirect_request(self, *a, **k): return None
         try: urllib.request.build_opener(NoRedirect).open(self.base + "/data/"); code = 200
         except urllib.error.HTTPError as e: code, loc = e.code, e.headers.get("Location")
         self.assertEqual((code, loc), (301, "/data"))
-        with urllib.request.urlopen(self.base + "/data/cafe-france.csv") as r: self.assertTrue(r.headers["Content-Type"].startswith("text/csv"))
+        with urllib.request.urlopen(self.base + "/data/matelas-france.csv") as r: self.assertTrue(r.headers["Content-Type"].startswith("text/csv"))
+        for p in ("/data/the-france", "/data/cafe-france", "/data/cafe-belgique", "/data/koffie-belgie", "/data/coffee-ireland", "/data/cafe-france.csv"):
+            self.assertEqual(self.get_status(self.base + p), 410, p)
         for p in ("/data/../server.py", "/data/..%2fserver.py", "/data/%2e%2e/server", "/data/missing"):
             self.assertEqual(self.get_status(self.base + p), 404, p)
 
