@@ -17,11 +17,11 @@ PUB, SRC = os.path.join(ROOT, "public"), os.path.join(ROOT, "content", "blog")
 SITE, E = "https://citedby.eu", html.escape
 ADS_ENABLED = False
 UI = {
- "en": dict(blog="Guides", idx_h1="AI visibility guides for online shops", idx_lede="How AI assistants find, read and name online shops, and what to fix. Each guide ends with an audit you can run on your own site, from €9.", answer="Short answer", by="By the CitedBy editorial team", rev="Reviewed on", sources="Sources", related="Keep reading", faq="Questions people ask", w_h="Audit your own site (from €9, 14-day money-back guarantee)", w_ph="yourshop.com", w_go="Audit my site", w_note="We crawl every page and give you the exact fix for each issue. Paid before the crawl.", cta_h="See what AI answers about your shop", cta_b="The audit crawls every page of your site, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.", cta="Audit my site", home="Home", chk="/", read="Read", skip="Skip to content", ad="Advertisement", langs="Languages", legal="Legal notice", privacy="Privacy"),
- "fr": dict(blog="Guides", idx_h1="Guides de visibilité IA pour les boutiques en ligne", idx_lede="Comment les assistants IA trouvent, lisent et citent les boutiques en ligne, et quoi corriger. Chaque guide se termine par un audit de votre site, dès 9 €.", answer="Réponse courte", by="Par la rédaction de CitedBy", rev="Vérifié le", sources="Sources", related="À lire aussi", faq="Questions fréquentes", w_h="Auditez votre site (dès 9 €, garantie 14 jours)", w_ph="votreboutique.fr", w_go="Auditer mon site", w_note="Nous explorons chaque page et donnons le correctif exact. Payé avant l'exploration.", cta_h="Voyez ce que les IA répondent sur votre boutique", cta_b="L'audit explore chaque page de votre site, montre quels robots IA il laisse entrer et donne le correctif exact. Dès 9 €, garantie 14 jours.", cta="Auditer mon site", home="Accueil", chk="/", read="Lire", skip="Aller au contenu", ad="Publicité", langs="Langues", legal="Mentions légales", privacy="Confidentialité"),
- "nl": dict(blog="Gidsen", idx_h1="AI-zichtbaarheidsgidsen voor webshops", idx_lede="Hoe AI-assistenten webshops vinden, lezen en noemen, en wat u moet aanpassen. Elke gids eindigt met een audit van uw eigen site, vanaf €9.", answer="Kort antwoord", by="Door de redactie van CitedBy", rev="Nagekeken op", sources="Bronnen", related="Lees ook", faq="Veelgestelde vragen", w_h="Audit uw eigen site (vanaf €9, 14 dagen geld-terug-garantie)", w_ph="uwwebshop.nl", w_go="Audit mijn site", w_note="We crawlen elke pagina en geven de exacte oplossing per probleem. Betaald vóór de crawl.", cta_h="Zie wat AI antwoordt over uw webshop", cta_b="De audit crawlt elke pagina van uw site, toont welke AI-crawlers binnenkomen en geeft de exacte oplossing. Vanaf €9, 14 dagen geld-terug-garantie.", cta="Audit mijn site", home="Home", chk="/", read="Lees", skip="Naar de inhoud", ad="Advertentie", langs="Talen", legal="Juridische informatie", privacy="Privacy"),
- "de": dict(blog="Ratgeber", idx_h1="Ratgeber zur KI-Sichtbarkeit für Online-Shops", idx_lede="Wie KI-Assistenten Online-Shops finden, lesen und nennen, und was Sie korrigieren sollten. Jeder Ratgeber endet mit einem Audit Ihrer Seite ab 9 €.", answer="Kurz gesagt", by="Von der CitedBy-Redaktion", rev="Geprüft am", sources="Quellen", related="Weiterlesen", faq="Häufige Fragen", w_h="Prüfen Sie Ihre Seite (ab 9 €, 14 Tage Geld-zurück-Garantie)", w_ph="ihr-shop.de", w_go="Meine Seite prüfen", w_note="Wir crawlen jede Seite und liefern die genaue Korrektur. Vor dem Crawl bezahlt.", cta_h="Sehen Sie, was KI über Ihren Shop antwortet", cta_b="Das Audit crawlt jede Seite Ihrer Website, zeigt, welche KI-Crawler hereinkommen, und liefert die genaue Korrektur. Ab 9 €, 14 Tage Geld-zurück-Garantie.", cta="Meine Seite prüfen", home="Start", chk="/", read="Lesen", skip="Zum Inhalt", ad="Anzeige", langs="Sprachen", legal="Impressum", privacy="Datenschutz"),
- "es": dict(blog="Guías", idx_h1="Guías de visibilidad en IA para tiendas online", idx_lede="Cómo los asistentes de IA encuentran, leen y nombran las tiendas online, y qué corregir. Cada guía termina con una auditoría de tu web desde 9 €.", answer="Respuesta corta", by="Por la redacción de CitedBy", rev="Revisado el", sources="Fuentes", related="Sigue leyendo", faq="Preguntas frecuentes", w_h="Audita tu web (desde 9 €, garantía de 14 días)", w_ph="tutienda.es", w_go="Auditar mi web", w_note="Rastreamos cada página y damos la corrección exacta. Se paga antes del rastreo.", cta_h="Mira qué responde la IA sobre tu tienda", cta_b="La auditoría rastrea cada página de tu web, muestra qué rastreadores de IA entran y da la corrección exacta. Desde 9 €, garantía de 14 días.", cta="Auditar mi web", home="Inicio", chk="/", read="Leer", skip="Ir al contenido", ad="Publicidad", langs="Idiomas", legal="Aviso legal", privacy="Privacidad"),
+ "en": dict(by_person='By', toc='On this page', price='Audit from €9, paid once. Fix Pack €390 paid once. 14-day money-back guarantee.', blog="Guides", idx_h1="AI visibility guides for online shops", idx_lede="How AI assistants find, read and name online shops, and what to fix. Each guide ends with an audit you can run on your own site, from €9.", answer="Short answer", by="By the CitedBy editorial team", rev="Reviewed on", sources="Sources", related="Keep reading", faq="Questions people ask", w_h="Audit your own site (from €9, 14-day money-back guarantee)", w_ph="yourshop.com", w_go="Audit my site", w_note="We crawl every page and give you the exact fix for each issue. Paid before the crawl.", cta_h="See what AI answers about your shop", cta_b="The audit crawls every page of your site, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.", cta="Audit my site", home="Home", chk="/", read="Read", skip="Skip to content", ad="Advertisement", langs="Languages", legal="Legal notice", privacy="Privacy"),
+ "fr": dict(by_person='Par', toc='Dans cet article', price='Audit dès 9 €, payé une fois. Fix Pack 390 € payé une fois. Garantie 14 jours.', blog="Guides", idx_h1="Guides de visibilité IA pour les boutiques en ligne", idx_lede="Comment les assistants IA trouvent, lisent et citent les boutiques en ligne, et quoi corriger. Chaque guide se termine par un audit de votre site, dès 9 €.", answer="Réponse courte", by="Par la rédaction de CitedBy", rev="Vérifié le", sources="Sources", related="À lire aussi", faq="Questions fréquentes", w_h="Auditez votre site (dès 9 €, garantie 14 jours)", w_ph="votreboutique.fr", w_go="Auditer mon site", w_note="Nous explorons chaque page et donnons le correctif exact. Payé avant l'exploration.", cta_h="Voyez ce que les IA répondent sur votre boutique", cta_b="L'audit explore chaque page de votre site, montre quels robots IA il laisse entrer et donne le correctif exact. Dès 9 €, garantie 14 jours.", cta="Auditer mon site", home="Accueil", chk="/", read="Lire", skip="Aller au contenu", ad="Publicité", langs="Langues", legal="Mentions légales", privacy="Confidentialité"),
+ "nl": dict(by_person='Door', toc='In dit artikel', price='Audit vanaf €9, eenmalig betaald. Fix Pack €390, eenmalig. 14 dagen geld-terug-garantie.', blog="Gidsen", idx_h1="AI-zichtbaarheidsgidsen voor webshops", idx_lede="Hoe AI-assistenten webshops vinden, lezen en noemen, en wat u moet aanpassen. Elke gids eindigt met een audit van uw eigen site, vanaf €9.", answer="Kort antwoord", by="Door de redactie van CitedBy", rev="Nagekeken op", sources="Bronnen", related="Lees ook", faq="Veelgestelde vragen", w_h="Audit uw eigen site (vanaf €9, 14 dagen geld-terug-garantie)", w_ph="uwwebshop.nl", w_go="Audit mijn site", w_note="We crawlen elke pagina en geven de exacte oplossing per probleem. Betaald vóór de crawl.", cta_h="Zie wat AI antwoordt over uw webshop", cta_b="De audit crawlt elke pagina van uw site, toont welke AI-crawlers binnenkomen en geeft de exacte oplossing. Vanaf €9, 14 dagen geld-terug-garantie.", cta="Audit mijn site", home="Home", chk="/", read="Lees", skip="Naar de inhoud", ad="Advertentie", langs="Talen", legal="Juridische informatie", privacy="Privacy"),
+ "de": dict(by_person='Von', toc='In diesem Artikel', price='Audit ab 9 €, einmal bezahlt. Fix Pack 390 € einmalig. 14 Tage Geld-zurück-Garantie.', blog="Ratgeber", idx_h1="Ratgeber zur KI-Sichtbarkeit für Online-Shops", idx_lede="Wie KI-Assistenten Online-Shops finden, lesen und nennen, und was Sie korrigieren sollten. Jeder Ratgeber endet mit einem Audit Ihrer Seite ab 9 €.", answer="Kurz gesagt", by="Von der CitedBy-Redaktion", rev="Geprüft am", sources="Quellen", related="Weiterlesen", faq="Häufige Fragen", w_h="Prüfen Sie Ihre Seite (ab 9 €, 14 Tage Geld-zurück-Garantie)", w_ph="ihr-shop.de", w_go="Meine Seite prüfen", w_note="Wir crawlen jede Seite und liefern die genaue Korrektur. Vor dem Crawl bezahlt.", cta_h="Sehen Sie, was KI über Ihren Shop antwortet", cta_b="Das Audit crawlt jede Seite Ihrer Website, zeigt, welche KI-Crawler hereinkommen, und liefert die genaue Korrektur. Ab 9 €, 14 Tage Geld-zurück-Garantie.", cta="Meine Seite prüfen", home="Start", chk="/", read="Lesen", skip="Zum Inhalt", ad="Anzeige", langs="Sprachen", legal="Impressum", privacy="Datenschutz"),
+ "es": dict(by_person='Por', toc='En este artículo', price='Auditoría desde 9 €, pago único. Fix Pack 390 € pago único. Garantía de 14 días.', blog="Guías", idx_h1="Guías de visibilidad en IA para tiendas online", idx_lede="Cómo los asistentes de IA encuentran, leen y nombran las tiendas online, y qué corregir. Cada guía termina con una auditoría de tu web desde 9 €.", answer="Respuesta corta", by="Por la redacción de CitedBy", rev="Revisado el", sources="Fuentes", related="Sigue leyendo", faq="Preguntas frecuentes", w_h="Audita tu web (desde 9 €, garantía de 14 días)", w_ph="tutienda.es", w_go="Auditar mi web", w_note="Rastreamos cada página y damos la corrección exacta. Se paga antes del rastreo.", cta_h="Mira qué responde la IA sobre tu tienda", cta_b="La auditoría rastrea cada página de tu web, muestra qué rastreadores de IA entran y da la corrección exacta. Desde 9 €, garantía de 14 días.", cta="Auditar mi web", home="Inicio", chk="/", read="Leer", skip="Ir al contenido", ad="Publicidad", langs="Idiomas", legal="Aviso legal", privacy="Privacidad"),
 }
 def ver(name):
     p = os.path.join(PUB, name); return hashlib.sha256(open(p, "rb").read()).hexdigest()[:8] if os.path.exists(p) else "0"
@@ -33,6 +33,44 @@ def inline(s):
     return re.sub(r"`([^`]+)`", r"<code>\1</code>", s)
 def plain(s): return re.sub(r"<[^>]+>", "", inline(s))
 def slugify(s): return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")[:48]
+
+
+def wrap(txt, n):
+    out, cur = [], ""
+    for w in txt.split():
+        if cur and len(cur) + 1 + len(w) > n: out.append(cur); cur = w
+        else: cur = (cur + " " + w).strip()
+    return out + ([cur] if cur else [])
+SVG_HEAD = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d"><title id="t">%s</title><desc id="d">%s</desc><rect width="1200" height="630" fill="#EEF2F7"/><rect width="1200" height="12" fill="#0F1B2D"/>'
+def boxes_svg(boxes, y0, h):
+    n = len(boxes); w = (1056 - 33 * (n - 1)) // n; o = ['<g font-family="system-ui,Arial,sans-serif" fill="#0F1B2D">']
+    for i, (b, sub) in enumerate(boxes):
+        x = 72 + i * (w + 33)
+        o.append('<rect x="%d" y="%d" width="%d" height="%d" fill="#fff" stroke="#0F1B2D" stroke-width="3"/><text x="%d" y="%d" font-size="40" font-weight="600" fill="#1F4FD8">%d</text>' % (x, y0, w, h, x + 22, y0 + 46, i + 1))
+        for k, ln in enumerate(wrap(b, max(8, w // 15))[:3]): o.append('<text x="%d" y="%d" font-size="24" font-weight="600">%s</text>' % (x + 22, y0 + 94 + 30 * k, E(ln)))
+        for k, ln in enumerate(wrap(sub, max(10, w // 11))[:2]): o.append('<text x="%d" y="%d" font-size="19" fill="#556070">%s</text>' % (x + 22, y0 + h - 44 + 24 * k, E(ln)))
+    return "".join(o) + "</g>"
+def make_hero(fm, slug):
+    if check_only(): return
+    bx = [(a.split("|")[0].strip(), (a.split("|") + [""])[1].strip()) for a in fm["hero_boxes"].split(";") if a.strip()][:4]
+    t = wrap(fm["h1"], 24)[:3]; fs = 60 if len(t) < 3 else 52
+    o = SVG_HEAD % (E(fm["h1"]), E(fm.get("hero_alt", fm["h1"])))
+    for i, ln in enumerate(t): o += '<text x="72" y="%d" font-family="Georgia,\'Times New Roman\',serif" font-size="%d" font-weight="600" fill="#0F1B2D">%s</text>' % (118 + i * (fs + 12), fs, E(ln))
+    o += '<text x="72" y="%d" font-family="system-ui,Arial,sans-serif" font-size="26" fill="#556070">%s</text>' % (118 + len(t) * (fs + 12) + 14, E(fm.get("hero_sub", "")[:70]))
+    o += boxes_svg(bx, 340, 230) + "</svg>"
+    open(os.path.join(PUB, "blog", "img", slug + "-hero.svg"), "w", encoding="utf-8").write(o)
+def make_steps(slug, title, steps):
+    st = [(re.split(r"[.:;]", plain(x))[0], "") for x in steps][:5]
+    st = [(" ".join(a.split()[:9]), "") for a, _ in st]
+    o = SVG_HEAD % (E(title), E(" / ".join(a for a, _ in st)))
+    o += '<text x="72" y="110" font-family="Georgia,serif" font-size="46" font-weight="600" fill="#0F1B2D">%s</text>' % E(" ".join(title.split()[:8]))
+    o += boxes_svg(st, 200, 330) + "</svg>"
+    open(os.path.join(PUB, "blog", "img", slug + "-steps.svg"), "w", encoding="utf-8").write(o)
+def authors():
+    p = os.path.join(ROOT, "data", "authors.json")
+    return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+
+def check_only(): return "--check" in sys.argv
 
 def parse(path):
     raw = open(path, encoding="utf-8").read()
@@ -137,12 +175,23 @@ def shell(loc, title, desc, canon, alts, og, jsonld, main, extra_head=""):
 </body></html>
 ''')
 
+GROUPS = {("root", "ai-visibility-audit"): [("en", "/ai-visibility-audit")]}  # EN page is static HTML
+def article_path(fm):
+    loc, slug = fm["locale"], fm["slug"]
+    return ("%s/%s/%s" % (prefix(loc), fm.get("section", "blog"), slug)) if fm.get("section") != "root" else "%s/%s" % (prefix(loc), slug)
+
 def build_article(fm, body, arts):
     loc, slug = fm["locale"], fm["slug"]
     t, state = UI[loc], {"imgs": 0}
-    path = "%s/%s/%s" % (prefix(loc), fm.get("section", "blog"), slug)
+    path = ("%s/%s/%s" % (prefix(loc), fm.get("section", "blog"), slug)) if fm.get("section") != "root" else "%s/%s" % (prefix(loc), slug)
     html_body, faq, steps, srcs = render_body(body, fm, loc, state)
     if state["imgs"] < 1 and fm.get("hero") is None: sys.exit("%s: needs images" % slug)
+    if fm.get("hero") == "auto":
+        make_hero(fm, slug); fm["hero"] = slug + "-hero.svg"
+    if fm.get("steps_img") == "on" and steps and not check_only():
+        make_steps(slug, fm["h1"], steps)
+        fig = '<figure><img src="/blog/img/%s-steps.svg" alt="%s" width="1200" height="630" loading="lazy" decoding="async"></figure>' % (slug, E(fm["h1"] + ": " + " / ".join(" ".join(plain(x).split()[:7]) for x in steps[:5])))
+        html_body = html_body.replace('<ol class="steps">', fig + '<ol class="steps">', 1)
     hero = fm.get("hero", "")
     og = "/blog/img/%s" % fm["og"] if fm.get("og") else "/og.png"
     ans = '<aside class="answer" aria-label="%s"><b>%s</b><p>%s</p></aside>' % (E(t["answer"]), E(t["answer"]), E(fm["answer"]))
@@ -150,10 +199,12 @@ def build_article(fm, body, arts):
     ad = '<aside class="ad-slot" aria-label="%s" data-slot="in-article"></aside>' % E(t["ad"]) if ADS_ENABLED and fm.get("ads") != "off" else "<!-- ad-slot:in-article (off) -->"
     rel = [r.split("|", 1) for r in fm.get("related", "").split(";") if "|" in r]
     rel_h = ('<nav class="rel" aria-label="%s"><h2>%s</h2><ul>%s</ul></nav>' % (E(t["related"]), E(t["related"]), "".join('<li><a href="%s">%s</a></li>' % (E(u.strip()), E(x.strip())) for u, x in rel))) if rel else ""
-    cta = '<section class="cta2"><h2>%s</h2><p>%s</p><a class="btn p" href="%s?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=%s&amp;utm_content=cta">%s</a></section>' % (E(t["cta_h"]), E(t["cta_b"]), t["chk"], E(slug), E(t["cta"]))
+    cta = '<section class="cta2"><h2>%s</h2><p>%s</p><a class="btn p" href="%s?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=%s&amp;utm_content=cta">%s</a><p class="gloss">%s</p></section>' % (E(t["cta_h"]), E(t["cta_b"]), t["chk"], E(slug), E(t["cta"]), E(t["price"]))
     hero_h = '<figure class="hero"><img src="/blog/img/%s" alt="%s" width="1200" height="630" fetchpriority="high" decoding="async"></figure>' % (E(hero), E(fm.get("hero_alt", fm["h1"]))) if hero else ""
     if hero and not fm.get("hero_alt"): sys.exit("%s: hero needs hero_alt" % slug)
     alts = [(l, p) for l, p in (kv.split("=", 1) for kv in fm.get("translations", "").split(";") if "=" in kv)]
+    if not alts and len(GROUPS.get((fm.get("section", "blog"), slug), [])) > 1:
+        alts = [(l, p) for l, p in GROUPS[(fm.get("section", "blog"), slug)] if l != loc]
     if alts: alts = [(loc, path)] + [(l.strip(), p.strip()) for l, p in alts]; alts.append(("x-default", next((p for l, p in alts if l == "en"), path)))
     org = {"@type": "Organization", "name": "CitedBy", "url": SITE + "/"}
     art = {"@context": "https://schema.org", "@type": "Article", "headline": fm["h1"], "description": fm["description"], "inLanguage": loc, "datePublished": fm["date"], "dateModified": fm["reviewed"],
@@ -168,12 +219,18 @@ def build_article(fm, body, arts):
     # ad slot sits after the first third of the body, never beside the widget or CTA
     parts = html_body.split("\n"); cut = max(1, len(parts) // 3)
     body_h = "\n".join(parts[:cut] + [ad] + parts[cut:])
+    heads = re.findall(r'<h2 id="([^"]+)">(.+?)</h2>', html_body)
+    toc = '<nav class="toc" aria-label="%s"><b>%s</b><ol>%s</ol></nav>' % (E(t["toc"]), E(t["toc"]), "".join('<li><a href="#%s">%s</a></li>' % (i, h) for i, h in heads)) if len(heads) >= 3 else ""
+    au = authors().get(fm.get("author", ""))
+    byline = ('%s <a href="/authors/%s" rel="author">%s</a>, %s · ' % (E(t["by_person"]), E(fm["author"]), E(au["name"]), E(au["role"].get(loc, au["role"]["en"])))) if au else E(t["by"]) + " · "
+    if au: art["author"] = {"@type": "Person", "name": au["name"], "jobTitle": au["role"]["en"], "url": SITE + "/authors/" + fm["author"]}
     main = f'''<main id="main" class="art"><article>
 <p class="dateline"><a href="{prefix(loc)}/blog">{E(t["blog"])}</a> / {E(fm.get("cluster", ""))}</p>
 <h1>{E(fm["h1"])}</h1>
-<p class="byline">{E(t["by"])} · {E(t["rev"])} <time datetime="{fm["reviewed"]}">{fm["reviewed"]}</time></p>
+<p class="byline">{byline}{E(t["rev"])} <time datetime="{fm["reviewed"]}">{fm["reviewed"]}</time></p>
 {ans}
 {hero_h}
+{toc}
 {w}
 {body_h}
 {cta}
@@ -181,11 +238,11 @@ def build_article(fm, body, arts):
 </article></main>'''
     return path, shell(loc, fm["title"], fm["description"], path, alts, og, ld, main)
 
-def build_index(loc, arts):
-    t = UI[loc]; path = prefix(loc) + "/blog"
-    cards = "".join('<li><a href="%s/blog/%s"><b>%s</b><span>%s</span><time datetime="%s">%s %s</time></a></li>' % (prefix(loc), a["slug"], E(a["h1"]), E(a["description"]), a["reviewed"], E(t["rev"]), a["reviewed"]) for a in sorted(arts, key=lambda a: a["reviewed"], reverse=True))
+def build_index(loc, arts, sect="blog"):
+    t = UI[loc]; path = prefix(loc) + "/" + sect
+    cards = "".join('<li><a href="%s/%s/%s"><b>%s</b><span>%s</span><time datetime="%s">%s %s</time></a></li>' % (prefix(loc), a.get("section", "blog"), a["slug"], E(a["h1"]), E(a["description"]), a["reviewed"], E(t["rev"]), a["reviewed"]) for a in sorted(arts, key=lambda a: a["reviewed"], reverse=True))
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": t["idx_h1"], "inLanguage": loc, "url": SITE + path},
-          {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": n + 1, "url": "%s%s/blog/%s" % (SITE, prefix(loc), a["slug"])} for n, a in enumerate(arts)]}]
+          {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": n + 1, "url": "%s%s/%s/%s" % (SITE, prefix(loc), a.get("section", "blog"), a["slug"])} for n, a in enumerate(arts)]}]
     main = '<main id="main" class="art idx"><h1>%s</h1><p class="lede">%s</p><ul class="cards">%s</ul></main>' % (E(t["idx_h1"]), E(t["idx_lede"]), cards)
     return path, shell(loc, t["idx_h1"] + ". CitedBy", t["idx_lede"], path, [], "/og.png", ld, main)
 
@@ -196,18 +253,23 @@ def main():
         fm, body = parse(p); arts.setdefault(fm["locale"], []).append((fm, body))
     urls, written = [], []
     for loc, items in arts.items():
+        for fm, _ in items: GROUPS.setdefault((fm.get("section", "blog"), fm["slug"]), []).append((loc, article_path(fm)))
+    for loc, items in arts.items():
         for fm, body in items:
             path, doc = build_article(fm, body, items); urls.append((path, fm["reviewed"])); written.append((path, doc))
-        bl = [f for f, _ in items if f.get("section", "blog") == "blog"]
+        bl = [f for f, _ in items if f.get("section", "blog") in ("blog", "guides")]
         path, doc = build_index(loc, bl); urls.append((path, max(f["reviewed"] for f in bl))); written.append((path, doc))
+        gl = [f for f in bl if f.get("section") == "guides"]
+        if gl:
+            path, doc = build_index(loc, gl, "guides"); urls.append((path, max(f["reviewed"] for f in gl))); written.append((path, doc))
     if check: print("ok: %d pages" % len(written)); return
     for path, doc in written:
         out = os.path.join(PUB, path.lstrip("/"))
-        if path.endswith("/blog"): out = os.path.join(out, "index.html")
+        if path.endswith(("/blog", "/guides")): out = os.path.join(out, "index.html")
         else: out += ".html"
         os.makedirs(os.path.dirname(out), exist_ok=True); open(out, "w", encoding="utf-8").write(doc)
     sm = os.path.join(PUB, "sitemap.xml"); s = open(sm, encoding="utf-8").read()
-    s = re.sub(r"<url><loc>%s(/[a-z]{2})?/(?:blog|compare)[^<]*</loc>(<lastmod>[^<]*</lastmod>)?</url>" % re.escape(SITE), "", s)
+    s = re.sub(r"<url><loc>%s(/[a-z]{2})?/(?:blog|compare|guides)[^<]*</loc>(<lastmod>[^<]*</lastmod>)?</url>" % re.escape(SITE), "", s)
     s = s.replace("</urlset>", "".join("<url><loc>%s%s</loc><lastmod>%s</lastmod></url>" % (SITE, p, d) for p, d in urls) + "</urlset>")
     open(sm, "w", encoding="utf-8").write(s)
     print("wrote %d pages" % len(written))
