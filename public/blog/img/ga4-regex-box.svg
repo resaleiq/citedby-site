@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-labelledby="t d">
+<title id="t">GA4 channel condition with a regex</title><desc id="d">Channel name AI assistants. Condition: Source, matches regex, chatgpt or openai or perplexity or claude or gemini or copilot.</desc>
+<rect width="1200" height="300" fill="#fff"/>
+<g font-family="system-ui,Arial,sans-serif" fill="#0F1B2D"><text x="48" y="52" font-size="28" font-weight="600">What goes in the condition</text>
+<rect x="48" y="84" width="1104" height="170" fill="#EEF2F7" stroke="#0F1B2D" stroke-width="3"/>
+<text x="76" y="124" font-size="18" fill="#556070">Channel name</text><text x="76" y="154" font-size="22" font-weight="600">AI assistants</text>
+<text x="400" y="124" font-size="18" fill="#556070">Dimension</text><text x="400" y="154" font-size="22" font-weight="600">Source</text>
+<text x="560" y="124" font-size="18" fill="#556070">Match type</text><text x="560" y="154" font-size="22" font-weight="600">matches regex</text>
+<rect x="76" y="184" width="1048" height="48" fill="#fff" stroke="#1F4FD8" stroke-width="2"/><text x="96" y="216" font-size="22" font-family="ui-monospace,Menlo,monospace">(chatgpt|openai|perplexity|claude|gemini|copilot)</text></g></svg>

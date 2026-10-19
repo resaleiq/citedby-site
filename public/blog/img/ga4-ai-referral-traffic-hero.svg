@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+<title id="t">Is AI traffic converting? Set up GA4</title><desc id="d">Three steps: find AI sources in your report, create an AI assistants channel, move it above Referral.</desc>
+<rect width="1200" height="630" fill="#EEF2F7"/><rect width="1200" height="12" fill="#0F1B2D"/>
+<text x="72" y="130" font-family="Georgia,'Times New Roman',serif" font-size="60" font-weight="600" fill="#0F1B2D">Is AI traffic converting?</text><text x="72" y="200" font-family="Georgia,'Times New Roman',serif" font-size="60" font-weight="600" fill="#0F1B2D">Set up GA4 to see it.</text>
+<text x="72" y="258" font-family="system-ui,Arial,sans-serif" font-size="26" fill="#556070">An AI assistants channel in three steps</text>
+<g font-family="system-ui,Arial,sans-serif" font-size="24" fill="#0F1B2D">
+<rect x="72" y="320" width="330" height="200" fill="#fff" stroke="#0F1B2D" stroke-width="3"/><text x="94" y="372" font-size="40" font-weight="600" fill="#1F4FD8">1</text><text x="94" y="420" font-weight="600">Find the sources</text><text x="94" y="452" font-size="19" fill="#556070">Traffic acquisition</text>
+<rect x="435" y="320" width="330" height="200" fill="#fff" stroke="#0F1B2D" stroke-width="3"/><text x="457" y="372" font-size="40" font-weight="600" fill="#1F4FD8">2</text><text x="457" y="420" font-weight="600">Create the channel</text><text x="457" y="452" font-size="19" fill="#556070">Source matches regex</text>
+<rect x="798" y="320" width="330" height="200" fill="#fff" stroke="#0F1B2D" stroke-width="3"/><text x="820" y="372" font-size="40" font-weight="600" fill="#1F4FD8">3</text><text x="820" y="420" font-weight="600">Move above Referral</text><text x="820" y="452" font-size="19" fill="#556070">First match wins</text></g>
+<text x="72" y="590" font-family="system-ui,Arial,sans-serif" font-size="22" fill="#0F1B2D" font-weight="600">CitedBy · citedby.eu</text></svg>
