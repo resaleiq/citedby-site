@@ -2,7 +2,7 @@
 import os, re, sys, unittest
 os.environ.setdefault("OPTIN_SECRET", "x" * 40)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import importlib.util, i18n
+import importlib.util, langroutes
 _s = importlib.util.spec_from_file_location("localize_landing", os.path.join(os.path.dirname(os.path.abspath(__file__)), "tools", "localize_landing.py")); L = importlib.util.module_from_spec(_s); _s.loader.exec_module(L)
 
 class T(unittest.TestCase):
@@ -13,7 +13,7 @@ class T(unittest.TestCase):
     def test_every_page_has_canonical_and_five_hreflangs(self):
         for lang, path in (("en", ""), ("fr", "/fr"), ("nl", "/nl"), ("de", "/de"), ("es", "/es")):
             f = "landing.html" if lang == "en" else f"landing.{lang}.html"
-            doc = i18n.head(open(os.path.join(L.PUB, f), encoding="utf-8").read(), lang)
+            doc = langroutes.head(open(os.path.join(L.PUB, f), encoding="utf-8").read(), lang)
             self.assertIn(f'<html lang="{lang}">', doc)
             self.assertIn(f'<link rel="canonical" href="https://citedby.eu{path or "/"}">', doc)
             self.assertEqual(len(re.findall(r'rel="alternate" hreflang="', doc)), 6)  # en fr nl de es x-default
@@ -35,8 +35,8 @@ class T(unittest.TestCase):
             self.assertIsNone(re.search(r"\bllms?\b(?!\.txt)", d))
 
     def test_routes(self):
-        self.assertEqual(i18n.LANDING_PATHS, {"/fr": "fr", "/nl": "nl", "/de": "de", "/es": "es"})
+        self.assertEqual(langroutes.LANDING_PATHS, {"/fr": "fr", "/nl": "nl", "/de": "de", "/es": "es"})
         src = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "server.py")).read()
-        self.assertNotIn('LAUNCH_REDIRECTS = {"/fr"', src); self.assertIn("i18n.head(", src)
+        self.assertNotIn('LAUNCH_REDIRECTS = {"/fr"', src); self.assertIn("langroutes.head(", src)
 
 if __name__ == "__main__": unittest.main()

@@ -7,7 +7,7 @@ import base64, hashlib, hmac, html, json, mimetypes, os, re, sqlite3, threading,
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 
-import analytics, doorcheck, home, i18n, pages, proxy, safefetch
+import analytics, doorcheck, home, langroutes, pages, proxy, safefetch
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CONSENT_VERSION = "2026-10-15.v1"
@@ -350,10 +350,10 @@ class H(BaseHTTPRequestHandler):
             return self.out(410, page("Gone"))
         if path in LAUNCH_REDIRECTS:  # RES-1496: the old shop-scan pages are retired; their paths lead to the new landing
             return self.out(301, b"", extra={"Location": LAUNCH_REDIRECTS[path]})
-        if path == "/" or path in i18n.LANDING_PATHS:  # RES-1731 row 10: / is English, /fr /nl /de /es are real translations (tools/localize_landing.py)
-            lang = i18n.LANDING_PATHS.get(path, "en")
+        if path == "/" or path in langroutes.LANDING_PATHS:  # RES-1731 row 10: / is English, /fr /nl /de /es are real translations (tools/localize_landing.py)
+            lang = langroutes.LANDING_PATHS.get(path, "en")
             with open(os.path.join(SITE_DIR, "landing.html" if lang == "en" else f"landing.{lang}.html"), encoding="utf-8") as f:
-                return self.out(200, i18n.head(landing_html(f.read()), lang).encode())
+                return self.out(200, langroutes.head(landing_html(f.read()), lang).encode())
         if path == "/data/":
             return self.out(301, b"", extra={"Location": "/data"})
         if path in HOME_ROUTES:

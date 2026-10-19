@@ -68,7 +68,8 @@ class T(unittest.TestCase):
     def test_response_headers_are_filtered_and_robots_blocked(self):
         s, b, h = self.get("/plans")
         self.assertEqual(h["Set-Cookie"], "ci_session=v; Path=/; HttpOnly")
-        self.assertEqual(h["X-Robots-Tag"], "noindex"); self.assertEqual(h["Cache-Control"], "no-store")
+        self.assertIsNone(h["X-Robots-Tag"]); self.assertEqual(h["Cache-Control"], "no-store")  # RES-1731: pricing is meant to be found
+        self.assertEqual(self.get("/dashboard")[2]["X-Robots-Tag"], "noindex"); self.assertIsNone(self.get("/fr/plans")[2]["X-Robots-Tag"])
         self.assertNotIn("leak", (h.get("Server") or ""))
 
     def test_post_body_and_redirect_pass_through(self):
