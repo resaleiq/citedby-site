@@ -30,7 +30,7 @@ class T(unittest.TestCase):
             d = open(os.path.join(L.PUB, f"landing.{lang}.html"), encoding="utf-8").read()
             self.assertIn(must, d); self.assertNotIn(banned, d)
             self.assertNotIn("<summary>What do I get", d)  # the stray English toggle (RES-1753) is gone
-            self.assertIn(f'href="/{lang}/plans"', d); self.assertNotIn('href="/plans"', d)
+            self.assertIn(f'href="/{lang}/plans?plan=', d); self.assertNotIn('href="/plans', d)  # RES-1897: pricing buttons pre-select their plan
             for w in ("Run my audit", "Questions</h2>", "Recommended", "Skip to content"): self.assertNotIn(w, d)
 
     def test_no_ai_wording_as_method(self):
