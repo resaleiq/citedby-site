@@ -7,7 +7,7 @@ import base64, hashlib, hmac, html, json, mimetypes, os, re, sqlite3, threading,
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 
-import analytics, doorcheck, home, pages, proxy, safefetch
+import analytics, doorcheck, home, i18n, pages, proxy, safefetch
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CONSENT_VERSION = "2026-10-15.v1"
@@ -306,7 +306,7 @@ def landing_html(s):
     return _re.sub(r"<!--/?N-->", "", _re.sub(r"<!--T-->.*?<!--/T-->", "", s, flags=_re.S))
 
 GONE = {"/data/" + n + ext for n in ("the-france", "cafe-france", "cafe-belgique", "koffie-belgie", "coffee-ireland") for ext in ("", ".csv")}  # RES-1459 row 6: retired tea/coffee studies answer 410
-LAUNCH_REDIRECTS = {"/fr": "/", "/nl": "/", "/pricing": "/#pricing", "/faq": "/#faq", "/sample-audit": "/sample", "/check": "/", "/partners": "/", "/fr/check": "/", "/nl/check": "/", "/fixpack": "/#fixpack", "/fix-pack": "/#fixpack"}
+LAUNCH_REDIRECTS = {"/pricing": "/#pricing", "/faq": "/#faq", "/sample-audit": "/sample", "/check": "/", "/partners": "/", "/fr/check": "/", "/nl/check": "/", "/fixpack": "/#fixpack", "/fix-pack": "/#fixpack"}
 ROUTES = {"/check": "check.html", "/fr/check": "fr/check.html", "/nl/check": "nl/check.html",
           "/legal": "legal.html", "/privacy": "privacy.html"}
 CSP = ("default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'; connect-src 'self'; "
@@ -350,9 +350,10 @@ class H(BaseHTTPRequestHandler):
             return self.out(410, page("Gone"))
         if path in LAUNCH_REDIRECTS:  # RES-1496: the old shop-scan pages are retired; their paths lead to the new landing
             return self.out(301, b"", extra={"Location": LAUNCH_REDIRECTS[path]})
-        if path == "/":
-            with open(os.path.join(SITE_DIR, "landing.html"), encoding="utf-8") as f:
-                return self.out(200, landing_html(f.read()).encode())
+        if path == "/" or path in i18n.LANDING_PATHS:  # RES-1731 row 10: / is English, /fr /nl /de /es are real translations (tools/localize_landing.py)
+            lang = i18n.LANDING_PATHS.get(path, "en")
+            with open(os.path.join(SITE_DIR, "landing.html" if lang == "en" else f"landing.{lang}.html"), encoding="utf-8") as f:
+                return self.out(200, i18n.head(landing_html(f.read()), lang).encode())
         if path == "/data/":
             return self.out(301, b"", extra={"Location": "/data"})
         if path in HOME_ROUTES:
