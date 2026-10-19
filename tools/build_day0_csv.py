@@ -4,7 +4,7 @@ Usage: build_day0_csv.py <raw-citedby.eu.jsonl> [out.csv]   (writes public/data/
        build_day0_csv.py --recount [csv]                     (prints 'named X of N')"""
 import csv, json, re, sys
 OUT = "public/data/day0-citedby-eu.csv"
-COLS = ["prompt_id", "counted", "run", "assistant", "prompt", "answer", "urls", "model", "date"]
+COLS = ["prompt_id", "counted", "run", "assistant", "prompt", "answer", "urls", "date"]
 NAMED = re.compile(r"citedby", re.I)
 
 def build(src, out=OUT):
@@ -19,7 +19,7 @@ def build(src, out=OUT):
         for (i, e), r in sorted(rows.items()):
             _, q, run = i.split("|")
             counted = "yes" if re.fullmatch(r"q[1-6]", q) else "no"
-            w.writerow([f"{q}", counted, run, e, r["prompt"], r["answer"], " ".join(r.get("links", [])), r.get("model", ""), r["ts"][:10]])
+            w.writerow([f"{q}", counted, run, e, r["prompt"], r["answer"], " ".join(r.get("links", [])), r["ts"][:10]])
     return len(rows)
 
 def recount(path=OUT):
