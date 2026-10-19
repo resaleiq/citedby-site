@@ -14,3 +14,7 @@ def test_privacy_does_not_overclaim_the_export():
     html = open("public/privacy.html", encoding="utf-8").read()
     assert "export everything we hold" not in html
     assert "export your account data" in html
+
+
+def test_privacy_names_the_server_location_res1909():
+    assert "Hetzner Online GmbH (our servers, in Helsinki, Finland, EU)" in open("public/privacy.html").read()
