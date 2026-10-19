@@ -7,8 +7,8 @@ from urllib.parse import urlparse
 
 UPSTREAM = os.environ.get("APP_UPSTREAM", "").rstrip("/")
 ROUTES = {
-    "GET": re.compile(r"/((fr|nl)/instant|instant|plans|thanks|dashboard|account|report/[A-Za-z0-9_-]{20,64}|r/[A-Za-z0-9_-]{16,64}(\.csv)?|start/[A-Za-z0-9_-]{20,64}|api/account/export|api/guess|api/grade|ci|ci/ai-crawler-check\.sh|grade|api/snapshot/(\d+|[A-Za-z0-9_-]{16,64})|signin|logout|app\.html|saas\.css|saas\.js|sample\.js|landing\.js|audit|api/me|api/projects|api/audits(/[A-Za-z0-9_]{3,40}(/(pages|page))?)?|api/audit/[A-Za-z0-9_]{3,40}(/(pages|page|pdf|issue/[a-z0-9_]{2,60}))?|api/site|api/share/[A-Za-z0-9_]{3,40}|r/audit/[A-Za-z0-9_]{3,40}|login/[A-Za-z0-9_-]{20,64}|recount/[A-Za-z0-9_-]{20,64}|api/crawl/[A-Za-z0-9_-]{1,64})"),
-    "POST": re.compile(r"/(api/crawl|api/audits|api/audit|api/audit/[A-Za-z0-9_]{3,40}/recrawl|api/snapshot|api/stripe/webhook|api/fixpack/intake|api/account/(link|delete)|api/portal|api/checkout|login/[A-Za-z0-9_-]{20,64})"),
+    "GET": re.compile(r"/((fr|nl)/instant|instant|plans|thanks|dashboard|account|report/[A-Za-z0-9_-]{20,64}|r/[A-Za-z0-9_-]{16,64}(\.csv)?|start/[A-Za-z0-9_-]{20,64}|api/account/export|api/guess|api/grade|ci|ci/ai-crawler-check\.sh|grade|api/snapshot/(\d+|[A-Za-z0-9_-]{16,64})|signin|login|signup|forgot|logout|auth/google(/callback)?|reset/[A-Za-z0-9_-]{20,64}|app\.html|saas\.css|saas\.js|sample\.js|landing\.js|audit|sample|api/me|api/projects|api/audits(/[A-Za-z0-9_]{3,40}(/(pages|page))?)?|api/audit/[A-Za-z0-9_]{3,40}(/(pages|page|pdf|issue/[a-z0-9_]{2,60}))?|api/site|api/share/[A-Za-z0-9_]{3,40}|r/audit/[A-Za-z0-9_]{3,40}|login/[A-Za-z0-9_-]{20,64}|trial/cancel/[A-Za-z0-9_.-]{20,100}|recount/[A-Za-z0-9_-]{20,64}|api/crawl/[A-Za-z0-9_-]{1,64})"),
+    "POST": re.compile(r"/(api/crawl|api/audits|api/audit|api/audit/[A-Za-z0-9_]{3,40}/recrawl|api/snapshot|api/stripe/webhook|api/fixpack/intake|api/account/(link|delete)|api/auth/(signup|login|forgot|reset)|api/portal|api/checkout|login/[A-Za-z0-9_-]{20,64}|trial/cancel/[A-Za-z0-9_.-]{20,100})"),
 }
 PASS = ("Content-Type", "Cache-Control", "Set-Cookie", "Location", "Referrer-Policy", "Content-Security-Policy")
 _H = {"t": 0.0, "u": "", "v": None}
@@ -41,7 +41,7 @@ def handle(h, method):
             _send(h, 413, {}, b'{"error":"too large"}'); return True
         body = h.rfile.read(n) if n else b""
     hdr = {"X-Forwarded-For": h.ip()}
-    for k in ("Content-Type", "Cookie", "Stripe-Signature"):
+    for k in ("Content-Type", "Cookie", "Stripe-Signature", "Accept"):  # Accept: the app serves /account as HTML only when it contains text/html (RES-1595)
         if h.headers.get(k): hdr[k] = h.headers[k]
     try:
         code, rh, rb = _call(urllib.request.Request(UPSTREAM + h.path, body, hdr, method=method), 20)

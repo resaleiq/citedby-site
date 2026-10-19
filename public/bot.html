@@ -1,4 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CitedBot, our site crawler. CitedBy</title><meta name="description" content="CitedBot crawls a site only when its owner or a visitor asks for an audit. It obeys robots.txt and waits at least 1 second between requests."><link rel="canonical" href="https://citedby.eu/bot"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="stylesheet" href="/style.css?v=4d2c24a4"></head><body><header class="top"><a class="logo" href="/" aria-label="CitedBy home">CitedBy<i aria-hidden="true">1</i></a></header><main class="doc"><h1>CitedBot</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CitedBot, our site crawler. CitedBy</title><meta name="description" content="CitedBot crawls a site only when its owner or a visitor asks for an audit. It obeys robots.txt and waits at least 1 second between requests."><link rel="canonical" href="https://citedby.eu/bot"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="stylesheet" href="/saas.css"><link rel="stylesheet" href="/doc.css?v=f556ede2"></head><body class="cb dc"><a class="sr" href="#main">Skip to content</a>
+<header class="topbar"><div class="in"><a class="mark" href="/"><i></i>CitedBy</a><nav aria-label="Main"><a class="opt" href="/#checks">What we check</a><a href="/plans">Pricing</a><a href="/blog">Guides</a><a class="opt" href="/data">Data</a></nav><a class="signin" href="/signin?next=%2Fapp.html">Sign in</a><a class="btn sm go" href="/app.html#/new">Audit a site</a></div></header><main id="main"><h1>CitedBot</h1>
 <p>CitedBot is the crawler behind CitedBy site audits: it crawls your pages, analyses them and reports what to fix. Its User-Agent header is:</p>
 <p><code>Mozilla/5.0 (compatible; CitedBot/1.0; +https://citedby.eu/bot)</code></p>
 <h2>When it visits</h2>
@@ -7,7 +8,7 @@
 <ul>
 <li>It reads your robots.txt first and obeys it. It follows the group <code>User-agent: CitedBot</code> and, if there is none, the group <code>User-agent: *</code>.</li>
 <li>It waits at least 1 second between requests to your site.</li>
-<li>It stops at a page limit set by the plan of the audit: 25, 250 or 1,000 pages.</li>
+<li>It stops at a page limit set by the plan of the audit: 500, 1,000, 5,000 or 10,000 pages.</li>
 <li>It only reads public pages. It does not log in, submit forms or run scripts.</li>
 </ul>
 <h2>Block it</h2>
@@ -16,4 +17,4 @@
 Disallow: /</code></pre>
 <p>To keep it out of one folder only, use <code>Disallow: /folder/</code> instead.</p>
 <h2>Contact</h2>
-<p>Questions or a request to stop crawling: hello@citedby.eu. We answer the same business day.</p></main><footer><span>© 2026 CitedBy. hello@citedby.eu</span><span><a href="/">Home</a> &nbsp; <a href="/terms">Terms</a> &nbsp; <a href="/refund">Refunds</a> &nbsp; <a href="/about">About</a> &nbsp; <a href="/legal">Legal notice</a> &nbsp; <a href="/privacy">Privacy</a></span></footer></body></html>
+<p>Questions or a request to stop crawling: hello@citedby.eu. We answer the same business day.</p></main><footer><div class="w"><span>© 2026 CitedBy · <a href="mailto:hello@citedby.eu">hello@citedby.eu</a></span><a href="/plans">Pricing</a><a href="/blog">Guides</a><a href="/data">Data</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/refund">Refunds</a><a href="/contact">Contact</a><a href="/legal">Legal notice</a></div></footer></body></html>

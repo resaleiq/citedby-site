@@ -80,17 +80,18 @@ def data():
     t = home.T["en"]
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": DATA_TITLE, "url": "https://citedby.eu/data", "inLanguage": "en",
            "hasPart": [{"@type": "Dataset", "name": n, "url": "https://citedby.eu" + h} for h, n, _ in DATA_ROWS]}]
-    study = '<li><a href="/data/study-buyer-questions-claude">64 Claude answers to 32 buyer questions in 2 EU niches: who gets linked</a></li>'
+    study = ('<li><a href="/data/study-buyer-questions-claude">64 Claude answers to 32 buyer questions in 2 EU niches: who gets linked</a></li>'
+             '<li><a href="/data/study-chatgpt-buyer-questions">127 ChatGPT answers to 64 buyer questions in 5 EU niches: who gets linked</a></li>')
     rows = "".join(f'<li><a href="{h}" hreflang="{l}">{E(n)}</a> <span class="src">({E(m)})</span></li>' for h, n, (l, m) in [(h, n, (m.split(",")[0].lower(), m)) for h, n, m in DATA_ROWS])
-    main = (f'<section class="pagehead on-navy"><div class="wrap"><h1>Who Claude links when buyers ask where to shop</h1>'
-            f'<p class="lede">Dated counts from our own runs of Claude (Anthropic API, web search on): which shop sites appear in the answers to buyer questions, by niche and country. Every page shows the questions, the method and the raw counts. One assistant only.</p></div></section>'
+    main = (f'<section class="pagehead on-navy"><div class="wrap"><h1>Who AI assistants link when buyers ask where to shop</h1>'
+            f'<p class="lede">Dated counts from our own runs of Claude and ChatGPT with web search on: which shop sites appear in the answers to buyer questions, by niche and country. Every page shows the questions, the method and the raw counts. Each page names the one assistant it counted.</p></div></section>'
             f'<div class="wrap dlist"><section><h2>Study</h2><ul>{study}</ul></section><section><h2>By niche and country</h2><ul>{rows}</ul></section></div>'
             f'<section class="endcta band"><div class="wrap"><h2>Want the same count for your shop?</h2><p class="lede">{E(t["micro"])}</p><p><a class="btn" href="/grade">{E(t["go"])}</a></p></div></section>')
     return shell.document("en", "CitedBy data: who Claude links when buyers ask where to shop", "Dated counts from our runs of Claude with web search: which shop sites get linked for buyer questions, by niche and country.", "/data", main, ld=ld, current="/data")
 
 
 DATA_TITLE = "CitedBy data: who Claude links when buyers ask where to shop"
-DATA_ROWS = [("/data/the-france", "Quelles boutiques Claude cite pour acheter du thé en ligne en France", "FR, 16 answers, 18 Oct 2026"),
-             ("/data/cafe-france", "Quelles boutiques Claude cite pour acheter du café en grains en ligne en France", "FR, 16 answers, 18 Oct 2026"),
-             ("/data/cafe-belgique", "Quelles boutiques Claude cite pour acheter du café en grains en ligne en Belgique", "FR, 16 answers, 18 Oct 2026"),
-             ("/data/koffie-belgie", "Welke webshops Claude linkt voor koffiebonen kopen in België", "NL, 16 answers, 18 Oct 2026")]
+DATA_ROWS = [
+             ("/data/matelas-france", "Matelas en ligne en France : les marques que ChatGPT cite", "FR, ChatGPT"),
+             ("/data/complements-alimentaires-france", "Compléments alimentaires en France : les marques que ChatGPT cite", "FR, ChatGPT"),
+             ("/data/complements-beaute-france", "Compléments beauté et collagène : les marques que ChatGPT cite", "FR, ChatGPT")]

@@ -1,0 +1,44 @@
+/* Reading pages (terms, privacy, blog, data, guides) on the saas.css shell (RES-1551). Loaded after /saas.css; blog.css and data.css still add their own blocks. */
+.dc{--page:#fff;--text:var(--ink);--muted:var(--mut);--accent:var(--navy);--correction:var(--fail);--s1:4px;--s2:8px;--s3:12px;--s4:16px;--s6:24px;--s8:32px;--s12:48px;--s16:64px;
+ background:#fff;font:400 17px/1.65 var(--sans);color:var(--ink)}
+.dc main{max-width:720px;margin:0 auto;padding:44px 20px 72px}
+.dc main.wide{max-width:860px}
+.dc main.art{max-width:760px}
+.dc h1{font-size:clamp(30px,5vw,44px);line-height:1.1;letter-spacing:-.01em;margin:0 0 20px}
+.dc h2{font-size:clamp(22px,3.4vw,28px);line-height:1.2;margin:40px 0 12px}
+.dc h3{font-size:20px;margin:28px 0 8px}
+.dc p{margin:0 0 16px}
+.dc ul,.dc ol{padding-left:1.3em;margin:0 0 20px}
+.dc li{margin-bottom:6px}
+.dc .lede{font-size:19px;color:var(--mut);margin:0 0 32px;max-width:36em}
+.dc .skip{position:absolute;left:-999px}
+.dc .dateline,.dc .byline{font-size:14px;color:var(--mut);margin:0 0 20px}
+.dc .gloss,.dc .note,.dc .src{font-size:14px;line-height:1.5;color:var(--mut)}
+.dc .sub{max-width:36em}
+.dc .tw{overflow-x:auto;margin:0 0 24px}
+.dc table{border-collapse:collapse;width:100%;font:400 15px/1.45 var(--sans)}
+.dc th{text-align:left;font-weight:600;color:var(--navy);border-bottom:2px solid var(--navy);padding:8px 14px 8px 0}
+.dc td{padding:10px 14px 10px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.dc td:last-child,.dc th:last-child{padding-right:0}
+.dc .btn.p,.dc a.btn{background:var(--amber);border:0;color:var(--amber-ink);text-decoration:none}
+.dc .btn.p:hover,.dc a.btn:hover{filter:brightness(.95)}
+.dc .actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin:0 0 20px}
+.dc details{border-bottom:1px solid var(--rule)}
+.dc summary{cursor:pointer;font-weight:600;color:var(--navy);padding:14px 0}
+.dc pre{background:var(--wash);border-left:4px solid var(--navy);padding:14px 18px;overflow-x:auto;font-size:14px;line-height:1.55}
+.dc code{font-size:.9em}
+.dc .steps{list-style:none;padding:0;counter-reset:s}
+.dc .steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:12px;padding:16px 0;border-top:1px solid var(--rule)}
+.dc .steps li::before{content:counter(s);font:600 24px/1 var(--serif);color:var(--navy)}
+.dc .crumb{font-size:14px}
+.dc .transcript{border-left:4px solid var(--navy);background:var(--wash);padding:16px 20px;font:400 15px/1.55 var(--mono);margin:0 0 24px}
+.dc .cta,.dc .cta2{margin-top:44px;padding:24px;background:var(--navy);color:#fff;border-radius:var(--r);border:0}
+.dc .cta h2,.dc .cta2 h2{color:#fff;margin-top:0}
+.dc .cta p,.dc .cta2 p{color:#D5DDEA}
+.dc .cta a:not(.btn),.dc .cta2 a:not(.btn){color:#fff}
+.dc footer{background:var(--navy);color:#C9D2DF;font-size:14px}
+.dc footer .w{max-width:1280px;margin:0 auto;padding:28px 20px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center}
+.dc footer a{color:#fff;display:inline-block;padding:6px 0}
+.dc .topbar .go{margin-left:4px}
+.dc .topbar .signin{color:#D5DDEA;margin-right:12px;font-size:15px;white-space:nowrap;text-decoration:none}
+@media(max-width:720px){.dc .topbar .in{gap:10px;padding:0 12px}.dc .topbar nav a{padding:8px}.dc .topbar nav .opt,.dc .topbar .signin{display:none}.dc main{padding:28px 16px 56px}}

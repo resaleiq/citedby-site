@@ -62,3 +62,8 @@ def test_faq_schema_matches_dom():
     h = PAGES["/faq"]
     ld = json.loads(re.search(r'application/ld\+json">(.*?)</script>', h, re.S).group(1))
     assert ld["@type"] == "FAQPage" and len(ld["mainEntity"]) == h.count("<details")
+
+
+def test_sample_audit_lands_on_sample_report():  # RES-1632: article links to /sample-audit must reach the sample report, not the home page
+    src = open(os.path.join(sys_path, "server.py")).read()
+    assert '"/sample-audit": "/sample"' in src and '"/sample-audit": "/"' not in src

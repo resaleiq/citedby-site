@@ -109,3 +109,15 @@ def pages_faq():
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class LandingVariants(unittest.TestCase):
+    def test_trial_wording_follows_the_flag(self):
+        import os, tempfile
+        os.environ.setdefault("OPTIN_SECRET", "x" * 40); os.environ.setdefault("BASE_URL", "http://t"); os.environ.setdefault("DATA_DIR", tempfile.mkdtemp())
+        import server
+        raw = open(os.path.join(os.path.dirname(__file__), "public", "landing.html"), encoding="utf-8").read()
+        for flag in ("", "1"):
+            os.environ["CITEDBY_TRIAL"] = flag; h = server.landing_html(raw)
+            self.assertEqual("7-day free trial" in h, flag == "1"); self.assertNotIn("<!--", h); self.assertNotIn("in one click", h.lower())
+        os.environ.pop("CITEDBY_TRIAL", None)

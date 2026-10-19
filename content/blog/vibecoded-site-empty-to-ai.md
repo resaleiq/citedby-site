@@ -27,7 +27,7 @@ Vercel analysed AI crawler traffic across its network and reported that none of 
 1. Open your homepage in a browser, right click and choose View page source (not Inspect, which shows the page after scripts ran).
 2. Search the source for your main headline and one price or product name.
 3. If you find them in the text, crawlers can read them. If you find only a `<div id="root"></div>` and script tags, the page is empty to a crawler that skips JavaScript.
-4. Run the free check in the box above. It fetches your page with a plain request, without running scripts, and counts the readable words in the HTML.
+4. Audit your site with the box above (from €9). It fetches your page with a plain request, without running scripts, and counts the readable words in the HTML.
 
 For a command-line version, `curl -s https://yourshop.com/ | head -c 3000` prints the start of what a crawler gets.
 
@@ -42,7 +42,7 @@ We found no equivalent statement from Bolt or other builders, so we make no clai
 | Your setup | Fix | Check afterwards |
 | --- | --- | --- |
 | New Lovable app (TanStack Start) | Nothing to switch, rendering is on the server | View source on the live address |
-| Older Lovable app (React + Vite) | Confirm the live address returns the text, and read Lovable's rendering notes for options | View source, and the free check |
+| Older Lovable app (React + Vite) | Confirm the live address returns the text, and read Lovable's rendering notes for options | View source, and the audit |
 | React + Vite you host yourself | Move critical pages to server rendering or prerender them at build time | View source on each key page |
 | Next.js | Pages and layouts are Server Components by default, which render on the server ([Next.js docs](https://nextjs.org/docs/app/getting-started/server-and-client-components)). Keep price and description out of client-only components | View source |
 | Other builder | Ask the vendor how published pages are rendered, then test | View source |
@@ -73,4 +73,4 @@ Vercel reports Gemini uses Googlebot's infrastructure and can render JavaScript.
 - [Vercel: the rise of the AI crawler](https://vercel.com/blog/the-rise-of-the-ai-crawler)
 - [Lovable FAQ: rendering and SEO](https://docs.lovable.dev/introduction/faq)
 - [Next.js: Server and Client Components](https://nextjs.org/docs/app/getting-started/server-and-client-components)
-- [CitedBy free check, method note](https://citedby.eu/check)
+- [CitedBy site audit](https://citedby.eu/)

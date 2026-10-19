@@ -9,6 +9,9 @@
 - [AI visibility audit guide](https://citedby.eu/ai-visibility-audit): what such an audit checks
 - [Data by niche](https://citedby.eu/data/study-buyer-questions-claude): published study with method and CSV
 
+- [How an audit works (methodology)](https://citedby.eu/methodology): what is crawled, checked and scored, and what we do not claim
+- [About CitedBy](https://citedby.eu/about): which CitedBy this is and who operates it
+
 ## Terms
 - [Terms of service](https://citedby.eu/terms)
 - [Refunds and guarantees](https://citedby.eu/refund)

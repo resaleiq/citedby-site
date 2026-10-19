@@ -5,13 +5,14 @@ import proxy
 
 SEEN = []
 SIG = []
+ACCEPT = []
 
 class Stub(BaseHTTPRequestHandler):
     def log_message(self, *a): pass
     def _do(self):
         n = int(self.headers.get("Content-Length") or 0)
         SEEN.append((self.command, self.path, self.headers.get("X-Forwarded-For"), self.headers.get("Cookie"), self.rfile.read(n)))
-        SIG.append(self.headers.get("Stripe-Signature"))
+        SIG.append(self.headers.get("Stripe-Signature")); ACCEPT.append(self.headers.get("Accept"))
         if self.path.startswith("/health"):
             b = b'{"status":"ok","deploy":"abc1234","db":"ok","ok":true}'
         else:
@@ -60,6 +61,10 @@ class T(unittest.TestCase):
         m, path, xff, ck, _ = SEEN[0]
         self.assertEqual(xff, "203.0.113.9"); self.assertEqual(ck, "ci_session=abc")
 
+    def test_accept_header_is_forwarded(self):  # RES-1595: the app returns the HTML /account (or 303 to /signin) only for Accept: text/html
+        ACCEPT.clear(); self.get("/account", headers={"Accept": "text/html,application/xhtml+xml"})
+        self.assertEqual(ACCEPT[0], "text/html,application/xhtml+xml")
+
     def test_response_headers_are_filtered_and_robots_blocked(self):
         s, b, h = self.get("/plans")
         self.assertEqual(h["Set-Cookie"], "ci_session=v; Path=/; HttpOnly")
@@ -100,9 +105,20 @@ if __name__ == "__main__": unittest.main()
 class RouteTable(unittest.TestCase):
     def test_launch_routes_are_forwarded(self):
         g, p = proxy.ROUTES["GET"], proxy.ROUTES["POST"]
-        for path in ("/signin", "/logout", "/api/me", "/api/projects", "/api/audits", "/api/audits/a_k3j2h1", "/api/audits/a_k3j2h1/pages", "/api/audits/a_k3j2h1/page", "/api/audit/a_k3j2h1/pdf", "/r/audit/a_k3j2h1", "/plans", "/app.html", "/saas.js", "/saas.css", "/sample.js", "/landing.js", "/bot"):
+        for path in ("/signin", "/login", "/signup", "/logout", "/api/me", "/api/projects", "/api/audits", "/api/audits/a_k3j2h1", "/api/audits/a_k3j2h1/pages", "/api/audits/a_k3j2h1/page", "/api/audit/a_k3j2h1/pdf", "/r/audit/a_k3j2h1", "/plans", "/app.html", "/saas.js", "/saas.css", "/sample.js", "/landing.js", "/sample"):
             self.assertTrue(g.fullmatch(path), path)
         for path in ("/api/audits", "/api/audit", "/api/audit/a_k3j2h1/recrawl", "/api/checkout"):
             self.assertTrue(p.fullmatch(path), path)
         for path in ("/api/audits/../x", "/api/audits/a_k3j2h1/other", "/admin"):
             self.assertFalse(g.fullmatch(path), path)
+
+def test_auth_routes_are_forwarded_res1641():
+    import proxy
+    for p in ("/forgot", "/reset/" + "a" * 30, "/auth/google", "/auth/google/callback"): assert proxy.ROUTES["GET"].fullmatch(p), p
+    for p in ("/api/auth/signup", "/api/auth/login", "/api/auth/forgot", "/api/auth/reset"): assert proxy.ROUTES["POST"].fullmatch(p), p
+
+
+def test_trial_cancel_paths_are_forwarded():
+    import proxy
+    p = "/trial/cancel/sub_1ABC.deadbeefdeadbeefdeadbeef"
+    assert proxy.ROUTES["GET"].fullmatch(p) and proxy.ROUTES["POST"].fullmatch(p)

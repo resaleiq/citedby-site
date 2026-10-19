@@ -291,7 +291,7 @@ def render_home(lang):  # the assistant list is read on every request: a stale t
     return home.render(lang, home.live_engines(engines_file())).encode()
 
 
-PAGE_ROUTES = {"/pricing": "pricing", "/faq": "faq", "/thanks": "thanks", "/data": "data"}  # shared-shell pages (RES-1335); /thanks is the app's when proxy.py forwards it
+PAGE_ROUTES = {"/pricing": "pricing", "/faq": "faq", "/thanks": "thanks"}  # shared-shell pages (RES-1335); /thanks is the app's when proxy.py forwards it
 
 
 def render_page(name):
@@ -299,7 +299,14 @@ def render_page(name):
     return (pages.thanks() if name == "thanks" else pages.data() if name == "data" else getattr(pages, name)(eng)).encode()
 
 
-LAUNCH_REDIRECTS = {"/fr": "/", "/nl": "/", "/pricing": "/#pricing", "/faq": "/#faq", "/data": "/", "/sample-audit": "/", "/check": "/", "/fr/check": "/", "/nl/check": "/"}
+def landing_html(s):
+    """Trial wording (blocks <!--T-->..<!--/T-->) only when CITEDBY_TRIAL=1; the no-trial wording (<!--N-->) otherwise. Same markers as the app's landing."""
+    import re as _re
+    if os.environ.get("CITEDBY_TRIAL") == "1": return _re.sub(r"<!--/?T-->", "", _re.sub(r"<!--N-->.*?<!--/N-->", "", s, flags=_re.S))
+    return _re.sub(r"<!--/?N-->", "", _re.sub(r"<!--T-->.*?<!--/T-->", "", s, flags=_re.S))
+
+GONE = {"/data/" + n + ext for n in ("the-france", "cafe-france", "cafe-belgique", "koffie-belgie", "coffee-ireland") for ext in ("", ".csv")}  # RES-1459 row 6: retired tea/coffee studies answer 410
+LAUNCH_REDIRECTS = {"/fr": "/", "/nl": "/", "/pricing": "/#pricing", "/faq": "/#faq", "/sample-audit": "/sample", "/check": "/", "/partners": "/", "/fr/check": "/", "/nl/check": "/", "/fixpack": "/#fixpack", "/fix-pack": "/#fixpack"}
 ROUTES = {"/check": "check.html", "/fr/check": "fr/check.html", "/nl/check": "nl/check.html",
           "/legal": "legal.html", "/privacy": "privacy.html"}
 CSP = ("default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'; connect-src 'self'; "
@@ -339,11 +346,13 @@ class H(BaseHTTPRequestHandler):
             self.wfile.write(body)
 
     def static(self, path):
+        if path in GONE:
+            return self.out(410, page("Gone"))
         if path in LAUNCH_REDIRECTS:  # RES-1496: the old shop-scan pages are retired; their paths lead to the new landing
             return self.out(301, b"", extra={"Location": LAUNCH_REDIRECTS[path]})
         if path == "/":
-            with open(os.path.join(SITE_DIR, "landing.html"), "rb") as f:
-                return self.out(200, f.read())
+            with open(os.path.join(SITE_DIR, "landing.html"), encoding="utf-8") as f:
+                return self.out(200, landing_html(f.read()).encode())
         if path == "/data/":
             return self.out(301, b"", extra={"Location": "/data"})
         if path in HOME_ROUTES:
