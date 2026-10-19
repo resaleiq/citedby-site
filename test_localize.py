@@ -6,9 +6,14 @@ import importlib.util, langroutes
 _s = importlib.util.spec_from_file_location("localize_landing", os.path.join(os.path.dirname(os.path.abspath(__file__)), "tools", "localize_landing.py")); L = importlib.util.module_from_spec(_s); _s.loader.exec_module(L)
 
 class T(unittest.TestCase):
-    def test_generated_files_are_current(self):
+    def test_free_check_form_is_in_every_language(self):
+        """RES-1836: the hero has the no-account teaser form in the page's own language (the generator was retired in RES-1785: the four pages are edited by hand now)."""
         for lang in L.LANGS:
-            self.assertEqual(open(os.path.join(L.PUB, f"landing.{lang}.html"), encoding="utf-8").read(), L.build(lang), f"run tools/localize_landing.py ({lang})")
+            d = open(os.path.join(L.PUB, f"landing.{lang}.html"), encoding="utf-8").read()
+            self.assertIn('id="tzf" action="/api/teaser"', d); self.assertIn('name="fax"', d); self.assertIn('id="tzn"', d)
+            self.assertNotIn("Check my site free", d); self.assertNotIn("Free, no account", d)
+            self.assertNotIn('action="/app.html#/new"', d)
+            self.assertIn('rel="preload" href="/fonts/newsreader-latin-600-normal.woff2"', d)
 
     def test_every_page_has_canonical_and_five_hreflangs(self):
         for lang, path in (("en", ""), ("fr", "/fr"), ("nl", "/nl"), ("de", "/de"), ("es", "/es")):

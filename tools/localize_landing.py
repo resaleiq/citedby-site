@@ -1,4 +1,5 @@
-"""Builds public/landing.<lang>.html (fr, nl, de, es) from public/landing.html (RES-1731 row 10).
+"""RETIRED in RES-1785: the four pages are edited by hand now and this script no longer matches landing.html (do not run it).
+Builds public/landing.<lang>.html (fr, nl, de, es) from public/landing.html (RES-1731 row 10).
 Run: python3 tools/localize_landing.py   Each English fragment below must be found in landing.html or the build fails,
 so an edit to the English page that drops a fragment is caught (test_localize.py runs this and checks the output is committed).
 Hero lines come from marketing-strategy-2026-10-18 B4. Amounts are re-formatted per language after translation."""
