@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-labelledby="t d">
+<title id="t">Channel order decides where AI visits go</title><desc id="d">Wrong order: Referral above AI assistants, so assistant visits are counted as Referral. Right order: AI assistants above Referral.</desc>
+<rect width="1200" height="400" fill="#fff"/>
+<g font-family="system-ui,Arial,sans-serif" fill="#0F1B2D"><text x="48" y="52" font-size="28" font-weight="600">Channel order decides where AI visits go</text>
+<text x="48" y="104" font-size="20" font-weight="600" fill="#B3121F">Wrong order</text><text x="648" y="104" font-size="20" font-weight="600" fill="#1F4FD8">Right order</text>
+<g stroke-width="3" fill="#EEF2F7"><rect x="48" y="124" width="500" height="64" stroke="#0F1B2D"/><rect x="48" y="204" width="500" height="64" stroke="#B3121F" stroke-dasharray="8 6" fill="#fff"/><rect x="648" y="124" width="500" height="64" stroke="#1F4FD8"/><rect x="648" y="204" width="500" height="64" stroke="#0F1B2D"/></g>
+<g font-size="22" font-weight="600"><text x="72" y="164">1  Referral</text><text x="72" y="244" fill="#556070">2  AI assistants</text><text x="672" y="164">1  AI assistants</text><text x="672" y="244">2  Referral</text></g>
+<text x="48" y="312" font-size="17" fill="#556070">Assistant visits match Referral first, so the new channel stays empty.</text><text x="648" y="312" font-size="17" fill="#556070">Assistant visits match the new channel first.</text>
+<text x="48" y="376" font-size="15" fill="#556070">Source: Google Analytics Help, custom channel groups: traffic goes to the first channel it matches.</text></g></svg>

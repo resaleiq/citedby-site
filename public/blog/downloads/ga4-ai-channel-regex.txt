@@ -1,0 +1,19 @@
+GA4: an "AI assistants" channel (CitedBy, citedby.eu/blog/ga4-ai-referral-traffic)
+
+1. Admin > Data display > Channel groups > Create new channel group.
+2. Add new channel, name it: AI assistants
+3. Add condition group: Source  matches regex  (paste the line below)
+4. Save channel, then Reorder: drag AI assistants ABOVE Referral, then Apply.
+   GA4 puts traffic in the first channel it matches, so the order matters.
+
+Starter regex (hostnames of well-known assistants; check it against YOUR report):
+(chatgpt|openai|perplexity|claude|gemini|copilot)
+
+Before you rely on it:
+- Open Reports > Acquisition > Traffic acquisition, set the dimension to
+  Session source / medium, and look for the assistant names above.
+- Add any source you actually see (for example a new assistant) to the regex.
+- Remove anything that matches a source that is not an assistant.
+- Sources that carry no referrer show as direct and cannot be recovered.
+
+Needs an Editor role on the property. Custom channel groups apply to past data.
