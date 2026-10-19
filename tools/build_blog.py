@@ -186,12 +186,19 @@ def build_article(fm, body, arts):
     path = ("%s/%s/%s" % (prefix(loc), fm.get("section", "blog"), slug)) if fm.get("section") != "root" else "%s/%s" % (prefix(loc), slug)
     html_body, faq, steps, srcs = render_body(body, fm, loc, state)
     if state["imgs"] < 1 and fm.get("hero") is None: sys.exit("%s: needs images" % slug)
+    img = slug if loc == "en" else slug + "-" + loc
     if fm.get("hero") == "auto":
-        make_hero(fm, slug); fm["hero"] = slug + "-hero.svg"
+        make_hero(fm, img); fm["hero"] = img + "-hero.svg"
+    if fm.get("steps_img") == "on" and not steps:  # no numbered list: the image lists the first four sections instead
+        steps = [re.sub(r"<[^>]+>", "", h) for i, h in re.findall(r'<h2 id="([^"]+)">(.+?)</h2>', html_body) if i not in ("faq", "sources")][:4]
+        sect_fig = True
+    else: sect_fig = False
     if fm.get("steps_img") == "on" and steps and not check_only():
-        make_steps(slug, fm["h1"], steps)
-        fig = '<figure><img src="/blog/img/%s-steps.svg" alt="%s" width="1200" height="630" loading="lazy" decoding="async"></figure>' % (slug, E(fm["h1"] + ": " + " / ".join(" ".join(plain(x).split()[:7]) for x in steps[:5])))
-        html_body = html_body.replace('<ol class="steps">', fig + '<ol class="steps">', 1)
+        make_steps(img, fm["h1"], steps)
+        fig = '<figure><img src="/blog/img/%s-steps.svg" alt="%s" width="1200" height="630" loading="lazy" decoding="async"></figure>' % (img, E(fm["h1"] + ": " + " / ".join(" ".join(plain(x).split()[:7]) for x in steps[:5])))
+        if sect_fig:
+            parts = html_body.split("<h2 ", 3); html_body = "<h2 ".join(parts[:2]) + "<h2 " + parts[2] + fig + "<h2 " + parts[3] if len(parts) > 3 else html_body + fig
+        else: html_body = html_body.replace('<ol class="steps">', fig + '<ol class="steps">', 1)
     hero = fm.get("hero", "")
     og = "/blog/img/%s" % fm["og"] if fm.get("og") else "/og.png"
     ans = '<aside class="answer" aria-label="%s"><b>%s</b><p>%s</p></aside>' % (E(t["answer"]), E(t["answer"]), E(fm["answer"]))
@@ -269,8 +276,10 @@ def main():
         else: out += ".html"
         os.makedirs(os.path.dirname(out), exist_ok=True); open(out, "w", encoding="utf-8").write(doc)
     sm = os.path.join(PUB, "sitemap.xml"); s = open(sm, encoding="utf-8").read()
-    s = re.sub(r"<url><loc>%s(/[a-z]{2})?/(?:blog|compare|guides)[^<]*</loc>(<lastmod>[^<]*</lastmod>)?</url>" % re.escape(SITE), "", s)
+    s = re.sub(r"<url><loc>%s(?:/[a-z]{2}/ai-visibility-audit|(?:/[a-z]{2})?/(?:blog|compare|guides)[^<]*)</loc>(<lastmod>[^<]*</lastmod>)?</url>" % re.escape(SITE), "", s)
     s = s.replace("</urlset>", "".join("<url><loc>%s%s</loc><lastmod>%s</lastmod></url>" % (SITE, p, d) for p, d in urls) + "</urlset>")
+    for extra in ("/data", "/bot", "/data/study-chatgpt-buyer-questions"):  # live pages the sitemap lacked (RES-1998)
+        if "<loc>%s%s</loc>" % (SITE, extra) not in s: s = s.replace("</urlset>", "<url><loc>%s%s</loc><lastmod>2026-10-20</lastmod></url></urlset>" % (SITE, extra))
     open(sm, "w", encoding="utf-8").write(s)
     print("wrote %d pages" % len(written))
 main()

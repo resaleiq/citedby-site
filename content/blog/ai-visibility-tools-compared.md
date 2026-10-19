@@ -11,6 +11,7 @@ hero: auto
 hero_alt: Three kinds of AI visibility tool: enterprise dashboards, monthly monitoring plans and one-off audits with fixes
 hero_sub: What each kind costs and does
 hero_boxes: Enterprise dashboards|Profound: no public price; Monthly monitoring|Peec AI, Otterly.ai; Free graders|One score for one site; Audit with fixes|CitedBy, from €9
+steps_img: on
 widget: on
 related: /compare/profound-vs-peec-vs-otterly|Profound vs Peec vs Otterly; /guides/check-if-ai-recommends-your-shop|How to check whether AI recommends your shop
 answer: Most tools in this category are dashboards: you pay a monthly fee and they track whether assistants mention your brand. CitedBy differs on one point: it crawls every page and gives the exact fix for each issue, from €9 paid once. Check each vendor's own pricing page, because prices change.
