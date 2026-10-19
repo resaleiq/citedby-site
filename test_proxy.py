@@ -122,3 +122,10 @@ def test_trial_cancel_paths_are_forwarded():
     import proxy
     p = "/trial/cancel/sub_1ABC.deadbeefdeadbeefdeadbeef"
     assert proxy.ROUTES["GET"].fullmatch(p) and proxy.ROUTES["POST"].fullmatch(p)
+
+
+def test_app_v2_routes_are_forwarded():
+    import proxy
+    for p in ("/app/app.css", "/app/report2.js", "/api/usage", "/api/account", "/api/brand", "/api/team", "/api/audit/a_k3j2h1/structure", "/api/audit/a_k3j2h1/compare"): assert proxy.ROUTES["GET"].fullmatch(p), p
+    for p in ("/api/account/signout-all", "/api/brand", "/api/brand/domain-check", "/api/team/remove", "/api/share/a_k3j2h1/unlock", "/api/audit/a_k3j2h1/share", "/api/audit/a_k3j2h1/schedule", "/api/projects/example.com/verify"): assert proxy.ROUTES["POST"].fullmatch(p), p
+    for p in ("/app/../x", "/app/x/y.js", "/api/admin/audit/a_k3j2h1"): assert not proxy.ROUTES["GET"].fullmatch(p), p
