@@ -272,6 +272,18 @@ def asset_ver(name):
         return hashlib.sha256(f.read()).hexdigest()[:8]
 
 
+def not_found_page():
+    """RES-1785: a 404 that leads somewhere (was a bare "Not found")."""
+    sv, cv = asset_ver("style.css"), asset_ver("check.css")
+    return (f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+            f'<meta name="robots" content="noindex"><title>Page not found | CitedBy</title><link rel="stylesheet" href="/style.css?v={sv}"><link rel="stylesheet" href="/check.css?v={cv}">'
+            '<body><main class="doc"><p><b>Error 404</b></p><h1>We could not find that page</h1>'
+            '<p>The address may be mistyped, or the page has moved. These pages exist:</p>'
+            '<ul><li><a href="/">Check your site free</a>: score and the 3 issues to fix first</li>'
+            '<li><a href="/sample">See a full sample report</a></li><li><a href="/plans">Plans and prices</a></li>'
+            '<li><a href="/blog">Articles</a></li></ul><p><a href="/">CitedBy</a></p></main>').encode()
+
+
 def page(msg, lang="en", form=None):
     sv, cv = asset_ver("style.css"), asset_ver("check.css")
     return (f'<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -368,7 +380,9 @@ class H(BaseHTTPRequestHandler):
                 full = cand
                 break
         if not full.startswith(base + os.sep) or not os.path.isfile(full):
-            return self.out(404, page("Not found"))
+            if len(path) > 1 and path.endswith("/"):  # RES-1785: /fr/ and /plans/ work like /fr and /plans
+                return self.out(301, b"", extra={"Location": path.rstrip("/") or "/"})
+            return self.out(404, not_found_page())
         ctype = mimetypes.guess_type(full)[0] or "application/octet-stream"
         if ctype.startswith("text/") or ctype in ("application/xml", "application/javascript"):
             ctype += "; charset=utf-8"
