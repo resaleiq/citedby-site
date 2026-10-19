@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-labelledby="t d">
+<title id="t">Where the AI crawler setting is in Cloudflare</title><desc id="d">Dashboard, your domain, AI Crawl Control, Security tab, then the Actions column where each crawler is set to Allow or Block. Block creates a WAF custom rule.</desc>
+<rect width="1200" height="420" fill="#fff"/>
+<g font-family="system-ui,Arial,sans-serif" fill="#0F1B2D"><text x="48" y="52" font-size="28" font-weight="600">Where the setting lives in Cloudflare</text>
+<g stroke="#0F1B2D" stroke-width="3" fill="#EEF2F7"><rect x="48" y="90" width="230" height="90"/><rect x="316" y="90" width="230" height="90"/><rect x="584" y="90" width="270" height="90"/><rect x="892" y="90" width="260" height="90"/></g>
+<g font-size="21" font-weight="600"><text x="68" y="143">Your domain</text><text x="336" y="143">AI Crawl Control</text><text x="604" y="143">Security tab</text><text x="912" y="143">Actions column</text></g>
+<g stroke="#0F1B2D" stroke-width="3" fill="none"><path d="M278 135H316M546 135H584M854 135H892"/></g>
+<rect x="48" y="224" width="520" height="130" fill="#fff" stroke="#1F4FD8" stroke-width="3"/><text x="72" y="266" font-size="22" font-weight="600" fill="#1F4FD8">Allow</text><text x="72" y="302" font-size="18" fill="#556070">The crawler may fetch your pages. You can still</text><text x="72" y="328" font-size="18" fill="#556070">turn on Enforce robots.txt.</text>
+<rect x="632" y="224" width="520" height="130" fill="#fff" stroke="#B3121F" stroke-width="3"/><text x="656" y="266" font-size="22" font-weight="600" fill="#B3121F">Block</text><text x="656" y="302" font-size="18" fill="#556070">Creates or updates a WAF custom rule on your zone.</text><text x="656" y="328" font-size="18" fill="#556070">Answers 403 or 402. To undo it, set Allow.</text>
+<text x="48" y="395" font-size="15" fill="#556070">Source: Cloudflare documentation, manage AI crawlers. Custom block responses need a paid plan.</text></g></svg>
