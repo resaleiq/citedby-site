@@ -121,3 +121,10 @@ class LandingVariants(unittest.TestCase):
             os.environ["CITEDBY_TRIAL"] = flag; h = server.landing_html(raw)
             self.assertEqual("7-day free trial" in h, flag == "1"); self.assertNotIn("<!--", h); self.assertNotIn("in one click", h.lower())
         os.environ.pop("CITEDBY_TRIAL", None)
+
+
+def test_res1650_home_names_oai_searchbot_in_every_language():
+    import os
+    for k in ("", ".fr", ".nl", ".de", ".es"):
+        html = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "public", f"landing{k}.html"), encoding="utf-8").read()
+        assert "OAI-SearchBot (" in html and "GPTBot (" in html, k
