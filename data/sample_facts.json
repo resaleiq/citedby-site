@@ -1,14 +1,14 @@
 {
- "id": "a_vuapiuZ3Duyp",
+ "id": "a_kWb26PW0P2Ol",
  "host": "plausible.io",
- "ts": 1792445518.8200846,
+ "ts": 1792449817.8193922,
  "score": 90,
  "grade": "A-",
  "pages": 403,
  "errors": 2,
- "warnings": 9,
+ "warnings": 8,
  "notices": 19,
- "fixes": 30,
+ "fixes": 29,
  "top": [
   [
    "high",
@@ -23,7 +23,7 @@
   [
    "medium",
    "Oversized images",
-   13
+   14
   ]
  ],
  "sections": [
