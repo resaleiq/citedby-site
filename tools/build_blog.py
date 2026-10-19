@@ -4,7 +4,7 @@
 usage: python3 tools/build_blog.py [--check]     (--check only validates, writes nothing)
 
 Article file = front matter, a blank line, then a small markdown subset:
-  title, h1, description, slug, locale (en|fr|nl|de|es), date, reviewed (YYYY-MM-DD), answer (40-60 words, quoted by assistants),
+  section ("compare" publishes at /compare/<slug> instead of /blog/<slug>, kept out of the blog index), title, h1, description, slug, locale (en|fr|nl|de|es), date, reviewed (YYYY-MM-DD), answer (40-60 words, quoted by assistants),
   hero (file in public/blog/img), og (PNG in public/blog/img, optional), related ("/path|Title; /path|Title"), translations ("fr=/fr/blog/x; nl=/nl/blog/y"),
   widget ("on" puts the free-check box after the answer; "off" omits it), howto ("on" adds HowTo schema from the first numbered list), ads ("off" never shows the slot).
   Body: ## / ### headings, paragraphs, - lists, 1. lists, | tables, ![alt](/blog/img/x.svg "caption") figures, ## FAQ (### question + answer), ## Sources (list).
@@ -140,7 +140,7 @@ def shell(loc, title, desc, canon, alts, og, jsonld, main, extra_head=""):
 def build_article(fm, body, arts):
     loc, slug = fm["locale"], fm["slug"]
     t, state = UI[loc], {"imgs": 0}
-    path = "%s/blog/%s" % (prefix(loc), slug)
+    path = "%s/%s/%s" % (prefix(loc), fm.get("section", "blog"), slug)
     html_body, faq, steps, srcs = render_body(body, fm, loc, state)
     if state["imgs"] < 1 and fm.get("hero") is None: sys.exit("%s: needs images" % slug)
     hero = fm.get("hero", "")
@@ -198,7 +198,8 @@ def main():
     for loc, items in arts.items():
         for fm, body in items:
             path, doc = build_article(fm, body, items); urls.append((path, fm["reviewed"])); written.append((path, doc))
-        path, doc = build_index(loc, [f for f, _ in items]); urls.append((path, max(f["reviewed"] for f, _ in items))); written.append((path, doc))
+        bl = [f for f, _ in items if f.get("section", "blog") == "blog"]
+        path, doc = build_index(loc, bl); urls.append((path, max(f["reviewed"] for f in bl))); written.append((path, doc))
     if check: print("ok: %d pages" % len(written)); return
     for path, doc in written:
         out = os.path.join(PUB, path.lstrip("/"))
@@ -206,7 +207,7 @@ def main():
         else: out += ".html"
         os.makedirs(os.path.dirname(out), exist_ok=True); open(out, "w", encoding="utf-8").write(doc)
     sm = os.path.join(PUB, "sitemap.xml"); s = open(sm, encoding="utf-8").read()
-    s = re.sub(r"<url><loc>%s(/[a-z]{2})?/blog[^<]*</loc>(<lastmod>[^<]*</lastmod>)?</url>" % re.escape(SITE), "", s)
+    s = re.sub(r"<url><loc>%s(/[a-z]{2})?/(?:blog|compare)[^<]*</loc>(<lastmod>[^<]*</lastmod>)?</url>" % re.escape(SITE), "", s)
     s = s.replace("</urlset>", "".join("<url><loc>%s%s</loc><lastmod>%s</lastmod></url>" % (SITE, p, d) for p, d in urls) + "</urlset>")
     open(sm, "w", encoding="utf-8").write(s)
     print("wrote %d pages" % len(written))
