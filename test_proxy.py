@@ -6,13 +6,14 @@ import proxy
 SEEN = []
 SIG = []
 ACCEPT = []
+QA = []
 
 class Stub(BaseHTTPRequestHandler):
     def log_message(self, *a): pass
     def _do(self):
         n = int(self.headers.get("Content-Length") or 0)
         SEEN.append((self.command, self.path, self.headers.get("X-Forwarded-For"), self.headers.get("Cookie"), self.rfile.read(n)))
-        SIG.append(self.headers.get("Stripe-Signature")); ACCEPT.append(self.headers.get("Accept"))
+        SIG.append(self.headers.get("Stripe-Signature")); ACCEPT.append(self.headers.get("Accept")); QA.append(self.headers.get("X-CitedBy-QA"))
         if self.path.startswith("/health"):
             b = b'{"status":"ok","deploy":"abc1234","db":"ok","ok":true}'
         else:
@@ -62,6 +63,7 @@ class T(unittest.TestCase):
         self.assertEqual(xff, "203.0.113.9"); self.assertEqual(ck, "ci_session=abc")
 
     def test_accept_header_is_forwarded(self):  # RES-1595: the app returns the HTML /account (or 303 to /signin) only for Accept: text/html
+        QA.clear(); self.get("/api/teaser/token", headers={"X-CitedBy-QA": "tok"}); self.assertEqual(QA[0], "tok")  # RES-1785: QA header reaches the app
         ACCEPT.clear(); self.get("/account", headers={"Accept": "text/html,application/xhtml+xml"})
         self.assertEqual(ACCEPT[0], "text/html,application/xhtml+xml")
 

@@ -42,7 +42,7 @@ def handle(h, method):
             _send(h, 413, {}, b'{"error":"too large"}'); return True
         body = h.rfile.read(n) if n else b""
     hdr = {"X-Forwarded-For": h.ip()}
-    for k in ("Content-Type", "Cookie", "Stripe-Signature", "Accept"):  # Accept: the app serves /account as HTML only when it contains text/html (RES-1595)
+    for k in ("Content-Type", "Cookie", "Stripe-Signature", "Accept", "X-CitedBy-QA"):  # X-CitedBy-QA: the app skips the per-network teaser caps for a request with the QA token (RES-1785); # Accept: the app serves /account as HTML only when it contains text/html (RES-1595)
         if h.headers.get(k): hdr[k] = h.headers[k]
     try:
         code, rh, rb = _call(urllib.request.Request(UPSTREAM + h.path, body, hdr, method=method), 20)
