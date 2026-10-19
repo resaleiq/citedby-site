@@ -128,3 +128,9 @@ def test_res1650_home_names_oai_searchbot_in_every_language():
     for k in ("", ".fr", ".nl", ".de", ".es"):
         html = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "public", f"landing{k}.html"), encoding="utf-8").read()
         assert "OAI-SearchBot (" in html and "GPTBot (" in html, k
+
+
+def test_home_org_sameas_matches_about():
+    import langroutes
+    org = langroutes.LD
+    assert '"sameAs": ["https://citedby.eu/about", "https://citedby.eu/methodology"]' in org

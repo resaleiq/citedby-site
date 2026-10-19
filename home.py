@@ -370,7 +370,7 @@ def render(lang, engines):
     faq_n = items[:HOME_FAQ_N + (1 if len(engines) >= 2 else 0)] if lang == "en" else items
     faq_more = f'<p><a class="link" href="/faq">{E(t["faq_all"])}</a></p>' if lang == "en" else ""
     ld = [{"@context": "https://schema.org", "@type": "Organization", "name": "CitedBy", "url": "https://citedby.eu", "logo": "https://citedby.eu/icon-192.png", "email": "hello@citedby.eu",
-           "disambiguatingDescription": t["org_desc"]},
+           "sameAs": ["https://citedby.eu/about", "https://citedby.eu/methodology"], "disambiguatingDescription": t["org_desc"]},
           {"@context": "https://schema.org", "@type": "Service", "name": t["svc"], "serviceType": t["svc_type"],
            "provider": {"@type": "Organization", "name": "CitedBy", "url": "https://citedby.eu", "disambiguatingDescription": "Not citedby.co or citedby.ai, and not an academic citation tool."}, "areaServed": "EU", "inLanguage": t["locale"],
            "offers": [{"@type": "Offer", "name": t["free_offer"], "price": "0", "priceCurrency": "EUR", "url": f"https://citedby.eu{t['path']}"}]
