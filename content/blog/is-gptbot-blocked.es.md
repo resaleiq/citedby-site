@@ -13,7 +13,7 @@ hero_boxes: robots.txt|El archivo público; CDN|Por ejemplo Cloudflare; Cortafue
 widget: on
 howto: on
 steps_img: on
-related: /es/blog/can-chatgpt-read-my-website|¿Puede ChatGPT leer mi web?; /es/ai-visibility-audit|Auditoría de visibilidad en IA; /es/guides/technical-seo-checklist|Lista de comprobación técnica
+related: /es/tools/ai-crawler-check|Verificador de acceso de rastreadores de IA (free); /es/blog/can-chatgpt-read-my-website|¿Puede ChatGPT leer mi web?; /es/ai-visibility-audit|Auditoría de visibilidad en IA; /es/guides/technical-seo-checklist|Lista de comprobación técnica
 answer: GPTBot está bloqueado en tu web si robots.txt tiene una regla Disallow que le afecta, o si una regla de tu CDN, cortafuegos o servidor rechaza sus peticiones. Abre tutienda.es/robots.txt, lanza una auditoría y compara dos peticiones a tu servidor. Bloquear GPTBot no bloquea por sí solo la búsqueda de ChatGPT.
 
 ## ¿En qué cuatro sitios puede frenarse a GPTBot?

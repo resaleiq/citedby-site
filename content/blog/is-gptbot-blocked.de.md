@@ -8,7 +8,7 @@ date: 2026-10-20
 reviewed: 2026-10-20
 widget: on
 howto: on
-related: /de/blog/can-chatgpt-read-my-website|Kann ChatGPT meine Website lesen?; /de/guides/technical-seo-checklist|Technische SEO-Checkliste für KI-Sichtbarkeit; /de/blog/does-llms-txt-work|Bringt llms.txt etwas?
+related: /de/tools/ai-crawler-check|KI-Crawler-Zugriffscheck (free); /de/blog/can-chatgpt-read-my-website|Kann ChatGPT meine Website lesen?; /de/guides/technical-seo-checklist|Technische SEO-Checkliste für KI-Sichtbarkeit; /de/blog/does-llms-txt-work|Bringt llms.txt etwas?
 hero: auto
 hero_alt: Titelkarte zu GPTBot mit vier Ebenen, auf denen der Crawler gestoppt werden kann: robots.txt, CDN, Sicherheits-Plugin oder Firewall und Servereinstellung
 hero_sub: Vier Ebenen, vier Tests

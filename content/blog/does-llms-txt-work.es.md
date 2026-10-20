@@ -12,7 +12,7 @@ hero_sub: Dos estudios y la guía de Google
 hero_boxes: 97 % sin peticiones|Ahrefs en mayo de 2026; 300.000 dominios|SE Ranking sin vínculo claro; Google|No hace falta ningún archivo
 widget: on
 howto: off
-related: /es/blog/can-chatgpt-read-my-website|¿Puede ChatGPT leer mi web?; /es/guides/technical-seo-checklist|Lista de comprobación técnica; /es/ai-visibility-audit|Auditoría de visibilidad en IA
+related: /es/tools/llms-txt-checker|Verificador de llms.txt (free); /es/blog/can-chatgpt-read-my-website|¿Puede ChatGPT leer mi web?; /es/guides/technical-seo-checklist|Lista de comprobación técnica; /es/ai-visibility-audit|Auditoría de visibilidad en IA
 answer: De momento, las pruebas indican que llms.txt no mueve las citas de la IA. Ahrefs halló que el 97 % de los archivos válidos no recibió ninguna petición en mayo de 2026, SE Ranking no vio un vínculo claro en unos 300.000 dominios y Google no pide archivos de texto para IA. Añadirlo es barato; no esperes tráfico.
 steps_img: on
 

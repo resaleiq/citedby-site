@@ -13,7 +13,7 @@ hero_boxes: 97 %|fichiers sans requête; 300 000|domaines (SE Ranking); Google|a
 widget: on
 steps_img: on
 howto: on
-related: /fr/blog/can-chatgpt-read-my-website|ChatGPT peut-il lire mon site ?; /fr/blog/geo-vs-aeo-vs-seo|Audit GEO, AEO ou SEO : lequel choisir ?; /sample-audit|Un exemple de mini-audit
+related: /fr/tools/llms-txt-checker|Vérificateur llms.txt (free); /fr/blog/can-chatgpt-read-my-website|ChatGPT peut-il lire mon site ?; /fr/blog/geo-vs-aeo-vs-seo|Audit GEO, AEO ou SEO : lequel choisir ?; /sample-audit|Un exemple de mini-audit
 answer: À ce jour, les données indiquent que llms.txt ne fait pas progresser les citations par les IA. Ahrefs a constaté que 97 % des fichiers valides n'avaient reçu aucune requête en mai 2026, SE Ranking ne voit aucun lien net sur environ 300 000 domaines, et Google n'exige aucun fichier IA. L'ajouter coûte peu, sans visites à attendre.
 
 ## Qu'est-ce que le fichier llms.txt ?

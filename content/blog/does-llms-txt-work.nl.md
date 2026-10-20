@@ -9,7 +9,7 @@ reviewed: 2026-10-20
 answer: Tot nu toe wijst het bewijs erop dat llms.txt AI-citaties niet beïnvloedt. Ahrefs zag in mei 2026 dat 97% van de geldige llms.txt-bestanden nul verzoeken kreeg, SE Ranking vond geen duidelijk verband bij ongeveer 300.000 domeinen en Google zegt dat u geen AI-tekstbestanden nodig hebt. Toevoegen kost weinig, maar verwacht er geen bezoekers van.
 widget: on
 howto: on
-related: /nl/blog/can-chatgpt-read-my-website|Kan ChatGPT mijn website lezen?; /nl/guides/technical-seo-checklist|Technische SEO-checklist voor AI-zichtbaarheid; /nl/ai-visibility-audit|AI-zichtbaarheidsaudit
+related: /nl/tools/llms-txt-checker|llms.txt-checker (free); /nl/blog/can-chatgpt-read-my-website|Kan ChatGPT mijn website lezen?; /nl/guides/technical-seo-checklist|Technische SEO-checklist voor AI-zichtbaarheid; /nl/ai-visibility-audit|AI-zichtbaarheidsaudit
 hero: auto
 hero_alt: Titelkaart: werkt llms.txt, met twee cijfers: 97 procent van de bestanden kreeg nul verzoeken en bij ongeveer 300.000 domeinen was geen duidelijk verband met AI-citaties zichtbaar
 hero_sub: Twee onderzoeken en de documentatie van Google
