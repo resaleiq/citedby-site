@@ -11,7 +11,7 @@ hero_alt: Four boxes numbered 1 to 4: robots.txt, CDN, firewall, server, the pla
 og: is-gptbot-blocked-og.png
 widget: on
 howto: on
-related: /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /|The CitedBy site audit; /sample-audit|A sample mini-audit
+related: /bots|AI crawlers: what each one does and how to allow or block it; /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /|The CitedBy site audit; /sample-audit|A sample mini-audit
 answer: GPTBot is blocked on your site if robots.txt has a Disallow rule that applies to it, or if a CDN, firewall or server rule refuses its requests. Open yourshop.com/robots.txt, run an audit, then compare two requests to your server. Blocking GPTBot does not by itself block ChatGPT search.
 
 ## Four places GPTBot can be stopped

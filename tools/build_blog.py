@@ -219,7 +219,7 @@ def build_article(fm, body, arts):
            "image": [SITE + og] + ([SITE + "/blog/img/" + hero] if hero else [])}
     ld = [art, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": t["home"], "item": SITE + (prefix(loc) or "/")},
-        {"@type": "ListItem", "position": 2, "name": t["blog"], "item": SITE + prefix(loc) + "/blog"},
+        {"@type": "ListItem", "position": 2, "name": SECT_NAME.get(fm.get("section"), t["blog"]), "item": SITE + prefix(loc) + "/" + SECT_PATH.get(fm.get("section"), "blog")},
         {"@type": "ListItem", "position": 3, "name": fm["h1"], "item": SITE + path}]}]
     if faq: ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": plain(" ".join(a))}} for q, a in faq]})
     if fm.get("howto") == "on" and steps: ld.append({"@context": "https://schema.org", "@type": "HowTo", "name": fm["h1"], "step": [{"@type": "HowToStep", "position": n + 1, "text": plain(s)} for n, s in enumerate(steps)]})
@@ -232,7 +232,7 @@ def build_article(fm, body, arts):
     byline = ('%s <a href="/authors/%s" rel="author">%s</a>, %s · ' % (E(t["by_person"]), E(fm["author"]), E(au["name"]), E(au["role"].get(loc, au["role"]["en"])))) if au else '<a href="%s/about#editorial">%s</a> · ' % (prefix(loc), E(t["by"]))
     if au: art["author"] = {"@type": "Person", "name": au["name"], "jobTitle": au["role"]["en"], "url": SITE + "/authors/" + fm["author"]}
     main = f'''<main id="main" class="art"><article>
-<p class="dateline"><a href="{prefix(loc)}/blog">{E(t["blog"])}</a> / {E(fm.get("cluster", ""))}</p>
+<p class="dateline"><a href="{prefix(loc)}/{SECT_PATH.get(fm.get("section"), "blog")}">{E(SECT_NAME.get(fm.get("section"), t["blog"]))}</a> / {E(fm.get("cluster", ""))}</p>
 <h1>{E(fm["h1"])}</h1>
 <p class="byline">{byline}{E(t["rev"])} <time datetime="{fm["reviewed"]}">{fm["reviewed"]}</time></p>
 {ans}
@@ -245,12 +245,15 @@ def build_article(fm, body, arts):
 </article></main>'''
     return path, shell(loc, fm["title"], fm["description"], path, alts, og, ld, main)
 
-INDEX_LOCALES = {"blog": ("en", "fr", "nl", "de", "es"), "guides": ("en", "fr", "nl", "de", "es")}
+INDEX_LOCALES = {"blog": ("en", "fr", "nl", "de", "es"), "guides": ("en", "fr", "nl", "de", "es"), "bots": ("en",)}
+SECT_NAME, SECT_PATH = {"bots": "AI crawlers"}, {"bots": "bots"}  # sections that have their own hub (H3 page sets)
+BOTS_IDX = ("AI crawlers: who they are, what they do, how to allow or block them", "One page per AI crawler, with the operator, the robots.txt token, the vendor's own sentence, what blocking costs and the vendor's published address list, each read from the vendor's page on the date shown.")
 BLOG_IDX = {'en': ('AI visibility blog for online shops', 'Notes and data on how AI assistants treat online shops, plus our step-by-step guides. Each post ends with an audit you can run on your own site.'), 'fr': ('Blog visibilité IA pour boutiques en ligne', 'Notes et données sur la façon dont les assistants IA traitent les boutiques en ligne, et nos guides pas à pas. Chaque article mène à un audit de votre site.'), 'nl': ('Blog AI-zichtbaarheid voor webshops', 'Notities en data over hoe AI-assistenten webshops behandelen, plus onze stap-voor-stap-gidsen. Elk artikel leidt naar een audit van uw site.'), 'de': ('Blog zur KI-Sichtbarkeit für Online-Shops', 'Notizen und Daten dazu, wie KI-Assistenten Online-Shops behandeln, plus unsere Schritt-für-Schritt-Ratgeber. Jeder Beitrag führt zu einem Audit Ihrer Seite.'), 'es': ('Blog de visibilidad en IA para tiendas online', 'Notas y datos sobre cómo los asistentes de IA tratan las tiendas online, más nuestras guías paso a paso. Cada artículo lleva a una auditoría de tu web.')}
 
 def build_index(loc, arts, sect="blog"):
     t = dict(UI[loc])  # /blog and /guides get their own title, H1 and description (RES-2210)
     if sect == "blog": t["idx_h1"], t["idx_lede"] = BLOG_IDX[loc]
+    if sect == "bots": t["idx_h1"], t["idx_lede"] = BOTS_IDX
     path = prefix(loc) + "/" + sect
     cards = "".join('<li><a href="%s/%s/%s"><b>%s</b><span>%s</span><time datetime="%s">%s %s</time></a></li>' % (prefix(loc), a.get("section", "blog"), a["slug"], E(a["h1"]), E(a["description"]), a["reviewed"], E(t["rev"]), a["reviewed"]) for a in sorted(arts, key=lambda a: a["reviewed"], reverse=True))
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": t["idx_h1"], "inLanguage": loc, "url": SITE + path},
@@ -275,14 +278,17 @@ def main():
         gl = [f for f in bl if f.get("section") == "guides"]
         if gl:
             path, doc = build_index(loc, gl, "guides"); urls.append((path, max(f["reviewed"] for f in gl))); written.append((path, doc))
+        bt = [f for f, _ in items if f.get("section") == "bots"]
+        if bt:
+            path, doc = build_index(loc, bt, "bots"); urls.append((path, max(f["reviewed"] for f in bt))); written.append((path, doc))
     if check: print("ok: %d pages" % len(written)); return
     for path, doc in written:
         out = os.path.join(PUB, path.lstrip("/"))
-        if path.endswith(("/blog", "/guides")): out = os.path.join(out, "index.html")
+        if path.endswith(("/blog", "/guides", "/bots")): out = os.path.join(out, "index.html")
         else: out += ".html"
         os.makedirs(os.path.dirname(out), exist_ok=True); open(out, "w", encoding="utf-8").write(doc)
     sm = os.path.join(PUB, "sitemap.xml"); s = open(sm, encoding="utf-8").read()
-    s = re.sub(r"<url><loc>%s(?:/[a-z]{2}/ai-visibility-audit|(?:/[a-z]{2})?/(?:blog|compare|guides)[^<]*)</loc>(<lastmod>[^<]*</lastmod>)?</url>" % re.escape(SITE), "", s)
+    s = re.sub(r"<url><loc>%s(?:/[a-z]{2}/ai-visibility-audit|(?:/[a-z]{2})?/(?:blog|compare|guides|bots)[^<]*)</loc>(<lastmod>[^<]*</lastmod>)?</url>" % re.escape(SITE), "", s)
     s = s.replace("</urlset>", "".join("<url><loc>%s%s</loc><lastmod>%s</lastmod></url>" % (SITE, p, d) for p, d in urls) + "</urlset>")
     for extra in ("/data", "/bot", "/data/study-chatgpt-buyer-questions", "/fr/about", "/nl/about", "/de/about", "/es/about"):  # live pages the sitemap lacked (RES-1998)
         if "<loc>%s%s</loc>" % (SITE, extra) not in s: s = s.replace("</urlset>", "<url><loc>%s%s</loc><lastmod>2026-10-20</lastmod></url></urlset>" % (SITE, extra))

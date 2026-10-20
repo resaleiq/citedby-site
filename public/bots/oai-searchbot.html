@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OAI-SearchBot: what it is and how to allow or block it</title>
+<meta name="description" content="OAI-SearchBot decides whether your pages can appear in ChatGPT search answers. Its robots.txt token, user-agent, 39 published IP ranges and what a block costs you.">
+<link rel="canonical" href="https://citedby.eu/bots/oai-searchbot">
+<meta property="og:title" content="OAI-SearchBot: what it is and how to allow or block it"><meta property="og:description" content="OAI-SearchBot decides whether your pages can appear in ChatGPT search answers. Its robots.txt token, user-agent, 39 published IP ranges and what a block costs you."><meta property="og:url" content="https://citedby.eu/bots/oai-searchbot"><meta property="og:type" content="article"><meta property="og:image" content="https://citedby.eu/og-v2.png"><meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0F1B2D">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/newsreader-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/saas.css"><link rel="stylesheet" href="/doc.css?v=f556ede2"><link rel="stylesheet" href="/blog.css?v=fa8fefd8"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "OAI-SearchBot: what it is and how to allow or block it", "description": "OAI-SearchBot decides whether your pages can appear in ChatGPT search answers. Its robots.txt token, user-agent, 39 published IP ranges and what a block costs you.", "inLanguage": "en", "datePublished": "2026-10-21", "dateModified": "2026-10-21", "author": {"@type": "Organization", "name": "CitedBy editorial team", "url": "https://citedby.eu/about#editorial"}, "publisher": {"@type": "Organization", "name": "CitedBy", "url": "https://citedby.eu/"}, "mainEntityOfPage": "https://citedby.eu/bots/oai-searchbot", "image": ["https://citedby.eu/og-v2.png", "https://citedby.eu/blog/img/oai-searchbot-hero.svg"]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://citedby.eu/"}, {"@type": "ListItem", "position": 2, "name": "AI crawlers", "item": "https://citedby.eu/bots"}, {"@type": "ListItem", "position": 3, "name": "OAI-SearchBot: what it is and how to allow or block it", "item": "https://citedby.eu/bots/oai-searchbot"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does blocking GPTBot also block OAI-SearchBot?", "acceptedAnswer": {"@type": "Answer", "text": "No. OpenAI states that each setting is independent of the others, so a robots.txt group for GPTBot does not change how OAI-SearchBot treats your site. Add a separate group for each token you want to control."}}, {"@type": "Question", "name": "Why would a firewall block OAI-SearchBot when robots.txt allows it?", "acceptedAnswer": {"@type": "Answer", "text": "Robots.txt is only a policy file. A CDN, WAF or host rule can still refuse the request before the server answers. OpenAI asks site owners to allow its published IP ranges for this reason."}}]}</script>
+</head><body class="cb dc">
+<a class="sr" href="#main">Skip to content</a>
+<header class="topbar"><div class="in"><a class="mark" href="/"><i></i>CitedBy</a><nav aria-label="Main"><a class="opt" href="/#checks">What we check</a><a href="/plans">Pricing</a><a href="/blog">Guides</a><a class="opt" href="/data">Data</a></nav><a class="signin" href="/signin?next=%2Fapp.html">Sign in</a><a class="btn sm go" href="/app.html#/new">Audit a site</a></div></header>
+<main id="main" class="art"><article>
+<p class="dateline"><a href="/bots">AI crawlers</a> / AI crawlers</p>
+<h1>OAI-SearchBot: what it is and how to allow or block it</h1>
+<p class="byline"><a href="/about#editorial">By the CitedBy editorial team</a> · Reviewed on <time datetime="2026-10-21">2026-10-21</time></p>
+<aside class="answer" aria-label="Short answer"><b>Short answer</b><p>OAI-SearchBot is OpenAI&#x27;s crawler for ChatGPT search. Sites that opt out of it will not be shown in ChatGPT search answers, though they can still appear as navigational links. It obeys robots.txt under the token OAI-SearchBot, and OpenAI publishes 39 IP ranges for it.</p></aside>
+<figure class="hero"><img src="/blog/img/oai-searchbot-hero.svg" alt="Four facts about OAI-SearchBot: operator OpenAI, job Search, robots.txt behaviour, published address lists" width="1200" height="630" fetchpriority="high" decoding="async"></figure>
+<nav class="toc" aria-label="On this page"><b>On this page</b><ol><li><a href="#what-oai-searchbot-is">What OAI-SearchBot is</a></li><li><a href="#what-the-vendor-says">What the vendor says</a></li><li><a href="#what-happens-if-you-block-it">What happens if you block it</a></li><li><a href="#the-robots-txt-lines">The robots.txt lines</a></li><li><a href="#how-to-tell-a-real-request-from-a-fake-one">How to tell a real request from a fake one</a></li><li><a href="#compare-with-gptbot">Compare with GPTBot</a></li><li><a href="#check-your-own-site">Check your own site</a></li><li><a href="#faq">Questions people ask</a></li><li><a href="#sources">Sources</a></li></ol></nav>
+<form class="bw" action="/app.html#/new" method="get" aria-labelledby="bw-h"><h2 id="bw-h">Audit your own site (from €9, 14-day money-back guarantee)</h2><input type="hidden" name="utm_source" value="blog"><input type="hidden" name="utm_medium" value="article"><input type="hidden" name="utm_campaign" value="oai-searchbot"><div class="bwr"><label class="sr" for="bw-u">URL</label><input id="bw-u" name="url" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="yourshop.com" required><button class="btn p" type="submit">Audit my site</button></div><p class="gloss">We crawl every page and give you the exact fix for each issue. Paid before the crawl.</p></form>
+<h2 id="what-oai-searchbot-is">What OAI-SearchBot is</h2>
+<p>OpenAI runs several crawlers and says each setting is independent of the others. OAI-SearchBot is the one that decides whether your pages can be surfaced in ChatGPT's search features. It is not the training crawler (that is <a href="/bots/gptbot">GPTBot</a>) and it is not the fetcher that opens a page when a person asks about it (that is <a href="/bots/chatgpt-user">ChatGPT-User</a>).</p>
+<div class="tw"><table><thead><tr><th scope="col">Fact</th><th scope="col">OAI-SearchBot</th></tr></thead><tbody><tr><td>Operator</td><td>OpenAI</td></tr><tr><td>Job</td><td>Search</td></tr><tr><td>robots.txt token</td><td><code>OAI-SearchBot</code></td></tr><tr><td>Follows robots.txt</td><td>Yes, it follows robots.txt</td></tr><tr><td>Published address list</td><td>39 ranges (openai.com/searchbot.json, file dated 2026-01-02)</td></tr><tr><td>Vendor page read</td><td>21 October 2026</td></tr></tbody></table></div>
+<h2 id="what-the-vendor-says">What the vendor says</h2>
+<p>In the vendor's words: “OAI-SearchBot is used to surface websites in search results in ChatGPT's search features. Sites that are opted out of OAI-SearchBot will not be shown in ChatGPT search answers, though can still appear as navigational links.”</p>
+<p>Source: <a href="https://developers.openai.com/api/docs/bots" rel="noopener">OpenAI: Overview of OpenAI Crawlers</a>, read on 21 October 2026.</p>
+<h2 id="what-happens-if-you-block-it">What happens if you block it</h2>
+<p>OpenAI's own wording is that opted-out sites "will not be shown in ChatGPT search answers". That is the cost: a shop that blocks OAI-SearchBot gives up the part of ChatGPT that links to sources. OpenAI recommends the opposite for sites that want to appear: allow OAI-SearchBot in robots.txt and allow requests from its published IP ranges.</p>
+<h2 id="the-robots-txt-lines">The robots.txt lines</h2>
+<p>To allow it:</p>
+<!-- ad-slot:in-article (off) -->
+<pre><code>User-agent: OAI-SearchBot
+Allow: /</code></pre>
+<p>To block it:</p>
+<pre><code>User-agent: OAI-SearchBot
+Disallow: /</code></pre>
+<p>The user-agent string the vendor shows:</p>
+<pre><code>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot</code></pre>
+<h2 id="how-to-tell-a-real-request-from-a-fake-one">How to tell a real request from a fake one</h2>
+<p>OpenAI publishes the addresses OAI-SearchBot uses at openai.com/searchbot.json. On 21 October 2026 that file held 39 prefixes and carried the creation time 2026-01-02. Match the address in your server log against those prefixes before you trust a request that only claims the name in its user-agent. OpenAI also says that when it fetches robots.txt it may add a <code>robots.txt</code> marker to the user-agent string, so those requests are easy to tell apart in logs without paths.</p>
+<h2 id="compare-with-gptbot">Compare with GPTBot</h2>
+<p><a href="/bots/gptbot">GPTBot</a>: GPTBot is for training; blocking it does not remove you from ChatGPT search because the settings are independent.</p>
+<h2 id="check-your-own-site">Check your own site</h2>
+<p>The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on <a href="/bots">the AI crawler hub</a>.</p>
+<h2 id="faq">Questions people ask</h2>
+<h3>Does blocking GPTBot also block OAI-SearchBot?</h3>
+<p>No. OpenAI states that each setting is independent of the others, so a robots.txt group for GPTBot does not change how OAI-SearchBot treats your site. Add a separate group for each token you want to control.</p>
+<h3>Why would a firewall block OAI-SearchBot when robots.txt allows it?</h3>
+<p>Robots.txt is only a policy file. A CDN, WAF or host rule can still refuse the request before the server answers. OpenAI asks site owners to allow its published IP ranges for this reason.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://developers.openai.com/api/docs/bots" rel="noopener">OpenAI: Overview of OpenAI Crawlers</a></li><li><a href="https://openai.com/searchbot.json" rel="noopener">openai.com/searchbot.json</a>, read 21 October 2026</li></ul>
+<section class="cta2"><h2>See what AI answers about your shop</h2><p>The audit crawls every page of your site, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.</p><a class="btn p" href="/?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=oai-searchbot&amp;utm_content=cta">Audit my site</a><p class="gloss">Audit from €9, paid once. 14-day money-back guarantee.</p></section>
+<nav class="rel" aria-label="Keep reading"><h2>Keep reading</h2><ul><li><a href="/bots">All AI crawlers compared</a></li><li><a href="/bots/gptbot">GPTBot</a></li><li><a href="/blog/is-gptbot-blocked">Is GPTBot blocked on your site?</a></li><li><a href="/blog/can-chatgpt-read-my-website">Can ChatGPT read my website?</a></li></ul></nav>
+</article></main>
+<footer><div class="w"><span>© 2026 CitedBy · <a href="mailto:hello@citedby.eu">hello@citedby.eu</a></span><a href="/plans">Pricing</a><a href="/blog">Guides</a><a href="/data">Data</a><a href="/methodology">Method</a><a href="/about">About</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/refund">Refunds</a><a href="/contact">Contact</a><a href="/legal">Legal notice</a></div></footer>
+</body></html>
