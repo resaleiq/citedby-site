@@ -80,8 +80,8 @@ def data():
     t = home.T["en"]
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": DATA_TITLE, "url": "https://citedby.eu/data", "inLanguage": "en",
            "hasPart": [{"@type": "Dataset", "name": n, "url": "https://citedby.eu" + h} for h, n, _ in DATA_ROWS]}]
-    study = ('<li><a href="/data/study-buyer-questions-claude">64 Claude answers to 32 buyer questions in 2 EU niches: who gets linked</a></li>'
-             '<li><a href="/data/study-chatgpt-buyer-questions">127 ChatGPT answers to 64 buyer questions in 5 EU niches: who gets linked</a></li>')
+    study = ('<li><a href="/data/study-buyer-questions-claude">48 Claude answers to 24 buyer questions in 3 EU niches: who gets linked</a></li>'
+             '<li><a href="/data/study-chatgpt-buyer-questions">48 ChatGPT answers to 24 buyer questions in 3 EU niches: who gets linked</a></li>')
     rows = "".join(f'<li><a href="{h}" hreflang="{l}">{E(n)}</a> <span class="src">({E(m)})</span></li>' for h, n, (l, m) in [(h, n, (m.split(",")[0].lower(), m)) for h, n, m in DATA_ROWS])
     main = (f'<section class="pagehead on-navy"><div class="wrap"><h1>Who AI assistants link when buyers ask where to shop</h1>'
             f'<p class="lede">Dated counts from our own runs of Claude and ChatGPT with web search on: which shop sites appear in the answers to buyer questions, by niche and country. Every page shows the questions, the method and the raw counts. Each page names the one assistant it counted.</p></div></section>'
