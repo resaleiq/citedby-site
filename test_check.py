@@ -264,6 +264,19 @@ class Api(unittest.TestCase):
         for p in ("/../server.py", "/%2e%2e/server.py", "/..%2fserver.py", "/data/snapshots.json"):
             self.assertEqual(self.get_status(self.base + p), 404, p)
 
+    def test_go_hn_redirect(self):  # RES-2130: /go/hn is a 302 to the home with the four fixed UTM fields; caller utm_* dropped, internal=1 forwarded
+        import re
+        class NoRedirect(urllib.request.HTTPRedirectHandler):
+            def redirect_request(self, *a, **k): return None
+        def hop(p):
+            try: urllib.request.build_opener(NoRedirect).open(self.base + p); self.fail("no redirect")
+            except urllib.error.HTTPError as e: return e.code, e.headers.get("Location"), e.headers.get("X-Robots-Tag")
+        self.assertEqual(hop("/go/hn"), (302, "/?utm_source=hackernews&utm_medium=organic_social&utm_campaign=citedby_202610&utm_content=show_hn_01", "noindex"))
+        code, loc, _ = hop("/go/hn?utm_source=evil&internal=1")
+        self.assertTrue(code == 302 and loc.endswith("&internal=1") and "evil" not in loc, loc)
+        self.assertRegex(hop("/go/hn")[1].split("?", 1)[1], r"^[a-z0-9_=&]+$")
+        self.assertEqual(self.get_status(self.base + "/go/nope"), 404)
+
     def test_data_pages_routing(self):
         for p in ("/data", "/data/matelas-france", "/data/study-chatgpt-buyer-questions", "/data/matelas-france.csv", "/data/citedby-study-2026-10.pdf"):
             self.assertEqual(self.get_status(self.base + p), 200, p)
