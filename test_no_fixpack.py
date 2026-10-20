@@ -18,3 +18,7 @@ class NoFixPack(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def test_privacy_names_no_retired_product():
+    assert "Fix Pack" not in open("public/privacy.html", encoding="utf-8").read()

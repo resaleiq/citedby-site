@@ -20,7 +20,7 @@ answer: Um zu prüfen, was ChatGPT über Ihre Marke sagt, stellen Sie 20 Prompts
 
 Sie brauchen ein kostenloses Konto bei jedem Assistenten, der Sie interessiert, eine Tabelle und etwa eine Stunde. Öffnen Sie für jeden Prompt einen neuen Chat, damit frühere Antworten die nächste nicht färben. Schalten Sie die Websuche ein, wenn der Assistent sie anbietet, denn eine Antwort aus aktuellen Seiten kann sich von einer ohne unterscheiden. Notieren Sie Assistent, Einstellung und Datum. Antworten ändern sich von Lauf zu Lauf, deshalb wird jeder Prompt zweimal gestellt.
 
-Ersetzen Sie die Platzhalter durch Ihre eigenen Wörter: `[Kategorie]` ist das, was Sie verkaufen (zum Beispiel "Specialty-Kaffeebohnen"), `[Land]` ist Ihr Liefergebiet, `[Marke]` Ihr Shopname und `[Mitbewerber]` ein Shop, mit dem Sie konkurrieren.
+Ersetzen Sie die Platzhalter durch Ihre eigenen Wörter: `[Kategorie]` ist das, was Sie verkaufen (zum Beispiel "Matratzen aus Naturlatex"), `[Land]` ist Ihr Liefergebiet, `[Marke]` Ihr Shopname und `[Mitbewerber]` ein Shop, mit dem Sie konkurrieren.
 
 ## Welche 20 Prompts stellen Sie?
 
