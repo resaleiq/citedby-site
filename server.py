@@ -319,6 +319,9 @@ def landing_html(s):
 
 GONE = {"/data/" + n + ext for n in ("the-france", "cafe-france", "cafe-belgique", "koffie-belgie", "coffee-ireland") for ext in ("", ".csv")}  # RES-1459 row 6: retired tea/coffee studies answer 410
 LAUNCH_REDIRECTS = {"/pricing": "/#pricing", "/faq": "/#faq", "/sample-audit": "/sample", "/check": "/", "/partners": "/", "/fr/check": "/", "/nl/check": "/", "/fixpack": "/#fixpack", "/fix-pack": "/#fixpack"}
+GO = {  # RES-2130: short links for posts; one fixed UTM set per link (UTM.md: lowercase [a-z0-9_]); other query params (e.g. internal=1) are forwarded, utm_* from the caller are dropped
+    "/go/hn": {"utm_source": "hackernews", "utm_medium": "organic_social", "utm_campaign": "citedby_202610", "utm_content": "show_hn_01"},
+}
 ROUTES = {"/check": "check.html", "/fr/check": "fr/check.html", "/nl/check": "nl/check.html",
           "/legal": "legal.html", "/privacy": "privacy.html"}
 CSP = ("default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'; connect-src 'self'; "
@@ -360,6 +363,10 @@ class H(BaseHTTPRequestHandler):
     def static(self, path):
         if path in GONE:
             return self.out(410, page("Gone"))
+        if path in GO:
+            from urllib.parse import urlencode
+            keep = [(k, v) for k, vs in parse_qs(urlparse(self.path).query).items() if not k.startswith("utm_") for v in vs][:5]
+            return self.out(302, b"", extra={"Location": "/?" + urlencode(list(GO[path].items()) + keep), "X-Robots-Tag": "noindex"})
         if path in LAUNCH_REDIRECTS:  # RES-1496: the old shop-scan pages are retired; their paths lead to the new landing
             return self.out(301, b"", extra={"Location": LAUNCH_REDIRECTS[path]})
         if path == "/" or path in langroutes.LANDING_PATHS:  # RES-1731 row 10: / is English, /fr /nl /de /es are real translations (tools/localize_landing.py)
