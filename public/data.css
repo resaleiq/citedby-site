@@ -20,6 +20,8 @@ ul.lv li{padding:var(--s3) 0;border-top:1px solid var(--rule);margin:0}
 .dp .tw td.n:last-child{white-space:nowrap}
 .pm{display:none}
 .dp .cta{margin-top:var(--s12);padding:var(--s8);background:var(--wash);border-left:6px solid var(--navy)}
+.dp .cta h2{color:var(--navy)}
+.dp .cta p,.dp .cta .lede{color:var(--text)}
 .dp .cta .lede{margin-bottom:var(--s6)}
 @media(max-width:600px){
  .doc.wide{padding:0 var(--s4)}
