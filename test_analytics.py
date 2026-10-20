@@ -15,6 +15,12 @@ def test_inject_leaves_fragments_alone_and_off_switch_works(monkeypatch):
     assert analytics.inject(PAGE) == PAGE
 
 
+def test_inject_implied_head_goes_before_body():  # RES-2130: citedby.eu / and /plans had no </head>, so no pageview was ever sent from the landing
+    page = b'<!doctype html><html lang="en"><meta charset="utf-8"><title>x</title><body class="cb land"><p>hi</p></body></html>'
+    out = analytics.inject(page)
+    assert out.count(b"riq-a.js") == 1 and out.index(b"riq-a.js") < out.index(b"<body") and analytics.inject(out) == out
+
+
 def test_no_query_or_email_in_tag():
     assert b"@" not in analytics.TAG and b"?" not in analytics.TAG.replace(b"riq-a.js?v=3", b"")
 
