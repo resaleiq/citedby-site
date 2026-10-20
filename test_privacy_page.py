@@ -45,5 +45,12 @@ def test_privacy_google_data_is_stated_exactly_res1406():
 
 
 def test_privacy_names_slack_and_dns_res2087():
-    for needle in ("Slack Technologies Limited", "webhook address you give us", "with none set, nothing goes to Slack", "Cloudflare, Inc.", "no account data"):
+    for needle in ("under your agreement with Slack", "EU-US Data Privacy Framework", "webhook address you give us", "with none set, nothing goes to Slack", "Cloudflare, Inc.", "no account data"):
         assert needle in P, needle
+
+
+def test_privacy_slack_and_cloudflare_res2196():
+    assert "Standard Contractual Clauses) receives our project alerts" not in P
+    assert "Slack Technologies Limited" not in P
+    assert "check the custom domain for your branded reports" in P
+    assert "that site address or domain" in P
