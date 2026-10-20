@@ -45,7 +45,6 @@ Pour voir à quoi ressemble un rapport, ouvrez [l'exemple de mini-audit](/sample
 | Offre | Prix | À savoir |
 | --- | --- | --- |
 | Audit unique | 9 €, payé une fois | Payé avant l'exploration, garantie de remboursement de 14 jours |
-| Fix Pack | 390 €, payé une fois | Offre à paiement unique, détaillée sur la page des tarifs |
 | Abonnement mensuel | dès 19 € | Nouvelle exploration à intervalle régulier |
 
 Il n'existe pas d'offre gratuite. Vous pouvez en revanche lancer vous-même les contrôles de base grâce à nos guides, par exemple [ChatGPT peut-il lire mon site ?](/fr/blog/can-chatgpt-read-my-website).

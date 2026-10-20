@@ -33,10 +33,10 @@ const ff = (n, w) => `@font-face{font-family:Newsreader;font-weight:${w};src:url
 const og = `<style>${ff("newsreader-latin-600-normal", 600)}${ff("newsreader-latin-400-normal", 400)}@font-face{font-family:Plex;font-weight:400;src:url(file://${PUB}/fonts/ibm-plex-sans-latin-400-normal.woff2)}
 body{margin:0;width:1200px;height:630px;background:#0F1B2D;color:#E8EDF4;position:relative;overflow:hidden}
 .l{position:absolute;left:72px;top:64px}.h{position:absolute;left:72px;top:200px;width:1040px;font:600 66px/1.08 Newsreader,Georgia,serif;letter-spacing:-.02em}
-.s{position:absolute;left:72px;top:430px;font:400 28px/1.45 Plex,sans-serif;color:#C9D2DF;width:900px}.bar{position:absolute;left:0;right:0;bottom:0;height:14px;background:#FFB400}
+.s{position:absolute;left:72px;top:430px;font:400 28px/1.45 Plex,sans-serif;color:#C9D2DF;width:900px}.bar{position:absolute;left:0;right:0;bottom:0;height:14px;background:#4FD1C5}
 .u{position:absolute;right:72px;top:84px;font:400 26px Plex,sans-serif;color:#C9D2DF}</style><body><div class="l">${lock}</div><div class="u">citedby.eu</div>
-<div class="h">Is an AI assistant sending your customers to a competitor?</div><div class="s">Paste your site address. We ask nine AI assistants what your buyers ask and show who they name instead of you.</div><div class="bar"></div></body>`;
-await png(og, 1200, 630, "og.png");
+<div class="h">Your audit says 300 errors. Which ones matter?</div><div class="s">We crawl every page, group repeats into single fixes and give you the exact code to paste. From €9.</div><div class="bar"></div></body>`;
+await png(og, 1200, 630, "og-v2.png");
 unlinkSync(join(PUB, "favicon-48.png")); // only inside the ICO
 await b.close();
 console.log("brand assets written to", PUB);

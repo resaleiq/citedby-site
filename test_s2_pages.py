@@ -42,7 +42,7 @@ def test_prices_on_pricing_page_equal_table():
     shown = sorted(int(x) for x in re.findall(r'class="pr">€(\d+)', h) + re.findall(r'class="price">€(\d+)', h))
     assert shown == sorted(pages.PRICES.values())
     assert "€149" not in h and "CitedBy Monthly" not in h
-    assert h.count("Buy ") == 1 and "buy.stripe.com" in h
+    assert h.count("Buy ") == 1 and "/go/fixpack" in h and "buy.stripe.com" not in h
     for s in ("Tell me when it opens", "Ask about Agency Kit", "Ask about Workspace"): assert s in h
 
 

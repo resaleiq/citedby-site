@@ -51,7 +51,7 @@
   }, true);
   // fetch rules per site: [method, path regex, event, optional JSON status that must match, 1 = fire on the request]
   var RULES = {
-    citedby: [["POST", /^\/api\/(snapshot|check)$/, "check_started", 0, 1], ["POST", /^\/api\/check$/, "check_finished"], ["GET", /^\/api\/snapshot\/[\w-]+$/, "check_finished", "done"],
+    citedby: [["POST", /^\/api\/(snapshot|check|teaser)$/, "check_started", 0, 1], ["POST", /^\/api\/check$/, "check_finished"], ["GET", /^\/api\/snapshot\/[\w-]+$/, "check_finished", "done"],
               ["POST", /^\/api\/(account\/link|request)$/, "signup"], ["POST", /^\/api\/(order|checkout)$/, "checkout_started", 0, 1]],
     hexaciv: [["POST", /^\/api\/mock\/start$/, "mock_started"], ["POST", /^\/api\/mock\/\d+\/submit$/, "mock_finished"], ["POST", /^\/api\/checkout$/, "checkout_started"]],
     civiqpass: [["POST", /^\/api\/mock\/start$/, "mock_started"], ["POST", /^\/api\/mock\/\d+\/submit$/, "mock_finished"]]

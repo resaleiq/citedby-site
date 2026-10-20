@@ -19,7 +19,6 @@ answer: Most tools in this category are dashboards: you pay a monthly fee and th
 ## What CitedBy costs
 
 - Site audit from €9, paid once: we crawl every page and give the exact fix for each issue, with a 14-day money-back guarantee.
-- Fix Pack: €390 paid once. We make the changes and re-check at day 30.
 - Our prices are public on the [home page](/#prices). Refund conditions are on the [refund page](/refund).
 
 ## How the other tools are positioned

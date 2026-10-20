@@ -18,7 +18,7 @@ answer: To check what ChatGPT says about your brand, ask it 20 prompts in four g
 
 You need a free account on each assistant you care about, a spreadsheet, and about an hour. Open a new chat for every prompt so earlier answers do not colour the next one, and turn web search on if the assistant offers it, because an answer built from live pages can differ from one without. Write down which assistant, which setting and the date. Answers change between runs, which is why every prompt gets asked twice.
 
-Fill the brackets with your own words: `[category]` is what you sell (for example "specialty coffee beans"), `[country]` is where you ship, `[brand]` is your shop name and `[rival]` is a shop you compete with.
+Fill the brackets with your own words: `[category]` is what you sell (for example "natural latex mattresses"), `[country]` is where you ship, `[brand]` is your shop name and `[rival]` is a shop you compete with.
 
 ## The 20 prompts
 

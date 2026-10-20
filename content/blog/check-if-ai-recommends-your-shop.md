@@ -18,7 +18,7 @@ answer: Ask each assistant the questions your buyers ask, twice, with web search
 
 ## Do it by hand in 10 minutes
 
-1. Write 5 questions a buyer would type, for your product and country. Example: "best online shop for specialty coffee in Belgium". Do not put your shop name in them.
+1. Write 5 questions a buyer would type, for your product and country. Example: "best online shop for natural latex mattresses in Belgium". Do not put your shop name in them.
 2. Ask each question in ChatGPT, Perplexity and Gemini, logged out, with web search on.
 3. Ask each question a second time. Answers change between runs.
 4. For each answer note two things: is your shop named in the text, and is your domain in the links.
@@ -36,7 +36,7 @@ Ask each assistant "what is [your shop name]" first. If it describes another bus
 
 The fixes that tend to matter are on your own site (a page that answers the buyer question directly, product data with price and availability) and off it (the pages assistants cite for your category, such as comparison articles and directories). Our [sample audit](/sample-audit) shows what that looks like for one shop. The [About page](/about) explains how we count.
 
-The Fix Pack is €390 paid once: we make the changes and re-check at day 30. The audit starts at €9 with a 14-day money-back guarantee.
+The audit starts at €9 with a 14-day money-back guarantee.
 
 ## FAQ
 

@@ -7,7 +7,7 @@ import base64, hashlib, hmac, html, json, mimetypes, os, re, sqlite3, threading,
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 
-import analytics, doorcheck, home, langroutes, pages, proxy, safefetch
+import analytics, doorcheck, home, langroutes, pages, proxy, safefetch, social
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CONSENT_VERSION = "2026-10-15.v1"
@@ -25,7 +25,7 @@ CHECK_PER_HOST = int(os.environ.get("CHECK_PER_HOST_HOUR", "4"))
 REQ_PER_IP = int(os.environ.get("REQ_PER_IP_HOUR", "5"))
 DAILY_CAP = int(os.environ.get("DAILY_CAP", "20"))
 MAILS_PER_ADDR_DAY = 2
-INTERNAL_IPS = {x for x in os.environ.get("INTERNAL_IPS", "").split(",") if x}
+INTERNAL_IPS = {x.split("#")[0].strip() for k in ("INTERNAL_CLIENT_IPS", "INTERNAL_IPS") for x in os.environ.get(k, "").split(",")} - {""}  # RES-2134: one own-traffic list (INTERNAL_CLIENT_IPS, same value in every container); the old name still works
 LANGS = ("en", "fr", "nl")
 COUNTRIES = ("BE", "FR", "NL", "IE", "DE", "ES", "GB", "OTHER")
 NICHES = ("coffee", "tea", "beauty", "mattress", "supplements", "other")
@@ -38,7 +38,7 @@ def _deploy_id():  # commit sha from the image build (Dockerfile ARG GIT_SHA); e
     return v or "unknown"
 DEPLOY_ID = _deploy_id()
 SNAPSHOTS = json.load(open(os.path.join(HERE, "data", "snapshots.json")))
-EVENTS = ("check_start", "check_complete", "email_submitted", "fixpack_click")
+EVENTS = ("check_start", "check_complete", "email_submitted", "fixpack_click", "first_screen_cta_click", "free_tool_start", "offer_view")
 
 os.makedirs(DATA_DIR, exist_ok=True)
 DB_PATH = os.path.join(DATA_DIR, "check.db")
@@ -138,7 +138,8 @@ def count_event(etype, lang, ip=""):
         return
     day = time.strftime("%Y-%m-%d", time.gmtime())
     with _lock:
-        _db.execute("INSERT INTO event_count(day,lang,type,n) VALUES(?,?,?,1) ON CONFLICT(day,lang,type) DO UPDATE SET n=n+1", (day, lang, etype))
+        for t in (etype,) + (("free_tool_start",) if etype == "check_start" else ()):  # free_tool_start: the server accepted the first free request (RES-2134)
+            _db.execute("INSERT INTO event_count(day,lang,type,n) VALUES(?,?,?,1) ON CONFLICT(day,lang,type) DO UPDATE SET n=n+1", (day, lang, t))
         _db.commit()
 
 
@@ -319,6 +320,9 @@ def landing_html(s):
 
 GONE = {"/data/" + n + ext for n in ("the-france", "cafe-france", "cafe-belgique", "koffie-belgie", "coffee-ireland") for ext in ("", ".csv")}  # RES-1459 row 6: retired tea/coffee studies answer 410
 LAUNCH_REDIRECTS = {"/pricing": "/#pricing", "/faq": "/#faq", "/sample-audit": "/sample", "/check": "/", "/partners": "/", "/fr/check": "/", "/nl/check": "/", "/fixpack": "/#fixpack", "/fix-pack": "/#fixpack"}
+GO = {  # RES-2130: short links for posts; one fixed UTM set per link (UTM.md: lowercase [a-z0-9_]); other query params (e.g. internal=1) are forwarded, utm_* from the caller are dropped
+    "/go/hn": {"utm_source": "hackernews", "utm_medium": "organic_social", "utm_campaign": "citedby_202610", "utm_content": "show_hn_01"},
+}
 ROUTES = {"/check": "check.html", "/fr/check": "fr/check.html", "/nl/check": "nl/check.html",
           "/legal": "legal.html", "/privacy": "privacy.html"}
 CSP = ("default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'; connect-src 'self'; "
@@ -339,7 +343,7 @@ class H(BaseHTTPRequestHandler):
 
     def out(self, code, body, ctype="text/html; charset=utf-8", extra=None):
         if code == 200 and ctype.startswith("text/html"):
-            body = analytics.inject(body)
+            body = social.ensure(analytics.inject(body))
         self.send_response(code)
         self.send_header("Content-Type", ctype)
         self.send_header("Content-Length", str(len(body)))
@@ -360,6 +364,10 @@ class H(BaseHTTPRequestHandler):
     def static(self, path):
         if path in GONE:
             return self.out(410, page("Gone"))
+        if path in GO:
+            from urllib.parse import urlencode
+            keep = [(k, v) for k, vs in parse_qs(urlparse(self.path).query).items() if not k.startswith("utm_") for v in vs][:5]
+            return self.out(302, b"", extra={"Location": "/?" + urlencode(list(GO[path].items()) + keep), "X-Robots-Tag": "noindex"})
         if path in LAUNCH_REDIRECTS:  # RES-1496: the old shop-scan pages are retired; their paths lead to the new landing
             return self.out(301, b"", extra={"Location": LAUNCH_REDIRECTS[path]})
         if path == "/" or path in langroutes.LANDING_PATHS:  # RES-1731 row 10: / is English, /fr /nl /de /es are real translations (tools/localize_landing.py)
@@ -395,6 +403,10 @@ class H(BaseHTTPRequestHandler):
         if proxy.handle(self, "GET"): return
         u = urlparse(self.path)
         tok = (parse_qs(u.query).get("t") or [""])[0]
+        if u.path == "/go/fixpack":  # RES-2134: the Payment Link leaves no trace of its own, so the button comes here first: count the open (not from our own addresses), then 302
+            lg = (parse_qs(u.query).get("lang") or ["en"])[0]
+            count_event("fixpack_click", lg if lg in LANGS else "en", self.ip())
+            return self.out(302, b"", extra={"Location": home.FIX_URL, "Cache-Control": "no-store", "X-Robots-Tag": "noindex"})
         if u.path == "/health":
             try:  # a fresh read-only connection: fails if the file is missing, unreadable or corrupt, never creates it
                 c = sqlite3.connect("file:%s?mode=ro" % DB_PATH, uri=True, timeout=2)
@@ -476,8 +488,8 @@ class H(BaseHTTPRequestHandler):
             ok = handle_request(data, self.ip())
             return send(200 if ok else 400, {"ok": ok})
         if u.path == "/api/event":
-            if data.get("type") == "fixpack_click":  # the only event the browser reports; the rest are counted server-side
-                count_event("fixpack_click", data.get("lang"), self.ip())
+            if data.get("type") in ("fixpack_click", "first_screen_cta_click", "offer_view"):  # the events the browser reports; the rest are counted server-side
+                count_event(data["type"], data.get("lang"), self.ip())
             return self.out(204, b"", "application/json")
         self.out(404, b'{"ok":false}', "application/json")
 

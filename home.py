@@ -374,7 +374,7 @@ def render(lang, engines):
           {"@context": "https://schema.org", "@type": "Service", "name": t["svc"], "serviceType": t["svc_type"],
            "provider": {"@type": "Organization", "name": "CitedBy", "url": "https://citedby.eu", "disambiguatingDescription": "Not citedby.co or citedby.ai, and not an academic citation tool."}, "areaServed": "EU", "inLanguage": t["locale"],
            "offers": [{"@type": "Offer", "name": t["free_offer"], "price": "0", "priceCurrency": "EUR", "url": f"https://citedby.eu{t['path']}"}]
-           + ([{"@type": "Offer", "name": t["fp_offer"], "price": "390", "priceCurrency": "EUR", "url": FIX_URL}] if live else [])}]
+           }]
     if live:
         ld[1]["description"] = eline_plain(t, day, names, lang)
     alts = '<link rel="alternate" hreflang="en" href="https://citedby.eu/"><link rel="alternate" hreflang="fr" href="https://citedby.eu/fr"><link rel="alternate" hreflang="x-default" href="https://citedby.eu/">'

@@ -22,7 +22,7 @@ U hebt een gratis account nodig bij elke assistent die u wilt testen, een spread
 
 Schrijf op welke assistent, welke instelling en welke datum. Antwoorden verschillen per run, daarom stelt u elke prompt twee keer.
 
-Vul de haken met uw eigen woorden: `[categorie]` is wat u verkoopt (bijvoorbeeld "speciaalkoffiebonen"), `[land]` is waarheen u verzendt, `[merk]` is de naam van uw webshop en `[concurrent]` is een webshop waarmee u concurreert.
+Vul de haken met uw eigen woorden: `[categorie]` is wat u verkoopt (bijvoorbeeld "matrassen van natuurlatex"), `[land]` is waarheen u verzendt, `[merk]` is de naam van uw webshop en `[concurrent]` is een webshop waarmee u concurreert.
 
 ## Welke 20 prompts stelt u?
 
