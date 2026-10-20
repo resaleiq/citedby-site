@@ -26,7 +26,7 @@ def pricing(engines):
     t = home.T["en"]
     d = shell.day0()
     live = bool(engines)
-    buy = (f'<a class="btn" href="{home.FIX_URL}" rel="noopener">Buy Audit + Fix, {eur(PRICES["fix"])}</a>' if live
+    buy = (f'<a class="btn" href="/go/fixpack" rel="noopener">Buy Audit + Fix, {eur(PRICES["fix"])}</a>' if live
            else f'<a class="btn" href="/grade">{E(t["go"])}</a>')
     tell = lambda n: MAIL + quote(f"Tell me when {n} opens")
     ask = lambda n: MAIL + quote(f"About {n}")

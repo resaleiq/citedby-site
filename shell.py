@@ -80,8 +80,8 @@ def document(lang, title, desc, path, main, *, ld=(), og_title=None, og_desc=Non
 <title>{E(title)}</title>
 <meta name="description" content="{E(desc)}">{f'<meta name="robots" content="{robots}">' if robots else ""}
 <link rel="canonical" href="https://citedby.eu{path}">{alts}
-<meta property="og:title" content="{E(ogt)}"><meta property="og:description" content="{E(ogd)}"><meta property="og:url" content="https://citedby.eu{path}"><meta property="og:type" content="website"><meta property="og:locale" content="{"fr_FR" if lang == "fr" else "en_IE"}"><meta property="og:image" content="https://citedby.eu/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{E(ogt)}"><meta name="twitter:description" content="{E(ogd)}"><meta name="twitter:image" content="https://citedby.eu/og.png">
+<meta property="og:title" content="{E(ogt)}"><meta property="og:description" content="{E(ogd)}"><meta property="og:url" content="https://citedby.eu{path}"><meta property="og:type" content="website"><meta property="og:locale" content="{"fr_FR" if lang == "fr" else "en_IE"}"><meta property="og:image" content="https://citedby.eu/og-v2.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{E(ogt)}"><meta name="twitter:description" content="{E(ogd)}"><meta name="twitter:image" content="https://citedby.eu/og-v2.png">
 <meta name="theme-color" content="#0F1B2D">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"><link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/newsreader-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>

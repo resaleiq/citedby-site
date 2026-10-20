@@ -1,6 +1,6 @@
 FROM python:3.12-slim
 WORKDIR /app
-COPY server.py home.py pages.py shell.py proxy.py langroutes.py safefetch.py doorcheck.py analytics.py ./
+COPY server.py home.py pages.py shell.py proxy.py langroutes.py safefetch.py doorcheck.py analytics.py social.py ./
 COPY data/ data/
 COPY public/ public/
 ARG GIT_SHA=unknown

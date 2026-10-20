@@ -3,14 +3,19 @@ POSTHOG_KEY="" switches the tag off (rollback without a redeploy of code)."""
 import os, threading, urllib.request
 
 KEY = os.environ.get("POSTHOG_KEY", "phc_r2uexPGqx2dCYjsFKnevTB8rf8Ez9B6twoMXcfFceHzD")
-TAG = ('<script src="/riq-a.js?v=3" data-key="%s" data-site="citedby" data-endpoint="/riq-e" defer></script>' % KEY).encode()
+TAG = ('<script src="/riq-a.js?v=4" data-key="%s" data-site="citedby" data-endpoint="/riq-e" defer></script>' % KEY).encode()
 
 
 def inject(body):
-    """Add the tag before </head> of an HTML page; pages without a head, or with the tag already, pass through."""
-    if not KEY or TAG in body or b"</head>" not in body:
+    """Add the tag before </head> of an HTML page (or before <body> when the head is implied); fragments, or pages with the tag already, pass through."""
+    if not KEY or TAG in body:
         return body
-    return body.replace(b"</head>", TAG + b"</head>", 1)
+    if b"</head>" in body:
+        return body.replace(b"</head>", TAG + b"</head>", 1)
+    i = body.find(b"<body")  # RES-2130: the landing and app pages have no explicit </head> (implied head); a deferred script before <body> is valid there. Fragments stay untouched.
+    if i < 0 or b"<html" not in body[:400].lower():
+        return body
+    return body[:i] + TAG + body[i:]
 
 
 UPSTREAM = "https://eu.i.posthog.com/i/v0/e/"

@@ -20,7 +20,7 @@ answer: Pour vérifier ce que ChatGPT dit de votre marque, posez-lui 20 question
 
 Il vous faut un compte gratuit sur chaque assistant qui vous intéresse, un tableur et environ une heure. Ouvrez une nouvelle conversation pour chaque question, afin que les réponses précédentes n'influencent pas la suivante, et activez la recherche web si l'assistant la propose : une réponse construite à partir de pages en direct peut différer d'une réponse sans. Notez l'assistant, le réglage et la date. Les réponses changent d'une exécution à l'autre, c'est pourquoi chaque question est posée deux fois.
 
-Remplacez les crochets par vos mots : `[catégorie]` est ce que vous vendez (par exemple « café de spécialité en grains »), `[pays]` est l'endroit où vous livrez, `[marque]` est le nom de votre boutique et `[concurrent]` une boutique avec laquelle vous êtes en concurrence.
+Remplacez les crochets par vos mots : `[catégorie]` est ce que vous vendez (par exemple « matelas en latex naturel »), `[pays]` est l'endroit où vous livrez, `[marque]` est le nom de votre boutique et `[concurrent]` une boutique avec laquelle vous êtes en concurrence.
 
 ## Quelles sont les 20 questions à poser ?
 

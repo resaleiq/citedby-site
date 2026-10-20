@@ -61,7 +61,6 @@ Sie können die Prüfung auch ohne uns Schritt für Schritt von Hand machen. Das
 | --- | --- | --- |
 | Einzelnes Audit | 9 €, einmal bezahlt, vor dem Crawl | Bericht mit Korrekturen für jedes Problem |
 | Monatstarife | ab 19 € | Neuer Crawl nach Zeitplan |
-| Fix Pack | 390 €, einmalig | Wir setzen die Änderungen aus Ihrem Bericht um |
 
 Auf alle Käufe gilt die 14-Tage-Geld-zurück-Garantie. Einen kostenlosen Tarif gibt es nicht.
 

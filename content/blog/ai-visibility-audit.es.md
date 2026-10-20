@@ -42,7 +42,7 @@ Además, nuestras [páginas de datos](/data) muestran qué sitios enlazó ChatGP
 
 ## ¿Cuánto cuesta la auditoría?
 
-Una auditoría suelta cuesta 9 €, con pago único antes del rastreo y garantía de devolución de 14 días. Los planes mensuales desde 19 € vuelven a rastrear tu web con la frecuencia que elijas. El Fix Pack cuesta 390 €, también con pago único. No hay plan gratuito.
+Una auditoría suelta cuesta 9 €, con pago único antes del rastreo y garantía de devolución de 14 días. Los planes mensuales desde 19 € vuelven a rastrear tu web con la frecuencia que elijas. No hay plan gratuito.
 
 ## ¿Qué puedes comprobar a mano antes de pagar?
 
