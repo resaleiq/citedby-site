@@ -36,7 +36,7 @@ Ask each assistant "what is [your shop name]" first. If it describes another bus
 
 The fixes that tend to matter are on your own site (a page that answers the buyer question directly, product data with price and availability) and off it (the pages assistants cite for your category, such as comparison articles and directories). Our [sample audit](/sample-audit) shows what that looks like for one shop. The [About page](/about) explains how we count.
 
-The Fix Pack is €390 paid once: we make the changes and re-check at day 30. The audit starts at €9 with a 14-day money-back guarantee.
+The audit starts at €9 with a 14-day money-back guarantee.
 
 ## FAQ
 
