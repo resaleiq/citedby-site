@@ -41,4 +41,4 @@ def test_privacy_names_all_three_cookies_res1406():
 
 def test_privacy_google_data_is_stated_exactly_res1406():
     assert "We receive no name, photo, contacts or other Google data" not in P
-    assert "an account ID" in P and "no Google token" in P
+    assert "an account ID" in P and "contacts or Google token" in P
