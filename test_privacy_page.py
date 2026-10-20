@@ -42,3 +42,8 @@ def test_privacy_names_all_three_cookies_res1406():
 def test_privacy_google_data_is_stated_exactly_res1406():
     assert "We receive no name, photo, contacts or other Google data" not in P
     assert "an account ID" in P and "contacts or Google token" in P
+
+
+def test_privacy_names_slack_and_dns_res2087():
+    for needle in ("Slack Technologies Limited", "webhook address you give us", "with none set, nothing goes to Slack", "Cloudflare, Inc.", "no account data"):
+        assert needle in P, needle
