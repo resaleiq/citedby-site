@@ -2,7 +2,7 @@
 meta description when the page lacks them, so a page that already carries its own is left alone. Standard library only."""
 import re
 
-IMG = "https://citedby.eu/og.png"  # 1200x630
+IMG = "https://citedby.eu/og-v2.png"  # 1200x630
 _TITLE = re.compile(rb"<title>(.*?)</title>", re.S)
 _DESC = re.compile(rb'<meta name="?description"? content="([^"]*)"')
 

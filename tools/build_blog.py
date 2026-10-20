@@ -200,7 +200,7 @@ def build_article(fm, body, arts):
             parts = html_body.split("<h2 ", 3); html_body = "<h2 ".join(parts[:2]) + "<h2 " + parts[2] + fig + "<h2 " + parts[3] if len(parts) > 3 else html_body + fig
         else: html_body = html_body.replace('<ol class="steps">', fig + '<ol class="steps">', 1)
     hero = fm.get("hero", "")
-    og = "/blog/img/%s" % fm["og"] if fm.get("og") else "/og.png"
+    og = "/blog/img/%s" % fm["og"] if fm.get("og") else "/og-v2.png"
     ans = '<aside class="answer" aria-label="%s"><b>%s</b><p>%s</p></aside>' % (E(t["answer"]), E(t["answer"]), E(fm["answer"]))
     w = widget(loc, slug) if fm.get("widget", "on") != "off" else ""
     ad = '<aside class="ad-slot" aria-label="%s" data-slot="in-article"></aside>' % E(t["ad"]) if ADS_ENABLED and fm.get("ads") != "off" else "<!-- ad-slot:in-article (off) -->"
@@ -251,7 +251,7 @@ def build_index(loc, arts, sect="blog"):
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": t["idx_h1"], "inLanguage": loc, "url": SITE + path},
           {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": n + 1, "url": "%s%s/%s/%s" % (SITE, prefix(loc), a.get("section", "blog"), a["slug"])} for n, a in enumerate(arts)]}]
     main = '<main id="main" class="art idx"><h1>%s</h1><p class="lede">%s</p><ul class="cards">%s</ul></main>' % (E(t["idx_h1"]), E(t["idx_lede"]), cards)
-    return path, shell(loc, t["idx_h1"] + ". CitedBy", t["idx_lede"], path, [], "/og.png", ld, main)
+    return path, shell(loc, t["idx_h1"] + ". CitedBy", t["idx_lede"], path, [], "/og-v2.png", ld, main)
 
 def main():
     check = "--check" in sys.argv

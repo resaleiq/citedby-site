@@ -6,7 +6,7 @@ PAGE = b'<!doctype html><html lang="en"><meta charset="utf-8"><title>Plans &amp;
 def test_adds_all_share_tags_from_title_and_description():
     out = social.ensure(PAGE).decode()
     for t in ('property="og:title" content="Plans &amp; &quot;prices&quot;"', 'property="og:description" content="Crawl every page."',
-              'property="og:image" content="https://citedby.eu/og.png"', 'name="twitter:card" content="summary_large_image"'):
+              'property="og:image" content="https://citedby.eu/og-v2.png"', 'name="twitter:card" content="summary_large_image"'):
         assert t in out
 
 
