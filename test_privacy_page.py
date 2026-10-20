@@ -21,7 +21,7 @@ def test_privacy_names_the_server_location_res1909():
 
 
 def test_privacy_names_every_recipient_res1406():
-    for needle in ("OpenRouter", "PostHog", "Forward Email", "Google Ireland", "Resend", "Anthropic", "Hetzner", "Stripe Payments Europe"):
+    for needle in ("OpenRouter", "PostHog", "Forward Email", "Google Ireland", "Resend", "Anthropic Ireland, Limited", "Hetzner", "Stripe Payments Europe"):
         assert needle in P, needle
     assert "These are the only recipients" not in P
     assert "We count anonymous events" not in P
