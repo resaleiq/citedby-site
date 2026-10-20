@@ -1,6 +1,6 @@
 # CitedBy
 
-> CitedBy is a website audit for search in the age of ChatGPT, Perplexity and Google AI answers. Enter a URL: CitedBy crawls every page, checks it against a list of checks (AI-crawler access, readable content, llms.txt, schema, titles and headings, internal links, answer-first content) and gives a graded report with a ready-to-paste fix for each issue. Plans: Single audit 9 EUR once (up to 100 pages), Starter 19 EUR/month, Pro 49 EUR/month, Agency 99 EUR/month; 14-day money-back guarantee. Fix Pack 390 EUR once: CitedBy applies the fixes. Service from Spain. Not citedby.co or citedby.ai (different companies); the only domain is citedby.eu.
+> CitedBy is a website audit for search in the age of ChatGPT, Perplexity and Google AI answers. Enter a URL: CitedBy crawls every page, checks it against a list of checks (AI-crawler access, readable content, llms.txt, schema, titles and headings, internal links, answer-first content) and gives a graded report with a ready-to-paste fix for each issue. Plans: Single audit 9 EUR once (up to 100 pages), Starter 19 EUR/month, Pro 49 EUR/month, Agency 99 EUR/month; 14-day money-back guarantee. Service from Spain. Not citedby.co or citedby.ai (different companies); the only domain is citedby.eu.
 
 ## Pages
 - [Home, checks, pricing and FAQ](https://citedby.eu/)

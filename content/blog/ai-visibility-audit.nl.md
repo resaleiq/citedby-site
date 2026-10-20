@@ -45,7 +45,6 @@ Wilt u eerst zien hoe zo'n rapport eruitziet? Bekijk de [voorbeeldaudit](/sample
 | Wat | Prijs | Opmerking |
 | --- | --- | --- |
 | Eén audit | €9, eenmalig | Betaald vóór de crawl, 14 dagen geld-terug-garantie |
-| Fix Pack | €390, eenmalig | Eenmalig betaald, geen abonnement |
 | Maandplan | vanaf €19 per maand | Crawlt op een vast schema opnieuw |
 
 Er is geen gratis abonnement. Met de knop bovenaan start u direct een audit van uw eigen webshop.
