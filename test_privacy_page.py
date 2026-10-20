@@ -78,3 +78,14 @@ def test_privacy_retention_claims_match_code_res1406():
     assert "[VERIFY" not in P and "[HELLO" not in P
     assert "Deleting your account does not remove them automatically" in P
     assert "removes your account, projects" not in P
+
+
+def test_privacy_matches_data_the_app_keeps_res2218():
+    for needle in ("password hash", "Stopping repeat free trials", "card fingerprint", "The free instant check", "7 days",
+                   "Colleagues you invite", "address, subject and message text", "up to 6,000 characters",
+                   "Monthly AI-assistant re-checks", "6 years (Spanish Commercial Code art. 30)",
+                   "a site address to run an audit", "It does not remove the free-trial record"):
+        assert needle in P, needle
+    assert "until you delete the audit or the account" not in P
+    assert "address and subject" not in P
+    assert "until the matter is closed" not in P
