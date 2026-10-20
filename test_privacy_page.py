@@ -25,3 +25,8 @@ def test_privacy_names_every_recipient_res1406():
         assert needle in P, needle
     assert "These are the only recipients" not in P
     assert "We count anonymous events" not in P
+
+
+def test_privacy_names_google_sign_in_slack_and_dns_res2087():
+    for needle in ("Continue with Google", "email address and that it has verified it", "nothing else from Google", "Slack Technologies Limited", "webhook address you give us", "with none set, nothing goes to Slack", "Cloudflare, Inc.", "no account data"):
+        assert needle in P, needle
