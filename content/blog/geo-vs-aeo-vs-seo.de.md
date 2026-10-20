@@ -1,4 +1,4 @@
-title: GEO, AEO und SEO im Vergleich: Unterschiede und was Sie brauchen
+title: GEO, AEO und SEO im Vergleich: Unterschiede und Nutzen
 h1: GEO, AEO und SEO im Vergleich: Was unterscheidet die Audits?
 description: Was ein SEO-, AEO- und GEO-Audit jeweils prüft, was Google zu KI-Funktionen sagt und womit ein kleiner Onlineshop zuerst anfängt.
 slug: geo-vs-aeo-vs-seo

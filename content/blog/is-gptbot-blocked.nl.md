@@ -1,4 +1,4 @@
-title: Is GPTBot geblokkeerd op uw webshop? 4 manieren om het te checken
+title: GPTBot geblokkeerd op uw webshop? 4 manieren om te checken
 h1: Is GPTBot geblokkeerd op mijn site? Vier plekken om na te kijken, met een test per plek
 description: GPTBot kan tegengehouden worden door robots.txt, uw CDN, een firewallregel of uw server. Zo ziet u in minuten welke, en wat blokkeren wel en niet doet.
 slug: is-gptbot-blocked

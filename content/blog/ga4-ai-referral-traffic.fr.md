@@ -1,4 +1,4 @@
-title: GA4 : suivre le trafic venant de ChatGPT et des assistants IA
+title: GA4 : suivre le trafic de ChatGPT et des assistants IA
 h1: Le trafic IA convertit-il ? Configurer GA4 pour voir les visites venant de ChatGPT et des autres assistants
 description: Créez un canal « Assistants IA » dans GA4, vérifiez les sources réelles de vos rapports et comparez les conversions aux autres canaux. Regex incluse.
 slug: ga4-ai-referral-traffic

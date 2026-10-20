@@ -40,7 +40,7 @@ S = {
     e_refused="Your site refused our request (HTTP {status}). That can happen when protection software treats every automated visitor as a threat, and it may be refusing AI crawlers too. We cannot tell from here.", e_unreachable="We could not reach that address. Check it and try again.", e_timeout="Your site took too long to answer. Slow answers also hurt crawlers.", e_net="Something went wrong on our side. Try again in a minute.",
     redirected="Your address redirects to {url}; we checked that site.")),
 "fr": dict(
-  path="/fr/check", title="Test gratuit des robots IA pour votre boutique en ligne | CitedBy",
+  path="/fr/check", title="Test gratuit des robots IA pour votre boutique | CitedBy",
   desc="Collez l'adresse de votre boutique. En 10 secondes : les robots IA peuvent-ils la lire, quelles données produit trouvent-ils, avec une correction pour chaque problème. Sans e-mail.",
   h1="Les robots IA peuvent-ils lire votre boutique ? Vérifiez en 10 secondes.", lede="Collez l'adresse de votre boutique. Vous voyez quels robots IA votre site laisse entrer, ce qu'une simple requête y trouve, et la correction pour chaque problème. Sans e-mail. Après le test, vous pouvez demander par e-mail le mini-audit de 16 réponses.",
   f_url="Adresse de la boutique", f_url_ph="votreboutique.fr", f_country="Pays où vous vendez", f_lang="Langue de vos acheteurs", f_niche="Ce que vous vendez", go="Vérifier ma boutique",

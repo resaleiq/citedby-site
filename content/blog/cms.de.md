@@ -1,5 +1,5 @@
-title: KI-Sichtbarkeit für Shopify, WooCommerce und andere Shopsysteme
-h1: KI-Sichtbarkeit für Shopify, WooCommerce und andere Shopsysteme: die Checkliste
+title: KI-Sichtbarkeit für Shopify, WooCommerce und Co.
+h1: KI-Sichtbarkeit für Shopify, WooCommerce und Co.: die Checkliste
 description: Wo Sie bei Shopify und WooCommerce robots.txt und Sitemap finden, wie Sie Produkt-JSON-LD prüfen und woran Sie JavaScript-only-Texte im Theme erkennen.
 slug: cms
 locale: de
@@ -11,7 +11,7 @@ widget: on
 howto: on
 related: /de/guides/technical-seo-checklist|Technische SEO-Checkliste für KI-Sichtbarkeit; /de/blog/is-gptbot-blocked|Ist GPTBot auf meiner Website blockiert?; /de/blog/can-chatgpt-read-my-website|Kann ChatGPT meine Website lesen?
 hero: auto
-hero_alt: Titelkarte: KI-Sichtbarkeit für Shopify, WooCommerce und andere Shopsysteme, mit fünf Prüfpunkten von robots.txt bis Theme-Text
+hero_alt: Titelkarte: KI-Sichtbarkeit für Shopify, WooCommerce und Co., mit fünf Prüfpunkten von robots.txt bis Theme-Text
 hero_sub: Fünf Prüfpunkte, die in jedem Shopsystem gelten
 hero_boxes: robots.txt|wo Sie sie ändern;Sitemap|wo Sie sie finden;Product-JSON-LD|im Quelltext prüfen;Theme-Text|ohne JavaScript lesbar
 steps_img: on

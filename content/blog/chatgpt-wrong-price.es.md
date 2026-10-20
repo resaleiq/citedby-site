@@ -1,4 +1,4 @@
-title: ChatGPT muestra un precio antiguo de mi producto: cómo corregirlo
+title: ChatGPT muestra mi precio antiguo: origen y cómo corregirlo
 h1: ChatGPT muestra mi precio antiguo. Cómo encontrar de dónde lo lee y corregirlo
 description: ChatGPT cita un precio que cambiaste hace meses. Las tres fuentes posibles (tu página, tu feed y otras webs), cómo rastrearlas y cómo volver a comprobarlo.
 slug: chatgpt-wrong-price

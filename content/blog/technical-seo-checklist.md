@@ -1,4 +1,4 @@
-title: Technical SEO checklist for AI visibility (10 checks for shops)
+title: Technical SEO checklist for AI visibility: 10 shop checks
 h1: Technical SEO checklist for AI visibility: 10 checks for your online shop
 description: Ten technical checks that decide whether AI assistants and search engines can read your shop, each with a way to test it by hand in your browser.
 slug: technical-seo-checklist

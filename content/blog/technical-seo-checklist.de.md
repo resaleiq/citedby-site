@@ -9,7 +9,7 @@ date: 2026-10-20
 reviewed: 2026-10-20
 widget: on
 howto: on
-related: /de/blog/can-chatgpt-read-my-website|Kann ChatGPT meine Website lesen?; /de/blog/is-gptbot-blocked|Ist GPTBot auf meiner Website blockiert?; /de/guides/cms|KI-Sichtbarkeit für Shopify, WooCommerce und andere Shopsysteme
+related: /de/blog/can-chatgpt-read-my-website|Kann ChatGPT meine Website lesen?; /de/blog/is-gptbot-blocked|Ist GPTBot auf meiner Website blockiert?; /de/guides/cms|KI-Sichtbarkeit für Shopify, WooCommerce und Co.
 hero: auto
 hero_alt: Titelkarte: Technische SEO-Checkliste für KI-Sichtbarkeit mit vier der neun Prüfungen: robots.txt, Statuscodes, Sitemap und Text im HTML
 hero_sub: Neun Prüfungen, die Sie ohne Tool selbst machen
@@ -50,7 +50,7 @@ Prüfung 1, 2 und 8 entscheiden, ob eine Seite überhaupt gelesen wird. Die übr
 
 ## Was ist, wenn Sie ein Shopsystem wie Shopify oder WooCommerce nutzen?
 
-Dann setzen Sie viele Punkte nicht im Code um, sondern in den Einstellungen Ihres Systems. Wo das geht und wo nicht, steht im Ratgeber [KI-Sichtbarkeit für Shopify, WooCommerce und andere Shopsysteme](/de/guides/cms).
+Dann setzen Sie viele Punkte nicht im Code um, sondern in den Einstellungen Ihres Systems. Wo das geht und wo nicht, steht im Ratgeber [KI-Sichtbarkeit für Shopify, WooCommerce und Co.](/de/guides/cms).
 
 ## FAQ
 

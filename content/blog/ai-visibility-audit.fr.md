@@ -1,4 +1,4 @@
-title: Audit de visibilité IA (GEO / AEO) pour une boutique en ligne
+title: Audit de visibilité IA (GEO / AEO) pour boutique en ligne
 h1: Audit de visibilité IA : ce que nous vérifions sur votre boutique en ligne
 description: L'audit de visibilité IA (GEO, AEO) vérifie page par page si les robots des assistants lisent votre site. Ce que vous recevez, le prix dès 9 €, la FAQ.
 slug: ai-visibility-audit
