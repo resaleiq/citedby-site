@@ -59,3 +59,22 @@ def test_privacy_slack_and_cloudflare_res2196():
 def test_privacy_cloudflare_basis_is_dpf_not_sccs_res2198():
     assert "Cloudflare, Inc. (United States, under the EU-US Data Privacy Framework) answers" in P
     assert "Cloudflare, Inc. (United States; Standard Contractual Clauses)" not in P
+
+
+def test_privacy_art13_sections_res1406():
+    for needle in ("Who is responsible", "legal notice", "Art. 6(1)(b)", "(f) legitimate interest", "(c) legal obligation",
+                   "How long we keep it", "14 days", "Do you have to give us your data?", "Your rights",
+                   "Agencia Española de Protección de Datos", "Automated decisions", "Last updated:"):
+        assert needle in P, needle
+
+
+def test_privacy_has_no_retired_product_wording_res1406():
+    low = P.lower()
+    for gone in ("shop url", "saved count", "recount report", "save a count", "which assistants named your shop", "shop name"):
+        assert gone not in low, gone
+
+
+def test_privacy_retention_claims_match_code_res1406():
+    assert "[VERIFY" not in P and "[HELLO" not in P
+    assert "Deleting your account does not remove them automatically" in P
+    assert "removes your account, projects" not in P
