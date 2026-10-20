@@ -25,7 +25,7 @@ CHECK_PER_HOST = int(os.environ.get("CHECK_PER_HOST_HOUR", "4"))
 REQ_PER_IP = int(os.environ.get("REQ_PER_IP_HOUR", "5"))
 DAILY_CAP = int(os.environ.get("DAILY_CAP", "20"))
 MAILS_PER_ADDR_DAY = 2
-INTERNAL_IPS = {x for x in os.environ.get("INTERNAL_IPS", "").split(",") if x}
+INTERNAL_IPS = {x.split("#")[0].strip() for k in ("INTERNAL_CLIENT_IPS", "INTERNAL_IPS") for x in os.environ.get(k, "").split(",")} - {""}  # RES-2134: one own-traffic list (INTERNAL_CLIENT_IPS, same value in every container); the old name still works
 LANGS = ("en", "fr", "nl")
 COUNTRIES = ("BE", "FR", "NL", "IE", "DE", "ES", "GB", "OTHER")
 NICHES = ("coffee", "tea", "beauty", "mattress", "supplements", "other")
@@ -38,7 +38,7 @@ def _deploy_id():  # commit sha from the image build (Dockerfile ARG GIT_SHA); e
     return v or "unknown"
 DEPLOY_ID = _deploy_id()
 SNAPSHOTS = json.load(open(os.path.join(HERE, "data", "snapshots.json")))
-EVENTS = ("check_start", "check_complete", "email_submitted", "fixpack_click")
+EVENTS = ("check_start", "check_complete", "email_submitted", "fixpack_click", "first_screen_cta_click", "free_tool_start", "offer_view")
 
 os.makedirs(DATA_DIR, exist_ok=True)
 DB_PATH = os.path.join(DATA_DIR, "check.db")
@@ -138,7 +138,8 @@ def count_event(etype, lang, ip=""):
         return
     day = time.strftime("%Y-%m-%d", time.gmtime())
     with _lock:
-        _db.execute("INSERT INTO event_count(day,lang,type,n) VALUES(?,?,?,1) ON CONFLICT(day,lang,type) DO UPDATE SET n=n+1", (day, lang, etype))
+        for t in (etype,) + (("free_tool_start",) if etype == "check_start" else ()):  # free_tool_start: the server accepted the first free request (RES-2134)
+            _db.execute("INSERT INTO event_count(day,lang,type,n) VALUES(?,?,?,1) ON CONFLICT(day,lang,type) DO UPDATE SET n=n+1", (day, lang, t))
         _db.commit()
 
 
@@ -402,6 +403,10 @@ class H(BaseHTTPRequestHandler):
         if proxy.handle(self, "GET"): return
         u = urlparse(self.path)
         tok = (parse_qs(u.query).get("t") or [""])[0]
+        if u.path == "/go/fixpack":  # RES-2134: the Payment Link leaves no trace of its own, so the button comes here first: count the open (not from our own addresses), then 302
+            lg = (parse_qs(u.query).get("lang") or ["en"])[0]
+            count_event("fixpack_click", lg if lg in LANGS else "en", self.ip())
+            return self.out(302, b"", extra={"Location": home.FIX_URL, "Cache-Control": "no-store", "X-Robots-Tag": "noindex"})
         if u.path == "/health":
             try:  # a fresh read-only connection: fails if the file is missing, unreadable or corrupt, never creates it
                 c = sqlite3.connect("file:%s?mode=ro" % DB_PATH, uri=True, timeout=2)
@@ -483,8 +488,8 @@ class H(BaseHTTPRequestHandler):
             ok = handle_request(data, self.ip())
             return send(200 if ok else 400, {"ok": ok})
         if u.path == "/api/event":
-            if data.get("type") == "fixpack_click":  # the only event the browser reports; the rest are counted server-side
-                count_event("fixpack_click", data.get("lang"), self.ip())
+            if data.get("type") in ("fixpack_click", "first_screen_cta_click", "offer_view"):  # the events the browser reports; the rest are counted server-side
+                count_event(data["type"], data.get("lang"), self.ip())
             return self.out(204, b"", "application/json")
         self.out(404, b'{"ok":false}', "application/json")
 
