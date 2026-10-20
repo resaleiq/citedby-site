@@ -2,7 +2,7 @@
 in the page's own language, always visible. Added at serve time so no page (static, generated or proxied from the app) can miss it."""
 import re
 
-LABELS = {"en": "Withdraw from contract here", "fr": "Se rétracter du contrat ici", "de": "Vertrag hier widerrufen", "nl": "Overeenkomst hier herroepen", "es": "Desistir del contrato aquí"}
+LABELS = {"en": "Withdraw from contract here", "fr": "Renoncer au contrat ici", "de": "Vertrag widerrufen", "nl": "Hier de overeenkomst herroepen", "es": "Desistir del contrato aquí"}
 _LANG = re.compile(rb'<html[^>]*\blang="?([a-z]{2})')
 MARK = b'data-withdraw'
 _BLOCK = '<p class="wd-link" style="margin:.75rem 0 0;padding:0 16px;text-align:center;font-size:14px"><a data-withdraw href="{href}" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{label}</a></p>'
