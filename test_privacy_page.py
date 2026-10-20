@@ -1,5 +1,6 @@
-import pathlib
+import pathlib, re
 P = (pathlib.Path(__file__).parent / "public" / "privacy.html").read_text()
+T = re.sub(r"<[^>]+>", "", P)  # visible text: the v2 page marks provider names up in <strong>
 
 def test_privacy_does_not_deny_the_session_cookie():
     assert "sets no cookies" not in P
@@ -17,7 +18,7 @@ def test_privacy_does_not_overclaim_the_export():
 
 
 def test_privacy_names_the_server_location_res1909():
-    assert "Hetzner Online GmbH (our servers, in Helsinki, Finland, EU)" in open("public/privacy.html").read()
+    assert "Hetzner Online GmbH (Germany; our servers are in Helsinki, Finland, EU)" in T
 
 
 def test_privacy_names_every_recipient_res1406():
@@ -41,11 +42,11 @@ def test_privacy_names_all_three_cookies_res1406():
 
 def test_privacy_google_data_is_stated_exactly_res1406():
     assert "We receive no name, photo, contacts or other Google data" not in P
-    assert "an account ID" in P and "contacts or Google token" in P
+    assert "openid and email scopes" in T and "contacts or Google token" in T
 
 
 def test_privacy_names_slack_and_dns_res2087():
-    for needle in ("under your agreement with Slack", "EU-US Data Privacy Framework", "webhook address you give us", "with none set, nothing goes to Slack", "Cloudflare, Inc.", "no account data"):
+    for needle in ("under your agreement with Slack", "EU-US Data Privacy Framework", "webhook address you give us", "With none set, nothing goes to Slack", "Cloudflare, Inc.", "no account data"):
         assert needle in P, needle
 
 
@@ -57,5 +58,5 @@ def test_privacy_slack_and_cloudflare_res2196():
 
 
 def test_privacy_cloudflare_basis_is_dpf_not_sccs_res2198():
-    assert "Cloudflare, Inc. (United States, under the EU-US Data Privacy Framework) answers" in P
+    assert "Cloudflare, Inc. (United States, under the EU-US Data Privacy Framework): answers" in T
     assert "Cloudflare, Inc. (United States; Standard Contractual Clauses)" not in P
