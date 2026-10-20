@@ -215,7 +215,7 @@ def build_article(fm, body, arts):
     if alts: alts = [(loc, path)] + [(l.strip(), p.strip()) for l, p in alts]; alts.append(("x-default", next((p for l, p in alts if l == "en"), path)))
     org = {"@type": "Organization", "name": "CitedBy", "url": SITE + "/"}
     art = {"@context": "https://schema.org", "@type": "Article", "headline": fm["h1"], "description": fm["description"], "inLanguage": loc, "datePublished": fm["date"], "dateModified": fm["reviewed"],
-           "author": {"@type": "Organization", "name": "CitedBy editorial team", "url": SITE + "/about"}, "publisher": org, "mainEntityOfPage": SITE + path,
+           "author": {"@type": "Organization", "name": "CitedBy editorial team", "url": SITE + prefix(loc) + "/about#editorial"}, "publisher": org, "mainEntityOfPage": SITE + path,
            "image": [SITE + og] + ([SITE + "/blog/img/" + hero] if hero else [])}
     ld = [art, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": t["home"], "item": SITE + (prefix(loc) or "/")},
@@ -229,7 +229,7 @@ def build_article(fm, body, arts):
     heads = re.findall(r'<h2 id="([^"]+)">(.+?)</h2>', html_body)
     toc = '<nav class="toc" aria-label="%s"><b>%s</b><ol>%s</ol></nav>' % (E(t["toc"]), E(t["toc"]), "".join('<li><a href="#%s">%s</a></li>' % (i, h) for i, h in heads)) if len(heads) >= 3 else ""
     au = authors().get(fm.get("author", ""))
-    byline = ('%s <a href="/authors/%s" rel="author">%s</a>, %s · ' % (E(t["by_person"]), E(fm["author"]), E(au["name"]), E(au["role"].get(loc, au["role"]["en"])))) if au else E(t["by"]) + " · "
+    byline = ('%s <a href="/authors/%s" rel="author">%s</a>, %s · ' % (E(t["by_person"]), E(fm["author"]), E(au["name"]), E(au["role"].get(loc, au["role"]["en"])))) if au else '<a href="%s/about#editorial">%s</a> · ' % (prefix(loc), E(t["by"]))
     if au: art["author"] = {"@type": "Person", "name": au["name"], "jobTitle": au["role"]["en"], "url": SITE + "/authors/" + fm["author"]}
     main = f'''<main id="main" class="art"><article>
 <p class="dateline"><a href="{prefix(loc)}/blog">{E(t["blog"])}</a> / {E(fm.get("cluster", ""))}</p>
@@ -278,7 +278,7 @@ def main():
     sm = os.path.join(PUB, "sitemap.xml"); s = open(sm, encoding="utf-8").read()
     s = re.sub(r"<url><loc>%s(?:/[a-z]{2}/ai-visibility-audit|(?:/[a-z]{2})?/(?:blog|compare|guides)[^<]*)</loc>(<lastmod>[^<]*</lastmod>)?</url>" % re.escape(SITE), "", s)
     s = s.replace("</urlset>", "".join("<url><loc>%s%s</loc><lastmod>%s</lastmod></url>" % (SITE, p, d) for p, d in urls) + "</urlset>")
-    for extra in ("/data", "/bot", "/data/study-chatgpt-buyer-questions"):  # live pages the sitemap lacked (RES-1998)
+    for extra in ("/data", "/bot", "/data/study-chatgpt-buyer-questions", "/fr/about", "/nl/about", "/de/about", "/es/about"):  # live pages the sitemap lacked (RES-1998)
         if "<loc>%s%s</loc>" % (SITE, extra) not in s: s = s.replace("</urlset>", "<url><loc>%s%s</loc><lastmod>2026-10-20</lastmod></url></urlset>" % (SITE, extra))
     open(sm, "w", encoding="utf-8").write(s)
     print("wrote %d pages" % len(written))

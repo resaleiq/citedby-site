@@ -34,4 +34,14 @@ class Blog(unittest.TestCase):
         for f in glob.glob(os.path.join(HERE, "public/**/*.html"), recursive=True):
             h = open(f).read()
             if '"@type": "Article"' in h and not os.path.exists(a): self.assertNotIn('"@type": "Person"', h, f)
+    def test_byline_links_to_editorial_section_in_every_locale(self):
+        for f in glob.glob(os.path.join(HERE, "public/**/blog/*.html"), recursive=True) + glob.glob(os.path.join(HERE, "public/**/guides/*.html"), recursive=True) + glob.glob(os.path.join(HERE, "public/compare/*.html")):
+            if f.endswith("index.html"): continue
+            h = open(f).read(); m = re.search(r"/public/([a-z]{2})/", f); pre = "/" + m.group(1) if m else ""
+            self.assertIn('<a href="%s/about#editorial">' % pre, h, f)
+            self.assertIn('"url": "https://citedby.eu%s/about#editorial"' % pre, h, f)
+    def test_about_has_editorial_section_in_all_locales(self):
+        for loc in ("", "fr/", "nl/", "de/", "es/"):
+            h = open(os.path.join(HERE, "public", loc + "about.html"), encoding="utf-8").read()
+            self.assertIn('<h2 id="editorial">', h, loc); self.assertIn("/methodology", h); self.assertIn("hello@citedby.eu", h)
 if __name__ == "__main__": unittest.main()
