@@ -28,3 +28,13 @@ def test_proxy_forwards_withdraw_in_five_languages():
 
 def test_refund_and_terms_point_to_the_function():
     for f in ("public/refund.html", "public/terms.html"): assert 'href="/withdraw">Withdraw from contract here</a>' in open(f).read()
+
+def test_404_page_carries_the_link_and_json_404_stays_json():  # RES-2199
+    import threading, urllib.request, urllib.error
+    from http.server import ThreadingHTTPServer
+    import tempfile; [os.environ.setdefault(k, v) for k, v in (("OPTIN_SECRET", "x" * 40), ("BASE_URL", "http://t"), ("DATA_DIR", tempfile.mkdtemp()))]; import server
+    srv = ThreadingHTTPServer(("127.0.0.1", 0), server.H); threading.Thread(target=srv.serve_forever, daemon=True).start()
+    try:
+        try: urllib.request.urlopen(f"http://127.0.0.1:{srv.server_address[1]}/no-such-page-res2199"); assert False
+        except urllib.error.HTTPError as e: b = e.read(); assert e.code == 404 and b.count(b"data-withdraw") == 1 and b"We could not find that page" in b
+    finally: srv.shutdown()

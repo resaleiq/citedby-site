@@ -53,8 +53,9 @@ def handle(h, method):
 
 
 def _send(h, code, headers, body, cookies=None, index_ok=False):
+    if code == 404 and headers.get("Content-Type", "").startswith("text/html"): body = withdraw_link.inject(body)  # RES-2199: error pages carry the link too
     if code == 200 and headers.get("Content-Type", "").startswith("text/html"):
-        body = withdraw_link.inject(social.ensure(analytics.inject(body)), h.path)  # RES-2182: the EU withdrawal link on app pages too; RES-2106: share tags on app pages too; RES-1071: cookieless analytics tag on the app pages too
+        body = withdraw_link.inject(social.ensure(analytics.inject(body)))  # RES-2182: the EU withdrawal link on app pages too; RES-2106: share tags on app pages too; RES-1071: cookieless analytics tag on the app pages too
     h.send_response(code)
     headers.setdefault("Content-Type", "application/json")
     headers.setdefault("Cache-Control", "no-store")
