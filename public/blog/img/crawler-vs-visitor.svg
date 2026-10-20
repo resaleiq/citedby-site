@@ -6,7 +6,7 @@
 <rect x="60" y="100" width="520" height="440" fill="#EEF2F7" stroke="#0F1B2D" stroke-width="3"/>
 <text x="84" y="142" font-size="22" font-weight="600">A visitor (JavaScript runs)</text>
 <rect x="84" y="168" width="200" height="170" fill="#C9D0DA"/><text x="184" y="260" font-size="18" text-anchor="middle" fill="#556070">photo</text>
-<text x="308" y="196" font-size="24" font-weight="600">Organic coffee, 1 kg</text><text x="308" y="232" font-size="20" fill="#556070">Roasted in Gent, ships in 2 days</text><text x="308" y="274" font-size="28" font-weight="600">€ 24,90</text>
+<text x="308" y="196" font-size="24" font-weight="600">Oak table lamp, linen shade</text><text x="308" y="232" font-size="20" fill="#556070">Made in Gent, ships in 2 days</text><text x="308" y="274" font-size="28" font-weight="600">€ 79,00</text>
 <rect x="308" y="296" width="140" height="42" fill="#1F4FD8"/><text x="378" y="323" font-size="18" text-anchor="middle" fill="#fff">Add to cart</text>
 <text x="84" y="388" font-size="18" fill="#556070">Name, price, stock and description are all readable.</text>
 <rect x="620" y="100" width="520" height="440" fill="#fff" stroke="#B3121F" stroke-width="3"/>
