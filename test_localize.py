@@ -26,7 +26,7 @@ class T(unittest.TestCase):
                 self.assertIn(f'hreflang="{c}" href="https://citedby.eu{p}"', doc)
 
     def test_translations_are_not_english(self):
-        for lang, must, banned in (("fr", "Votre audit SEO affiche 300 erreurs", "Which ones actually matter"), ("nl", "Je SEO-tool toont 300 fouten", "300 errors"), ("de", "Ihr SEO-Tool meldet 300 Fehler", "300 errors"), ("es", "Tu herramienta SEO marca 300 errores", "300 errors")):
+        for lang, must, banned in (("fr", "Votre audit affiche 300 erreurs", "Which ones actually matter"), ("nl", "Je SEO-tool toont 300 fouten", "300 errors"), ("de", "Ihr SEO-Tool meldet 300 Fehler", "300 errors"), ("es", "Tu auditoría marca 300 errores", "300 errors")):
             d = open(os.path.join(L.PUB, f"landing.{lang}.html"), encoding="utf-8").read()
             self.assertIn(must, d); self.assertNotIn(banned, d)
             self.assertNotIn("<summary>What do I get", d)  # the stray English toggle (RES-1753) is gone
