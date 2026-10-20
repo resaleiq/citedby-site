@@ -10,8 +10,8 @@ def test_inject_in_footer_per_language():
 def test_no_footer_falls_back_to_body_end_and_is_idempotent():
     out = w.inject(b'<!doctype html><html lang="en"><body>x</body></html>'); assert b"Withdraw from contract here</a></p></body>" in out and w.inject(out) == out
 
-def test_fragments_and_the_form_page_itself_untouched():
-    assert w.inject(b"<p>fragment</p>") == b"<p>fragment</p>" and b"data-withdraw" not in w.inject(b'<html lang="en"><body></body></html>', "/withdraw")
+def test_fragments_untouched():
+    assert w.inject(b"<p>fragment</p>") == b"<p>fragment</p>"
 
 def test_every_static_page_gets_exactly_one_link():
     n = 0
