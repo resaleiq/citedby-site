@@ -54,3 +54,8 @@ def test_privacy_slack_and_cloudflare_res2196():
     assert "Slack Technologies Limited" not in P
     assert "check the custom domain for your branded reports" in P
     assert "that site address or domain" in P
+
+
+def test_privacy_cloudflare_basis_is_dpf_not_sccs_res2198():
+    assert "Cloudflare, Inc. (United States, under the EU-US Data Privacy Framework) answers" in P
+    assert "Cloudflare, Inc. (United States; Standard Contractual Clauses)" not in P
