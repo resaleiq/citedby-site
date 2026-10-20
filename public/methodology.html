@@ -4,7 +4,7 @@
 <h2>1. The crawl</h2><p>We start from your URL, read robots.txt and the sitemap, and follow internal links to find pages and sub-pages. Each plan has a page cap; the single audit covers up to 500 pages. We identify ourselves with a CitedBy user agent and stay on your domain. Every request is made from the public internet, logged out, like any crawler would.</p>
 <h2>2. What is checked on every page</h2><ul>
 <li><b>Crawler access.</b> robots.txt rules for GPTBot, ClaudeBot and PerplexityBot, the status code your home page returns to each of those user agents (one request per bot), and signs of a firewall or CDN block.</li>
-<li><b>Readable HTML.</b> The text a crawler receives without running JavaScript, compared with the size of the page. Pages that arrive empty are flagged.</li>
+<li><b>Readable HTML.</b> The text a crawler receives without running JavaScript, compared with the size of the page. Pages that arrive empty are flagged, and the report lists the words a crawler sees on the pages with the fewest. We do not run scripts, so we do not count what a browser shows after they run.</li>
 <li><b>llms.txt and sitemap.</b> Whether the files exist and parse. No major assistant is confirmed to read llms.txt, so it is marked optional and never drags the score down on its own.</li>
 <li><b>Structured data.</b> JSON-LD for Organization, Product, FAQ and Article, checked for validity and for fields a buyer would ask about, such as price.</li>
 <li><b>Titles, headings and links.</b> Missing or duplicate titles and descriptions, H1s, heading order, canonical tags, hreflang, broken internal links.</li>
