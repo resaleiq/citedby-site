@@ -135,7 +135,7 @@ SEG = [
 ("For freelancers and teams with a few sites", "Pour les indépendants et les équipes avec quelques sites", "Voor freelancers en teams met een paar sites", "Für Freiberufler und Teams mit wenigen Websites", "Para autónomos y equipos con unos pocos sitios"),
 ("<li>5 sites, up to 5,000 pages per site</li>", "<li>5 sites, jusqu'à 5 000 pages par site</li>", "<li>5 sites, tot 5.000 pagina's per site</li>", "<li>5 Websites, bis zu 5.000 Seiten pro Website</li>", "<li>5 sitios, hasta 5.000 páginas por sitio</li>"),
 ("Daily re-crawl and score trend", "Nouvelle analyse quotidienne et évolution du score", "Dagelijkse crawl en scoretrend", "Täglicher Re-Crawl und Score-Verlauf", "Nuevo rastreo diario y evolución de la puntuación"),
-("<li>PDF reports, priority crawl</li>", "<li>Rapports PDF, analyse prioritaire</li>", "<li>PDF-rapporten, prioriteitscrawl</li>", "<li>PDF-Berichte, bevorzugter Crawl</li>", "<li>Informes en PDF, rastreo prioritario</li>"),
+("<li>PDF reports</li>", "<li>Rapports PDF</li>", "<li>PDF-rapporten</li>", "<li>PDF-Berichte</li>", "<li>Informes en PDF</li>"),
 ("€9.80 a month per site", "€9,80 par mois et par site", "€9,80 per maand per site", "€9,80 pro Monat und Website", "€9,80 al mes por sitio"),
 ("€0 today, then €49 a month. Card needed.", "€0 aujourd'hui, puis €49 par mois. Carte requise.", "Vandaag €0, daarna €49 per maand. Kaart nodig.", "Heute €0, danach €49 pro Monat. Karte nötig.", "€0 hoy, luego €49 al mes. Hace falta tarjeta."),
 ("Try Pro free for 7 days", "Essayer Pro gratuitement 7 jours", "Probeer Pro 7 dagen gratis", "Pro 7 Tage gratis testen", "Probar Pro 7 días gratis"),
