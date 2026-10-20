@@ -25,3 +25,9 @@ def test_privacy_names_every_recipient_res1406():
         assert needle in P, needle
     assert "These are the only recipients" not in P
     assert "We count anonymous events" not in P
+
+
+def test_privacy_names_google_sign_in_res1406():
+    assert "Continue with Google" in P and "independent controller" in P
+    assert "policies.google.com/privacy" in P and "Art. 6(1)(b)" in P
+    assert "email address only" in P
