@@ -15,7 +15,7 @@ widget: on
 howto: off
 steps_img: on
 related: /es/blog/can-chatgpt-read-my-website|¿Puede ChatGPT leer mi web?; /es/blog/is-gptbot-blocked|¿Está bloqueado GPTBot en tu web?; /es/guides/technical-seo-checklist|Lista de comprobación técnica
-answer: Una auditoría de visibilidad en IA, también llamada auditoría GEO o AEO, comprueba si los rastreadores de IA pueden llegar a tus páginas y leerlas, y si cada página responde con claridad a la pregunta de un comprador. CitedBy rastrea todas tus páginas y te da la corrección exacta de cada problema.
+answer: Una auditoría de visibilidad en IA, también llamada auditoría GEO o AEO, comprueba si los rastreadores de IA pueden llegar a tus páginas y leerlas, y si cada página responde con claridad a la pregunta de un comprador. CitedBy rastrea tu web hasta el límite de páginas de tu plan y te da la corrección exacta de cada problema.
 
 ## ¿Qué es una auditoría de visibilidad en IA?
 

@@ -14,7 +14,7 @@ SEG = [
  "CitedBy: website-audit met een oplossing voor elk probleem",
  "CitedBy: Website-Audit mit einer Lösung für jedes Problem",
  "CitedBy: auditoría web con una solución para cada problema"),
-("Your audit says 300 errors. CitedBy crawls your site up to your plan's page limit, groups repeats into single fixes and gives you the exact code to paste. From €9, 14-day money-back.",
+("CitedBy crawls your site up to your plan's page limit, groups repeats into single fixes and gives you the exact code to paste. From €9, 14-day money-back.",
  "Votre audit affiche 300 erreurs. CitedBy lit votre site jusqu'à la limite de votre offre, regroupe les doublons, donne le code. Dès €9, remboursé 14 jours.",
  "Je SEO-tool toont 300 fouten. CitedBy leest je site tot je paginalimiet, bundelt herhalingen tot één fix en geeft de exacte code. Vanaf €9, 14 dagen geld-terug.",
  "Ihr SEO-Tool meldet 300 Fehler. CitedBy liest Ihre Website bis zum Seitenlimit, fasst Wiederholungen zusammen und liefert den Code. Ab €9, 14 Tage Geld-zurück.",

@@ -14,7 +14,7 @@ hero_boxes: Find robots.txt|Open it in a browser; Find the sitemap|List of produ
 steps_img: on
 widget: on
 related: /guides/technical-seo-checklist|Technical SEO checklist for AI visibility; /blog/is-gptbot-blocked|Is GPTBot blocked on your site?; /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?
-answer: On any shop platform, check four things: robots.txt does not block AI crawlers, the sitemap lists your products, product pages carry price and availability as JSON-LD, and product text is in the raw HTML. Shopify and WordPress generate the first two for you. Our audit tests all four on every page, from €9.
+answer: On any shop platform, check four things: robots.txt does not block AI crawlers, the sitemap lists your products, product pages carry price and availability as JSON-LD, and product text is in the raw HTML. Shopify and WordPress generate the first two for you. Our audit tests all four on every page up to your plan's page limit, from €9.
 
 ## Which checks apply on every shop platform?
 
