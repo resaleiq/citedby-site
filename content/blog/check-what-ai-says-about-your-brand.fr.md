@@ -13,7 +13,7 @@ hero_boxes: Votre marque|vous connaît-il ?; Votre catégorie|êtes-vous nommé 
 widget: on
 steps_img: on
 howto: on
-related: /sample-audit|Un exemple de mini-audit; /fr/blog/can-chatgpt-read-my-website|ChatGPT peut-il lire mon site ?; /data|Qui ChatGPT cite, par niche
+related: /fr/sample|Un exemple de rapport; /fr/blog/can-chatgpt-read-my-website|ChatGPT peut-il lire mon site ?; /data|Qui ChatGPT cite, par niche
 answer: Pour vérifier ce que ChatGPT dit de votre marque, posez-lui 20 questions en quatre groupes : votre marque, votre catégorie, les comparaisons avec vos concurrents et les faits comme le prix ou la livraison. Posez chacune deux fois dans une nouvelle conversation, notez si l'assistant vous nomme, vous cite et dit vrai, puis faites le décompte.
 
 ## Que faut-il préparer avant de poser les questions ?
@@ -84,7 +84,7 @@ N'arrondissez pas. Une boutique nommée dans 1 exécution sur 2 est nommée dans
 
 ## Existe-t-il une méthode plus rapide ?
 
-Vingt questions sur cinq assistants représentent 200 exécutions à la main. Un audit CitedBy travaille sur votre site : il explore jusqu'à la limite de pages de votre formule, montre les pages que les assistants ne peuvent pas lire ni citer, et donne le correctif exact pour chacune. L'audit commence à 9 € ([voir l'exemple de mini-audit](/fr/sample)).
+Vingt questions sur cinq assistants représentent 200 exécutions à la main. Un audit CitedBy travaille sur votre site : il explore jusqu'à la limite de pages de votre formule, montre les pages que les assistants ne peuvent pas lire ni citer, et donne le correctif exact pour chacune. L'audit commence à 9 € ([voir l'exemple de rapport](/fr/sample)).
 
 ## FAQ
 
@@ -102,5 +102,5 @@ Après chaque modification de votre site et environ une fois par mois. Notez la 
 
 ## Sources
 
-- [CitedBy : exemple d'audit, méthode, questions et CSV](https://citedby.eu/sample-audit)
-- [À propos de CitedBy : comment nous comptons](https://citedby.eu/about)
+- [CitedBy : exemple d'audit, méthode, questions et CSV](https://citedby.eu/fr/sample)
+- [À propos de CitedBy : comment nous comptons](https://citedby.eu/fr/about)

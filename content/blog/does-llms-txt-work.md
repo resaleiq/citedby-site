@@ -11,7 +11,7 @@ hero_alt: Title card: does llms.txt work, with two figures: 97 percent of files 
 og: does-llms-txt-work-og.png
 widget: on
 howto: off
-related: /tools/llms-txt-checker|llms.txt checker (free); /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /blog/geo-vs-aeo-vs-seo|GEO vs AEO vs SEO audit; /sample-audit|A sample mini-audit
+related: /tools/llms-txt-checker|llms.txt checker (free); /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /blog/geo-vs-aeo-vs-seo|GEO vs AEO vs SEO audit; /sample|A sample report
 answer: So far the evidence says llms.txt does not move AI citations. Ahrefs found 97% of valid llms.txt files got zero requests in May 2026, SE Ranking found no clear link to citations across about 300,000 domains, and Google says you do not need AI text files. Adding one is cheap, but do not expect traffic from it.
 
 ## What llms.txt is

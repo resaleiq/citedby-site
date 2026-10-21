@@ -181,7 +181,7 @@ def render(l):
     doc = f'''<!doctype html><html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0F1B2D"><title>{E(t["title"])}</title><meta name="description" content="{E(t["desc"])}"><link rel="canonical" href="{url}">{alts}<meta property="og:title" content="{E(t["title"])}"><meta property="og:description" content="{E(t["desc"])}"><meta property="og:url" content="{url}"><meta property="og:type" content="website"><meta property="og:image" content="{SITE}/og-v2.png"><meta name="twitter:image" content="{SITE}/og-v2.png"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="preload" href="/fonts/newsreader-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/saas.css">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")}</script></head>
 <body class="cb land"><a class="sr" href="#main">{E(t["skip"])}</a>
-<header class="topbar"><div class="in"><a class="mark" href="{p or "/"}"><i></i>CitedBy</a><nav aria-label="Main"><a href="/plans">{E(t["nav"][0])}</a><a href="/blog">{E(t["nav"][1])}</a></nav><a href="/signin?next=%2Fapp.html" style="color:#C9D2DF;margin-right:12px">{E(t["signin"])}</a></div></header>
+<header class="topbar"><div class="in"><a class="mark" href="{p or "/"}"><i></i>CitedBy</a><nav aria-label="Main"><a href="{p}/plans">{E(t["nav"][0])}</a><a href="{p}/blog">{E(t["nav"][1])}</a></nav><a href="/signin?next=%2Fapp.html" style="color:#C9D2DF;margin-right:12px">{E(t["signin"])}</a></div></header>
 <main id="main">
 <section class="band dark"><style>.fch{{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:36px;align-items:center}}.fcc{{background:#fff;color:#0F1B2D;border-radius:12px;padding:20px 22px;box-shadow:0 12px 32px -12px rgba(0,0,0,.5)}}.fcc h2{{font:600 .8rem var(--sans);text-transform:uppercase;letter-spacing:.05em;color:#556173;margin:0 0 10px}}.fcc .sc{{display:flex;align-items:baseline;gap:10px;margin:0 0 4px}}.fcc .sc b{{font:600 3rem/1 var(--serif)}}.fcc .sc span{{font-weight:600;color:#0F8F84}}.fcc p{{margin:0 0 8px;font-size:.9rem}}.fcc code{{overflow-wrap:anywhere;font-size:.82rem}}@media(max-width:800px){{.fch{{grid-template-columns:minmax(0,1fr);gap:20px}}}}</style><div class="w fch" style="max-width:1040px"><div>
 <h1>{E(t["h1"])}</h1>
@@ -201,7 +201,7 @@ def render(l):
 <p><a href="{p}/tools/ai-crawler-check">{E(t["more_tool"])}</a></p>
 <h2>{E(t["h_faq"])}</h2>{faq}
 </div></section>
-</main><footer><div class="w">CitedBy · hello@citedby.eu · <a href="/about">{f[0]}</a> · <a href="/methodology">{f[1]}</a> · <a href="/terms">{f[2]}</a> · <a href="/privacy">{f[3]}</a> · <a href="/refund">{f[4]}</a></div></footer>
+</main><footer><div class="w">CitedBy · hello@citedby.eu · <a href="{p}/about">{f[0]}</a> · <a href="/methodology">{f[1]}</a> · <a href="{p}/terms">{f[2]}</a> · <a href="{p}/privacy">{f[3]}</a> · <a href="{p}/refund">{f[4]}</a></div></footer>
 <script src="/landing.js"></script></html>
 '''
     return fr_typo(doc) if l == "fr" else doc

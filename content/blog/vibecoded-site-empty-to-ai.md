@@ -11,7 +11,7 @@ hero_alt: Title card: a vibe-coded site is full in a browser but shows only an e
 og: vibecoded-site-empty-to-ai-og.png
 widget: on
 howto: on
-related: /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /blog/is-gptbot-blocked|Is GPTBot blocked on my site?; /sample-audit|A sample mini-audit
+related: /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /blog/is-gptbot-blocked|Is GPTBot blocked on my site?; /sample|A sample report
 answer: AI crawlers read the HTML your server sends and, according to Vercel's analysis, do not run JavaScript. A site built in the browser can look empty to them even when it looks perfect to you. Test it by viewing the page source, then switch to server rendering or prerendering if your text is missing.
 
 ## Why a site that looks fine can be empty to AI

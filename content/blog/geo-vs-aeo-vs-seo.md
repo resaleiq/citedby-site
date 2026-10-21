@@ -11,7 +11,7 @@ hero_alt: Title card: GEO vs AEO vs SEO audit, three boxes asking do I rank, am 
 og: geo-vs-aeo-vs-seo-og.png
 widget: on
 howto: off
-related: /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /blog/check-what-ai-says-about-your-brand|Check what AI says about your brand; /sample-audit|A sample mini-audit
+related: /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /blog/check-what-ai-says-about-your-brand|Check what AI says about your brand; /sample|A sample report
 answer: An SEO audit checks whether you rank in search results. An AEO audit checks whether your pages give direct answers that assistants can quote. A GEO audit checks whether AI assistants name your brand in generated answers. The terms have no official definition, and the first two checks feed the third.
 
 ## The short version

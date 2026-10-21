@@ -11,7 +11,7 @@ hero_alt: Four boxes with the number 5: your brand, your category, comparisons a
 og: check-what-ai-says-about-your-brand-og.png
 widget: on
 howto: on
-related: /sample-audit|A sample mini-audit; /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /data|Who ChatGPT linked, by niche
+related: /sample|A sample report; /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /data|Who ChatGPT linked, by niche
 answer: To check what ChatGPT says about your brand, ask it 20 prompts in four groups: your brand, your category, comparisons with rivals, and facts such as price and shipping. Ask each twice in a new chat, log whether it names you, links you and gets the facts right, and count the results.
 
 ## What to prepare
@@ -102,5 +102,5 @@ After each change to your site and about once a month. Log the date every time s
 
 ## Sources
 
-- [CitedBy sample audit: method, questions and CSV](https://citedby.eu/sample-audit)
+- [CitedBy sample audit: method, questions and CSV](https://citedby.eu/sample)
 - [About CitedBy: how we count](https://citedby.eu/about)

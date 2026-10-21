@@ -13,7 +13,7 @@ hero_sub: A 10-minute check you can run today
 hero_boxes: Write 5 buyer questions|No shop name in them; Ask each assistant|Logged out, web search on; Ask twice|Answers change between runs; Count the mentions|Named in text, domain linked
 steps_img: on
 widget: on
-related: /blog/check-what-ai-says-about-your-brand|Check what AI says about your brand, 20 prompts; /guides/ai-visibility-tools-compared|AI visibility tools compared; /sample-audit|A sample mini-audit
+related: /blog/check-what-ai-says-about-your-brand|Check what AI says about your brand, 20 prompts; /guides/ai-visibility-tools-compared|AI visibility tools compared; /sample|A sample report
 answer: Ask each assistant the questions your buyers ask, twice, with web search on, and count how often your shop is named and how often your site is linked. Our site audit then checks whether your pages can be read and quoted by AI crawlers, from €9, with the exact fix for each issue.
 
 ## Do it by hand in 10 minutes

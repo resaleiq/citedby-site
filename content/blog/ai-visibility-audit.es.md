@@ -69,4 +69,4 @@ No. La auditoría cuesta 9 € una vez, con garantía de devolución de 14 días
 - [OpenAI: rastreadores y agentes de usuario](https://developers.openai.com/api/docs/bots)
 - [Google Search Central: funciones de IA y tu sitio web](https://developers.google.com/search/docs/appearance/ai-features)
 - [llmstxt.org: la propuesta llms.txt](https://llmstxt.org/)
-- [CitedBy: informe de muestra](https://citedby.eu/sample-audit)
+- [CitedBy: informe de muestra](https://citedby.eu/es/sample)

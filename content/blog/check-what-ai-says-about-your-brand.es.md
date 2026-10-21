@@ -106,5 +106,5 @@ Después de cada cambio en tu web y aproximadamente una vez al mes. Anota la fec
 
 ## Sources
 
-- [CitedBy: informe de muestra, método, preguntas y CSV](https://citedby.eu/sample-audit)
-- [Sobre CitedBy: cómo contamos](https://citedby.eu/about)
+- [CitedBy: informe de muestra, método, preguntas y CSV](https://citedby.eu/es/sample)
+- [Sobre CitedBy: cómo contamos](https://citedby.eu/es/about)

@@ -11,7 +11,7 @@ hero_alt: Three steps for a GA4 AI assistants channel: find the sources in your 
 og: ga4-ai-referral-traffic-og.png
 widget: on
 howto: on
-related: /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /blog/check-what-ai-says-about-your-brand|What AI says about your brand; /check|The free crawler check
+related: /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /blog/check-what-ai-says-about-your-brand|What AI says about your brand; /free-ai-visibility-check|The free crawler check
 answer: Create a custom channel group in GA4 with an AI assistants channel whose Source matches a regex of the assistants you see in your Traffic acquisition report. Move it above Referral, because GA4 uses the first matching channel. Then compare conversions by channel. Visits without a referrer stay under Direct.
 
 ## What GA4 shows by default, and why AI visits hide
@@ -72,4 +72,4 @@ No, but you need at least the Editor role on the property.
 ## Sources
 
 - [Google Analytics Help: custom channel groups](https://support.google.com/analytics/answer/13051316)
-- [CitedBy free check, method note](https://citedby.eu/check)
+- [CitedBy free check, method note](https://citedby.eu/free-ai-visibility-check)

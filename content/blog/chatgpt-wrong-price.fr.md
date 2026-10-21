@@ -13,7 +13,7 @@ hero_boxes: Votre page|HTML et JSON-LD; Votre flux produits|Google Shopping; Aut
 widget: on
 steps_img: on
 howto: on
-related: /fr/blog/check-what-ai-says-about-your-brand|Que dit ChatGPT de votre marque ? 20 questions; /fr/blog/can-chatgpt-read-my-website|ChatGPT peut-il lire mon site ?; /sample-audit|Un exemple de mini-audit
+related: /fr/blog/check-what-ai-says-about-your-brand|Que dit ChatGPT de votre marque ? 20 questions; /fr/blog/can-chatgpt-read-my-website|ChatGPT peut-il lire mon site ?; /fr/sample|Un exemple de rapport
 answer: ChatGPT affiche un ancien prix quand il l'a lu dans une source périmée : votre propre page, un flux produits ou un autre site. Cherchez l'ancien prix à chacun de ces endroits, corrigez la source, puis reposez la question deux fois dans une nouvelle conversation. Mettez votre flux à jour à chaque début et fin de promotion.
 
 ## Pourquoi un assistant cite-t-il un prix que vous avez changé ?

@@ -13,7 +13,7 @@ hero_boxes: SEO|suis-je bien classé ?; AEO|ma page est-elle la réponse ?; GEO|
 widget: on
 steps_img: on
 howto: off
-related: /fr/blog/can-chatgpt-read-my-website|ChatGPT peut-il lire mon site ?; /fr/blog/check-what-ai-says-about-your-brand|Que dit ChatGPT de votre marque ?; /sample-audit|Un exemple de mini-audit
+related: /fr/blog/can-chatgpt-read-my-website|ChatGPT peut-il lire mon site ?; /fr/blog/check-what-ai-says-about-your-brand|Que dit ChatGPT de votre marque ?; /fr/sample|Un exemple de rapport
 answer: Un audit SEO vérifie si vous êtes bien classé dans les résultats de recherche. Un audit AEO vérifie si vos pages donnent des réponses directes que les assistants peuvent citer. Un audit GEO vérifie si les assistants IA nomment votre marque dans leurs réponses. Ces termes n'ont pas de définition officielle, et les deux premiers contrôles alimentent le troisième.
 
 ## Quelle est la différence en bref ?

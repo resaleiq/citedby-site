@@ -10,7 +10,7 @@ reviewed: 2026-10-20
 answer: Een AI-zichtbaarheidsaudit controleert of AI-crawlers elke pagina van uw webshop kunnen bereiken en lezen, en of elke pagina een koopvraag helder genoeg beantwoordt om geciteerd te worden. CitedBy crawlt uw site tot de paginalimiet van uw abonnement en geeft per probleem de exacte oplossing. Een audit kost €9, eenmalig betaald.
 widget: on
 howto: on
-related: /nl/blog/can-chatgpt-read-my-website|Kan ChatGPT mijn website lezen?; /nl/blog/is-gptbot-blocked|Is GPTBot geblokkeerd op uw site?; /sample-audit|Een voorbeeldaudit
+related: /nl/blog/can-chatgpt-read-my-website|Kan ChatGPT mijn website lezen?; /nl/blog/is-gptbot-blocked|Is GPTBot geblokkeerd op uw site?; /nl/sample|Een voorbeeldrapport
 hero: auto
 hero_alt: Titelkaart: AI-zichtbaarheidsaudit voor uw webshop, met drie vakken: toegang voor crawlers, leesbare HTML, gestructureerde data
 hero_sub: Elke pagina gecrawld, elke fout met oplossing
@@ -75,7 +75,7 @@ Nee. Niemand bepaalt wat een assistent antwoordt. De audit vindt wat uw pagina's
 
 ## Sources
 
-- [CitedBy: voorbeeldaudit](https://citedby.eu/sample-audit)
+- [CitedBy: voorbeeldaudit](https://citedby.eu/nl/sample)
 - [CitedBy: methodologie](https://citedby.eu/methodology)
 - [OpenAI: crawlers en user agents](https://developers.openai.com/api/docs/bots)
 - [llmstxt.org: het llms.txt-voorstel](https://llmstxt.org/)

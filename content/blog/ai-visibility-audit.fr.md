@@ -14,7 +14,7 @@ hero_boxes: Accès des robots|robots.txt et pare-feu; HTML lisible|texte sans Ja
 widget: on
 steps_img: on
 howto: off
-related: /fr/blog/can-chatgpt-read-my-website|ChatGPT peut-il lire mon site ?; /fr/blog/geo-vs-aeo-vs-seo|Audit GEO, AEO ou SEO : lequel choisir ?; /sample-audit|Un exemple de mini-audit
+related: /fr/blog/can-chatgpt-read-my-website|ChatGPT peut-il lire mon site ?; /fr/blog/geo-vs-aeo-vs-seo|Audit GEO, AEO ou SEO : lequel choisir ?; /fr/sample|Un exemple de rapport
 answer: Un audit de visibilité IA (audit GEO ou AEO) vérifie si les robots des assistants IA peuvent atteindre et lire chaque page de votre boutique en ligne, et si chaque page répond assez clairement à une question d'acheteur pour être citée. CitedBy explore votre site jusqu'à la limite de votre offre et vous remet le correctif exact, dès 9 €.
 
 ## Qu'est-ce qu'un audit de visibilité IA ?
@@ -38,7 +38,7 @@ Un score de santé pour l'ensemble du site, les problèmes classés par gravité
 
 Après vos modifications, vous relancez l'exploration et vous voyez le score évoluer. Les agences peuvent ajouter un PDF en marque blanche et suivre plusieurs sites clients.
 
-Pour voir à quoi ressemble un rapport, ouvrez [l'exemple de mini-audit](/fr/sample). Nos [pages de données](/data) montrent quels sites ChatGPT a cités, question par question, avec le CSV brut, et la [méthodologie](/methodology) explique comment nous comptons. Vous voulez d'abord essayer ? Le [test gratuit de visibilité IA](/fr/free-ai-visibility-check) lit jusqu'à 10 pages, sans compte.
+Pour voir à quoi ressemble un rapport, ouvrez [l'exemple de rapport](/fr/sample). Nos [pages de données](/data) montrent quels sites ChatGPT a cités, question par question, avec le CSV brut, et la [méthodologie](/methodology) explique comment nous comptons. Vous voulez d'abord essayer ? Le [test gratuit de visibilité IA](/fr/free-ai-visibility-check) lit jusqu'à 10 pages, sans compte.
 
 ## Combien coûte l'audit ?
 
@@ -70,4 +70,4 @@ Oui. Une nouvelle exploration montre si les problèmes ont disparu et fait évol
 ## Sources
 
 - [OpenAI : robots d'exploration et user agents](https://developers.openai.com/api/docs/bots)
-- [CitedBy : exemple de mini-audit](https://citedby.eu/sample-audit)
+- [CitedBy : exemple de rapport](https://citedby.eu/fr/sample)

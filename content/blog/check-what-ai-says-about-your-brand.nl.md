@@ -9,7 +9,7 @@ reviewed: 2026-10-20
 answer: Om te zien wat ChatGPT over uw merk zegt, stelt u 20 prompts in vier groepen: uw merk, uw categorie, vergelijkingen met concurrenten en feiten zoals prijs en verzending. Stel elke prompt twee keer in een nieuwe chat, noteer of u genoemd en gelinkt wordt en of de feiten kloppen, en tel de uitkomsten.
 widget: on
 howto: on
-related: /sample-audit|Een voorbeeldaudit; /nl/blog/can-chatgpt-read-my-website|Kan ChatGPT mijn website lezen?; /nl/blog/chatgpt-wrong-price|ChatGPT toont mijn oude prijs
+related: /nl/sample|Een voorbeeldrapport; /nl/blog/can-chatgpt-read-my-website|Kan ChatGPT mijn website lezen?; /nl/blog/chatgpt-wrong-price|ChatGPT toont mijn oude prijs
 hero: auto
 hero_alt: Vier vakken rond het getal 5: uw merk, uw categorie, vergelijkingen en feiten, de 20 prompts
 hero_sub: 20 prompts, elk twee keer, één logboek
@@ -105,5 +105,5 @@ Na elke wijziging aan uw site en ongeveer eens per maand. Noteer telkens de datu
 
 ## Sources
 
-- [CitedBy: voorbeeldaudit met methode, vragen en CSV](https://citedby.eu/sample-audit)
-- [Over CitedBy: hoe wij tellen](https://citedby.eu/about)
+- [CitedBy: voorbeeldaudit met methode, vragen en CSV](https://citedby.eu/nl/sample)
+- [Over CitedBy: hoe wij tellen](https://citedby.eu/nl/about)

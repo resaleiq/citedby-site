@@ -11,7 +11,7 @@ hero_alt: Three gates between a shop page and an AI assistant: robots.txt, page 
 og: can-chatgpt-read-my-website-og.png
 widget: on
 howto: on
-related: /bots|AI crawlers: what each one does and how to allow or block it; /ai-visibility-audit|AI visibility audit: what it is and what to check; /data|Who ChatGPT linked, by niche; /sample-audit|A sample mini-audit
+related: /bots|AI crawlers: what each one does and how to allow or block it; /ai-visibility-audit|AI visibility audit: what it is and what to check; /data|Who ChatGPT linked, by niche; /sample|A sample report
 answer: ChatGPT can read your website if three things hold: robots.txt does not block OAI-SearchBot, the page text is in the HTML your server sends rather than added by JavaScript, and your server or firewall does not refuse the crawler. The CitedBy audit tests the first two on every page.
 
 ## The three gates

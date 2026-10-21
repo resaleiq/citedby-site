@@ -70,4 +70,4 @@ Non, mais il faut au moins le rôle Éditeur sur la propriété.
 ## Sources
 
 - [Aide Google Analytics : groupes de canaux personnalisés](https://support.google.com/analytics/answer/13051316?hl=fr)
-- [CitedBy : exemple de mini-audit](https://citedby.eu/sample-audit)
+- [CitedBy : exemple de rapport](https://citedby.eu/fr/sample)

@@ -11,7 +11,7 @@ hero_alt: Title card: ChatGPT shows my old price, with three boxes: your own pag
 og: chatgpt-wrong-price-og.png
 widget: on
 howto: on
-related: /blog/check-what-ai-says-about-your-brand|Check what AI says about your brand, 20 prompts; /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /sample-audit|A sample mini-audit
+related: /blog/check-what-ai-says-about-your-brand|Check what AI says about your brand, 20 prompts; /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /sample|A sample report
 answer: ChatGPT shows an old price when it read that price from a stale source: your own page, a product feed, or another website. Search for the old price in each place, fix the source, then ask again twice in a new chat. Update your feed whenever a sale starts or ends.
 
 ## Why an assistant quotes a price you changed

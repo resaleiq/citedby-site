@@ -101,5 +101,5 @@ Nach jeder Änderung an Ihrer Seite und etwa einmal im Monat. Notieren Sie jedes
 
 ## Sources
 
-- [CitedBy Beispiel-Audit: Methode, Fragen und CSV](https://citedby.eu/sample-audit)
-- [Über CitedBy: so zählen wir](https://citedby.eu/about)
+- [CitedBy Beispiel-Audit: Methode, Fragen und CSV](https://citedby.eu/de/sample)
+- [Über CitedBy: so zählen wir](https://citedby.eu/de/about)

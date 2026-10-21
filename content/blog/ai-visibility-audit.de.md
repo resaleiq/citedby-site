@@ -84,5 +84,5 @@ Nein. Niemand steuert, was ein Assistent antwortet. Das Audit findet, was Ihre S
 ## Sources
 
 - [OpenAI: Crawler und User-Agents](https://developers.openai.com/api/docs/bots)
-- [CitedBy Beispiel-Audit](https://citedby.eu/sample-audit)
+- [CitedBy Beispiel-Audit](https://citedby.eu/de/sample)
 - [CitedBy Datenseiten](https://citedby.eu/data)

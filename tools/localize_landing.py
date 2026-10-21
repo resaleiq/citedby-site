@@ -192,7 +192,7 @@ SEG = [
 ]
 # the stray first <details> in the English head (RES-1753) is not carried into the translations
 STRAY = re.compile(r'<details><summary>What do I get for €9\?</summary>.*?</details>\n(?=<style>)', re.S)
-LINK_SWAP = (('href="/plans"', 'href="/{l}/plans"'), ('href="/sample"', 'href="/{l}/sample"'))
+LINK_SWAP = tuple((f'href="/{p}"', f'href="/{{l}}/{p}"') for p in ("plans", "sample", "about", "refund", "privacy", "terms"))  # RES-2666: every legal and money link keeps the visitor's language
 
 def money(s, lang):
     if lang == "nl": return re.sub(r"€(\d+)[.,](\d+)", r"€\1,\2", s)
