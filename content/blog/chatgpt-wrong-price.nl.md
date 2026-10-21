@@ -90,4 +90,4 @@ Ja, als die verouderd is. Een JSON-LD-blok dat nooit is bijgewerkt, is een veelv
 
 - [OpenAI: productfeedspecificatie](https://developers.openai.com/commerce/specs/feed)
 - [OpenAI: crawlers en user agents](https://developers.openai.com/api/docs/bots)
-- [CitedBy: site-audit](https://citedby.eu/)
+- [CitedBy: site-audit](https://citedby.eu/nl)

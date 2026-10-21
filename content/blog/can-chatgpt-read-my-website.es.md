@@ -68,4 +68,4 @@ OpenAI indica que sus sistemas pueden tardar unas 24 horas en ajustarse tras cam
 ## Sources
 
 - [OpenAI: rastreadores y agentes de usuario](https://developers.openai.com/docs/bots)
-- [CitedBy: auditoría de tu web](https://citedby.eu/)
+- [CitedBy: auditoría de tu web](https://citedby.eu/es)

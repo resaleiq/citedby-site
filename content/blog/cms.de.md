@@ -79,4 +79,4 @@ Prüfen Sie zuerst, was Ihr Theme oder Plugin ausgibt, im Quelltext einer Produk
 - [Make WordPress Core: XML-Sitemaps in WordPress 5.5](https://make.wordpress.org/core/2020/07/22/new-xml-sitemaps-functionality-in-wordpress-5-5/)
 - [Google Search Central: Einführung in robots.txt](https://developers.google.com/search/docs/crawling-indexing/robots/intro)
 - [Google Search Central: Sitemaps](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview)
-- [CitedBy Website-Audit](https://citedby.eu/)
+- [CitedBy Website-Audit](https://citedby.eu/de)

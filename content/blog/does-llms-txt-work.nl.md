@@ -77,4 +77,4 @@ Nee. robots.txt vertelt crawlers wat ze mogen ophalen. llms.txt is een voorgeste
 - [SE Ranking: llms.txt-onderzoek](https://seranking.com/blog/llms-txt/)
 - [Google Search Central: AI-functies en uw website](https://developers.google.com/search/docs/appearance/ai-features)
 - [OpenAI: crawlers en user agents](https://developers.openai.com/api/docs/bots)
-- [CitedBy: site-audit](https://citedby.eu/)
+- [CitedBy: site-audit](https://citedby.eu/nl)
