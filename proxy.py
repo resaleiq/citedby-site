@@ -12,7 +12,7 @@ ROUTES = {
 }
 INDEXABLE = re.compile(r"/((fr|nl|de|es)/)?(plans|sample|tools(/(ai-crawler-check|llms-txt-checker))?)")  # pricing and the sample report in every language are meant to be found (RES-1731); the rest of the app stays noindex
 BODY_CAPS = {"sitemap": 2_100_000, "gsc": 8_100_000}  # the app takes a sitemap file up to 2 MB and a Search Console export up to 8 MB (RES-2572)
-PASS = ("Content-Type", "Cache-Control", "Retry-After", "Set-Cookie", "Location", "Referrer-Policy", "Content-Security-Policy")
+PASS = ("Content-Type", "Cache-Control", "Retry-After", "Set-Cookie", "Location", "Referrer-Policy", "Content-Security-Policy", "Content-Disposition")
 _H = {"t": 0.0, "u": "", "v": None}
 
 
