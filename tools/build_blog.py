@@ -42,10 +42,10 @@ def wrap(txt, n):
         else: cur = (cur + " " + w).strip()
     return out + ([cur] if cur else [])
 SVG_HEAD = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d"><title id="t">%s</title><desc id="d">%s</desc><rect width="1200" height="630" fill="#EEF2F7"/><rect width="1200" height="12" fill="#0F1B2D"/>'
-def boxes_svg(boxes, y0, h):
-    n = len(boxes); w = (1056 - 33 * (n - 1)) // n; o = ['<g font-family="system-ui,Arial,sans-serif" fill="#0F1B2D">']
+def boxes_svg(boxes, y0, h, per=None):
+    y0s = y0; n = per or len(boxes); w = (1056 - 33 * (n - 1)) // n; o = ['<g font-family="system-ui,Arial,sans-serif" fill="#0F1B2D">']
     for i, (b, sub) in enumerate(boxes):
-        x = 72 + i * (w + 33)
+        x = 72 + (i % n) * (w + 33); y0 = y0 if not per else y0s + (i // n) * (h + 20)
         o.append('<rect x="%d" y="%d" width="%d" height="%d" fill="#fff" stroke="#0F1B2D" stroke-width="3"/><text x="%d" y="%d" font-size="40" font-weight="600" fill="#1F4FD8">%d</text>' % (x, y0, w, h, x + 22, y0 + 46, i + 1))
         for k, ln in enumerate(wrap(b, max(8, w // 15))[:3]): o.append('<text x="%d" y="%d" font-size="24" font-weight="600">%s</text>' % (x + 22, y0 + 94 + 30 * k, E(ln)))
         for k, ln in enumerate(wrap(sub, max(10, w // 11))[:2]): o.append('<text x="%d" y="%d" font-size="19" fill="#556070">%s</text>' % (x + 22, y0 + h - 44 + 24 * k, E(ln)))
@@ -60,11 +60,12 @@ def make_hero(fm, slug):
     o += boxes_svg(bx, 340, 230) + "</svg>"
     open(os.path.join(PUB, "blog", "img", slug + "-hero.svg"), "w", encoding="utf-8").write(o)
 def make_steps(slug, title, steps):
-    st = [(re.split(r"[.:;]", plain(x))[0], "") for x in steps][:5]
+    st = [(re.split(r"[:;]|\.(?=\s)", plain(x))[0], "") for x in steps][:6]
     st = [(" ".join(a.split()[:9]), "") for a, _ in st]
     o = SVG_HEAD % (E(title), E(" / ".join(a for a, _ in st)))
-    o += '<text x="72" y="110" font-family="Georgia,serif" font-size="46" font-weight="600" fill="#0F1B2D">%s</text>' % E(" ".join(title.split()[:8]))
-    o += boxes_svg(st, 200, 330) + "</svg>"
+    tl = wrap(title, 42)[:2]
+    for k, ln in enumerate(tl): o += '<text x="72" y="%d" font-family="Georgia,serif" font-size="42" font-weight="600" fill="#0F1B2D">%s</text>' % (96 + 52 * k, E(ln))
+    o += (boxes_svg(st, 185, 175, 3) if len(st) > 4 else boxes_svg(st, 220, 330)) + "</svg>"
     open(os.path.join(PUB, "blog", "img", slug + "-steps.svg"), "w", encoding="utf-8").write(o)
 def authors():
     p = os.path.join(ROOT, "data", "authors.json")
