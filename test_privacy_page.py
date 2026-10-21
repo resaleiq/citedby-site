@@ -77,5 +77,5 @@ def test_analytics_wording_names_user_agent_not_browser_type_and_report_30_days_
         for bad in ("language and browser type", "la langue et le type", "browsertaal en browsertype", "Browsersprache und Browsertyp", "el idioma y el tipo"): assert bad not in h, (loc, bad)
     assert "2 000" not in open("public/fr/privacy.html", encoding="utf-8").read()
     for f, bad in (("landing.html", "kept 30 days"), ("landing.fr.html", "conservé 30"), ("landing.nl.html", "30 dagen bewaard"), ("landing.de.html", "30 Tage gespeichert"), ("landing.es.html", "guardado 30"),
-                   ("landing.html", "in your account for 30"), ("landing.fr.html", "dans votre compte 30"), ("landing.nl.html", "in je account"), ("landing.de.html", "in Ihrem Konto"), ("landing.es.html", "en tu cuenta 30")):
+                   ("landing.html", "in your account for 30"), ("landing.fr.html", "dans votre compte 30"), ("landing.nl.html", "30 dagen in je account"), ("landing.de.html", "in Ihrem Konto"), ("landing.es.html", "en tu cuenta 30")):
         assert bad not in open(f"public/{f}", encoding="utf-8").read(), (f, bad)
