@@ -76,7 +76,6 @@ def test_privacy_has_no_retired_product_wording_res1406():
 
 def test_privacy_retention_claims_match_code_res1406():
     assert "[VERIFY" not in P and "[HELLO" not in P
-    assert "Deleting your account does not remove them automatically" in P
     assert "removes your account, projects" not in P
 
 
@@ -89,3 +88,14 @@ def test_privacy_matches_data_the_app_keeps_res2218():
     assert "until you delete the audit or the account" not in P
     assert "address and subject" not in P
     assert "until the matter is closed" not in P
+
+
+def test_privacy_matches_delete_account_and_withdrawals_res2291():
+    for needle in ("until you delete them or your account", "Withdrawing from a contract (/withdraw)",
+                   "Withdrawal records", "your audits and the pages they crawled",
+                   "a withdrawal you sent us", "Reports stay until you delete your account",
+                   "a scrambled form of your IP address"):
+        assert needle in P, needle
+    for gone in ("Deleting your account does not remove them automatically", "we remove the last two on request",
+                 "until you ask us to delete them"):
+        assert gone not in P, gone
