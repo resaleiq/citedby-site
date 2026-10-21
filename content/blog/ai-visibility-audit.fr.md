@@ -15,13 +15,13 @@ widget: on
 steps_img: on
 howto: off
 related: /fr/blog/can-chatgpt-read-my-website|ChatGPT peut-il lire mon site ?; /fr/blog/geo-vs-aeo-vs-seo|Audit GEO, AEO ou SEO : lequel choisir ?; /sample-audit|Un exemple de mini-audit
-answer: Un audit de visibilité IA, aussi appelé audit GEO ou AEO, vérifie si les robots des assistants IA peuvent atteindre et lire chaque page de votre boutique en ligne, et si chaque page répond assez clairement à une question d'acheteur pour être citée. CitedBy explore toutes les pages et vous remet le correctif exact, dès 9 €.
+answer: Un audit de visibilité IA (audit GEO ou AEO) vérifie si les robots des assistants IA peuvent atteindre et lire chaque page de votre boutique en ligne, et si chaque page répond assez clairement à une question d'acheteur pour être citée. CitedBy explore votre site jusqu'à la limite de votre offre et vous remet le correctif exact, dès 9 €.
 
 ## Qu'est-ce qu'un audit de visibilité IA ?
 
 Quand un client demande à ChatGPT, Perplexity ou Gemini où acheter un produit, l'assistant répond à partir de ce qu'il a pu lire : vos pages, des fiches produit, des sites tiers qui parlent de vous. Si vos pages lui sont fermées ou vides, vous ne pouvez pas apparaître dans la réponse.
 
-L'audit contrôle cette base. Nous explorons chaque page de votre site, nous les testons une par une et nous vous remettons un rapport avec le correctif exact pour chaque problème.
+L'audit contrôle cette base. Nous explorons votre site jusqu'à la limite de votre offre, nous les testons une par une et nous vous remettons un rapport avec le correctif exact pour chaque problème.
 
 ## Que vérifie l'audit, page par page ?
 

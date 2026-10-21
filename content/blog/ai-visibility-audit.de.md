@@ -11,16 +11,16 @@ widget: on
 related: /de/guides/technical-seo-checklist|Technische SEO-Checkliste für KI-Sichtbarkeit; /de/blog/geo-vs-aeo-vs-seo|GEO, AEO und SEO im Vergleich; /de/blog/can-chatgpt-read-my-website|Kann ChatGPT meine Website lesen?
 hero: auto
 hero_alt: Titelkarte: KI-Sichtbarkeits-Audit für Ihre Website, mit sechs Prüfbereichen von Crawler-Zugang bis Antwortqualität
-hero_sub: Wir crawlen jede Seite und liefern die genaue Korrektur
+hero_sub: Wir crawlen Ihre Website bis zum Seitenlimit Ihres Tarifs und liefern die genaue Korrektur
 hero_boxes: Crawler-Zugang|robots.txt und Statuscodes;Lesbares HTML|Text ohne JavaScript;Strukturierte Daten|Product und Organization;Antwortqualität|zitierfähige Seiten
 steps_img: on
-answer: Ein KI-Sichtbarkeits-Audit, auch GEO- oder AEO-Audit genannt, prüft, ob KI-Crawler Ihre Seiten erreichen und lesen können und ob jede Seite die Frage eines Käufers klar genug beantwortet, um zitiert zu werden. CitedBy crawlt jede Seite und liefert die genaue Korrektur für jedes Problem, ab 9 € einmalig.
+answer: Ein KI-Sichtbarkeits-Audit, auch GEO- oder AEO-Audit genannt, prüft, ob KI-Crawler Ihre Seiten erreichen und lesen können und ob jede Seite die Frage eines Käufers klar genug beantwortet, um zitiert zu werden. CitedBy crawlt Ihre Website bis zum Seitenlimit Ihres Tarifs und liefert die genaue Korrektur für jedes Problem, ab 9 € einmalig.
 
 ## Was ist ein KI-Sichtbarkeits-Audit?
 
 Ein KI-Sichtbarkeits-Audit klärt, ob KI-Suchcrawler Ihre Seiten erreichen und lesen können und ob jede Seite eine Käuferfrage so klar beantwortet, dass sie zitiert werden kann. Für einen Onlineshop heißt das: Sieht der Crawler Ihre Produkte, Preise, Versandkosten und Rückgabebedingungen, und stehen sie dort, wo er sie findet?
 
-CitedBy übernimmt die Prüfung für Sie. Wir crawlen jede Seite, prüfen sie und liefern einen Bericht mit der genauen Korrektur für jedes Problem. Eine Garantie, dass ChatGPT Ihre Website nennt, ist das nicht. Niemand steuert, was ein Assistent antwortet.
+CitedBy übernimmt die Prüfung für Sie. Wir crawlen Ihre Website bis zum Seitenlimit Ihres Tarifs, prüfen sie und liefern einen Bericht mit der genauen Korrektur für jedes Problem. Eine Garantie, dass ChatGPT Ihre Website nennt, ist das nicht. Niemand steuert, was ein Assistent antwortet.
 
 Das Audit kostet ab 9 €, mit 14 Tagen Geld-zurück-Garantie. Wie ein Bericht aussieht, zeigt das [Beispiel-Audit](/sample-audit).
 

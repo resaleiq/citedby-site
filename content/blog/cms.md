@@ -54,7 +54,7 @@ Text hidden behind tabs, accordions or "read more" buttons is fine if it is in t
 
 ## What does the audit check?
 
-Platform dashboards show settings. A crawler sees the result. The [CitedBy audit](/) crawls every page of your shop, shows which AI crawlers it lets in and gives the exact fix for each issue. It starts at €9, paid once, with a 14-day money-back guarantee.
+Platform dashboards show settings. A crawler sees the result. The [CitedBy audit](/) crawls your shop up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. It starts at €9, paid once, with a 14-day money-back guarantee.
 
 ## FAQ
 

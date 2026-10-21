@@ -15,12 +15,16 @@ UI = {  # masthead and footer labels, per language
     "fr": dict(check="Ce que nous vérifions", plans="Tarifs", blog="Guides", data="Données", signin="Connexion", cta="Auditer un site", skip="Aller au contenu", main="Principal",
                terms="Conditions", privacy="Confidentialité", refund="Remboursements", contact="Contact", legal="Mentions légales", home="/fr", plans_h="/fr/plans", blog_h="/fr/blog", sw="Langue"),
     "nl": dict(check="Wat wij controleren", plans="Prijzen", blog="Gidsen", data="Data", signin="Inloggen", cta="Een site auditen", skip="Naar de inhoud", main="Hoofdmenu",
-               terms="Voorwaarden", privacy="Privacy", refund="Terugbetalingen", contact="Contact", legal="Juridische informatie", home="/nl", plans_h="/nl/plans", blog_h="/nl/blog", sw="Taal"),
+               terms="Voorwaarden", privacy="Privacy", refund="Terugbetaling", contact="Contact", legal="Juridische informatie", home="/nl", plans_h="/nl/plans", blog_h="/nl/blog", sw="Taal"),
     "de": dict(check="Was wir prüfen", plans="Preise", blog="Ratgeber", data="Daten", signin="Anmelden", cta="Website prüfen", skip="Zum Inhalt", main="Hauptmenü",
                terms="AGB", privacy="Datenschutz", refund="Erstattungen", contact="Kontakt", legal="Impressum", home="/de", plans_h="/de/plans", blog_h="/de/blog", sw="Sprache"),
     "es": dict(check="Qué comprobamos", plans="Precios", blog="Guías", data="Datos", signin="Iniciar sesión", cta="Auditar un sitio", skip="Saltar al contenido", main="Principal",
                terms="Condiciones", privacy="Privacidad", refund="Reembolsos", contact="Contacto", legal="Aviso legal", home="/es", plans_h="/es/plans", blog_h="/es/blog", sw="Idioma"),
 }
+TABLE_CSS = (".lt{overflow-x:auto}@media(min-width:641px){.lt table{min-width:620px}}"
+             "@media(max-width:640px){.lt table,.lt tbody,.lt tr,.lt td{display:block;width:100%}.lt thead{position:absolute;left:-9999px}"
+             ".lt tr{border-bottom:2px solid var(--rule);padding:10px 0}.lt td{border:0;padding:6px 0}"
+             ".lt td::before{content:attr(data-label);display:block;font-weight:600;color:var(--navy);font-size:13px}}")
 NAMES = {"en": "English", "fr": "Français", "nl": "Nederlands", "de": "Deutsch", "es": "Español"}
 LOC_PAGES = ("/privacy", "/terms", "/refund", "/withdraw")  # link targets that exist once per language
 
@@ -54,8 +58,8 @@ def render_md(md, lang):
             while i < len(lines) and lines[i].startswith("|"): rows.append([c.strip() for c in lines[i].strip().strip("|").split("|")]); i += 1
             head, body = rows[0], [r for r in rows[2:]]
             t = "<thead><tr>" + "".join(f"<th>{inline(c, lang)}</th>" for c in head) + "</tr></thead><tbody>"
-            t += "".join("<tr>" + "".join(f"<td>{inline(c, lang)}</td>" for c in r) + "</tr>" for r in body) + "</tbody>"
-            out.append(f'<div style="overflow-x:auto"><table style="min-width:620px">{t}</table></div>'); continue
+            t += "".join("<tr>" + "".join(f'<td data-label="{E(head[j] if j < len(head) else "", quote=True)}">{inline(c, lang)}</td>' for j, c in enumerate(r)) + "</tr>" for r in body) + "</tbody>"
+            out.append(f'<div class="lt"><table>{t}</table></div>'); continue
         if ln.startswith("- "):
             items = []
             while i < len(lines) and lines[i].startswith("- "): items.append(inline(lines[i][2:], lang)); i += 1
@@ -91,7 +95,7 @@ def shell(lang, page, title, desc, body_html):
     sw = " · ".join(f'<a href="{path(c, page)}" hreflang="{c}" lang="{c}"' + (' aria-current="true"' if c == lang else "") + f">{NAMES[c]}</a>" for c in LANGS)
     return (f'<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)}. CitedBy</title>'
             f'<meta name="description" content="{E(desc)}"><link rel="canonical" href="{base}">{alts}<link rel="icon" href="/favicon.svg">'
-            f'<link rel="stylesheet" href="/saas.css"><link rel="stylesheet" href="/doc.css?v={ver}"><script type="application/ld+json">{ld}</script></head><body class="cb dc">'
+            f'<link rel="stylesheet" href="/saas.css"><link rel="stylesheet" href="/doc.css?v={ver}"><style>{TABLE_CSS}</style><script type="application/ld+json">{ld}</script></head><body class="cb dc">'
             f'<a class="sr" href="#main">{E(t["skip"])}</a>\n<header class="topbar"><div class="in"><a class="mark" href="{t["home"]}"><i></i>CitedBy</a>'
             f'<nav aria-label="{E(t["main"])}"><a class="opt" href="{t["home"].rstrip("/")}/#checks">{E(t["check"])}</a><a href="{t["plans_h"]}">{E(t["plans"])}</a><a href="{t["blog_h"]}">{E(t["blog"])}</a><a class="opt" href="/data">{E(t["data"])}</a></nav>'
             f'<a class="signin" href="/signin?next=%2Fapp.html">{E(t["signin"])}</a><a class="btn sm go" href="/app.html#/new">{E(t["cta"])}</a></div></header>'

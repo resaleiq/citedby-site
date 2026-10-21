@@ -58,4 +58,19 @@ def test_legal_links_localizes_footer_only_for_non_english():
 
 
 def test_v2_texts_are_the_ones_served():
-    assert "Last updated: 20 October 2026" in re.sub(r"<[^>]+>", "", F("en", "privacy")).replace("Last updated:", "Last updated:")
+    assert "Last updated: 21 October 2026" in re.sub(r"<[^>]+>", "", F("en", "privacy")).replace("Last updated:", "Last updated:")
+
+
+def test_switch_english_link_has_no_locale_prefix_after_serve_time_rewrite():
+    for pg in PAGES:
+        for l in LANGS[1:]:
+            out = legal_links.localize(F(l, pg).encode()).decode()
+            assert f'<a href="/{pg}" hreflang="en" lang="en">English</a>' in out, (l, pg)
+            assert f'href="/{l}/{pg}" hreflang="{l}"' in out
+
+
+def test_tables_stack_with_labels_on_phones():
+    for l in LANGS:
+        h = F(l, "privacy")
+        assert 'data-label="' in h and "attr(data-label)" in h and 'style="min-width:620px"' not in h
+        assert 'data-label=""' not in h

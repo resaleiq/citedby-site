@@ -64,7 +64,7 @@ Dit is de fout die op elk platform kan voorkomen. Thema's en plugins voor review
 
 Test het zo: kies "Paginabron weergeven" (niet "Element inspecteren") en zoek op een zin uit uw productbeschrijving en op de prijs. Staat de zin er niet, dan ontbreekt de tekst voor die crawler. Schakel de plugin of het thema-onderdeel uit om te zien of de tekst terugkomt in de bron, en vraag zo nodig uw leverancier om server-side rendering.
 
-Wilt u alle pagina's laten nakijken, gebruik dan de [AI-zichtbaarheidsaudit](/nl/ai-visibility-audit): die crawlt elke pagina en geeft de exacte oplossing. De volledige reeks controles staat in de [technische SEO-checklist](/nl/guides/technical-seo-checklist).
+Wilt u alle pagina's laten nakijken, gebruik dan de [AI-zichtbaarheidsaudit](/nl/ai-visibility-audit): die crawlt uw site tot de paginalimiet van uw abonnement en geeft de exacte oplossing. De volledige reeks controles staat in de [technische SEO-checklist](/nl/guides/technical-seo-checklist).
 
 ## FAQ
 
