@@ -86,4 +86,4 @@ Beheben Sie zuerst Crawl-Zugang und grundlegende Fakten, denn die können Sie se
 
 - [Google Search Central: KI-Funktionen und Ihre Website](https://developers.google.com/search/docs/appearance/ai-features)
 - [OpenAI: Crawler und User-Agents](https://developers.openai.com/api/docs/bots)
-- [CitedBy Website-Audit](https://citedby.eu/)
+- [CitedBy Website-Audit](https://citedby.eu/de)

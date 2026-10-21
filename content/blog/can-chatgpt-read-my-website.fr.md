@@ -68,4 +68,4 @@ OpenAI indique qu'il faut compter environ 24 heures pour que ses systèmes s'ada
 ## Sources
 
 - [OpenAI : robots d'exploration et user agents](https://developers.openai.com/docs/bots)
-- [CitedBy : audit de site](https://citedby.eu/)
+- [CitedBy : audit de site](https://citedby.eu/fr)

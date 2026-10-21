@@ -90,4 +90,4 @@ Nein. Lesbar zu sein ist die Eintrittskarte. Ob ein Assistent Ihren Shop nennt, 
 - [Cloudflare: AI-Crawler verwalten](https://developers.cloudflare.com/ai-crawl-control/features/manage-ai-crawlers/)
 - [Help Net Security: Cloudflare ändert Zugriffsregeln für KI-Crawler, 2. Juli 2026](https://www.helpnetsecurity.com/2026/07/02/cloudflare-ai-crawler-controls/)
 - [IETF RFC 9309: Robots Exclusion Protocol](https://www.rfc-editor.org/rfc/rfc9309)
-- [CitedBy Website-Audit](https://citedby.eu/)
+- [CitedBy Website-Audit](https://citedby.eu/de)

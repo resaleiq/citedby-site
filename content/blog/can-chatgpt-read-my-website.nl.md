@@ -72,4 +72,4 @@ OpenAI zegt dat het ongeveer 24 uur kan duren voordat zijn systemen zich aanpass
 ## Sources
 
 - [OpenAI: crawlers en user agents](https://developers.openai.com/api/docs/bots)
-- [CitedBy: site-audit](https://citedby.eu/)
+- [CitedBy: site-audit](https://citedby.eu/nl)

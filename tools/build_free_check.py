@@ -156,6 +156,7 @@ def facts():
     return d, datetime.datetime.fromtimestamp(d["ts"], __import__("zoneinfo").ZoneInfo("Europe/Madrid"))  # same day as /sample and the home band
 
 
+COL = {"fr": "\u202f:"}  # RES-2696: French typography, narrow no-break space before a colon
 PG = {"en": "pages", "fr": "pages", "nl": "pagina's", "de": "Seiten", "es": "páginas"}
 
 
@@ -191,12 +192,12 @@ def render(l):
 <form class="urlf" id="tzf" action="/api/teaser" method="post" novalidate aria-describedby="tzn"><label class="sr" for="u">{E(t["label"])}</label><input class="fld" id="u" name="url" placeholder="{E(t["ph"])}" autocomplete="url" inputmode="url" required><span class="hp" aria-hidden="true"><label>{E(t["hp"])} <input name="fax" tabindex="-1" autocomplete="off"></label></span><button class="btn go" data-cta="primary" data-cta-id="free-check-page">{E(t["btn"])}</button></form>
 <p class="tzm" id="tzm" role="alert" aria-live="polite"></p>
 <ul class="trust"><li>{E(t["who"])}</li></ul>
-</div><aside class="fcc" aria-label="{E(t["h_ex"])}"><h2>{E(t["h_ex"])}</h2><p class="fcs"><b>{d["score"]}</b><span>/100 · {E(d["grade"])}</span></p><p>{E(d["host"])} · {d["pages"]} {PG[l]} · {date}</p><p><b>{E(t["ex_issue"])}:</b> {E(title_ex)}<br><b>{E(t["ex_page"])}:</b> <code>{E(ex["path"])}</code></p><p><a href="{p}/sample">{E(t["ex_more"])} &rarr;</a></p></aside></div></section>
+</div><aside class="fcc" aria-label="{E(t["h_ex"])}"><h2>{E(t["h_ex"])}</h2><p class="fcs"><b>{d["score"]}</b><span>/100 · {E(d["grade"])}</span></p><p>{E(d["host"])} · {d["pages"]} {PG[l]} · {date}</p><p><b>{E(t["ex_issue"])}{COL.get(l, ":")}</b> {E(title_ex)}<br><b>{E(t["ex_page"])}{COL.get(l, ":")}</b> <code>{E(ex["path"])}</code></p><p><a href="{p}/sample">{E(t["ex_more"])} &rarr;</a></p></aside></div></section>
 <section class="band"><div class="w" style="max-width:760px">
 <h2>{E(t["h_shows"])}</h2><ol>{shows}</ol>
 <h2>{E(t["h_ex"])}</h2><p>{ex_intro}</p>
-<p><b>{E(t["ex_issue"])}:</b> {E(title_ex)}<br><b>{E(t["ex_page"])}:</b> <code>{E(ex["path"])}</code></p>
-<p><b>{E(t["ex_fix"])}:</b></p><pre style="white-space:pre-wrap;overflow-wrap:anywhere"><code>{E(ex["code"])}</code></pre>
+<p><b>{E(t["ex_issue"])}{COL.get(l, ":")}</b> {E(title_ex)}<br><b>{E(t["ex_page"])}{COL.get(l, ":")}</b> <code>{E(ex["path"])}</code></p>
+<p><b>{E(t["ex_fix"])}{COL.get(l, ":")}</b></p><pre style="white-space:pre-wrap;overflow-wrap:anywhere"><code>{E(ex["code"])}</code></pre>
 <p><a href="{p}/sample">{E(t["ex_more"])} &rarr;</a></p>
 <h2>{E(t["h_paid"])}</h2><p>{E(t["paid"])} <a href="{p}/plans">{E(t["paid_cta"])}</a>.</p>
 <p><a href="{p}/tools/ai-crawler-check">{E(t["more_tool"])}</a></p>

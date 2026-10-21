@@ -74,4 +74,4 @@ OpenAI nennt etwa 24 Stunden, bis sich seine Systeme nach einer Änderung der ro
 ## Sources
 
 - [OpenAI: Crawler und User-Agents](https://developers.openai.com/docs/bots)
-- [CitedBy Website-Audit](https://citedby.eu/)
+- [CitedBy Website-Audit](https://citedby.eu/de)

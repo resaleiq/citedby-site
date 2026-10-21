@@ -82,4 +82,4 @@ Sí, cuando está desactualizado. Un bloque de marcado que nunca se actualizó e
 
 - [OpenAI: especificación del feed de productos](https://developers.openai.com/commerce/specs/feed)
 - [OpenAI: rastreadores y agentes de usuario](https://developers.openai.com/api/docs/bots)
-- [CitedBy: auditoría de tu web](https://citedby.eu/)
+- [CitedBy: auditoría de tu web](https://citedby.eu/es)

@@ -78,4 +78,4 @@ Nein. robots.txt legt fest, was Crawler abrufen dürfen. llms.txt ist eine vorge
 - [Search Engine Journal: SE-Ranking-Studie zu rund 300.000 Domains, 20. November 2025](https://www.searchenginejournal.com/llms-txt-shows-no-clear-effect-on-ai-citations-based-on-300k-domains/561542/)
 - [Google Search Central: KI-Funktionen und Ihre Website](https://developers.google.com/search/docs/appearance/ai-features)
 - [OpenAI: Crawler und User-Agents](https://developers.openai.com/api/docs/bots)
-- [CitedBy Website-Audit](https://citedby.eu/)
+- [CitedBy Website-Audit](https://citedby.eu/de)

@@ -79,4 +79,4 @@ Ja, wenn er veraltet ist. Google schreibt, dass Preis in Markup und Feed zur Zie
 - [OpenAI: Produktfeed-Spezifikation](https://developers.openai.com/commerce/specs/feed)
 - [OpenAI: Crawler und User-Agents](https://developers.openai.com/api/docs/bots)
 - [Google Merchant Center-Hilfe: falscher Preis durch Abweichung zwischen Feed und Zielseite](https://support.google.com/merchants/answer/9773429)
-- [CitedBy Website-Audit](https://citedby.eu/)
+- [CitedBy Website-Audit](https://citedby.eu/de)

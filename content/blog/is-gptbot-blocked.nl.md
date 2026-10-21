@@ -90,4 +90,4 @@ Nee. Leesbaar zijn is het toegangsbewijs. Of een assistent uw webshop noemt, han
 - [Cloudflare: manage AI crawlers](https://developers.cloudflare.com/ai-crawl-control/features/manage-ai-crawlers/)
 - [Help Net Security: Cloudflare past toegangsregels voor AI-crawlers aan, 2 juli 2026](https://www.helpnetsecurity.com/2026/07/02/cloudflare-ai-crawler-controls/)
 - [IETF RFC 9309: Robots Exclusion Protocol](https://www.rfc-editor.org/rfc/rfc9309)
-- [CitedBy: site-audit](https://citedby.eu/)
+- [CitedBy: site-audit](https://citedby.eu/nl)

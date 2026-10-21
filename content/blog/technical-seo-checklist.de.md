@@ -75,4 +75,4 @@ Nein. Die Sitemap zeigt, welche Seiten Sie wichtig finden. Ob ein Crawler sie ab
 - [Google Search Central: Product-Markup](https://developers.google.com/search/docs/appearance/structured-data/product)
 - [Google Search Central: Grundlagen JavaScript-SEO](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics)
 - [OpenAI: Crawler und User-Agents](https://developers.openai.com/api/docs/bots)
-- [CitedBy Website-Audit](https://citedby.eu/)
+- [CitedBy Website-Audit](https://citedby.eu/de)
