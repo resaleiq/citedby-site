@@ -94,7 +94,7 @@ class T(unittest.TestCase):
         self.assertEqual(urllib.request.urlopen(req).read(), b"app-page"); self.assertEqual(SEEN[0][1], "/api/fixpack/intake")
 
     # RES-2572: the app's project routes. Keep in step with citedby-app sa_projects.PROJECT_ROUTES (its test pins the same table): a route missing here is a 404 on citedby.eu.
-    APP_PROJECT_ROUTES = {"settings": ("GET", "POST"), "history": ("GET",), "progress": ("GET",), "crawl": ("POST",), "verify": ("GET", "POST"), "sitemap": ("GET", "POST"), "remove": ("POST",), "gsc": ("GET", "POST"), "gsc/clear": ("POST",), "logs": ("GET", "POST"), "logs/clear": ("POST",)}
+    APP_PROJECT_ROUTES = {"settings": ("GET", "POST"), "history": ("GET",), "progress": ("GET",), "crawl": ("POST",), "verify": ("GET", "POST"), "sitemap": ("GET", "POST"), "remove": ("POST",), "gsc": ("GET", "POST"), "gsc/clear": ("POST",), "logs": ("GET", "POST"), "logs/clear": ("POST",), "os/graph": ("GET",), "os/query": ("GET",), "os/page": ("GET",), "os/sources": ("GET",)}
 
     def test_every_app_project_route_is_forwarded(self):
         for what, methods in self.APP_PROJECT_ROUTES.items():
