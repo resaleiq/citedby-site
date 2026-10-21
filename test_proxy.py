@@ -163,10 +163,10 @@ def test_app_v2_routes_are_forwarded():
 
 def test_free_tools_paths_are_forwarded_and_only_tool_pages_are_indexable():
     """RES-2323: /tools, both tools and their result pages in every language reach the app; results stay noindex."""
-    for p in ("/tools", "/fr/tools", "/tools/ai-crawler-check", "/de/tools/llms-txt-checker", "/es/tools/ai-crawler-check/elpais.com", "/tools/llms-txt-checker/www.shop.co.uk"):
+    for p in ("/tools", "/fr/tools", "/tools/ai-crawler-check", "/de/tools/llms-txt-checker", "/es/tools/ai-crawler-check/elpais.com", "/tools/llms-txt-checker/www.shop.co.uk", "/tools/findable-check", "/fr/tools/findable-check/elpais.com"):
         assert proxy.ROUTES["GET"].fullmatch(p), p
     for p in ("/tools/other", "/tools/ai-crawler-check/a/b", "/xx/tools", "/tools/ai-crawler-check/a_b.com"): assert not proxy.ROUTES["GET"].fullmatch(p), p
-    for p in ("/tools", "/nl/tools/llms-txt-checker"): assert proxy.INDEXABLE.fullmatch(p), p
+    for p in ("/tools", "/nl/tools/llms-txt-checker", "/de/tools/findable-check"): assert proxy.INDEXABLE.fullmatch(p), p
     assert not proxy.INDEXABLE.fullmatch("/tools/ai-crawler-check/shop.eu")
 
 def test_res2423_wrong_mark_is_forwarded():

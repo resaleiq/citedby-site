@@ -9,6 +9,7 @@
 - [AI crawler settings by platform](https://citedby.eu/platforms): Shopify, Squarespace, Wix, Webflow, WordPress.com and Cloudflare, each from the platform's own help page
 - [AI-crawler access checker](https://citedby.eu/tools/ai-crawler-check): free, no account: robots.txt rules and a live request for GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot, with the exact fix
 - [llms.txt checker](https://citedby.eu/tools/llms-txt-checker): free, no account: is /llms.txt present, valid, working and consistent with robots.txt and the sitemap
+- [Findable check](https://citedby.eu/tools/findable-check): free, no account: can Google, Bing and the AI assistants' crawlers reach your site, is your sitemap declared, and the next step per engine
 - [Guides and articles](https://citedby.eu/blog): how AI assistants find and read websites
 - [Free AI visibility check](https://citedby.eu/free-ai-visibility-check): free, no account: we crawl up to 10 pages and show your score, AI crawler access and the 3 issues to fix first
 - [AI visibility audit guide](https://citedby.eu/ai-visibility-audit): what such an audit checks
