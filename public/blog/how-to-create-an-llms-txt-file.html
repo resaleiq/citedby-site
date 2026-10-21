@@ -25,7 +25,7 @@
 <h2 id="the-format-in-order">The format, in order</h2>
 <p>The llmstxt.org specification lists these parts in this order. Only the first is required.</p>
 <ul><li>A <code>#</code> title with the name of the site or project.</li><li>A <code>&gt;</code> blockquote with a short summary.</li><li>Optional paragraphs or lists with more detail, but no headings.</li><li>Zero or more <code>##</code> sections, each holding a list of links.</li><li>By convention, a section named <code>Optional</code> for links an assistant can skip when it needs shorter context.</li></ul>
-<p>Each list item is a Markdown link, then optionally a colon and a note: <code>- <a href="https://link_url" rel="noopener">Link title</a>: what this page answers</code>.</p>
+<p>Each list item is a Markdown link, then optionally a colon and a note: <code>- [Link title](https://link_url): what this page answers</code>.</p>
 <h2 id="template-to-copy">Template to copy</h2>
 <p>Replace the example text with your own. Keep the shape.</p>
 <pre><code># Example Shop
@@ -44,7 +44,7 @@
 <h2 id="how-to-create-the-file">How to create the file</h2>
 <ol class="steps"><li>Open a plain-text editor and type the title line: <code># Your shop name</code>. Keep it to the name buyers know you by.</li><li>Add one <code>&gt;</code> line under it that says what you sell and where, in one sentence. Use facts a page of yours also states.</li><li>List your most useful pages under <code>##</code> headings such as Products, Help or Policies. Use full URLs, one link per line, and add a short note after a colon saying what the page answers.</li><li>Put pages that are nice to have, such as About or press, under a section named <code>Optional</code>.</li><li>Save the file as <code>llms.txt</code> (plain text, UTF-8) and upload it to the root of your site so that <code>https://yourshop.com/llms.txt</code> loads. A file in a subfolder does not count, and the address must answer with text, not a login or an HTML error page.</li><li>Run the <a href="/tools/llms-txt-checker">free llms.txt checker</a> on your domain. It reports whether the file loads, follows the format, links to pages that load, and agrees with your robots.txt and sitemap.</li></ol>
 <h2 id="mistakes-the-checker-finds">Mistakes the checker finds</h2>
-<ul><li>The title is missing or is not the first line.</li><li>A list item is not in <code><a href="url">name</a></code> form, for example a bare URL.</li><li>A listed page returns an error, or robots.txt keeps AI crawlers away from it. A page you list but block sends mixed signals.</li><li>A listed page is not in your sitemap.</li><li>The address returns an HTML page instead of a text file.</li></ul>
+<ul><li>The title is missing or is not the first line.</li><li>A list item is not in <code>[name](url)</code> form, for example a bare URL.</li><li>A listed page returns an error, or robots.txt keeps AI crawlers away from it. A page you list but block sends mixed signals.</li><li>A listed page is not in your sitemap.</li><li>The address returns an HTML page instead of a text file.</li></ul>
 <h2 id="check-the-crawlers-too">Check the crawlers too</h2>
 <p>A perfect llms.txt does nothing for a site whose firewall refuses AI crawlers. Run the <a href="/tools/ai-crawler-check">AI-crawler access checker</a> next: it tests robots.txt and a live request for eight crawlers.</p>
 <h2 id="faq">Questions people ask</h2>

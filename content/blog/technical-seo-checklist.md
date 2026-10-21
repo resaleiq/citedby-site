@@ -58,7 +58,7 @@ One limit: a test from your own computer can differ from what a crawler gets. A 
 
 ## What does the audit add?
 
-By hand you check a few pages. The [CitedBy audit](/) crawls your shop up to your plan's page limit, runs these checks on each one and gives the exact fix for each issue. It starts at €9, paid once, with a 14-day money-back guarantee. The [sample audit](/sample-audit) shows the format.
+By hand you check a few pages. The [CitedBy audit](/) crawls your shop up to your plan's page limit, runs these checks on each one and gives the exact fix for each issue. It starts at €9, paid once, with a 14-day money-back guarantee. The [sample audit](/sample) shows the format.
 
 ## FAQ
 

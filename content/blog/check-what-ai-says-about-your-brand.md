@@ -84,7 +84,7 @@ Do not round up. A shop named in 1 of 2 runs is named in 1 of 2 runs, not "recom
 
 ## The faster way
 
-Twenty prompts across five assistants is 200 manual runs. CitedBy asks the questions your buyers ask in your market, twice each, and lists who is named and linked. The audit starts at €9.
+Twenty prompts across five assistants is 200 manual runs. A CitedBy audit works on your site instead: it crawls up to your plan's page limit, shows which pages assistants cannot read or quote, and gives the exact fix for each. The audit starts at €9.
 
 ## FAQ
 
@@ -92,7 +92,7 @@ Twenty prompts across five assistants is 200 manual runs. CitedBy asks the quest
 No. A free account is enough to see what a free user sees. Paid plans can answer differently, so note which plan you used.
 
 ### Why ask every prompt twice?
-Answers vary between runs. Two runs show whether a result is stable; one run can be luck. Our own audits ask each question twice for the same reason.
+Answers vary between runs. Two runs show whether a result is stable; one run can be luck. 
 
 ### Should I ask for my brand by name in every prompt?
 No. Groups B and C test whether you are named when the buyer does not know you yet, which is the case that brings new customers. Groups A and D test what is said once they do.

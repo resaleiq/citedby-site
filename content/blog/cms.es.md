@@ -58,7 +58,7 @@ Si no está, desactiva el elemento o cambia a una versión que sirva el texto en
 
 ## ¿Hay una forma de revisarlo todo de una vez?
 
-La auditoría de CitedBy, desde 9 €, rastrea tu tienda hasta el límite de páginas de tu plan, revisa estos puntos y da la corrección exacta de cada problema. Mira [qué revisa](/es/ai-visibility-audit) y el [informe de muestra](/sample-audit).
+La auditoría de CitedBy, desde 9 €, rastrea tu tienda hasta el límite de páginas de tu plan, revisa estos puntos y da la corrección exacta de cada problema. Mira [qué revisa](/es/ai-visibility-audit) y el [informe de muestra](/es/sample).
 
 ## FAQ
 

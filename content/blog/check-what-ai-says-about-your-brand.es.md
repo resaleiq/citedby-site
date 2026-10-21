@@ -88,7 +88,7 @@ Una hoja con estas columnas basta: pregunta, ejecución, asistente, nombrada, en
 
 ## ¿Hay una forma más rápida?
 
-Veinte preguntas en cinco asistentes son 200 ejecuciones manuales. CitedBy hace las preguntas que hacen tus compradores en tu mercado, dos veces cada una, y lista quién es nombrado y enlazado. La auditoría empieza en 9 €. Puedes ver cómo se presenta el resultado en el [informe de muestra](/sample-audit).
+Veinte preguntas en cinco asistentes son 200 ejecuciones manuales. Una auditoría de CitedBy trabaja sobre tu web: rastrea hasta el límite de páginas de tu plan, muestra qué páginas no pueden leer ni citar los asistentes y da la solución exacta de cada una. La auditoría empieza en 9 €. Puedes ver cómo se presenta el resultado en el [informe de muestra](/es/sample).
 
 ## FAQ
 
@@ -96,7 +96,7 @@ Veinte preguntas en cinco asistentes son 200 ejecuciones manuales. CitedBy hace 
 No. Una cuenta gratuita basta para ver lo que ve un usuario gratuito. Los planes de pago pueden responder de otra forma, así que anota qué plan usaste.
 
 ### ¿Por qué hacer cada pregunta dos veces?
-Las respuestas varían de una ejecución a otra. Dos ejecuciones indican si un resultado es estable; con una sola puede ser suerte. Nuestras auditorías también hacen cada pregunta dos veces por la misma razón.
+Las respuestas varían de una ejecución a otra. Dos ejecuciones indican si un resultado es estable; con una sola puede ser suerte.
 
 ### ¿Debo nombrar mi marca en todas las preguntas?
 No. Los grupos B y C comprueban si te nombran cuando el comprador aún no te conoce, que es el caso que trae clientes nuevos. Los grupos A y D comprueban lo que se dice cuando ya te conoce.

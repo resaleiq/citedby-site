@@ -28,9 +28,12 @@ def ver(name):
 def prefix(loc): return "" if loc == "en" else "/" + loc
 def inline(s):
     s = E(s, quote=False)
+    codes = []
+    def keep(m): codes.append("<code>%s</code>" % m.group(1)); return "\x00%d\x00" % (len(codes) - 1)
+    s = re.sub(r"`([^`]+)`", keep, s)  # RES-2616: code spans stay literal, never become live links
     s = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", lambda m: '<a href="%s"%s>%s</a>' % (m.group(2), ' rel="noopener"' if m.group(2).startswith("http") else "", m.group(1)), s)
     s = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", s)
-    return re.sub(r"`([^`]+)`", r"<code>\1</code>", s)
+    return re.sub(r"\x00(\d+)\x00", lambda m: codes[int(m.group(1))], s)
 def plain(s): return re.sub(r"<[^>]+>", "", inline(s))
 def slugify(s): return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")[:48]
 

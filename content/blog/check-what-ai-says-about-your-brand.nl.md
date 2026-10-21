@@ -87,7 +87,7 @@ Maak in uw spreadsheet kolommen voor prompt, run, genoemd, gelinkt, andere websh
 
 ## Kan het sneller?
 
-Twintig prompts bij vijf assistenten zijn 200 handmatige runs. CitedBy stelt de vragen die uw kopers in uw markt stellen, elk twee keer, en toont wie er genoemd en gelinkt wordt. De audit begint bij €9. Lees wat de audit controleert op de pagina [AI-zichtbaarheidsaudit](/nl/ai-visibility-audit).
+Twintig prompts bij vijf assistenten zijn 200 handmatige runs. Een CitedBy-audit werkt in plaats daarvan op uw site: hij crawlt tot de paginalimiet van uw abonnement, toont welke pagina's assistenten niet kunnen lezen of citeren en geeft per pagina de exacte oplossing. De audit begint bij €9. Lees wat de audit controleert op de pagina [AI-zichtbaarheidsaudit](/nl/ai-visibility-audit).
 
 ## FAQ
 
@@ -95,7 +95,7 @@ Twintig prompts bij vijf assistenten zijn 200 handmatige runs. CitedBy stelt de 
 Nee. Een gratis account is genoeg om te zien wat een gratis gebruiker ziet. Betaalde abonnementen kunnen anders antwoorden, noteer dus welk abonnement u gebruikte.
 
 ### Waarom stel ik elke prompt twee keer?
-Antwoorden verschillen per run. Twee runs tonen of een uitkomst stabiel is, één run kan toeval zijn. Onze eigen audits stellen elke vraag om dezelfde reden twee keer.
+Antwoorden verschillen per run. Twee runs tonen of een uitkomst stabiel is, één run kan toeval zijn.
 
 ### Moet ik in elke prompt mijn merknaam noemen?
 Nee. Groep B en C testen of u genoemd wordt als de koper u nog niet kent, en dat levert nieuwe klanten op. Groep A en D testen wat er gezegd wordt als hij u wel kent.

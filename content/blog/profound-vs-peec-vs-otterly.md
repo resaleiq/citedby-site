@@ -48,7 +48,7 @@ A tracker tells you whether AI answers mention you. CitedBy checks something dif
 
 CitedBy's terms, from [citedby.eu/plans](/plans) on 19 October 2026: no free plan. The cheapest option is a €9 one-off audit for 1 site and up to 500 pages. Starter (€19 a month), Pro (€49) and Agency (€99) each start with 7 days free, with a card required and €0 charged today. An account is needed for every audit. Prices include VAT.
 
-OtterlyAI's pricing page also lists a Crawlability Check and Audit among its plan features, so the two tools overlap on that point. You can run our [free crawler check](/check) on your own site and compare it with what any tool tells you.
+OtterlyAI's pricing page also lists a Crawlability Check and Audit among its plan features, so the two tools overlap on that point. You can run our [free crawler check](/free-ai-visibility-check) on your own site and compare it with what any tool tells you.
 
 ## FAQ
 

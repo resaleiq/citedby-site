@@ -48,7 +48,7 @@ Un asistente solo puede nombrar tu tienda online si antes ha podido llegar a tus
 
 ## ¿Se puede hacer todo esto a la vez?
 
-Las diez comprobaciones llevan una tarde en una tienda pequeña. La auditoría de CitedBy, desde 9 €, rastrea tu web hasta el límite de páginas de tu plan y revisa estos puntos en cada página rastreada, con la corrección exacta para cada problema. Puedes ver el formato en el [informe de muestra](/sample-audit) o leer qué revisa en [Auditoría de visibilidad en IA](/es/ai-visibility-audit).
+Las diez comprobaciones llevan una tarde en una tienda pequeña. La auditoría de CitedBy, desde 9 €, rastrea tu web hasta el límite de páginas de tu plan y revisa estos puntos en cada página rastreada, con la corrección exacta para cada problema. Puedes ver el formato en el [informe de muestra](/es/sample) o leer qué revisa en [Auditoría de visibilidad en IA](/es/ai-visibility-audit).
 
 Para las instrucciones por plataforma (Shopify, WooCommerce y otras) tienes la [guía por plataformas](/es/guides/cms).
 

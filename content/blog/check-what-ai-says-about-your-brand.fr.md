@@ -84,7 +84,7 @@ N'arrondissez pas. Une boutique nommée dans 1 exécution sur 2 est nommée dans
 
 ## Existe-t-il une méthode plus rapide ?
 
-Vingt questions sur cinq assistants représentent 200 exécutions à la main. CitedBy pose les questions que vos acheteurs posent sur votre marché, deux fois chacune, et liste qui est nommé et cité. L'audit commence à 9 € ([voir l'exemple de mini-audit](/sample-audit)).
+Vingt questions sur cinq assistants représentent 200 exécutions à la main. Un audit CitedBy travaille sur votre site : il explore jusqu'à la limite de pages de votre formule, montre les pages que les assistants ne peuvent pas lire ni citer, et donne le correctif exact pour chacune. L'audit commence à 9 € ([voir l'exemple de mini-audit](/fr/sample)).
 
 ## FAQ
 
@@ -92,7 +92,7 @@ Vingt questions sur cinq assistants représentent 200 exécutions à la main. Ci
 Non. Un compte gratuit suffit pour voir ce que voit un utilisateur gratuit. Les offres payantes peuvent répondre autrement : notez celle que vous avez utilisée.
 
 ### Pourquoi poser chaque question deux fois ?
-Les réponses varient d'une exécution à l'autre. Deux exécutions montrent si un résultat est stable, une seule peut être un hasard. Nos propres audits posent chaque question deux fois pour la même raison.
+Les réponses varient d'une exécution à l'autre. Deux exécutions montrent si un résultat est stable, une seule peut être un hasard.
 
 ### Faut-il citer ma marque dans chaque question ?
 Non. Les groupes B et C testent si vous êtes nommé quand l'acheteur ne vous connaît pas encore, le cas qui amène de nouveaux clients. Les groupes A et D testent ce qui se dit une fois qu'il vous connaît.

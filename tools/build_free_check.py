@@ -156,6 +156,9 @@ def facts():
     return d, datetime.datetime.fromtimestamp(d["ts"], __import__("zoneinfo").ZoneInfo("Europe/Madrid"))  # same day as /sample and the home band
 
 
+PG = {"en": "pages", "fr": "pages", "nl": "pagina's", "de": "Seiten", "es": "páginas"}
+
+
 def render(l):
     t = T[l]
     d, when = facts()
@@ -180,14 +183,14 @@ def render(l):
 <body class="cb land"><a class="sr" href="#main">{E(t["skip"])}</a>
 <header class="topbar"><div class="in"><a class="mark" href="{p or "/"}"><i></i>CitedBy</a><nav aria-label="Main"><a href="/plans">{E(t["nav"][0])}</a><a href="/blog">{E(t["nav"][1])}</a></nav><a href="/signin?next=%2Fapp.html" style="color:#C9D2DF;margin-right:12px">{E(t["signin"])}</a></div></header>
 <main id="main">
-<section class="band dark"><div class="w" style="max-width:760px">
+<section class="band dark"><style>.fch{{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:36px;align-items:center}}.fcc{{background:#fff;color:#0F1B2D;border-radius:12px;padding:20px 22px;box-shadow:0 12px 32px -12px rgba(0,0,0,.5)}}.fcc h2{{font:600 .8rem var(--sans);text-transform:uppercase;letter-spacing:.05em;color:#556173;margin:0 0 10px}}.fcc .sc{{display:flex;align-items:baseline;gap:10px;margin:0 0 4px}}.fcc .sc b{{font:600 3rem/1 var(--serif)}}.fcc .sc span{{font-weight:600;color:#0F8F84}}.fcc p{{margin:0 0 8px;font-size:.9rem}}.fcc code{{overflow-wrap:anywhere;font-size:.82rem}}@media(max-width:800px){{.fch{{grid-template-columns:minmax(0,1fr);gap:20px}}}}</style><div class="w fch" style="max-width:1040px"><div>
 <h1>{E(t["h1"])}</h1>
 <p class="lede">{E(t["lede"])}</p>
 <p class="tzn" id="tzn" style="font-weight:600;margin-bottom:10px">{E(t["free"])}</p>
 <form class="urlf" id="tzf" action="/api/teaser" method="post" novalidate aria-describedby="tzn"><label class="sr" for="u">{E(t["label"])}</label><input class="fld" id="u" name="url" placeholder="{E(t["ph"])}" autocomplete="url" inputmode="url" required><span class="hp" aria-hidden="true"><label>{E(t["hp"])} <input name="fax" tabindex="-1" autocomplete="off"></label></span><button class="btn go" data-cta="primary" data-cta-id="free-check-page">{E(t["btn"])}</button></form>
 <p class="tzm" id="tzm" role="alert" aria-live="polite"></p>
 <ul class="trust"><li>{E(t["who"])}</li></ul>
-</div></section>
+</div><aside class="fcc" aria-label="{E(t["h_ex"])}"><h2>{E(t["h_ex"])}</h2><p class="sc"><b>{d["score"]}</b><span>/100 · {E(d["grade"])}</span></p><p>{E(d["host"])} · {d["pages"]} {PG[l]} · {date}</p><p><b>{E(t["ex_issue"])}:</b> {E(title_ex)}<br><b>{E(t["ex_page"])}:</b> <code>{E(ex["path"])}</code></p><p><a href="{p}/sample">{E(t["ex_more"])} &rarr;</a></p></aside></div></section>
 <section class="band"><div class="w" style="max-width:760px">
 <h2>{E(t["h_shows"])}</h2><ol>{shows}</ol>
 <h2>{E(t["h_ex"])}</h2><p>{ex_intro}</p>

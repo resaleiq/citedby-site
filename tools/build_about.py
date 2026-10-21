@@ -18,7 +18,7 @@ T = {
   "<b>Corrections.</b> If you find an error, write to <a href=\"mailto:hello@citedby.eu\">hello@citedby.eu</a> with the page address. We fix it and update the review date.",
   "<b>Method.</b> How each number is produced is on the <a href=\"/methodology\">methodology page</a>."],
  who_h="Who runs it", who='CitedBy is operated by an individual in Spain. The operator\'s name, postal address and contact details are in the <a href="/legal">legal notice</a>, as Spanish law (LSSI-CE art. 10) requires. The reports and guides on this site are written by the CitedBy team and describe only what we have checked ourselves.',
- con_h="Contact", con='<a href="mailto:hello@citedby.eu">hello@citedby.eu</a>. Replies the same business day.', ln="About CitedBy"),
+ con_h="Contact", con='<a href="mailto:hello@citedby.eu">hello@citedby.eu</a>. We reply within 2 working days.', ln="About CitedBy"),
 "fr": dict(title="À propos de CitedBy : audit de site pour l'IA | CitedBy", desc="CitedBy (citedby.eu) audite les sites web pour la recherche IA. Ni citedby.co ni citedby.ai, pas un outil de citations académiques. Qui l'exploite et comment nous gagnons de l'argent.",
  h1="À propos de CitedBy", lead="CitedBy (citedby.eu) est un audit de site web pour la recherche IA. Vous saisissez une URL, nous explorons votre site jusqu'à la limite de votre offre, vérifions si les robots de recherche IA peuvent l'atteindre et la lire, et vous remettons un rapport noté avec le correctif exact pour chaque problème.",
  which_h="De quel CitedBy s'agit-il", which="Il s'agit de citedby.eu. Ce n'est ni <b>citedby.co</b> ni <b>citedby.ai</b>, qui sont d'autres entreprises, et ce n'est <b>pas un outil de citations académiques</b> : il ne met pas en forme, ne compte pas et ne recherche pas de références scientifiques. Le seul domaine que nous utilisons est citedby.eu.",
@@ -31,7 +31,7 @@ T = {
   "<b>Corrections.</b> Si vous trouvez une erreur, écrivez à <a href=\"mailto:hello@citedby.eu\">hello@citedby.eu</a> avec l'adresse de la page. Nous la corrigeons et mettons à jour la date de vérification.",
   "<b>Méthode.</b> La façon dont chaque chiffre est produit est décrite sur la <a href=\"/methodology\">page méthodologie</a> (en anglais)."],
  who_h="Qui l'exploite", who="CitedBy est exploité par une personne physique établie en Espagne. Son nom, son adresse postale et ses coordonnées figurent dans les <a href=\"/legal\">mentions légales</a>, comme l'exige le droit espagnol (LSSI-CE, art. 10). Les rapports et guides de ce site sont rédigés par l'équipe CitedBy et ne décrivent que ce que nous avons vérifié nous-mêmes.",
- con_h="Contact", con='<a href="mailto:hello@citedby.eu">hello@citedby.eu</a>. Réponse le jour ouvré même.', ln="À propos"),
+ con_h="Contact", con='<a href="mailto:hello@citedby.eu">hello@citedby.eu</a>. Réponse sous 2 jours ouvrés.', ln="À propos"),
 "nl": dict(title="Over CitedBy: website-audit voor AI-zoekopdrachten | CitedBy", desc="CitedBy (citedby.eu) controleert websites voor AI-zoekopdrachten. Niet citedby.co of citedby.ai, geen tool voor academische citaties. Wie het runt en hoe we geld verdienen.",
  h1="Over CitedBy", lead="CitedBy (citedby.eu) is een website-audit voor AI-zoekopdrachten. U voert een URL in, wij crawlen uw site tot de paginalimiet van uw abonnement, controleren of AI-zoekcrawlers de pagina kunnen bereiken en lezen, en geven u een beoordeeld rapport met de exacte oplossing per probleem.",
  which_h="Welke CitedBy is dit", which="Dit is citedby.eu. Het is niet <b>citedby.co</b> of <b>citedby.ai</b>, die andere bedrijven zijn, en het is <b>geen tool voor academische citaties</b>: het maakt geen literatuurverwijzingen op, telt ze niet en zoekt ze niet op. Het enige domein dat wij gebruiken is citedby.eu.",
@@ -44,7 +44,7 @@ T = {
   "<b>Correcties.</b> Vindt u een fout, mail dan <a href=\"mailto:hello@citedby.eu\">hello@citedby.eu</a> met het adres van de pagina. Wij herstellen het en werken de datum bij.",
   "<b>Methode.</b> Hoe elk getal tot stand komt, staat op de <a href=\"/methodology\">methodologiepagina</a> (in het Engels)."],
  who_h="Wie het runt", who="CitedBy wordt uitgebaat door een particulier in Spanje. Naam, postadres en contactgegevens van de uitbater staan in de <a href=\"/legal\">juridische informatie</a>, zoals de Spaanse wet (LSSI-CE art. 10) vereist. De rapporten en gidsen op deze site zijn geschreven door het CitedBy-team en beschrijven alleen wat wij zelf hebben gecontroleerd.",
- con_h="Contact", con='<a href="mailto:hello@citedby.eu">hello@citedby.eu</a>. Antwoord dezelfde werkdag.', ln="Over ons"),
+ con_h="Contact", con='<a href="mailto:hello@citedby.eu">hello@citedby.eu</a>. Antwoord binnen 2 werkdagen.', ln="Over ons"),
 "de": dict(title="Über CitedBy: Website-Audit für die KI-Suche | CitedBy", desc="CitedBy (citedby.eu) prüft Websites für die KI-Suche. Nicht citedby.co oder citedby.ai, kein Tool für akademische Zitate. Wer es betreibt und wie wir Geld verdienen.",
  h1="Über CitedBy", lead="CitedBy (citedby.eu) ist ein Website-Audit für die KI-Suche. Sie geben eine URL ein, wir crawlen Ihre Website bis zum Seitenlimit Ihres Tarifs, prüfen, ob KI-Suchcrawler sie erreichen und lesen können, und liefern einen bewerteten Bericht mit der genauen Korrektur für jedes Problem.",
  which_h="Welches CitedBy ist das", which="Das ist citedby.eu. Es ist nicht <b>citedby.co</b> oder <b>citedby.ai</b>, die andere Unternehmen sind, und es ist <b>kein Tool für akademische Zitate</b>: Es formatiert, zählt und sucht keine wissenschaftlichen Quellenangaben. Die einzige Domain, die wir nutzen, ist citedby.eu.",
@@ -57,7 +57,7 @@ T = {
   "<b>Korrekturen.</b> Wenn Sie einen Fehler finden, schreiben Sie an <a href=\"mailto:hello@citedby.eu\">hello@citedby.eu</a> mit der Adresse der Seite. Wir korrigieren ihn und aktualisieren das Prüfdatum.",
   "<b>Methode.</b> Wie jede Zahl entsteht, steht auf der <a href=\"/methodology\">Methodikseite</a> (auf Englisch)."],
  who_h="Wer es betreibt", who="CitedBy wird von einer Einzelperson in Spanien betrieben. Name, Postanschrift und Kontaktdaten des Betreibers stehen im <a href=\"/legal\">Impressum</a>, wie es spanisches Recht (LSSI-CE Art. 10) verlangt. Die Berichte und Ratgeber auf dieser Seite schreibt das CitedBy-Team; sie beschreiben nur, was wir selbst geprüft haben.",
- con_h="Kontakt", con='<a href="mailto:hello@citedby.eu">hello@citedby.eu</a>. Antwort am selben Werktag.', ln="Über uns"),
+ con_h="Kontakt", con='<a href="mailto:hello@citedby.eu">hello@citedby.eu</a>. Antwort innerhalb von 2 Werktagen.', ln="Über uns"),
 "es": dict(title="Sobre CitedBy: auditoría web para la búsqueda IA | CitedBy", desc="CitedBy (citedby.eu) audita sitios web para la búsqueda con IA. No es citedby.co ni citedby.ai, ni una herramienta de citas académicas. Quién lo gestiona y cómo ganamos dinero.",
  h1="Sobre CitedBy", lead="CitedBy (citedby.eu) es una auditoría web para la búsqueda con IA. Introduces una URL, rastreamos tu web hasta el límite de páginas de tu plan, comprobamos si los rastreadores de búsqueda con IA pueden llegar a ella y leerla, y te damos un informe con nota y la corrección exacta de cada problema.",
  which_h="Qué CitedBy es este", which="Este es citedby.eu. No es <b>citedby.co</b> ni <b>citedby.ai</b>, que son otras empresas, y <b>no es una herramienta de citas académicas</b>: no da formato, no cuenta ni busca referencias científicas. El único dominio que usamos es citedby.eu.",
@@ -70,7 +70,7 @@ T = {
   "<b>Correcciones.</b> Si encuentras un error, escribe a <a href=\"mailto:hello@citedby.eu\">hello@citedby.eu</a> con la dirección de la página. Lo corregimos y actualizamos la fecha de revisión.",
   "<b>Método.</b> Cómo se obtiene cada cifra está en la <a href=\"/methodology\">página de metodología</a> (en inglés)."],
  who_h="Quién lo gestiona", who="CitedBy lo gestiona una persona física en España. Su nombre, dirección postal y datos de contacto figuran en el <a href=\"/legal\">aviso legal</a>, como exige la ley española (LSSI-CE art. 10). Los informes y guías de este sitio los escribe el equipo de CitedBy y describen solo lo que hemos comprobado nosotros.",
- con_h="Contacto", con='<a href="mailto:hello@citedby.eu">hello@citedby.eu</a>. Respuesta el mismo día laborable.', ln="Sobre nosotros"),
+ con_h="Contacto", con='<a href="mailto:hello@citedby.eu">hello@citedby.eu</a>. Respuesta en 2 días laborables.', ln="Sobre nosotros"),
 }
 base = open(os.path.join(PUB, "about.html"), encoding="utf-8").read()
 head = base[:base.index("<main")]; foot = base[base.index("</main>") + len("</main>"):]
@@ -86,6 +86,7 @@ def render(l):
     li = "".join("<li>%s</li>" % x for x in t["do"]); ed = "".join("<li>%s</li>" % x for x in t["ed"])
     main = ('<main id="main"><h1>%s</h1><p class="lead">%s</p>\n<h2>%s</h2><p>%s</p>\n<h2>%s</h2><ul>%s</ul>\n<h2>%s</h2><p>%s</p>\n<h2>%s</h2><p>%s</p>\n'
             '<h2 id="editorial">%s</h2><ul>%s</ul>\n<h2>%s</h2><p>%s</p>\n<h2>%s</h2><p>%s</p></main>') % (t["h1"], t["lead"], t["which_h"], t["which"], t["do_h"], li, t["not_h"], t["nota"], t["earn_h"], t["earn"], t["ed_h"], ed, t["who_h"], t["who"], t["con_h"], t["con"])
+    if l != "en": main = main.replace('href="/refund"', 'href="/%s/refund"' % l).replace('href="/privacy"', 'href="/%s/privacy"' % l).replace('href="/terms"', 'href="/%s/terms"' % l)  # RES-2616
     return h + main + foot
 for l in LANGS:
     out = os.path.join(PUB, path(l).lstrip("/") + ".html"); os.makedirs(os.path.dirname(out), exist_ok=True)

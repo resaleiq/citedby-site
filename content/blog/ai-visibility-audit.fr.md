@@ -38,7 +38,7 @@ Un score de santé pour l'ensemble du site, les problèmes classés par gravité
 
 Après vos modifications, vous relancez l'exploration et vous voyez le score évoluer. Les agences peuvent ajouter un PDF en marque blanche et suivre plusieurs sites clients.
 
-Pour voir à quoi ressemble un rapport, ouvrez [l'exemple de mini-audit](/sample-audit). Nos [pages de données](/data) montrent quels sites ChatGPT a cités, question par question, avec le CSV brut, et la [méthodologie](/methodology) explique comment nous comptons. Vous voulez d'abord essayer ? Le [test gratuit de visibilité IA](/fr/free-ai-visibility-check) lit jusqu'à 10 pages, sans compte.
+Pour voir à quoi ressemble un rapport, ouvrez [l'exemple de mini-audit](/fr/sample). Nos [pages de données](/data) montrent quels sites ChatGPT a cités, question par question, avec le CSV brut, et la [méthodologie](/methodology) explique comment nous comptons. Vous voulez d'abord essayer ? Le [test gratuit de visibilité IA](/fr/free-ai-visibility-check) lit jusqu'à 10 pages, sans compte.
 
 ## Combien coûte l'audit ?
 

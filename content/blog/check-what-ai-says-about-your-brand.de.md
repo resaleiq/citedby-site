@@ -83,7 +83,7 @@ Runden Sie nicht auf. Ein Shop, der in einem von zwei Läufen genannt wird, wurd
 
 ## Gibt es einen schnelleren Weg?
 
-Zwanzig Prompts bei fünf Assistenten sind 200 Einzelläufe von Hand. CitedBy stellt die Fragen, die Ihre Käufer in Ihrem Markt stellen, jeweils zweimal und listet auf, wer genannt und verlinkt wird. Das Audit beginnt bei 9 €. Die Methode im Detail steht im [Beispiel-Audit](/sample-audit).
+Zwanzig Prompts bei fünf Assistenten sind 200 Einzelläufe von Hand. Ein CitedBy-Audit arbeitet stattdessen an Ihrer Website: Es crawlt bis zum Seitenlimit Ihres Tarifs, zeigt, welche Seiten Assistenten nicht lesen oder zitieren können, und liefert für jede den genauen Fix. Das Audit beginnt bei 9 €. Die Methode im Detail steht im [Beispiel-Audit](/de/sample).
 
 ## FAQ
 
@@ -91,7 +91,7 @@ Zwanzig Prompts bei fünf Assistenten sind 200 Einzelläufe von Hand. CitedBy st
 Nein. Ein kostenloses Konto genügt, um zu sehen, was ein kostenloser Nutzer sieht. Bezahlte Tarife können anders antworten, vermerken Sie deshalb, welchen Tarif Sie genutzt haben.
 
 ### Warum jeden Prompt zweimal stellen?
-Die Antworten schwanken von Lauf zu Lauf. Zwei Läufe zeigen, ob ein Ergebnis stabil ist. Ein einzelner Lauf kann Zufall sein. Unsere eigenen Audits stellen jede Frage aus demselben Grund zweimal.
+Die Antworten schwanken von Lauf zu Lauf. Zwei Läufe zeigen, ob ein Ergebnis stabil ist. Ein einzelner Lauf kann Zufall sein.
 
 ### Soll ich in jedem Prompt meine Marke nennen?
 Nein. Die Gruppen B und C testen, ob Sie genannt werden, wenn der Käufer Sie noch nicht kennt. Das ist der Fall, der Neukunden bringt. Die Gruppen A und D testen, was gesagt wird, sobald er Sie kennt.
