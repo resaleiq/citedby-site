@@ -65,6 +65,17 @@ def test_privacy_cloudflare_basis_is_dpf_not_sccs_res2198():
 def test_privacy_names_marks_fix_history_verification_and_analytics_fields_res2615():
     for loc in ("", "fr/", "nl/", "de/", "es/"):
         h = open(f"public/{loc}privacy.html", encoding="utf-8").read()
-        for needle in ("500", "2.000" if loc in ("nl/", "de/", "es/") else ("2 000" if loc == "fr/" else "2,000"), "300", "utm"):
+        for needle in ("500", "2.000" if loc in ("nl/", "de/", "es/") else ("2\u202f000" if loc == "fr/" else "2,000"), "300", "utm"):
             assert needle in h, (loc, needle)
         assert h.count("<tr>") >= 17, loc  # header + 16 rows (3 added)
+
+
+def test_analytics_wording_names_user_agent_not_browser_type_and_report_30_days_res2657():
+    for loc in ("", "fr/", "nl/", "de/", "es/"):
+        h = open(f"public/{loc}privacy.html", encoding="utf-8").read()
+        assert "user-agent" in h.lower() and "ref" in h and "Eén audit" not in h, loc
+        for bad in ("language and browser type", "la langue et le type", "browsertaal en browsertype", "Browsersprache und Browsertyp", "el idioma y el tipo"): assert bad not in h, (loc, bad)
+    assert "2 000" not in open("public/fr/privacy.html", encoding="utf-8").read()
+    for f, bad in (("landing.html", "kept 30 days"), ("landing.fr.html", "conservé 30"), ("landing.nl.html", "30 dagen bewaard"), ("landing.de.html", "30 Tage gespeichert"), ("landing.es.html", "guardado 30"),
+                   ("landing.html", "in your account for 30"), ("landing.fr.html", "dans votre compte 30"), ("landing.nl.html", "in je account"), ("landing.de.html", "in Ihrem Konto"), ("landing.es.html", "en tu cuenta 30")):
+        assert bad not in open(f"public/{f}", encoding="utf-8").read(), (f, bad)
