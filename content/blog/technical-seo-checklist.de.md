@@ -19,7 +19,7 @@ steps_img: on
 
 ## Was gehört in eine technische Checkliste für KI-Sichtbarkeit?
 
-Ein Assistent kann Ihren Shop nur nennen, wenn er ihn lesen kann. Die folgenden neun Prüfungen betreffen genau das: Zugang, Auslieferung, Struktur und Lesbarkeit. Sie brauchen dafür nur einen Browser. Wer lieber nicht jede Seite einzeln öffnet, lässt das [Audit](/de/ai-visibility-audit) (ab 9 €) alle Seiten crawlen. Ob ein Assistent Sie danach tatsächlich nennt, ist eine zweite Frage, die Sie mit [20 Prompts](/de/blog/check-what-ai-says-about-your-brand) messen.
+Ein Assistent kann Ihren Shop nur nennen, wenn er ihn lesen kann. Die folgenden neun Prüfungen betreffen genau das: Zugang, Auslieferung, Struktur und Lesbarkeit. Sie brauchen dafür nur einen Browser. Wer lieber nicht jede Seite einzeln öffnet, lässt das [Audit](/de/ai-visibility-audit) (ab 9 €) Seiten bis zum Seitenlimit Ihres Tarifs crawlen. Ob ein Assistent Sie danach tatsächlich nennt, ist eine zweite Frage, die Sie mit [20 Prompts](/de/blog/check-what-ai-says-about-your-brand) messen.
 
 ## Die neun Prüfungen
 
