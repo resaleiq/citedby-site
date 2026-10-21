@@ -26,7 +26,7 @@ answer: Ask each assistant the questions your buyers ask, twice, with web search
 
 ## Do it with the site audit
 
-The [CitedBy site audit](/) crawls every page of your site and tells you whether AI crawlers can read it and whether each page answers a buyer's question near the top, with the exact fix for each issue. It does not ask assistants whether they name you; the manual method above does that.
+The [CitedBy site audit](/) crawls your site up to your plan's page limit and tells you whether AI crawlers can read it and whether each page answers a buyer's question near the top, with the exact fix for each issue. It does not ask assistants whether they name you; the manual method above does that.
 
 ## Check you are reading the right company
 

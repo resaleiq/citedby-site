@@ -14,11 +14,11 @@ hero_boxes: Enterprise dashboards|Profound: no public price; Monthly monitoring|
 steps_img: on
 widget: on
 related: /compare/profound-vs-peec-vs-otterly|Profound vs Peec vs Otterly; /guides/check-if-ai-recommends-your-shop|How to check whether AI recommends your shop
-answer: Most tools in this category are dashboards: you pay a monthly fee and they track whether assistants mention your brand. CitedBy differs on one point: it crawls every page and gives the exact fix for each issue, from €9 paid once. Check each vendor's own pricing page, because prices change.
+answer: Most tools in this category are dashboards: you pay a monthly fee and they track whether assistants mention your brand. CitedBy differs on one point: it crawls your site up to your plan's page limit and gives the exact fix for each issue, from €9 paid once. Check each vendor's own pricing page, because prices change.
 
 ## What CitedBy costs
 
-- Site audit from €9, paid once: we crawl every page and give the exact fix for each issue, with a 14-day money-back guarantee.
+- Site audit from €9, paid once: we crawl your site up to your plan's page limit and give the exact fix for each issue, with a 14-day money-back guarantee.
 - Our prices are public on the [home page](/#prices). Refund conditions are on the [refund page](/refund).
 
 ## How the other tools are positioned

@@ -55,7 +55,7 @@ llms.txt is optioneel. Geen enkele grote assistent heeft bevestigd dat hij het b
 
 Loop de lijst een keer door en noteer per punt of het klopt. Sluit u een crawler buiten, begin dan bij punt 1 en 2. Ziet u lege pagina's in punt 8, dan helpt geen enkele andere aanpassing totdat de tekst op de server wordt gerenderd.
 
-Heeft u honderden producten, dan is handmatig nakijken traag. De [AI-zichtbaarheidsaudit](/nl/ai-visibility-audit) crawlt elke pagina, controleert deze punten en geeft per probleem de exacte oplossing, vanaf €9 eenmalig. Op Shopify of WooCommerce past u dingen op een andere plek aan. Dat staat in [AI-zichtbaarheid op Shopify en WooCommerce](/nl/guides/cms).
+Heeft u honderden producten, dan is handmatig nakijken traag. De [AI-zichtbaarheidsaudit](/nl/ai-visibility-audit) crawlt uw site tot de paginalimiet van uw abonnement, controleert deze punten en geeft per probleem de exacte oplossing, vanaf €9 eenmalig. Op Shopify of WooCommerce past u dingen op een andere plek aan. Dat staat in [AI-zichtbaarheid op Shopify en WooCommerce](/nl/guides/cms).
 
 ## FAQ
 
