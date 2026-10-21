@@ -419,7 +419,7 @@ class H(BaseHTTPRequestHandler):
         if u.path == "/go/fixpack":  # RES-2134: the Payment Link leaves no trace of its own, so the button comes here first: count the open (not from our own addresses), then 302
             lg = (parse_qs(u.query).get("lang") or ["en"])[0]
             count_event("fixpack_click", lg if lg in LANGS else "en", self.ip())
-            return self.out(302, b"", extra={"Location": home.FIX_URL, "Cache-Control": "no-store", "X-Robots-Tag": "noindex"})
+            return self.out(302, b"", extra={"Location": "/plans", "Cache-Control": "no-store", "X-Robots-Tag": "noindex"})
         if u.path == "/health":
             try:  # a fresh read-only connection: fails if the file is missing, unreadable or corrupt, never creates it
                 c = sqlite3.connect("file:%s?mode=ro" % DB_PATH, uri=True, timeout=2)

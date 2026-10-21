@@ -35,10 +35,10 @@ class T(unittest.TestCase):
 
     def test_fixpack_redirect_counts_outsiders_only(self):
         b = self.n("fixpack_click")
-        self.assertEqual(self.get("/go/fixpack?lang=fr", "9.9.9.9"), (302, home.FIX_URL))
+        self.assertEqual(self.get("/go/fixpack?lang=fr", "9.9.9.9"), (302, "/plans"))
         self.assertEqual(self.n("fixpack_click"), b + 1)
-        self.assertEqual(self.get("/go/fixpack", "203.0.113.7"), (302, home.FIX_URL))
-        self.assertEqual(self.get("/go/fixpack", "1.1.1.1, 192.0.2.9"), (302, home.FIX_URL))
+        self.assertEqual(self.get("/go/fixpack", "203.0.113.7"), (302, "/plans"))
+        self.assertEqual(self.get("/go/fixpack", "1.1.1.1, 192.0.2.9"), (302, "/plans"))
         self.assertEqual(self.n("fixpack_click"), b + 1)
 
     def test_browser_events(self):

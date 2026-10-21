@@ -8,7 +8,6 @@ import datetime, html, json, os
 import shell
 from shell import E, fmt_date
 
-FIX_URL = "https://buy.stripe.com/3cI8wHgJK4q9atr9Y98N200"
 MAX_AGE = datetime.timedelta(hours=24)
 HERE = os.path.dirname(os.path.abspath(__file__))
 
