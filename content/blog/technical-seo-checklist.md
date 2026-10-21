@@ -13,7 +13,7 @@ hero_sub: Ten checks you can run in a browser
 hero_boxes: Crawler access|robots.txt and status codes; Sitemap and URLs|Sitemap, canonical, hreflang; Page signals|Title, H1 and JSON-LD; Readable content|Raw HTML and internal links
 widget: on
 related: /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /blog/does-llms-txt-work|Does llms.txt work?; /guides/cms|AI visibility checklist by shop platform
-answer: A technical SEO checklist for AI visibility has ten checks: robots.txt, HTTP status, sitemap, canonical, hreflang, title and H1, JSON-LD, text in the raw HTML, internal links and, optionally, llms.txt. Each one can be tested by hand in a browser. Our audit runs them on every page, from €9, with the exact fix.
+answer: A technical SEO checklist for AI visibility has ten checks: robots.txt, HTTP status, sitemap, canonical, hreflang, title and H1, JSON-LD, text in the raw HTML, internal links and, optionally, llms.txt. Each one can be tested by hand in a browser. Our audit runs them on every page up to your plan's page limit, from €9, with the exact fix.
 steps_img: on
 
 ## What does a technical check for AI visibility cover?

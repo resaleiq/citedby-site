@@ -318,6 +318,14 @@ def landing_html(s):
     if os.environ.get("CITEDBY_TRIAL") == "1": return _re.sub(r"<!--/?T-->", "", _re.sub(r"<!--N-->.*?<!--/N-->", "", s, flags=_re.S))
     return _re.sub(r"<!--/?N-->", "", _re.sub(r"<!--T-->.*?<!--/T-->", "", s, flags=_re.S))
 
+HOST_Q = re.compile(r"^[a-z0-9]([a-z0-9.-]{0,251}[a-z0-9])?\.[a-z]{2,24}$")
+def prefill_host(raw_path):
+    """The bare host from ?url= on a landing path, or "" (hostname characters only, so it is safe inside the attribute)."""
+    v = (parse_qs(urlparse(raw_path).query).get("url", [""])[0]).strip().lower()
+    v = re.sub(r"^[a-z]+://", "", v).split("/")[0].split("?")[0]
+    v = re.sub(r"^www\.", "", v)
+    return v if HOST_Q.match(v) else ""
+
 GONE = {"/data/" + n + ext for n in ("the-france", "cafe-france", "cafe-belgique", "koffie-belgie", "coffee-ireland") for ext in ("", ".csv")}  # RES-1459 row 6: retired tea/coffee studies answer 410
 LAUNCH_REDIRECTS = {"/pricing": "/#pricing", "/faq": "/#faq", "/sample-audit": "/sample", "/check": "/", "/partners": "/", "/fr/check": "/", "/nl/check": "/", "/fixpack": "/#fixpack", "/fix-pack": "/#fixpack"}
 GO = {  # RES-2130: short links for posts; one fixed UTM set per link (UTM.md: lowercase [a-z0-9_]); other query params (e.g. internal=1) are forwarded, utm_* from the caller are dropped
@@ -375,7 +383,10 @@ class H(BaseHTTPRequestHandler):
         if path == "/" or path in langroutes.LANDING_PATHS:  # RES-1731 row 10: / is English, /fr /nl /de /es are real translations (tools/localize_landing.py)
             lang = langroutes.LANDING_PATHS.get(path, "en")
             with open(os.path.join(SITE_DIR, "landing.html" if lang == "en" else f"landing.{lang}.html"), encoding="utf-8") as f:
-                return self.out(200, langroutes.head(landing_html(f.read()), lang).encode())
+                page_html = landing_html(f.read())
+            pre = prefill_host(self.path)  # RES-2343: /fr?url=lemonde.fr fills the field on the server, no JavaScript needed
+            if pre: page_html = page_html.replace('id="u" name="url"', f'id="u" name="url" value="{pre}"', 1)
+            return self.out(200, langroutes.head(page_html, lang).encode())
         if path == "/data/":
             return self.out(301, b"", extra={"Location": "/data"})
         if path in HOME_ROUTES:

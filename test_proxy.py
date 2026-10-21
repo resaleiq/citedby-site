@@ -141,3 +141,7 @@ def test_free_tools_paths_are_forwarded_and_only_tool_pages_are_indexable():
     for p in ("/tools/other", "/tools/ai-crawler-check/a/b", "/xx/tools", "/tools/ai-crawler-check/a_b.com"): assert not proxy.ROUTES["GET"].fullmatch(p), p
     for p in ("/tools", "/nl/tools/llms-txt-checker"): assert proxy.INDEXABLE.fullmatch(p), p
     assert not proxy.INDEXABLE.fullmatch("/tools/ai-crawler-check/shop.eu")
+
+def test_res2423_wrong_mark_is_forwarded():
+    import proxy
+    assert proxy.ROUTES["POST"].fullmatch("/api/audit/a_k3j2h1/wrong")

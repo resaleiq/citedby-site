@@ -7,7 +7,7 @@ locale: nl
 cluster: AI-zichtbaarheid
 date: 2026-10-20
 reviewed: 2026-10-20
-answer: Een AI-zichtbaarheidsaudit controleert of AI-crawlers elke pagina van uw webshop kunnen bereiken en lezen, en of elke pagina een koopvraag helder genoeg beantwoordt om geciteerd te worden. CitedBy crawlt alle pagina's en geeft per probleem de exacte oplossing. Een audit kost €9, eenmalig betaald.
+answer: Een AI-zichtbaarheidsaudit controleert of AI-crawlers elke pagina van uw webshop kunnen bereiken en lezen, en of elke pagina een koopvraag helder genoeg beantwoordt om geciteerd te worden. CitedBy crawlt uw site tot de paginalimiet van uw abonnement en geeft per probleem de exacte oplossing. Een audit kost €9, eenmalig betaald.
 widget: on
 howto: on
 related: /nl/blog/can-chatgpt-read-my-website|Kan ChatGPT mijn website lezen?; /nl/blog/is-gptbot-blocked|Is GPTBot geblokkeerd op uw site?; /sample-audit|Een voorbeeldaudit
@@ -51,7 +51,7 @@ Er is geen gratis abonnement. Met de knop bovenaan start u direct een audit van 
 
 ## Waarom pagina voor pagina?
 
-Een webshop met 500 producten heeft 500 kansen op dezelfde fout. Eén theme-update kan op elke productpagina de prijs uit de HTML halen, of een nieuwe firewallregel kan een crawler op alle pagina's weigeren. Daarom crawlen we elke pagina en tonen we per probleem welke pagina's het raakt, zodat u een oorzaak één keer oplost in plaats van honderd keer.
+Een webshop met 500 producten heeft 500 kansen op dezelfde fout. Eén theme-update kan op elke productpagina de prijs uit de HTML halen, of een nieuwe firewallregel kan een crawler op alle pagina's weigeren. Daarom crawlen we uw site tot de paginalimiet van uw abonnement en tonen we per probleem welke pagina's het raakt, zodat u een oorzaak één keer oplost in plaats van honderd keer.
 
 ## Voor welke webshops is dit bedoeld?
 
