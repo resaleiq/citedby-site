@@ -7,7 +7,7 @@ import base64, hashlib, hmac, html, json, mimetypes, os, re, sqlite3, threading,
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 
-import analytics, doorcheck, home, langroutes, pages, proxy, safefetch, social, withdraw_link
+import analytics, doorcheck, home, langroutes, legal_links, pages, proxy, safefetch, social, withdraw_link
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CONSENT_VERSION = "2026-10-15.v1"
@@ -343,7 +343,7 @@ class H(BaseHTTPRequestHandler):
 
     def out(self, code, body, ctype="text/html; charset=utf-8", extra=None):
         if code == 200 and ctype.startswith("text/html"):
-            body = withdraw_link.inject(social.ensure(analytics.inject(body)))
+            body = legal_links.localize(withdraw_link.inject(social.ensure(analytics.inject(body))))
         elif code == 404 and ctype.startswith("text/html"):
             body = withdraw_link.inject(body)  # RES-2199: the EU withdrawal link is on every page, error pages included (no analytics or share tags there)
         self.send_response(code)
