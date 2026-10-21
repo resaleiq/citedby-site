@@ -134,3 +134,12 @@ def test_home_org_sameas_matches_about():
     import langroutes
     org = langroutes.LD
     assert '"sameAs": ["https://citedby.eu/about", "https://citedby.eu/methodology"]' in org
+
+
+class TestHomeJsonLdRes2651(unittest.TestCase):
+    def test_no_product_type_on_any_home(self):
+        import json, re, langroutes
+        m = re.search(r'<script type="application/ld\+json">(.*?)</script>', langroutes.LD)
+        types = [n["@type"] for n in json.loads(m.group(1))["@graph"]]
+        self.assertNotIn("Product", types)  # Google: merchant listing needs image + availability
+        self.assertIn("Service", types)
