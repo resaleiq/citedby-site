@@ -1,7 +1,7 @@
 {
- "id": "a_kWb26PW0P2Ol",
+ "id": "a_yZPnSTkLLaxV",
  "host": "plausible.io",
- "ts": 1792449817.8193922,
+ "ts": 1792462742.8891988,
  "score": 90,
  "grade": "A-",
  "pages": 403,
@@ -23,7 +23,7 @@
   [
    "medium",
    "Oversized images",
-   14
+   13
   ]
  ],
  "sections": [
@@ -90,7 +90,7 @@
    "de": "Keine strukturierten Daten (Schema)",
    "es": "Sin datos estructurados (schema)"
   },
-  "path": "/docs/odoo-integration",
-  "code": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Using Plausible Cloud with Odoo\",\n  \"description\": \"Connect your Odoo website to Plausible Cloud, view analytics inside Odoo and check that your tracking works.\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"Plausible\"\n  }\n}\n</script>"
+  "path": "/docs/exclusion-examples/exclude-bare.html",
+  "code": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"WebPage\",\n  \"name\": \"Plausible Analytics · Exclusion\",\n  \"url\": \"https://plausible.io/docs/exclusion-examples/exclude-bare.html\"\n}\n</script>"
  }
 }

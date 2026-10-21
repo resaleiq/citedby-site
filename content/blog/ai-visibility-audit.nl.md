@@ -38,7 +38,7 @@ U krijgt een gezondheidsscore voor de hele site, problemen gegroepeerd naar erns
 
 Na een aanpassing crawlt u opnieuw en ziet u de score veranderen. Bureaus kunnen een white-label-pdf toevoegen en meerdere klantsites beheren.
 
-Wilt u eerst zien hoe zo'n rapport eruitziet? Bekijk de [voorbeeldaudit](/sample-audit). Op de [datapagina's](/data) staat welke sites ChatGPT per vraag heeft gelinkt, met de ruwe CSV. Hoe wij tellen, leest u bij [methodologie](/methodology).
+Wilt u eerst zien hoe zo'n rapport eruitziet? Bekijk de [voorbeeldaudit](/sample-audit). Op de [datapagina's](/data) staat welke sites ChatGPT per vraag heeft gelinkt, met de ruwe CSV. Hoe wij tellen, leest u bij [methodologie](/methodology). Eerst proberen? De [gratis AI-zichtbaarheidscheck](/nl/free-ai-visibility-check) leest tot 10 pagina's, zonder account.
 
 ## Wat kost een audit?
 

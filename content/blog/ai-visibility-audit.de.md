@@ -22,7 +22,7 @@ Ein KI-Sichtbarkeits-Audit klärt, ob KI-Suchcrawler Ihre Seiten erreichen und l
 
 CitedBy übernimmt die Prüfung für Sie. Wir crawlen Ihre Website bis zum Seitenlimit Ihres Tarifs, prüfen sie und liefern einen Bericht mit der genauen Korrektur für jedes Problem. Eine Garantie, dass ChatGPT Ihre Website nennt, ist das nicht. Niemand steuert, was ein Assistent antwortet.
 
-Das Audit kostet ab 9 €, mit 14 Tagen Geld-zurück-Garantie. Wie ein Bericht aussieht, zeigt das [Beispiel-Audit](/sample-audit).
+Das Audit kostet ab 9 €, mit 14 Tagen Geld-zurück-Garantie. Wie ein Bericht aussieht, zeigt das [Beispiel-Audit](/sample-audit). Erst ausprobieren? Der [kostenlose KI-Sichtbarkeits-Check](/de/free-ai-visibility-check) liest bis zu 10 Seiten, ohne Konto.
 
 ## Was prüft das Audit, Seite für Seite?
 

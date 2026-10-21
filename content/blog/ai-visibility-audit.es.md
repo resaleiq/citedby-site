@@ -38,7 +38,7 @@ Una puntuación de salud de toda la web, los problemas agrupados por gravedad co
 
 Cuando cambies algo, puedes volver a rastrear y ver cómo se mueve la puntuación. Las agencias pueden añadir un PDF con marca blanca y gestionar muchas webs de clientes. Cada corrección indica la página a la que afecta, para que sepas dónde tocar.
 
-Además, nuestras [páginas de datos](/data) muestran qué sitios enlazó ChatGPT, pregunta a pregunta, con el CSV completo. Y en el [informe de muestra](/sample-audit) puedes ver cómo se presenta el resultado.
+Además, nuestras [páginas de datos](/data) muestran qué sitios enlazó ChatGPT, pregunta a pregunta, con el CSV completo. Y en el [informe de muestra](/sample-audit) puedes ver cómo se presenta el resultado. ¿Quieres probar primero? La [revisión gratis de visibilidad en IA](/es/free-ai-visibility-check) lee hasta 10 páginas, sin cuenta.
 
 ## ¿Cuánto cuesta la auditoría?
 

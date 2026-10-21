@@ -10,6 +10,7 @@
 - [AI-crawler access checker](https://citedby.eu/tools/ai-crawler-check): free, no account: robots.txt rules and a live request for GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot, with the exact fix
 - [llms.txt checker](https://citedby.eu/tools/llms-txt-checker): free, no account: is /llms.txt present, valid, working and consistent with robots.txt and the sitemap
 - [Guides and articles](https://citedby.eu/blog): how AI assistants find and read websites
+- [Free AI visibility check](https://citedby.eu/free-ai-visibility-check): free, no account: we crawl up to 10 pages and show your score, AI crawler access and the 3 issues to fix first
 - [AI visibility audit guide](https://citedby.eu/ai-visibility-audit): what such an audit checks
 - [Data by niche](https://citedby.eu/data/study-buyer-questions-claude): published study with method and CSV
 
