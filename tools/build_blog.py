@@ -221,8 +221,8 @@ def build_article(fm, body, arts):
         {"@type": "ListItem", "position": 1, "name": t["home"], "item": SITE + (prefix(loc) or "/")},
         {"@type": "ListItem", "position": 2, "name": SECT_NAME.get(fm.get("section"), t["blog"]), "item": SITE + prefix(loc) + "/" + SECT_PATH.get(fm.get("section"), "blog")},
         {"@type": "ListItem", "position": 3, "name": fm["h1"], "item": SITE + path}]}]
-    if faq: ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": plain(" ".join(a))}} for q, a in faq]})
-    if fm.get("howto") == "on" and steps: ld.append({"@context": "https://schema.org", "@type": "HowTo", "name": fm["h1"], "step": [{"@type": "HowToStep", "position": n + 1, "text": plain(s)} for n, s in enumerate(steps)]})
+    if faq: ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": html.unescape(plain(" ".join(a)))}} for q, a in faq]})
+    if fm.get("howto") == "on" and steps: ld.append({"@context": "https://schema.org", "@type": "HowTo", "name": fm["h1"], "step": [{"@type": "HowToStep", "position": n + 1, "text": html.unescape(plain(s))} for n, s in enumerate(steps)]})
     # ad slot sits after the first third of the body, never beside the widget or CTA
     parts = html_body.split("\n"); cut = max(1, len(parts) // 3)
     body_h = "\n".join(parts[:cut] + [ad] + parts[cut:])
