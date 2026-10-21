@@ -13,7 +13,7 @@ hero_boxes: robots.txt|la règle Disallow; CDN|réglages anti-robots; Pare-feu o
 widget: on
 steps_img: on
 howto: on
-related: /fr/blog/can-chatgpt-read-my-website|ChatGPT peut-il lire mon site ?; /fr/ai-visibility-audit|Audit de visibilité IA : que vérifier ?; /sample-audit|Un exemple de mini-audit
+related: /fr/tools/ai-crawler-check|Vérificateur d'accès des robots IA (free); /fr/blog/can-chatgpt-read-my-website|ChatGPT peut-il lire mon site ?; /fr/ai-visibility-audit|Audit de visibilité IA : que vérifier ?; /sample-audit|Un exemple de mini-audit
 answer: GPTBot est bloqué sur votre site si votre fichier robots.txt contient une règle Disallow qui le concerne, ou si un CDN, un pare-feu ou le serveur refuse ses requêtes. Ouvrez votre-boutique.fr/robots.txt, lancez un audit, puis comparez deux requêtes envoyées à votre serveur. Bloquer GPTBot ne bloque pas à lui seul la recherche ChatGPT.
 
 ## Où GPTBot peut-il être arrêté ?

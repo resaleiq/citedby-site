@@ -1,10 +1,12 @@
 # CitedBy
 
-> CitedBy is a website audit for search in the age of ChatGPT, Perplexity and Google AI answers. Enter a URL: CitedBy crawls every page, checks it against a list of checks (AI-crawler access, readable content, llms.txt, schema, titles and headings, internal links, answer-first content) and gives a graded report with a ready-to-paste fix for each issue. Plans: Single audit 9 EUR once (up to 100 pages), Starter 19 EUR/month, Pro 49 EUR/month, Agency 99 EUR/month; 14-day money-back guarantee. Service from Spain. Not citedby.co or citedby.ai (different companies); the only domain is citedby.eu.
+> CitedBy is a website audit for search in the age of ChatGPT, Perplexity and Google AI answers. Enter a URL: CitedBy crawls your site up to your plan's page limit, checks it against a list of checks (AI-crawler access, readable content, llms.txt, schema, titles and headings, internal links, answer-first content) and gives a graded report with a ready-to-paste fix for each issue. Plans: Single audit 9 EUR once (1 site, up to 500 pages), Starter 19 EUR/month (1 site, up to 1,000 pages), Pro 49 EUR/month (5 sites, up to 5,000 pages per site), Agency 99 EUR/month (25 sites, up to 10,000 pages per crawl); monthly plans start with a 7-day free trial; 14-day money-back guarantee. Service from Spain. Not citedby.co or citedby.ai (different companies); the only domain is citedby.eu.
 
 ## Pages
 - [Home, checks, pricing and FAQ](https://citedby.eu/)
 - [Free CI check for AI crawlers](https://citedby.eu/ci): a shell script and GitHub Action that fail a deploy when GPTBot, ClaudeBot or PerplexityBot see an empty or blocked page
+- [AI-crawler access checker](https://citedby.eu/tools/ai-crawler-check): free, no account: robots.txt rules and a live request for GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot, with the exact fix
+- [llms.txt checker](https://citedby.eu/tools/llms-txt-checker): free, no account: is /llms.txt present, valid, working and consistent with robots.txt and the sitemap
 - [Guides and articles](https://citedby.eu/blog): how AI assistants find and read websites
 - [AI visibility audit guide](https://citedby.eu/ai-visibility-audit): what such an audit checks
 - [Data by niche](https://citedby.eu/data/study-buyer-questions-claude): published study with method and CSV

@@ -11,7 +11,7 @@ SAME_AS = ["https://citedby.eu/about", "https://citedby.eu/methodology"]
 _OFFERS = [("Single audit", "9"), ("Starter (monthly)", "19"), ("Pro (monthly)", "49"), ("Agency (monthly)", "99")]
 LD = '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": [
     {"@type": "Organization", "@id": "https://citedby.eu/#org", "name": "CitedBy", "url": "https://citedby.eu/", "logo": "https://citedby.eu/icon-192.png", "email": "hello@citedby.eu", "sameAs": SAME_AS},
-    {"@type": "Product", "name": "CitedBy website audit", "brand": {"@id": "https://citedby.eu/#org"}, "description": "Crawls every page of a website and gives the exact fix for each issue.",
+    {"@type": "Product", "name": "CitedBy website audit", "brand": {"@id": "https://citedby.eu/#org"}, "description": "Crawls a website up to your plan's page limit and gives the exact fix for each issue.",
      "offers": [{"@type": "Offer", "name": n, "price": pr, "priceCurrency": "EUR", "url": "https://citedby.eu/plans"} for n, pr in _OFFERS]}]}, ensure_ascii=False).replace("</", "<\\/") + '</script>'
 
 

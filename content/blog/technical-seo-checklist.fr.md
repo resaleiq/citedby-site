@@ -51,7 +51,7 @@ Il est facultatif. Aucun grand assistant n'est confirmé comme lecteur de ce fic
 
 ## Peut-on automatiser ces contrôles ?
 
-Oui. L'[audit CitedBy](/fr/ai-visibility-audit) explore chaque page de votre site, vérifie ces points (sauf ce qui dépend de vos journaux serveur) et vous donne le correctif exact pour chaque problème, dès 9 €, avec une garantie de remboursement de 14 jours. Le test à la main reste utile pour comprendre ce que le rapport signale.
+Oui. L'[audit CitedBy](/fr/ai-visibility-audit) explore votre site jusqu'à la limite de votre offre, vérifie ces points (sauf ce qui dépend de vos journaux serveur) et vous donne le correctif exact pour chaque problème, dès 9 €, avec une garantie de remboursement de 14 jours. Le test à la main reste utile pour comprendre ce que le rapport signale.
 
 ## FAQ
 

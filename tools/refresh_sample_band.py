@@ -3,6 +3,8 @@
     python3 tools/refresh_sample_band.py [https://citedby.eu/api/sample-facts | facts.json]
 Fetches the facts (default: the live app endpoint), saves them as data/sample_facts.json and rewrites the product band, the hero label and the caption in
 public/landing{,.fr,.nl,.de,.es}.html. test_sample_band.py fails when the pages and the snapshot disagree. Run it after every re-crawl of the sample."""
+from datetime import datetime
+from zoneinfo import ZoneInfo
 import html, json, os, re, sys, time, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -17,10 +19,10 @@ ONE_OF = {"en": "one of {n} pages, fix written from this page's own text", "fr":
 ARIA = {"en": "Health score {s} out of 100", "fr": "Score de santé {s} sur 100", "nl": "Gezondheidsscore {s} van 100", "de": "Gesundheitswert {s} von 100", "es": "Puntuación de salud {s} sobre 100"}
 
 def date(ts, lang, short=False):
-    t = time.gmtime(ts); m = MON[lang].split()[t.tm_mon - 1]
+    t = datetime.fromtimestamp(ts, ZoneInfo("Europe/Berlin")); m = MON[lang].split()[t.month - 1]
     if short and lang == "nl": m = m.rstrip(".")
-    d = f"{t.tm_mday}." if lang == "de" else str(t.tm_mday)
-    return f"{d} {m}" + ("" if short else f" {t.tm_year}")
+    d = f"{t.day}." if lang == "de" else str(t.day)
+    return f"{d} {m}" + ("" if short else f" {t.year}")
 
 def apply(t, lang, f):
     def sub(pat, fn, s, count=1, flags=re.S):
