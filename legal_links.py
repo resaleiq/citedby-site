@@ -13,4 +13,7 @@ def localize(body):
     m = _LANG.search(body[:600])
     lg = m.group(1).decode() if m else "en"
     if lg not in LANGS: return body
-    return _FOOTER.sub(lambda f: _HREF.sub(lambda h: b'href="/' + lg.encode() + b"/" + h.group(1), f.group(0)), body)
+    def foot(f):  # the language switch (span.langsw) keeps its own targets: its "English" link must stay /privacy
+        head, sep, sw = f.group(0).partition(b'<span class="langsw"')
+        return _HREF.sub(lambda h: b'href="/' + lg.encode() + b"/" + h.group(1), head) + sep + sw
+    return _FOOTER.sub(foot, body)
