@@ -37,7 +37,7 @@ def transform(h):
     return h
 
 
-TARGETS = ["about", "methodology", "terms", "refund", "privacy", "legal", "contact", "bot", "ai-visibility-audit", "blog/*", "guides/*", "data/*"]
+TARGETS = ["about", "methodology", "terms", "refund", "privacy", "legal", "contact", "bot", "ai-visibility-audit", "blog/*", "guides/*", "bots", "bots/*", "data/*"]
 
 
 def main():
