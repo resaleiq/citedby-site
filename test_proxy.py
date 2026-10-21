@@ -145,3 +145,8 @@ def test_free_tools_paths_are_forwarded_and_only_tool_pages_are_indexable():
 def test_res2423_wrong_mark_is_forwarded():
     import proxy
     assert proxy.ROUTES["POST"].fullmatch("/api/audit/a_k3j2h1/wrong")
+
+def test_res2514_verify_bundle_timeline_are_forwarded():
+    assert proxy.ROUTES["POST"].fullmatch("/api/audit/a_k3j2h1/verify")
+    for w in ("bundle", "timeline"): assert proxy.ROUTES["GET"].fullmatch("/api/audit/a_k3j2h1/" + w)
+    assert not proxy.ROUTES["GET"].fullmatch("/api/audit/a_k3j2h1/nope")
