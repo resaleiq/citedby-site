@@ -94,7 +94,7 @@ class T(unittest.TestCase):
         self.assertEqual(urllib.request.urlopen(req).read(), b"app-page"); self.assertEqual(SEEN[0][1], "/api/fixpack/intake")
 
     # RES-2572: the app's project routes. Keep in step with citedby-app sa_projects.PROJECT_ROUTES (its test pins the same table): a route missing here is a 404 on citedby.eu.
-    APP_PROJECT_ROUTES = {"settings": ("GET", "POST"), "history": ("GET",), "progress": ("GET",), "crawl": ("POST",), "verify": ("GET", "POST"), "sitemap": ("GET", "POST"), "remove": ("POST",), "gsc": ("GET", "POST"), "gsc/clear": ("POST",)}
+    APP_PROJECT_ROUTES = {"settings": ("GET", "POST"), "history": ("GET",), "progress": ("GET",), "crawl": ("POST",), "verify": ("GET", "POST"), "sitemap": ("GET", "POST"), "remove": ("POST",), "gsc": ("GET", "POST"), "gsc/clear": ("POST",), "logs": ("GET", "POST"), "logs/clear": ("POST",)}
 
     def test_every_app_project_route_is_forwarded(self):
         for what, methods in self.APP_PROJECT_ROUTES.items():
@@ -116,6 +116,7 @@ class T(unittest.TestCase):
             except urllib.error.URLError: return 413   # the proxy answers 413 without reading the body, so the client may see a reset
         self.assertEqual(post("/api/projects/example.com/sitemap", 1_500_000), 200)
         self.assertEqual(post("/api/projects/example.com/gsc", 5_000_000), 200)
+        self.assertEqual(post("/api/projects/example.com/logs", 5_000_000), 200)
         self.assertEqual(post("/api/projects/example.com/settings", 70_000), 413)
         self.assertEqual(post("/api/projects/example.com/sitemap", 2_200_000), 413)
 
