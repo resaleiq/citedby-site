@@ -1,4 +1,4 @@
-title: Technische SEO-checklist voor AI-zichtbaarheid van uw webshop
+title: Technische SEO-checklist voor AI-zichtbaarheid van webshops
 h1: Technische SEO-checklist voor AI-zichtbaarheid: 9 controles voor uw webshop
 description: Negen technische controles die bepalen of AI-assistenten uw webshop kunnen lezen, elk met een manier om het zelf na te kijken. Van robots.txt tot JSON-LD.
 slug: technical-seo-checklist

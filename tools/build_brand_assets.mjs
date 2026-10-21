@@ -30,13 +30,20 @@ const head = Buffer.alloc(6 + 16 * imgs.length); head.writeUInt16LE(0, 0); head.
 let off = head.length; imgs.forEach(([s, buf], i) => { const o = 6 + 16 * i; head[o] = s; head[o + 1] = s; head.writeUInt16LE(1, o + 4); head.writeUInt16LE(32, o + 6); head.writeUInt32LE(buf.length, o + 8); head.writeUInt32LE(off, o + 12); off += buf.length; });
 writeFileSync(join(PUB, "favicon.ico"), Buffer.concat([head, ...imgs.map(i => i[1])]));
 const ff = (n, w) => `@font-face{font-family:Newsreader;font-weight:${w};src:url(file://${PUB}/fonts/${n}.woff2)}`;
-const og = `<style>${ff("newsreader-latin-600-normal", 600)}${ff("newsreader-latin-400-normal", 400)}@font-face{font-family:Plex;font-weight:400;src:url(file://${PUB}/fonts/ibm-plex-sans-latin-400-normal.woff2)}
+const og = `<style>${ff("newsreader-latin-600-normal", 600)}${ff("newsreader-latin-400-normal", 400)}@font-face{font-family:Plex;font-weight:400;src:url(file://${PUB}/fonts/ibm-plex-sans-latin-400-normal.woff2)}@font-face{font-family:Plex;font-weight:600;src:url(file://${PUB}/fonts/ibm-plex-sans-latin-600-normal.woff2)}
 body{margin:0;width:1200px;height:630px;background:#0F1B2D;color:#E8EDF4;position:relative;overflow:hidden}
-.l{position:absolute;left:72px;top:64px}.h{position:absolute;left:72px;top:200px;width:1040px;font:600 66px/1.08 Newsreader,Georgia,serif;letter-spacing:-.02em}
-.s{position:absolute;left:72px;top:430px;font:400 28px/1.45 Plex,sans-serif;color:#C9D2DF;width:900px}.bar{position:absolute;left:0;right:0;bottom:0;height:14px;background:#4FD1C5}
-.u{position:absolute;right:72px;top:84px;font:400 26px Plex,sans-serif;color:#C9D2DF}</style><body><div class="l">${lock}</div><div class="u">citedby.eu</div>
-<div class="h">Your audit says 300 errors. Which ones matter?</div><div class="s">We crawl every page, group repeats into single fixes and give you the exact code to paste. From €9.</div><div class="bar"></div></body>`;
-await png(og, 1200, 630, "og-v2.png");
+.l{position:absolute;left:72px;top:56px}.u{position:absolute;right:72px;top:76px;font:400 26px Plex,sans-serif;color:#C9D2DF}
+.k{position:absolute;left:72px;top:176px;font:600 20px Plex,sans-serif;letter-spacing:.14em;color:#9AA6B8}
+.h{position:absolute;left:72px;top:212px;width:1056px;font:600 72px/1.06 Newsreader,Georgia,serif;letter-spacing:-.02em}
+.h u{text-decoration:none;box-shadow:inset 0 -.2em 0 #4FD1C5}
+.rows{position:absolute;left:72px;right:72px;top:420px}.r{height:22px;border-radius:4px;background:#2A374D;margin-bottom:12px}
+.f{height:64px;border-radius:6px;background:#4FD1C5;color:#0F1B2D;display:flex;align-items:center;padding:0 24px;font:600 26px Plex,sans-serif;margin-bottom:12px}
+.f b{font-size:18px;letter-spacing:.14em;margin-right:22px}.f i{margin-left:auto;font-style:normal}
+.n{position:absolute;left:72px;bottom:16px;font:400 18px Plex,sans-serif;color:#9AA6B8}</style><body><div class="l">${lock}</div><div class="u">citedby.eu</div>
+<div class="k">WEBSITE AUDIT · THE FIX, WRITTEN FOR YOUR PAGE</div><div class="h">300 errors. Here is <u>the one</u> to fix first.</div>
+<div class="rows"><div class="r" style="width:92%"></div><div class="f"><b>FIX THIS FIRST</b>Pages return an error status<i>85 pages</i></div><div class="r" style="width:78%"></div><div class="r" style="width:64%"></div></div>
+<div class="n">Real crawl of plausible.io, 20 Oct 2026. Not a customer.</div></body>`;
+const ogBuf = await png(og, 1200, 630, "og-v2.png"); writeFileSync(join(PUB, "og.png"), ogBuf); // og.png still sold the retired product (READINESS gap 2)
 unlinkSync(join(PUB, "favicon-48.png")); // only inside the ICO
 await b.close();
 console.log("brand assets written to", PUB);

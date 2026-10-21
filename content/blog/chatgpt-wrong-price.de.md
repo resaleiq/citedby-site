@@ -1,4 +1,4 @@
-title: ChatGPT nennt meinen alten Preis: Quelle finden und korrigieren
+title: ChatGPT nennt meinen alten Preis: Quelle finden, korrigieren
 h1: ChatGPT nennt meinen alten Preis. So finden Sie die Quelle und korrigieren sie
 description: ChatGPT zitiert einen Preis, den Sie vor Monaten geändert haben. Die drei möglichen Quellen (Ihre Seite, Ihr Feed, fremde Seiten), Suche und erneuter Test.
 slug: chatgpt-wrong-price

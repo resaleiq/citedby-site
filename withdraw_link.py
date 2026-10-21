@@ -8,7 +8,7 @@ MARK = b'data-withdraw'
 _BLOCK = '<p class="wd-link" style="margin:.75rem 0 0;padding:0 16px;text-align:center;font-size:14px"><a data-withdraw href="{href}" style="color:inherit;text-decoration:underline;text-underline-offset:3px">{label}</a></p>'
 
 
-def inject(body, path=""):  # path kept for callers
+def inject(body):
     """Add the link inside the page's last <footer> (before </footer>), else before </body>; fragments and pages that already have it pass through."""
     if MARK in body or b"<html" not in body[:600].lower():
         return body

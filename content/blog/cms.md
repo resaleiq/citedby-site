@@ -1,5 +1,5 @@
-title: AI visibility checklist for Shopify, WooCommerce and other shop platforms
-h1: AI visibility checklist for Shopify, WooCommerce and other shop platforms
+title: AI visibility checklist for Shopify, WooCommerce and more
+h1: AI visibility checklist for Shopify, WooCommerce and more
 description: Where to find robots.txt, the sitemap and product data on Shopify, WordPress with WooCommerce and other shop platforms, and what to check for AI crawlers.
 slug: cms
 section: guides

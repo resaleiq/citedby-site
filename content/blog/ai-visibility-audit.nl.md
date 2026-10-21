@@ -1,4 +1,4 @@
-title: AI-zichtbaarheidsaudit voor uw webshop (GEO/AEO-audit) | CitedBy
+title: AI-zichtbaarheidsaudit voor uw webshop (GEO/AEO) | CitedBy
 h1: AI-zichtbaarheidsaudit voor uw webshop: wat wij pagina voor pagina controleren
 description: Wat een AI-zichtbaarheidsaudit (GEO of AEO) op elke pagina van uw webshop controleert en wat u krijgt: de exacte oplossing per probleem, vanaf €9.
 slug: ai-visibility-audit

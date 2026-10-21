@@ -16,3 +16,16 @@ def test_no_links_or_roaster_text():
         if any("/data/" + n in s for n in SLUGS) or "example-roaster" in s or "coffee roaster" in s:
             bad.append(os.path.relpath(f, HERE))
     assert not bad, bad
+
+
+def test_studies_and_demo_assets_have_no_coffee_or_tea():
+    """RES-2206: the two /data studies (html, CSV, JSON-LD), and the data hub cover only mattresses and supplements."""
+    cells = {"fr-mattress-fr", "fr-supp-fr", "fr-beauty-fr"}
+    for n in ("study-buyer-questions-claude", "study-chatgpt-buyer-questions"):
+        h = open(os.path.join(HERE, "public", "data", n + ".html"), encoding="utf-8").read().lower()
+        assert not re.search(r"coffee|\btea\b|loose-leaf|belgi|ireland|roaster", h), n
+        rows = open(os.path.join(HERE, "public", "data", n + ".csv"), encoding="utf-8").read().splitlines()[1:]
+        assert {r.split(",")[0] for r in rows} == cells, n
+    for f in ("public/data.html", "pages.py"):
+        s = open(os.path.join(HERE, f), encoding="utf-8").read()
+        assert "5 EU niches" not in s and "2 EU niches" not in s, f

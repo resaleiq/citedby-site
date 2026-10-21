@@ -1,4 +1,4 @@
-title: Visibilidad en IA en Shopify, WooCommerce y otras plataformas
+title: Visibilidad en IA en Shopify, WooCommerce y similares
 h1: Lista de comprobación de visibilidad en IA para Shopify, WooCommerce y otras plataformas de tienda online
 description: Cómo editar robots.txt, hallar el sitemap, revisar el JSON-LD de producto y detectar texto que solo carga JavaScript en Shopify y WooCommerce.
 slug: cms

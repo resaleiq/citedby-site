@@ -1,4 +1,4 @@
-title: Is GPTBot geblokkeerd op uw webshop? 4 manieren om het te checken
+title: GPTBot geblokkeerd op uw webshop? 4 manieren om te checken
 h1: Is GPTBot geblokkeerd op mijn site? Vier plekken om na te kijken, met een test per plek
 description: GPTBot kan tegengehouden worden door robots.txt, uw CDN, een firewallregel of uw server. Zo ziet u in minuten welke, en wat blokkeren wel en niet doet.
 slug: is-gptbot-blocked
@@ -9,7 +9,7 @@ reviewed: 2026-10-20
 answer: GPTBot is geblokkeerd op uw site als robots.txt een Disallow-regel heeft die voor GPTBot geldt, of als een CDN-, firewall- of serverregel de verzoeken weigert. Open uwwebshop.nl/robots.txt, laat een audit draaien en vergelijk twee verzoeken aan uw server. Blokkeren van GPTBot blokkeert ChatGPT-zoeken niet vanzelf.
 widget: on
 howto: on
-related: /nl/blog/can-chatgpt-read-my-website|Kan ChatGPT mijn website lezen?; /nl/ai-visibility-audit|AI-zichtbaarheidsaudit; /nl/guides/cms|AI-zichtbaarheid op Shopify en WooCommerce
+related: /nl/tools/ai-crawler-check|AI-crawler-toegangscheck (free); /nl/blog/can-chatgpt-read-my-website|Kan ChatGPT mijn website lezen?; /nl/ai-visibility-audit|AI-zichtbaarheidsaudit; /nl/guides/cms|AI-zichtbaarheid op Shopify en WooCommerce
 hero: auto
 hero_alt: Vier genummerde vakken: robots.txt, CDN, firewall, server, de plekken waar GPTBot tegengehouden kan worden
 hero_sub: Vier lagen, vier tests

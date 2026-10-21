@@ -7,7 +7,7 @@ cluster: Grundlagen KI-Sichtbarkeit
 date: 2026-10-20
 reviewed: 2026-10-20
 widget: on
-related: /de/blog/can-chatgpt-read-my-website|Kann ChatGPT meine Website lesen?; /de/blog/geo-vs-aeo-vs-seo|GEO, AEO und SEO im Vergleich; /de/guides/technical-seo-checklist|Technische SEO-Checkliste für KI-Sichtbarkeit
+related: /de/tools/llms-txt-checker|llms.txt-Checker (free); /de/blog/can-chatgpt-read-my-website|Kann ChatGPT meine Website lesen?; /de/blog/geo-vs-aeo-vs-seo|GEO, AEO und SEO im Vergleich; /de/guides/technical-seo-checklist|Technische SEO-Checkliste für KI-Sichtbarkeit
 hero: auto
 hero_alt: Titelkarte zu llms.txt mit zwei Zahlen: 97 Prozent der Dateien ohne Abruf und rund 300.000 Domains ohne erkennbaren Zusammenhang mit KI-Zitaten
 hero_sub: Zwei Studien, Googles Aussage, ein klares Bild

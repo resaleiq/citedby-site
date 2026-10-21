@@ -38,7 +38,7 @@ Manche Assistenten führen JavaScript aus, andere nicht. Sicher ist nur, wenn Ih
 
 ## Was heißt das für Shops mit Baukasten oder Theme?
 
-Wer einen Baukasten oder ein fertiges Theme nutzt, sieht den Quelltext selten und verlässt sich darauf, dass die Standardeinstellungen passen. Das ist meist in Ordnung, aber nicht garantiert. Prüfen Sie deshalb einmal selbst, was Ihr Shop ausliefert: die robots.txt, den Text im Quelltext einer Produktseite und die Organization-Daten. Wie das in einzelnen Shopsystemen aussieht, steht im Ratgeber [KI-Sichtbarkeit für Shopify, WooCommerce und andere Shopsysteme](/de/guides/cms).
+Wer einen Baukasten oder ein fertiges Theme nutzt, sieht den Quelltext selten und verlässt sich darauf, dass die Standardeinstellungen passen. Das ist meist in Ordnung, aber nicht garantiert. Prüfen Sie deshalb einmal selbst, was Ihr Shop ausliefert: die robots.txt, den Text im Quelltext einer Produktseite und die Organization-Daten. Wie das in einzelnen Shopsystemen aussieht, steht im Ratgeber [KI-Sichtbarkeit für Shopify, WooCommerce und Co.](/de/guides/cms).
 
 Wiederholen Sie die Prüfung nach jedem Theme-Wechsel und nach größeren Plugin-Updates, denn dabei ändern sich Einstellungen und Ausgaben gern unbemerkt.
 

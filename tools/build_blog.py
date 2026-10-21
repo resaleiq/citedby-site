@@ -245,13 +245,19 @@ def build_article(fm, body, arts):
 </article></main>'''
     return path, shell(loc, fm["title"], fm["description"], path, alts, og, ld, main)
 
+INDEX_LOCALES = {"blog": ("en", "fr", "nl", "de", "es"), "guides": ("en", "fr", "nl", "de", "es")}
+BLOG_IDX = {'en': ('AI visibility blog for online shops', 'Notes and data on how AI assistants treat online shops, plus our step-by-step guides. Each post ends with an audit you can run on your own site.'), 'fr': ('Blog visibilité IA pour boutiques en ligne', 'Notes et données sur la façon dont les assistants IA traitent les boutiques en ligne, et nos guides pas à pas. Chaque article mène à un audit de votre site.'), 'nl': ('Blog AI-zichtbaarheid voor webshops', 'Notities en data over hoe AI-assistenten webshops behandelen, plus onze stap-voor-stap-gidsen. Elk artikel leidt naar een audit van uw site.'), 'de': ('Blog zur KI-Sichtbarkeit für Online-Shops', 'Notizen und Daten dazu, wie KI-Assistenten Online-Shops behandeln, plus unsere Schritt-für-Schritt-Ratgeber. Jeder Beitrag führt zu einem Audit Ihrer Seite.'), 'es': ('Blog de visibilidad en IA para tiendas online', 'Notas y datos sobre cómo los asistentes de IA tratan las tiendas online, más nuestras guías paso a paso. Cada artículo lleva a una auditoría de tu web.')}
+
 def build_index(loc, arts, sect="blog"):
-    t = UI[loc]; path = prefix(loc) + "/" + sect
+    t = dict(UI[loc])  # /blog and /guides get their own title, H1 and description (RES-2210)
+    if sect == "blog": t["idx_h1"], t["idx_lede"] = BLOG_IDX[loc]
+    path = prefix(loc) + "/" + sect
     cards = "".join('<li><a href="%s/%s/%s"><b>%s</b><span>%s</span><time datetime="%s">%s %s</time></a></li>' % (prefix(loc), a.get("section", "blog"), a["slug"], E(a["h1"]), E(a["description"]), a["reviewed"], E(t["rev"]), a["reviewed"]) for a in sorted(arts, key=lambda a: a["reviewed"], reverse=True))
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": t["idx_h1"], "inLanguage": loc, "url": SITE + path},
           {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": n + 1, "url": "%s%s/%s/%s" % (SITE, prefix(loc), a.get("section", "blog"), a["slug"])} for n, a in enumerate(arts)]}]
     main = '<main id="main" class="art idx"><h1>%s</h1><p class="lede">%s</p><ul class="cards">%s</ul></main>' % (E(t["idx_h1"]), E(t["idx_lede"]), cards)
-    return path, shell(loc, t["idx_h1"] + ". CitedBy", t["idx_lede"], path, [], "/og-v2.png", ld, main)
+    alts = [(l, prefix(l) + "/" + sect) for l in UI if l in INDEX_LOCALES[sect]] + [("x-default", "/" + sect)]  # reciprocal hreflang across the 5 indexes (RES-2210)
+    return path, shell(loc, t["idx_h1"] + ". CitedBy", t["idx_lede"], path, alts, "/og-v2.png", ld, main)
 
 def main():
     check = "--check" in sys.argv

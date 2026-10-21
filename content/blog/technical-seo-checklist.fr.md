@@ -1,4 +1,4 @@
-title: Checklist SEO technique pour la visibilité IA d'une boutique
+title: Checklist SEO technique : visibilité IA d'une boutique
 h1: Checklist SEO technique pour la visibilité IA : 9 contrôles à faire à la main sur votre boutique en ligne
 description: Neuf vérifications pour qu'un assistant IA lise votre boutique : robots.txt, codes HTTP, sitemap, canonical, JSON-LD, texte dans le HTML. Test manuel inclus.
 slug: technical-seo-checklist
