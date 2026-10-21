@@ -93,6 +93,32 @@ class T(unittest.TestCase):
         req = urllib.request.Request(self.base + "/api/fixpack/intake", b'{"token":"t"}', {"Content-Type": "application/json"})
         self.assertEqual(urllib.request.urlopen(req).read(), b"app-page"); self.assertEqual(SEEN[0][1], "/api/fixpack/intake")
 
+    # RES-2572: the app's project routes. Keep in step with citedby-app sa_projects.PROJECT_ROUTES (its test pins the same table): a route missing here is a 404 on citedby.eu.
+    APP_PROJECT_ROUTES = {"settings": ("GET", "POST"), "history": ("GET",), "crawl": ("POST",), "verify": ("GET", "POST"), "sitemap": ("GET", "POST"), "remove": ("POST",), "gsc": ("GET", "POST"), "gsc/clear": ("POST",)}
+
+    def test_every_app_project_route_is_forwarded(self):
+        for what, methods in self.APP_PROJECT_ROUTES.items():
+            for m in ("GET", "POST"):
+                p = "/api/projects/example.com/" + what; SEEN.clear()
+                if m == "GET": code, body = self.get(p)[:2]
+                else:
+                    try: r = urllib.request.urlopen(urllib.request.Request(self.base + p, b"{}", {"Content-Type": "application/json"})); code, body = r.status, r.read()
+                    except urllib.error.HTTPError as e: code, body = e.code, e.read()
+                if m in methods: self.assertEqual((code, body), (200, b"app-page"), m + " " + p)
+                else: self.assertEqual(code, 404, m + " " + p)   # the app answers 405 itself for these; the proxy never forwards a method the app does not serve
+        for p in ("/api/projects/ab/settings", "/api/projects/example.com/other", "/api/projects/example.com", "/api/projects/example.com/settings/x", "/api/projects/Exa_mple/settings"):
+            self.assertEqual(self.get(p)[0], 404, p)
+
+    def test_project_upload_bodies_use_the_apps_caps(self):
+        def post(path, n):
+            try: return urllib.request.urlopen(urllib.request.Request(self.base + path, b"x" * n, {"Content-Type": "application/json"})).status
+            except urllib.error.HTTPError as e: return e.code
+            except urllib.error.URLError: return 413   # the proxy answers 413 without reading the body, so the client may see a reset
+        self.assertEqual(post("/api/projects/example.com/sitemap", 1_500_000), 200)
+        self.assertEqual(post("/api/projects/example.com/gsc", 5_000_000), 200)
+        self.assertEqual(post("/api/projects/example.com/settings", 70_000), 413)
+        self.assertEqual(post("/api/projects/example.com/sitemap", 2_200_000), 413)
+
     def test_upstream_down_is_502_not_a_crash(self):
         proxy.UPSTREAM = "http://127.0.0.1:1"
         self.assertEqual(self.get("/plans")[0], 502)
