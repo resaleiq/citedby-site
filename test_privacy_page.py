@@ -60,3 +60,11 @@ def test_privacy_slack_and_cloudflare_res2196():
 def test_privacy_cloudflare_basis_is_dpf_not_sccs_res2198():
     assert "Cloudflare, Inc. (United States, under the EU-US Data Privacy Framework): answers" in T
     assert "Cloudflare, Inc. (United States; Standard Contractual Clauses)" not in P
+
+
+def test_privacy_names_marks_fix_history_verification_and_analytics_fields_res2615():
+    for loc in ("", "fr/", "nl/", "de/", "es/"):
+        h = open(f"public/{loc}privacy.html", encoding="utf-8").read()
+        for needle in ("500", "2.000" if loc in ("nl/", "de/", "es/") else ("2 000" if loc == "fr/" else "2,000"), "300", "utm"):
+            assert needle in h, (loc, needle)
+        assert h.count("<tr>") >= 17, loc  # header + 16 rows (3 added)
