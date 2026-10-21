@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shopify: how to allow or block AI crawlers (and what robots.txt does not stop)</title>
+<meta name="description" content="Edit robots.txt.liquid to allow or block AI crawlers on Shopify. Shopify&#x27;s own help page says a block affects open-web discovery only, not the product data it sends to ChatGPT and Copilot.">
+<link rel="canonical" href="https://citedby.eu/platforms/shopify">
+<meta property="og:title" content="Shopify: how to allow or block AI crawlers (and what robots.txt does not stop)"><meta property="og:description" content="Edit robots.txt.liquid to allow or block AI crawlers on Shopify. Shopify&#x27;s own help page says a block affects open-web discovery only, not the product data it sends to ChatGPT and Copilot."><meta property="og:url" content="https://citedby.eu/platforms/shopify"><meta property="og:type" content="article"><meta property="og:image" content="https://citedby.eu/og-v2.png"><meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0F1B2D">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/newsreader-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/saas.css"><link rel="stylesheet" href="/doc.css?v=f556ede2"><link rel="stylesheet" href="/blog.css?v=fa8fefd8"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Shopify: how to allow or block AI crawlers (and what robots.txt does not stop)", "description": "Edit robots.txt.liquid to allow or block AI crawlers on Shopify. Shopify's own help page says a block affects open-web discovery only, not the product data it sends to ChatGPT and Copilot.", "inLanguage": "en", "datePublished": "2026-10-21", "dateModified": "2026-10-21", "author": {"@type": "Organization", "name": "CitedBy editorial team", "url": "https://citedby.eu/about#editorial"}, "publisher": {"@type": "Organization", "name": "CitedBy", "url": "https://citedby.eu/"}, "mainEntityOfPage": "https://citedby.eu/platforms/shopify", "image": ["https://citedby.eu/og-v2.png", "https://citedby.eu/blog/img/shopify-hero.svg"]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://citedby.eu/"}, {"@type": "ListItem", "position": 2, "name": "AI crawler settings by platform", "item": "https://citedby.eu/platforms"}, {"@type": "ListItem", "position": 3, "name": "Shopify: how to allow or block AI crawlers (and what robots.txt does not stop)", "item": "https://citedby.eu/platforms/shopify"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does blocking GPTBot on Shopify stop ChatGPT showing my products?", "acceptedAnswer": {"@type": "Answer", "text": "Not by itself. Shopify says robots.txt and network blocks affect open-web discoverability only, and that Shopify Catalog sends product data to the agentic storefronts you have activated independently of /robots.txt. To control that feed, use Shopify's agentic storefronts settings."}}, {"@type": "Question", "name": "Can Shopify Support fix my robots.txt.liquid?", "acceptedAnswer": {"@type": "Answer", "text": "No. Shopify's page says Support cannot help with edits to the file and suggests hiring a Shopify Partner."}}, {"@type": "Question", "name": "Do I need a Cloudflare proxy in front of Shopify?", "acceptedAnswer": {"@type": "Answer", "text": "Shopify says bot management at the network layer is handled for stores on Shopify and that it does not recommend a proxy configuration in front of Shopify or support one."}}]}</script>
+</head><body class="cb dc">
+<a class="sr" href="#main">Skip to content</a>
+<header class="topbar"><div class="in"><a class="mark" href="/"><i></i>CitedBy</a><nav aria-label="Main"><a class="opt" href="/#checks">What we check</a><a href="/plans">Pricing</a><a href="/blog">Guides</a><a class="opt" href="/data">Data</a></nav><a class="signin" href="/signin?next=%2Fapp.html">Sign in</a><a class="btn sm go" href="/app.html#/new">Audit a site</a></div></header>
+<main id="main" class="art"><article>
+<p class="dateline"><a href="/platforms">AI crawler settings by platform</a> / AI crawlers by platform</p>
+<h1>Shopify: how to allow or block AI crawlers (and what robots.txt does not stop)</h1>
+<p class="byline"><a href="/about#editorial">By the CitedBy editorial team</a> · Reviewed on <time datetime="2026-10-21">2026-10-21</time></p>
+<aside class="answer" aria-label="Short answer"><b>Short answer</b><p>On Shopify you control AI crawlers by adding a robots.txt.liquid template to your theme. Shopify&#x27;s help page says a block there affects only open-web discoverability: product data still goes to agentic storefronts such as ChatGPT or Microsoft Copilot through Shopify Catalog, independently of /robots.txt.</p></aside>
+<figure class="hero"><img src="/blog/img/shopify-hero.svg" alt="Four facts about Shopify: Where robots.txt.liquid, Support Unsupported by Shopify, Catalog feed Not covered, Effect Instant" width="1200" height="630" fetchpriority="high" decoding="async"></figure>
+<nav class="toc" aria-label="On this page"><b>On this page</b><ol><li><a href="#where-the-setting-is-on-shopify">Where the setting is on Shopify</a></li><li><a href="#the-one-thing-shopify-s-page-says-that-the-other">The one thing Shopify's page says that the other platforms do not</a></li><li><a href="#the-steps">The steps</a></li><li><a href="#the-lines-to-use">The lines to use</a></li><li><a href="#gotchas">Gotchas</a></li><li><a href="#compare-with-squarespace">Compare with Squarespace</a></li><li><a href="#check-your-own-site">Check your own site</a></li><li><a href="#faq">Questions people ask</a></li><li><a href="#sources">Sources</a></li></ol></nav>
+<form class="bw" action="/app.html#/new" method="get" aria-labelledby="bw-h"><h2 id="bw-h">Audit your own site (from €9, 14-day money-back guarantee)</h2><input type="hidden" name="utm_source" value="blog"><input type="hidden" name="utm_medium" value="article"><input type="hidden" name="utm_campaign" value="shopify"><div class="bwr"><label class="sr" for="bw-u">URL</label><input id="bw-u" name="url" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="yourshop.com" required><button class="btn p" type="submit">Audit my site</button></div><p class="gloss">We crawl your site up to your plan&#x27;s page limit and give you the exact fix for each issue. Paid before the crawl.</p></form>
+<h2 id="where-the-setting-is-on-shopify">Where the setting is on Shopify</h2>
+<p>Online Store, then the theme's Edit code, then Add a new template and choose robots. Shopify says this is an unsupported customization: its Support cannot help with edits, and incorrect use "can result in loss of all traffic".</p>
+<h2 id="the-one-thing-shopify-s-page-says-that-the-other">The one thing Shopify's page says that the other platforms do not</h2>
+<p>Shopify describes two layers of control. The network layer is handled by Shopify for stores on Shopify, and you do not need to act. The /robots.txt layer is yours through robots.txt.liquid. Its page then draws the line that matters for a shop: if you sell through agentic storefronts such as ChatGPT or Microsoft Copilot, your product data is syndicated through Shopify Catalog "independently of /robots.txt", and blocking AI crawlers at either layer "affects only open-web discoverability". To change what Catalog shares you use the agentic storefronts settings, not robots.txt.</p>
+<p>In the vendor's words: “Blocking AI crawlers at the /robots.txt or network layer affects only open-web discoverability. It doesn't stop your product data from being sent by Shopify Catalog to the agentic storefronts that you've activated.”</p>
+<p>Source: <a href="https://help.shopify.com/en/manual/promoting-marketing/seo/editing-robots-txt" rel="noopener">Shopify Help Center: Editing robots.txt.liquid</a>, read on 21 October 2026.</p>
+<h2 id="the-steps">The steps</h2>
+<ol class="steps"><li>From your Shopify admin go to Online Store.</li><li>For the theme you publish, open the menu and choose Edit code.</li><li>Click Add a new template, choose robots, then Create template.</li><li>Keep the Liquid that outputs the default rule groups and add your own rules below it. Shopify recommends this over replacing the file with plain text, because plain text goes out of date.</li><li>Save in the published theme. Shopify says changes are instant, but crawlers do not always react immediately.</li></ol>
+<h2 id="the-lines-to-use">The lines to use</h2>
+<p>To allow:</p>
+<pre><code># Nothing to add: Shopify's default robots.txt allows crawlers that are not named.
+<!-- ad-slot:in-article (off) -->
+# To name one explicitly, add under the default Liquid block:
+User-agent: OAI-SearchBot
+Allow: /</code></pre>
+<p>To block:</p>
+<pre><code>User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /</code></pre>
+<h2 id="gotchas">Gotchas</h2>
+<p>Two details from the same page. A theme uploaded from the Themes section of the admin does not import robots.txt.liquid; ThemeKit or command-line changes keep it. And if your template outputs the default groups, delete it to pick up Shopify's current default, which can include rules your older copy lacks, such as Disallow: /search.</p>
+<h2 id="compare-with-squarespace">Compare with Squarespace</h2>
+<p><a href="/platforms/squarespace">Squarespace</a>: One checkbox instead of a template, and a fixed list of 26 names.</p>
+<h2 id="check-your-own-site">Check your own site</h2>
+<p>The audit box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on <a href="/bots">the AI crawler hub</a>.</p>
+<h2 id="faq">Questions people ask</h2>
+<h3>Does blocking GPTBot on Shopify stop ChatGPT showing my products?</h3>
+<p>Not by itself. Shopify says robots.txt and network blocks affect open-web discoverability only, and that Shopify Catalog sends product data to the agentic storefronts you have activated independently of /robots.txt. To control that feed, use Shopify's agentic storefronts settings.</p>
+<h3>Can Shopify Support fix my robots.txt.liquid?</h3>
+<p>No. Shopify's page says Support cannot help with edits to the file and suggests hiring a Shopify Partner.</p>
+<h3>Do I need a Cloudflare proxy in front of Shopify?</h3>
+<p>Shopify says bot management at the network layer is handled for stores on Shopify and that it does not recommend a proxy configuration in front of Shopify or support one.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://help.shopify.com/en/manual/promoting-marketing/seo/editing-robots-txt" rel="noopener">Shopify Help Center: Editing robots.txt.liquid</a>, read 21 October 2026</li><li><a href="https://shopify.dev/docs/storefronts/themes/seo/robots-txt" rel="noopener">Shopify.dev: Customize robots.txt.liquid</a>, read 21 October 2026</li></ul>
+<section class="cta2"><h2>See what AI answers about your shop</h2><p>The audit crawls your site up to your plan&#x27;s page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.</p><a class="btn p" href="/?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=shopify&amp;utm_content=cta">Audit my site</a><p class="gloss">Audit from €9, paid once. 14-day money-back guarantee.</p></section>
+<nav class="rel" aria-label="Keep reading"><h2>Keep reading</h2><ul><li><a href="/platforms">All platforms compared</a></li><li><a href="/platforms/squarespace">Squarespace</a></li><li><a href="/bots">AI crawlers compared</a></li><li><a href="/guides/cms">AI visibility checklist for Shopify, WooCommerce and more</a></li></ul></nav>
+</article></main>
+<footer><div class="w"><span>© 2026 CitedBy · <a href="mailto:hello@citedby.eu">hello@citedby.eu</a></span><a href="/plans">Pricing</a><a href="/blog">Guides</a><a href="/data">Data</a><a href="/methodology">Method</a><a href="/about">About</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/refund">Refunds</a><a href="/contact">Contact</a><a href="/legal">Legal notice</a></div></footer>
+</body></html>

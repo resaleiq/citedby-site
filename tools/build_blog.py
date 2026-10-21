@@ -245,15 +245,17 @@ def build_article(fm, body, arts):
 </article></main>'''
     return path, shell(loc, fm["title"], fm["description"], path, alts, og, ld, main)
 
-INDEX_LOCALES = {"blog": ("en", "fr", "nl", "de", "es"), "guides": ("en", "fr", "nl", "de", "es"), "bots": ("en",)}
-SECT_NAME, SECT_PATH = {"bots": "AI crawlers"}, {"bots": "bots"}  # sections that have their own hub (H3 page sets)
+INDEX_LOCALES = {"blog": ("en", "fr", "nl", "de", "es"), "guides": ("en", "fr", "nl", "de", "es"), "bots": ("en",), "platforms": ("en",)}
+SECT_NAME, SECT_PATH = {"bots": "AI crawlers", "platforms": "AI crawler settings by platform"}, {"bots": "bots", "platforms": "platforms"}  # sections that have their own hub (H3 page sets)
 BOTS_IDX = ("AI crawlers: who they are, what they do, how to allow or block them", "One page per AI crawler, with the operator, the robots.txt token, the vendor's own sentence, what blocking costs and the vendor's published address list, each read from the vendor's page on the date shown.")
+PLATFORMS_IDX = ("How to allow or block AI crawlers on Shopify, Squarespace, Wix, Webflow, WordPress.com and Cloudflare", "One page per platform: where its own help page says the setting lives, what it does and does not cover, and the one thing that page says that the others do not, each read on the date shown.")
 BLOG_IDX = {'en': ('AI visibility blog for online shops', 'Notes and data on how AI assistants treat online shops, plus our step-by-step guides. Each post ends with an audit you can run on your own site.'), 'fr': ('Blog visibilité IA pour boutiques en ligne', 'Notes et données sur la façon dont les assistants IA traitent les boutiques en ligne, et nos guides pas à pas. Chaque article mène à un audit de votre site.'), 'nl': ('Blog AI-zichtbaarheid voor webshops', 'Notities en data over hoe AI-assistenten webshops behandelen, plus onze stap-voor-stap-gidsen. Elk artikel leidt naar een audit van uw site.'), 'de': ('Blog zur KI-Sichtbarkeit für Online-Shops', 'Notizen und Daten dazu, wie KI-Assistenten Online-Shops behandeln, plus unsere Schritt-für-Schritt-Ratgeber. Jeder Beitrag führt zu einem Audit Ihrer Seite.'), 'es': ('Blog de visibilidad en IA para tiendas online', 'Notas y datos sobre cómo los asistentes de IA tratan las tiendas online, más nuestras guías paso a paso. Cada artículo lleva a una auditoría de tu web.')}
 
 def build_index(loc, arts, sect="blog"):
     t = dict(UI[loc])  # /blog and /guides get their own title, H1 and description (RES-2210)
     if sect == "blog": t["idx_h1"], t["idx_lede"] = BLOG_IDX[loc]
     if sect == "bots": t["idx_h1"], t["idx_lede"] = BOTS_IDX
+    if sect == "platforms": t["idx_h1"], t["idx_lede"] = PLATFORMS_IDX
     path = prefix(loc) + "/" + sect
     cards = "".join('<li><a href="%s/%s/%s"><b>%s</b><span>%s</span><time datetime="%s">%s %s</time></a></li>' % (prefix(loc), a.get("section", "blog"), a["slug"], E(a["h1"]), E(a["description"]), a["reviewed"], E(t["rev"]), a["reviewed"]) for a in sorted(arts, key=lambda a: a["reviewed"], reverse=True))
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": t["idx_h1"], "inLanguage": loc, "url": SITE + path},
@@ -281,14 +283,17 @@ def main():
         bt = [f for f, _ in items if f.get("section") == "bots"]
         if bt:
             path, doc = build_index(loc, bt, "bots"); urls.append((path, max(f["reviewed"] for f in bt))); written.append((path, doc))
+        pt = [f for f, _ in items if f.get("section") == "platforms"]
+        if pt:
+            path, doc = build_index(loc, pt, "platforms"); urls.append((path, max(f["reviewed"] for f in pt))); written.append((path, doc))
     if check: print("ok: %d pages" % len(written)); return
     for path, doc in written:
         out = os.path.join(PUB, path.lstrip("/"))
-        if path.endswith(("/blog", "/guides", "/bots")): out = os.path.join(out, "index.html")
+        if path.endswith(("/blog", "/guides", "/bots", "/platforms")): out = os.path.join(out, "index.html")
         else: out += ".html"
         os.makedirs(os.path.dirname(out), exist_ok=True); open(out, "w", encoding="utf-8").write(doc)
     sm = os.path.join(PUB, "sitemap.xml"); s = open(sm, encoding="utf-8").read()
-    s = re.sub(r"<url><loc>%s(?:/[a-z]{2}/ai-visibility-audit|(?:/[a-z]{2})?/(?:blog|compare|guides|bots)[^<]*)</loc>(<lastmod>[^<]*</lastmod>)?</url>" % re.escape(SITE), "", s)
+    s = re.sub(r"<url><loc>%s(?:/[a-z]{2}/ai-visibility-audit|(?:/[a-z]{2})?/(?:blog|compare|guides|bots|platforms)[^<]*)</loc>(<lastmod>[^<]*</lastmod>)?</url>" % re.escape(SITE), "", s)
     s = s.replace("</urlset>", "".join("<url><loc>%s%s</loc><lastmod>%s</lastmod></url>" % (SITE, p, d) for p, d in urls) + "</urlset>")
     for extra in ("/data", "/bot", "/data/study-chatgpt-buyer-questions", "/fr/about", "/nl/about", "/de/about", "/es/about"):  # live pages the sitemap lacked (RES-1998)
         if "<loc>%s%s</loc>" % (SITE, extra) not in s: s = s.replace("</urlset>", "<url><loc>%s%s</loc><lastmod>2026-10-20</lastmod></url></urlset>" % (SITE, extra))
