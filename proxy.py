@@ -11,7 +11,7 @@ ROUTES = {
     "POST": re.compile(r"/((?:fr|nl|de|es)/withdraw(?:/confirm)?|withdraw(?:/confirm)?|api/teaser|api/crawl|api/audits|api/audit|api/audit/[A-Za-z0-9_]{3,40}/recrawl|api/snapshot|api/stripe/webhook|api/fixpack/intake|api/account/(link|delete|signout-all)|api/brand(/domain-check)?|api/team(/(leave|remove))?|api/share/[A-Za-z0-9_]{3,40}/unlock|api/projects(/[a-z0-9.-]{3,253}/(settings|crawl|verify|sitemap|remove|gsc|gsc/clear|logs|logs/clear))?|api/audit/[A-Za-z0-9_]{3,40}/(share|schedule|recheck|wrong|verify)|api/auth/(signup|login|forgot|reset)|api/portal|api/checkout|login/[A-Za-z0-9_-]{20,64}|trial/cancel/[A-Za-z0-9_.-]{20,100})"),
 }
 INDEXABLE = re.compile(r"/((fr|nl|de|es)/)?(plans|sample|tools(/(ai-crawler-check|llms-txt-checker))?)")  # pricing and the sample report in every language are meant to be found (RES-1731); the rest of the app stays noindex
-BODY_CAPS = {"sitemap": 2_100_000, "gsc": 8_100_000, "logs": 8_100_000}  # the app takes a sitemap file up to 2 MB and a Search Console export up to 8 MB (RES-2572)
+BODY_CAPS = {"sitemap": 2_100_000, "gsc": 8_100_000, "logs": 9_500_000}  # the app takes a sitemap file up to 2 MB and a Search Console export up to 8 MB (RES-2572)
 PASS = ("Content-Type", "Cache-Control", "Retry-After", "Set-Cookie", "Location", "Referrer-Policy", "Content-Security-Policy", "Content-Disposition")
 _H = {"t": 0.0, "u": "", "v": None}
 
