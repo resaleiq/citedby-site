@@ -18,3 +18,9 @@ def test_keeps_a_page_that_has_its_own():
 
 def test_leaves_fragments_and_json_alone():
     assert social.ensure(b'{"a":1}') == b'{"a":1}' and social.ensure(b"<p>hi</p>") == b"<p>hi</p>"
+
+
+def test_twitter_image_reuses_the_pages_own_og_image():
+    own = PAGE.replace(b"<body>", b'<meta property="og:image" content="https://citedby.eu/blog/img/a-og.png"><body>')
+    out = social.ensure(own).decode()
+    assert 'name="twitter:image" content="https://citedby.eu/blog/img/a-og.png"' in out and "og-v2" not in out

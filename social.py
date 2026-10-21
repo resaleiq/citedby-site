@@ -7,6 +7,9 @@ _TITLE = re.compile(rb"<title>(.*?)</title>", re.S)
 _DESC = re.compile(rb'<meta name="?description"? content="([^"]*)"')
 
 
+_OGIMG = re.compile(rb'<meta property="og:image" content="([^"]*)"')
+
+
 def ensure(body):
     m = _TITLE.search(body)
     if not m or b"<html" not in body[:400].lower():
@@ -21,5 +24,7 @@ def ensure(body):
     if not has(b"og:image"): add += b'<meta property="og:image" content="' + IMG.encode() + b'">'
     if not has(b"og:type"): add += b'<meta property="og:type" content="website">'
     if not has(b"twitter:card"): add += b'<meta name="twitter:card" content="summary_large_image">'
-    if not has(b"twitter:image"): add += b'<meta name="twitter:image" content="' + IMG.encode() + b'">'
+    if not has(b"twitter:image"):
+        og = _OGIMG.search(head)  # X reads twitter:image only: reuse the page's own og:image
+        add += b'<meta name="twitter:image" content="' + (og.group(1) if og else IMG.encode()) + b'">'
     return body[:m.end()] + add + body[m.end():] if add else body
