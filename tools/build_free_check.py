@@ -170,8 +170,9 @@ def render(l):
     alts = "".join('<link rel="alternate" hreflang="%s" href="%s%s/free-ai-visibility-check">' % (x, SITE, pfx(x)) for x in LANGS)
     alts += '<link rel="alternate" hreflang="x-default" href="%s/free-ai-visibility-check">' % SITE
     ld = {"@context": "https://schema.org", "@graph": [
-        {"@type": "WebApplication", "name": t["h1"], "url": url, "description": t["wa_desc"], "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "inLanguage": l,
-         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "url": url}, "publisher": {"@type": "Organization", "name": "CitedBy", "url": SITE}},
+        {"@type": "WebPage", "name": t["h1"], "url": url, "description": t["wa_desc"], "inLanguage": l,
+         "mainEntity": {"@type": "Service", "name": t["h1"], "serviceType": "Website check", "description": t["wa_desc"], "inLanguage": l,
+                        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "url": url}, "provider": {"@type": "Organization", "name": "CitedBy", "url": SITE}}},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in t["faq"]]}]}
     shows = "".join("<li><b>%s.</b> %s</li>" % (E(h), E(p)) for h, p in t["shows"])
     faq = "".join("<h3>%s</h3><p>%s</p>" % (E(q), E(a)) for q, a in t["faq"])
