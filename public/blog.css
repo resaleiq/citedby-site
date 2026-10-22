@@ -3,7 +3,7 @@
 .art h1{font-size:clamp(34px,6vw,56px);line-height:1.06;margin-bottom:var(--s4)}
 .art h2{font-size:clamp(26px,4vw,34px);margin:var(--s12) 0 var(--s4)}
 .art h3{margin:var(--s8) 0 var(--s3)}
-.byline{font:400 15px var(--sans);color:var(--muted);margin:0 0 var(--s6)}
+.byline time,.idx .cards time{white-space:nowrap}.byline{font:400 15px var(--sans);color:var(--muted);margin:0 0 var(--s6)}
 .dateline a{color:var(--muted)}
 .answer{border-left:4px solid var(--accent);background:var(--wash);padding:var(--s4) var(--s6);margin:0 0 var(--s8)}
 .answer b{display:block;font:600 13px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:var(--s2)}
