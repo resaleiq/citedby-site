@@ -12,7 +12,7 @@ ROUTES = {
 }
 INDEXABLE = re.compile(r"/((fr|nl|de|es)/)?(plans|sample|tools(/(ai-crawler-check|llms-txt-checker|findable-check))?)")  # pricing and the sample report in every language are meant to be found (RES-1731); the rest of the app stays noindex
 BODY_CAPS = {"sitemap": 2_100_000, "gsc": 8_100_000, "logs": 9_500_000}  # the app takes a sitemap file up to 2 MB and a Search Console export up to 8 MB (RES-2572)
-PASS = ("Content-Type", "Cache-Control", "Retry-After", "Set-Cookie", "Location", "Referrer-Policy", "Content-Security-Policy", "Content-Disposition")
+PASS = ("Content-Type", "Cache-Control", "Retry-After", "Refresh", "Set-Cookie", "Location", "Referrer-Policy", "Content-Security-Policy", "Content-Disposition")
 _H = {"t": 0.0, "u": "", "v": None}
 
 
@@ -28,6 +28,19 @@ def _call(req, timeout):
     except urllib.error.HTTPError as e:
         r = e
     return r.status if hasattr(r, "status") else r.code, r.headers, r.read()
+
+
+_DOWN = {"en": ("CitedBy is busy", "This page did not load in time. Reload it in a minute.", "Back to CitedBy"),
+         "fr": ("CitedBy est occupé", "Cette page ne s'est pas chargée à temps. Rechargez-la dans une minute.", "Retour à CitedBy"),
+         "nl": ("CitedBy is druk bezig", "Deze pagina laadde niet op tijd. Laad hem over een minuut opnieuw.", "Terug naar CitedBy"),
+         "de": ("CitedBy ist ausgelastet", "Diese Seite wurde nicht rechtzeitig geladen. Laden Sie sie in einer Minute neu.", "Zurück zu CitedBy"),
+         "es": ("CitedBy está ocupado", "Esta página no cargó a tiempo. Recárgala en un minuto.", "Volver a CitedBy")}
+
+
+def _unavailable_page(path):
+    m = re.match(r"/(fr|nl|de|es)(?:/|$)", path); lang = m[1] if m else "en"; t, p, b = _DOWN[lang]
+    return (f'<!doctype html><html lang="{lang}"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>{t} | CitedBy</title>'
+            f'<body style="font-family:system-ui,sans-serif;max-width:560px;margin:15vh auto;padding:0 20px;line-height:1.55"><h1>{t}</h1><p>{p}</p><p><a href="/{m[1] if m else ""}">{b}</a></p>').encode()
 
 
 def handle(h, method):
@@ -48,6 +61,8 @@ def handle(h, method):
     try:
         code, rh, rb = _call(urllib.request.Request(UPSTREAM + h.path, body, hdr, method=method), 20)
     except (urllib.error.URLError, OSError, ValueError):
+        if method == "GET" and "text/html" in (h.headers.get("Accept") or "") and not u.path.startswith("/api/"):
+            _send(h, 502, {"Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store", "Retry-After": "30"}, _unavailable_page(u.path)); return True  # RES-2738 F3: a visitor never sees JSON
         _send(h, 502, {}, b'{"error":"app unavailable"}'); return True
     _send(h, code, {k: rh[k] for k in PASS if rh.get(k)}, rb, rh.get_all("Set-Cookie"), index_ok=bool(INDEXABLE.fullmatch(u.path)) and code == 200 and method == "GET")
     return True
