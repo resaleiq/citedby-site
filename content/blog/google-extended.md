@@ -1,6 +1,6 @@
 title: Google-Extended: the robots.txt token for Gemini, not a crawler
 h1: Google-Extended: the robots.txt token for Gemini, not a crawler
-description: Google-Extended is a control token, not a crawler: it has no user agent and never appears in server logs. What it controls, what it leaves alone and why you cannot verify it with an IP list.
+description: Google-Extended is a control token, not a crawler: no user agent, never in server logs. What it controls, what it leaves alone and why IP lists cannot verify it
 slug: google-extended
 section: bots
 locale: en

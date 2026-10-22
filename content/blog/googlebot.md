@@ -1,6 +1,6 @@
 title: Googlebot: what it covers, its IP ranges and what a block removes
 h1: Googlebot: what it covers, its IP ranges and what a block removes
-description: Googlebot's robots.txt token controls Google Search and the products built on it. Its user-agent, the 317 IP ranges Google publishes and how to confirm a request is real.
+description: Googlebot's robots.txt token controls Google Search and the products built on it. Its user-agent, the 317 IP ranges Google publishes and how to verify one.
 slug: googlebot
 section: bots
 locale: en

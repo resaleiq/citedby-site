@@ -12,8 +12,8 @@ def row(label, m, tip=""):
 S, L = R["S"], R["V_lovable"]
 head = T[:T.index("<h1>")]
 head = head.replace("Data study · 14 Oct 2026", "Data study · 21 Oct 2026")
-head = re.sub(r"<title>.*?</title>", "<title>Launch crawl 2026-10: 300 Show HN sites and 70 Lovable sites read as a crawler reads them</title>", head, flags=re.S)
-desc = f'We fetched the homepage and up to 9 pages of {S["n_listed"]} Show HN sites and {L["n_listed"]} Lovable sites as a crawler: {round(float(L["empty_pct"]))}% of the Lovable homepages hold under 100 words of text without JavaScript.'
+head = re.sub(r"<title>.*?</title>", "<title>Launch crawl 2026-10: 300 Show HN and 70 Lovable sites</title>", head, flags=re.S)
+desc = f'We fetched the homepage and up to 9 pages of {S["n_listed"]} Show HN and {L["n_listed"]} Lovable sites as a crawler: {round(float(L["empty_pct"]))}% of Lovable homepages hold under 100 words without JavaScript.'
 head = re.sub(r'<meta name="description" content=".*?">', f'<meta name="description" content="{desc}">', head)
 head = head.replace("study-chatgpt-buyer-questions", "launch-crawl-2026-10")
 head = re.sub(r'(<meta property="og:title" content=")[^"]*', r"\1Launch crawl 2026-10: Show HN and Lovable sites read as a crawler reads them", head)

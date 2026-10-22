@@ -1,6 +1,6 @@
 title: OAI-SearchBot: what it is and how to allow or block it
 h1: OAI-SearchBot: what it is and how to allow or block it
-description: OAI-SearchBot decides whether your pages can appear in ChatGPT search answers. Its robots.txt token, user-agent, 39 published IP ranges and what a block costs you.
+description: OAI-SearchBot decides whether your pages can appear in ChatGPT search answers. Its robots.txt token, user-agent, 39 published IP ranges and what a block costs.
 slug: oai-searchbot
 section: bots
 locale: en

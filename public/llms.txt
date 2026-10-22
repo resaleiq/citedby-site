@@ -18,6 +18,7 @@
 - [How an audit works (methodology)](https://citedby.eu/methodology): what is crawled, checked and scored, and what we do not claim
 - [Engine changes](https://citedby.eu/changes): dated changes from Google, Bing and Lighthouse, each read on the engine's own page, and whether CitedBy checks them
 - [About CitedBy](https://citedby.eu/about): which CitedBy this is and who operates it
+- [Full text of these pages](https://citedby.eu/llms-full.txt): the plain text of the key English pages in one file (optional)
 
 ## Terms
 - [Terms of service](https://citedby.eu/terms)

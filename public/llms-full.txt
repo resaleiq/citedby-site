@@ -1,0 +1,3680 @@
+# CitedBy: full text of the key pages
+
+> The plain text of the English pages listed in /llms.txt, in one file. CitedBy crawls your site up to your plan's page limit and gives the exact fix for each issue. The only domain is citedby.eu.
+
+## CitedBy: AI search audit with the fix for every page
+Source: https://citedby.eu/
+
+Your audit says 300 errors. Which ones matter for AI search?
+
+We crawl your site up to your plan's page limit, group the same problem across 100 pages into one fix, rank what to fix first, and give you the exact code to paste for each issue.
+
+See what's stopping search engines and AI assistants from reading your site.
+
+Free, no account. We crawl up to 10 pages and show your score, your AI crawler access and the 3 issues to fix first.
+
+No prompts to set up, no subscription: paste your address, get every fix. Full audit from €9 one-off , or try any monthly plan free for 7 days (card needed, €0 today) . 14-day money-back guarantee. See a real check of plausible.io (not our customer) →
+
+We read public pages only and never log in
+Our crawler is CitedBot, documented at citedby.eu/bot
+Pay by card through Stripe
+CitedBy is run from Spain. Legal notice
+
+citedby.eu/sample · plausible.io (real crawl, 21 Oct)
+
+Real crawl of a public site on 21 Oct 2026. plausible.io is not a CitedBy customer.
+
+This is what you get: a real report, not a list of errors
+A real crawl of plausible.io, 21 Oct 2026, 403 pages. plausible.io is not a CitedBy customer. Open the full report .
+Health score
+90 / 100
+2 Errors 8 Warnings 19 Notices
+403 pages crawled
+
+Category grades
+Content and readability A+ 99
+Titles, headings and schema A 96
+Links, canonical and speed A- 92
+AI-search readiness B 83
+
+AI crawler access
+robots.txt, plus one live request per crawler
+Crawler robots.txt Live test
+PerplexityBot allowed 200
+OAI-SearchBot allowed 200
+Claude-SearchBot allowed 200
+GPTBot allowed 200
+ClaudeBot allowed 200
+
+One issue, with its fix
+Warning No structured data (schema) 3 pages
+Page: /docs/exclusion-examples/exclude-bare.html (one of 3 pages, fix written from this page's own text)
+Fix, ready to paste
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "WebPage",
+"name": "Plausible Analytics · Exclusion",
+"url": "https://plausible.io/docs/exclusion-examples/exclude-bare.html"
+}
+</script>
+
+Check my site free
+
+Not a list of errors. A list of fixes.
+
+Free one-page checkers Test the page you paste. Your other pages stay unchecked.
+Crawlers you install Give you a spreadsheet of problems. You work out the fixes.
+CitedBy Reads every page up to your plan limit and gives you the fix for each issue: the exact tag, the robots.txt line, the schema block, ready to paste. A problem repeated on 100 pages is one fix with the page count shown, not 100 errors.
+
+Built your site with Lovable, Bolt or v0?
+Check what your server actually sends. We read the HTML each page serves, the same way a crawler that does not run JavaScript does. A page that arrives empty until JavaScript runs is reported as empty, page by page, with the fix and the robots.txt lines that decide whether GPTBot, ClaudeBot and PerplexityBot are allowed in.
+
+What we check on every page, in five categories
+See your site the way search and AI crawlers see it. The site audit comes first; AI-search readiness is one of the five.
+
+Links, speed and indexing Broken links, redirect chains, canonicals, sitemap, slow and heavy pages, orphan pages.
+Titles, headings and schema Missing and duplicate titles and descriptions, H1s, heading order, Organization, Product, FAQ and Article schema, Open Graph tags.
+Readable content Pages that arrive empty until JavaScript runs, thin pages, noindex tags.
+AI-search readiness Whether OAI-SearchBot (ChatGPT search), GPTBot (OpenAI training), ClaudeBot, PerplexityBot and Google-Extended are allowed in robots.txt, whether your firewall blocks them, and whether your llms.txt exists and works.
+Answer quality Does the page answer the buyer's question near the top, and do you have the FAQ, pricing, comparison and about pages that get quoted?
+The fix for each issue Why it matters, the affected pages, and the exact change to paste. Every issue lists its pages, so you can open each one and check us.
+
+From URL to fix list
+1. Enter your URL Start with the free check above, no account needed. For the full report, pick the €9 audit or a plan: the full crawl is paid, because it costs us money. Starter, Pro and Agency start with a 7-day free trial.
+2. We crawl up to your plan's page limit Up to 500 pages on a Single audit, up to 10,000 on Agency. You watch the count rise live.
+3. Read the report A short list of what to fix first, every issue ranked by severity with the pages it affects, and a page-by-page view of the checks that failed.
+4. Paste the fixes, then re-crawl Each issue has the exact fix. Re-crawl weekly on Starter, daily on Pro and Agency, and watch the score move.
+
+Pick how often you audit
+Every plan has the full report with a ready-to-paste fix for every issue, and a 14-day money-back guarantee.
+
+Single audit
+€9
+one-off One site, one report
+1 site, up to 500 pages
+Ready-to-paste fix for each issue
+PDF report
+Report open to you for 30 days
+
+€9 once
+Run one audit for €9
+
+Starter
+€19
+a month Keep one site healthy
+1 site, up to 1,000 pages per crawl
+Weekly re-crawl and score trend
+Email alerts on new issues
+PDF report
+
+€19 a month per site
+€0 today, then €19 a month. Card needed.
+Try Starter free for 7 days
+
+Recommended Pro
+€49
+a month For freelancers and teams with a few sites
+5 sites, up to 5,000 pages per site
+Daily re-crawl and score trend
+Email alerts on new issues
+PDF reports
+
+€9.80 a month per site
+€0 today, then €49 a month. Card needed.
+Try Pro free for 7 days
+
+Agency
+€99
+a month Client sites under your name
+25 sites, up to 10,000 pages per crawl
+Daily re-crawl and score trend
+Email alerts on new issues
+White-label PDF with your logo
+Your brand on shared report links
+
+€3.96 a month per site
+€0 today, then €99 a month. Card needed.
+Try Agency free for 7 days
+
+Yearly billing gives you two months free: Starter €190, Pro €490, Agency €990 a year. Prices include VAT. The trial covers 1 site, up to 500 pages and 2 audits; your plan's full allowance starts with the first payment. One trial per email address and card. Cancel any time in your account. Pay by card through Stripe, we never see your card.
+
+14-day money-back guarantee, on every plan. If CitedBy was not worth it, write to hello@citedby.eu within 14 days of paying , including after the first charge of a trial, and we refund the full amount. You do not need a reason. Refund terms
+
+The date and amount, up front Before you confirm a trial, you see the first charge: the date and the euros. A card is needed to start, and €0 is charged today.
+A reminder 3 days before We email you 3 days before the first charge, with the date, the amount and a link to cancel.
+Cancel in your account Any time, from your account page. Cancel before the first charge and you pay nothing. After it, 14 days money back.
+
+Questions
+
+Why pay for an audit when free checkers exist?
+Free checkers test one page, and crawlers you install hand you a list of problems. CitedBy checks every page up to your plan limit and writes the exact fix for each issue, so you paste the fix and skip the research. If it is not worth €9 to you, the 14-day guarantee refunds it.
+
+How does the 7-day free trial work?
+Starter, Pro and Agency start with 7 days free. You enter a card, we charge €0 today, and the Stripe page shows the date and amount of the first charge before you confirm. The trial covers 1 site, up to 500 pages and 2 audits, with the full report; your plan's full allowance starts with the first payment. We email you 3 days before the first charge with a cancel link. Cancel in your account, and if you cancel before the first charge you pay nothing. One trial per email address and card.
+
+Why do you need my card for a trial?
+A crawl costs us real money, and a card keeps the trial to one per person. It is not a trap: the charge date and amount are shown up front, you get a reminder 3 days before, and after the first charge the 14-day money-back guarantee still applies. If you want no subscription at all, the €9 audit has none.
+
+What do I get for €9?
+One audit of one site, up to 500 pages: a short list of what to fix first, every issue ranked by severity with the pages it affects, a page-by-page view, a ready-to-paste fix for each issue and a PDF. Your report stays open to you for 30 days.
+
+What does the audit read?
+The HTML each page serves, plus robots.txt, your sitemap and llms.txt. We read public pages only. We do not log in, and we do not run your JavaScript, so a page that arrives empty until JavaScript runs is reported as exactly that. A check we could not read is shown as "not measured", never as a pass.
+
+What if you cannot crawl my site?
+If your firewall or host blocks CitedBot, the report says so and shows how to allow it. Change the setting and write to us, and we look at it with you. If it is not worth it to you, the 14-day money-back guarantee covers it, no reason needed.
+
+Which flags can I ignore?
+Every issue has a severity, so you start with the high ones. Checks that are optional say so: no major assistant is confirmed to read an llms.txt file, for example. A check we could not read is shown as "not measured", never as a failure.
+
+Do you guarantee ChatGPT will mention my site?
+No. Nobody controls what an assistant answers. The audit finds what blocks or weakens your pages for AI search and gives you the fix.
+
+Can I cancel?
+Yes, in your account, any time. You keep access until the end of the period you paid for. Inside 14 days of paying you can also ask for the full amount back.
+
+See what is stopping your pages from ranking and being quoted
+Check my site free
+From €9. 14-day money-back guarantee.
+
+## About CitedBy: website audit for AI search | CitedBy
+Source: https://citedby.eu/about
+
+About CitedBy
+CitedBy (citedby.eu) is a website audit for AI search. You enter a URL, we crawl your site up to your plan's page limit, check whether AI search crawlers can reach and read it, and give you a graded report with the exact fix for each issue.
+
+Which CitedBy is this
+This is citedby.eu. It is not citedby.co or citedby.ai , which are different companies, and it is not an academic citation tool : it does not format, count or look up scholarly references. The only domain we use is citedby.eu.
+
+What we do
+Crawl your site from one URL, up to your plan's page limit, and score every page crawled for AI-crawler access, readable content, llms.txt, structured data, titles and headings, internal links and answer-first content.
+Give the fix for each issue, copy-paste where possible.
+Re-crawl on a schedule so you can see the score move; white-label PDF reports and multi-site monitoring for agencies.
+Keep a dated list of changes the engines published , with what you can do and whether we check it.
+
+What we do not do
+We do not promise rankings or citations by any assistant, and we do not sell reviews, links or mentions. How each number is produced is on the methodology page .
+
+How we earn money
+From audits and plans, listed on the pricing page , with a 14-day money-back guarantee ( refund terms ). We take no commission from anything we recommend.
+
+Editorial standards
+Who writes. The guides, studies and reports on this site are written by the CitedBy editorial team, the people who run CitedBy. Articles carry the team byline, not an individual's name.
+How claims are checked. Every statement about how a crawler or assistant behaves is checked against our own crawls and the data pages , or against a public document that the article cites. Each article lists its sources at the end.
+What "Reviewed on" means. The date the team last re-read the article and re-checked its sources and numbers. A changed number gets a new date.
+Corrections. If you find an error, write to hello@citedby.eu with the page address. We fix it and update the review date.
+Method. How each number is produced is on the methodology page .
+
+Who runs it
+CitedBy is operated by an individual in Spain. The operator's name, postal address and contact details are in the legal notice , as Spanish law (LSSI-CE art. 10) requires. The reports and guides on this site are written by the CitedBy team and describe only what we have checked ourselves.
+
+Contact
+hello@citedby.eu . We reply within 2 working days.
+
+## How a CitedBy audit works | CitedBy
+Source: https://citedby.eu/methodology
+
+How a CitedBy audit works
+Enter a URL. CitedBy crawls the site, checks every page it finds and gives you a graded report with the exact fix for each issue. This page says what is checked, how the score is built and what we do not claim.
+
+1. The crawl
+We start from your URL, read robots.txt and the sitemap, and follow internal links to find pages and sub-pages. Each plan has a page cap; the single audit covers up to 500 pages. We identify ourselves with a CitedBy user agent and stay on your domain. Every request is made from the public internet, logged out, like any crawler would.
+
+2. What is checked on every page
+
+Crawler access. robots.txt rules for GPTBot, ClaudeBot and PerplexityBot, the status code your home page returns to each of those user agents (one request per bot), and signs of a firewall or CDN block.
+
+Readable HTML. The text a crawler receives without running JavaScript, compared with the size of the page. Pages that arrive empty are flagged, and the report lists the words a crawler sees on the pages with the fewest. We do not run scripts, so we do not count what a browser shows after they run.
+
+llms.txt and sitemap. Whether the files exist and parse. No major assistant is confirmed to read llms.txt, so it is marked optional and never drags the score down on its own.
+
+Structured data. JSON-LD for Organization, Product, FAQ and Article, checked for validity and for fields a buyer would ask about, such as price.
+
+Titles, headings and links. Missing or duplicate titles and descriptions, H1s, heading order, canonical tags, hreflang, broken internal links.
+
+Answer quality. Whether a page states what it is and answers a buyer's question near the top, and whether the site has FAQ, pricing, comparison and about pages that get quoted.
+
+3. How the score is built
+Each check passes or raises an issue per page. Issues are grouped by severity (Error, Warning, Notice) with the number of pages each one affects. Sections get a letter grade from A+ to F and the site gets one overall grade. Open any issue to see every affected URL with the value we measured on it (for example the word count or the status code) and the date of the crawl, so you can check any count against your own site.
+Could not verify. If a page refuses our crawler (HTTP 401, 403 or 429), shows a firewall challenge, is blocked by your robots.txt or does not answer, we cannot tell what is on it. We list it as “could not verify” with the reason, skip its checks and leave it out of the score, so a firewall never costs you points. Allow our crawler and re-crawl to have those pages checked.
+
+4. The fixes
+Where a fix can be pasted, we give it: the robots.txt lines, a JSON-LD block, an llms.txt file, a rewritten answer block. Re-crawl after you change something and the score moves with it; scheduled re-crawls show the trend.
+
+5. What we do not claim
+
+A good score does not guarantee that any assistant will name or link your site. It tells you that nothing on your side is stopping it.
+
+We do not report a "visibility percentage" from a sample of assistant answers. Anything we have not measured is shown as not measured, never as 0.
+
+Some checks are judgements about quality (is this page quotable). They are marked as such and carry less weight than the access and readability checks, which are exact.
+
+We do not use private or consumer chat interfaces of any vendor.
+
+Changes to the method
+Last updated 18 October 2026. When a check is added or changed, this page changes with it. Who operates CitedBy and which CitedBy this is: About CitedBy . Questions about a result: hello@citedby.eu .
+
+## CitedBy data: who AI assistants link for shop questions
+Source: https://citedby.eu/data
+
+Who AI assistants link when buyers ask where to shop
+Dated counts from our own runs of Claude and ChatGPT with web search on: which shop sites appear in the answers to buyer questions, by niche and country. Every page shows the questions, the method and the raw counts. Each page names the one assistant it counted.
+
+Studies
+Launch crawl 2026-10: Show HN and Lovable sites read as a crawler reads them
+48 Claude answers to 24 buyer questions in 3 EU niches: who gets linked
+48 ChatGPT answers to 24 buyer questions in 3 EU niches: who gets linked
+
+By niche and country
+Quelles marques Claude cite pour acheter un matelas en ligne en France (FR, Claude, 16 answers, 19 Oct 2026)
+Quelles marques Claude cite pour acheter des compléments alimentaires en ligne en France (FR, Claude, 16 answers, 19 Oct 2026)
+Quelles marques Claude cite pour des compléments beauté et du collagène en France (FR, Claude, 16 answers, 19 Oct 2026)
+
+Want a report on your own site?
+CitedBy crawls your site up to your plan's page limit and gives you the exact fix for each issue. From €9, with a 14-day money-back guarantee.
+Audit my site, from €9
+
+## CitedBot, our site crawler. CitedBy
+Source: https://citedby.eu/bot
+
+CitedBot
+
+CitedBot is the crawler behind CitedBy site audits: it crawls your pages, analyses them and reports what to fix. Its User-Agent header is:
+
+Mozilla/5.0 (compatible; CitedBot/1.0; +https://citedby.eu/bot)
+
+When it visits
+
+Only when a site owner or a visitor asks CitedBy to audit that site. It does not crawl on its own, and it does not build an index of the web.
+
+How it behaves
+
+It reads your robots.txt first and obeys it. It follows the group User-agent: CitedBot and, if there is none, the group User-agent: * .
+
+It waits at least 1 second between requests to your site.
+
+It stops at a page limit set by the plan of the audit: 500, 1,000, 5,000 or 10,000 pages.
+
+It only reads public pages. It does not log in, submit forms or run scripts.
+
+Block it
+
+Add this to your robots.txt and it will not fetch any page:
+
+User-agent: CitedBot
+Disallow: /
+
+To keep it out of one folder only, use Disallow: /folder/ instead.
+
+Contact
+
+Questions or a request to stop crawling: hello@citedby.eu. We reply within 2 working days.
+
+## AI crawlers: what they do, how to allow or block them. CitedBy
+Source: https://citedby.eu/bots
+
+AI crawlers: who they are, what they do, how to allow or block them
+One page per AI crawler, with the operator, the robots.txt token, the vendor's own sentence, what blocking costs and the vendor's published address list, each read from the vendor's page on the date shown.
+Amazonbot, Amzn-SearchBot and Amzn-User: three Amazon agents, three rules Amazon's page now describes three agents with independent robots.txt settings. What each does, which may train Amazon AI models and which may ignore robots.txt. Reviewed on 2026-10-21
+Applebot-Extended: opting out of Apple's model training without leaving search Applebot-Extended is Apple's opt-out token for generative model training. What it does, why Applebot can still crawl you and what stays in Spotlight and Siri. Reviewed on 2026-10-21
+Bingbot: Microsoft's crawler, five user agents, how to verify Bingbot is Bing's standard crawler. The five Microsoft crawler names, how to verify a request and where crawl rate is set, read from Bing's own help page. Reviewed on 2026-10-21
+ChatGPT-User: the fetcher that opens your page when someone asks ChatGPT-User visits a page when a person asks ChatGPT or a custom GPT about it. Why robots.txt may not apply, its user-agent string and 234 published IP ranges. Reviewed on 2026-10-21
+Claude-SearchBot: Anthropic's search crawler and what blocking costs Claude-SearchBot indexes content to improve Claude's search results. Its robots.txt token, what a block does and how it differs from the other Claude robots. Reviewed on 2026-10-21
+Claude-User: the agent that fetches pages when someone asks Claude Claude-User retrieves a page when a person asks Claude something. What Anthropic says disabling it does, and how it differs from ClaudeBot and Claude-SearchBot. Reviewed on 2026-10-21
+ClaudeBot: Anthropic's training crawler, Crawl-delay and blocking ClaudeBot collects web content that could contribute to Anthropic's model training. The robots.txt group, Crawl-delay support and why IP blocking does not work. Reviewed on 2026-10-21
+DuckAssistBot: DuckDuckGo's real-time answer crawler and its 486 addresses DuckAssistBot fetches pages for DuckDuckGo's AI-assisted answers, which cite sources. Opt-out takes 72 hours; rankings are unaffected; 486 IP addresses listed. Reviewed on 2026-10-21
+Google-Extended: the robots.txt token for Gemini, not a crawler Google-Extended is a control token, not a crawler: no user agent, never in server logs. What it controls, what it leaves alone and why IP lists cannot verify it Reviewed on 2026-10-21
+Googlebot: what it covers, its IP ranges and what a block removes Googlebot's robots.txt token controls Google Search and the products built on it. Its user-agent, the 317 IP ranges Google publishes and how to verify one. Reviewed on 2026-10-21
+GPTBot: what it does and what blocking it changes GPTBot crawls content that may be used to train OpenAI models. What a Disallow does, what it leaves alone, its user-agent and the 18 IP ranges OpenAI publishes. Reviewed on 2026-10-21
+Meta-ExternalAgent: Meta's AI crawler and its four siblings Meta-ExternalAgent crawls for training foundation AI models or indexing. Meta's page, updated 21 May 2026, lists five agents and says two may bypass robots.txt. Reviewed on 2026-10-21
+MistralAI-User, MistralAI-Index and MistralAI-Training explained Mistral documents three robots: a user-action fetcher, a search index agent and a training crawler. What each does, its robots.txt token and published IP files. Reviewed on 2026-10-21
+OAI-SearchBot: what it is and how to allow or block it OAI-SearchBot decides whether your pages can appear in ChatGPT search answers. Its robots.txt token, user-agent, 39 published IP ranges and what a block costs. Reviewed on 2026-10-21
+PerplexityBot: how it differs from Perplexity-User and how to allow it PerplexityBot surfaces and links sites in Perplexity search; it is not used for foundation model crawling. User-agent, the 8 IP ranges published, WAF advice. Reviewed on 2026-10-21
+
+## Allow or block AI crawlers on six site platforms. CitedBy
+Source: https://citedby.eu/platforms
+
+How to allow or block AI crawlers on Shopify, Squarespace, Wix, Webflow, WordPress.com and Cloudflare
+One page per platform: where its own help page says the setting lives, what it does and does not cover, and the one thing that page says that the others do not, each read on the date shown.
+Cloudflare: AI bot policies for Search, Agent and Training Cloudflare's Block AI Bots page splits AI bots into Search, Agent and Training with Block, Block on pages with ads and Allow. New defaults from 15 Sept 2026. Reviewed on 2026-10-21
+Shopify: allow or block AI crawlers, and what robots.txt misses Edit robots.txt.liquid to allow or block AI crawlers on Shopify. Shopify says a block affects open-web discovery only, not product data sent to ChatGPT. Reviewed on 2026-10-21
+Squarespace: the AI crawler box blocks 26 bots but not ChatGPT Squarespace's Crawlers panel has one box blocking known AI crawlers. The 26 names it writes to robots.txt leave out ChatGPT's search and user bots. Reviewed on 2026-10-21
+Webflow: robots.txt rules and the Content-Signal header for AI Where Webflow's robots.txt editor is, which plan it needs and how its Content-Signal header separates AI training, search and AI input. Reviewed on 2026-10-21
+Wix: block AI crawlers in the Robots.txt Editor (four names) Wix's help page tells you to paste four user agents into the Robots.txt Editor. Where the editor is, what the example leaves out and the nosnippet option. Reviewed on 2026-10-21
+WordPress.com: AI opt-out is a privacy setting, not robots.txt WordPress.com treats AI opt-out as 'Prevent third-party sharing' under privacy settings. What its site-visibility guide says, reviewed 5 October 2026. Reviewed on 2026-10-21
+
+## AI visibility guides for online shops. CitedBy
+Source: https://citedby.eu/guides
+
+AI visibility guides for online shops
+How AI assistants find, read and name online shops, and what to fix. Each guide ends with an audit you can run on your own site, from €9.
+AI visibility tools compared by what they cost and do Most AI visibility tools are monthly dashboards. A plain comparison of what CitedBy, Profound, Peec AI, Otterly.ai and free graders cost and do. Reviewed on 2026-10-20
+How to check whether AI assistants recommend your shop A way to see if ChatGPT, Perplexity and Gemini name your online shop when a buyer asks, by hand in 10 minutes, and what to do when they do not. Reviewed on 2026-10-20
+AI visibility checklist for Shopify, WooCommerce and more Where to find robots.txt, the sitemap and product data on Shopify, WordPress with WooCommerce and other shop platforms, and what to check for AI crawlers. Reviewed on 2026-10-20
+Technical SEO checklist for AI visibility: 10 checks for your online shop Ten technical checks that decide whether AI assistants and search engines can read your shop, each with a way to test it by hand in your browser. Reviewed on 2026-10-20
+
+## AI visibility blog for online shops. CitedBy
+Source: https://citedby.eu/blog
+
+AI visibility blog for online shops
+Notes and data on how AI assistants treat online shops, plus our step-by-step guides. Each post ends with an audit you can run on your own site.
+How to create an llms.txt file, step by step Write an llms.txt in six steps with a copy-paste template that follows the llmstxt.org format, publish it at your site root and check it with a free tool. Reviewed on 2026-10-21
+AI visibility tools compared by what they cost and do Most AI visibility tools are monthly dashboards. A plain comparison of what CitedBy, Profound, Peec AI, Otterly.ai and free graders cost and do. Reviewed on 2026-10-20
+How to check whether AI assistants recommend your shop A way to see if ChatGPT, Perplexity and Gemini name your online shop when a buyer asks, by hand in 10 minutes, and what to do when they do not. Reviewed on 2026-10-20
+AI visibility checklist for Shopify, WooCommerce and more Where to find robots.txt, the sitemap and product data on Shopify, WordPress with WooCommerce and other shop platforms, and what to check for AI crawlers. Reviewed on 2026-10-20
+Technical SEO checklist for AI visibility: 10 checks for your online shop Ten technical checks that decide whether AI assistants and search engines can read your shop, each with a way to test it by hand in your browser. Reviewed on 2026-10-20
+Cloudflare is blocking AI crawlers on my site. How to allow GPTBot and ClaudeBot Where Cloudflare's AI Crawl Control setting lives, which OpenAI and Anthropic crawler to allow for which goal, and how to confirm the change worked. Reviewed on 2026-10-19
+Is AI traffic converting? How to set up GA4 to see visits from ChatGPT and other assistants Build a custom AI assistants channel in GA4, check which sources really appear in your report, and compare conversions with other channels. Regex file included. Reviewed on 2026-10-19
+Can ChatGPT read my website? Three things decide whether ChatGPT and other AI assistants can read your shop: robots.txt, the text in your HTML, and structured data. How to check each. Reviewed on 2026-10-18
+ChatGPT shows my old price. How to find where it read it and fix it ChatGPT quotes a price you changed months ago. The three places it can come from (your page, your feed, other sites), how to trace it and how to re-test. Reviewed on 2026-10-18
+What does ChatGPT say about your brand? 20 prompts to check it by hand A free 20-prompt test of what AI assistants say about your shop: do they name you, link you, name rivals instead, get your facts right? Includes a log sheet. Reviewed on 2026-10-18
+Does llms.txt work? What two studies and Google's own documentation say llms.txt is a proposed file for AI assistants. What the Ahrefs and SE Ranking studies found, what Google says, and when it is still worth adding. Reviewed on 2026-10-18
+GEO audit vs AEO audit vs SEO audit: what is different and which one you need Three names for overlapping checks. What each audit looks at, what Google says about AI features, and a short order of work for a small online shop. Reviewed on 2026-10-18
+Is GPTBot blocked on my site? Four places to check, with a test for each GPTBot can be stopped by robots.txt, your CDN, a firewall rule or your server. How to find out which, in minutes, and what blocking it does and does not change. Reviewed on 2026-10-18
+My Lovable, Bolt or React site looks empty to AI. How to check it and fix it Many AI crawlers do not run JavaScript, so a client-rendered site can look empty to them. A 30-second test, what Lovable says, and the fixes by setup. Reviewed on 2026-10-18
+
+## AI visibility tools compared by what they cost and do
+Source: https://citedby.eu/guides/ai-visibility-tools-compared
+
+Guides / Guide
+
+AI visibility tools compared by what they cost and do
+
+By the CitedBy editorial team · Reviewed on 2026-10-20
+
+Short answer Most tools in this category are dashboards: you pay a monthly fee and they track whether assistants mention your brand. CitedBy differs on one point: it crawls your site up to your plan's page limit and gives the exact fix for each issue, from €9 paid once. Check each vendor's own pricing page, because prices change.
+
+On this page What CitedBy costs
+How the other tools are positioned
+Which to pick
+Questions people ask
+Sources
+
+What CitedBy costs
+
+Site audit from €9, paid once: we crawl your site up to your plan's page limit and give the exact fix for each issue, with a 14-day money-back guarantee.
+Our prices are public on the home page . Refund conditions are on the refund page .
+
+How the other tools are positioned
+
+Tool Aimed at Price, checked 18 October 2026
+Profound Larger brands and enterprise teams No public price on its own site
+Peec AI Teams tracking prompts over time Monthly plans, see its pricing page
+Otterly.ai Teams tracking prompts over time Monthly plans, see its pricing page
+Free graders (HubSpot, Ahrefs, Mangools) A first look at one site Free
+
+Some free graders score a different company when the brand name is shared, so check the entity first.
+
+Which to pick
+
+If you have a team that will read a dashboard every week, a monitoring tool fits. If you run a small shop and want to know whether you are named and what to change, start with a site audit and decide after. CitedBy is at citedby.eu; it is not citedby.co.
+
+How we count is on the About page , and this guide shows how to check by hand.
+
+Questions people ask
+
+Do I need a monitoring dashboard?
+
+Only if someone will read it every week. A one-off audit with fixes suits a small shop better.
+
+Why no prices for Profound?
+
+Its own site showed no public price on 18 October 2026, so we do not quote one.
+
+Sources
+
+Profound
+Peec AI
+Otterly.ai
+CitedBy refund terms
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+Profound vs Peec vs Otterly
+How to check whether AI recommends your shop
+
+## How to check whether AI assistants recommend your shop
+Source: https://citedby.eu/guides/check-if-ai-recommends-your-shop
+
+Guides / Guide
+
+How to check whether AI assistants recommend your shop
+
+By the CitedBy editorial team · Reviewed on 2026-10-20
+
+Short answer Ask each assistant the questions your buyers ask, twice, with web search on, and count how often your shop is named and how often your site is linked. Our site audit then checks whether your pages can be read and quoted by AI crawlers, from €9, with the exact fix for each issue.
+
+On this page Do it by hand in 10 minutes
+Do it with the site audit
+Check you are reading the right company
+If you are not named
+Questions people ask
+Sources
+
+Do it by hand in 10 minutes
+
+Write 5 questions a buyer would type, for your product and country. Example: "best online shop for natural latex mattresses in Belgium". Do not put your shop name in them.
+Ask each question in ChatGPT, Perplexity and Gemini, logged out, with web search on.
+Ask each question a second time. Answers change between runs.
+For each answer note two things: is your shop named in the text, and is your domain in the links.
+Add it up: named in 3 of 40 answers is a different situation from 0 of 40.
+
+Do it with the site audit
+
+The CitedBy site audit crawls your site up to your plan's page limit and tells you whether AI crawlers can read it and whether each page answers a buyer's question near the top, with the exact fix for each issue. It does not ask assistants whether they name you; the manual method above does that.
+
+Check you are reading the right company
+
+Ask each assistant "what is [your shop name]" first. If it describes another business with a similar name, fix that before anything else: add an About page with your legal name, country and domain, put Organization data in JSON-LD on the home page, and link the same facts from your listings.
+
+If you are not named
+
+The fixes that tend to matter are on your own site (a page that answers the buyer question directly, product data with price and availability) and off it (the pages assistants cite for your category, such as comparison articles and directories). Our sample audit shows what that looks like for one shop. The About page explains how we count.
+
+The audit starts at €9 with a 14-day money-back guarantee.
+
+Questions people ask
+
+How many questions should I ask?
+
+Five questions asked twice in three assistants gives 30 answers, enough to see whether you are named never, sometimes or often. More questions give a steadier picture.
+
+Why ask each question twice?
+
+Answers change between runs, so one answer can mislead. Log both and count them separately.
+
+Does the audit tell me if assistants name my shop?
+
+No. It checks whether your pages can be read and quoted. The manual method above shows whether you are named today.
+
+Sources
+
+OpenAI: crawlers and user agents
+CitedBy methodology
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+Check what AI says about your brand, 20 prompts
+AI visibility tools compared
+A sample report
+
+## AI visibility checklist for Shopify, WooCommerce and more
+Source: https://citedby.eu/guides/cms
+
+Guides / Guide
+
+AI visibility checklist for Shopify, WooCommerce and more
+
+By the CitedBy editorial team · Reviewed on 2026-10-20
+
+Short answer On any shop platform, check four things: robots.txt does not block AI crawlers, the sitemap lists your products, product pages carry price and availability as JSON-LD, and product text is in the raw HTML. Shopify and WordPress generate the first two for you. Our audit tests all four on every page up to your plan's page limit, from €9.
+
+On this page Which checks apply on every shop platform?
+How do I check AI crawler access on Shopify?
+Where is the sitemap on Shopify and WordPress?
+How do I check product data and text on my platform?
+Which platform setting is easiest to miss?
+What does the audit check?
+Questions people ask
+Sources
+
+Which checks apply on every shop platform?
+
+The same four questions apply whatever you sell on. Open yourshop.com/robots.txt and check that nothing blocks the crawlers you want. Open yourshop.com/sitemap.xml and check that products are listed. View the source of a product page and search for application/ld+json to see the product data. Then search the same source for a sentence from the product description. If it is missing, a script adds it after loading and many crawlers never see it.
+
+The platform decides where you change each of these. The sections below say what the official help pages confirm and leave the rest to your own settings.
+
+How do I check AI crawler access on Shopify?
+
+Shopify creates a default robots.txt for every store. Shopify's help page says the file sits at the root of your primary domain, and that you can customise it by adding a robots.txt.liquid template to your theme. It calls this an unsupported customisation that Shopify Support cannot help with, so ask a Shopify Partner or a developer if you are unsure ( Shopify: editing robots.txt.liquid ).
+
+The same page explains that robots.txt rules are advisory, and that blocking AI crawlers there affects only open-web discoverability. Product data sent through Shopify Catalog to agentic storefronts you have activated is not stopped by it.
+
+Where is the sitemap on Shopify and WordPress?
+
+Shopify generates sitemap files automatically at yourshop.com/sitemap.xml . They link to separate sitemaps for products, collections, blogs and pages and update when you add content. Search engines cannot read the sitemap if the store is in private mode ( Shopify: find your sitemap ).
+
+WordPress, which WooCommerce runs on, has exposed a sitemap index at /wp-sitemap.xml since version 5.5, and the robots.txt it serves references that index ( WordPress core announcement ). An SEO plugin may replace it with its own sitemap address, so open both and see which one your site answers with.
+
+How do I check product data and text on my platform?
+
+Shopify's guidance on product pages for AI systems asks for clear titles, price and availability shown prominently, detailed specifications, structured data and product attributes. It adds that detail meant only for AI systems can sit lower on the page ( Shopify: optimizing your store for AI ).
+
+There is no official help page I could confirm that states exactly which structured data a given theme or plugin outputs on WooCommerce, Wix, Squarespace, PrestaShop or Magento. So check your own product page source. If application/ld+json is missing or shows the wrong price, look in your platform's settings or your SEO plugin for a structured data option, and compare the values against the page.
+
+Text hidden behind tabs, accordions or "read more" buttons is fine if it is in the HTML. It is a problem if a theme or app loads it with JavaScript only after the page opens.
+
+Which platform setting is easiest to miss?
+
+Platform Where to look What to confirm
+Shopify robots.txt.liquid in the theme code Default file is intact or edits are deliberate
+Shopify Online store preferences Store is not in private mode
+WordPress with WooCommerce /wp-sitemap.xml or your SEO plugin One sitemap, listing products
+Any platform CDN or firewall rules Crawlers are not refused by name
+Any platform Product page source JSON-LD price matches the page
+
+What does the audit check?
+
+Platform dashboards show settings. A crawler sees the result. The CitedBy audit crawls your shop up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. It starts at €9, paid once, with a 14-day money-back guarantee.
+
+Questions people ask
+
+Can I edit robots.txt on every platform?
+
+No. On Shopify you can, through the robots.txt.liquid template. On other platforms it depends on the platform and plan, so look in your platform's settings or help pages.
+
+Does a sitemap plugin matter for AI assistants?
+
+A sitemap helps crawlers find your pages, but assistants also need to be allowed in and to read the page. See the technical SEO checklist .
+
+My theme loads descriptions with JavaScript. What now?
+
+Ask the theme or app developer for a version that outputs the text in the HTML, or move the key facts into the standard product description field.
+
+Sources
+
+Shopify: editing robots.txt.liquid
+Shopify: finding and submitting your sitemap
+Shopify: optimizing your store for AI
+WordPress core: XML sitemaps in 5.5
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+Technical SEO checklist for AI visibility
+Is GPTBot blocked on your site?
+Can ChatGPT read my website?
+
+## Technical SEO checklist for AI visibility: 10 shop checks
+Source: https://citedby.eu/guides/technical-seo-checklist
+
+Guides / Guide
+
+Technical SEO checklist for AI visibility: 10 checks for your online shop
+
+By the CitedBy editorial team · Reviewed on 2026-10-20
+
+Short answer A technical SEO checklist for AI visibility has ten checks: robots.txt, HTTP status, sitemap, canonical, hreflang, title and H1, JSON-LD, text in the raw HTML, internal links and, optionally, llms.txt. Each one can be tested by hand in a browser. Our audit runs them on every page up to your plan's page limit, from €9, with the exact fix.
+
+On this page What does a technical check for AI visibility cover?
+What are the 10 checks?
+Which checks matter most?
+How do I test without any tools?
+What does the audit add?
+Questions people ask
+Sources
+
+What does a technical check for AI visibility cover?
+
+AI assistants and search engines can only quote what their crawlers can fetch and read. A page that returns an error, is blocked in robots.txt or shows its text only after JavaScript runs may look fine to you and empty to a crawler. The checks below are ordered from "can it get in" to "can it read the page" to "can it trust the facts".
+
+You need a browser and a few minutes per check. Test your home page, one category page and one product page first, because problems usually repeat across a template.
+
+What are the 10 checks?
+
+Check robots.txt and AI crawlers. Open yourshop.com/robots.txt . Look for Disallow: / under User-agent: * and for groups that name GPTBot, OAI-SearchBot or PerplexityBot. OpenAI documents its crawlers and says robots.txt controls them.
+Check the HTTP status of key pages. Your home, category, product and policy pages should answer 200. Run curl -sI https://yourshop.com/product-page and read the first line. Redirect chains, 403, 404 and 5xx answers all cost you.
+Check that sitemap.xml exists. Open yourshop.com/sitemap.xml . It should list your product and category URLs, and robots.txt can point to it with a Sitemap: line.
+Check the canonical tag. Open a product page, view the source and search for rel="canonical" . It should point to the clean address of that same page, not to the home page or a filtered variant.
+Check hreflang if you sell in several languages. Each language version should list its siblings and itself. Google's documentation asks for the annotations to be reciprocal.
+Check the title and H1. Each page needs one title and one H1 that say what the page is. Duplicate titles across hundreds of products are common after a theme or import change.
+Check JSON-LD. Search the source for application/ld+json . A product page should carry Product data with name, price, currency and availability, and the home page should carry Organization data. The values must match what the page shows.
+Check that the text is in the raw HTML. Open the page source (not the inspector) and search for a sentence from the product description. If it is missing, the text is added by JavaScript and many crawlers will not see it.
+Check broken internal links. Click through your menu, a category and a product. A crawler that hits a 404 from your own navigation stops following that path. Fix or remove the link.
+Decide on llms.txt last. It is optional. No major assistant has confirmed that it reads the file, so do it only after the nine checks above. See does llms.txt work .
+
+Which checks matter most?
+
+Check If it fails Priority
+robots.txt Crawlers are told to stay out First
+HTTP status Pages cannot be fetched at all First
+Raw HTML text The crawler sees an empty page First
+Sitemap Pages are found more slowly Second
+Canonical Duplicates compete with each other Second
+JSON-LD Price and stock are guessed from text Second
+Title and H1 Pages look alike to a reader Second
+Hreflang Wrong language version gets shown If multilingual
+Internal links Crawl paths end early Third
+llms.txt Nothing measurable so far Optional
+
+How do I test without any tools?
+
+A browser is enough for most of it. The "view source" page (Ctrl+U, or Cmd+Option+U on a Mac) answers checks 4, 6, 7 and 8. The address bar answers checks 1 and 3. A single curl line answers check 2.
+
+One limit: a test from your own computer can differ from what a crawler gets. A CDN or firewall may refuse a crawler by its name or address while letting you in. If robots.txt looks fine and a crawler is still locked out, see can ChatGPT read my website .
+
+What does the audit add?
+
+By hand you check a few pages. The CitedBy audit crawls your shop up to your plan's page limit, runs these checks on each one and gives the exact fix for each issue. It starts at €9, paid once, with a 14-day money-back guarantee. The sample audit shows the format.
+
+Questions people ask
+
+How often should I run these checks?
+
+After every theme change, app install, migration or CDN setting change, and once a quarter otherwise. Most breakage appears right after a change.
+
+Do I need all ten checks to be recommended by AI assistants?
+
+No. Passing them does not guarantee a mention, because assistants also weigh what other sites say about you. Failing the first three can keep you out entirely.
+
+Can I fix these myself on a hosted shop platform?
+
+Often yes, but the place to do it differs by platform. See the checklist by shop platform .
+
+Sources
+
+OpenAI: crawlers and user agents
+Google Search Central: robots.txt introduction
+Google Search Central: sitemaps overview
+Google Search Central: canonical URLs
+Google Search Central: localized versions (hreflang)
+Google Search Central: product structured data
+Google Search Central: JavaScript SEO basics
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+Can ChatGPT read my website?
+Does llms.txt work?
+AI visibility checklist by shop platform
+
+## Amazonbot, Amzn-SearchBot and Amzn-User: three Amazon agents
+Source: https://citedby.eu/bots/amazonbot
+
+AI crawlers / AI crawlers
+
+Amazonbot, Amzn-SearchBot and Amzn-User: three Amazon agents, three rules
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer Amazonbot is used to improve Amazon's products and services and may be used to train Amazon AI models. Amazon's page also covers Amzn-SearchBot, which makes content eligible for search experiences such as Alexa, and Amzn-User, which may not follow all robots.txt directives. Each setting is independent.
+
+On this page What Amazonbot is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with DuckAssistBot
+Check your own site
+Questions people ask
+Sources
+
+What Amazonbot is
+
+Amazon's page covers three user agents and says each setting is independent of the others and can take about 24 hours to take effect: Amazonbot, Amzn-SearchBot and Amzn-User. Only the first is described as possibly training Amazon AI models.
+
+Fact Amazonbot
+Operator Amazon
+Job Product improvement, may train Amazon AI models
+robots.txt token Amazonbot
+Follows robots.txt Yes, changes take about 24 hours
+Published address list Published on Amazon's page (developer.amazon.com/amazonbot/ip-addresses)
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “Amazonbot is used to improve our products and services. This helps us provide more accurate information to customers and may be used to train Amazon AI models.”
+
+Source: Amazon: About Amazonbot , read on 21 October 2026.
+
+What happens if you block it
+
+Amzn-SearchBot is for search experiences such as Alexa: allow it and the content is eligible to appear there. Amzn-User answers live Alexa queries that need up-to-date information; Amazon says it may not follow all robots.txt directives and does not crawl for generative AI training. A robots.txt that lists only Amazonbot therefore does not describe your policy for the other two.
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: Amazonbot
+
+Allow: /
+
+User-agent: Amzn-SearchBot
+Allow: /
+
+To block it:
+
+User-agent: Amazonbot
+Disallow: /
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amazonbot/0.1) Chrome/W.X.Y.Z Safari/537.36
+
+How to tell a real request from a fake one
+
+Amazon publishes the addresses for Amazonbot and, on separate pages, for Amzn-SearchBot and for live fetches; the lists are HTML pages, not a JSON file, so we do not state a count. Amazon also says that if robots.txt does not mention Amzn-SearchBot but allows other search bots, Amzn-SearchBot crawls in accordance with that file.
+
+Compare with DuckAssistBot
+
+DuckAssistBot : Another answer-engine fetcher with a stated opt-out and a 72-hour delay.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Amzn-User follow robots.txt?
+
+Amazon says that because its actions can be initiated by a user, Amzn-User may not follow all robots.txt directives. It also says it does not crawl content for generative AI model training.
+
+Does blocking Amazonbot block Alexa answers?
+
+Not by that line alone. Amazon describes Amzn-SearchBot and Amzn-User as separate agents with independent settings.
+
+Sources
+
+Amazon: About Amazonbot
+developer.amazon.com/amazonbot/ip-addresses , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+DuckAssistBot
+Is GPTBot blocked on your site?
+Can ChatGPT read my website?
+
+## Applebot-Extended: opt out of Apple model training, keep search
+Source: https://citedby.eu/bots/applebot-extended
+
+AI crawlers / AI crawlers
+
+Applebot-Extended: opting out of Apple's model training without leaving search
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer Applebot-Extended is a robots.txt token. Apple says publishers can opt out of having their content used to train generative foundation models by disallowing it. Applebot may still crawl the page, so the content stays discoverable in Spotlight, Siri and Safari. It makes no requests of its own.
+
+On this page What Applebot-Extended is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Applebot
+Check your own site
+Questions people ask
+Sources
+
+What Applebot-Extended is
+
+Apple's page describes Applebot-Extended as the way to keep content out of training for foundation models behind Apple Intelligence, services and developer tools. Like Google-Extended it is a control token: you will not find it in a log.
+
+Fact Applebot-Extended
+Operator Apple
+Job Control token (no requests of its own)
+robots.txt token Applebot-Extended
+Follows robots.txt Read from robots.txt only
+Published address list None: it never fetches
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “Web publishers can opt-out from having their content used to train generative foundation models by disallowing Applebot-Extended in the robots.txt file.”
+
+Source: Apple Support: About Applebot , read on 21 October 2026.
+
+What happens if you block it
+
+Apple spells out the limit: if you disallow Applebot-Extended and also tag content with the nosnippet meta tag, your instructions may still allow Applebot to crawl the page, and the content remains discoverable through Spotlight, Siri and Safari. The same page says publishers can opt out of use in broad world-knowledge answers by applying this robots.txt control.
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: Applebot-Extended
+Allow: /
+
+To block it:
+
+User-agent: Applebot-Extended
+Disallow: /
+
+How to tell a real request from a fake one
+
+No network check exists for a token that sends no requests. Read robots.txt, on each host, and check Applebot separately, because the two tokens are independent and a single User-agent: Applebot-Extended group says nothing about Applebot.
+
+Compare with Applebot
+
+Applebot: The crawler itself: allowing it keeps you in Spotlight, Siri and Safari search.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Why does Applebot-Extended not show up in my server logs?
+
+It sends no requests. Apple describes it as a robots.txt control for whether crawled content is used for training.
+
+Does Disallow Applebot-Extended remove me from Siri?
+
+Apple says content stays discoverable through Spotlight, Siri and Safari because Applebot may still crawl it.
+
+Sources
+
+Apple Support: About Applebot
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Is GPTBot blocked on your site?
+Can ChatGPT read my website?
+
+## Bingbot: Microsoft's crawler, five user agents, how to verify
+Source: https://citedby.eu/bots/bingbot
+
+AI crawlers / AI crawlers
+
+Bingbot: Microsoft's crawler, five user agents, how to verify
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer Bingbot is Microsoft's standard crawler and handles most of Bing's crawling. Bing's help page lists five crawlers: Bingbot, AdIdxBot, BingPreview, MicrosoftPreview and BingVideoPreview. You control them through robots.txt, and crawl rate through the Crawl control tool in Bing Webmaster Tools, not through robots.txt.
+
+On this page What Bingbot is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Googlebot
+Check your own site
+Questions people ask
+Sources
+
+What Bingbot is
+
+Bing's page is titled "Overview of Bing crawlers (user agents)" and says Bing operates these main crawlers today: Bingbot (the standard crawler), AdIdxBot (used by Bing Ads, which crawls ads and follows their websites for quality control), BingPreview (page snapshots for Bing), MicrosoftPreview (snapshots for Microsoft products) and BingVideoPreview (video previews, in Bing only). Bingbot, AdIdxBot, BingPreview and BingVideoPreview have desktop and mobile variants. The page does not name a separate AI crawler. The same help section includes "How To Permanently Remove a URL or Page from Bing or Copilot", which is the page to read if the goal is removal rather than access.
+
+Fact Bingbot
+Operator Microsoft
+Job Search crawler
+robots.txt token bingbot
+Follows robots.txt Yes
+Published address list Verify tool, no list read
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “Bingbot is our standard crawler and handles most of our crawling needs each day.”
+
+Source: Microsoft Bing Webmaster help: Which Crawlers Does Bing Use? , read on 21 October 2026.
+
+What happens if you block it
+
+Bing's page does not say what a block costs; this is our reading, not Bing's. Bingbot is the crawler that feeds Bing, so disallowing it in robots.txt stops Bing crawling those pages, and anything that relies on Bing's index loses them too. Bing gives you two controls: robots.txt tells its crawlers how to interact with your site, and Bing Webmaster Tools has a Crawl control tool that sets the crawl rate by the hour.
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: bingbot
+Allow: /
+
+To block it:
+
+User-agent: bingbot
+Disallow: /
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/W.X.Y.Z Safari/537.36
+
+How to tell a real request from a fake one
+
+Bing says user agent strings are easy to spoof, so not every request with them comes from a real Bing crawler. To check the address, use the Verify Bingbot tool, or one of the other verification methods Bing describes. In the user-agent string, W.X.Y.Z stands for the Microsoft Edge version Bing renders with, which Bing says it updates regularly. We did not read an IP list on that page, so we state no count.
+
+Compare with Googlebot
+
+Googlebot : The other main search crawler: a different token and different verification.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Is there a separate Bing AI crawler?
+
+Bing's page lists five crawlers and none is described as an AI crawler. Wix's example list names BingAI, which is not on Bing's list.
+
+How do I slow Bingbot down?
+
+Bing says to use the Crawl control tool in Bing Webmaster Tools, which sets the crawl rate by the hour.
+
+How do I know a request is really Bingbot?
+
+Do not trust the user agent alone. Bing says it can be faked and points to its Verify Bingbot tool.
+
+Sources
+
+Microsoft Bing Webmaster help: Which Crawlers Does Bing Use? , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Googlebot
+AI crawler settings by platform
+Can ChatGPT read my website?
+
+## ChatGPT-User: the fetcher that opens your page when someone asks
+Source: https://citedby.eu/bots/chatgpt-user
+
+AI crawlers / AI crawlers
+
+ChatGPT-User: the fetcher that opens your page when someone asks
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer ChatGPT-User visits a web page when a person asks ChatGPT or a custom GPT a question that needs it. OpenAI says it is not used to crawl automatically and that, because a user starts the request, robots.txt rules may not apply. OpenAI lists 234 IP ranges for it.
+
+On this page What ChatGPT-User is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with OAI-SearchBot
+Check your own site
+Questions people ask
+Sources
+
+What ChatGPT-User is
+
+Unlike the other OpenAI robots, ChatGPT-User does not roam the web by itself. OpenAI describes it as the agent used for certain user actions in ChatGPT and custom GPTs, including pages a custom GPT reaches through GPT Actions. A person typed something, and a request to your server followed.
+
+Fact ChatGPT-User
+Operator OpenAI
+Job User-triggered fetch
+robots.txt token ChatGPT-User
+Follows robots.txt Robots.txt rules may not apply
+Published address list 234 ranges (openai.com/chatgpt-user.json, file dated 2026-10-20)
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “ChatGPT-User is not used for crawling the web in an automatic fashion. Because these actions are initiated by a user, robots.txt rules may not apply.”
+
+Source: OpenAI: Overview of OpenAI Crawlers , read on 21 October 2026.
+
+What happens if you block it
+
+Because the visit is user-initiated, OpenAI warns that robots.txt rules may not apply, so a Disallow line for ChatGPT-User is not a guaranteed stop. OpenAI also says ChatGPT-User is not used to decide whether content appears in search and sends search opt-outs to OAI-SearchBot. If you need to stop these requests, the control is on your server or CDN, not in robots.txt alone.
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: ChatGPT-User
+Allow: /
+
+To block it:
+
+User-agent: ChatGPT-User
+Disallow: / # OpenAI says robots.txt rules may not apply to this agent
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot
+
+How to tell a real request from a fake one
+
+Its address list is the longest of the three OpenAI files we counted: openai.com/chatgpt-user.json held 234 prefixes on 21 October 2026, creation time 2026-10-20, the day before this page. A list that long is a reason to fetch it again when you check a log line, not to copy it once into a firewall.
+
+Compare with OAI-SearchBot
+
+OAI-SearchBot : OAI-SearchBot is the search crawler and does obey robots.txt.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does ChatGPT-User obey robots.txt?
+
+OpenAI says robots.txt rules may not apply to it because a person starts each request. Treat a robots.txt block as a request that OpenAI is not committed to honour here.
+
+Is ChatGPT-User the same as GPTBot?
+
+No. GPTBot crawls content that may be used for training. ChatGPT-User only fetches a page when a user action calls for it, and OpenAI says it is not used to crawl the web automatically.
+
+Sources
+
+OpenAI: Overview of OpenAI Crawlers
+openai.com/chatgpt-user.json , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+OAI-SearchBot
+Is GPTBot blocked on your site?
+Can ChatGPT read my website?
+
+## Claude-SearchBot: Anthropic's search crawler and blocking it
+Source: https://citedby.eu/bots/claude-searchbot
+
+AI crawlers / AI crawlers
+
+Claude-SearchBot: Anthropic's search crawler and what blocking costs
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer Claude-SearchBot is the Anthropic robot that navigates the web to improve search result quality. Anthropic says disabling it prevents indexing of your content for search optimization, which may reduce your visibility and accuracy in user search results. Its robots.txt token is Claude-SearchBot.
+
+On this page What Claude-SearchBot is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with ClaudeBot
+Check your own site
+Questions people ask
+Sources
+
+What Claude-SearchBot is
+
+Claude-SearchBot is the indexing side of Anthropic's search. Anthropic describes it as analysing online content to improve relevance and accuracy of search responses. ClaudeBot collects for training and Claude-User answers a live question.
+
+Fact Claude-SearchBot
+Operator Anthropic
+Job Search
+robots.txt token Claude-SearchBot
+Follows robots.txt Yes, Anthropic says its robots respect robots.txt
+Published address list Anthropic points to a list but advises against IP blocking
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “Claude-SearchBot navigates the web to improve search result quality for users. It analyzes online content specifically to enhance the relevance and accuracy of search responses. Disabling Claude-SearchBot on your site prevents our system from indexing your content for search optimization, which may reduce your site's visibility and accuracy in user search results.”
+
+Source: Anthropic Help Center: Does Anthropic crawl data from the web, and how can site owners block the crawler? (7 April 2026) , read on 21 October 2026.
+
+What happens if you block it
+
+Anthropic names two effects of disabling it: your content is not indexed for search optimization, and your site's visibility and accuracy in user search results may fall.
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: Claude-SearchBot
+Allow: /
+
+To block it:
+
+User-agent: Claude-SearchBot
+Disallow: /
+
+How to tell a real request from a fake one
+
+The help article is dated 7 April 2026. It lists no user-agent string, so a log line that names Claude-SearchBot is a claim you cannot confirm from the article alone. Anthropic says traffic from an address on its linked list is Anthropic's, and it asks site owners who think a robot is misbehaving to write from an email on the domain concerned.
+
+Compare with ClaudeBot
+
+ClaudeBot : Blocking ClaudeBot opts out of training only; it does not remove you from Claude's search index.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Do I have to allow Claude-SearchBot to be cited by Claude?
+
+Anthropic says that disabling it may reduce your visibility and accuracy in user search results. It makes no promise either way that allowing it leads to a citation.
+
+Where do I put the rule?
+
+In the robots.txt at the top level of each host. Anthropic says to do this for every subdomain.
+
+Sources
+
+Anthropic Help Center: Does Anthropic crawl data from the web, and how can site owners block the crawler? (7 April 2026)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+ClaudeBot
+Is GPTBot blocked on your site?
+Can ChatGPT read my website?
+
+## Claude-User: fetches pages when someone asks Claude
+Source: https://citedby.eu/bots/claude-user
+
+AI crawlers / AI crawlers
+
+Claude-User: the agent that fetches pages when someone asks Claude
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer Claude-User is the agent Claude may use to access a website when a person asks it a question. Anthropic says disabling it prevents retrieval of your content in response to a user query, which may reduce your visibility for user-directed web search. It is separate from ClaudeBot and Claude-SearchBot.
+
+On this page What Claude-User is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Claude-SearchBot
+Check your own site
+Questions people ask
+Sources
+
+What Claude-User is
+
+Of Anthropic's three robots, Claude-User is the one tied to a person's question. It does not collect training data ( ClaudeBot does) and it does not build the search index ( Claude-SearchBot does).
+
+Fact Claude-User
+Operator Anthropic
+Job User-triggered fetch
+robots.txt token Claude-User
+Follows robots.txt Yes, Anthropic says its robots respect robots.txt
+Published address list Anthropic points to a list but advises against IP blocking
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “Claude-User supports Claude AI users. When individuals ask questions to Claude, it may access websites using a Claude-User agent. Disabling Claude-User on your site prevents our system from retrieving your content in response to a user query, which may reduce your site's visibility for user-directed web search.”
+
+Source: Anthropic Help Center: Does Anthropic crawl data from the web, and how can site owners block the crawler? (7 April 2026) , read on 21 October 2026.
+
+What happens if you block it
+
+This is where Anthropic's wording on cost is most direct: disabling Claude-User prevents retrieval "in response to a user query" and "may reduce your site's visibility for user-directed web search". A shop that blocks it can still be known to the model from other sources, but Claude cannot open the page when asked.
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: Claude-User
+Allow: /
+
+To block it:
+
+User-agent: Claude-User
+Disallow: /
+
+How to tell a real request from a fake one
+
+Anthropic's help article does not print a user-agent string for the three robots, and it says its source IP addresses are on a list it links. Because Anthropic also says that blocking those addresses can stop its robots reading robots.txt, the article's advice is to control access in robots.txt rather than at the IP layer.
+
+Compare with Claude-SearchBot
+
+Claude-SearchBot : Search quality robot; its block affects indexing for search, not a user's live question.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+What is the difference between Claude-User and Claude-SearchBot?
+
+Claude-User fetches a page when a person asks Claude a question. Claude-SearchBot navigates the web to improve the quality of search results. They have separate robots.txt rules.
+
+Will blocking Claude-User hide my shop from Claude?
+
+Anthropic says it may reduce visibility for user-directed web search. It does not say it removes you from everything Claude knows.
+
+Sources
+
+Anthropic Help Center: Does Anthropic crawl data from the web, and how can site owners block the crawler? (7 April 2026)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Claude-SearchBot
+Is GPTBot blocked on your site?
+Can ChatGPT read my website?
+
+## ClaudeBot: Anthropic's training crawler, Crawl-delay and blocking
+Source: https://citedby.eu/bots/claudebot
+
+AI crawlers / AI crawlers
+
+ClaudeBot: Anthropic's training crawler, Crawl-delay and blocking
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer ClaudeBot is Anthropic's crawler for content that could contribute to model training. A robots.txt Disallow signals that a site's future materials should be excluded from training datasets. Anthropic honours Crawl-delay, and warns that blocking its IP addresses can stop it reading robots.txt, so use robots.txt instead.
+
+On this page What ClaudeBot is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Claude-SearchBot
+Check your own site
+Questions people ask
+Sources
+
+What ClaudeBot is
+
+Anthropic names three robots in its help article: ClaudeBot for training data, Claude-User for pages fetched at a user's request, and Claude-SearchBot for search quality. ClaudeBot is the training one. The article is dated 7 April 2026.
+
+Fact ClaudeBot
+Operator Anthropic
+Job Training
+robots.txt token ClaudeBot
+Follows robots.txt Yes, it follows robots.txt and Crawl-delay
+Published address list Anthropic points to a list but advises against IP blocking
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “ClaudeBot helps enhance the utility and safety of our generative AI models by collecting web content that could potentially contribute to their training. When a site restricts ClaudeBot access, it signals that the site's future materials should be excluded from our AI model training datasets.”
+
+Source: Anthropic Help Center: Does Anthropic crawl data from the web, and how can site owners block the crawler? (7 April 2026) , read on 21 October 2026.
+
+What happens if you block it
+
+Anthropic says a restriction signals that the site's future materials should be excluded from its training datasets. The wording says "future materials"; it does not say what happens to content already collected. The other two Claude robots are separate, so blocking ClaudeBot leaves their rules untouched.
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: ClaudeBot
+Allow: /
+
+To block it:
+
+User-agent: ClaudeBot
+Disallow: /
+
+How to tell a real request from a fake one
+
+Anthropic's article says its robots respect "do not crawl" signals in robots.txt and will not try to bypass CAPTCHAs. It supports the non-standard Crawl-delay directive, for example User-agent: ClaudeBot followed by Crawl-delay: 1 . It also says that blocking by IP address may not give a lasting opt-out, because it stops the robot from reading robots.txt. Anthropic's article states that robots.txt must be set for every subdomain you want to opt out.
+
+Compare with Claude-SearchBot
+
+Claude-SearchBot : A separate search robot: blocking ClaudeBot does not touch it.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does ClaudeBot support Crawl-delay?
+
+Yes. Anthropic says it supports the non-standard Crawl-delay extension and gives Crawl-delay: 1 under User-agent: ClaudeBot as an example.
+
+Do I need a robots.txt file on every subdomain?
+
+Anthropic's article says to add the rule at the top level for every subdomain you want to opt out. A rule on example.com does not cover shop.example.com.
+
+Sources
+
+Anthropic Help Center: Does Anthropic crawl data from the web, and how can site owners block the crawler? (7 April 2026)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Claude-SearchBot
+Is GPTBot blocked on your site?
+Can ChatGPT read my website?
+
+## DuckAssistBot: DuckDuckGo's answer crawler and its 486 addresses
+Source: https://citedby.eu/bots/duckassistbot
+
+AI crawlers / AI crawlers
+
+DuckAssistBot: DuckDuckGo's real-time answer crawler and its 486 addresses
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer DuckAssistBot crawls pages in real time for DuckDuckGo's AI-assisted answers, which cite their sources. DuckDuckGo says the data is not used to train AI models. A robots.txt Disallow takes effect after 72 hours and does not affect organic search rankings. It lists 486 IP addresses.
+
+On this page What DuckAssistBot is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Amazonbot
+Check your own site
+Questions people ask
+Sources
+
+What DuckAssistBot is
+
+DuckDuckGo runs two bots that people confuse. DuckDuckBot is the search crawler; DuckAssistBot is the one behind AI-assisted answers. DuckDuckGo's help page says the answers prominently cite their sources and that the crawled data is not used to train AI models.
+
+Fact DuckAssistBot
+Operator DuckDuckGo
+Job Real-time fetch for AI-assisted answers
+robots.txt token DuckAssistBot
+Follows robots.txt Yes, a change takes effect after 72 hours
+Published address list 486 addresses (duckduckgo.com/duckassistbot.json, file dated 2026-09-01)
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “DuckAssistBot is a web crawler for DuckDuckGo Search that crawls pages in real-time for our AI-assisted answers, which prominently cite their sources. This data is not used in any way to train AI models.”
+
+Source: DuckDuckGo Help Pages: About DuckAssistBot , read on 21 October 2026.
+
+What happens if you block it
+
+DuckDuckGo says that once you disallow DuckAssistBot the change takes effect after 72 hours, and that opting out does not impact organic search rankings and will not affect whether sites appear in its search results. The cost of a block is therefore limited to the assisted answers and their citations. Opt-out problems go to the address the page gives, crawling@duckduckgo.com.
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: DuckAssistBot
+Allow: /
+
+To block it:
+
+User-agent: DuckAssistBot
+Disallow: /
+
+The user-agent string the vendor shows:
+
+DuckAssistBot/1.2; (+http://duckduckgo.com/duckassistbot.html)
+
+How to tell a real request from a fake one
+
+DuckDuckGo lists the addresses in the help article and as JSON at duckduckgo.com/duckassistbot.json. The file held 486 entries on 21 October 2026, creation time 2026-09-01, longer than any other address list we counted for this set, and it holds single addresses where the others publish CIDR ranges. The user agent appears as DuckAssistBot/1.2 .
+
+Compare with Amazonbot
+
+Amazonbot : Amazon's family of three agents, one of which may ignore robots.txt.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+How long does a DuckAssistBot opt-out take?
+
+DuckDuckGo says the change takes effect after 72 hours.
+
+Will blocking DuckAssistBot drop me from DuckDuckGo search?
+
+DuckDuckGo says it does not impact organic search rankings and does not affect whether sites appear in its search results.
+
+Sources
+
+DuckDuckGo Help Pages: About DuckAssistBot
+duckduckgo.com/duckassistbot.json , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Amazonbot
+Is GPTBot blocked on your site?
+Can ChatGPT read my website?
+
+## Google-Extended: the robots.txt token for Gemini, not a crawler
+Source: https://citedby.eu/bots/google-extended
+
+AI crawlers / AI crawlers
+
+Google-Extended: the robots.txt token for Gemini, not a crawler
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer Google-Extended is a robots.txt product token that lets publishers manage whether content Google crawls may be used to train future Gemini models. It has no HTTP user agent of its own, so it never shows in your logs. Google says it does not affect inclusion in Search or ranking.
+
+On this page What Google-Extended is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Googlebot
+Check your own site
+Questions people ask
+Sources
+
+What Google-Extended is
+
+Most pages in this set describe a crawler you can find in a log. This one you cannot. Google states that Google-Extended "doesn't have a separate HTTP request user agent string": crawling happens with existing Google user agents, and the robots.txt token is used in a control capacity.
+
+Fact Google-Extended
+Operator Google
+Job Control token (no requests of its own)
+robots.txt token Google-Extended
+Follows robots.txt Read from robots.txt only; there is no separate user agent
+Published address list None: it never fetches
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “Google-Extended is a standalone product token that web publishers can use to manage whether content Google crawls from their sites may be used for training future generations of Gemini models that power Gemini Apps and Vertex AI API for Gemini. Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.”
+
+Source: Google Search Central: Google's common crawlers (last updated 2026-10-15) , read on 21 October 2026.
+
+What happens if you block it
+
+Adding Disallow: / under Google-Extended tells Google it may not use the content for training future Gemini models behind Gemini Apps and the Vertex AI API for Gemini. Google also says it does not impact inclusion in Google Search and is not a ranking signal. Our audit reads this token in robots.txt as one of its checks; it is the only signal there is.
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: Google-Extended
+Allow: /
+
+To block it:
+
+User-agent: Google-Extended
+Disallow: /
+
+How to tell a real request from a fake one
+
+There is nothing to verify at the network layer: no user agent, no address list. Check the robots.txt itself, on every host, and remember that a log search for Google-Extended finds nothing whether you block it or not. Google's own example group shows the token taking an allow path and a disallow path like any other.
+
+Compare with Googlebot
+
+Googlebot : The crawler that actually fetches your pages for Search.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Why does Google-Extended never appear in my logs?
+
+Google says it has no separate HTTP request user agent string. It is a robots.txt token only, and the crawling is done by existing Google user agents.
+
+Does blocking Google-Extended hurt my Google rankings?
+
+Google says it does not impact a site's inclusion in Google Search and is not used as a ranking signal.
+
+Sources
+
+Google Search Central: Google's common crawlers (last updated 2026-10-15)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Googlebot
+Is GPTBot blocked on your site?
+Can ChatGPT read my website?
+
+## Googlebot: what it covers, its IP ranges and what a block removes
+Source: https://citedby.eu/bots/googlebot
+
+AI crawlers / AI crawlers
+
+Googlebot: what it covers, its IP ranges and what a block removes
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer Googlebot is Google's main crawler for Search. Google says its common crawlers always obey robots.txt rules when crawling automatically. Crawling preferences for the Googlebot token affect Google Search, including Discover, and products such as Images, Video and News. Google publishes 317 IP ranges for it.
+
+On this page What Googlebot is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Google-Extended
+Check your own site
+Questions people ask
+Sources
+
+What Googlebot is
+
+Googlebot is the crawler every Search check starts from. Google's page lists several crawlers, and the single token Googlebot governs Search, Discover and the products that draw on the same crawl, such as Images, Video mode and News.
+
+Fact Googlebot
+Operator Google
+Job Search (also Images, Video, News, Discover)
+robots.txt token Googlebot
+Follows robots.txt Yes, always when crawling automatically
+Published address list 317 ranges (developers.google.com/static/search/apis/ipranges/googlebot.json, file dated 2026-10-20)
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “Google's common crawlers are used to find information for building Google's search indexes, perform other product specific crawls, and for analysis. They always obey robots.txt rules when crawling automatically.”
+
+Source: Google Search Central: Google's common crawlers (last updated 2026-10-15) , read on 21 October 2026.
+
+What happens if you block it
+
+A Disallow for Googlebot is not a narrow AI opt-out; it affects Google Search itself, including Discover and the features built on it, per Google's list of affected products. The narrower control for Gemini training is the separate token Google-Extended .
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: Googlebot
+Allow: /
+
+To block it:
+
+User-agent: Googlebot
+Disallow: / # affects Google Search, not only AI features
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+
+How to tell a real request from a fake one
+
+Google publishes the ranges its common crawlers use. The Googlebot file held 317 prefixes on 21 October 2026, creation time 2026-10-20 14:46 UTC. Google also documents a reverse DNS mask for confirming a hostname, so a request is checked two ways: the address against the file, and the reverse lookup against the mask. The page itself was last updated 2026-10-15.
+
+Compare with Google-Extended
+
+Google-Extended : A control token for Gemini training; it never fetches a page.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Googlebot obey robots.txt?
+
+Google says its common crawlers always obey robots.txt rules when crawling automatically.
+
+Will blocking Googlebot stop Gemini training?
+
+Googlebot controls Search. The Gemini training control is the separate Google-Extended token, and blocking Googlebot would also take you out of Google Search.
+
+Sources
+
+Google Search Central: Google's common crawlers (last updated 2026-10-15)
+developers.google.com/static/search/apis/ipranges/googlebot.json , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Google-Extended
+Is GPTBot blocked on your site?
+Can ChatGPT read my website?
+
+## GPTBot: what it does and what blocking it changes
+Source: https://citedby.eu/bots/gptbot
+
+AI crawlers / AI crawlers
+
+GPTBot: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer GPTBot is OpenAI's training crawler. Disallowing it in robots.txt tells OpenAI the site's content should not be used to train its generative AI foundation models. It does not control ChatGPT search, which uses OAI-SearchBot. OpenAI publishes 18 IP ranges for GPTBot.
+
+On this page What GPTBot is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with OAI-SearchBot
+Check your own site
+Questions people ask
+Sources
+
+What GPTBot is
+
+GPTBot is the crawler people usually mean when they say "block OpenAI". OpenAI's page says it is used to crawl content that may be used in training its models. It is one of three crawlers named in the OpenAI documentation for the ChatGPT product family, next to OAI-SearchBot and ChatGPT-User .
+
+Fact GPTBot
+Operator OpenAI
+Job Training
+robots.txt token GPTBot
+Follows robots.txt Yes, it follows robots.txt
+Published address list 18 ranges (openai.com/gptbot.json, file dated 2026-09-22)
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “GPTBot is used to make our generative AI foundation models more useful and safe. It is used to crawl content that may be used in training our generative AI foundation models. Disallowing GPTBot indicates a site's content should not be used in training generative AI foundation models.”
+
+Source: OpenAI: Overview of OpenAI Crawlers , read on 21 October 2026.
+
+What happens if you block it
+
+OpenAI frames a GPTBot Disallow as a signal about training: the content should not be used in training generative AI foundation models. The same page gives an example of a site allowing OAI-SearchBot to appear in search results while disallowing GPTBot, so a block here does not by itself take you out of ChatGPT's search answers. Whether to block is a business choice; both are legitimate.
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: GPTBot
+Allow: /
+
+To block it:
+
+User-agent: GPTBot
+Disallow: /
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.4; +https://openai.com/gptbot
+
+How to tell a real request from a fake one
+
+The GPTBot list at openai.com/gptbot.json is the shortest of the three OpenAI files we counted: 18 prefixes on 21 October 2026, creation time 2026-09-22. When a request names GPTBot but comes from an address outside that list, the name alone proves nothing.
+
+Compare with OAI-SearchBot
+
+OAI-SearchBot : Allow it and disallow GPTBot to stay in ChatGPT search while opting out of training.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+If I block GPTBot, will ChatGPT stop mentioning my shop?
+
+Not through GPTBot alone. OpenAI treats its crawler settings as independent and says search appearance is managed through OAI-SearchBot. Check both tokens in your robots.txt.
+
+How do I know GPTBot is really blocked?
+
+Robots.txt is only one layer. A CDN or firewall rule can also turn the crawler away. Our guide to the four places GPTBot can be stopped shows a two-request test for each.
+
+Sources
+
+OpenAI: Overview of OpenAI Crawlers
+openai.com/gptbot.json , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+OAI-SearchBot
+Is GPTBot blocked on your site?
+Can ChatGPT read my website?
+
+## Meta-ExternalAgent: Meta's AI crawler and its four siblings
+Source: https://citedby.eu/bots/meta-externalagent
+
+AI crawlers / AI crawlers
+
+Meta-ExternalAgent: Meta's AI crawler and its four siblings
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer Meta-ExternalAgent is Meta's crawler for use cases such as training foundation AI models or improving products by indexing content directly. Meta's page, updated 21 May 2026, lists five agents. It says Meta-ExternalFetcher and FacebookExternalHit may bypass robots.txt, and that changes can take up to 24 hours.
+
+On this page What Meta-ExternalAgent is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with GPTBot
+Check your own site
+Questions people ask
+Sources
+
+What Meta-ExternalAgent is
+
+Meta's page lists five crawlers. FacebookExternalHit fetches a page when someone shares a link on Facebook, Instagram or Messenger, to cache its title, description and thumbnail. Meta-WebIndexer improves Meta AI search results, and Meta says allowing it helps Meta cite and link to your content in Meta AI's responses. Meta-ExternalAds crawls for advertising and business products. Meta-ExternalAgent is the one for training foundation AI models or indexing. Meta-ExternalFetcher fetches individual links at a user's request, including helping AI navigate websites to complete tasks for users.
+
+Fact Meta-ExternalAgent
+Operator Meta
+Job AI model training and content indexing
+robots.txt token meta-externalagent
+Follows robots.txt Yes
+Published address list None read
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “The Meta-ExternalAgent crawler crawls the web for use cases such as training foundation AI models or improving products by indexing content directly.”
+
+Source: Meta for Developers: Meta Web Crawlers , read on 21 October 2026.
+
+What happens if you block it
+
+Disallowing meta-externalagent affects that agent only: Meta's own examples give a separate group for each token, and the other four have their own. The costly one to block by mistake is FacebookExternalHit, because it builds the link preview when someone shares your page. Two of the five may ignore your robots.txt: Meta says Meta-ExternalFetcher may bypass robots.txt because it performs fetches requested by the user, and FacebookExternalHit may bypass it for security or integrity checks such as malware checks.
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: meta-webindexer
+
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+To block it:
+
+User-agent: meta-externalagent
+Disallow: /
+
+The user-agent string the vendor shows:
+
+meta-externalagent/1.1
+
+How to tell a real request from a fake one
+
+Meta's page gives the user-agent strings (meta-externalagent/1.1 and the version with a link) and does not publish an IP list in the text we read, so we state no count. For FacebookExternalHit Meta says to allow-list either the user-agent strings or the IP addresses, and calls the addresses the more secure option. Meta says crawlers may cache robots.txt for up to 24 hours, so allow that long before judging a change. Questions go to webmasters@meta.com.
+
+Compare with GPTBot
+
+GPTBot : OpenAI's training crawler, which honours robots.txt without Meta's bypass cases.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Which Meta crawler trains AI models?
+
+Meta describes Meta-ExternalAgent as crawling for use cases such as training foundation AI models or improving products by indexing content directly.
+
+Does Meta-ExternalFetcher obey robots.txt?
+
+Meta says it may bypass robots.txt rules because it fetches links at a user's request.
+
+How long does a robots.txt change take?
+
+Meta says to allow up to 24 hours, because crawlers may cache the file for up to 24 hours.
+
+Sources
+
+Meta for Developers: Meta Web Crawlers , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+GPTBot
+AI crawler settings by platform
+Can ChatGPT read my website?
+
+## MistralAI-User, MistralAI-Index and MistralAI-Training explained
+Source: https://citedby.eu/bots/mistralai-user
+
+AI crawlers / AI crawlers
+
+MistralAI-User, MistralAI-Index and MistralAI-Training explained
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer MistralAI-User is the Mistral agent that may visit a page when a user asks Vibe a question and link the source in its answer. Mistral says it is not used to crawl automatically or for generative AI training. Mistral's page also lists MistralAI-Index and MistralAI-Training, each with its own token.
+
+On this page What MistralAI-User is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with ChatGPT-User
+Check your own site
+Questions people ask
+Sources
+
+What MistralAI-User is
+
+Mistral's crawler page lists three agents: MistralAI-User for user actions in Vibe, MistralAI-Index for indexing content for Mistral search, and MistralAI-Training, which crawls web content to help build datasets for training Mistral generative AI models. Webmasters can disallow each in robots.txt.
+
+Fact MistralAI-User
+Operator Mistral
+Job User-triggered fetch
+robots.txt token MistralAI-User
+Follows robots.txt Opt-out through robots.txt
+Published address list 4 ranges (mistral.ai/mistralai-user-ips.json, file dated 2025-02-19)
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “MistralAI-User is for user actions in Vibe. When users ask Vibe a question, it may visit a web page to help answer and include a link to the source in its response.”
+
+Source: Mistral Docs: Mistral crawlers , read on 21 October 2026.
+
+What happens if you block it
+
+Disallowing MistralAI-User stops that agent opening your page for a Vibe user's question; it leaves the index and training agents alone, which have their own tokens. Mistral says the user agent is not used for crawling the web in any automatic fashion, nor to crawl content for generative AI training, and that content crawled by the index agent is not used for generative AI training of any kind.
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: MistralAI-User
+
+Allow: /
+
+To block it:
+
+User-agent: MistralAI-User
+Disallow: /
+
+User-agent: MistralAI-Training
+Disallow: /
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-User/1.0; +https://docs.mistral.ai/robots)
+
+How to tell a real request from a fake one
+
+Mistral publishes separate address files for the agents. mistral.ai/mistralai-user-ips.json held 4 prefixes (creation time 2025-02-19) and the index file 2 prefixes (creation time 2026-04-19) on 21 October 2026. Two entries for an index crawler is a list a firewall rule can hold exactly.
+
+Compare with ChatGPT-User
+
+ChatGPT-User : The same job at OpenAI, with a different robots.txt promise.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Which Mistral agent trains models?
+
+Mistral's page says MistralAI-Training crawls web content to help build datasets for training its generative AI models. MistralAI-User and MistralAI-Index are described as not used for training.
+
+Is Vibe a crawler?
+
+Vibe is Mistral's product. MistralAI-User is the agent that may visit a page on behalf of a Vibe user.
+
+Sources
+
+Mistral Docs: Mistral crawlers
+mistral.ai/mistralai-user-ips.json , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+ChatGPT-User
+Is GPTBot blocked on your site?
+Can ChatGPT read my website?
+
+## OAI-SearchBot: what it is and how to allow or block it
+Source: https://citedby.eu/bots/oai-searchbot
+
+AI crawlers / AI crawlers
+
+OAI-SearchBot: what it is and how to allow or block it
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer OAI-SearchBot is OpenAI's crawler for ChatGPT search. Sites that opt out of it will not be shown in ChatGPT search answers, though they can still appear as navigational links. It obeys robots.txt under the token OAI-SearchBot, and OpenAI publishes 39 IP ranges for it.
+
+On this page What OAI-SearchBot is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with GPTBot
+Check your own site
+Questions people ask
+Sources
+
+What OAI-SearchBot is
+
+OpenAI runs several crawlers and says each setting is independent of the others. OAI-SearchBot is the one that decides whether your pages can be surfaced in ChatGPT's search features. It is not the training crawler (that is GPTBot ) and it is not the fetcher that opens a page when a person asks about it (that is ChatGPT-User ).
+
+Fact OAI-SearchBot
+Operator OpenAI
+Job Search
+robots.txt token OAI-SearchBot
+Follows robots.txt Yes, it follows robots.txt
+Published address list 39 ranges (openai.com/searchbot.json, file dated 2026-01-02)
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “OAI-SearchBot is used to surface websites in search results in ChatGPT's search features. Sites that are opted out of OAI-SearchBot will not be shown in ChatGPT search answers, though can still appear as navigational links.”
+
+Source: OpenAI: Overview of OpenAI Crawlers , read on 21 October 2026.
+
+What happens if you block it
+
+OpenAI's own wording is that opted-out sites "will not be shown in ChatGPT search answers". That is the cost: a shop that blocks OAI-SearchBot gives up the part of ChatGPT that links to sources. OpenAI recommends the opposite for sites that want to appear: allow OAI-SearchBot in robots.txt and allow requests from its published IP ranges.
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: OAI-SearchBot
+Allow: /
+
+To block it:
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot
+
+How to tell a real request from a fake one
+
+OpenAI publishes the addresses OAI-SearchBot uses at openai.com/searchbot.json. On 21 October 2026 that file held 39 prefixes and carried the creation time 2026-01-02. Match the address in your server log against those prefixes before you trust a request that only claims the name in its user-agent. OpenAI also says that when it fetches robots.txt it may add a robots.txt marker to the user-agent string, so those requests are easy to tell apart in logs without paths.
+
+Compare with GPTBot
+
+GPTBot : GPTBot is for training; blocking it does not remove you from ChatGPT search because the settings are independent.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does blocking GPTBot also block OAI-SearchBot?
+
+No. OpenAI states that each setting is independent of the others, so a robots.txt group for GPTBot does not change how OAI-SearchBot treats your site. Add a separate group for each token you want to control.
+
+Why would a firewall block OAI-SearchBot when robots.txt allows it?
+
+Robots.txt is only a policy file. A CDN, WAF or host rule can still refuse the request before the server answers. OpenAI asks site owners to allow its published IP ranges for this reason.
+
+Sources
+
+OpenAI: Overview of OpenAI Crawlers
+openai.com/searchbot.json , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+GPTBot
+Is GPTBot blocked on your site?
+Can ChatGPT read my website?
+
+## PerplexityBot vs Perplexity-User: differences and how to allow it
+Source: https://citedby.eu/bots/perplexitybot
+
+AI crawlers / AI crawlers
+
+PerplexityBot: how it differs from Perplexity-User and how to allow it
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer PerplexityBot is Perplexity's crawler for surfacing and linking websites in its search results. Perplexity says it is not used to crawl content for AI foundation models. It follows robots.txt, changes can take up to 24 hours to apply, and Perplexity publishes 8 IP ranges for it.
+
+On this page What PerplexityBot is
+What the vendor says
+What happens if you block it
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Perplexity-User
+Check your own site
+Questions people ask
+Sources
+
+What PerplexityBot is
+
+Perplexity names two agents. PerplexityBot builds the search index; Perplexity-User visits a page when a person asks. Perplexity's page contains configuration guidelines for popular WAF providers because a firewall can stop the crawler before robots.txt matters.
+
+Fact PerplexityBot
+Operator Perplexity
+Job Search
+robots.txt token PerplexityBot
+Follows robots.txt Yes, it follows robots.txt
+Published address list 8 ranges (perplexity.com/perplexitybot.json, file dated 2025-02-07)
+Vendor page read 21 October 2026
+
+What the vendor says
+
+In the vendor's words: “PerplexityBot is designed to surface and link websites in search results on Perplexity. It is not used to crawl content for AI foundation models.”
+
+Source: Perplexity: Perplexity Crawlers , read on 21 October 2026.
+
+What happens if you block it
+
+Perplexity recommends allowing PerplexityBot in robots.txt and permitting requests from its published IP ranges if you want to appear in its search results. It also says changes to your robots.txt can take up to 24 hours to be reflected in its systems, so a check made an hour after an edit proves little.
+
+The robots.txt lines
+
+To allow it:
+
+User-agent: PerplexityBot
+Allow: /
+
+To block it:
+
+User-agent: PerplexityBot
+Disallow: /
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)
+
+How to tell a real request from a fake one
+
+Perplexity's file at perplexity.com/perplexitybot.json held 8 prefixes on 21 October 2026, creation time 2025-02-07. Its WAF section suggests a rule that combines the user-agent with the IP condition, so a request claiming the name from another address does not get through.
+
+Compare with Perplexity-User
+
+Perplexity-User: The user-triggered fetcher; Perplexity says it generally ignores robots.txt.
+
+Check your own site
+
+The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+How long does a robots.txt change take for PerplexityBot?
+
+Perplexity says it may take up to 24 hours for its systems to reflect a change.
+
+Does PerplexityBot train AI models?
+
+Perplexity says it is not used to crawl content for AI foundation models.
+
+Sources
+
+Perplexity: Perplexity Crawlers
+perplexity.com/perplexitybot.json , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Is GPTBot blocked on your site?
+Can ChatGPT read my website?
+
+## Cloudflare: AI bot policies for Search, Agent and Training
+Source: https://citedby.eu/platforms/cloudflare
+
+AI crawler settings by platform / AI crawlers by platform
+
+Cloudflare: AI bot policies for Search, Agent and Training
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer Cloudflare sorts AI bots into three behaviors: Search, Agent and Training. For each you choose Block on all pages, Block on pages with ads, or Allow, under Security Settings, then Configure AI bot policies. Its page, last updated 1 July 2026, says updated defaults for new domains start on 15 September 2026.
+
+On this page Where the setting is on Cloudflare
+Three behaviors, three choices and a date that has already passed
+The steps
+The lines to use
+Gotchas
+Compare with Shopify
+Check your own site
+Questions people ask
+Sources
+
+Where the setting is on Cloudflare
+
+In the Cloudflare dashboard go to Security Settings, then Configure AI bot policies. Each of the three behaviors gets its own setting. This works at the network level, so it applies whatever platform the site runs on.
+
+Three behaviors, three choices and a date that has already passed
+
+Cloudflare's presets are: Search, crawlers that collect or index your content to answer questions about it later; Agent, automated activity acting in real time on a person's behalf, such as chat fetch bots and browser-use agents; Training, crawlers taking your content to train or fine-tune a model, including mixed-purpose crawlers used for both Training and Search. Each preset blocks verified bots classified that way plus some unverified bots that behave similarly. The page, last updated 1 July 2026, announces new defaults for new domains from 15 September 2026: Training and Agent bots blocked on pages that display ads, Search remaining allowed, and mixed-purpose crawlers blocked by every configuration that blocks AI training, including the legacy Block AI bots option, which it marks as deprecating on that date. The page still used future tense when we read it on 21 October, five weeks after that date, so open your own dashboard and look at what is switched on rather than trusting either text.
+
+In the vendor's words: “Search: crawlers that collect or index your content to answer questions about it later.”
+
+Source: Cloudflare Docs: Block AI Bots , read on 21 October 2026.
+
+The steps
+
+Open your zone in the Cloudflare dashboard and go to Security Settings.
+Open Configure AI bot policies.
+For Search, Agent and Training pick Block on all pages, Block on pages with ads, or Allow.
+If you use the legacy Block AI bots option, check which mixed-purpose crawlers it now covers, because Cloudflare says it is deprecating.
+Test with the free AI-crawler access checker : a bot that robots.txt allows can still be refused here.
+
+The lines to use
+
+To allow:
+
+# Cloudflare settings are not robots.txt lines.
+# Choose Allow (do not block) for Search so answer engines can fetch pages.
+
+To block:
+
+# Cloudflare settings are not robots.txt lines.
+# Choose Block (on all pages) for Training; leave Search on Allow.
+
+Gotchas
+
+The risk for a shop that wants citations is the middle preset: Cloudflare defines Agent as chat fetch bots acting on a person's behalf, which is the job of fetchers like ChatGPT-User . Blocking Agent can stop an assistant opening your page when a person asks about it, even when your robots.txt allows it. Also note that Shopify says it does not recommend a proxy configuration in front of a Shopify store.
+
+Compare with Shopify
+
+Shopify : Says it handles bot management itself and advises against a proxy.
+
+Check your own site
+
+The audit box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Cloudflare's AI block override robots.txt?
+
+Cloudflare's page describes blocking by behavior at its network, so a bot can be refused there even where your robots.txt allows it. That is why a live request test matters.
+
+What is the difference between Search and Training on Cloudflare?
+
+Search crawlers index content to answer questions later; Training crawlers take content to train or fine-tune a model. Mixed-purpose crawlers are classed as Training.
+
+Is Block AI bots still available?
+
+Cloudflare marks it as deprecating on 15 September 2026. Its page was still written in future tense when we read it on 21 October 2026.
+
+Sources
+
+Cloudflare Docs: Block AI Bots , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All platforms compared
+Shopify
+AI crawlers compared
+AI visibility checklist for Shopify, WooCommerce and more
+
+## Shopify: allow or block AI crawlers, and what robots.txt misses
+Source: https://citedby.eu/platforms/shopify
+
+AI crawler settings by platform / AI crawlers by platform
+
+Shopify: allow or block AI crawlers, and what robots.txt misses
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer On Shopify you control AI crawlers by adding a robots.txt.liquid template to your theme. Shopify's help page says a block there affects only open-web discoverability: product data still goes to agentic storefronts such as ChatGPT or Microsoft Copilot through Shopify Catalog, independently of /robots.txt.
+
+On this page Where the setting is on Shopify
+The one thing Shopify's page says that the other platforms do not
+The steps
+The lines to use
+Gotchas
+Compare with Squarespace
+Check your own site
+Questions people ask
+Sources
+
+Where the setting is on Shopify
+
+Online Store, then the theme's Edit code, then Add a new template and choose robots. Shopify says this is an unsupported customization: its Support cannot help with edits, and incorrect use "can result in loss of all traffic".
+
+The one thing Shopify's page says that the other platforms do not
+
+Shopify describes two layers of control. The network layer is handled by Shopify for stores on Shopify, and you do not need to act. The /robots.txt layer is yours through robots.txt.liquid. Its page then draws the line that matters for a shop: if you sell through agentic storefronts such as ChatGPT or Microsoft Copilot, your product data is syndicated through Shopify Catalog "independently of /robots.txt", and blocking AI crawlers at either layer "affects only open-web discoverability". To change what Catalog shares you use the agentic storefronts settings, not robots.txt.
+
+In the vendor's words: “Blocking AI crawlers at the /robots.txt or network layer affects only open-web discoverability. It doesn't stop your product data from being sent by Shopify Catalog to the agentic storefronts that you've activated.”
+
+Source: Shopify Help Center: Editing robots.txt.liquid , read on 21 October 2026.
+
+The steps
+
+From your Shopify admin go to Online Store.
+For the theme you publish, open the menu and choose Edit code.
+Click Add a new template, choose robots, then Create template.
+Keep the Liquid that outputs the default rule groups and add your own rules below it. Shopify recommends this over replacing the file with plain text, because plain text goes out of date.
+Save in the published theme. Shopify says changes are instant, but crawlers do not always react immediately.
+
+The lines to use
+
+To allow:
+
+# Nothing to add: Shopify's default robots.txt allows crawlers that are not named.
+
+# To name one explicitly, add under the default Liquid block:
+User-agent: OAI-SearchBot
+Allow: /
+
+To block:
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+Gotchas
+
+Two details from the same page. A theme uploaded from the Themes section of the admin does not import robots.txt.liquid; ThemeKit or command-line changes keep it. And if your template outputs the default groups, delete it to pick up Shopify's current default, which can include rules your older copy lacks, such as Disallow: /search.
+
+Compare with Squarespace
+
+Squarespace : One checkbox instead of a template, and a fixed list of 26 names.
+
+Check your own site
+
+The audit box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does blocking GPTBot on Shopify stop ChatGPT showing my products?
+
+Not by itself. Shopify says robots.txt and network blocks affect open-web discoverability only, and that Shopify Catalog sends product data to the agentic storefronts you have activated independently of /robots.txt. To control that feed, use Shopify's agentic storefronts settings.
+
+Can Shopify Support fix my robots.txt.liquid?
+
+No. Shopify's page says Support cannot help with edits to the file and suggests hiring a Shopify Partner.
+
+Do I need a Cloudflare proxy in front of Shopify?
+
+Shopify says bot management at the network layer is handled for stores on Shopify and that it does not recommend a proxy configuration in front of Shopify or support one.
+
+Sources
+
+Shopify Help Center: Editing robots.txt.liquid , read 21 October 2026
+Shopify.dev: Customize robots.txt.liquid , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All platforms compared
+Squarespace
+AI crawlers compared
+AI visibility checklist for Shopify, WooCommerce and more
+
+## Squarespace: the AI crawler box blocks 26 bots but not ChatGPT
+Source: https://citedby.eu/platforms/squarespace
+
+AI crawler settings by platform / AI crawlers by platform
+
+Squarespace: the AI crawler box blocks 26 bots but not ChatGPT
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer Squarespace has one checkbox, Settings, then Crawlers, then Block known artificial intelligence crawlers. It adds 26 named bots to your robots.txt. The list includes GPTBot, ClaudeBot and DuckAssistBot but not OAI-SearchBot, ChatGPT-User or PerplexityBot, and you cannot edit robots.txt yourself.
+
+On this page Where the setting is on Squarespace
+The 26 names, and which ones are missing
+The steps
+The lines to use
+Gotchas
+Compare with Wix
+Check your own site
+Questions people ask
+Sources
+
+Where the setting is on Squarespace
+
+Open the Settings panel, click Crawlers, and tick Block known artificial intelligence crawlers. Squarespace's page says ticking the box updates your robots.txt file for the bots listed below, and that it may add more over time.
+
+The 26 names, and which ones are missing
+
+Squarespace's help page lists exactly 26 names: AI2Bot, Ai2Bot-Dolma, aiHitBot, Amazonbot, anthropic-ai, Applebot-Extended, Bytespider, CCBot, ClaudeBot, cohere-ai, cohere-training-data-crawler, DuckAssistBot, FacebookBot, Google-Extended, GoogleOther, GoogleOther-Image, GoogleOther-Video, GPTBot, img2dataset, Meta-ExternalAgent, MyCentralAIScraperBot, omgili, omgilibot, Quora-Bot, TikTokSpider and YouBot. Read against our own crawler pages, the box covers the training and dataset crawlers of OpenAI, Anthropic, Google, Apple, Meta and Common Crawl. It does not name OAI-SearchBot , ChatGPT-User , PerplexityBot , Claude-SearchBot or Claude-User , so ticking it does not remove you from ChatGPT search. It does name DuckAssistBot and Amazonbot , which are answer-engine and product crawlers, so ticking it can also cost you DuckDuckGo's AI answers.
+
+In the vendor's words: “Checking the box updates your robots.txt file to tell the following bots not to crawl your site.”
+
+Source: Squarespace Help: Request that AI models exclude your site , read on 21 October 2026.
+
+The steps
+
+Open the Settings panel of your Squarespace site.
+Click Crawlers.
+Tick Block known artificial intelligence crawlers to block the 26 names, or leave it unticked to leave them all allowed.
+To ask for another bot to be added, contact Squarespace: your page's own text says you can request it.
+
+The lines to use
+
+To allow:
+
+# Squarespace sites are open to these crawlers while the box is unticked.
+
+# You cannot add lines yourself, so there is nothing to paste.
+
+To block:
+
+# Written by Squarespace when the box is ticked (excerpt):
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: CCBot
+Disallow: /
+
+Gotchas
+
+Squarespace states that ticking the box does not retroactively remove content already scraped from your site from AI model training data. It also says robots.txt is only a request that friendly crawlers have offered to obey. The excerpt above is our shortened illustration of the kind of lines the box produces; the exact file is whatever your site serves at /robots.txt, so open it and read it.
+
+Compare with Wix
+
+Wix : A real robots.txt editor, and an example list of four names.
+
+Check your own site
+
+The audit box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Can I allow ChatGPT search but block training on Squarespace?
+
+Partly. Ticking the box writes a rule for GPTBot, and OAI-SearchBot is not among the 26 names. You cannot add lines of your own, so open your live /robots.txt to confirm what it says.
+
+Can I edit robots.txt on Squarespace?
+
+Squarespace's own page treats the Crawlers panel as the control and does not offer a robots.txt editor. Wix and Webflow do.
+
+Does the box stop Google from indexing my site?
+
+No. It is separate from the search engine crawlers option in the same panel. The AI box names Google-Extended and GoogleOther, not Googlebot.
+
+Sources
+
+Squarespace Help: Request that AI models exclude your site , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All platforms compared
+Wix
+AI crawlers compared
+AI visibility checklist for Shopify, WooCommerce and more
+
+## Webflow: robots.txt rules and the Content-Signal header for AI
+Source: https://citedby.eu/platforms/webflow
+
+AI crawler settings by platform / AI crawlers by platform
+
+Webflow: robots.txt rules and the Content-Signal header for AI
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer Webflow puts robots.txt in Site settings, then SEO, then Indexing, and one of its help pages says you need a Site plan or a paid Workspace plan. It can also send a Content-Signal header that sets ai-train, search and ai-input separately. Webflow calls that a proposed extension, not an accepted standard.
+
+On this page Where the setting is on Webflow
+A header that splits training, search and AI answers
+The steps
+The lines to use
+Gotchas
+Compare with Wix
+Check your own site
+Questions people ask
+Sources
+
+Where the setting is on Webflow
+
+Go to Site settings, then SEO, then Indexing, add the robots.txt rule or rules you want, then click Save and publish your site. Webflow adds a sitemap line by default; a toggle removes it.
+
+A header that splits training, search and AI answers
+
+Besides robots.txt, Webflow's page says a site can serve a Content-Signal HTTP header, set in the same Indexing area, to give AI crawlers more granular instructions. Its example is Content-Signal: ai-train=no, search=yes, ai-input=no . Webflow explains the split: robots.txt controls whether bots can access your pages, while Content-Signal says whether content can be used for AI training, search indexing, or AI-generated responses, separately. Webflow adds the caveat itself: this is based on a proposed extension to RFC 9309 and is not yet an accepted standard. So it states a preference; it does not stop a crawler, and Webflow's page does not say which crawlers read it.
+
+In the vendor's words: “This is based on a proposed extension to RFC 9309 and is not yet an accepted standard.”
+
+Source: Webflow Help: Set robots.txt rules , read on 21 October 2026.
+
+The steps
+
+Open Site settings and go to SEO, then Indexing.
+Type the robots.txt rules you want in the rules field.
+Optionally set the Content-Signal header in the same area.
+Click Save and publish your site, then open yourdomain.com/robots.txt to check the live file.
+
+The lines to use
+
+To allow:
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: *
+Allow: /
+
+To block:
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+Gotchas
+
+Webflow's page says your robots.txt is publicly visible, so do not rely on it to hide private pages, and that not all bots follow it.
+
+Compare with Wix
+
+Wix : A longer editing path and a four-name example.
+
+Check your own site
+
+The audit box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Do I need a paid plan for robots.txt on Webflow?
+
+One Webflow help page says you need a Site plan or a paid Workspace plan to add a robots.txt file to your site.
+
+What is Content-Signal?
+
+A proposed extension to RFC 9309 that Webflow can send as a header: ai-train, search and ai-input, each set to yes or no.
+
+Does Webflow block bad bots for me?
+
+Its help page shows how to write a rule for a named bot. It says some bots, especially malicious ones, do not follow robots.txt.
+
+Sources
+
+Webflow Help: Set robots.txt rules , read 21 October 2026
+Webflow Help: Request to block specific bots from visiting your site , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All platforms compared
+Wix
+AI crawlers compared
+AI visibility checklist for Shopify, WooCommerce and more
+
+## Wix: block AI crawlers in the Robots.txt Editor (four names)
+Source: https://citedby.eu/platforms/wix
+
+AI crawler settings by platform / AI crawlers by platform
+
+Wix: block AI crawlers in the Robots.txt Editor (four names)
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer Wix lets you edit robots.txt: SEO & GEO in the dashboard, then Tools and settings, then Robots.txt Editor. Its help page pastes four names to block: CCBot, GPTBot, ChatGPT-User and BingAI. ClaudeBot, PerplexityBot and Google-Extended are not in that example, so add them yourself if you want them blocked.
+
+On this page Where the setting is on Wix
+The example blocks four names, and one of them is not on Bing's list
+The steps
+The lines to use
+Gotchas
+Compare with Webflow
+Check your own site
+Questions people ask
+Sources
+
+Where the setting is on Wix
+
+In your site's dashboard go to SEO & GEO, scroll to Tools and settings, click Robots.txt Editor, then View File. Wix's separate editing guide calls this an advanced feature and says Wix Customer Care cannot help with changes you make to the file.
+
+The example blocks four names, and one of them is not on Bing's list
+
+Wix's help page says its list "includes some known AI crawlers, but you can always add more". The four it prints are CCBot, GPTBot, ChatGPT-User and BingAI. It leaves out the Anthropic, Perplexity, Google and Meta tokens that appear on our other pages. "BingAI" is the odd one: Microsoft's page on which crawlers Bing uses, read the same day, lists Bingbot, AdIdxBot, BingPreview, MicrosoftPreview and BingVideoPreview and no BingAI. A rule for a name that no crawler uses does nothing, so treat Wix's list as a starting point and check it against each vendor's own page. Also note ChatGPT-User is the fetcher that opens a page for a person asking ChatGPT, so blocking it removes that route to your pages.
+
+In the vendor's words: “This list includes some known AI crawlers, but you can always add more as needed.”
+
+Source: Wix Help Center: Blocking AI Crawlers from Your Site , read on 21 October 2026.
+
+The steps
+
+Go to SEO & GEO in your site's dashboard.
+Scroll to Tools and settings and click Robots.txt Editor.
+Click View File, then click the field under Your robots.txt file.
+Add the directives under This is your current file, then Save Changes and Save.
+For one page only, open the page's SEO basics, Advanced SEO, Robots meta tag, and tick nosnippet. Wix says this prevents the content being used as direct input for AI overviews.
+
+The lines to use
+
+To allow:
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+To block:
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+Gotchas
+
+Wix's FAQ says blocking AI crawlers in robots.txt may limit NLWeb functionality, because AI agents need access to your structured content. It also says some crawlers ignore robots.txt, so a block is not airtight.
+
+Compare with Webflow
+
+Webflow : Also a robots.txt editor, plus a Content-Signal header.
+
+Check your own site
+
+The audit box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Will blocking AI crawlers hurt my Wix SEO?
+
+Wix says blocking specific AI crawlers should not significantly affect SEO, and recommends checking your analytics afterwards.
+
+Is BingAI a real crawler?
+
+It is not on Microsoft's current list of Bing crawlers, which names Bingbot, AdIdxBot, BingPreview, MicrosoftPreview and BingVideoPreview. See the Bingbot page .
+
+Does nosnippet block AI crawlers?
+
+Wix describes it as preventing your content being used as a direct input for AI overviews. It is a page-level tag, not a crawler block.
+
+Sources
+
+Wix Help Center: Blocking AI Crawlers from Your Site , read 21 October 2026
+Wix Help Center: Editing Your Site's Robots.txt File , read 21 October 2026
+Microsoft Bing Webmaster help: Which Crawlers Does Bing Use? , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All platforms compared
+Webflow
+AI crawlers compared
+AI visibility checklist for Shopify, WooCommerce and more
+
+## WordPress.com: AI opt-out is a privacy setting, not robots.txt
+Source: https://citedby.eu/platforms/wordpress-com
+
+AI crawler settings by platform / AI crawlers by platform
+
+WordPress.com: AI opt-out is a privacy setting, not robots.txt
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer On WordPress.com, the AI opt-out is a privacy setting rather than a robots.txt edit. Its site visibility guide, last reviewed on 5 October 2026, says to opt out of sharing your public content with third parties, including AI models, you follow its Prevent third-party sharing guide.
+
+On this page Where the setting is on WordPress.com
+Opting out of AI is a sharing setting here
+The steps
+The lines to use
+Gotchas
+Compare with Cloudflare
+Check your own site
+Questions people ask
+Sources
+
+Where the setting is on WordPress.com
+
+WordPress.com's visibility guide sends you to Settings, then Reading, for Site Visibility (Public, Coming Soon or Private), and to a separate Prevent third-party sharing guide for the AI opt-out.
+
+Opting out of AI is a sharing setting here
+
+WordPress.com's guide on controlling your site's visibility says: to opt out of sharing your site's public content with third parties (including AI models), visit the Prevent third-party sharing guide. That is a platform setting, separate from the robots.txt that search and AI crawlers read. The same page, last reviewed on 5 October 2026, also describes the opposite direction: you can connect external AI agents such as ChatGPT or Claude to read and edit your site's visibility settings by enabling MCP tool access. We could not read the body of the Prevent third-party sharing guide on 21 October: the page loaded with its title and a review date of 1 August 2024 but no steps, by a plain fetch and in a browser. So this page does not describe how that setting works; open the guide from your own dashboard. If you run self-hosted WordPress rather than WordPress.com, the file is yours to edit, as on any host.
+
+In the vendor's words: “To opt out of sharing your site's public content with third parties (including AI models), visit the Prevent third-party sharing guide.”
+
+Source: WordPress.com Support: Control your site's visibility , read on 21 October 2026.
+
+The steps
+
+Open Settings, then Reading, and check Site Visibility is Public if you want crawlers to see the site at all.
+Open WordPress.com's Prevent third-party sharing guide from the privacy settings help and follow it if you want to opt out of sharing content with third parties, including AI models.
+Open yourdomain.com/robots.txt and read what your site actually serves to crawlers.
+
+The lines to use
+
+To allow:
+
+# No edit to make on WordPress.com for the sharing opt-out.
+# Check what your site serves:
+# https://yourdomain.com/robots.txt
+
+To block:
+
+# On a self-hosted WordPress site, you add lines like these through your SEO plugin or the file:
+User-agent: GPTBot
+Disallow: /
+
+Gotchas
+
+A Coming Soon or Private site is not the same as an AI opt-out: it hides the site from everyone, search engines included, which is the opposite of what a shop that wants to be cited needs.
+
+Compare with Cloudflare
+
+Cloudflare : A network-level switch that works whatever the site platform is.
+
+Check your own site
+
+The audit box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Is the WordPress.com AI opt-out the same as blocking GPTBot?
+
+WordPress.com describes it as opting out of sharing your public content with third parties, including AI models. It does not describe it as a robots.txt rule, so check your live robots.txt to see what crawlers are told.
+
+Can I edit robots.txt on WordPress.com?
+
+We did not find a robots.txt editor in the visibility guide we read, so we do not say either way. Look in your site's settings for your plan.
+
+What is MCP tool access?
+
+The guide says it lets external AI agents read and edit your site's visibility settings. It is about managing the site, not about crawlers.
+
+Sources
+
+WordPress.com Support: Control your site's visibility , read 21 October 2026
+WordPress.com Support: Prevent third-party sharing , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All platforms compared
+Cloudflare
+AI crawlers compared
+AI visibility checklist for Shopify, WooCommerce and more
+
+## Can ChatGPT read my website? What decides it
+Source: https://citedby.eu/blog/can-chatgpt-read-my-website
+
+Guides / Crawlability
+
+Can ChatGPT read my website?
+
+By the CitedBy editorial team · Reviewed on 2026-10-18
+
+Short answer ChatGPT can read your website if three things hold: robots.txt does not block OAI-SearchBot, the page text is in the HTML your server sends rather than added by JavaScript, and your server or firewall does not refuse the crawler. The CitedBy audit tests the first two on every page.
+
+On this page The three gates
+How to check, step by step
+What a blocked page looks like to a crawler
+The gate the audit cannot see
+What to do with the result
+Questions people ask
+Sources
+
+The three gates
+
+ChatGPT search uses a crawler called OAI-SearchBot to find pages. OpenAI also runs GPTBot, which collects training data, and ChatGPT-User, which fetches a page when a person asks about it. OpenAI says each is controlled separately in robots.txt, so you can allow one and block another ( OpenAI crawler documentation ).
+
+The audit tests gates 1 and 3. Gate 2 needs your server logs.
+How to check, step by step
+
+Open yourshop.com/robots.txt in a browser. Look for User-agent: OAI-SearchBot , GPTBot or * followed by Disallow: / . A blanket Disallow: / under User-agent: * blocks every crawler that has no rule of its own.
+Audit your site with the box above (from €9). It reads robots.txt for OAI-SearchBot, GPTBot, PerplexityBot, Google-Extended and Bingbot and tells you which are blocked.
+Look at the word count it reports for the page HTML. Your homepage should have hundreds of words there, including your brand name and what you sell.
+Open the page, choose "View page source" and search for your product name. If it is missing, the page builds its text with JavaScript and a crawler that does not run scripts sees nothing.
+Check that Organization data (JSON-LD) is present, so assistants get your name, logo and contact details from one place.
+
+A real run on bbc.com, 18 Oct 2026. The BBC blocks these crawlers on purpose; for a shop that wants to be named, a result like this is the problem to fix.
+What a blocked page looks like to a crawler
+
+Some shop themes and website builders send an almost empty page and fill it in with JavaScript. A visitor sees a full product page. A crawler that does not run JavaScript receives a shell.
+
+Illustration with invented example values.
+Some assistants do run JavaScript and some do not, so the safe position is to have your brand and product text in the HTML itself.
+
+The gate the audit cannot see
+
+robots.txt is a request, and your hosting is the enforcement. A firewall or CDN setting can answer a crawler with an error even when robots.txt allows it. The audit does not test this. Look in your server or CDN logs for requests from OAI-SearchBot and see which status codes came back; a run of 403 responses is the sign.
+
+What to do with the result
+
+robots.txt blocks a crawler you want: remove the matching Disallow rule. OpenAI says changes can take about a day to take effect.
+Few words in the HTML: render the homepage and product text on the server.
+No Organization data: add it as JSON-LD on the homepage.
+All clear: being readable is the entry ticket, not the result. Whether an assistant names your shop is a separate question, which the audit measures by asking real buyer questions.
+
+Questions people ask
+
+Is GPTBot the same as ChatGPT search?
+
+No. GPTBot collects data that may be used to train models. OAI-SearchBot is the crawler for ChatGPT search results. You can block GPTBot and still allow OAI-SearchBot.
+
+If I block GPTBot, will ChatGPT stop mentioning my shop?
+
+Not by itself. Search results depend on OAI-SearchBot. Blocking only GPTBot is a common choice for shops that do not want their content used for training.
+
+Does adding llms.txt fix this?
+
+It is optional. We do not expect it to change what assistants answer, and the audit marks it as optional.
+
+How long until a change shows up?
+
+OpenAI says it can take about 24 hours for its systems to adjust after you change robots.txt.
+
+Sources
+
+OpenAI: crawlers and user agents
+CitedBy site audit
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+AI crawlers: what each one does and how to allow or block it
+AI visibility audit: what it is and what to check
+Who ChatGPT linked, by niche
+A sample report
+
+## ChatGPT shows my old price: find the source and fix it
+Source: https://citedby.eu/blog/chatgpt-wrong-price
+
+Guides / Wrong facts
+
+ChatGPT shows my old price. How to find where it read it and fix it
+
+By the CitedBy editorial team · Reviewed on 2026-10-18
+
+Short answer ChatGPT shows an old price when it read that price from a stale source: your own page, a product feed, or another website. Search for the old price in each place, fix the source, then ask again twice in a new chat. Update your feed whenever a sale starts or ends.
+
+On this page Why an assistant quotes a price you changed
+Step 1: write down the wrong answer
+Step 2: look for the old price on your own page
+Step 3: check your product feed
+Step 4: search for the old price on other websites
+Step 5: wait, then re-ask
+Can the audit find this?
+Questions people ask
+Sources
+
+Why an assistant quotes a price you changed
+
+An assistant answers from what it can find: pages it fetched, feeds a merchant submitted, and third-party pages that mention you. If one of those still carries the old figure, the answer can carry it too. That makes a wrong price a data problem on a page you control or can contact, which is why it can be fixed. The fix happens at the source, not in the chat.
+
+A reader on r/ecommerce described exactly this on 22 September: ChatGPT recommended a bundle that had been discontinued a year earlier, at the old $149 price ( thread ). It is one report, not a measured rate, so treat it as an illustration of the pattern.
+
+Check the three sources in this order: your page, your feed, then other sites.
+Step 1: write down the wrong answer
+
+Open a new chat, with web search on if the assistant offers it, and ask: "What does [product] from [shop] cost?" Copy the answer, the date, the assistant and any link it cites. A cited link is the best clue, because it names the page that fed the answer. Ask a second time in another new chat. If the two answers differ, log both, since answers vary between runs.
+
+Step 2: look for the old price on your own page
+
+Open the product page and view the page source (right click, View page source).
+Search for the old price, for example 49.00 . Try with and without the currency sign.
+Find the application/ld+json block and read the offers price. Product markup that was never updated is a common reason for a stale figure, and Google says the price in markup and feed must match the landing page ( Google Merchant Center help ).
+Look for a second price on the page: a "was" price, a bundle price, a variant that loads a different amount.
+Fetch the page the way a crawler does, with no JavaScript. If the price only appears after scripts run, a crawler may not see the final figure. Google's help page also warns that slow pages can make crawlers miss the final price.
+
+Step 3: check your product feed
+
+If you sell through Google Shopping, a marketplace or ChatGPT's shopping feed, the feed is a second copy of your price. OpenAI's product feed specification asks for a price in the form 79.99 USD , one row per purchasable item or variant, and says to update the feed when a sale starts or ends ( OpenAI product feed spec ). A sale that ended on your site but stayed in the feed is the classic mismatch.
+
+Google describes the same trap for its own feed: when the feed and the landing page disagree, the fix is to match them, resubmit through feed upload, the Content API or your shop platform, and then request a review, which Google says takes 7 business days ( Google Merchant Center help ). OpenAI's page does not describe a way to dispute data already ingested, so we do not promise one.
+
+Step 4: search for the old price on other websites
+
+Search the old price together with your brand name and product name. Look at review sites, price lists, comparison pages, old blog posts and your own press releases. Ask the owner of each page to update it. Where you cannot, publish a current page on your own site that states the price with the date, so the newest source is also the clearest one.
+
+Step 5: wait, then re-ask
+
+OpenAI says a robots.txt change can take about 24 hours to reach its search crawler ( OpenAI crawler documentation ). It publishes no schedule for refreshing a page it has already read, so nobody can promise you a date. Re-ask the same prompt twice, in new chats, once a week, and log each answer in a table.
+
+Fix the source, not the chat. Then log every re-test.
+Date Assistant Prompt Price shown Link cited Matches your page?
+2026-10-18 ChatGPT, search on What does [product] from [shop] cost?
+
+Can the audit find this?
+
+The CitedBy audit crawls your pages and tests whether AI crawlers can reach them and read your product data. If your price page is blocked or empty to a crawler, no fix to the price can help, so test that first.
+
+Questions people ask
+
+Why does ChatGPT show an old price for my product?
+
+It probably read the old figure from your page, your product feed or another website that still carries it. Search the old price in each place and look at the link it cites, if there is one.
+
+How long until ChatGPT shows the new price?
+
+Nobody can promise a date. OpenAI says robots.txt changes take about 24 hours to reach its search crawler, and it gives no refresh schedule for pages already read. Re-ask weekly and log the answers.
+
+Can I ask OpenAI to change a wrong price?
+
+OpenAI's feed specification does not describe a way to correct data already ingested, so fix the sources instead and re-test. Check OpenAI's help centre for any report option that exists when you read this.
+
+Does a price in schema markup matter?
+
+Yes, when it is stale. Google says markup and feed price should match the landing page, and a markup block that was never updated is a common mismatch to look for.
+
+Sources
+
+OpenAI: product feed specification
+OpenAI: crawlers and user agents
+Google Merchant Center: inaccurate price due to feed and landing page mismatch
+r/ecommerce, 22 September 2026: ChatGPT recommends a discontinued bundle at the old price
+CitedBy site audit
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+Check what AI says about your brand, 20 prompts
+Can ChatGPT read my website?
+A sample report
+
+## What does ChatGPT say about your brand? 20 prompts
+Source: https://citedby.eu/blog/check-what-ai-says-about-your-brand
+
+Guides / Brand checks
+
+What does ChatGPT say about your brand? 20 prompts to check it by hand
+
+By the CitedBy editorial team · Reviewed on 2026-10-18
+
+Short answer To check what ChatGPT says about your brand, ask it 20 prompts in four groups: your brand, your category, comparisons with rivals, and facts such as price and shipping. Ask each twice in a new chat, log whether it names you, links you and gets the facts right, and count the results.
+
+On this page What to prepare
+The 20 prompts
+How to score each answer
+What to do with your log
+The faster way
+Questions people ask
+Sources
+
+What to prepare
+
+You need a free account on each assistant you care about, a spreadsheet, and about an hour. Open a new chat for every prompt so earlier answers do not colour the next one, and turn web search on if the assistant offers it, because an answer built from live pages can differ from one without. Write down which assistant, which setting and the date. Answers change between runs, which is why every prompt gets asked twice.
+
+Fill the brackets with your own words: [category] is what you sell (for example "natural latex mattresses"), [country] is where you ship, [brand] is your shop name and [rival] is a shop you compete with.
+
+The 20 prompts
+
+Group A: your brand (does it know you?)
+
+Prompt Ask this
+P1 What is [brand]?
+P2 Is [brand] a good place to buy [category]?
+P3 What do customers say about [brand]?
+P4 Where is [brand] based and where does it ship?
+P5 What does [brand] sell and what is it best known for?
+
+Group B: your category (are you named?)
+
+Prompt Ask this
+P6 Where can I buy [category] online in [country]?
+P7 Which online shop is best for [category] in [country]?
+P8 Which shop delivers [category] fast in [country]?
+P9 What should I buy as a gift: [category], and from where in [country]?
+P10 Which small or independent shops sell good [category] in [country]?
+
+Group C: comparisons (who beats you?)
+
+Prompt Ask this
+P11 [brand] or [rival] for [category]?
+P12 What are alternatives to [rival] for [category] in [country]?
+P13 Is [brand] cheaper than [rival]?
+P14 Which shops are similar to [brand]?
+P15 Why would I choose [brand] over a big marketplace for [category]?
+
+Group D: facts (is it right?)
+
+Prompt Ask this
+P16 How much does [brand] charge for [your best-selling product]?
+P17 Does [brand] still sell [a product you discontinued]?
+P18 What is [brand]'s return policy?
+P19 How much is shipping from [brand] to [country]?
+P20 Does [brand] have a physical shop?
+
+Copy this layout into a spreadsheet. The rows shown are invented examples.
+How to score each answer
+
+Run the prompt and save the full answer text and every link.
+Mark named when your brand name or your domain appears in the answer text or in its links. If you appear as a link only, still mark it, and note it.
+Mark linked when a link goes to your own domain.
+Copy every other shop that is named. Rivals that appear again and again are your real competition in that assistant.
+For groups A and D, check every fact against your own site and mark the ones that are wrong or old.
+Run the same prompt once more in a new chat and log it as run 2.
+
+Do not round up. A shop named in 1 of 2 runs is named in 1 of 2 runs, not "recommended".
+
+What to do with your log
+
+Named in few group B answers: the assistant does not connect your shop to your category. Look at which pages it links for those answers; they are the pages it trusts.
+Wrong facts in group D: fix the source it read. Prices and policies on your own pages come first, then third-party listings.
+Rivals named again and again: open the pages the assistant linked for them and note what they contain that yours lacks.
+Nothing named anywhere, including your brand: check first that assistants can read your site at all ( Can ChatGPT read my website? ).
+
+The faster way
+
+Twenty prompts across five assistants is 200 manual runs. A CitedBy audit works on your site instead: it crawls up to your plan's page limit, shows which pages assistants cannot read or quote, and gives the exact fix for each. The audit starts at €9.
+
+Questions people ask
+
+Do I need ChatGPT Plus to run these prompts?
+
+No. A free account is enough to see what a free user sees. Paid plans can answer differently, so note which plan you used.
+
+Why ask every prompt twice?
+
+Answers vary between runs. Two runs show whether a result is stable; one run can be luck.
+
+Should I ask for my brand by name in every prompt?
+
+No. Groups B and C test whether you are named when the buyer does not know you yet, which is the case that brings new customers. Groups A and D test what is said once they do.
+
+How often should I repeat this?
+
+After each change to your site and about once a month. Log the date every time so you can compare.
+
+Sources
+
+CitedBy sample audit: method, questions and CSV
+About CitedBy: how we count
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+A sample report
+Can ChatGPT read my website?
+Who ChatGPT linked, by niche
+
+## Cloudflare blocking AI crawlers? How to allow them (2026)
+Source: https://citedby.eu/blog/cloudflare-ai-crawlers
+
+Guides / Crawlability
+
+Cloudflare is blocking AI crawlers on my site. How to allow GPTBot and ClaudeBot
+
+By the CitedBy editorial team · Reviewed on 2026-10-19
+
+Short answer In the Cloudflare dashboard, open your domain, then AI Crawl Control, then the Security tab. Find each crawler, such as GPTBot or ClaudeBot, and choose Allow in the Actions column. Blocking creates a WAF rule, so removing it means switching the crawler back to Allow. Then run a check from outside.
+
+On this page Why Cloudflare can block AI crawlers without you touching robots.txt
+Allow a crawler in Cloudflare, step by step
+Which crawler to allow for which goal
+How to confirm it worked
+Should you allow everything?
+Questions people ask
+Sources
+
+Why Cloudflare can block AI crawlers without you touching robots.txt
+
+Cloudflare sits in front of your shop and can refuse a crawler before your server sees the request. That is why a robots.txt that welcomes every bot does not settle the question. When you choose Block for a crawler in AI Crawl Control, Cloudflare creates or updates a WAF custom rule on your zone to enforce it ( Cloudflare docs ).
+
+Defaults are moving too. Help Net Security reports that from 15 September 2026 the default settings for new domains block Training and Agent crawlers on pages that display ads, while Search crawlers stay allowed. Cloudflare said it would notify customers before the change. That date has passed, so read your own dashboard instead of guessing which default your domain has ( Help Net Security ).
+
+Allow a crawler in Cloudflare, step by step
+
+Log in to the Cloudflare dashboard and select your account and domain.
+Open AI Crawl Control, then the Security tab.
+Find the crawler in the table, for example GPTBot or ClaudeBot.
+In the Actions column choose Allow. The same menu offers Block.
+If you also want robots.txt rules honoured, enable Enforce robots.txt. Cloudflare says this stays available when you allow a crawler.
+Run the free check below on your homepage, then repeat the two-request test from our GPTBot guide .
+
+The setting sits under AI Crawl Control, not under the general firewall rules.
+Two details from Cloudflare's documentation. A blocked crawler can be answered with a 403 or a 402 code and a custom message, and changing that response is available on paid plans only. Free plans can still allow and block.
+
+Which crawler to allow for which goal
+
+OpenAI and Anthropic each publish three crawlers with different jobs. Allowing the search crawler is the usual way to be findable, and you can treat the training crawler as a separate decision.
+
+Job OpenAI Anthropic
+Collect content that may train models GPTBot ClaudeBot
+Improve search results OAI-SearchBot Claude-SearchBot
+Fetch a page because a person asked ChatGPT-User Claude-User
+
+Same three jobs at both companies. Allow or block them one by one.
+Anthropic says its bots follow robots.txt and support Crawl-delay. It publishes the IP ranges its crawlers use at claude.com/crawling/bots.json , and warns that blocking by IP address alone may stop the bot from reading your robots.txt ( Anthropic help centre ). OpenAI publishes its crawler list and IP ranges in its documentation ( OpenAI ).
+
+How to confirm it worked
+
+Cloudflare changes are not proof until a request gets through. Three checks, in order:
+
+Run the free check in the box above. It reads robots.txt for the main AI crawlers and tells you if your page answers a plain request.
+Send two requests with curl, one normal and one with a crawler user-agent, and compare the status codes. The commands are in our GPTBot guide .
+Look at your server or Cloudflare logs a day later for the crawler's name and the status codes it received.
+
+If the dashboard says Allow but the second request still returns 403, look for a second rule: a security plugin, a hosting firewall or an older WAF rule can refuse the same traffic.
+
+Should you allow everything?
+
+Not necessarily. Blocking training crawlers while allowing search crawlers is a legitimate setup, and Cloudflare's own defaults lean that way for pages with ads. What costs shops is blocking by accident. A site that blocks the search crawlers cannot be fetched for those search features, so decide per crawler and write down why.
+
+Questions people ask
+
+Where is the AI crawler setting in Cloudflare?
+
+Open your domain, then AI Crawl Control, then the Security tab. Each crawler has an Actions column with Allow and Block.
+
+How do I unblock ClaudeBot in Cloudflare?
+
+Find ClaudeBot in the crawler table on the Security tab and choose Allow. Anthropic also lists Claude-SearchBot and Claude-User as separate crawlers, so check those rows too.
+
+Does allowing a crawler in Cloudflare override my robots.txt?
+
+No. Cloudflare says you can still enforce robots.txt after allowing a crawler. A Disallow rule in your robots.txt still tells that crawler to stay away.
+
+Is the 15 September 2026 default change affecting my shop?
+
+Help Net Security describes it as a change to the defaults for new domains. If your domain is older, your existing settings stand until you change them. Check the Security tab to see what applies.
+
+Sources
+
+Cloudflare: manage AI crawlers
+Help Net Security: Cloudflare changes AI crawler access rules, 2 July 2026
+Anthropic: does Anthropic crawl data from the web, and how can site owners block the crawler
+OpenAI: crawlers and user agents, IP ranges
+CitedBy free check, method note
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+Is GPTBot blocked on my site?
+Can ChatGPT read my website?
+The free crawler check
+
+## Does llms.txt work? What the data says (2026)
+Source: https://citedby.eu/blog/does-llms-txt-work
+
+Guides / AI visibility basics
+
+Does llms.txt work? What two studies and Google's own documentation say
+
+By the CitedBy editorial team · Reviewed on 2026-10-18
+
+Short answer So far the evidence says llms.txt does not move AI citations. Ahrefs found 97% of valid llms.txt files got zero requests in May 2026, SE Ranking found no clear link to citations across about 300,000 domains, and Google says you do not need AI text files. Adding one is cheap, but do not expect traffic from it.
+
+On this page What llms.txt is
+What the data says
+What Google says
+So should you add one?
+What to do instead first
+Questions people ask
+Sources
+
+What llms.txt is
+
+llms.txt is a proposal by Jeremy Howard, published in September 2024: a Markdown file at /llms.txt with a title, a short summary and lists of links, meant to give AI agents a concise map of a site ( llmstxt.org ). It is not an official standard of any search engine or AI lab. The proposal's own page lists adoption by documentation platforms and says OpenAI, Anthropic and Gemini publish the file for their own developer docs. That shows people write it. It does not show that assistants read yours when they answer a shopper.
+
+What the data says
+
+Figures as reported by Ahrefs. Most requests came from audit tools and unknown bots, not assistants.
+Does anything fetch it? Ahrefs checked 137,210 domains with its web analytics in May 2026. It found that 97% of valid llms.txt files received zero requests that month. Of the requests that did arrive, 19.5% came from named AI tools. SEO audit tools, unknown bots and general crawlers made up much of the rest. Ahrefs also reports that no AI bot went looking for the file on sites that did not have one ( Ahrefs study ).
+
+Does it change citations? SE Ranking analysed about 300,000 domains and published in November 2025 that having llms.txt showed no clear connection to how often a domain is cited by AI, with 10.13% of domains having the file ( Search Engine Journal on the SE Ranking study ). Their own wording is that it "doesn't seem to directly impact AI citation frequency. At least not yet."
+
+Both studies are correlation or log data from outside parties, run on different samples with different methods. They support "no measurable benefit so far", not "it can never matter".
+
+What Google says
+
+Google's documentation on AI features states that there are no additional requirements to appear in AI Overviews or AI Mode, and that you do not need to create new machine-readable files, AI text files or markup to appear in them ( Google Search Central: AI features ). For ChatGPT, OpenAI documents the crawlers it uses (OAI-SearchBot, GPTBot, ChatGPT-User) and says robots.txt controls them; it does not describe llms.txt there ( OpenAI crawler documentation ).
+
+So should you add one?
+
+Your site Add llms.txt? Why
+Online shop, no developer docs Optional, after the basics The data shows no citation benefit, so fix crawler access and on-page facts first
+Software with public docs or an API Reasonable Coding agents and audit tools do fetch it, and Ahrefs saw agents among the requesters
+You already have one Leave it, keep it accurate A stale file that lists dead pages helps nobody
+
+If you add one, keep it short: your name, one sentence on what you sell and where you ship, and links to your main category, shipping and returns pages. It takes minutes.
+
+What to do instead first
+
+Audit your site with the box above (from €9). It tests whether AI crawlers can fetch your page and read it, and it reports whether an llms.txt exists as a hygiene item, without treating it as a ranking factor.
+Put price, shipping and returns in the page text, not only in images or scripts.
+Ask an assistant 20 buyer questions twice each and log who gets named ( the method ).
+
+Questions people ask
+
+Does ChatGPT read llms.txt?
+
+There is no published evidence that it does. OpenAI documents its crawlers and robots.txt but does not describe llms.txt, and Ahrefs found most requests to llms.txt files came from other kinds of bots.
+
+Does llms.txt help me get cited by AI?
+
+Not on current evidence. SE Ranking found no clear link across about 300,000 domains, and Google says no AI text file is needed for its AI features.
+
+Can llms.txt hurt?
+
+It can mislead if it is stale or lists pages you removed. Keep it short and accurate, or do not publish one.
+
+Is llms.txt the same as robots.txt?
+
+No. robots.txt tells crawlers what they may fetch. llms.txt is a proposed summary file for AI agents that no major search engine requires.
+
+Sources
+
+llmstxt.org: the llms.txt proposal
+Ahrefs: llms.txt study, 137,210 domains, May 2026
+Search Engine Journal: SE Ranking study of about 300,000 domains, 20 November 2025
+Google Search Central: AI features and your website
+OpenAI: crawlers and user agents
+CitedBy site audit
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+llms.txt checker (free)
+Can ChatGPT read my website?
+GEO vs AEO vs SEO audit
+A sample report
+
+## GA4: track traffic from ChatGPT and AI assistants
+Source: https://citedby.eu/blog/ga4-ai-referral-traffic
+
+Guides / Measurement
+
+Is AI traffic converting? How to set up GA4 to see visits from ChatGPT and other assistants
+
+By the CitedBy editorial team · Reviewed on 2026-10-19
+
+Short answer Create a custom channel group in GA4 with an AI assistants channel whose Source matches a regex of the assistants you see in your Traffic acquisition report. Move it above Referral, because GA4 uses the first matching channel. Then compare conversions by channel. Visits without a referrer stay under Direct.
+
+On this page What GA4 shows by default, and why AI visits hide
+Build an AI assistants channel in GA4
+A starter regex, and how to check it
+What GA4 cannot tell you
+Make the next step visible
+Questions people ask
+Sources
+
+What GA4 shows by default, and why AI visits hide
+
+GA4 sorts every session into a channel. Visits from an assistant can end up in the Referral channel, mixed with links from blogs and directories, or under another channel, so you cannot see them as a group. A custom channel gives them their own row. Google's documentation describes how: a custom channel group can be applied to your reports retroactively, so history is relabelled as soon as you save it ( Google Analytics Help ).
+
+You need the Editor role or above on the property to create one. Standard properties can hold 2 custom channel groups, with up to 50 channels each, according to the same page.
+
+Build an AI assistants channel in GA4
+
+In GA4, open Reports, then Acquisition, then Traffic acquisition. Change the dimension to Session source / medium.
+Scan the list for assistant names such as chatgpt, perplexity, claude, gemini or copilot. Write down the exact sources you see.
+Open Admin, then Data display, then Channel groups, and choose Create new channel group.
+Choose Add new channel, name it AI assistants, and add a condition group: Source, matches regex, then paste your list of sources.
+Save the channel, choose Reorder, and drag AI assistants above Referral. Click Apply.
+Reopen Traffic acquisition with your new channel group as the dimension and compare sessions, engaged sessions and conversions.
+
+Order matters: GA4 gives each session to the first channel it matches.
+The order step is the one people miss. Google says traffic is included in the first channel whose definition it matches, given the current order. If Referral sits above your new channel, assistants never reach it.
+
+A starter regex, and how to check it
+
+Download the file with the steps and the regex . It starts from the names of the well-known assistants:
+
+(chatgpt|openai|perplexity|claude|gemini|copilot)
+
+Treat it as a starting guess, not a verified list. Hostnames change and assistants launch, so what matters is what appears in your own report. Add the sources you really see, and remove any that match something that is not an assistant. Run the check at least once a quarter.
+
+Match what your own report shows, not a copied list.
+What GA4 cannot tell you
+
+Only visits that carry a referrer can be labelled. A person who copies your address from an answer and pastes it into a browser arrives as Direct. A channel in GA4 therefore shows a lower bound of AI-driven visits, not the total. Say so when you report the number to anyone who will act on it.
+
+Small numbers can be noise. Compare conversion rate and revenue per session against Organic Search before drawing any conclusion, and do not extrapolate from a week of data.
+
+Make the next step visible
+
+The channel tells you whether assistants send visitors. It does not tell you whether they name your shop. The free check shows whether AI crawlers can read your pages, and the audit asks real buyer questions to see who gets named.
+
+Questions people ask
+
+How do I see ChatGPT traffic in GA4?
+
+Open Traffic acquisition with Session source / medium and look for chatgpt in the source column. For a standing view, create an AI assistants channel as above.
+
+Why does my AI traffic show as Direct?
+
+When the visitor's browser sends no referrer, GA4 has nothing to label. Pasting a link or opening it from an app without referrer information gives that result.
+
+Does a custom channel group change my old data?
+
+Google says custom channel groups can be applied to your reports retroactively, so yes, your history is relabelled in reports that use the group.
+
+Do I need to be an admin to create it?
+
+No, but you need at least the Editor role on the property.
+
+Sources
+
+Google Analytics Help: custom channel groups
+CitedBy free check, method note
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+Can ChatGPT read my website?
+What AI says about your brand
+The free crawler check
+
+## GEO vs AEO vs SEO audit: what differs, what you need
+Source: https://citedby.eu/blog/geo-vs-aeo-vs-seo
+
+Guides / AI visibility basics
+
+GEO audit vs AEO audit vs SEO audit: what is different and which one you need
+
+By the CitedBy editorial team · Reviewed on 2026-10-18
+
+Short answer An SEO audit checks whether you rank in search results. An AEO audit checks whether your pages give direct answers that assistants can quote. A GEO audit checks whether AI assistants name your brand in generated answers. The terms have no official definition, and the first two checks feed the third.
+
+On this page The short version
+What an SEO audit checks
+What an AEO audit checks
+What a GEO audit checks
+What Google says
+Which one a small shop needs first
+A five-step order of work
+Questions people ask
+Sources
+
+The short version
+
+None of the three terms is a standard. Each vendor draws the lines a little differently, so ask what a quoted audit actually tests before you compare prices. The grid below is how we use the words at CitedBy, and the sections after it explain each one.
+
+Our reading of the three terms. Other vendors group the checks differently.
+What an SEO audit checks
+
+An SEO audit asks whether search engines can crawl and index your pages and whether those pages deserve to rank for the searches your buyers make. Typical items are crawl access, page speed, titles, internal links, structured data and backlinks. The output is a list of fixes and a set of ranking positions.
+
+What an AEO audit checks
+
+AEO, answer engine optimization, asks whether a page answers a question so directly that a system can lift the answer. Typical items are a short answer under a question heading, FAQ blocks, tables and clear facts such as price, shipping time and returns. It overlaps with SEO, since a page that answers clearly also reads well to a search engine.
+
+What a GEO audit checks
+
+GEO, generative engine optimization, asks whether an assistant such as ChatGPT, Gemini or Perplexity names your brand when someone asks for a recommendation, and whether what it says is true. The check is run by asking real buyer questions, several times, and counting who gets named, who gets linked and which facts are wrong. A page-level checklist cannot answer that, because the result depends on what the assistant finds across the web.
+
+What Google says
+
+Google's documentation on AI features in Search states that there are no additional requirements to appear in AI Overviews or AI Mode and no other special optimizations necessary. It adds that the best practices for SEO remain relevant, that a page must be indexed and eligible to show with a snippet, and that you do not need new machine-readable files, AI text files or markup ( Google Search Central: AI features ). That applies to Google's own features. ChatGPT uses its own crawlers, and OpenAI lists three with different jobs: OAI-SearchBot for ChatGPT's search features, GPTBot for model training, and ChatGPT-User for actions a person starts ( OpenAI crawler documentation ).
+
+So the honest answer to "is it just SEO?" is: the base is shared, and the part that is new is measuring whether assistants name you.
+
+Which one a small shop needs first
+
+Your situation Start with Why
+Pages are not indexed, or the site is slow or empty without JavaScript SEO basics Nothing else works if crawlers cannot read the page
+You rank, but pages bury price, shipping and returns AEO fixes Direct facts are what an assistant can quote
+You rank and answer well, but buyers ask an assistant and rivals get named GEO audit This is the question only asking the assistant can answer
+You are not sure An audit, then 20 prompts by hand The audit shows crawler access on every page, the prompts show what is said
+
+A five-step order of work
+
+Audit your site with the box above (from €9) and fix any crawler that is blocked or any page that is empty to a crawler.
+Make sure price, shipping, returns and a short description sit in the HTML text, not only in images or scripts.
+Add a short answer and a FAQ to your top three pages, written in your buyers' own words.
+Ask an assistant 20 buyer questions twice each and log who gets named ( the 20-prompt method ).
+Fix the sources behind any wrong fact, then repeat the prompts a few weeks later.
+
+Questions people ask
+
+Is GEO just SEO with a new name?
+
+Partly. The technical base is shared, and Google says SEO best practices remain relevant for its AI features. What GEO adds is measuring whether assistants name your brand, which a ranking report does not show.
+
+What is the difference between AEO and GEO?
+
+AEO is about making a page easy to quote as an answer. GEO is about whether an assistant mentions your brand in what it generates. The first is a property of your pages, the second is an outcome you measure by asking.
+
+Do I need an llms.txt file for any of them?
+
+Google says you do not need new machine-readable files or AI text files to appear in its AI features. We cover the evidence for other assistants in a separate guide on llms.txt.
+
+Which audit should I buy first?
+
+Fix crawl access and basic facts first, since you can check those yourself. Buy a GEO audit when you want to know who gets named when buyers ask, and ask the seller what prompts it runs and how often.
+
+Sources
+
+Google Search Central: AI features and your website
+OpenAI: crawlers and user agents
+CitedBy site audit
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+Can ChatGPT read my website?
+Check what AI says about your brand
+A sample report
+
+## How to create an llms.txt file: 6 steps and a template (2026)
+Source: https://citedby.eu/blog/how-to-create-an-llms-txt-file
+
+Guides / AI visibility basics
+
+How to create an llms.txt file, step by step
+
+By the CitedBy editorial team · Reviewed on 2026-10-21
+
+Short answer To create an llms.txt file, write a plain-text Markdown file with a # title, a short > summary and ## sections that list your key pages as [name](url): note links, save it as llms.txt and upload it to your site root so it loads at yourshop.com/llms.txt. Then run the free checker to confirm it loads and its links work.
+
+On this page What llms.txt is
+The format, in order
+Template to copy
+How to create the file
+Mistakes the checker finds
+Check the crawlers too
+Questions people ask
+Sources
+
+What llms.txt is
+
+llms.txt is a proposal published at llmstxt.org : a Markdown file at the root of your site that gives language-model assistants a short map of the pages that matter most. It is not a standard that any search engine or assistant has committed to read. Does llms.txt work? covers what the studies found. The file is cheap to write, and writing it makes you decide which of your pages answer buyers' questions.
+
+The format, in order
+
+The llmstxt.org specification lists these parts in this order. Only the first is required.
+
+A # title with the name of the site or project.
+A > blockquote with a short summary.
+Optional paragraphs or lists with more detail, but no headings.
+Zero or more ## sections, each holding a list of links.
+By convention, a section named Optional for links an assistant can skip when it needs shorter context.
+
+Each list item is a Markdown link, then optionally a colon and a note: - [Link title](https://link_url): what this page answers .
+
+Template to copy
+
+Replace the example text with your own. Keep the shape.
+
+# Example Shop
+> Example Shop sells handmade leather bags and ships across the EU.
+
+## Products
+- [Leather bags](https://example.com/bags): all models with prices and sizes
+
+- [Care guide](https://example.com/care): how to clean and store a bag
+
+## Policies
+- [Shipping and returns](https://example.com/shipping): delivery times and the 30-day return rule
+
+## Optional
+- [About us](https://example.com/about)
+
+How to create the file
+
+Open a plain-text editor and type the title line: # Your shop name . Keep it to the name buyers know you by.
+Add one > line under it that says what you sell and where, in one sentence. Use facts a page of yours also states.
+List your most useful pages under ## headings such as Products, Help or Policies. Use full URLs, one link per line, and add a short note after a colon saying what the page answers.
+Put pages that are nice to have, such as About or press, under a section named Optional .
+Save the file as llms.txt (plain text, UTF-8) and upload it to the root of your site so that https://yourshop.com/llms.txt loads. A file in a subfolder does not count, and the address must answer with text, not a login or an HTML error page.
+Run the free llms.txt checker on your domain. It reports whether the file loads, follows the format, links to pages that load, and agrees with your robots.txt and sitemap.
+
+Mistakes the checker finds
+
+The title is missing or is not the first line.
+A list item is not in [name](url) form, for example a bare URL.
+A listed page returns an error, or robots.txt keeps AI crawlers away from it. A page you list but block sends mixed signals.
+A listed page is not in your sitemap.
+The address returns an HTML page instead of a text file.
+
+Check the crawlers too
+
+A perfect llms.txt does nothing for a site whose firewall refuses AI crawlers. Run the AI-crawler access checker next: it tests robots.txt and a live request for eight crawlers.
+
+Questions people ask
+
+Where does llms.txt go?
+
+At the root of the domain: https://yourshop.com/llms.txt . Not in a subfolder.
+
+Do I have to list every page?
+
+No. List the pages that best answer buyers' questions. A short, accurate file is better than a long list of everything.
+
+Do ChatGPT, Gemini or Perplexity read llms.txt?
+
+No major assistant has confirmed that it does. Treat the file as a cheap addition, not as a way to get cited.
+
+What is llms-full.txt?
+
+An optional second file some sites publish with the full text of key pages in one document. The checker only reports whether it exists.
+
+How do I know the file is valid?
+
+Run the free llms.txt checker on your domain.
+
+Sources
+
+llmstxt.org: the /llms.txt file proposal
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+llms.txt checker (free)
+Does llms.txt work?
+AI-crawler access checker (free)
+Can ChatGPT read my website?
+
+## Is GPTBot blocked on your site? 4 ways to check (2026)
+Source: https://citedby.eu/blog/is-gptbot-blocked
+
+Guides / Crawlability
+
+Is GPTBot blocked on my site? Four places to check, with a test for each
+
+By the CitedBy editorial team · Reviewed on 2026-10-18
+
+Short answer GPTBot is blocked on your site if robots.txt has a Disallow rule that applies to it, or if a CDN, firewall or server rule refuses its requests. Open yourshop.com/robots.txt, run an audit, then compare two requests to your server. Blocking GPTBot does not by itself block ChatGPT search.
+
+On this page Four places GPTBot can be stopped
+How to check, step by step
+The two-request test
+Cloudflare: where the setting lives
+When the check says your site refused the request
+Should you unblock GPTBot?
+Questions people ask
+Sources
+
+Four places GPTBot can be stopped
+
+GPTBot is the crawler OpenAI says it uses to collect content that may be used to train its models. A request from it can be turned away at four layers, and each one needs its own test. The CitedBy audit in the box above covers the first. The other three answer with an error code even when robots.txt says yes.
+
+Layers 2 to 4 are invisible in robots.txt, so check them separately.
+How to check, step by step
+
+Open yourshop.com/robots.txt in a browser. Look for a group that names GPTBot . If there is none, GPTBot follows the User-agent: * group, so a blanket Disallow: / under it blocks GPTBot too ( RFC 9309 ).
+Audit your site with the box above (from €9). It reads robots.txt for GPTBot, OAI-SearchBot, PerplexityBot, Google-Extended and Bingbot and names the ones that are blocked.
+Send two requests to your homepage and compare the status codes: one normal, one that carries the GPTBot user-agent string. Commands below.
+Open your CDN account and look at its AI crawler settings. For Cloudflare, the steps are below.
+Open your security plugin or firewall rule list and search for GPTBot , bot , AI and crawler .
+Search your server logs for GPTBot . A run of 403 responses to it is the sign of a block that robots.txt does not show.
+
+The two-request test
+
+Replace yourshop.com with your address. The first command sends a normal request, the second sends the GPTBot user-agent string that OpenAI publishes. Each prints only the status code.
+
+curl -s -o /dev/null -w "%{http_code}\n" https://yourshop.com/
+curl -s -o /dev/null -w "%{http_code}\n" -A "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.4; +https://openai.com/gptbot" https://yourshop.com/
+
+A 403 on the second request alone means a rule targets the crawler's name.
+
+Read the result with one limit in mind. This test comes from your own computer. If your host also judges crawlers by IP address, the real GPTBot can get a different answer from the one you saw. OpenAI publishes the IP ranges for GPTBot at openai.com/gptbot.json , so your logs can show whether requests from those ranges got through ( OpenAI crawler documentation ).
+
+Cloudflare: where the setting lives
+
+Cloudflare's documentation describes the steps: open your domain, go to AI Crawl Control, open the Security tab, then the Crawlers tab. The Actions column lets you Allow or Block each crawler. Choosing Block creates or updates a WAF custom rule, and you can still enforce robots.txt when you choose Allow ( Cloudflare: manage AI crawlers ).
+
+Cloudflare's defaults are also changing. Help Net Security reports that from 15 September 2026 new domains block Training and Agent crawlers by default on pages that show ads, while Search crawlers stay allowed ( Help Net Security ). Check your own dashboard rather than assuming which default your domain got.
+
+When the check says your site refused the request
+
+A plain request from our check can itself be refused. When the answer is HTTP 403, 429 or 503, the check says so and says it cannot tell from outside whether AI crawlers are refused as well. A 403 usually means a rule blocked the request. A 429 or 503 can also mean rate limiting or an outage, which affects every visitor. Fix the cause in your CDN, firewall or hosting panel, then run the check again.
+
+Should you unblock GPTBot?
+
+That is your decision, and blocking it is a legitimate choice. OpenAI lists GPTBot, OAI-SearchBot and ChatGPT-User as separate crawlers with separate jobs. GPTBot is for training data. OAI-SearchBot surfaces sites in ChatGPT's search features. ChatGPT-User fetches pages when a person asks about them.
+
+Your goal What to do
+Appear in ChatGPT search results, keep content out of training Allow OAI-SearchBot , disallow GPTBot
+Appear in ChatGPT search results and allow training Allow both
+Stay out of both Disallow both and check your logs for ChatGPT-User
+
+A change to robots.txt can take about 24 hours to reach OAI-SearchBot, according to OpenAI.
+
+Questions people ask
+
+Does blocking GPTBot remove my shop from ChatGPT?
+
+Not by itself. OpenAI describes OAI-SearchBot as the crawler for ChatGPT's search features and GPTBot as the training crawler, each set separately in robots.txt.
+
+Why does robots.txt look fine but GPTBot still gets a 403?
+
+robots.txt is a request to the crawler. A CDN, firewall or server rule can refuse the request anyway, so check those layers with the two-request test and your logs.
+
+Does ChatGPT-User obey robots.txt?
+
+OpenAI says robots.txt rules may not apply to ChatGPT-User, because a person starts those requests.
+
+Will unblocking GPTBot get my shop recommended?
+
+No. Being readable is the entry ticket. Whether an assistant names your shop depends on what it finds about your category, which the CitedBy audit measures with real buyer questions.
+
+Sources
+
+OpenAI: crawlers and user agents, IP ranges
+Cloudflare: manage AI crawlers
+Help Net Security: Cloudflare changes AI crawler access rules, 2 July 2026
+IETF RFC 9309: Robots Exclusion Protocol
+CitedBy site audit
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+AI crawlers: what each one does and how to allow or block it
+AI-crawler access checker (free)
+Can ChatGPT read my website?
+The CitedBy site audit
+A sample report
+
+## Lovable, Bolt or React site empty to AI? Check and fix
+Source: https://citedby.eu/blog/vibecoded-site-empty-to-ai
+
+Guides / Crawlability
+
+My Lovable, Bolt or React site looks empty to AI. How to check it and fix it
+
+By the CitedBy editorial team · Reviewed on 2026-10-18
+
+Short answer AI crawlers read the HTML your server sends and, according to Vercel's analysis, do not run JavaScript. A site built in the browser can look empty to them even when it looks perfect to you. Test it by viewing the page source, then switch to server rendering or prerendering if your text is missing.
+
+On this page Why a site that looks fine can be empty to AI
+The 30-second test
+What Lovable says
+Fixes by setup
+Two other things to check at the same time
+Questions people ask
+Sources
+
+Why a site that looks fine can be empty to AI
+
+A site made with an AI app builder is often a single-page app. The server sends a near-empty HTML shell, and JavaScript builds the headline, price and buttons in your browser. A visitor never notices. A crawler that does not run the script receives the shell and nothing else.
+
+Vercel analysed AI crawler traffic across its network and reported that none of the major AI crawlers it looked at render JavaScript. It names OpenAI (OAI-SearchBot, ChatGPT-User, GPTBot), Anthropic (ClaudeBot), Perplexity (PerplexityBot), Meta and ByteDance. It also reports that ChatGPT's and Claude's crawlers fetch JavaScript files (11.5% and 23.84% of their requests) without executing them, while Gemini uses Googlebot's infrastructure and can render JavaScript ( Vercel: the rise of the AI crawler ). That is one company's measurement from its own network, and crawler behaviour can change, so test your own site instead of assuming.
+
+What a crawler without JavaScript receives, in both setups.
+The 30-second test
+
+Open your homepage in a browser, right click and choose View page source (not Inspect, which shows the page after scripts ran).
+Search the source for your main headline and one price or product name.
+If you find them in the text, crawlers can read them. If you find only a <div id="root"></div> and script tags, the page is empty to a crawler that skips JavaScript.
+Audit your site with the box above (from €9). It fetches your page with a plain request, without running scripts, and counts the readable words in the HTML.
+
+For a command-line version, curl -s https://yourshop.com/ | head -c 3000 prints the start of what a crawler gets.
+
+What Lovable says
+
+Lovable's FAQ says new apps created from 13 May 2026 (22 June 2026 for Enterprise workspaces) use TanStack Start, which renders pages on the server, and that older apps use React with Vite and render in the browser. For those older apps it says Lovable serves pre-rendered copies of published pages to verified search engines, social preview bots and AI crawlers ( Lovable FAQ ). So a Lovable site may be readable even if it is client-rendered, but that depends on how and where it is published. A custom setup or a copy exported to another host does not inherit it. Check the source on your live address, not on the builder's preview.
+
+We found no equivalent statement from Bolt or other builders, so we make no claim about them. Run the test on each site.
+
+Fixes by setup
+
+Your setup Fix Check afterwards
+New Lovable app (TanStack Start) Nothing to switch, rendering is on the server View source on the live address
+Older Lovable app (React + Vite) Confirm the live address returns the text, and read Lovable's rendering notes for options View source, and the audit
+React + Vite you host yourself Move critical pages to server rendering or prerender them at build time View source on each key page
+Next.js Pages and layouts are Server Components by default, which render on the server ( Next.js docs ). Keep price and description out of client-only components View source
+Other builder Ask the vendor how published pages are rendered, then test View source
+
+Whatever you choose, the pages that matter are the ones a buyer would ask about: home, category, product, shipping and returns. Put price, availability and a short description in the server-sent HTML and keep scripts for interaction only.
+
+Two other things to check at the same time
+
+Product data: the price and name should also appear as Product JSON-LD in the server HTML, not injected later.
+Blocks: a site can be readable and still be refused. See Is GPTBot blocked on my site? .
+
+Questions people ask
+
+Does ChatGPT run JavaScript on my site?
+
+Vercel's analysis found that none of the major AI crawlers, including OpenAI's, render JavaScript. Test your own page with View page source, since behaviour can change.
+
+How do I know if my site is client-side rendered?
+
+View the page source. If your headline and price are not in it, and you see an empty root div with script tags, the page is built in the browser.
+
+Is a Lovable site always empty to AI?
+
+No. Lovable says new apps render on the server and that older apps get pre-rendered copies served to verified crawlers. Check the live address to be sure.
+
+Does Google see my client-rendered site?
+
+Vercel reports Gemini uses Googlebot's infrastructure and can render JavaScript. Other assistants may still read nothing, so server rendering helps with all of them.
+
+Sources
+
+Vercel: the rise of the AI crawler
+Lovable FAQ: rendering and SEO
+Next.js: Server and Client Components
+CitedBy site audit
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+Can ChatGPT read my website?
+Is GPTBot blocked on my site?
+A sample report

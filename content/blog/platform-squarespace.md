@@ -1,6 +1,6 @@
-title: Squarespace: the AI crawler checkbox blocks 26 bots, but not ChatGPT search
+title: Squarespace: the AI crawler box blocks 26 bots but not ChatGPT
 slug: squarespace
-description: Squarespace's Crawlers panel has one box to block known AI crawlers. Its help page lists the 26 names it writes into robots.txt, and ChatGPT's search and user bots are not among them.
+description: Squarespace's Crawlers panel has one box blocking known AI crawlers. The 26 names it writes to robots.txt leave out ChatGPT's search and user bots.
 section: platforms
 locale: en
 cluster: AI crawlers by platform

@@ -1,4 +1,4 @@
-title: Wix: block AI crawlers in the Robots.txt Editor (its example lists only four names)
+title: Wix: block AI crawlers in the Robots.txt Editor (four names)
 slug: wix
 description: Wix's help page tells you to paste four user agents into the Robots.txt Editor. Where the editor is, what the example leaves out and the nosnippet option.
 section: platforms

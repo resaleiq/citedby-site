@@ -1,4 +1,4 @@
-title: Claude-User: the agent that fetches pages when someone asks Claude
+title: Claude-User: fetches pages when someone asks Claude
 h1: Claude-User: the agent that fetches pages when someone asks Claude
 description: Claude-User retrieves a page when a person asks Claude something. What Anthropic says disabling it does, and how it differs from ClaudeBot and Claude-SearchBot.
 slug: claude-user

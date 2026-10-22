@@ -1,6 +1,6 @@
-title: Claude-SearchBot: Anthropic's search crawler and what blocking costs
+title: Claude-SearchBot: Anthropic's search crawler and blocking it
 h1: Claude-SearchBot: Anthropic's search crawler and what blocking costs
-description: Claude-SearchBot indexes content to improve Claude's search results. The robots.txt token, what Anthropic says a block does and how it differs from the other two Claude robots.
+description: Claude-SearchBot indexes content to improve Claude's search results. Its robots.txt token, what a block does and how it differs from the other Claude robots.
 slug: claude-searchbot
 section: bots
 locale: en

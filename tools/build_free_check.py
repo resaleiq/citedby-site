@@ -18,7 +18,7 @@ def pfx(l): return "" if l == "en" else "/" + l
 
 T = {
 "en": dict(
-    title="Free AI visibility check: ChatGPT, Claude, Gemini, Perplexity | CitedBy",
+    title="Free AI visibility check for your website | CitedBy",
     desc="Free AI visibility check, no account: we crawl up to 10 pages and show your score, your AI crawler access and the 3 fixes to make first.",
     h1="Free AI visibility check for your website",
     lede="See what stops AI assistants such as ChatGPT, Claude, Gemini and Perplexity from reading your site, and the three fixes to make first.",
@@ -43,7 +43,7 @@ T = {
     footer=("About", "Method", "Terms", "Privacy", "Refunds"), wa_desc="Free AI visibility check for a website: score, AI crawler access and the 3 issues to fix first.",
 ),
 "fr": dict(
-    title="Test gratuit de visibilité IA : ChatGPT, Claude, Gemini, Perplexity | CitedBy",
+    title="Test gratuit de visibilité IA pour votre site | CitedBy",
     desc="Test gratuit de visibilité IA, sans compte : nous lisons jusqu'à 10 pages et montrons votre score, l'accès des robots IA et les 3 corrections à faire d'abord.",
     h1="Test gratuit de visibilité IA pour votre site",
     lede="Voyez ce qui empêche des assistants IA comme ChatGPT, Claude, Gemini et Perplexity de lire votre site, et les trois corrections à faire en premier.",
@@ -68,7 +68,7 @@ T = {
     footer=("À propos", "Méthode", "CGV", "Confidentialité", "Remboursements"), wa_desc="Test gratuit de visibilité IA d'un site : score, accès des robots IA et les 3 problèmes à corriger d'abord.",
 ),
 "nl": dict(
-    title="Gratis AI-zichtbaarheidscheck: ChatGPT, Claude, Gemini, Perplexity | CitedBy",
+    title="Gratis AI-zichtbaarheidscheck voor je website | CitedBy",
     desc="Gratis AI-zichtbaarheidscheck zonder account: we lezen tot 10 pagina's en tonen je score, de toegang van AI-crawlers en de 3 fixes om eerst te doen.",
     h1="Gratis AI-zichtbaarheidscheck voor je website",
     lede="Zie wat AI-assistenten zoals ChatGPT, Claude, Gemini en Perplexity beletten je site te lezen, en de drie fixes om als eerste te doen.",
@@ -93,7 +93,7 @@ T = {
     footer=("Over ons", "Methode", "Voorwaarden", "Privacy", "Terugbetalingen"), wa_desc="Gratis AI-zichtbaarheidscheck voor een website: score, toegang van AI-crawlers en de 3 problemen om eerst op te lossen.",
 ),
 "de": dict(
-    title="Kostenloser KI-Sichtbarkeits-Check: ChatGPT, Claude, Gemini, Perplexity | CitedBy",
+    title="Kostenloser KI-Sichtbarkeits-Check für Ihre Website | CitedBy",
     desc="Kostenloser KI-Sichtbarkeits-Check ohne Konto: Wir lesen bis zu 10 Seiten und zeigen Ihren Score, den Zugang der KI-Crawler und die 3 wichtigsten Korrekturen.",
     h1="Kostenloser KI-Sichtbarkeits-Check für Ihre Website",
     lede="Sehen Sie, was KI-Assistenten wie ChatGPT, Claude, Gemini und Perplexity daran hindert, Ihre Website zu lesen, und welche drei Korrekturen zuerst anstehen.",
@@ -118,8 +118,8 @@ T = {
     footer=("Über uns", "Methode", "AGB", "Datenschutz", "Rückerstattungen"), wa_desc="Kostenloser KI-Sichtbarkeits-Check für eine Website: Score, Zugang der KI-Crawler und die 3 wichtigsten Probleme.",
 ),
 "es": dict(
-    title="Revisión gratis de visibilidad en IA: ChatGPT, Claude, Gemini, Perplexity | CitedBy",
-    desc="Revisión gratis de visibilidad en IA, sin cuenta: leemos hasta 10 páginas y te mostramos tu puntuación, el acceso de los robots de IA y las 3 correcciones primero.",
+    title="Revisión gratis de visibilidad en IA de tu web | CitedBy",
+    desc="Revisión gratis de visibilidad en IA, sin cuenta: leemos hasta 10 páginas y te mostramos tu puntuación, el acceso de los robots de IA y 3 correcciones.",
     h1="Revisión gratis de visibilidad en IA para tu web",
     lede="Mira qué impide que asistentes de IA como ChatGPT, Claude, Gemini y Perplexity lean tu web, y las tres correcciones que debes hacer primero.",
     free="Gratis, sin cuenta. Leemos hasta 10 páginas. Sin tarjeta, sin correo.",

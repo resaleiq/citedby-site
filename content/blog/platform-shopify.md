@@ -1,6 +1,6 @@
-title: Shopify: how to allow or block AI crawlers (and what robots.txt does not stop)
+title: Shopify: allow or block AI crawlers, and what robots.txt misses
 slug: shopify
-description: Edit robots.txt.liquid to allow or block AI crawlers on Shopify. Shopify's own help page says a block affects open-web discovery only, not the product data it sends to ChatGPT and Copilot.
+description: Edit robots.txt.liquid to allow or block AI crawlers on Shopify. Shopify says a block affects open-web discovery only, not product data sent to ChatGPT.
 section: platforms
 locale: en
 cluster: AI crawlers by platform

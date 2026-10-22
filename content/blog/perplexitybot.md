@@ -1,6 +1,6 @@
-title: PerplexityBot: how it differs from Perplexity-User and how to allow it
+title: PerplexityBot vs Perplexity-User: differences and how to allow it
 h1: PerplexityBot: how it differs from Perplexity-User and how to allow it
-description: PerplexityBot surfaces and links sites in Perplexity search. It is not used for foundation model crawling. User-agent, the 8 IP ranges Perplexity publishes and WAF advice.
+description: PerplexityBot surfaces and links sites in Perplexity search; it is not used for foundation model crawling. User-agent, the 8 IP ranges published, WAF advice.
 slug: perplexitybot
 section: bots
 locale: en

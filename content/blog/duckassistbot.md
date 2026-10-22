@@ -1,6 +1,6 @@
-title: DuckAssistBot: DuckDuckGo's real-time answer crawler and its 486 addresses
+title: DuckAssistBot: DuckDuckGo's answer crawler and its 486 addresses
 h1: DuckAssistBot: DuckDuckGo's real-time answer crawler and its 486 addresses
-description: DuckAssistBot fetches pages for DuckDuckGo's AI-assisted answers, which cite their sources. Opt-out takes 72 hours, search rankings are unaffected and DuckDuckGo lists 486 IP addresses.
+description: DuckAssistBot fetches pages for DuckDuckGo's AI-assisted answers, which cite sources. Opt-out takes 72 hours; rankings are unaffected; 486 IP addresses listed.
 slug: duckassistbot
 section: bots
 locale: en

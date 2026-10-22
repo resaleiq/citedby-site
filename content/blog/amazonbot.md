@@ -1,4 +1,4 @@
-title: Amazonbot, Amzn-SearchBot and Amzn-User: three Amazon agents, three rules
+title: Amazonbot, Amzn-SearchBot and Amzn-User: three Amazon agents
 h1: Amazonbot, Amzn-SearchBot and Amzn-User: three Amazon agents, three rules
 description: Amazon's page now describes three agents with independent robots.txt settings. What each does, which may train Amazon AI models and which may ignore robots.txt.
 slug: amazonbot

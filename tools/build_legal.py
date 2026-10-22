@@ -25,6 +25,9 @@ TABLE_CSS = (".lt{overflow-x:auto}@media(min-width:641px){.lt table{min-width:62
              "@media(max-width:640px){.lt table,.lt tbody,.lt tr,.lt td{display:block;width:100%}.lt thead{position:absolute;left:-9999px}"
              ".lt tr{border-bottom:2px solid var(--rule);padding:10px 0}.lt td{border:0;padding:6px 0}"
              ".lt td::before{content:attr(data-label);display:block;font-weight:600;color:var(--navy);font-size:13px}}")
+TITLES = {  # <title> and JSON-LD name per page (15-65 characters in total, unique per language); the H1 stays the legal text's own heading (RES-2935)
+    "terms": {"en": "Terms of service", "fr": "Conditions générales", "nl": "Algemene voorwaarden", "de": "Allgemeine Geschäftsbedingungen", "es": "Condiciones del servicio"},
+    "privacy": {"en": "Privacy policy", "fr": "Politique de confidentialité", "nl": "Privacyverklaring", "de": "Datenschutzerklärung", "es": "Política de privacidad"}}
 NAMES = {"en": "English", "fr": "Français", "nl": "Nederlands", "de": "Deutsch", "es": "Español"}
 LOC_PAGES = ("/privacy", "/terms", "/refund", "/withdraw")  # link targets that exist once per language
 
@@ -84,6 +87,7 @@ def render_md(md, lang):
 
 
 def shell(lang, page, title, desc, body_html):
+    title = TITLES.get(page, {}).get(lang, title)
     t, base = UI[lang], f"{SITE}{path(lang, page)}"
     alts = "".join(f'<link rel="alternate" hreflang="{c}" href="{SITE}{path(c, page)}">' for c in LANGS) + f'<link rel="alternate" hreflang="x-default" href="{SITE}{path("en", page)}">'
     css = open(os.path.join(PUB, "privacy.html"), encoding="utf-8").read()

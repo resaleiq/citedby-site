@@ -1,6 +1,6 @@
 title: AI visibility tools compared by what they cost and do
 h1: AI visibility tools compared by what they cost and do
-description: Most AI visibility tools are monthly dashboards. A plain comparison of what CitedBy, Profound, Peec AI, Otterly.ai and the free graders cost and do, and which fits a small shop.
+description: Most AI visibility tools are monthly dashboards. A plain comparison of what CitedBy, Profound, Peec AI, Otterly.ai and free graders cost and do.
 slug: ai-visibility-tools-compared
 section: guides
 locale: en

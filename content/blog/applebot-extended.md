@@ -1,6 +1,6 @@
-title: Applebot-Extended: opting out of Apple's model training without leaving search
+title: Applebot-Extended: opt out of Apple model training, keep search
 h1: Applebot-Extended: opting out of Apple's model training without leaving search
-description: Applebot-Extended is Apple's opt-out token for generative model training. What it does, why Applebot can still crawl you and what stays discoverable in Spotlight, Siri and Safari.
+description: Applebot-Extended is Apple's opt-out token for generative model training. What it does, why Applebot can still crawl you and what stays in Spotlight and Siri.
 slug: applebot-extended
 section: bots
 locale: en

@@ -1,4 +1,4 @@
-title: Bingbot: Microsoft's crawler, its five user agents and how to verify it
+title: Bingbot: Microsoft's crawler, five user agents, how to verify
 slug: bingbot
 description: Bingbot is Bing's standard crawler. The five Microsoft crawler names, how to verify a request and where crawl rate is set, read from Bing's own help page.
 section: bots

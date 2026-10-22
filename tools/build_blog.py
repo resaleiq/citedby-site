@@ -255,6 +255,9 @@ BOTS_IDX = ("AI crawlers: who they are, what they do, how to allow or block them
 PLATFORMS_IDX = ("How to allow or block AI crawlers on Shopify, Squarespace, Wix, Webflow, WordPress.com and Cloudflare", "One page per platform: where its own help page says the setting lives, what it does and does not cover, and the one thing that page says that the others do not, each read on the date shown.")
 BLOG_IDX = {'en': ('AI visibility blog for online shops', 'Notes and data on how AI assistants treat online shops, plus our step-by-step guides. Each post ends with an audit you can run on your own site.'), 'fr': ('Blog visibilité IA pour boutiques en ligne', 'Notes et données sur la façon dont les assistants IA traitent les boutiques en ligne, et nos guides pas à pas. Chaque article mène à un audit de votre site.'), 'nl': ('Blog AI-zichtbaarheid voor webshops', 'Notities en data over hoe AI-assistenten webshops behandelen, plus onze stap-voor-stap-gidsen. Elk artikel leidt naar een audit van uw site.'), 'de': ('Blog zur KI-Sichtbarkeit für Online-Shops', 'Notizen und Daten dazu, wie KI-Assistenten Online-Shops behandeln, plus unsere Schritt-für-Schritt-Ratgeber. Jeder Beitrag führt zu einem Audit Ihrer Seite.'), 'es': ('Blog de visibilidad en IA para tiendas online', 'Notas y datos sobre cómo los asistentes de IA tratan las tiendas online, más nuestras guías paso a paso. Cada artículo lleva a una auditoría de tu web.')}
 
+IDX_META = {"bots": ("AI crawlers: what they do, how to allow or block them", "One page per AI crawler: operator, robots.txt token, what blocking costs and the vendor's published address list, each read from the vendor's page."),
+            "platforms": ("Allow or block AI crawlers on six site platforms", "One page per platform: where its help page says the setting lives, what it covers and does not cover, and what only that page says, each read on a stated date.")}  # RES-2935: title 15-65 and description 50-160, not the long H1 and lede
+
 def build_index(loc, arts, sect="blog"):
     t = dict(UI[loc])  # /blog and /guides get their own title, H1 and description (RES-2210)
     if sect == "blog": t["idx_h1"], t["idx_lede"] = BLOG_IDX[loc]
@@ -266,7 +269,8 @@ def build_index(loc, arts, sect="blog"):
           {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": n + 1, "url": "%s%s/%s/%s" % (SITE, prefix(loc), a.get("section", "blog"), a["slug"])} for n, a in enumerate(arts)]}]
     main = '<main id="main" class="art idx"><h1>%s</h1><p class="lede">%s</p><ul class="cards">%s</ul></main>' % (E(t["idx_h1"]), E(t["idx_lede"]), cards)
     alts = [(l, prefix(l) + "/" + sect) for l in UI if l in INDEX_LOCALES[sect]] + [("x-default", "/" + sect)]  # reciprocal hreflang across the 5 indexes (RES-2210)
-    return path, shell(loc, t["idx_h1"] + ". CitedBy", t["idx_lede"], path, alts, "/og-v2.png", ld, main)
+    ti, de = IDX_META.get(sect, (t["idx_h1"], t["idx_lede"]))
+    return path, shell(loc, ti + ". CitedBy", de, path, alts, "/og-v2.png", ld, main)
 
 def main():
     check = "--check" in sys.argv

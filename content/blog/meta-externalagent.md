@@ -1,6 +1,6 @@
-title: Meta-ExternalAgent: Meta's AI crawler and its four siblings, which may bypass robots.txt
+title: Meta-ExternalAgent: Meta's AI crawler and its four siblings
 slug: meta-externalagent
-description: Meta-ExternalAgent crawls for training foundation AI models or indexing. Meta's page, updated 21 May 2026, lists five agents and says two of them may bypass robots.txt.
+description: Meta-ExternalAgent crawls for training foundation AI models or indexing. Meta's page, updated 21 May 2026, lists five agents and says two may bypass robots.txt.
 section: bots
 locale: en
 cluster: AI crawlers

@@ -1,6 +1,6 @@
 title: MistralAI-User, MistralAI-Index and MistralAI-Training explained
 h1: MistralAI-User, MistralAI-Index and MistralAI-Training explained
-description: Mistral documents three robots: a user-action fetcher for Vibe, a search index agent and a training crawler. What each does, its robots.txt token and the IP files it publishes.
+description: Mistral documents three robots: a user-action fetcher, a search index agent and a training crawler. What each does, its robots.txt token and published IP files.
 slug: mistralai-user
 section: bots
 locale: en

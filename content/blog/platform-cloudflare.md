@@ -1,6 +1,6 @@
-title: Cloudflare: AI bot policies by Search, Agent and Training, and the changed defaults
+title: Cloudflare: AI bot policies for Search, Agent and Training
 slug: cloudflare
-description: Cloudflare's Block AI Bots page splits AI bots into Search, Agent and Training, with Block, Block on pages with ads and Allow. Its page announced new defaults for 15 September 2026.
+description: Cloudflare's Block AI Bots page splits AI bots into Search, Agent and Training with Block, Block on pages with ads and Allow. New defaults from 15 Sept 2026.
 section: platforms
 locale: en
 cluster: AI crawlers by platform

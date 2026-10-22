@@ -1,4 +1,4 @@
-title: WordPress.com: where the AI opt-out sits (a privacy setting, not robots.txt)
+title: WordPress.com: AI opt-out is a privacy setting, not robots.txt
 slug: wordpress-com
 description: WordPress.com treats AI opt-out as 'Prevent third-party sharing' under privacy settings. What its site-visibility guide says, reviewed 5 October 2026.
 section: platforms

@@ -1,6 +1,6 @@
 title: ClaudeBot: Anthropic's training crawler, Crawl-delay and blocking
 h1: ClaudeBot: Anthropic's training crawler, Crawl-delay and blocking
-description: ClaudeBot collects web content that could contribute to Anthropic's model training. The robots.txt group, the Crawl-delay Anthropic supports and why IP blocking does not work.
+description: ClaudeBot collects web content that could contribute to Anthropic's model training. The robots.txt group, Crawl-delay support and why IP blocking does not work.
 slug: claudebot
 section: bots
 locale: en

@@ -1,4 +1,4 @@
-title: Webflow: robots.txt rules and the Content-Signal header for AI use
+title: Webflow: robots.txt rules and the Content-Signal header for AI
 slug: webflow
 description: Where Webflow's robots.txt editor is, which plan it needs and how its Content-Signal header separates AI training, search and AI input.
 section: platforms
