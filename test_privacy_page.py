@@ -79,3 +79,16 @@ def test_analytics_wording_names_user_agent_not_browser_type_and_report_30_days_
     for f, bad in (("landing.html", "kept 30 days"), ("landing.fr.html", "conservé 30"), ("landing.nl.html", "30 dagen bewaard"), ("landing.de.html", "30 Tage gespeichert"), ("landing.es.html", "guardado 30"),
                    ("landing.html", "in your account for 30"), ("landing.fr.html", "dans votre compte 30"), ("landing.nl.html", "30 dagen in je account"), ("landing.de.html", "30 Tage in Ihrem Konto"), ("landing.es.html", "en tu cuenta 30")):
         assert bad not in open(f"public/{f}", encoding="utf-8").read(), (f, bad)
+
+
+def test_res2797_every_locale_names_the_search_engine_recipients_and_rows():
+    import re, pathlib
+    root = pathlib.Path(__file__).parent / "public"
+    pages = {l: (root / l / "privacy.html").read_text() for l in ("", "fr", "de", "es", "nl")}
+    n = len(re.findall("<tr>", pages[""]))
+    for l, t in pages.items():
+        assert len(re.findall("<tr>", t)) == n, l                   # the same table rows in every language
+        assert t.count("Microsoft") >= 2 and "Bing Webmaster Tools" in t, l   # section 4 entry and the section 5 transfer list
+        assert "Search Console" in t and "4" in t
+    assert "keep no name, photo, contacts or Google token." not in pages[""]
+    assert "We never show the key or token again" not in pages[""] and "last 4 characters" in pages[""]
