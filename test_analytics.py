@@ -22,7 +22,7 @@ def test_inject_implied_head_goes_before_body():  # RES-2130: citedby.eu / and /
 
 
 def test_no_query_or_email_in_tag():
-    assert b"@" not in analytics.TAG and b"?" not in analytics.TAG.replace(b"riq-a.js?v=4", b"")
+    assert b"@" not in analytics.TAG and b"?" not in analytics.TAG.replace(b"riq-a.js?v=5", b"")
 
 
 def test_relay_ignores_empty_and_oversize_bodies(monkeypatch):
@@ -33,3 +33,8 @@ def test_relay_ignores_empty_and_oversize_bodies(monkeypatch):
     assert calls == []
     analytics.relay(b'{"event":"x"}', "1.2.3.4", "ua")
     assert calls == [1]
+
+
+def test_internal_query_sets_flag_before_the_off_check():  # RES-3001: walk bursts without the flag raised a false checkout signal
+    js = open("public/riq-a.js").read()
+    assert js.index('internal=1') < js.index('var off =') and 'setItem("riq_internal", "1")' in js
