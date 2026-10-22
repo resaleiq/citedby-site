@@ -1,0 +1,122 @@
+[
+ {
+  "id": "bing-ai-performance-public-preview",
+  "date": "2026-02-10",
+  "source_url": "https://blogs.bing.com/webmaster/2026/2/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview/",
+  "source_name": "Bing Webmaster Blog",
+  "quote": "We are happy to introduce AI Performance in Bing Webmaster Tools, a new set of insights that shows how publisher content appears across Microsoft Copilot",
+  "engines": [
+   "bing-copilot"
+  ],
+  "owner_action": "Verify the site in Bing Webmaster Tools, open AI Performance and export citations, cited pages and grounding queries each month.",
+  "read_on": "2026-10-22"
+ },
+ {
+  "id": "gsc-branded-queries-all-eligible",
+  "date": "2026-03-11",
+  "source_url": "https://developers.google.com/search/blog/2025/11/search-console-branded-filter",
+  "source_name": "Google Search Central Blog",
+  "quote": "The branded queries filter is now available to all eligible sites.",
+  "engines": [
+   "google-search"
+  ],
+  "owner_action": "In the Search Console Performance report, apply the branded and non-branded filter and read the two groups separately.",
+  "read_on": "2026-10-22"
+ },
+ {
+  "id": "lighthouse-agentic-browsing-category",
+  "date": "2026-05-07",
+  "source_url": "https://github.com/GoogleChrome/lighthouse/releases/tag/v13.3.0",
+  "source_name": "Lighthouse v13.3.0 release notes (GoogleChrome/lighthouse)",
+  "quote": "New agentic browsing category added to default config",
+  "engines": [
+   "chrome-lighthouse"
+  ],
+  "owner_action": "Make /llms.txt answer 200 or 404, never a server error: Lighthouse flags server errors on it and marks a 404 Not Applicable.",
+  "read_on": "2026-10-22"
+ },
+ {
+  "id": "ga4-ai-assistant-channel",
+  "date": "2026-05-13",
+  "source_url": "https://support.google.com/analytics/answer/9164320",
+  "source_name": "Google Analytics Help, release notes",
+  "quote": "Google Analytics now provides a dedicated way to measure and analyze traffic originating from popular AI assistants.",
+  "engines": [
+   "chatgpt",
+   "gemini",
+   "claude",
+   "copilot",
+   "deepseek",
+   "grok"
+  ],
+  "owner_action": "Open the Default Channel Group in GA4 reports, check that the AI Assistant channel shows, and add a custom rule only for AI referrers that still land in Referral.",
+  "read_on": "2026-10-22"
+ },
+ {
+  "id": "gsc-generative-ai-reports-launch",
+  "date": "2026-06-03",
+  "source_url": "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
+  "source_name": "Google Search Central Blog",
+  "quote": "we're excited to announce the launch of new Search Generative AI performance reports in Search Console",
+  "engines": [
+   "google-ai-overviews",
+   "google-ai-mode",
+   "google-discover"
+  ],
+  "owner_action": "Open the Generative AI performance report in Search Console and read AI impressions by page, country and device.",
+  "read_on": "2026-10-22"
+ },
+ {
+  "id": "gsc-generative-ai-reports-worldwide",
+  "date": "2026-08-31",
+  "source_url": "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
+  "source_name": "Google Search Central Blog (note added to the 3 June post)",
+  "quote": "As of August 31, 2026, we've rolled out these insights to all websites worldwide.",
+  "engines": [
+   "google-ai-overviews",
+   "google-ai-mode",
+   "google-discover"
+  ],
+  "owner_action": "Check the Generative AI performance report is now visible for every property, in every country you serve.",
+  "read_on": "2026-10-22"
+ },
+ {
+  "id": "gsc-search-generative-ai-control-worldwide",
+  "date": "2026-08-31",
+  "source_url": "https://support.google.com/webmasters/answer/16908024",
+  "source_name": "Search Console Help: Search generative AI control",
+  "quote": "As of August 31, 2026, we’ve rolled out this control to all websites worldwide.",
+  "engines": [
+   "google-ai-overviews",
+   "google-ai-mode",
+   "google-discover"
+  ],
+  "owner_action": "Open Settings > Search generative AI in Search Console and confirm each property is set to include the site, unless the owner chose otherwise.",
+  "read_on": "2026-10-22"
+ },
+ {
+  "id": "google-ai-overviews-ai-mode-france",
+  "date": "2026-07-22",
+  "source_url": "https://blog.google/intl/fr-fr/nouveautes-produits/explorez-obtenez-des-reponses/recherche-ia-apercus-mode/",
+  "source_name": "Blog Google France",
+  "quote": "La Recherche Google franchit une étape majeure aujourd’hui en France avec le lancement des Aperçus IA (AI Overviews) et du Mode IA (AI Mode).",
+  "engines": [
+   "google-ai-overviews",
+   "google-ai-mode"
+  ],
+  "owner_action": "Read the French AI impressions in the Generative AI performance report and check which French questions now show an AI Overview.",
+  "read_on": "2026-10-22"
+ },
+ {
+  "id": "google-llms-txt-guidance",
+  "date": "2026-06-15",
+  "source_url": "https://developers.google.com/search/updates",
+  "source_name": "Google Search Central, documentation updates",
+  "quote": "while these files aren't needed for Google Search (and won't negatively or positively impact your visibility or rankings)",
+  "engines": [
+   "google-search"
+  ],
+  "owner_action": "Keep llms.txt optional: publish it for other tools if wanted, but do not expect Google Search visibility from it.",
+  "read_on": "2026-10-22"
+ }
+]

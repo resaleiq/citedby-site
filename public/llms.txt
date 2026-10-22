@@ -16,6 +16,7 @@
 - [Data by niche](https://citedby.eu/data/study-buyer-questions-claude): published study with method and CSV
 
 - [How an audit works (methodology)](https://citedby.eu/methodology): what is crawled, checked and scored, and what we do not claim
+- [Engine changes](https://citedby.eu/changes): dated changes from Google, Bing and Lighthouse, each read on the engine's own page, and whether CitedBy checks them
 - [About CitedBy](https://citedby.eu/about): which CitedBy this is and who operates it
 
 ## Terms
