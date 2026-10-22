@@ -409,7 +409,7 @@ Guides / Guide
 
 AI visibility tools compared by what they cost and do
 
-By the CitedBy editorial team · Reviewed on 2026-10-20 · 4 sources · method
+By the CitedBy editorial team · Reviewed on 2026-10-20 · 3 sources · method
 
 Short answer Most tools in this category are dashboards: you pay a monthly fee and they track whether assistants mention your brand. CitedBy differs on one point: it crawls your site up to your plan's page limit and gives the exact fix for each issue, from €9 paid once. Check each vendor's own pricing page, because prices change.
 
@@ -472,7 +472,7 @@ Guides / Guide
 
 How to check whether AI assistants recommend your shop
 
-By the CitedBy editorial team · Reviewed on 2026-10-20 · 2 sources · method
+By the CitedBy editorial team · Reviewed on 2026-10-20
 
 Short answer Ask each assistant the questions your buyers ask, twice, with web search on, and count how often your shop is named and how often your site is linked. Our site audit then checks whether your pages can be read and quoted by AI crawlers, from €9, with the exact fix for each issue.
 
@@ -790,7 +790,7 @@ DuckAssistBot : Another answer-engine fetcher with a stated opt-out and a 72-hou
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -882,7 +882,7 @@ Applebot: The crawler itself: allowing it keeps you in Spotlight, Siri and Safar
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -976,7 +976,7 @@ Googlebot : The other main search crawler: a different token and different verif
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -1075,7 +1075,7 @@ OAI-SearchBot : OAI-SearchBot is the search crawler and does obey robots.txt.
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -1167,7 +1167,7 @@ ClaudeBot : Blocking ClaudeBot opts out of training only; it does not remove you
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -1258,7 +1258,7 @@ Claude-SearchBot : Search quality robot; its block affects indexing for search, 
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -1349,7 +1349,7 @@ Claude-SearchBot : A separate search robot: blocking ClaudeBot does not touch it
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -1444,7 +1444,7 @@ Amazonbot : Amazon's family of three agents, one of which may ignore robots.txt.
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -1536,7 +1536,7 @@ Googlebot : The crawler that actually fetches your pages for Search.
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -1631,7 +1631,7 @@ Google-Extended : A control token for Gemini training; it never fetches a page.
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -1727,7 +1727,7 @@ OAI-SearchBot : Allow it and disallow GPTBot to stay in ChatGPT search while opt
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -1827,7 +1827,7 @@ GPTBot : OpenAI's training crawler, which honours robots.txt without Meta's bypa
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -1930,7 +1930,7 @@ ChatGPT-User : The same job at OpenAI, with a different robots.txt promise.
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -2026,7 +2026,7 @@ GPTBot : GPTBot is for training; blocking it does not remove you from ChatGPT se
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -2122,7 +2122,7 @@ Perplexity-User: The user-triggered fetcher; Perplexity says it generally ignore
 
 Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -2211,7 +2211,7 @@ Shopify : Says it handles bot management itself and advises against a proxy.
 
 Check your own site
 
-The audit box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -2310,7 +2310,7 @@ Squarespace : One checkbox instead of a template, and a fixed list of 26 names.
 
 Check your own site
 
-The audit box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -2407,7 +2407,7 @@ Wix : A real robots.txt editor, and an example list of four names.
 
 Check your own site
 
-The audit box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -2507,7 +2507,7 @@ Wix : A longer editing path and a four-name example.
 
 Check your own site
 
-The audit box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -2610,7 +2610,7 @@ Webflow : Also a robots.txt editor, plus a Content-Signal header.
 
 Check your own site
 
-The audit box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -2705,7 +2705,7 @@ Cloudflare : A network-level switch that works whatever the site platform is.
 
 Check your own site
 
-The audit box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+The free check in the box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
 
 Questions people ask
 
@@ -2743,7 +2743,7 @@ Guides / Crawlability
 
 Can ChatGPT read my website?
 
-By the CitedBy editorial team · Reviewed on 2026-10-18 · 2 sources · method
+By the CitedBy editorial team · Reviewed on 2026-10-18
 
 Short answer ChatGPT can read your website if three things hold: robots.txt does not block OAI-SearchBot, the page text is in the HTML your server sends rather than added by JavaScript, and your server or firewall does not refuse the crawler. The CitedBy audit tests the first two on every page.
 
@@ -2763,7 +2763,7 @@ The audit tests gates 1 and 3. Gate 2 needs your server logs.
 How to check, step by step
 
 Open yourshop.com/robots.txt in a browser. Look for User-agent: OAI-SearchBot , GPTBot or * followed by Disallow: / . A blanket Disallow: / under User-agent: * blocks every crawler that has no rule of its own.
-Audit your site with the box above (from €9). It reads robots.txt for OAI-SearchBot, GPTBot, PerplexityBot, Google-Extended and Bingbot and tells you which are blocked.
+Run the free check in the box above. It reads robots.txt for OAI-SearchBot, GPTBot, PerplexityBot, Google-Extended and Bingbot and tells you which are blocked.
 Look at the word count it reports for the page HTML. Your homepage should have hundreds of words there, including your brand name and what you sell.
 Open the page, choose "View page source" and search for your product name. If it is missing, the page builds its text with JavaScript and a crawler that does not run scripts sees nothing.
 Check that Organization data (JSON-LD) is present, so assistants get your name, logo and contact details from one place.
@@ -2827,7 +2827,7 @@ Guides / Wrong facts
 
 ChatGPT shows my old price. How to find where it read it and fix it
 
-By the CitedBy editorial team · Reviewed on 2026-10-18 · 5 sources · method
+By the CitedBy editorial team · Reviewed on 2026-10-18 · 4 sources · method
 
 Short answer ChatGPT shows an old price when it read that price from a stale source: your own page, a product feed, or another website. Search for the old price in each place, fix the source, then ask again twice in a new chat. Update your feed whenever a sale starts or ends.
 
@@ -2924,7 +2924,7 @@ Guides / Brand checks
 
 What does ChatGPT say about your brand? 20 prompts to check it by hand
 
-By the CitedBy editorial team · Reviewed on 2026-10-18 · 2 sources · method
+By the CitedBy editorial team · Reviewed on 2026-10-18
 
 Short answer To check what ChatGPT says about your brand, ask it 20 prompts in four groups: your brand, your category, comparisons with rivals, and facts such as price and shipping. Ask each twice in a new chat, log whether it names you, links you and gets the facts right, and count the results.
 
@@ -3042,7 +3042,7 @@ Guides / Crawlability
 
 Cloudflare is blocking AI crawlers on my site. How to allow GPTBot and ClaudeBot
 
-By the CitedBy editorial team · Reviewed on 2026-10-19 · 5 sources · method
+By the CitedBy editorial team · Reviewed on 2026-10-19 · 4 sources · method
 
 Short answer In the Cloudflare dashboard, open your domain, then AI Crawl Control, then the Security tab. Find each crawler, such as GPTBot or ClaudeBot, and choose Allow in the Actions column. Blocking creates a WAF rule, so removing it means switching the crawler back to Allow. Then run a check from outside.
 
@@ -3140,7 +3140,7 @@ Guides / AI visibility basics
 
 Does llms.txt work? What two studies and Google's own documentation say
 
-By the CitedBy editorial team · Reviewed on 2026-10-18 · 6 sources · method
+By the CitedBy editorial team · Reviewed on 2026-10-18 · 5 sources · method
 
 Short answer So far the evidence says llms.txt does not move AI citations. Ahrefs found 97% of valid llms.txt files got zero requests in May 2026, SE Ranking found no clear link to citations across about 300,000 domains, and Google says you do not need AI text files. Adding one is cheap, but do not expect traffic from it.
 
@@ -3180,7 +3180,7 @@ If you add one, keep it short: your name, one sentence on what you sell and wher
 
 What to do instead first
 
-Audit your site with the box above (from €9). It tests whether AI crawlers can fetch your page and read it, and it reports whether an llms.txt exists as a hygiene item, without treating it as a ranking factor.
+Run the free check in the box above. It tests whether AI crawlers can fetch your page and read it, and it reports whether an llms.txt exists as a hygiene item, without treating it as a ranking factor.
 Put price, shipping and returns in the page text, not only in images or scripts.
 Ask an assistant 20 buyer questions twice each and log who gets named ( the method ).
 
@@ -3228,7 +3228,7 @@ Guides / Measurement
 
 Is AI traffic converting? How to set up GA4 to see visits from ChatGPT and other assistants
 
-By the CitedBy editorial team · Reviewed on 2026-10-19 · 2 sources · method
+By the CitedBy editorial team · Reviewed on 2026-10-19
 
 Short answer Create a custom channel group in GA4 with an AI assistants channel whose Source matches a regex of the assistants you see in your Traffic acquisition report. Move it above Referral, because GA4 uses the first matching channel. Then compare conversions by channel. Visits without a referrer stay under Direct.
 
@@ -3316,7 +3316,7 @@ Guides / AI visibility basics
 
 GEO audit vs AEO audit vs SEO audit: what is different and which one you need
 
-By the CitedBy editorial team · Reviewed on 2026-10-18 · 3 sources · method
+By the CitedBy editorial team · Reviewed on 2026-10-18 · 2 sources · method
 
 Short answer An SEO audit checks whether you rank in search results. An AEO audit checks whether your pages give direct answers that assistants can quote. A GEO audit checks whether AI assistants name your brand in generated answers. The terms have no official definition, and the first two checks feed the third.
 
@@ -3363,7 +3363,7 @@ You are not sure An audit, then 20 prompts by hand The audit shows crawler acces
 
 A five-step order of work
 
-Audit your site with the box above (from €9) and fix any crawler that is blocked or any page that is empty to a crawler.
+Run the free check in the box above and fix any crawler that is blocked or any page that is empty to a crawler.
 Make sure price, shipping, returns and a short description sit in the HTML text, not only in images or scripts.
 Add a short answer and a FAQ to your top three pages, written in your buyers' own words.
 Ask an assistant 20 buyer questions twice each and log who gets named ( the 20-prompt method ).
@@ -3520,7 +3520,7 @@ Guides / Crawlability
 
 Is GPTBot blocked on my site? Four places to check, with a test for each
 
-By the CitedBy editorial team · Reviewed on 2026-10-18 · 5 sources · method
+By the CitedBy editorial team · Reviewed on 2026-10-18 · 4 sources · method
 
 Short answer GPTBot is blocked on your site if robots.txt has a Disallow rule that applies to it, or if a CDN, firewall or server rule refuses its requests. Open yourshop.com/robots.txt, run an audit, then compare two requests to your server. Blocking GPTBot does not by itself block ChatGPT search.
 
@@ -3535,13 +3535,13 @@ Sources
 
 Four places GPTBot can be stopped
 
-GPTBot is the crawler OpenAI says it uses to collect content that may be used to train its models. A request from it can be turned away at four layers, and each one needs its own test. The CitedBy audit in the box above covers the first. The other three answer with an error code even when robots.txt says yes.
+GPTBot is the crawler OpenAI says it uses to collect content that may be used to train its models. A request from it can be turned away at four layers, and each one needs its own test. The free check in the box above covers the first. The other three answer with an error code even when robots.txt says yes.
 
 Layers 2 to 4 are invisible in robots.txt, so check them separately.
 How to check, step by step
 
 Open yourshop.com/robots.txt in a browser. Look for a group that names GPTBot . If there is none, GPTBot follows the User-agent: * group, so a blanket Disallow: / under it blocks GPTBot too ( RFC 9309 ).
-Audit your site with the box above (from €9). It reads robots.txt for GPTBot, OAI-SearchBot, PerplexityBot, Google-Extended and Bingbot and names the ones that are blocked.
+Run the free check in the box above. It reads robots.txt for GPTBot, OAI-SearchBot, PerplexityBot, Google-Extended and Bingbot and names the ones that are blocked.
 Send two requests to your homepage and compare the status codes: one normal, one that carries the GPTBot user-agent string. Commands below.
 Open your CDN account and look at its AI crawler settings. For Cloudflare, the steps are below.
 Open your security plugin or firewall rule list and search for GPTBot , bot , AI and crawler .
@@ -3623,7 +3623,7 @@ Guides / Crawlability
 
 My Lovable, Bolt or React site looks empty to AI. How to check it and fix it
 
-By the CitedBy editorial team · Reviewed on 2026-10-18 · 4 sources · method
+By the CitedBy editorial team · Reviewed on 2026-10-18 · 3 sources · method
 
 Short answer AI crawlers read the HTML your server sends and, according to Vercel's analysis, do not run JavaScript. A site built in the browser can look empty to them even when it looks perfect to you. Test it by viewing the page source, then switch to server rendering or prerendering if your text is missing.
 
@@ -3647,7 +3647,7 @@ The 30-second test
 Open your homepage in a browser, right click and choose View page source (not Inspect, which shows the page after scripts ran).
 Search the source for your main headline and one price or product name.
 If you find them in the text, crawlers can read them. If you find only a <div id="root"></div> and script tags, the page is empty to a crawler that skips JavaScript.
-Audit your site with the box above (from €9). It fetches your page with a plain request, without running scripts, and counts the readable words in the HTML.
+Run the free check in the box above. It fetches your page with a plain request, without running scripts, and counts the readable words in the HTML.
 
 For a command-line version, curl -s https://yourshop.com/ | head -c 3000 prints the start of what a crawler gets.
 

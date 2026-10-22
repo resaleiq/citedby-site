@@ -27,7 +27,7 @@ Een webshop kan dus op alle drie de punten onderuit gaan zonder dat u het in uw 
 ## Hoe controleert u dat stap voor stap?
 
 1. Open `uwwebshop.nl/robots.txt` in een browser. Zoek `User-agent: OAI-SearchBot`, `GPTBot` of `*`, gevolgd door `Disallow: /`. Een algemene `Disallow: /` onder `User-agent: *` blokkeert elke crawler die geen eigen regel heeft.
-2. Laat uw site auditen met het vak hierboven (vanaf €9). De audit leest robots.txt voor OAI-SearchBot, GPTBot, PerplexityBot, Google-Extended en Bingbot en meldt welke geblokkeerd zijn.
+2. Draai de gratis check in het vak hierboven. Die leest robots.txt voor OAI-SearchBot, GPTBot, PerplexityBot, Google-Extended en Bingbot en meldt welke geblokkeerd zijn.
 3. Bekijk het aantal woorden dat de audit voor de HTML meldt. Uw homepage hoort daar honderden woorden te hebben, met uw merknaam en wat u verkoopt.
 4. Kies op de pagina "Paginabron weergeven" en zoek op uw productnaam. Ontbreekt die, dan bouwt de pagina zijn tekst met JavaScript op en ziet een crawler die geen scripts draait niets.
 5. Controleer of Organization-data (JSON-LD) aanwezig is, zodat assistenten uw naam, logo en contactgegevens op één plek vinden.

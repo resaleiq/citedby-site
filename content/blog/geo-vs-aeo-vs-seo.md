@@ -49,7 +49,7 @@ So the honest answer to "is it just SEO?" is: the base is shared, and the part t
 
 ## A five-step order of work
 
-1. Audit your site with the box above (from €9) and fix any crawler that is blocked or any page that is empty to a crawler.
+1. Run the free check in the box above and fix any crawler that is blocked or any page that is empty to a crawler.
 2. Make sure price, shipping, returns and a short description sit in the HTML text, not only in images or scripts.
 3. Add a short answer and a FAQ to your top three pages, written in your buyers' own words.
 4. Ask an assistant 20 buyer questions twice each and log who gets named ([the 20-prompt method](/blog/check-what-ai-says-about-your-brand)).

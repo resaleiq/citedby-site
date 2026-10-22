@@ -50,7 +50,7 @@ Voegt u er een toe, houd het dan kort: uw naam, één zin over wat u verkoopt en
 
 ## Wat kunt u beter eerst doen?
 
-1. Laat uw site auditen met het vak hierboven (vanaf €9). De audit test of AI-crawlers uw pagina kunnen ophalen en lezen. Of er een llms.txt is, melden we als detail, niet als rankingfactor.
+1. Draai de gratis check in het vak hierboven. Die test of AI-crawlers uw pagina kunnen ophalen en lezen. Of er een llms.txt is, melden we als detail, niet als rankingfactor.
 2. Zet prijs, verzendkosten en retourvoorwaarden in de paginatekst. Alleen in afbeeldingen of scripts is niet genoeg.
 3. Stel een assistent 20 koopvragen, elk twee keer, en noteer wie er genoemd wordt ([de methode](/nl/blog/check-what-ai-says-about-your-brand)).
 

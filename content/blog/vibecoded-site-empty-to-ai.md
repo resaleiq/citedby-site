@@ -27,7 +27,7 @@ Vercel analysed AI crawler traffic across its network and reported that none of 
 1. Open your homepage in a browser, right click and choose View page source (not Inspect, which shows the page after scripts ran).
 2. Search the source for your main headline and one price or product name.
 3. If you find them in the text, crawlers can read them. If you find only a `<div id="root"></div>` and script tags, the page is empty to a crawler that skips JavaScript.
-4. Audit your site with the box above (from €9). It fetches your page with a plain request, without running scripts, and counts the readable words in the HTML.
+4. Run the free check in the box above. It fetches your page with a plain request, without running scripts, and counts the readable words in the HTML.
 
 For a command-line version, `curl -s https://yourshop.com/ | head -c 3000` prints the start of what a crawler gets.
 

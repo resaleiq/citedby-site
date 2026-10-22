@@ -18,7 +18,7 @@ answer: GPTBot ist auf Ihrer Website blockiert, wenn die robots.txt eine passend
 
 ## An welchen vier Stellen kann GPTBot gestoppt werden?
 
-GPTBot ist der Crawler, mit dem OpenAI nach eigener Angabe Inhalte sammelt, die zum Training seiner Modelle dienen können. Eine Anfrage von ihm kann auf vier Ebenen abgewiesen werden, und jede braucht einen eigenen Test. Das CitedBy-Audit im Kasten oben deckt die erste ab. Die anderen drei antworten mit einem Fehlercode, auch wenn die robots.txt alles erlaubt.
+GPTBot ist der Crawler, mit dem OpenAI nach eigener Angabe Inhalte sammelt, die zum Training seiner Modelle dienen können. Eine Anfrage von ihm kann auf vier Ebenen abgewiesen werden, und jede braucht einen eigenen Test. Der kostenlose Check im Kasten oben deckt die erste ab. Die anderen drei antworten mit einem Fehlercode, auch wenn die robots.txt alles erlaubt.
 
 - robots.txt: eine Disallow-Regel für GPTBot oder für alle Crawler.
 - CDN: eine Bot-Einstellung bei Ihrem Content-Delivery-Anbieter, zum Beispiel Cloudflare.
