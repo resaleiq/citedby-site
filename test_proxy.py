@@ -124,6 +124,13 @@ class T(unittest.TestCase):
         proxy.UPSTREAM = "http://127.0.0.1:1"
         self.assertEqual(self.get("/plans")[0], 502)
 
+    def test_res2738_upstream_down_gives_html_to_a_browser_json_to_the_rest(self):
+        proxy.UPSTREAM = "http://127.0.0.1:1"
+        c, b, h = self.get("/fr/tools/findable-check/webmd.com", headers={"Accept": "text/html,application/xhtml+xml"})
+        self.assertEqual(c, 502); self.assertIn("text/html", h["Content-Type"]); self.assertTrue(b.startswith(b"<!doctype html>")); self.assertIn("CitedBy est occup", b.decode()); self.assertNotIn(b"app unavailable", b)
+        c, b, h = self.get("/tools/findable-check/webmd.com", headers={"Accept": "text/html"}); self.assertIn(b"CitedBy is busy", b)
+        c, b, h = self.get("/api/me", headers={"Accept": "text/html"}); self.assertEqual(b, b'{"error":"app unavailable"}')
+
     def test_app_health_summary(self):
         self.assertEqual(proxy.app_health(), {"status": "ok", "deploy": "abc1234"})
         proxy.UPSTREAM = ""; self.assertIsNone(proxy.app_health())
