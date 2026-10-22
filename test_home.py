@@ -185,3 +185,17 @@ def test_retired_and_unlocalized_paths_redirect_res2895():
     for l in ("fr", "nl", "de", "es"):
         for p in ("legal", "data", "methodology"):
             assert server.LAUNCH_REDIRECTS[f"/{l}/{p}"] == f"/{p}"
+
+
+def test_res3013_home_faq_parity_and_faqpage_in_every_locale():
+    import json, re
+    en = open("public/landing.html", encoding="utf-8").read()
+    n = en.count("<summary>") + en.count("<summary ")
+    for lg in ("fr", "de", "nl", "es"):
+        s = open(f"public/landing.{lg}.html", encoding="utf-8").read()
+        assert s.count("<summary>") == n, lg
+        ld = [json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>', s) if '"FAQPage"' in x]
+        assert len(ld) == 1 and len(ld[0]["mainEntity"]) == 8 and ld[0]["inLanguage"] == lg, lg
+        assert any(w in s for w in ("1 seconde", "1 Sekunde", "1 seconde", "1 segundo")), lg
+        if lg == "fr":
+            assert not re.search(r"[^ \s<>=\"'/;&a-z]? [?:;!]<?", ld[0]["mainEntity"][0]["name"]), lg

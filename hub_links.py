@@ -10,6 +10,11 @@ LABELS = {  # (guides, blog, tools, audit)
     "nl": ("Gidsen", "Blog", "Gratis tools", "AI-zichtbaarheidsaudit"), "de": ("Ratgeber", "Blog", "Kostenlose Tools", "KI-Sichtbarkeits-Audit"),
     "es": ("Guías", "Blog", "Herramientas gratis", "Auditoría de visibilidad en IA")}
 ENGLISH_ONLY = (("/bots", "AI bots"), ("/platforms", "Platforms"), ("/data", "Data"), ("/compare/profound-vs-peec-vs-otterly", "Tool comparison"), ("/bot", "Our crawler"))
+ENGLISH_ONLY_LABELS = {  # RES-3013: the five links go to English-only pages, so each other language names them in its own words and says "(in English)"
+    "fr": ("Robots IA (en anglais)", "Plateformes (en anglais)", "Données (en anglais)", "Comparatif d'outils (en anglais)", "Notre robot (en anglais)"),
+    "nl": ("AI-bots (in het Engels)", "Platforms (in het Engels)", "Data (in het Engels)", "Toolvergelijking (in het Engels)", "Onze crawler (in het Engels)"),
+    "de": ("KI-Bots (auf Englisch)", "Plattformen (auf Englisch)", "Daten (auf Englisch)", "Tool-Vergleich (auf Englisch)", "Unser Crawler (auf Englisch)"),
+    "es": ("Bots de IA (en inglés)", "Plataformas (en inglés)", "Datos (en inglés)", "Comparativa de herramientas (en inglés)", "Nuestro rastreador (en inglés)")}
 HOMES = (("en", "/", "English"), ("fr", "/fr", "Français"), ("nl", "/nl", "Nederlands"), ("de", "/de", "Deutsch"), ("es", "/es", "Español"))  # the home pages in each language: the only <a> path to /fr, /nl, /de, /es
 _BLOCK = '<p class="hub-links" data-hub-links style="margin:.75rem 0 0;padding:0 16px;text-align:center;font-size:14px">{links}</p>'
 
@@ -18,7 +23,7 @@ def links(lg):
     p = "" if lg == "en" else "/" + lg
     g, b, t, a = LABELS[lg]
     out = [(f"{p}/guides", g, lg), (f"{p}/blog", b, lg), (f"{p}/tools", t, lg), (f"{p}/ai-visibility-audit", a, lg)]
-    out += [(h, l, "en") for h, l in ENGLISH_ONLY]
+    out += [(h, ENGLISH_ONLY_LABELS[lg][i] if lg in ENGLISH_ONLY_LABELS else l, "en") for i, (h, l) in enumerate(ENGLISH_ONLY)]
     return out
 
 
