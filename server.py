@@ -364,6 +364,7 @@ class H(BaseHTTPRequestHandler):
         self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
         self.send_header("Content-Security-Policy", CSP)
+        self.send_header("X-Frame-Options", "DENY"); self.send_header("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=()")  # RES-2976
         self.send_header("Strict-Transport-Security", "max-age=31536000")
         for k, v in (extra or {}).items():
             self.send_header(k, v)

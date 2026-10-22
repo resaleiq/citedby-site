@@ -1,5 +1,5 @@
 """App proxy rules (RES-661 prod cutover). Run: python3 test_proxy.py"""
-import json, threading, unittest, urllib.request, urllib.error
+import json, os, tempfile, threading, unittest, urllib.request, urllib.error
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import proxy
 
@@ -184,3 +184,22 @@ def test_res2514_verify_bundle_timeline_are_forwarded():
     assert proxy.ROUTES["POST"].fullmatch("/api/audit/a_k3j2h1/verify")
     for w in ("bundle", "timeline"): assert proxy.ROUTES["GET"].fullmatch("/api/audit/a_k3j2h1/" + w)
     assert not proxy.ROUTES["GET"].fullmatch("/api/audit/a_k3j2h1/nope")
+
+
+class Res2976(T):
+    def test_every_proxied_page_is_unframable_and_gets_a_csp(self):
+        for p in ("/plans", "/sample", "/signin", "/signup", "/forgot", "/withdraw/verify", "/fr/withdraw/verify"):
+            s, b, h = self.get(p)
+            self.assertEqual(h["X-Frame-Options"], "DENY", p); self.assertIn("frame-ancestors 'none'", h["Content-Security-Policy"], p); self.assertIn("camera=()", h["Permissions-Policy"], p)
+
+    def test_security_txt_is_served_and_the_site_sends_the_same_headers(self):
+        os.environ.setdefault("OPTIN_SECRET", "x" * 40); os.environ.setdefault("BASE_URL", "http://t"); os.environ.setdefault("DATA_DIR", tempfile.mkdtemp())
+        import server
+        s, b, h = serve_site(server)
+        self.assertEqual(s, 200); self.assertIn(b"Contact: mailto:hello@citedby.eu", b); self.assertEqual(h["X-Frame-Options"], "DENY"); self.assertIn("frame-ancestors 'none'", h["Content-Security-Policy"])
+
+def serve_site(server):
+    s = ThreadingHTTPServer(("127.0.0.1", 0), server.H); threading.Thread(target=s.serve_forever, daemon=True).start()
+    try:
+        r = urllib.request.urlopen("http://127.0.0.1:%d/.well-known/security.txt" % s.server_address[1]); return r.status, r.read(), r.headers
+    finally: s.shutdown()
