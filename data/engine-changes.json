@@ -118,5 +118,94 @@
   ],
   "owner_action": "Keep llms.txt optional: publish it for other tools if wanted, but do not expect Google Search visibility from it.",
   "read_on": "2026-10-22"
+ },
+ {
+  "id": "google-ai-optimization-guide",
+  "date": "2026-05-15",
+  "source_url": "https://developers.google.com/search/updates",
+  "source_name": "Google Search Central, documentation updates",
+  "quote": "Added a new guide on optimizing for generative AI features on Search.",
+  "engines": [
+   "google-ai-overviews",
+   "google-ai-mode"
+  ],
+  "owner_action": "Read Google's guide on optimizing for generative AI features, its 'AEO/GEO' mythbusting section first, before paying for an AI-specific fix.",
+  "read_on": "2026-10-22"
+ },
+ {
+  "id": "google-spam-policies-cover-ai-responses",
+  "date": "2026-05-15",
+  "source_url": "https://developers.google.com/search/updates",
+  "source_name": "Google Search Central, documentation updates",
+  "quote": "Clarified that our spam policies also apply to generative AI responses in Google Search.",
+  "engines": [
+   "google-ai-overviews",
+   "google-ai-mode"
+  ],
+  "owner_action": "Do not publish mass-produced or deceptive pages meant to win AI citations: Google's spam policies now say they cover AI responses too.",
+  "read_on": "2026-10-22"
+ },
+ {
+  "id": "google-preferred-sources-ai-mode",
+  "date": "2026-05-27",
+  "source_url": "https://developers.google.com/search/updates",
+  "source_name": "Google Search Central, documentation updates",
+  "quote": "The preferred sources feature is starting to roll out to AI Overviews and AI Mode.",
+  "engines": [
+   "google-ai-overviews",
+   "google-ai-mode"
+  ],
+  "owner_action": "If the site publishes articles or news, check it in Google's source preferences tool and add the preferred-source button; the site must be included in Search generative AI features.",
+  "read_on": "2026-10-22"
+ },
+ {
+  "id": "googlebot-2mb-fetch-limit",
+  "date": "2026-03-31",
+  "source_url": "https://developers.google.com/search/blog/2026/03/crawler-blog-post",
+  "source_name": "Google Search Central Blog",
+  "quote": "Googlebot currently fetches up to 2MB for any individual URL (excluding PDFs).",
+  "engines": [
+   "google-search"
+  ],
+  "owner_action": "Keep each page's HTML under 2MB and put the title, canonical and key structured data near the top; move heavy inline CSS and JavaScript to external files.",
+  "read_on": "2026-10-22"
+ },
+ {
+  "id": "google-faq-rich-result-ended",
+  "date": "2026-05-15",
+  "source_url": "https://developers.google.com/search/updates",
+  "source_name": "Google Search Central, documentation updates",
+  "quote": "This feature will no longer appear in Google Search starting May 7, 2026.",
+  "engines": [
+   "google-search"
+  ],
+  "owner_action": "Stop treating FAQPage markup as a way to win an FAQ rich result in Google Search; the result no longer appears.",
+  "read_on": "2026-10-22"
+ },
+ {
+  "id": "gsc-web-multimodal-reporting",
+  "date": "2026-09-24",
+  "source_url": "https://developers.google.com/search/blog/2026/09/web-multimodal-in-sc",
+  "source_name": "Google Search Central Blog",
+  "quote": "we are excited to introduce Search Console reporting for web multimodal search, in the report for performance on Search results",
+  "engines": [
+   "google-search",
+   "google-ai-overviews",
+   "google-ai-mode"
+  ],
+  "owner_action": "In the Search Console performance reports, use the new multimodal search type filter to see visits that began with an image search (Lens, Circle to Search) and export them.",
+  "read_on": "2026-10-22"
+ },
+ {
+  "id": "bing-topics-portfolio-beta",
+  "date": "2026-10-13",
+  "source_url": "https://blogs.bing.com/webmaster/2026/10/introducing-topics-portfolio-beta-in-ai-performance/",
+  "source_name": "Bing Webmaster Blog",
+  "quote": "It is called Topics Portfolio, and it groups the grounding queries where your site appears into broader thematic clusters",
+  "engines": [
+   "bing-copilot"
+  ],
+  "owner_action": "In Bing Webmaster Tools open AI Performance > Topics Portfolio and read Top Opportunity Queries: topics where other sites are cited and yours is not.",
+  "read_on": "2026-10-22"
  }
 ]

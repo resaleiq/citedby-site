@@ -59,7 +59,8 @@ class Changes(unittest.TestCase):
     def test_checked_lines_match_code_claims(self):
         st = {i: v["en"][2] for i, v in B.C.items()}
         self.assertEqual(st["google-llms-txt-guidance"], "Y"); self.assertEqual(st["lighthouse-agentic-browsing-category"], "P")
-        self.assertEqual(sum(1 for v in st.values() if v == "N"), len(st) - 2)
+        self.assertEqual(st["googlebot-2mb-fetch-limit"], "Y"); self.assertEqual(st["google-faq-rich-result-ended"], "P")  # heavy_page warns over 1 MB; schema_faq_missing and schema_rejected still exist
+        self.assertEqual(sum(1 for v in st.values() if v == "N"), len(st) - 4)
 
     def test_rss_parses_and_has_one_item_per_record(self):
         for l in B.LANGS:
