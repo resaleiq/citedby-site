@@ -472,7 +472,7 @@ Guides / Guide
 
 How to check whether AI assistants recommend your shop
 
-By the CitedBy editorial team · Reviewed on 2026-10-20
+By the CitedBy editorial team · Reviewed on 2026-10-20 · method
 
 Short answer Ask each assistant the questions your buyers ask, twice, with web search on, and count how often your shop is named and how often your site is linked. Our site audit then checks whether your pages can be read and quoted by AI crawlers, from €9, with the exact fix for each issue.
 
@@ -824,7 +824,7 @@ AI crawlers / AI crawlers
 
 Applebot-Extended: opting out of Apple's model training without leaving search
 
-By the CitedBy editorial team · Reviewed on 2026-10-21
+By the CitedBy editorial team · Reviewed on 2026-10-21 · method
 
 Short answer Applebot-Extended is a robots.txt token. Apple says publishers can opt out of having their content used to train generative foundation models by disallowing it. Applebot may still crawl the page, so the content stays discoverable in Spotlight, Siri and Safari. It makes no requests of its own.
 
@@ -914,7 +914,7 @@ AI crawlers / AI crawlers
 
 Bingbot: Microsoft's crawler, five user agents, how to verify
 
-By the CitedBy editorial team · Reviewed on 2026-10-21
+By the CitedBy editorial team · Reviewed on 2026-10-21 · method
 
 Short answer Bingbot is Microsoft's standard crawler and handles most of Bing's crawling. Bing's help page lists five crawlers: Bingbot, AdIdxBot, BingPreview, MicrosoftPreview and BingVideoPreview. You control them through robots.txt, and crawl rate through the Crawl control tool in Bing Webmaster Tools, not through robots.txt.
 
@@ -1109,7 +1109,7 @@ AI crawlers / AI crawlers
 
 Claude-SearchBot: Anthropic's search crawler and what blocking costs
 
-By the CitedBy editorial team · Reviewed on 2026-10-21
+By the CitedBy editorial team · Reviewed on 2026-10-21 · method
 
 Short answer Claude-SearchBot is the Anthropic robot that navigates the web to improve search result quality. Anthropic says disabling it prevents indexing of your content for search optimization, which may reduce your visibility and accuracy in user search results. Its robots.txt token is Claude-SearchBot.
 
@@ -1200,7 +1200,7 @@ AI crawlers / AI crawlers
 
 Claude-User: the agent that fetches pages when someone asks Claude
 
-By the CitedBy editorial team · Reviewed on 2026-10-21
+By the CitedBy editorial team · Reviewed on 2026-10-21 · method
 
 Short answer Claude-User is the agent Claude may use to access a website when a person asks it a question. Anthropic says disabling it prevents retrieval of your content in response to a user query, which may reduce your visibility for user-directed web search. It is separate from ClaudeBot and Claude-SearchBot.
 
@@ -1291,7 +1291,7 @@ AI crawlers / AI crawlers
 
 ClaudeBot: Anthropic's training crawler, Crawl-delay and blocking
 
-By the CitedBy editorial team · Reviewed on 2026-10-21
+By the CitedBy editorial team · Reviewed on 2026-10-21 · method
 
 Short answer ClaudeBot is Anthropic's crawler for content that could contribute to model training. A robots.txt Disallow signals that a site's future materials should be excluded from training datasets. Anthropic honours Crawl-delay, and warns that blocking its IP addresses can stop it reading robots.txt, so use robots.txt instead.
 
@@ -1478,7 +1478,7 @@ AI crawlers / AI crawlers
 
 Google-Extended: the robots.txt token for Gemini, not a crawler
 
-By the CitedBy editorial team · Reviewed on 2026-10-21
+By the CitedBy editorial team · Reviewed on 2026-10-21 · method
 
 Short answer Google-Extended is a robots.txt product token that lets publishers manage whether content Google crawls may be used to train future Gemini models. It has no HTTP user agent of its own, so it never shows in your logs. Google says it does not affect inclusion in Search or ranking.
 
@@ -1761,7 +1761,7 @@ AI crawlers / AI crawlers
 
 Meta-ExternalAgent: Meta's AI crawler and its four siblings
 
-By the CitedBy editorial team · Reviewed on 2026-10-21
+By the CitedBy editorial team · Reviewed on 2026-10-21 · method
 
 Short answer Meta-ExternalAgent is Meta's crawler for use cases such as training foundation AI models or improving products by indexing content directly. Meta's page, updated 21 May 2026, lists five agents. It says Meta-ExternalFetcher and FacebookExternalHit may bypass robots.txt, and that changes can take up to 24 hours.
 
@@ -2155,7 +2155,7 @@ AI crawler settings by platform / AI crawlers by platform
 
 Cloudflare: AI bot policies for Search, Agent and Training
 
-By the CitedBy editorial team · Reviewed on 2026-10-21
+By the CitedBy editorial team · Reviewed on 2026-10-21 · method
 
 Short answer Cloudflare sorts AI bots into three behaviors: Search, Agent and Training. For each you choose Block on all pages, Block on pages with ads, or Allow, under Security Settings, then Configure AI bot policies. Its page, last updated 1 July 2026, says updated defaults for new domains start on 15 September 2026.
 
@@ -2348,7 +2348,7 @@ AI crawler settings by platform / AI crawlers by platform
 
 Squarespace: the AI crawler box blocks 26 bots but not ChatGPT
 
-By the CitedBy editorial team · Reviewed on 2026-10-21
+By the CitedBy editorial team · Reviewed on 2026-10-21 · method
 
 Short answer Squarespace has one checkbox, Settings, then Crawlers, then Block known artificial intelligence crawlers. It adds 26 named bots to your robots.txt. The list includes GPTBot, ClaudeBot and DuckAssistBot but not OAI-SearchBot, ChatGPT-User or PerplexityBot, and you cannot edit robots.txt yourself.
 
@@ -2743,7 +2743,7 @@ Guides / Crawlability
 
 Can ChatGPT read my website?
 
-By the CitedBy editorial team · Reviewed on 2026-10-18
+By the CitedBy editorial team · Reviewed on 2026-10-18 · method
 
 Short answer ChatGPT can read your website if three things hold: robots.txt does not block OAI-SearchBot, the page text is in the HTML your server sends rather than added by JavaScript, and your server or firewall does not refuse the crawler. The CitedBy audit tests the first two on every page.
 
@@ -2924,7 +2924,7 @@ Guides / Brand checks
 
 What does ChatGPT say about your brand? 20 prompts to check it by hand
 
-By the CitedBy editorial team · Reviewed on 2026-10-18
+By the CitedBy editorial team · Reviewed on 2026-10-18 · method
 
 Short answer To check what ChatGPT says about your brand, ask it 20 prompts in four groups: your brand, your category, comparisons with rivals, and facts such as price and shipping. Ask each twice in a new chat, log whether it names you, links you and gets the facts right, and count the results.
 
@@ -3228,7 +3228,7 @@ Guides / Measurement
 
 Is AI traffic converting? How to set up GA4 to see visits from ChatGPT and other assistants
 
-By the CitedBy editorial team · Reviewed on 2026-10-19
+By the CitedBy editorial team · Reviewed on 2026-10-19 · method
 
 Short answer Create a custom channel group in GA4 with an AI assistants channel whose Source matches a regex of the assistants you see in your Traffic acquisition report. Move it above Referral, because GA4 uses the first matching channel. Then compare conversions by channel. Visits without a referrer stay under Direct.
 
@@ -3409,7 +3409,7 @@ Guides / AI visibility basics
 
 How to create an llms.txt file, step by step
 
-By the CitedBy editorial team · Reviewed on 2026-10-21
+By the CitedBy editorial team · Reviewed on 2026-10-21 · method
 
 Short answer To create an llms.txt file, write a plain-text Markdown file with a # title, a short > summary and ## sections that list your key pages as [name](url): note links, save it as llms.txt and upload it to your site root so it loads at yourshop.com/llms.txt. Then run the free checker to confirm it loads and its links work.
 
