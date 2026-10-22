@@ -95,7 +95,7 @@ one-off One site, one report
 1 site, up to 500 pages
 Ready-to-paste fix for each issue
 PDF report
-Report open to you for 30 days
+Report stays in your account
 
 €9 once
 Run one audit for €9
@@ -150,6 +150,30 @@ Questions
 Why pay for an audit when free checkers exist?
 Free checkers test one page, and crawlers you install hand you a list of problems. CitedBy checks every page up to your plan limit and writes the exact fix for each issue, so you paste the fix and skip the research. If it is not worth €9 to you, the 14-day guarantee refunds it.
 
+What is an AI search audit and why do I need one?
+An AI search audit checks whether AI assistants and search engines can reach, read and quote your pages: crawler access in robots.txt, readable text without JavaScript, llms.txt, structured data, titles, internal links and answer-first content. You need one because an assistant that cannot read a page cannot cite it, and most blockers are fixed with a few lines.
+
+How do I check if AI assistants can read my website?
+Paste your address into the free check on this page, or use the free AI crawler checker at citedby.eu/tools/ai-crawler-check . It shows whether robots.txt and your server let GPTBot, ClaudeBot, PerplexityBot and Googlebot in, with the exact lines to change.
+
+How much does a website audit for AI visibility cost?
+A single audit is €9 once, for 1 site and up to 500 pages. Starter is €19 a month (up to 1,000 pages), Pro €49 a month (5 sites, up to 5,000 pages each) and Agency €99 a month (25 sites). Monthly plans start with a 7-day free trial, and every paid plan has a 14-day money-back guarantee.
+
+What is the difference between SEO and AI search readiness?
+SEO is about ranking in a list of links. AI search readiness is whether an assistant can fetch your page, read its text without running JavaScript and lift a sentence as an answer. They overlap on crawlability, titles and structured data, and differ on bot access (GPTBot, ClaudeBot) and answer-first writing. More in GEO vs AEO vs SEO .
+
+Can I fix AI crawler access issues myself?
+Yes. Most access problems are a few lines in robots.txt or one setting in your host or CDN. Each issue in the audit comes with the exact lines to paste, and our pages for Shopify, Squarespace, Wix, Webflow, WordPress.com and Cloudflare show where each setting sits.
+
+How do I know if ChatGPT can find my site?
+ChatGPT search uses OAI-SearchBot, and ChatGPT-User fetches a page when someone asks about it. If robots.txt or your firewall blocks them, ChatGPT cannot read your pages, and the free AI crawler check tests both. Whether it then names you in an answer is something nobody can guarantee.
+
+What structured data do AI assistants need?
+No major assistant publishes a required list. JSON-LD tells them what a page is: Organization on the home page, Product on product pages, Article on posts and FAQPage where a page answers questions. The audit flags pages with none and writes the JSON-LD to paste.
+
+How long does a website audit take?
+Our crawler waits at least 1 second between requests to your site, so a 500-page audit takes at least 8 minutes and a larger site takes longer. The report opens in your account when the crawl finishes.
+
 How does the 7-day free trial work?
 Starter, Pro and Agency start with 7 days free. You enter a card, we charge €0 today, and the Stripe page shows the date and amount of the first charge before you confirm. The trial covers 1 site, up to 500 pages and 2 audits, with the full report; your plan's full allowance starts with the first payment. We email you 3 days before the first charge with a cancel link. Cancel in your account, and if you cancel before the first charge you pay nothing. One trial per email address and card.
 
@@ -157,7 +181,7 @@ Why do you need my card for a trial?
 A crawl costs us real money, and a card keeps the trial to one per person. It is not a trap: the charge date and amount are shown up front, you get a reminder 3 days before, and after the first charge the 14-day money-back guarantee still applies. If you want no subscription at all, the €9 audit has none.
 
 What do I get for €9?
-One audit of one site, up to 500 pages: a short list of what to fix first, every issue ranked by severity with the pages it affects, a page-by-page view, a ready-to-paste fix for each issue and a PDF. Your report stays open to you for 30 days.
+One audit of one site, up to 500 pages: a short list of what to fix first, every issue ranked by severity with the pages it affects, a page-by-page view, a ready-to-paste fix for each issue and a PDF. Your report stays in your account.
 
 What does the audit read?
 The HTML each page serves, plus robots.txt, your sitemap and llms.txt. We read public pages only. We do not log in, and we do not run your JavaScript, so a page that arrives empty until JavaScript runs is reported as exactly that. A check we could not read is shown as "not measured", never as a pass.
@@ -316,6 +340,7 @@ Source: https://citedby.eu/bots
 
 AI crawlers: who they are, what they do, how to allow or block them
 One page per AI crawler, with the operator, the robots.txt token, the vendor's own sentence, what blocking costs and the vendor's published address list, each read from the vendor's page on the date shown.
+An AI crawler is a bot that fetches pages for an assistant such as ChatGPT, Claude, Perplexity or Gemini. Each page below names the operator, the robots.txt token, what blocking costs and the vendor's published address list, so you can decide per bot whether to allow it.
 Amazonbot, Amzn-SearchBot and Amzn-User: three Amazon agents, three rules Amazon's page now describes three agents with independent robots.txt settings. What each does, which may train Amazon AI models and which may ignore robots.txt. Reviewed on 2026-10-21
 Applebot-Extended: opting out of Apple's model training without leaving search Applebot-Extended is Apple's opt-out token for generative model training. What it does, why Applebot can still crawl you and what stays in Spotlight and Siri. Reviewed on 2026-10-21
 Bingbot: Microsoft's crawler, five user agents, how to verify Bingbot is Bing's standard crawler. The five Microsoft crawler names, how to verify a request and where crawl rate is set, read from Bing's own help page. Reviewed on 2026-10-21
@@ -337,6 +362,7 @@ Source: https://citedby.eu/platforms
 
 How to allow or block AI crawlers on Shopify, Squarespace, Wix, Webflow, WordPress.com and Cloudflare
 One page per platform: where its own help page says the setting lives, what it does and does not cover, and the one thing that page says that the others do not, each read on the date shown.
+Each page names the platform's own help page, where the AI-crawler setting sits, what it covers and what it does not: Shopify, Squarespace, Wix, Webflow, WordPress.com and Cloudflare.
 Cloudflare: AI bot policies for Search, Agent and Training Cloudflare's Block AI Bots page splits AI bots into Search, Agent and Training with Block, Block on pages with ads and Allow. New defaults from 15 Sept 2026. Reviewed on 2026-10-21
 Shopify: allow or block AI crawlers, and what robots.txt misses Edit robots.txt.liquid to allow or block AI crawlers on Shopify. Shopify says a block affects open-web discovery only, not product data sent to ChatGPT. Reviewed on 2026-10-21
 Squarespace: the AI crawler box blocks 26 bots but not ChatGPT Squarespace's Crawlers panel has one box blocking known AI crawlers. The 26 names it writes to robots.txt leave out ChatGPT's search and user bots. Reviewed on 2026-10-21
@@ -349,6 +375,7 @@ Source: https://citedby.eu/guides
 
 AI visibility guides for online shops
 How AI assistants find, read and name online shops, and what to fix. Each guide ends with an audit you can run on your own site, from €9.
+These guides cover where to edit robots.txt and find the sitemap on Shopify and WooCommerce, how to check product JSON-LD, ten technical checks you can run by hand, how to see whether ChatGPT, Perplexity and Gemini name your shop, and how the AI visibility tools compare on price.
 AI visibility tools compared by what they cost and do Most AI visibility tools are monthly dashboards. A plain comparison of what CitedBy, Profound, Peec AI, Otterly.ai and free graders cost and do. Reviewed on 2026-10-20
 How to check whether AI assistants recommend your shop A way to see if ChatGPT, Perplexity and Gemini name your online shop when a buyer asks, by hand in 10 minutes, and what to do when they do not. Reviewed on 2026-10-20
 AI visibility checklist for Shopify, WooCommerce and more Where to find robots.txt, the sitemap and product data on Shopify, WordPress with WooCommerce and other shop platforms, and what to check for AI crawlers. Reviewed on 2026-10-20
@@ -359,6 +386,7 @@ Source: https://citedby.eu/blog
 
 AI visibility blog for online shops
 Notes and data on how AI assistants treat online shops, plus our step-by-step guides. Each post ends with an audit you can run on your own site.
+The posts cover whether ChatGPT can read your website, whether llms.txt works, how to track AI referral traffic in GA4, how to check what AI says about your brand and what to do when an assistant shows a wrong price.
 How to create an llms.txt file, step by step Write an llms.txt in six steps with a copy-paste template that follows the llmstxt.org format, publish it at your site root and check it with a free tool. Reviewed on 2026-10-21
 AI visibility tools compared by what they cost and do Most AI visibility tools are monthly dashboards. A plain comparison of what CitedBy, Profound, Peec AI, Otterly.ai and free graders cost and do. Reviewed on 2026-10-20
 How to check whether AI assistants recommend your shop A way to see if ChatGPT, Perplexity and Gemini name your online shop when a buyer asks, by hand in 10 minutes, and what to do when they do not. Reviewed on 2026-10-20
