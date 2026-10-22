@@ -4,6 +4,8 @@ Source: <company-memory>/products/citedby/legal-v2/<lang>/<page>.md (default pat
 image needs no access to the texts. Run after editing them; `--check` exits 1 if a committed page differs. Standard library only."""
 import datetime, html, os, re, sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import docshell
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 PUB = os.path.join(ROOT, "public"); SITE = "https://citedby.eu"; E = html.escape
 SRC = next((a for a in sys.argv[1:] if not a.startswith("--")), os.path.expanduser("~/work/company-memory/products/citedby/legal-v2"))
@@ -91,7 +93,7 @@ def shell(lang, page, title, desc, body_html):
     t, base = UI[lang], f"{SITE}{path(lang, page)}"
     alts = "".join(f'<link rel="alternate" hreflang="{c}" href="{SITE}{path(c, page)}">' for c in LANGS) + f'<link rel="alternate" hreflang="x-default" href="{SITE}{path("en", page)}">'
     css = open(os.path.join(PUB, "privacy.html"), encoding="utf-8").read()
-    ver = re.search(r'/doc\.css\?v=(\w+)', css).group(1)
+    ver = docshell.ver()
     ld = ('{"@context": "https://schema.org", "@type": "WebPage", "name": %s, "url": "%s", "inLanguage": "%s", "description": %s, "isPartOf": {"@type": "WebSite", "name": "CitedBy", "url": "https://citedby.eu"}, '
           '"publisher": {"@type": "Organization", "@id": "https://citedby.eu/#org", "name": "CitedBy", "url": "https://citedby.eu"}}')
     import json
