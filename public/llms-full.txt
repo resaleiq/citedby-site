@@ -387,6 +387,7 @@ Source: https://citedby.eu/blog
 AI visibility blog for online shops
 Notes and data on how AI assistants treat online shops, plus our step-by-step guides. Each post ends with an audit you can run on your own site.
 The posts cover whether ChatGPT can read your website, whether llms.txt works, how to track AI referral traffic in GA4, how to check what AI says about your brand and what to do when an assistant shows a wrong price.
+Is my website cited by ChatGPT? How to check it, step by step Four checks tell you if ChatGPT can reach, index, name and send visitors to your site, with numbers from our crawl of 370 launched sites. Reviewed on 2026-10-23
 How to create an llms.txt file, step by step Write an llms.txt in six steps with a copy-paste template that follows the llmstxt.org format, publish it at your site root and check it with a free tool. Reviewed on 2026-10-21
 AI visibility tools compared by what they cost and do Most AI visibility tools are monthly dashboards. A plain comparison of what CitedBy, Profound, Peec AI, Otterly.ai and free graders cost and do. Reviewed on 2026-10-20
 How to check whether AI assistants recommend your shop A way to see if ChatGPT, Perplexity and Gemini name your online shop when a buyer asks, by hand in 10 minutes, and what to do when they do not. Reviewed on 2026-10-20
@@ -3615,6 +3616,88 @@ AI-crawler access checker (free)
 Can ChatGPT read my website?
 The CitedBy site audit
 A sample report
+
+## Is my website cited by ChatGPT? How to check it
+Source: https://citedby.eu/blog/is-my-website-cited-by-chatgpt
+
+Guides / Brand checks
+
+Is my website cited by ChatGPT? How to check it, step by step
+
+By the CitedBy editorial team · Reviewed on 2026-10-23 · method
+
+Short answer To find out if ChatGPT cites your website, run four checks: its crawlers can fetch your pages, Bing holds them in its index, ChatGPT names or links you when you ask the questions your buyers ask, and chatgpt.com shows up as a referrer in your analytics. A failure at step one or two explains most silence.
+
+On this page The four checks
+What stops sites at step 1
+What stops sites at step 2
+What to do with the result
+The faster way
+Questions people ask
+Sources
+
+The four checks
+
+Reach. Open your robots.txt and look for rules on GPTBot, OAI-SearchBot and ChatGPT-User, then fetch your homepage without JavaScript and count the words. The AI crawler checker does both for free.
+Index. ChatGPT search draws on search-engine results from partners, and Bing is the one most often named, so check that Bing and Google hold your pages: add your site to Bing Webmaster Tools and Google Search Console, submit the sitemap, and run URL Inspection on your homepage.
+Answers. Ask ChatGPT, logged out and in a new chat, the questions your buyers ask ("where can I buy [what you sell] in [country]?"). Write down whether it names you, links you and gets your facts right. Use the 20-prompt list .
+Visits. In GA4 or your server logs, filter referrers for chatgpt.com. A cited page sends clicks; a mention without a link may not.
+
+What stops sites at step 1
+
+We fetched 300 sites that launched on Show HN (15 to 20 October 2026) and 70 built with Lovable, as CitedBot, with robots.txt obeyed and no JavaScript. The launch crawl found:
+
+Check Show HN Lovable
+Homepage under 100 words of text in the raw HTML 16% (47/293) 74% (49/66)
+robots.txt blocks at least one of five AI crawlers 4% (12/294) 0% (0/67)
+Homepage turned away a live request from one of those crawlers 11% (33/293) 0% (0/66)
+
+So robots.txt was the smaller factor. An empty HTML shell and a firewall that refuses AI user agents turned up more often. These numbers say nothing about whether those sites are cited; we did not measure that.
+
+What stops sites at step 2
+
+A page that no index holds cannot be found by a search-backed answer. On 22 October 2026 Bing's own URL Inspection reported the home pages of three of our sites as "Discovered but not crawled". Discovered means Bing knows the URL and has not fetched it yet. Submitting the sitemap and the IndexNow protocol on every publish shortens the wait; it does not set a date.
+
+What to do with the result
+
+Step 1 fails: fix robots.txt rules or the firewall first, then make the homepage send its text in the HTML.
+Step 2 fails: submit the sitemap, request indexing and ping IndexNow, then check again in a week.
+Step 3 shows rivals, not you: open the pages ChatGPT linked for them and note what they hold that yours lacks.
+Step 4 shows nothing: one week is too short to judge; log the date and repeat monthly.
+
+The faster way
+
+The audit crawls your site up to your plan's page limit, shows what AI crawlers cannot read or quote, and gives the exact fix for each issue. It starts at €9. Prefer to check only access first? Run the free check .
+
+Questions people ask
+
+Can I see every time ChatGPT cites my site?
+
+No. OpenAI does not publish a citation report for site owners. Your server logs show its crawlers' requests and visits from chatgpt.com, and asking the questions by hand shows the rest.
+
+Does blocking GPTBot stop ChatGPT citing me?
+
+Not by itself. GPTBot is the training crawler; OAI-SearchBot is the one used for search, and ChatGPT-User fetches pages when a person asks. Check each rule on its own.
+
+How long until a new page is cited?
+
+We cannot give a number. It must first be crawled and indexed, and answers change from run to run.
+
+Sources
+
+CitedBy launch crawl 2026-10: method, limits and CSV
+OpenAI: crawlers overview (GPTBot, OAI-SearchBot, ChatGPT-User)
+About CitedBy: how we count
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+AI crawler checker
+Is my site findable by Google, Bing and ChatGPT?
+Launch crawl: 370 sites
+20 prompts to ask ChatGPT about your brand
 
 ## Lovable, Bolt or React site empty to AI? Check and fix
 Source: https://citedby.eu/blog/vibecoded-site-empty-to-ai
