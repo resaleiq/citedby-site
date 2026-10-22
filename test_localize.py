@@ -37,7 +37,7 @@ class T(unittest.TestCase):
         for lang in L.LANGS:
             d = open(os.path.join(L.PUB, f"landing.{lang}.html"), encoding="utf-8").read().lower()
             for w in ("claude haiku", "openrouter", "anthropic", "gpt-4"): self.assertNotIn(w, d)
-            self.assertIsNone(re.search(r"\bllms?\b(?!\.txt)", d))
+            self.assertIsNone(re.search(r"\bllms?\b(?!\.txt|-txt)", d))
 
     def test_routes(self):
         self.assertEqual(langroutes.LANDING_PATHS, {"/fr": "fr", "/nl": "nl", "/de": "de", "/es": "es"})

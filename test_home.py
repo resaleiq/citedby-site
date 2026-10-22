@@ -154,3 +154,15 @@ def test_pricing_redirects_to_plans_in_every_locale_res2790():
         h = home.render(lang, [])
         assert 'href="/pricing"' not in h and 'href="/fr/pricing"' not in h
         assert ("/plans" if lang == "en" else f"/{lang}/plans") in h
+
+
+class FreeToolsLinks(unittest.TestCase):
+    """RES-2857: every landing links, server-rendered, to /tools, both checkers and /bots."""
+    def test_footer_links(self):
+        import os, re
+        pub = os.path.join(os.path.dirname(os.path.abspath(__file__)), "public")
+        for lang, p in (("", ""), (".fr", "/fr"), (".nl", "/nl"), (".de", "/de"), (".es", "/es")):
+            d = open(os.path.join(pub, f"landing{lang}.html"), encoding="utf-8").read()
+            foot = d[d.index("<footer"):]
+            for h in (f"{p}/tools", f"{p}/tools/ai-crawler-check", f"{p}/tools/llms-txt-checker", "/bots"):
+                self.assertIn(f'<a href="{h}">', foot)
