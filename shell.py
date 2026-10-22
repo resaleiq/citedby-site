@@ -32,16 +32,16 @@ def asset_ver(name):
 S = {
  "en": dict(
   skip="Skip to content", home="CitedBy home", main="Main", foot_nav="Footer", langlabel="Language", path="/", other="/fr",
-  nav=(("/grade", "Scan"), ("/pricing", "Prices"), ("/data", "Data"), ("/faq", "FAQ")),
+  nav=(("/grade", "Scan"), ("/plans", "Prices"), ("/data", "Data"), ("/faq", "FAQ")),
   own="OUR OWN SITE", proof="Named in {n} of {a} category answers. Counted {date}, {k} assistants.", proof_link="Read the count", proof_href="/#proof",
-  foot=(("/grade", "Scan"), ("/pricing", "Prices"), ("/data", "Data"), ("/faq", "FAQ"), ("/sample-audit", "Sample audit"), ("/terms", "Terms"), ("/refund", "Refunds"),
+  foot=(("/grade", "Scan"), ("/plans", "Prices"), ("/data", "Data"), ("/faq", "FAQ"), ("/sample-audit", "Sample audit"), ("/terms", "Terms"), ("/refund", "Refunds"),
         ("/contact", "Contact"), ("/legal", "Legal notice"), ("/privacy", "Privacy")),
   copy="© 2026 CitedBy."),
  "fr": dict(
   skip="Aller au contenu", home="Accueil CitedBy", main="Principal", foot_nav="Pied de page", langlabel="Langue", path="/fr", other="/",
-  nav=(("/grade", "Test gratuit"), ("/pricing", "Tarifs"), ("/data", "Données"), ("/fr#faq", "FAQ")),
+  nav=(("/grade", "Test gratuit"), ("/fr/plans", "Tarifs"), ("/data", "Données"), ("/fr#faq", "FAQ")),
   own="NOTRE PROPRE SITE", proof="Cité dans {n} réponse sur {a} (questions de catégorie). Compté le {date}, {k} assistants.", proof_link="Lire le décompte", proof_href="/fr#proof",
-  foot=(("/grade", "Test gratuit"), ("/pricing", "Tarifs"), ("/data", "Données"), ("/fr#faq", "FAQ"), ("/sample-audit", "Exemple d'audit"), ("/terms", "Conditions"),
+  foot=(("/grade", "Test gratuit"), ("/fr/plans", "Tarifs"), ("/data", "Données"), ("/fr#faq", "FAQ"), ("/sample-audit", "Exemple d'audit"), ("/terms", "Conditions"),
         ("/refund", "Remboursements"), ("/contact", "Contact"), ("/legal", "Mentions légales"), ("/privacy", "Confidentialité")),
   copy="© 2026 CitedBy."),
 }
