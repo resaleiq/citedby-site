@@ -5,7 +5,7 @@ slug: does-llms-txt-work
 locale: en
 cluster: AI visibility basics
 date: 2026-10-18
-reviewed: 2026-10-18
+reviewed: 2026-10-23
 hero: does-llms-txt-work-hero.svg
 hero_alt: Title card: does llms.txt work, with two figures: 97 percent of files got zero requests, and about 300,000 domains showed no clear link to AI citations
 og: does-llms-txt-work-og.png
@@ -25,6 +25,8 @@ llms.txt is a proposal by Jeremy Howard, published in September 2024: a Markdown
 **Does anything fetch it?** Ahrefs checked 137,210 domains with its web analytics in May 2026. It found that 97% of valid llms.txt files received zero requests that month. Of the requests that did arrive, 19.5% came from named AI tools. SEO audit tools, unknown bots and general crawlers made up much of the rest. Ahrefs also reports that no AI bot went looking for the file on sites that did not have one ([Ahrefs study](https://ahrefs.com/blog/llmstxt-study)).
 
 **Does it change citations?** SE Ranking analysed about 300,000 domains and published in November 2025 that having llms.txt showed no clear connection to how often a domain is cited by AI, with 10.13% of domains having the file ([Search Engine Journal on the SE Ranking study](https://www.searchenginejournal.com/llms-txt-shows-no-clear-effect-on-ai-citations-based-on-300k-domains/561542/)). Their own wording is that it "doesn't seem to directly impact AI citation frequency. At least not yet."
+
+**How common is it on launched sites?** In our [launch crawl](/data/launch-crawl-2026-10) of 300 Show HN sites and 70 Lovable builds (20 and 21 October 2026, CitedBot, no JavaScript), 34% of Show HN sites (100/293) and 18% of Lovable sites (12/66) served an llms.txt file. In the same crawl, 16% of Show HN homepages and 74% of Lovable ones sent under 100 words of text in their HTML. We did not measure citations, so the crawl shows how often the file exists, not what it does.
 
 Both studies are correlation or log data from outside parties, run on different samples with different methods. They support "no measurable benefit so far", not "it can never matter".
 
