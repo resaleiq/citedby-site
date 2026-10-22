@@ -21,11 +21,26 @@ class Changes(unittest.TestCase):
             for r in REC:
                 self.assertIn('id="%s"' % r["id"], h); self.assertIn('datetime="%s"' % r["date"], h)
                 self.assertIn(B.E(r["quote"]), h, (l, r["id"])); self.assertIn(B.E(r["source_url"]), h)
-            self.assertEqual(len(re.findall(r'class="chip ', h)), len(REC))
+            self.assertEqual(len(re.findall(r'class="chip ', h)), 2 * len(REC))  # summary row + article
 
     def test_newest_first(self):
         for l in B.LANGS:
-            d = re.findall(r'<time datetime="([\d-]+)"', page(l)); self.assertEqual(d, sorted(d, reverse=True))
+            d = re.findall(r'<time datetime="([\d-]+)"', page(l).split('<article ', 1)[1]); self.assertEqual(d, sorted(d, reverse=True))
+
+    def test_summary_list_and_free_tool_links(self):
+        for l in B.LANGS:
+            h = page(l); sm = h[h.index('class="sum"'):h.index("</section>", h.index('class="sum"'))]
+            self.assertEqual(re.findall(r'<a href="#([^"]+)"', sm), [r["id"] for r in B.ordered()], l)
+            self.assertEqual(len(re.findall(r'class="chip ', sm)), len(REC))
+            arts = {m.group(1): m.group(0) for m in re.finditer(r'<article id="([^"]+)".*?</article>', h, re.S)}
+            for rid, (tool, _) in B.FREE.items():
+                self.assertIn('href="%s"' % B.tp(l, "/" + tool), arts[rid], (l, rid))
+            self.assertIn('href="%s"' % B.tp(l), h.split('class="cta"')[1])
+            self.assertEqual(h.count('class="free"'), 4)
+        for l in B.LANGS[1:]:
+            h = page(l)
+            for w in ("note added to", "Bing and Copilot", "Check yours free", "All changes at a glance", "Free tools"): self.assertNotIn(w, h, (l, w))
+        self.assertIn("vérifie\u202f:", page("fr"))
 
     def test_no_english_source_strings_in_other_locales(self):
         for l in B.LANGS[1:]:
