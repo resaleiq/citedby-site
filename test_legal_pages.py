@@ -58,7 +58,7 @@ def test_legal_links_localizes_footer_only_for_non_english():
 
 
 def test_v2_texts_are_the_ones_served():
-    assert "Last updated: 21 October 2026" in re.sub(r"<[^>]+>", "", F("en", "privacy")).replace("Last updated:", "Last updated:")
+    assert "Last updated: 22 October 2026" in re.sub(r"<[^>]+>", "", F("en", "privacy")).replace("Last updated:", "Last updated:")
 
 
 def test_switch_english_link_has_no_locale_prefix_after_serve_time_rewrite():
