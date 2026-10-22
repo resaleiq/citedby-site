@@ -327,7 +327,7 @@ def prefill_host(raw_path):
     return v if HOST_Q.match(v) else ""
 
 GONE = {"/data/" + n + ext for n in ("the-france", "cafe-france", "cafe-belgique", "koffie-belgie", "coffee-ireland") for ext in ("", ".csv")}  # RES-1459 row 6: retired tea/coffee studies answer 410
-LAUNCH_REDIRECTS = {"/pricing": "/#pricing", "/faq": "/#faq", "/sample-audit": "/sample", "/check": "/", "/partners": "/", "/fr/check": "/", "/nl/check": "/", "/fixpack": "/#fixpack", "/fix-pack": "/#fixpack"}
+LAUNCH_REDIRECTS = {"/pricing": "/plans", **{f"/{l}/pricing": f"/{l}/plans" for l in ("fr", "nl", "de", "es")}, "/faq": "/#faq", "/sample-audit": "/sample", "/check": "/", "/partners": "/", "/fr/check": "/", "/nl/check": "/", "/fixpack": "/#fixpack", "/fix-pack": "/#fixpack"}
 GO = {  # RES-2130: short links for posts; one fixed UTM set per link (UTM.md: lowercase [a-z0-9_]); other query params (e.g. internal=1) are forwarded, utm_* from the caller are dropped
     "/go/hn": {"utm_source": "hackernews", "utm_medium": "organic_social", "utm_campaign": "citedby_202610", "utm_content": "show_hn_01"},
 }

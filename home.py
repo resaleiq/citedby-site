@@ -338,12 +338,17 @@ def shot_html(lang):
             f'<p class="shotcap"><span class="own">{E(t["shot_tag"])}</span>{t["shot_cap"]}</p>')
 
 
+def plans_href(lang):
+    return "/plans" if lang == "en" else f"/{lang}/plans"  # /pricing redirects here (RES-2790)
+
+
 def rows_html(lang):
     t = T[lang]
+    plans_path = plans_href(lang)
     ic_y = '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="1" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>'
     ic_n = '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="1" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 6l8 8M14 6l-8 8" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>'
     return (f'<section class="band" id="rows"><div class="wrap"><h2 class="h2b">{E(t["rows_h"])}</h2><div class="cols2"><div><p class="lede" style="max-width:30em">{E(t["rows_p"])}</p>'
-            f'<p><a class="btn sec" href="/pricing">{E(t["prices"])}</a></p></div><div class="lg"><h3>{E(t["rows_t"])} <span class="smp">{E(t["rows_s"])}</span></h3>'
+            f'<p><a class="btn sec" href="{plans_path}">{E(t["prices"])}</a></p></div><div class="lg"><h3>{E(t["rows_t"])} <span class="smp">{E(t["rows_s"])}</span></h3>'
             f'<div class="arow yes">{ic_y}<span class="nm">{E(t["rows_a"])}<small>{E(t["rows_ls"])}</small></span><span class="st">{E(t["rows_y"])}</span><span class="ct">7 / 12</span></div>'
             f'<div class="arow no">{ic_n}<span class="nm">{E(t["rows_b"])}<small>{E(t["rows_ls"])}</small></span><span class="st">{E(t["rows_n"])}</span><span class="ct">0 / 12</span></div>'
             f'<p class="k">{E(t["rows_k"])}</p></div></div></div></section>')
@@ -378,7 +383,7 @@ def render(lang, engines):
         ld[1]["description"] = eline_plain(t, day, names, lang)
     alts = '<link rel="alternate" hreflang="en" href="https://citedby.eu/"><link rel="alternate" hreflang="fr" href="https://citedby.eu/fr"><link rel="alternate" hreflang="x-default" href="https://citedby.eu/">'
     behind = f'<section id="behind" class="tintband behind"><div class="wrap qgrid"><div class="qh"><span class="eyebrow-bar"></span><h2>{E(t["behind_h"])}</h2></div><p>{E(t["behind"])} <a href="/legal">{E(t["legal"])}</a>.</p></div></section>'
-    prices_lnk = "/pricing"
+    prices_lnk = plans_href(lang)
     main = f'''<section class="hero on-navy" id="scan"><div class="wrap"><div class="cols"><div class="lcol"><h1>{E(t["h1"])}</h1><p class="lede">{E(t["lede"])}</p>
 {form}
 <ol class="hsteps" aria-label="{E(t["steps_label"])}">{steps_html(t, lang, engines)}</ol></div><div class="rcol">{sample_html(lang)}</div></div></div></section>

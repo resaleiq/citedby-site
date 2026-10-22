@@ -143,3 +143,14 @@ class TestHomeJsonLdRes2651(unittest.TestCase):
         types = [n["@type"] for n in json.loads(m.group(1))["@graph"]]
         self.assertNotIn("Product", types)  # Google: merchant listing needs image + availability
         self.assertIn("Service", types)
+
+
+def test_pricing_redirects_to_plans_in_every_locale_res2790():
+    import server
+    for l in ("fr", "nl", "de", "es"):
+        assert server.LAUNCH_REDIRECTS[f"/{l}/pricing"] == f"/{l}/plans"
+    assert server.LAUNCH_REDIRECTS["/pricing"] == "/plans"
+    for lang in ("en", "fr"):
+        h = home.render(lang, [])
+        assert 'href="/pricing"' not in h and 'href="/fr/pricing"' not in h
+        assert ("/plans" if lang == "en" else f"/{lang}/plans") in h
