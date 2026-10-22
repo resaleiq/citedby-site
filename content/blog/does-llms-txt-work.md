@@ -44,7 +44,7 @@ If you add one, keep it short: your name, one sentence on what you sell and wher
 
 ## What to do instead first
 
-1. Audit your site with the box above (from €9). It tests whether AI crawlers can fetch your page and read it, and it reports whether an llms.txt exists as a hygiene item, without treating it as a ranking factor.
+1. Run the free check in the box above. It tests whether AI crawlers can fetch your page and read it, and it reports whether an llms.txt exists as a hygiene item, without treating it as a ranking factor.
 2. Put price, shipping and returns in the page text, not only in images or scripts.
 3. Ask an assistant 20 buyer questions twice each and log who gets named ([the method](/blog/check-what-ai-says-about-your-brand)).
 

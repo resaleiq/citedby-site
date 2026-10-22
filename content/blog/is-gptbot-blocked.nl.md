@@ -18,7 +18,7 @@ steps_img: on
 
 ## Op welke vier plekken kan GPTBot worden tegengehouden?
 
-GPTBot is de crawler die OpenAI naar eigen zeggen gebruikt om content te verzamelen die gebruikt kan worden om zijn modellen te trainen. Een verzoek van GPTBot kan op vier lagen worden afgewezen en elke laag heeft een eigen test. De audit in het vak hierboven dekt de eerste laag. De andere drie geven een foutcode terug, ook als robots.txt "ja" zegt.
+GPTBot is de crawler die OpenAI naar eigen zeggen gebruikt om content te verzamelen die gebruikt kan worden om zijn modellen te trainen. Een verzoek van GPTBot kan op vier lagen worden afgewezen en elke laag heeft een eigen test. De gratis check in het vak hierboven dekt de eerste laag. De andere drie geven een foutcode terug, ook als robots.txt "ja" zegt.
 
 | Laag | Wat u moet nakijken |
 | --- | --- |
@@ -30,7 +30,7 @@ GPTBot is de crawler die OpenAI naar eigen zeggen gebruikt om content te verzame
 ## Hoe controleert u of GPTBot geblokkeerd is?
 
 1. Open `uwwebshop.nl/robots.txt` in een browser. Zoek een groep die `GPTBot` noemt. Is die er niet, dan volgt GPTBot de groep `User-agent: *`, dus een algemene `Disallow: /` daaronder blokkeert GPTBot ook ([RFC 9309](https://www.rfc-editor.org/rfc/rfc9309)).
-2. Laat uw site auditen met het vak hierboven (vanaf €9). De audit leest robots.txt voor GPTBot, OAI-SearchBot, PerplexityBot, Google-Extended en Bingbot en noemt welke geblokkeerd zijn.
+2. Draai de gratis check in het vak hierboven. Die leest robots.txt voor GPTBot, OAI-SearchBot, PerplexityBot, Google-Extended en Bingbot en noemt welke geblokkeerd zijn.
 3. Stuur twee verzoeken naar uw homepage en vergelijk de statuscodes. Eén normaal, één met de user-agent van GPTBot. De opdrachten staan hieronder.
 4. Open uw CDN-account en kijk bij de instellingen voor AI-crawlers. De stappen voor Cloudflare staan verderop.
 5. Doorzoek de regels van uw beveiligingsplugin of firewall op `GPTBot`, `bot`, `AI` en `crawler`, en zoek in uw serverlogs naar `GPTBot`. Veel 403-antwoorden aan GPTBot wijzen op een blokkade die robots.txt niet toont.

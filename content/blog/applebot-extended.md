@@ -64,7 +64,7 @@ Applebot: The crawler itself: allowing it keeps you in Spotlight, Siri and Safar
 
 ## Check your own site
 
-The audit box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on [the AI crawler hub](/bots).
+The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on [the AI crawler hub](/bots).
 
 ## FAQ
 

@@ -23,7 +23,7 @@ ChatGPT search uses a crawler called OAI-SearchBot to find pages. OpenAI also ru
 ## How to check, step by step
 
 1. Open `yourshop.com/robots.txt` in a browser. Look for `User-agent: OAI-SearchBot`, `GPTBot` or `*` followed by `Disallow: /`. A blanket `Disallow: /` under `User-agent: *` blocks every crawler that has no rule of its own.
-2. Audit your site with the box above (from €9). It reads robots.txt for OAI-SearchBot, GPTBot, PerplexityBot, Google-Extended and Bingbot and tells you which are blocked.
+2. Run the free check in the box above. It reads robots.txt for OAI-SearchBot, GPTBot, PerplexityBot, Google-Extended and Bingbot and tells you which are blocked.
 3. Look at the word count it reports for the page HTML. Your homepage should have hundreds of words there, including your brand name and what you sell.
 4. Open the page, choose "View page source" and search for your product name. If it is missing, the page builds its text with JavaScript and a crawler that does not run scripts sees nothing.
 5. Check that Organization data (JSON-LD) is present, so assistants get your name, logo and contact details from one place.

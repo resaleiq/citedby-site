@@ -16,14 +16,14 @@ answer: GPTBot is blocked on your site if robots.txt has a Disallow rule that ap
 
 ## Four places GPTBot can be stopped
 
-GPTBot is the crawler OpenAI says it uses to collect content that may be used to train its models. A request from it can be turned away at four layers, and each one needs its own test. The CitedBy audit in the box above covers the first. The other three answer with an error code even when robots.txt says yes.
+GPTBot is the crawler OpenAI says it uses to collect content that may be used to train its models. A request from it can be turned away at four layers, and each one needs its own test. The free check in the box above covers the first. The other three answer with an error code even when robots.txt says yes.
 
 ![Table of four layers where GPTBot can be stopped: robots.txt, CDN, security plugin or WAF rule, web server rule, each with how to see it](/blog/img/four-places.svg "Layers 2 to 4 are invisible in robots.txt, so check them separately.")
 
 ## How to check, step by step
 
 1. Open `yourshop.com/robots.txt` in a browser. Look for a group that names `GPTBot`. If there is none, GPTBot follows the `User-agent: *` group, so a blanket `Disallow: /` under it blocks GPTBot too ([RFC 9309](https://www.rfc-editor.org/rfc/rfc9309)).
-2. Audit your site with the box above (from €9). It reads robots.txt for GPTBot, OAI-SearchBot, PerplexityBot, Google-Extended and Bingbot and names the ones that are blocked.
+2. Run the free check in the box above. It reads robots.txt for GPTBot, OAI-SearchBot, PerplexityBot, Google-Extended and Bingbot and names the ones that are blocked.
 3. Send two requests to your homepage and compare the status codes: one normal, one that carries the GPTBot user-agent string. Commands below.
 4. Open your CDN account and look at its AI crawler settings. For Cloudflare, the steps are below.
 5. Open your security plugin or firewall rule list and search for `GPTBot`, `bot`, `AI` and `crawler`.

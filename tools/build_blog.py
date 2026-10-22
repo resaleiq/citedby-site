@@ -243,7 +243,11 @@ def build_article(fm, body, arts):
     au = authors().get(fm.get("author", ""))
     byline = ('%s <a href="/authors/%s" rel="author">%s</a>, %s · ' % (E(t["by_person"]), E(fm["author"]), E(au["name"]), E(au["role"].get(loc, au["role"]["en"])))) if au else '<a href="%s/about#editorial">%s</a> · ' % (prefix(loc), E(t["by"]))
     if au: art["author"] = {"@type": "Person", "name": au["name"], "jobTitle": au["role"]["en"], "url": SITE + "/authors/" + fm["author"]}
-    srcn = ' · <a href="/methodology">%s</a>' % E(t["src_n"].format(n=len(srcs))) if len(srcs) >= 2 else ""
+    def own_src(x):  # RES-3141: our own pages stay in the list but are not an outside check
+        m = re.search(r'\]\(([^)\s]+)', x); u = m.group(1) if m else ""
+        return u.startswith("/") or re.match(r"https?://(www\.)?citedby\.eu(/|$)", u) is not None
+    n_ext = sum(1 for x in srcs if not own_src(x))
+    srcn = ' · <a href="/methodology">%s</a>' % E(t["src_n"].format(n=n_ext)) if n_ext >= 2 else ""
     main = f'''<main id="main" class="art"><article>
 <p class="dateline"><a href="{prefix(loc)}/{SECT_PATH.get(fm.get("section"), "blog")}">{E(SECT_NAME.get(fm.get("section"), t["blog"]))}</a> / {E(fm.get("cluster", ""))}</p>
 <h1>{E(fm["h1"])}</h1>
