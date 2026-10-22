@@ -8,6 +8,7 @@
   var key = s && s.getAttribute("data-key");
   var site = (s && s.getAttribute("data-site")) || location.hostname;
   var internal = false;
+  try { if (/[?&]internal=1(?:&|$)/.test(location.search)) localStorage.setItem("riq_internal", "1"); } catch (e) {}  // RES-3001: our walks and QA open ?internal=1; only that browser stores the flag
   try { internal = localStorage.getItem("riq_internal") === "1" || /(?:^|;\s*)riq_internal=1/.test(document.cookie); } catch (e) {}  // team browsers (read only)
   var off = !key || internal || navigator.doNotTrack === "1" || window.doNotTrack === "1" || navigator.msDoNotTrack === "1" || navigator.globalPrivacyControl === true;
   var EVENTS = { check_started: 1, check_finished: 1, signup: 1, checkout_started: 1, paid: 1, mock_started: 1, mock_finished: 1, checkout_completed: 1, cta_click: 1 };
