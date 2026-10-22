@@ -90,5 +90,5 @@ def test_res2797_every_locale_names_the_search_engine_recipients_and_rows():
         assert len(re.findall("<tr>", t)) == n, l                   # the same table rows in every language
         assert t.count("Microsoft") >= 2 and "Bing Webmaster Tools" in t, l   # section 4 entry and the section 5 transfer list
         assert "Search Console" in t and "4" in t
-    assert "keep no name, photo, contacts or Google token." not in pages[""]
+    assert "and keep no name, photo, contacts or Google token." not in pages[""] and "for sign-in, keep no name" in pages[""]
     assert "We never show the key or token again" not in pages[""] and "last 4 characters" in pages[""]
