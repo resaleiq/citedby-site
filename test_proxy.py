@@ -94,7 +94,7 @@ class T(unittest.TestCase):
         self.assertEqual(urllib.request.urlopen(req).read(), b"app-page"); self.assertEqual(SEEN[0][1], "/api/fixpack/intake")
 
     # RES-2572: the app's project routes. Keep in step with citedby-app sa_projects.PROJECT_ROUTES (its test pins the same table): a route missing here is a 404 on citedby.eu.
-    APP_PROJECT_ROUTES = {"settings": ("GET", "POST"), "history": ("GET",), "progress": ("GET",), "crawl": ("POST",), "verify": ("GET", "POST"), "sitemap": ("GET", "POST"), "remove": ("POST",), "gsc": ("GET", "POST"), "gsc/clear": ("POST",), "logs": ("GET", "POST"), "logs/clear": ("POST",), "os/graph": ("GET",), "os/query": ("GET",), "os/page": ("GET",), "os/sources": ("GET",), "os/sos": ("GET",), "os/quickwins": ("GET",), "os/gaps": ("GET",), "os/decay": ("GET",), "os/rivals": ("GET",), "os/ai-gaps": ("GET",), "os/cannibal": ("GET",), "os/index": ("GET",), "os/next": ("GET",)}
+    APP_PROJECT_ROUTES = {"settings": ("GET", "POST"), "history": ("GET",), "progress": ("GET",), "crawl": ("POST",), "verify": ("GET", "POST"), "sitemap": ("GET", "POST"), "remove": ("POST",), "gsc": ("GET", "POST"), "gsc/clear": ("POST",), "logs": ("GET", "POST"), "logs/clear": ("POST",), "conn": ("GET",), "conn/refresh": ("POST",), "conn/bing": ("POST",), "conn/google": ("POST",), "conn/clear": ("POST",), "os/graph": ("GET",), "os/query": ("GET",), "os/page": ("GET",), "os/sources": ("GET",), "os/sos": ("GET",), "os/quickwins": ("GET",), "os/gaps": ("GET",), "os/decay": ("GET",), "os/rivals": ("GET",), "os/ai-gaps": ("GET",), "os/cannibal": ("GET",), "os/index": ("GET",), "os/next": ("GET",)}
 
     def test_every_app_project_route_is_forwarded(self):
         for what, methods in self.APP_PROJECT_ROUTES.items():
@@ -144,7 +144,7 @@ class RouteTable(unittest.TestCase):
 
 def test_auth_routes_are_forwarded_res1641():
     import proxy
-    for p in ("/forgot", "/reset/" + "a" * 30, "/auth/google", "/auth/google/callback"): assert proxy.ROUTES["GET"].fullmatch(p), p
+    for p in ("/forgot", "/reset/" + "a" * 30, "/auth/google", "/auth/google/callback", "/api/gsc/callback"): assert proxy.ROUTES["GET"].fullmatch(p), p
     for p in ("/api/auth/signup", "/api/auth/login", "/api/auth/forgot", "/api/auth/reset"): assert proxy.ROUTES["POST"].fullmatch(p), p
 
 
