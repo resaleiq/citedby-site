@@ -166,3 +166,22 @@ class FreeToolsLinks(unittest.TestCase):
             foot = d[d.index("<footer"):]
             for h in (f"{p}/tools", f"{p}/tools/ai-crawler-check", f"{p}/tools/llms-txt-checker", "/bots"):
                 self.assertIn(f'<a href="{h}">', foot)
+
+
+def test_home_jsonld_offers_follow_the_locale_res2895():
+    import json, re, langroutes
+    for l, word in (("fr", "mensuel"), ("nl", "maandelijks"), ("de", "monatlich"), ("es", "mensual")):
+        m = re.search(r'<script type="application/ld\+json">(.*?)</script>', langroutes.ld(l))
+        svc = [n for n in json.loads(m.group(1))["@graph"] if n["@type"] == "Service"][0]
+        assert all(o["url"] == f"https://citedby.eu/{l}/plans" for o in svc["offers"]), l
+        assert any(word in o["name"] for o in svc["offers"]) and "Single audit" not in json.dumps(svc, ensure_ascii=False), l
+    assert '"url": "https://citedby.eu/plans"' in langroutes.ld("en")
+
+
+def test_retired_and_unlocalized_paths_redirect_res2895():
+    import server
+    for p in ("/fixpack", "/fix-pack"):
+        assert server.LAUNCH_REDIRECTS[p] == "/plans"
+    for l in ("fr", "nl", "de", "es"):
+        for p in ("legal", "data", "methodology"):
+            assert server.LAUNCH_REDIRECTS[f"/{l}/{p}"] == f"/{p}"

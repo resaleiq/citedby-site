@@ -42,7 +42,7 @@ body{margin:0;width:1200px;height:630px;background:#0F1B2D;color:#E8EDF4;positio
 .n{position:absolute;left:72px;bottom:16px;font:400 18px Plex,sans-serif;color:#9AA6B8}</style><body><div class="l">${lock}</div><div class="u">citedby.eu</div>
 <div class="k">WEBSITE AUDIT · THE FIX, WRITTEN FOR YOUR PAGE</div><div class="h">300 errors. Here is <u>the one</u> to fix first.</div>
 <div class="rows"><div class="r" style="width:92%"></div><div class="f"><b>FIX THIS FIRST</b>Pages return an error status<i>85 pages</i></div><div class="r" style="width:78%"></div><div class="r" style="width:64%"></div></div>
-<div class="n">Real crawl of plausible.io, 20 Oct 2026. Not a customer.</div></body>`;
+<div class="n">Real crawl of plausible.io, 21 Oct 2026. Not a customer.</div></body>`;
 const ogBuf = await png(og, 1200, 630, "og-v2.png"); writeFileSync(join(PUB, "og.png"), ogBuf); // og.png still sold the retired product (READINESS gap 2)
 unlinkSync(join(PUB, "favicon-48.png")); // only inside the ICO
 await b.close();
