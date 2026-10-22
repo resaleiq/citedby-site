@@ -79,6 +79,14 @@ class Changes(unittest.TestCase):
             t = re.sub(r"<[^>]+>", " ", page(l)).lower()
             for w in ("claude to ", "powered by", "guarantee ranking", "boost your ranking"): self.assertNotIn(w, t)
 
+    def test_res3045_faq_date_unit_nbsp_and_queries(self):
+        r = next(x for x in REC if x["id"] == "google-faq-rich-result-ended")
+        self.assertEqual(r["date"], "2026-05-08")
+        for l in B.LANGS:
+            t = page(l)
+            self.assertNotRegex(t, r"\d (MB|Mo)\b")
+            self.assertNotIn("topics where", t); self.assertNotIn("les sujets o", t)
+
 
 if __name__ == "__main__":
     unittest.main()
