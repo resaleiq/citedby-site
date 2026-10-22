@@ -41,4 +41,4 @@
 .dc footer a{color:#fff;display:inline-block;padding:6px 0}
 .dc .topbar .go{margin-left:4px}
 .dc .topbar .signin{color:#D5DDEA;margin-right:12px;font-size:15px;white-space:nowrap;text-decoration:none}
-@media(max-width:720px){.dc .topbar .in{gap:10px;padding:0 12px}.dc .topbar nav a{padding:8px}.dc .topbar nav .opt,.dc .topbar .signin{display:none}.dc main{padding:28px 16px 56px}}
+@media(max-width:720px){.dc .topbar .in{gap:4px;padding:0 12px}.dc .topbar nav a{padding:8px}.dc .topbar nav .opt,.dc .topbar .signin{display:none}.dc .topbar nav{min-width:0;margin-left:0}.dc .topbar nav a{white-space:nowrap;flex:none}.dc .topbar .go{white-space:nowrap;padding-left:8px;padding-right:8px;margin-left:0}.dc main{padding:28px 16px 56px}}
