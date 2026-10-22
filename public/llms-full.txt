@@ -157,7 +157,7 @@ How do I check if AI assistants can read my website?
 Paste your address into the free check on this page, or use the free AI crawler checker at citedby.eu/tools/ai-crawler-check . It shows whether robots.txt and your server let GPTBot, ClaudeBot, PerplexityBot and Googlebot in, with the exact lines to change.
 
 How much does a website audit for AI visibility cost?
-A single audit is €9 once, for 1 site and up to 500 pages. Starter is €19 a month (up to 1,000 pages), Pro €49 a month (5 sites, up to 5,000 pages each) and Agency €99 a month (25 sites). Monthly plans start with a 7-day free trial, and every paid plan has a 14-day money-back guarantee.
+A single audit is €9 once, for 1 site and up to 500 pages. Starter is €19 a month (up to 1,000 pages), Pro €49 a month (5 sites, up to 5,000 pages each) and Agency €99 a month (25 sites). Every paid plan has a 14-day money-back guarantee.
 
 What is the difference between SEO and AI search readiness?
 SEO is about ranking in a list of links. AI search readiness is whether an assistant can fetch your page, read its text without running JavaScript and lift a sentence as an answer. They overlap on crawlability, titles and structured data, and differ on bot access (GPTBot, ClaudeBot) and answer-first writing. More in GEO vs AEO vs SEO .
