@@ -426,21 +426,26 @@ class H(BaseHTTPRequestHandler):
     def backlinks(self, u):
         if u.path == "/sitemap-backlinks.xml":
             return self.out(200, backlinks.sitemap().encode(), "application/xml; charset=utf-8")
-        if u.path == "/backlinks":
+        m = backlinks.ROUTE.match(u.path)  # RES-3749: /backlinks and /fr|de|es|nl/backlinks
+        lg, rest = m.group(1) or "en", m.group(2)
+        p, no_index = backlinks.prefix(lg), {"X-Robots-Tag": "noindex"}
+        if rest is None:
             raw = (parse_qs(u.query).get("host") or [""])[0]
             if not raw:
-                return self.out(200, backlinks.index_page().encode())
+                return self.out(200, backlinks.index_page("", lg).encode())
             h = backlinks.norm(raw)
             if h:
-                return self.out(302, b"", extra={"Location": "/backlinks/" + h, "X-Robots-Tag": "noindex"})
-            return self.out(200, backlinks.index_page("That does not look like a domain name. Try something like example.com.").encode(), extra={"X-Robots-Tag": "noindex"})
-        raw = u.path[len("/backlinks/"):].rstrip("/")
+                return self.out(302, b"", extra={"Location": p + "/backlinks/" + h, **no_index})
+            return self.out(200, backlinks.index_page(backlinks.T[lg]["bad_host"], lg).encode(), extra=no_index)
+        raw = rest.rstrip("/")
         h = backlinks.norm(raw)
         if not h:
-            return self.out(404, not_found_page())
+            if lg == "en":
+                return self.out(404, not_found_page())
+            return self.out(404, backlinks.index_page(backlinks.T[lg]["bad_host"], lg).encode(), extra=no_index)  # a page in the visitor's language with the lookup form
         if h != raw:  # www., upper case, a pasted URL: one canonical address per domain
-            return self.out(301, b"", extra={"Location": "/backlinks/" + h})
-        code, body = backlinks.host_page(h)
+            return self.out(301, b"", extra={"Location": p + "/backlinks/" + h})
+        code, body = backlinks.host_page(h, lg)
         self.out(code, body.encode())
 
     def do_HEAD(self): self.do_GET()
@@ -449,7 +454,7 @@ class H(BaseHTTPRequestHandler):
         if proxy.handle(self, "GET"): return
         u = urlparse(self.path)
         tok = (parse_qs(u.query).get("t") or [""])[0]
-        if u.path == "/backlinks" or u.path.startswith("/backlinks/") or u.path == "/sitemap-backlinks.xml":  # RES-3699: open-data referring-domain lookup
+        if backlinks.ROUTE.match(u.path) or u.path == "/sitemap-backlinks.xml":  # RES-3699: open-data referring-domain lookup; RES-3749: in fr, de, es and nl too
             return self.backlinks(u)
         if u.path == "/go/fixpack":  # RES-2134: the Payment Link leaves no trace of its own, so the button comes here first: count the open (not from our own addresses), then 302
             lg = (parse_qs(u.query).get("lang") or ["en"])[0]

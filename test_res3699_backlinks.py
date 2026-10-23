@@ -36,5 +36,5 @@ def test_every_shipped_host_has_20_rows_and_in_set_links_only():
 
 def test_sitemap_and_index():
     s = b.sitemap()
-    assert s.count("<url>") == 5012 and "https://citedby.eu/backlinks/semrush.com" in s
+    assert s.count("<url>") == 5 * 5012 and "https://citedby.eu/backlinks/semrush.com" in s   # RES-3749: the lookup and every host page in 5 languages
     assert 'action="/backlinks"' in b.index_page() and "name=\"host\"" in b.index_page()
