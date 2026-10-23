@@ -2,7 +2,7 @@
 Founder 22 Oct: fix everything the crawl finds and do not cause it again. One test per finding class; each lists every offending URL.
 Pages are the sitemap's URLs. Static pages are read from public/ and passed through the serve-time footer layers (hub_links); pages the app renders (proxy.ROUTES) are leaves here and are gated by the app's own tests (test_res2935_checks.py)."""
 import collections, html, os, re
-import hub_links, proxy
+import backlinks, hub_links, proxy
 
 HERE = os.path.dirname(os.path.abspath(__file__)); PUB = os.path.join(HERE, "public")
 SITE = "https://citedby.eu"
@@ -139,5 +139,5 @@ def test_llms_full_txt_is_current_and_every_llms_txt_link_resolves():
     bad = []
     for u in re.findall(r"\((https://citedby\.eu[^)\s]*)\)", llms):
         p = norm(u)
-        if not (file_for(p) or app_served(p) or os.path.exists(PUB + p)): bad.append(("llms.txt link with no page", u))
+        if not (file_for(p) or app_served(p) or os.path.exists(PUB + p) or backlinks.ROUTE.fullmatch(p)): bad.append(("llms.txt link with no page", u))  # /backlinks is a route of server.py (RES-3749)
     report(bad)
