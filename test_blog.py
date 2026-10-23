@@ -18,7 +18,8 @@ class Blog(unittest.TestCase):
             for path in ("/blog", "/guides", "/ai-visibility-audit", "/blog/does-llms-txt-work", "/blog/is-gptbot-blocked", "/guides/cms", "/guides/technical-seo-checklist"):
                 url = "/%s%s" % (loc, path)
                 self.assertTrue(os.path.exists(os.path.join(HERE, "public", url[1:] + (".html" if path.count("/") else "/index.html") if path in ("/blog", "/guides") else url[1:] + ".html")) or os.path.exists(os.path.join(HERE, "public", url[1:], "index.html")), url)
-                self.assertIn("<loc>https://citedby.eu%s</loc>" % url, sm)
+                if url == "/es/blog/does-llms-txt-work": continue  # RES-3269: noindex, so not in the sitemap
+            self.assertIn("<loc>https://citedby.eu%s</loc>" % url, sm)
     def test_pages_have_hreflang_dates_images_and_no_duplicate_sitemap_urls(self):
         sm = open(os.path.join(HERE, "public/sitemap.xml")).read()
         locs = re.findall(r"<loc>([^<]+)</loc>", sm); self.assertEqual(len(locs), len(set(locs)))

@@ -29,7 +29,7 @@ def localize(h):
     import build_legal as L
     t, (meth, about) = L.UI[lg], EXTRA[lg]
     top = (f'<a class="sr" href="#main">{t["skip"]}</a>\n<header class="topbar"><div class="in"><a class="mark" href="{t["home"]}"><i></i>CitedBy</a>'
-           f'<nav aria-label="{t["main"]}"><a class="opt" href="{t["home"]}/#checks">{t["check"]}</a><a href="{t["plans_h"]}">{t["plans"]}</a><a href="{t["blog_h"]}">{t["blog"]}</a><a class="opt" href="/data">{t["data"]}</a></nav>'
+           f'<nav aria-label="{t["main"]}"><a class="opt" href="{t["home"]}#checks">{t["check"]}</a><a href="{t["plans_h"]}">{t["plans"]}</a><a href="{t["blog_h"]}">{t["blog"]}</a><a class="opt" href="/data">{t["data"]}</a></nav>'
            f'<a class="signin" href="/signin?next=%2Fapp.html">{t["signin"]}</a><a class="btn sm go" href="/app.html#/new">{t["cta"]}</a></div></header>')
     foot = (f'<footer><div class="w"><span>© 2026 CitedBy · <a href="mailto:hello@citedby.eu">hello@citedby.eu</a></span>'
             f'<a href="{t["plans_h"]}">{t["plans"]}</a><a href="{t["blog_h"]}">{t["blog"]}</a><a href="/data">{t["data"]}</a><a href="/methodology">{meth}</a><a href="/{lg}/about">{about}</a>'
