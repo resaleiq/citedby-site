@@ -7,3 +7,4 @@ Disallow: /*?plan=
 Disallow: /*?billing=
 Disallow: /*?url=
 Sitemap: https://citedby.eu/sitemap.xml
+Sitemap: https://citedby.eu/sitemap-backlinks.xml
