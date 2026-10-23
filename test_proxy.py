@@ -161,6 +161,13 @@ def test_trial_cancel_paths_are_forwarded():
     assert proxy.ROUTES["GET"].fullmatch(p) and proxy.ROUTES["POST"].fullmatch(p)
 
 
+def test_unsub_paths_are_forwarded_res3688():
+    import proxy
+    p = "/unsub/" + "61".encode().hex() * 6 + "." + "0" * 32
+    assert proxy.ROUTES["GET"].fullmatch(p) and proxy.ROUTES["POST"].fullmatch(p)
+    assert not proxy.ROUTES["GET"].fullmatch("/unsub/x") and not proxy.ROUTES["GET"].fullmatch("/unsub/")
+
+
 def test_app_v2_routes_are_forwarded():
     import proxy
     for p in ("/app/app.css", "/app/report2.js", "/api/usage", "/api/account", "/api/brand", "/api/team", "/api/audit/a_k3j2h1/structure", "/api/audit/a_k3j2h1/compare", "/api/audit/a_k3j2h1/discovery"): assert proxy.ROUTES["GET"].fullmatch(p), p
