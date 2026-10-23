@@ -133,7 +133,7 @@ def test_res1650_home_names_oai_searchbot_in_every_language():
 def test_home_org_sameas_matches_about():
     import langroutes
     org = langroutes.LD
-    assert '"sameAs": ["https://citedby.eu/about", "https://citedby.eu/methodology"]' in org
+    assert '"sameAs": ["https://citedby.eu/about", "https://citedby.eu/methodology", "https://x.com/CitedByEU"]' in org
 
 
 class TestHomeJsonLdRes2651(unittest.TestCase):

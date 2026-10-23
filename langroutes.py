@@ -7,7 +7,7 @@ SWITCH_LABEL = {"en": "Language", "fr": "Langue", "nl": "Taal", "de": "Sprache",
 OG_LOCALE = {"en": "en_GB", "fr": "fr_FR", "nl": "nl_NL", "de": "de_DE", "es": "es_ES"}
 
 
-SAME_AS = ["https://citedby.eu/about", "https://citedby.eu/methodology"]
+from trust import SAME_AS  # RES-3683: one list, X account included
 # Service, not Product: Google reads Product as a merchant listing and rejects it without image and availability (RES-2651, Search Console 21 Oct).
 _LD_WORDS = {  # offer names and descriptions in the page's language; the plan names are brand names (RES-2895)
     "en": ("Single audit", "monthly", "Website audit", "Crawls a website up to your plan's page limit and gives the exact fix for each issue."),
