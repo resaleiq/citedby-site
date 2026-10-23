@@ -11,6 +11,8 @@ TOOLS = ("ai-crawler-check", "llms-txt-checker", "findable-check")
 RFC9309 = ("https://www.rfc-editor.org/rfc/rfc9309", "RFC 9309 (robots.txt)")
 SOURCES = {  # slug -> [(url, label)] outside pages that are the authority for what the page counts
     "launch-crawl-2026-10": [RFC9309],
+    "ai-access-index-2026-10": [RFC9309, ("https://tranco-list.eu/list/56Z8N/1000000", "Tranco list 56Z8N")],
+    "ai-access-index": [RFC9309, ("https://tranco-list.eu/list/56Z8N/1000000", "Tranco list 56Z8N")],
     "study-chatgpt-buyer-questions": [("https://help.openai.com/en/articles/9237897-chatgpt-search", "ChatGPT search help page")],
     "study-buyer-questions-claude": [("https://support.claude.com/en/articles/10684626-enabling-and-using-web-search", "Claude web search help page")],
     "ai-crawler-check": [RFC9309],
