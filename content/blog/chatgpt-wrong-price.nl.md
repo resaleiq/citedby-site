@@ -46,7 +46,7 @@ Vraag het een tweede keer in een andere nieuwe chat. Verschillen de twee antwoor
 
 ## Stap 3: hoe controleert je je productfeed?
 
-Verkoopt je via Google Shopping, een marktplaats of de shoppingfeed van ChatGPT, dan is de feed een tweede kopie van je prijs. De productfeedspecificatie van OpenAI vraagt om een prijs in de vorm `79.99 USD`, één rij per koopbaar artikel of variant, en zegt dat je de feed moet bijwerken wanneer een actie begint of eindigt ([OpenAI-productfeed](https://developers.openai.com/commerce/specs/feed)).
+Verkoopt je via Google Shopping, een marktplaats of de shoppingfeed van ChatGPT, dan is de feed een tweede kopie van je prijs. De productfeedspecificatie van OpenAI vraagt om een prijs in de vorm `79.99 USD`, één rij per koopbaar artikel of variant, en zegt dat je de feed moet bijwerken wanneer een actie begint of eindigt ([OpenAI-productfeed](https://developers.openai.com/commerce/specs/file-upload/products)).
 
 Een actie die op je site is afgelopen maar in de feed bleef staan, is de klassieke afwijking. Controleer na elke actie of de feed opnieuw is aangeleverd.
 
@@ -88,6 +88,6 @@ Ja, als die verouderd is. Een JSON-LD-blok dat nooit is bijgewerkt, is een veelv
 
 ## Sources
 
-- [OpenAI: productfeedspecificatie](https://developers.openai.com/commerce/specs/feed)
+- [OpenAI: productfeedspecificatie](https://developers.openai.com/commerce/specs/file-upload/products)
 - [OpenAI: crawlers en user agents](https://developers.openai.com/api/docs/bots)
 - [CitedBy: site-audit](https://citedby.eu/nl)

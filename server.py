@@ -354,12 +354,20 @@ class H(BaseHTTPRequestHandler):
             body = legal_links.localize(withdraw_link.inject(hub_links.inject(social.ensure(analytics.inject(body)))))
         elif code == 404 and ctype.startswith("text/html"):
             body = withdraw_link.inject(body)  # RES-2199: the EU withdrawal link is on every page, error pages included (no analytics or share tags there)
-        self.send_response(code)
-        self.send_header("Content-Type", ctype)
-        self.send_header("Content-Length", str(len(body)))
         cache = "no-store"
         if code == 200 and not self.path.startswith(("/api/", "/health", "/deploy-id")):
             cache = "public, max-age=604800" if self.path.split("?")[0].endswith((".css", ".js", ".svg", ".png", ".ico", ".woff2")) and not self.path.startswith(("/saas.", "/landing.", "/sample.")) else "public, max-age=300"
+        etag = None
+        if cache != "no-store" and self.command in ("GET", "HEAD"):  # RES-3284: conditional requests for pages and assets (crawlers re-fetch with If-None-Match)
+            etag = '"%s"' % hashlib.sha256(body).hexdigest()[:20]
+            if self.headers.get("If-None-Match") == etag:
+                code, body = 304, b""
+        self.send_response(code)
+        if code != 304:
+            self.send_header("Content-Type", ctype)
+            self.send_header("Content-Length", str(len(body)))
+        if etag:
+            self.send_header("ETag", etag)
         self.send_header("Cache-Control", cache)
         self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")

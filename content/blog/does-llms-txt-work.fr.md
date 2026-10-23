@@ -24,7 +24,7 @@ La page de la proposition cite des plateformes de documentation qui l'ont adopt�
 
 ## Que montrent les études sur llms.txt ?
 
-Ahrefs a analysé 137 210 domaines avec son outil d'analyse web en mai 2026. Résultat : 97 % des fichiers llms.txt valides n'ont reçu aucune requête dans le mois. Parmi les requêtes arrivées, 19,5 % venaient d'outils IA identifiés. Le reste vient en grande partie d'outils d'audit SEO, de robots inconnus et de robots généralistes. Ahrefs indique aussi qu'aucun robot IA n'est allé chercher le fichier sur les sites qui n'en avaient pas ([étude Ahrefs](https://ahrefs.com/blog/llmstxt-study)).
+Ahrefs a analysé 137 210 domaines avec son outil d'analyse web en mai 2026. Résultat : 97 % des fichiers llms.txt valides n'ont reçu aucune requête dans le mois. Parmi les requêtes arrivées, 19,5 % venaient d'outils IA identifiés. Le reste vient en grande partie d'outils d'audit SEO, de robots inconnus et de robots généralistes. Ahrefs indique aussi qu'aucun robot IA n'est allé chercher le fichier sur les sites qui n'en avaient pas ([étude Ahrefs](https://ahrefs.com/blog/llmstxt-study/)).
 
 SE Ranking a analysé environ 300 000 domaines et publié en novembre 2025 que la présence d'un llms.txt n'a pas de lien net avec la fréquence de citation d'un domaine par les IA. Seuls 10,13 % des domaines avaient le fichier ([Search Engine Journal sur l'étude SE Ranking](https://www.searchenginejournal.com/llms-txt-shows-no-clear-effect-on-ai-citations-based-on-300k-domains/561542/)).
 
@@ -69,7 +69,7 @@ Non. robots.txt indique aux robots ce qu'ils ont le droit de récupérer. llms.t
 ## Sources
 
 - [llmstxt.org : la proposition llms.txt](https://llmstxt.org/)
-- [Ahrefs : étude llms.txt, 137 210 domaines, mai 2026](https://ahrefs.com/blog/llmstxt-study)
+- [Ahrefs : étude llms.txt, 137 210 domaines, mai 2026](https://ahrefs.com/blog/llmstxt-study/)
 - [Search Engine Journal : étude SE Ranking sur environ 300 000 domaines, 20 novembre 2025](https://www.searchenginejournal.com/llms-txt-shows-no-clear-effect-on-ai-citations-based-on-300k-domains/561542/)
 - [Google Search Central : les fonctionnalités d'IA et votre site](https://developers.google.com/search/docs/appearance/ai-features)
 - [OpenAI : robots d'exploration et user agents](https://developers.openai.com/api/docs/bots)

@@ -18,7 +18,7 @@ answer: ChatGPT peut lire votre site si trois conditions sont réunies : robots.
 
 ## Quelles sont les trois portes entre ChatGPT et votre page ?
 
-La recherche de ChatGPT utilise un robot nommé OAI-SearchBot pour trouver des pages. OpenAI exploite aussi GPTBot, qui collecte des données d'entraînement, et ChatGPT-User, qui récupère une page quand une personne pose une question à son sujet. OpenAI précise que chacun se règle séparément dans robots.txt : vous pouvez en autoriser un et en bloquer un autre ([documentation OpenAI](https://developers.openai.com/docs/bots)).
+La recherche de ChatGPT utilise un robot nommé OAI-SearchBot pour trouver des pages. OpenAI exploite aussi GPTBot, qui collecte des données d'entraînement, et ChatGPT-User, qui récupère une page quand une personne pose une question à son sujet. OpenAI précise que chacun se règle séparément dans robots.txt : vous pouvez en autoriser un et en bloquer un autre ([documentation OpenAI](https://developers.openai.com/api/docs/bots)).
 
 Trois portes doivent donc rester ouvertes : robots.txt, la réponse de votre serveur et le contenu de la page. L'audit teste la première et la troisième. La deuxième se lit dans vos journaux de serveur.
 
@@ -67,5 +67,5 @@ OpenAI indique qu'il faut compter environ 24 heures pour que ses systèmes s'ada
 
 ## Sources
 
-- [OpenAI : robots d'exploration et user agents](https://developers.openai.com/docs/bots)
+- [OpenAI : robots d'exploration et user agents](https://developers.openai.com/api/docs/bots)
 - [CitedBy : audit de site](https://citedby.eu/fr)

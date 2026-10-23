@@ -23,7 +23,7 @@ Un asistente solo puede nombrar tu tienda online si antes ha podido llegar a tus
 
 ## Las diez comprobaciones, una a una
 
-1. Revisa los rastreadores de IA en robots: abre `tutienda.es/robots.txt` y busca reglas para `OAI-SearchBot`, `GPTBot`, `PerplexityBot`, `Google-Extended` y `Bingbot`. Un `Disallow: /` bajo `User-agent: *` afecta a los rastreadores sin regla propia ([RFC 9309](https://www.rfc-editor.org/rfc/rfc9309)). OpenAI indica que cada uno de sus rastreadores se controla por separado ([OpenAI](https://developers.openai.com/api/docs/bots)).
+1. Revisa los rastreadores de IA en robots: abre `tutienda.es/robots.txt` y busca reglas para `OAI-SearchBot`, `GPTBot`, `PerplexityBot`, `Google-Extended` y `Bingbot`. Un `Disallow: /` bajo `User-agent: *` afecta a los rastreadores sin regla propia ([RFC 9309](https://www.rfc-editor.org/info/rfc9309/)). OpenAI indica que cada uno de sus rastreadores se controla por separado ([OpenAI](https://developers.openai.com/api/docs/bots)).
 2. Comprueba el código de estado: abre la portada, una categoría y un producto, y mira el código HTTP de cada una (las herramientas para desarrolladores del navegador lo muestran en la pestaña Red). Debe ser 200. Un 403, un 429 o un 503 tampoco ayudan a un rastreador. Para el caso de un bloqueo en el servidor, mira [¿Está bloqueado GPTBot en tu web?](/es/blog/is-gptbot-blocked).
 3. Localiza el sitemap: abre `tutienda.es/sitemap.xml`, comprueba que lista tus productos y categorías y que no incluye páginas que quieras ocultar. Google explica qué es y cómo se construye en su [guía de sitemaps](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview).
 4. Mira el canonical: en el código fuente de una ficha, busca `rel="canonical"`. Debe apuntar a la dirección que quieres que se lea, y no a otra variante con parámetros. Google lo explica en [consolidar URL duplicadas](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls).
@@ -68,7 +68,7 @@ Es opcional y, con los datos actuales, no mueve las citas. Hazlo después de lo 
 
 ## Sources
 
-- [IETF RFC 9309: protocolo de exclusión de robots](https://www.rfc-editor.org/rfc/rfc9309)
+- [IETF RFC 9309: protocolo de exclusión de robots](https://www.rfc-editor.org/info/rfc9309/)
 - [OpenAI: rastreadores y agentes de usuario](https://developers.openai.com/api/docs/bots)
 - [Google Search Central: sitemaps](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview)
 - [Google Search Central: consolidar URL duplicadas](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)

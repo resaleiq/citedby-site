@@ -24,7 +24,7 @@ Le premier niveau se lit dans robots.txt, et notre audit le contrôle. Les trois
 
 ## Comment vérifier, étape par étape ?
 
-1. Ouvrez robots.txt : tapez `votre-boutique.fr/robots.txt` dans un navigateur et cherchez un groupe qui nomme `GPTBot`. S'il n'y en a pas, GPTBot suit le groupe `User-agent: *`, et un `Disallow: /` général le bloque aussi ([RFC 9309](https://www.rfc-editor.org/rfc/rfc9309)).
+1. Ouvrez robots.txt : tapez `votre-boutique.fr/robots.txt` dans un navigateur et cherchez un groupe qui nomme `GPTBot`. S'il n'y en a pas, GPTBot suit le groupe `User-agent: *`, et un `Disallow: /` général le bloque aussi ([RFC 9309](https://www.rfc-editor.org/info/rfc9309/)).
 2. Lancez l'audit : il lit robots.txt pour GPTBot, OAI-SearchBot, PerplexityBot, Google-Extended et Bingbot et nomme ceux qui sont bloqués (dès 9 €).
 3. Comparez deux requêtes : envoyez deux requêtes vers votre page d'accueil, l'une normale, l'autre avec le user-agent de GPTBot, et comparez les codes de réponse (commandes plus bas).
 4. Regardez votre CDN : ouvrez votre compte et cherchez les réglages sur les robots IA. Les étapes pour Cloudflare sont plus bas.
@@ -83,4 +83,4 @@ Non. Être lisible est le ticket d'entrée. Que l'assistant nomme votre boutique
 - [OpenAI : robots d'exploration, user agents et plages d'IP](https://developers.openai.com/api/docs/bots)
 - [Cloudflare : gérer les robots IA](https://developers.cloudflare.com/ai-crawl-control/features/manage-ai-crawlers/)
 - [Help Net Security : Cloudflare modifie l'accès des robots IA, 2 juillet 2026](https://www.helpnetsecurity.com/2026/07/02/cloudflare-ai-crawler-controls/)
-- [IETF RFC 9309 : protocole d'exclusion des robots](https://www.rfc-editor.org/rfc/rfc9309)
+- [IETF RFC 9309 : protocole d'exclusion des robots](https://www.rfc-editor.org/info/rfc9309/)

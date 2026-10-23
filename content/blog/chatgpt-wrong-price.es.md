@@ -38,7 +38,7 @@ Un enlace citado es la mejor pista, porque señala la página que alimentó la r
 
 ## Paso 3: ¿cómo reviso mi feed de productos?
 
-Si vendes por Google Shopping, un marketplace o el feed de compras de ChatGPT, el feed es una segunda copia de tu precio. La especificación de feed de producto de OpenAI pide un precio con el formato `79.99 USD`, una fila por artículo o variante comprable, y dice que hay que actualizar el feed cuando empieza o termina una oferta ([especificación de OpenAI](https://developers.openai.com/commerce/specs/feed)).
+Si vendes por Google Shopping, un marketplace o el feed de compras de ChatGPT, el feed es una segunda copia de tu precio. La especificación de feed de producto de OpenAI pide un precio con el formato `79.99 USD`, una fila por artículo o variante comprable, y dice que hay que actualizar el feed cuando empieza o termina una oferta ([especificación de OpenAI](https://developers.openai.com/commerce/specs/file-upload/products)).
 
 Una oferta que ya terminó en tu web pero sigue en el feed es el desajuste clásico. Si usas una plataforma de tienda, mira en sus ajustes cómo se genera y cada cuánto se reenvía el feed.
 
@@ -80,6 +80,6 @@ Sí, cuando está desactualizado. Un bloque de marcado que nunca se actualizó e
 
 ## Sources
 
-- [OpenAI: especificación del feed de productos](https://developers.openai.com/commerce/specs/feed)
+- [OpenAI: especificación del feed de productos](https://developers.openai.com/commerce/specs/file-upload/products)
 - [OpenAI: rastreadores y agentes de usuario](https://developers.openai.com/api/docs/bots)
 - [CitedBy: auditoría de tu web](https://citedby.eu/es)

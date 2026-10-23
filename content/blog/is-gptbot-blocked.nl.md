@@ -29,7 +29,7 @@ GPTBot is de crawler die OpenAI naar eigen zeggen gebruikt om content te verzame
 
 ## Hoe controleert je of GPTBot geblokkeerd is?
 
-1. Open `jouwwebshop.nl/robots.txt` in een browser. Zoek een groep die `GPTBot` noemt. Is die er niet, dan volgt GPTBot de groep `User-agent: *`, dus een algemene `Disallow: /` daaronder blokkeert GPTBot ook ([RFC 9309](https://www.rfc-editor.org/rfc/rfc9309)).
+1. Open `jouwwebshop.nl/robots.txt` in een browser. Zoek een groep die `GPTBot` noemt. Is die er niet, dan volgt GPTBot de groep `User-agent: *`, dus een algemene `Disallow: /` daaronder blokkeert GPTBot ook ([RFC 9309](https://www.rfc-editor.org/info/rfc9309/)).
 2. Draai de gratis check in het vak hierboven. Die leest robots.txt voor GPTBot, OAI-SearchBot, PerplexityBot, Google-Extended en Bingbot en noemt welke geblokkeerd zijn.
 3. Stuur twee verzoeken naar je homepage en vergelijk de statuscodes. Eén normaal, één met de user-agent van GPTBot. De opdrachten staan hieronder.
 4. Open je CDN-account en kijk bij de instellingen voor AI-crawlers. De stappen voor Cloudflare staan verderop.
@@ -89,5 +89,5 @@ Nee. Leesbaar zijn is het toegangsbewijs. Of een assistent je webshop noemt, han
 - [OpenAI: crawlers en user agents, IP-bereiken](https://developers.openai.com/api/docs/bots)
 - [Cloudflare: manage AI crawlers](https://developers.cloudflare.com/ai-crawl-control/features/manage-ai-crawlers/)
 - [Help Net Security: Cloudflare past toegangsregels voor AI-crawlers aan, 2 juli 2026](https://www.helpnetsecurity.com/2026/07/02/cloudflare-ai-crawler-controls/)
-- [IETF RFC 9309: Robots Exclusion Protocol](https://www.rfc-editor.org/rfc/rfc9309)
+- [IETF RFC 9309: Robots Exclusion Protocol](https://www.rfc-editor.org/info/rfc9309/)
 - [CitedBy: site-audit](https://citedby.eu/nl)

@@ -32,7 +32,7 @@ Googlebot is the crawler every Search check starts from. Google's page lists sev
 
 In the vendor's words: “Google's common crawlers are used to find information for building Google's search indexes, perform other product specific crawls, and for analysis. They always obey robots.txt rules when crawling automatically.”
 
-Source: [Google Search Central: Google's common crawlers (last updated 2026-10-15)](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers), read on 21 October 2026.
+Source: [Google Search Central: Google's common crawlers (last updated 2026-10-15)](https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers), read on 21 October 2026.
 
 ## What happens if you block it
 
@@ -84,5 +84,5 @@ Googlebot controls Search. The Gemini training control is the separate Google-Ex
 
 ## Sources
 
-- [Google Search Central: Google's common crawlers (last updated 2026-10-15)](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)
-- [developers.google.com/static/search/apis/ipranges/googlebot.json](https://developers.google.com/static/search/apis/ipranges/googlebot.json), read 21 October 2026
+- [Google Search Central: Google's common crawlers (last updated 2026-10-15)](https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers)
+- [developers.google.com/static/search/apis/ipranges/googlebot.json](https://developers.google.com/static/crawling/ipranges/common-crawlers.json), read 21 October 2026

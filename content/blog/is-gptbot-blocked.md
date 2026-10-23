@@ -11,7 +11,7 @@ hero_alt: Four boxes numbered 1 to 4: robots.txt, CDN, firewall, server, the pla
 og: is-gptbot-blocked-og.png
 widget: on
 howto: on
-related: /bots|AI crawlers: what each one does and how to allow or block it; /tools/ai-crawler-check|AI-crawler access checker (free); /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /|The CitedBy site audit; /sample|A sample report
+related: /bots|AI crawlers: what each one does and how to allow or block it; /tools/ai-crawler-check|AI-crawler access checker (free); /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /|The CitedBy site audit; /sample|A sample report; /tools/findable-check|Findable check: can search engines find your pages? (free); /changes|What changed: log of AI-crawler and search changes
 answer: GPTBot is blocked on your site if robots.txt has a Disallow rule that applies to it, or if a CDN, firewall or server rule refuses its requests. Open yourshop.com/robots.txt, run an audit, then compare two requests to your server. Blocking GPTBot does not by itself block ChatGPT search.
 
 ## Four places GPTBot can be stopped
@@ -22,7 +22,7 @@ GPTBot is the crawler OpenAI says it uses to collect content that may be used to
 
 ## How to check, step by step
 
-1. Open `yourshop.com/robots.txt` in a browser. Look for a group that names `GPTBot`. If there is none, GPTBot follows the `User-agent: *` group, so a blanket `Disallow: /` under it blocks GPTBot too ([RFC 9309](https://www.rfc-editor.org/rfc/rfc9309)).
+1. Open `yourshop.com/robots.txt` in a browser. Look for a group that names `GPTBot`. If there is none, GPTBot follows the `User-agent: *` group, so a blanket `Disallow: /` under it blocks GPTBot too ([RFC 9309](https://www.rfc-editor.org/info/rfc9309/)).
 2. Run the free check in the box above. It reads robots.txt for GPTBot, OAI-SearchBot, PerplexityBot, Google-Extended and Bingbot and names the ones that are blocked.
 3. Send two requests to your homepage and compare the status codes: one normal, one that carries the GPTBot user-agent string. Commands below.
 4. Open your CDN account and look at its AI crawler settings. For Cloudflare, the steps are below.
@@ -83,5 +83,5 @@ No. Being readable is the entry ticket. Whether an assistant names your shop dep
 - [OpenAI: crawlers and user agents, IP ranges](https://developers.openai.com/api/docs/bots)
 - [Cloudflare: manage AI crawlers](https://developers.cloudflare.com/ai-crawl-control/features/manage-ai-crawlers/)
 - [Help Net Security: Cloudflare changes AI crawler access rules, 2 July 2026](https://www.helpnetsecurity.com/2026/07/02/cloudflare-ai-crawler-controls/)
-- [IETF RFC 9309: Robots Exclusion Protocol](https://www.rfc-editor.org/rfc/rfc9309)
+- [IETF RFC 9309: Robots Exclusion Protocol](https://www.rfc-editor.org/info/rfc9309/)
 - [CitedBy site audit](https://citedby.eu/)

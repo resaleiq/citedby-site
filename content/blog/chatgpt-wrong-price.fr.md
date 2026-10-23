@@ -36,7 +36,7 @@ Ouvrez une nouvelle conversation, avec la recherche web activée si l'assistant 
 
 ## Étape 3 : votre flux produits affiche-t-il encore l'ancien prix ?
 
-Si vous vendez via Google Shopping, une place de marché ou le flux shopping de ChatGPT, le flux est une seconde copie de votre prix. La spécification de flux d'OpenAI demande un prix sous la forme `79.99 USD`, une ligne par article ou déclinaison achetable, et indique de mettre le flux à jour au début et à la fin d'une promotion ([spécification du flux produits OpenAI](https://developers.openai.com/commerce/specs/feed)). Une promotion terminée sur votre site mais restée dans le flux est le décalage classique.
+Si vous vendez via Google Shopping, une place de marché ou le flux shopping de ChatGPT, le flux est une seconde copie de votre prix. La spécification de flux d'OpenAI demande un prix sous la forme `79.99 USD`, une ligne par article ou déclinaison achetable, et indique de mettre le flux à jour au début et à la fin d'une promotion ([spécification du flux produits OpenAI](https://developers.openai.com/commerce/specs/file-upload/products)). Une promotion terminée sur votre site mais restée dans le flux est le décalage classique.
 
 Google décrit le même piège pour son flux : quand le flux et la page d'atterrissage divergent, la solution est de les aligner, de renvoyer le flux (import, Content API ou plateforme de votre boutique), puis de demander un examen, qui prend 7 jours ouvrés selon Google ([aide Google Merchant Center](https://support.google.com/merchants/answer/9773429)). La page d'OpenAI ne décrit aucun moyen de contester des données déjà intégrées, nous n'en promettons donc pas.
 
@@ -72,7 +72,7 @@ Oui, quand il est périmé. Google indique que le prix du balisage et du flux do
 
 ## Sources
 
-- [OpenAI : spécification du flux produits](https://developers.openai.com/commerce/specs/feed)
+- [OpenAI : spécification du flux produits](https://developers.openai.com/commerce/specs/file-upload/products)
 - [OpenAI : robots d'exploration et user agents](https://developers.openai.com/api/docs/bots)
 - [Google Merchant Center : prix inexact dû à un décalage entre flux et page d'atterrissage](https://support.google.com/merchants/answer/9773429)
 - [r/ecommerce, 22 septembre 2026 : ChatGPT recommande un lot abandonné à l'ancien prix](https://old.reddit.com/comments/1wnbg86/)
