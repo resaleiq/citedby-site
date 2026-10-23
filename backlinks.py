@@ -13,6 +13,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DB = os.environ.get("BACKLINKS_DB", os.path.join(HERE, "data", "backlinks.sqlite"))
 HOST = re.compile(r"^(?=.{4,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,24}$")
 ROUTE = re.compile(r"^(?:/(fr|de|es|nl))?/backlinks(?:/(.*))?$")  # group 1: language prefix, group 2: the host part (None = the lookup page)
+LINK_DENY = re.compile(r"porn|xxx|sex|escort|casino|bet(?!a|ter|ween|s)|poker|viagra|cialis|pharma|loan|crypto|slot|lotto|gambl|adult|hentai|nude|dating|vape|cbd|payday")  # RES-3801 (open): a referrer with one of these words is listed as text, never linked or featured; the SEO lead decides whether it is hidden
 OWN_ZERO = {"citedby.eu", "hexaciv.com", "civiqpass.com", "revalx.eu"}  # METHOD.md sanity check: the graph saw none of them
 GRAPH, GRAPH_COVER = "cc-main-2026-aug-sep-oct", "2026-08/2026-10"
 OG = {**langroutes.OG_LOCALE, "en": "en_IE"}  # English keeps the og:locale it was published with
@@ -53,7 +54,8 @@ def full_info():
     key = (FULL_DB, st.st_mtime_ns, st.st_size, st.st_ino)
     if key not in _FULL:
         n = _qf("select count(*) from dom")
-        top = _qf("select domain, referring_domains from dom order by referring_domains desc, domain limit 24") if n and n[0][0] else None
+        top = _qf("select domain, referring_domains from dom order by referring_domains desc, domain limit 80") if n and n[0][0] else None
+        top = [r for r in top if not LINK_DENY.search(r[0])][:24] if top is not None else None
         ok = top is not None and _qf("select 1 from bl limit 1") is not None
         _FULL.clear()
         _FULL[key] = {"n": n[0][0], "top": top} if ok else None
@@ -227,6 +229,7 @@ def host_page(host, lg="en"):
         known = {x[0] for x in _q("select domain from dom where domain in (%s)" % marks, refs)}
         if full_info():  # a referrer that has a page in either file is a link
             known |= {x[0] for x in (_qf("select domain from dom where domain in (%s)" % marks, refs) or [])}
+        known = {k for k in known if not LINK_DENY.search(k)}  # gambling and adult names stay text (RES-3801)
         link = lambda ref: f'<a href="{p}/backlinks/{E(ref)}">{E(ref)}</a>' if ref in known else E(ref)
         tr = "".join(f'<tr><td data-label="{E(t["dl_rank"])}">{r}</td><td data-label="{E(t["dl_ref"])}">{link(ref)}</td><td class="n" data-label="{E(t["dl_str"])}">{fmt(inl, lg)}</td></tr>' for r, ref, inl in rows)
         table = (f'<section><h2>{E(t["table_h2"])}</h2><div class="tw"><table><thead><tr><th>{E(t["th_rank"])}</th><th>{E(t["th_ref"])}</th><th class="n">{E(t["th_str"])}</th></tr></thead>'
