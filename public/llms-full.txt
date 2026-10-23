@@ -286,6 +286,7 @@ Who AI assistants link when buyers ask where to shop
 Dated counts from our own runs of Claude and ChatGPT with web search on: which shop sites appear in the answers to buyer questions, by niche and country. Every page shows the questions, the method and the raw counts. Each page names the one assistant it counted.
 
 Studies
+EU AI-Access Index: which AI crawlers 10,426 popular EU sites block in robots.txt
 Launch crawl 2026-10: Show HN and Lovable sites read as a crawler reads them
 48 Claude answers to 24 buyer questions in 3 EU niches: who gets linked
 48 ChatGPT answers to 24 buyer questions in 3 EU niches: who gets linked

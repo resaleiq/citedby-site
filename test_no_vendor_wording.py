@@ -5,6 +5,7 @@ files = glob.glob("public/data/*.html") + glob.glob("public/data/*.csv") + ["pub
 hits = []
 for f in files:
     for n, line in enumerate(open(f, encoding="utf-8"), 1):
+        if "ai-access-index-2026-10" in f and f.endswith(".csv") and n > 1: continue  # RES-3712: the rows are third-party domain names (api.bg); only the header is ours
         if f.endswith("day0-citedby-eu.csv"):
             line = line.split(",", 1)[0]  # raw answers quote the web; only the header and ids are ours
             if n > 1: continue

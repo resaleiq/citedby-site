@@ -13,6 +13,7 @@
 - [Guides and articles](https://citedby.eu/blog): how AI assistants find and read websites
 - [Free AI visibility check](https://citedby.eu/free-ai-visibility-check): free, no account: we crawl up to 10 pages and show your score, AI crawler access and the 3 issues to fix first
 - [AI visibility audit guide](https://citedby.eu/ai-visibility-audit): what such an audit checks
+- [EU AI-Access Index](https://citedby.eu/data/ai-access-index): which AI crawlers 10,426 popular EU sites block in robots.txt, by country and CMS, with method and CSV
 - [Data by niche](https://citedby.eu/data/study-buyer-questions-claude): published study with method and CSV
 
 - [How an audit works (methodology)](https://citedby.eu/methodology): what is crawled, checked and scored, and what we do not claim
