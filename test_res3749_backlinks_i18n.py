@@ -227,3 +227,17 @@ def test_host_page_titles_are_short_enough_to_show_in_search_results():
     assert worst >= 60
     for lg in ALL:                                                                       # a typical host shows whole in a results page (about 60 characters)
         assert len(html.unescape(re.search(r"<title>(.*?)</title>", b.host_page("semrush.com", lg)[1]).group(1))) <= 62, lg
+
+
+def test_the_outline_cta_button_is_readable_on_the_light_data_css_box():
+    """doc.css paints a non-primary `a.btn` in a .cta white-on-navy; data.css turns the .cta box light, so on these pages that button was white on white (found on the live 390 screenshot, RES-3749).
+    The pages carry the overriding rule after their stylesheet links, with the same specificity, so it wins by order. A first version of this rule had one class less and lost to doc.css: this string test cannot see that, so
+    the contrast of every button is also measured in a real browser before and after a deploy (res3749_btn_contrast.mjs, 4.5 or more)."""
+    rule = ".dc .cta a.btn:not(.p){background:#fff;color:var(--navy);border:2px solid var(--navy)}"     # doc.css's own selector, `.dc .cta a.btn:not(.p)`: equal specificity, so source order decides
+    for lg in ALL:
+        for h in (b.index_page("", lg), b.index_page(i.T[lg]["bad_host"], lg), b.host_page("semrush.com", lg)[1]):
+            head = h[:h.index("</head>")]
+            assert head.count(rule) == 1, lg
+            assert head.index(rule) > head.rindex('rel="stylesheet"'), lg                 # after the three stylesheet links
+    h = b.index_page("", "es")
+    assert re.search(r'<a class="btn" href="[^"]*utm_campaign=backlinks">', h)               # the lookup page's CTA is the non-primary anchor this rule is for

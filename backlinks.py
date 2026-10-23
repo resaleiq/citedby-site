@@ -130,6 +130,7 @@ def _shell(lg, title, desc, canonical, body, noindex=False, ld=None, alts=""):
 <meta name="theme-color" content="#0F1B2D">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/saas.css"><link rel="stylesheet" href="/doc.css?v=bbef868a"><link rel="stylesheet" href="/data.css?v=08430f8c">
+<style>.dc .cta a.btn:not(.p){{background:#fff;color:var(--navy);border:2px solid var(--navy)}}</style>
 {ld_tag}
 </head><body class="cb dc dp">
 {_topbar(lg)}
