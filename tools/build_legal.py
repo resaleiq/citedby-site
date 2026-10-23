@@ -103,7 +103,7 @@ def shell(lang, page, title, desc, body_html):
             f'<meta name="description" content="{E(desc)}"><link rel="canonical" href="{base}">{alts}<link rel="icon" href="/favicon.svg">'
             f'<link rel="stylesheet" href="/saas.css"><link rel="stylesheet" href="/doc.css?v={ver}"><style>{TABLE_CSS}</style><script type="application/ld+json">{ld}</script></head><body class="cb dc">'
             f'<a class="sr" href="#main">{E(t["skip"])}</a>\n<header class="topbar"><div class="in"><a class="mark" href="{t["home"]}"><i></i>CitedBy</a>'
-            f'<nav aria-label="{E(t["main"])}"><a class="opt" href="{t["home"].rstrip("/")}/#checks">{E(t["check"])}</a><a href="{t["plans_h"]}">{E(t["plans"])}</a><a href="{t["blog_h"]}">{E(t["blog"])}</a><a class="opt" href="/data">{E(t["data"])}</a></nav>'
+            f'<nav aria-label="{E(t["main"])}"><a class="opt" href="{t["home"].rstrip("/") or ""}{"#checks" if t["home"].rstrip("/") else "/#checks"}">{E(t["check"])}</a><a href="{t["plans_h"]}">{E(t["plans"])}</a><a href="{t["blog_h"]}">{E(t["blog"])}</a><a class="opt" href="/data">{E(t["data"])}</a></nav>'
             f'<a class="signin" href="/signin?next=%2Fapp.html">{E(t["signin"])}</a><a class="btn sm go" href="/app.html#/new">{E(t["cta"])}</a></div></header>'
             f'<main id="main">{body_html}</main>'
             f'<footer><div class="w"><span>© 2026 CitedBy · <a href="mailto:hello@citedby.eu">hello@citedby.eu</a></span><a href="{t["plans_h"]}">{E(t["plans"])}</a><a href="{t["blog_h"]}">{E(t["blog"])}</a><a href="/data">{E(t["data"])}</a>'

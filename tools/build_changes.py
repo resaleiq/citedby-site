@@ -206,7 +206,7 @@ def render(l):
             r["id"], E(tx(ttl)), r["date"], E(day(l, r["date"])), eng, E(tx(u["src"])), E(r["source_url"]), E(sn), E(tx(u["read"])), E(day(l, r["read_on"])),
             "fr" if r["id"] == "google-ai-overviews-ai-mode-france" else "en", E(r["quote"]), E(tx(u["quote"])), qn, E(tx(u["do"])), E(tx(act)), E(tx(u["checks"])), "\u202f:" if l == "fr" else ":", c, E(lab), E(tx(chk)), free(l, r["id"])))
     main = '<main id="main"><h1>%s</h1><p class="lead">%s</p><p class="src">%s <a href="%s">%s</a></p>\n%s\n%s\n<section class="cta"><h2>%s</h2><p class="lede">%s</p><div class="actions"><a class="btn p" href="%s">%s</a><a class="btn" href="%s">%s</a></div></section></main>' % (
-        E(tx(u["h1"])), E(tx(u["lead"])), E(tx(u["more"])), path(l, ".xml"), E(tx(u["feed"])), summary(l), "\n".join(art), E(tx(u["cta_h"])), E(tx(u["cta_b"])), "/" if l == "en" else "/%s/" % l, E(tx(u["cta"])), tp(l), E(tx(u["cta2"])))
+        E(tx(u["h1"])), E(tx(u["lead"])), E(tx(u["more"])), path(l, ".xml"), E(tx(u["feed"])), summary(l), "\n".join(art), E(tx(u["cta_h"])), E(tx(u["cta_b"])), "/" if l == "en" else "/%s" % l, E(tx(u["cta"])), tp(l), E(tx(u["cta2"])))
     return head + main + foot
 
 

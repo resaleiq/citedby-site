@@ -346,7 +346,7 @@ def main():
     sm = os.path.join(PUB, "sitemap.xml"); s = open(sm, encoding="utf-8").read()
     s = re.sub(r"<url><loc>%s(?:/[a-z]{2}/ai-visibility-audit|(?:/[a-z]{2})?/(?:blog|compare|guides|bots|platforms)[^<]*)</loc>(<lastmod>[^<]*</lastmod>)?</url>" % re.escape(SITE), "", s)
     s = s.replace("</urlset>", "".join("<url><loc>%s%s</loc><lastmod>%s</lastmod></url>" % (SITE, p, d) for p, d in urls) + "</urlset>")
-    for extra in ("/data", "/bot", "/data/study-chatgpt-buyer-questions", "/fr/about", "/nl/about", "/de/about", "/es/about"):  # live pages the sitemap lacked (RES-1998)
+    for extra in ("/data", "/bot", "/ci", "/data/study-chatgpt-buyer-questions", "/fr/about", "/nl/about", "/de/about", "/es/about"):  # live pages the sitemap lacked (RES-1998)
         if "<loc>%s%s</loc>" % (SITE, extra) not in s: s = s.replace("</urlset>", "<url><loc>%s%s</loc><lastmod>2026-10-20</lastmod></url></urlset>" % (SITE, extra))
     open(sm, "w", encoding="utf-8").write(s)
     print("wrote %d pages" % len(written))
