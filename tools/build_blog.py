@@ -202,6 +202,9 @@ def fr_typo(doc):  # RES-3165: French typography, U+202F before ? ! : ; in text 
         else: out.append(fix(x))
     return "".join(out)
 
+NOINDEX = {("es", "does-llms-txt-work"), ("nl", "check-what-ai-says-about-your-brand")}  # RES-3269: Google crawled these translations and did not index them; noindex until each has its own example and FAQ
+
+
 def build_article(fm, body, arts):
     loc, slug = fm["locale"], fm["slug"]
     t, state = UI[loc], {"imgs": 0}
@@ -274,7 +277,7 @@ def build_article(fm, body, arts):
 {cta}
 {rel_h}
 </article></main>'''
-    return path, shell(loc, fm["title"], fm["description"], path, alts, og, ld, main)
+    return path, shell(loc, fm["title"], fm["description"], path, alts, og, ld, main, '<meta name="robots" content="noindex,follow">' if (loc, slug) in NOINDEX else "")
 
 INDEX_LOCALES = {"blog": ("en", "fr", "nl", "de", "es"), "guides": ("en", "fr", "nl", "de", "es"), "bots": ("en",), "platforms": ("en",)}
 SECT_NAME, SECT_PATH = {"bots": "AI crawlers", "platforms": "AI crawler settings by platform"}, {"bots": "bots", "platforms": "platforms"}  # sections that have their own hub (H3 page sets)
@@ -345,7 +348,7 @@ def main():
         os.makedirs(os.path.dirname(out), exist_ok=True); open(out, "w", encoding="utf-8").write(doc)
     sm = os.path.join(PUB, "sitemap.xml"); s = open(sm, encoding="utf-8").read()
     s = re.sub(r"<url><loc>%s(?:/[a-z]{2}/ai-visibility-audit|(?:/[a-z]{2})?/(?:blog|compare|guides|bots|platforms)[^<]*)</loc>(<lastmod>[^<]*</lastmod>)?</url>" % re.escape(SITE), "", s)
-    s = s.replace("</urlset>", "".join("<url><loc>%s%s</loc><lastmod>%s</lastmod></url>" % (SITE, p, d) for p, d in urls) + "</urlset>")
+    s = s.replace("</urlset>", "".join("<url><loc>%s%s</loc><lastmod>%s</lastmod></url>" % (SITE, p, d) for p, d in urls if not any(p == "/%s/blog/%s" % k for k in NOINDEX)) + "</urlset>")
     for extra in ("/data", "/bot", "/ci", "/data/study-chatgpt-buyer-questions", "/fr/about", "/nl/about", "/de/about", "/es/about"):  # live pages the sitemap lacked (RES-1998)
         if "<loc>%s%s</loc>" % (SITE, extra) not in s: s = s.replace("</urlset>", "<url><loc>%s%s</loc><lastmod>2026-10-20</lastmod></url></urlset>" % (SITE, extra))
     open(sm, "w", encoding="utf-8").write(s)

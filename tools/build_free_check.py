@@ -170,6 +170,8 @@ def render(l):
     url = SITE + path
     alts = "".join('<link rel="alternate" hreflang="%s" href="%s%s/free-ai-visibility-check">' % (x, SITE, pfx(x)) for x in LANGS)
     alts += '<link rel="alternate" hreflang="x-default" href="%s/free-ai-visibility-check">' % SITE
+    alts = ""  # RES-3269: only the English page is indexed, so no hreflang points at the noindex copies
+    robots = "" if l == "en" else '<meta name="robots" content="noindex,follow">'  # Google crawled all five and indexed none; the copies share one worked example, so they wait for their own
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "WebPage", "name": t["h1"], "url": url, "description": t["wa_desc"], "inLanguage": l,
          "mainEntity": {"@type": "Service", "name": t["h1"], "serviceType": "Website check", "description": t["wa_desc"], "inLanguage": l,
@@ -180,7 +182,7 @@ def render(l):
     ex_intro = E(t["ex_intro"].format(host=d["host"], date=date, pages=d["pages"], score=d["score"], grade=d["grade"]))
     p = pfx(l)
     f = t["footer"]
-    doc = f'''<!doctype html><html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0F1B2D"><title>{E(t["title"])}</title><meta name="description" content="{E(t["desc"])}"><link rel="canonical" href="{url}">{alts}<meta property="og:title" content="{E(t["title"])}"><meta property="og:description" content="{E(t["desc"])}"><meta property="og:url" content="{url}"><meta property="og:type" content="website"><meta property="og:image" content="{SITE}/og-v2.png"><meta name="twitter:image" content="{SITE}/og-v2.png"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="preload" href="/fonts/newsreader-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/saas.css">
+    doc = f'''<!doctype html><html lang="{l}"><head><meta charset="utf-8">{robots}<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0F1B2D"><title>{E(t["title"])}</title><meta name="description" content="{E(t["desc"])}"><link rel="canonical" href="{url}">{alts}<meta property="og:title" content="{E(t["title"])}"><meta property="og:description" content="{E(t["desc"])}"><meta property="og:url" content="{url}"><meta property="og:type" content="website"><meta property="og:image" content="{SITE}/og-v2.png"><meta name="twitter:image" content="{SITE}/og-v2.png"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="preload" href="/fonts/newsreader-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/saas.css">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")}</script></head>
 <body class="cb land"><a class="sr" href="#main">{E(t["skip"])}</a>
 <header class="topbar"><div class="in"><a class="mark" href="{p or "/"}"><i></i>CitedBy</a><nav aria-label="Main"><a href="{p}/plans">{E(t["nav"][0])}</a><a href="{p}/blog">{E(t["nav"][1])}</a></nav><a href="/signin?next=%2Fapp.html" style="color:#C9D2DF;margin-right:12px">{E(t["signin"])}</a></div></header>
@@ -213,7 +215,7 @@ def sitemap():
     sm = os.path.join(PUB, "sitemap.xml")
     s = open(sm, encoding="utf-8").read()
     s = re.sub(r"<url><loc>%s(?:/[a-z]{2})?/free-ai-visibility-check</loc>.*?</url>" % re.escape(SITE), "", s)
-    new = "".join("<url><loc>%s%s/free-ai-visibility-check</loc><lastmod>%s</lastmod></url>" % (SITE, pfx(l), LASTMOD) for l in LANGS)
+    new = "".join("<url><loc>%s%s/free-ai-visibility-check</loc><lastmod>%s</lastmod></url>" % (SITE, pfx(l), LASTMOD) for l in LANGS[:1])
     return sm, s.replace("</urlset>", new + "</urlset>")
 
 
