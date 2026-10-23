@@ -194,3 +194,36 @@ def test_the_coverage_sentence_puts_the_threshold_before_the_scope_in_every_lang
         for k in ("top_note_full", "nis_ans_full"):
             t = i.T[lg][k]
             assert "100" in t and ".eu" in t and t.index("100") < t.index(".eu"), (lg, k)
+
+
+def buttons(h):
+    return re.findall(r'<(?:a|button)\b[^>]*class="(btn[^"]*)"[^>]*>', h[h.index("<main"):h.index("</main>")])
+
+
+def test_one_filled_primary_per_state_in_every_language():
+    """Money-path state review (RES-3749): the lookup page's job is the lookup, a host page's job is the free check. Exactly one filled `btn p` in <main> per state; the other button is the outline style."""
+    for lg in ALL:
+        idx = buttons(b.index_page("", lg))
+        assert idx.count("btn p") == 1 and len(idx) == 2, (lg, "index", idx)
+        assert buttons(b.index_page(i.T[lg]["bad_host"], lg)).count("btn p") == 1, (lg, "index error")
+        for host in ("semrush.com", "citedby.eu", "example-unknown-site.fr"):
+            bt = buttons(b.host_page(host, lg)[1])
+            assert bt.count("btn p") == 1 and len(bt) == 2, (lg, host, bt)
+        h = b.host_page("semrush.com", lg)[1]
+        assert re.search(r'<a class="btn p" href="[^"]*utm_campaign=backlinks', h), lg          # the filled one on a host page is the free-check link
+        assert re.search(r'<button class="btn" type="submit">', h), lg                          # the lookup button is the outline style there
+        assert re.search(r'<button class="btn p" type="submit">', b.index_page("", lg)), lg     # and the filled one on the lookup page
+
+
+def test_host_page_titles_are_short_enough_to_show_in_search_results():
+    """A title is the template plus the host name, so the longest host names give the longest titles: check those in every language (all 25k pages took two minutes)."""
+    longest = sorted(b.hosts(), key=len)[-40:]
+    worst = 0
+    for lg in ALL:
+        for host in longest:
+            title = html.unescape(re.search(r"<title>(.*?)</title>", b.host_page(host, lg)[1]).group(1))
+            worst = max(worst, len(title))
+            assert title.endswith("| CitedBy") and len(title) <= 100, (lg, host, len(title))
+    assert worst >= 60
+    for lg in ALL:                                                                       # a typical host shows whole in a results page (about 60 characters)
+        assert len(html.unescape(re.search(r"<title>(.*?)</title>", b.host_page("semrush.com", lg)[1]).group(1))) <= 62, lg

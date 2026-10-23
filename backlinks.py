@@ -165,19 +165,21 @@ def _crumb(lg, *rest):
     return f'<p class="crumb"><a href="{HOME[lg]}">{E(t["crumb_home"])}</a> / ' + " / ".join(rest or (E(t["crumb_bl"]),)) + "</p>"
 
 
-def _form(lg, value=""):
+def _form(lg, value="", primary=False):
+    """The lookup form. Its button is the filled one only on the lookup page; on a host page the free-check link below is the one primary."""
     t = T[lg]
     return (f'<form class="bl-form" action="{prefix(lg)}/backlinks" method="get" role="search"><label for="bl-host">{E(t["form_label"])}</label> '
             f'<input id="bl-host" name="host" type="text" inputmode="url" autocomplete="off" placeholder="{E(t["form_ph"])}" value="{E(value)}" required maxlength="253"> '
-            f'<button class="btn p" type="submit">{E(t["form_btn"])}</button></form>')
+            f'<button class="btn{" p" if primary else ""}" type="submit">{E(t["form_btn"])}</button></form>')
 
 
-def _cta(lg, host=None):
+def _cta(lg, host=None, primary=True):
+    """The free-check call to action. The filled button on a host page; on the lookup page the lookup button is the primary and this one is the outline style."""
     t = T[lg]
     u = HOME[lg] + ("?url=%s&" % quote(host) if host else "?") + "utm_source=citedby_backlinks&utm_medium=free_tool&utm_campaign=backlinks"
     name = host or t["cta_name"]
     return (f'<section class="cta"><h2>{E(t["cta_h2"].format(name=name))}</h2><p class="lede">{E(t["cta_lede"])}</p>'
-            f'<div class="actions"><a class="btn p" href="{E(u)}">{E(t["cta_btn"].format(name=name))}</a></div></section>')
+            f'<div class="actions"><a class="btn{" p" if primary else ""}" href="{E(u)}">{E(t["cta_btn"].format(name=name))}</a></div></section>')
 
 
 def _method(lg, m):
@@ -195,11 +197,11 @@ def index_page(msg="", lg="en"):
 {_switch(lg, "/backlinks")}
 <h1>{E(t["index_h1"])}</h1>
 {note}<p class="ans">{E(t["index_ans"])}</p>
-{_form(lg)}
+{_form(lg, primary=True)}
 <section><h2>{E(t["top_h2"])}</h2><ul>{li}</ul>
 <p class="src">{E(note_text)}</p></section>
 <section><h2>{E(t["method_h2"])}</h2><p>{_method(lg, m)}</p></section>
-{_cta(lg)}'''
+{_cta(lg, primary=False)}'''
     return _shell(lg, t["index_title"], t["index_desc"], f"{p}/backlinks", body, alts=_alts("/backlinks"))
 
 

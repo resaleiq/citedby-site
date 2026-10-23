@@ -41,7 +41,7 @@ T = {
                 "and do not use any third-party backlink index. Common Crawl samples the web, so counts are lower than a full index such as Ahrefs or Semrush; use them to compare sites "
                 "and spot big referrers, not as an exact total. Updated each quarter, last graph: {graph}. Nofollow and link position are not in this data."),
         bad_host="That does not look like a domain name. Try something like example.com.",
-        host_h1="Who links to {host}?", host_title="Who links to {host}? Referring domains from open data | CitedBy",
+        host_h1="Who links to {host}?", host_title="Who links to {host}? Referring domains | CitedBy",
         desc_n="{n} domains link to {host} in Common Crawl's open web graph ({label}). The 20 strongest, with the method.",
         desc_n_one="1 domain links to {host} in Common Crawl's open web graph ({label}), with the method.",
         desc_0="Common Crawl found no linking domains for {host}. What that means and how the data is built.",
@@ -77,7 +77,7 @@ T = {
                 "Servez-vous-en pour comparer des sites et repérer les principaux domaines référents, pas comme un total exact. Mis à jour chaque trimestre, dernier graphe : {graph}. "
                 "Le nofollow et la position du lien ne figurent pas dans ces données."),
         bad_host="Cela ne ressemble pas à un nom de domaine. Essayez par exemple example.com.",
-        host_h1="Qui renvoie vers {host} ?", host_title="Qui renvoie vers {host} ? Domaines référents issus de données ouvertes | CitedBy",
+        host_h1="Qui renvoie vers {host} ?", host_title="Qui renvoie vers {host} ? Domaines référents | CitedBy",
         desc_n="{n} domaines renvoient vers {host} dans le graphe web ouvert de Common Crawl ({label}). Les 20 plus forts, avec la méthode.",
         desc_n_one="1 domaine renvoie vers {host} dans le graphe web ouvert de Common Crawl ({label}), avec la méthode.",
         desc_0="Common Crawl n'a trouvé aucun domaine référent pour {host}. Ce que cela signifie et comment les données sont construites.",
@@ -113,7 +113,7 @@ T = {
                 "Nutzen Sie sie, um Websites zu vergleichen und große Linkgeber zu finden, nicht als exakte Summe. Aktualisiert jedes Quartal, letzter Graph: {graph}. "
                 "Nofollow und Linkposition sind in diesen Daten nicht enthalten."),
         bad_host="Das sieht nicht nach einem Domainnamen aus. Versuchen Sie es mit etwas wie example.com.",
-        host_h1="Wer verlinkt auf {host}?", host_title="Wer verlinkt auf {host}? Verweisende Domains aus offenen Daten | CitedBy",
+        host_h1="Wer verlinkt auf {host}?", host_title="Wer verlinkt auf {host}? Verweisende Domains | CitedBy",
         desc_n="{n} Domains verlinken im offenen Web-Graphen von Common Crawl ({label}) auf {host}. Die 20 stärksten, mit Methode.",
         desc_n_one="1 Domain verlinkt im offenen Web-Graphen von Common Crawl ({label}) auf {host}, mit Methode.",
         desc_0="Common Crawl hat keine verweisenden Domains für {host} gefunden. Was das bedeutet und wie die Daten entstehen.",
@@ -149,7 +149,7 @@ T = {
                 "Úsalas para comparar sitios y detectar los principales dominios de referencia, no como un total exacto. Se actualiza cada trimestre; último grafo: {graph}. "
                 "El nofollow y la posición del enlace no están en estos datos."),
         bad_host="Eso no parece un nombre de dominio. Prueba con algo como example.com.",
-        host_h1="¿Quién enlaza a {host}?", host_title="¿Quién enlaza a {host}? Dominios de referencia con datos abiertos | CitedBy",
+        host_h1="¿Quién enlaza a {host}?", host_title="¿Quién enlaza a {host}? Dominios de referencia | CitedBy",
         desc_n="{n} dominios enlazan a {host} en el grafo web abierto de Common Crawl ({label}). Los 20 más fuertes, con el método.",
         desc_n_one="1 dominio enlaza a {host} en el grafo web abierto de Common Crawl ({label}), con el método.",
         desc_0="Common Crawl no encontró dominios que enlacen a {host}. Qué significa y cómo se construyen los datos.",
@@ -185,7 +185,7 @@ T = {
                 "Gebruik ze om sites te vergelijken en grote verwijzende domeinen te vinden, niet als exact totaal. Elk kwartaal bijgewerkt, laatste graaf: {graph}. "
                 "Nofollow en de plek van de link zitten niet in deze data."),
         bad_host="Dat lijkt niet op een domeinnaam. Probeer iets als example.com.",
-        host_h1="Wie linkt naar {host}?", host_title="Wie linkt naar {host}? Verwijzende domeinen uit open data | CitedBy",
+        host_h1="Wie linkt naar {host}?", host_title="Wie linkt naar {host}? Verwijzende domeinen | CitedBy",
         desc_n="{n} domeinen linken naar {host} in de open webgraaf van Common Crawl ({label}). De 20 sterkste, met de methode.",
         desc_n_one="1 domein linkt naar {host} in de open webgraaf van Common Crawl ({label}), met de methode.",
         desc_0="Common Crawl vond geen verwijzende domeinen voor {host}. Wat dat betekent en hoe de data is opgebouwd.",
