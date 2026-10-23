@@ -1,12 +1,18 @@
 """RES-3699 module 2: /backlinks and /backlinks/<host>, who links to a site, from Common Crawl's public domain web graph (job and method: RES-3703, seo-intel/backlinks/METHOD.md).
-Served at request time from data/backlinks.sqlite (tools/build_backlinks_db.py: our sites, rivals and the top 5,000 EU-ccTLD domains). English only for now.
+Served at request time from the full table when the host mounts it at /backlinks/backlinks.sqlite (RES-3706: every domain the job kept, 264,824; tier 3 = on demand, noindex),
+else from the 5,011-host cut baked into the image (data/backlinks.sqlite, tools/build_backlinks_db.py: our sites, rivals and the top 5,000 EU-ccTLD domains). English only for now.
 A host outside the file gets a "not in the set" page (noindex), never a zero. Standard library only."""
 import html, json, os, re, sqlite3
 from urllib.parse import quote
 
 E = html.escape
 HERE = os.path.dirname(os.path.abspath(__file__))
-DB = os.environ.get("BACKLINKS_DB", os.path.join(HERE, "data", "backlinks.sqlite"))
+DB_BAKED = os.path.join(HERE, "data", "backlinks.sqlite")
+DB_MOUNT = "/backlinks/backlinks.sqlite"  # read-only bind mount from /opt/citedby/backlinks (recreate.sh, deploy-citedby-site); built by seo-intel/backlinks/serve_db.py
+DB = os.environ.get("BACKLINKS_DB") or None  # explicit override (tests, rollback); None = decided per request by _db()
+COVER_CUT = "our own sites, SEO tools and the most-linked sites under .eu, .fr, .de, .es, .nl, .it, .pt and .be"
+COVER_FULL = ("our own sites, SEO tools and every domain under a European country-code domain (.eu, .fr, .de, .es, .nl, .it, .pt, .be, .at, .pl, .se, .uk and 16 more) "
+              "that has at least 100 referring domains")
 HOST = re.compile(r"^(?=.{4,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,24}$")
 OWN_ZERO = {"citedby.eu", "hexaciv.com", "civiqpass.com", "revalx.eu"}  # METHOD.md sanity check: the graph saw none of them
 GRAPH, GRAPH_LABEL, GRAPH_COVER = "cc-main-2026-aug-sep-oct", "Aug-Oct 2026", "2026-08/2026-10"
@@ -15,8 +21,14 @@ METHOD = ("Source: Common Crawl's public domain web graph, built from three mont
           "and spot big referrers, not as an exact total. Updated each quarter, last graph: " + GRAPH + ". Nofollow and link position are not in this data.")
 
 
+def _db():
+    """The override, else the mounted full table when the file is there, else the baked cut. Looked up per request, so renaming the file in or out of
+    /opt/citedby/backlinks switches the table with no restart (and `mv backlinks.sqlite backlinks.sqlite.off` is the instant rollback)."""
+    return DB or (DB_MOUNT if os.path.exists(DB_MOUNT) else DB_BAKED)
+
+
 def _q(sql, args=()):
-    c = sqlite3.connect("file:%s?mode=ro" % DB, uri=True)
+    c = sqlite3.connect("file:%s?mode=ro" % _db(), uri=True)
     try:
         return c.execute(sql, args).fetchall()
     finally:
@@ -35,6 +47,17 @@ def meta():
 
 def hosts():
     return [r[0] for r in _q("select domain from dom where tier in (1,2) order by tier, referring_domains desc")]
+
+
+def tier(host):
+    """1 our sites and rivals, 2 the sitemap set, 3 the on-demand rest (served, noindex); 0 = not in the table."""
+    r = _q("select tier from dom where domain=?", (host,))
+    return r[0][0] if r else 0
+
+
+def _cover():
+    """What the loaded table covers, in words: the cut and the full table say different things."""
+    return COVER_FULL if _q("select 1 from dom where tier=3 limit 1") else COVER_CUT
 
 
 def lookup(host):
@@ -102,7 +125,7 @@ def index_page(msg=""):
 {note}<p class="ans">Type a domain to see the 20 strongest domains that link to it in Common Crawl's latest open web graph, with the method shown. No sign-up.</p>
 {_form()}
 <section><h2>Most-linked EU sites in the data</h2><ul>{li}</ul>
-<p class="src">Count in brackets: referring domains. The lookup covers {len(hosts()):,} domains: our own sites, SEO tools and the most-linked sites under .eu, .fr, .de, .es, .nl, .it, .pt and .be.</p></section>
+<p class="src">Count in brackets: referring domains. The lookup covers {_q("select count(*) from dom")[0][0]:,} domains: {_cover()}.</p></section>
 <section><h2>Method and limits</h2><p>{E(METHOD.format(d=f"{int(m['domains']):,}", l=f"{int(m['links']):,}"))}</p></section>
 {_cta()}'''
     return _shell("Who links to a website? Free referring-domain lookup | CitedBy", "Free lookup of the strongest domains linking to a site, from Common Crawl's open web graph. Method and limits shown.", "/backlinks", body)
@@ -115,7 +138,7 @@ def host_page(host):
     if got is None:
         body = f'''<p class="crumb"><a href="/">CitedBy</a> / <a href="/backlinks">Backlinks</a> / {E(host)}</p>
 <h1>Who links to {E(host)}?</h1>
-<p class="ans">{E(host)} is not in the set we have loaded yet. The lookup covers our own sites, SEO tools and the most-linked sites under .eu, .fr, .de, .es, .nl, .it, .pt and .be. It does not mean the site has no links. The set grows with each quarterly graph.</p>
+<p class="ans">{E(host)} is not in the set we have loaded yet. The lookup covers {_cover()}. It does not mean the site has no links. The set grows with each quarterly graph.</p>
 {_form(host)}{_cta(host)}'''
         return 200, _shell(f"Who links to {host}? Not in the data yet | CitedBy", f"{host} is not in CitedBy's backlink data set yet.", f"/backlinks/{host}", body, noindex=True)
     n, rows = got
@@ -125,7 +148,7 @@ def host_page(host):
         table = ""
     else:
         ans = f"{n:,} domains link to {host} in the latest Common Crawl web graph ({GRAPH_LABEL}). Below are the {len(rows)} strongest. Strength is how many domains link to that referrer."
-        known = {x[0] for x in _q("select domain from dom where domain in (%s)" % ",".join("?" * len(rows)), [r[1] for r in rows])}
+        known = {x[0] for x in _q("select domain from dom where tier <= 2 and domain in (%s)" % ",".join("?" * len(rows)), [r[1] for r in rows])}  # links stay inside the indexable set
         link = lambda ref: f'<a href="/backlinks/{E(ref)}">{E(ref)}</a>' if ref in known else E(ref)
         tr = "".join(f'<tr><td data-label="#">{r}</td><td data-label="Referring domain">{link(ref)}</td><td class="n" data-label="Strength">{inl:,}</td></tr>' for r, ref, inl in rows)
         table = f'<section><h2>Strongest referring domains</h2><div class="tw"><table><thead><tr><th>#</th><th>Referring domain</th><th class="n">Domains linking to it</th></tr></thead><tbody>{tr}</tbody></table></div></section>'
@@ -143,7 +166,7 @@ def host_page(host):
 <section><h2>Look up another domain</h2>{_form()}</section>
 <section><h2>Method and limits</h2><p>{E(METHOD.format(d=d, l=l))}</p></section>
 {_cta(host)}'''
-    return 200, _shell(f"Who links to {host}? Referring domains from open data | CitedBy", desc, f"/backlinks/{host}", body, ld=ld)
+    return 200, _shell(f"Who links to {host}? Referring domains from open data | CitedBy", desc, f"/backlinks/{host}", body, noindex=tier(host) >= 3, ld=ld)  # tier 3: on demand, not offered to search engines (METHOD.md)
 
 
 def sitemap():
