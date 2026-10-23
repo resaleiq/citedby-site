@@ -2,7 +2,7 @@
 Off unless APP_UPSTREAM is set (for example http://citedby-app:8080); unsetting it is the rollback.
 Only the paths in ROUTES are forwarded; the client IP is sent as one X-Forwarded-For value."""
 import json, os, re, time, urllib.error, urllib.request
-import analytics, hub_links, social, withdraw_link
+import analytics, hub_links, social, trust, withdraw_link
 from urllib.parse import urlparse
 
 UPSTREAM = os.environ.get("APP_UPSTREAM", "").rstrip("/")
@@ -65,14 +65,14 @@ def handle(h, method):
         if method == "GET" and "text/html" in (h.headers.get("Accept") or "") and not u.path.startswith("/api/"):
             _send(h, 502, {"Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store", "Retry-After": "30"}, _unavailable_page(u.path)); return True  # RES-2738 F3: a visitor never sees JSON
         _send(h, 502, {}, b'{"error":"app unavailable"}'); return True
-    _send(h, code, {k: rh[k] for k in PASS if rh.get(k)}, rb, rh.get_all("Set-Cookie"), index_ok=bool(INDEXABLE.fullmatch(u.path)) and code == 200 and method == "GET")
+    _send(h, code, {k: rh[k] for k in PASS if rh.get(k)}, rb, rh.get_all("Set-Cookie"), index_ok=bool(INDEXABLE.fullmatch(u.path)) and code == 200 and method == "GET", path=u.path)
     return True
 
 
-def _send(h, code, headers, body, cookies=None, index_ok=False):
+def _send(h, code, headers, body, cookies=None, index_ok=False, path=""):
     if code == 404 and headers.get("Content-Type", "").startswith("text/html"): body = withdraw_link.inject(body)  # RES-2199: error pages carry the link too
     if code == 200 and headers.get("Content-Type", "").startswith("text/html"):
-        body = withdraw_link.inject(hub_links.inject(social.ensure(analytics.inject(body))))  # RES-2182: the EU withdrawal link on app pages too; RES-2106: share tags on app pages too; RES-1071: cookieless analytics tag on the app pages too
+        body = withdraw_link.inject(hub_links.inject(social.ensure(analytics.inject(trust.inject(body, path)))))  # RES-3683: trust block on the tool pages; RES-2182: the EU withdrawal link on app pages too; RES-2106: share tags on app pages too; RES-1071: cookieless analytics tag on the app pages too
     h.send_response(code)
     headers.setdefault("Content-Type", "application/json")
     headers.setdefault("Cache-Control", "no-store")
