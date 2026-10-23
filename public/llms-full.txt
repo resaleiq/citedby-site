@@ -77,7 +77,7 @@ Links, speed and indexing Broken links, redirect chains, canonicals, sitemap, sl
 Titles, headings and schema Missing and duplicate titles and descriptions, H1s, heading order, Organization, Product, FAQ and Article schema, Open Graph tags.
 Readable content Pages that arrive empty until JavaScript runs, thin pages, noindex tags.
 AI-search readiness Whether OAI-SearchBot (ChatGPT search), GPTBot (OpenAI training), ClaudeBot, PerplexityBot and Google-Extended are allowed in robots.txt, whether your firewall blocks them, and whether your llms.txt exists and works.
-Answer quality Do you have the FAQ, pricing, comparison and about pages that get quoted, and does some page answer each question buyers ask?
+Answer quality Do you have FAQ, pricing, comparison and about pages, and does some page answer each question buyers ask?
 The fix for each issue Why it matters, the affected pages, and the exact change to paste. Every issue lists its pages, so you can open each one and check us.
 
 From URL to fix list
@@ -151,7 +151,7 @@ Why pay for an audit when free checkers exist?
 Free checkers test one page, and crawlers you install hand you a list of problems. CitedBy checks every page up to your plan limit and writes the exact fix for each issue, so you paste the fix and skip the research. If it is not worth €9 to you, the 14-day guarantee refunds it.
 
 What is an AI search audit and why do I need one?
-An AI search audit checks whether AI assistants and search engines can reach, read and quote your pages: crawler access in robots.txt, readable text without JavaScript, llms.txt, structured data, titles, internal links and answer-first content. You need one because an assistant that cannot read a page cannot cite it, and most blockers are fixed with a few lines.
+An AI search audit checks whether AI assistants and search engines can reach, read and quote your pages: crawler access in robots.txt, readable text without JavaScript, llms.txt, structured data, titles and internal links. You need one because an assistant that cannot read a page cannot cite it, and most blockers are fixed with a few lines.
 
 How do I check if AI assistants can read my website?
 Paste your address into the free check on this page, or use the free AI crawler checker at citedby.eu/tools/ai-crawler-check . It shows whether robots.txt and your server let GPTBot, ClaudeBot, PerplexityBot and Googlebot in, with the exact lines to change.
@@ -212,7 +212,7 @@ Which CitedBy is this
 This is citedby.eu. It is not citedby.co or citedby.ai , which are different companies, and it is not an academic citation tool : it does not format, count or look up scholarly references. The only domain we use is citedby.eu.
 
 What we do
-Crawl your site from one URL, up to your plan's page limit, and score every page crawled for AI-crawler access, readable content, llms.txt, structured data, titles and headings, internal links and answer-first content.
+Crawl your site from one URL, up to your plan's page limit, and score every page crawled for AI-crawler access, readable content, llms.txt, structured data, titles and headings and internal links.
 Give the fix for each issue, copy-paste where possible.
 Re-crawl on a schedule so you can see the score move; white-label PDF reports and multi-site monitoring for agencies.
 Keep a dated list of changes the engines published , with what you can do and whether we check it.
@@ -264,7 +264,7 @@ Each check passes or raises an issue per page. Issues are grouped by severity (E
 Could not verify. If a page refuses our crawler (HTTP 401, 403 or 429), shows a firewall challenge, is blocked by your robots.txt or does not answer, we cannot tell what is on it. We list it as “could not verify” with the reason, skip its checks and leave it out of the score, so a firewall never costs you points. Allow our crawler and re-crawl to have those pages checked.
 
 4. The fixes
-Where a fix can be pasted, we give it: the robots.txt lines, a JSON-LD block, an llms.txt file, a rewritten answer block. Re-crawl after you change something and the score moves with it; scheduled re-crawls show the trend.
+Where a fix can be pasted, we give it: the robots.txt lines, a JSON-LD block, an llms.txt file. Re-crawl after you change something and the score moves with it; scheduled re-crawls show the trend.
 
 5. What we do not claim
 
@@ -533,6 +533,7 @@ Keep reading
 Check what AI says about your brand, 20 prompts
 AI visibility tools compared
 A sample report
+Profound vs Peec vs Otterly compared
 
 ## AI visibility checklist for Shopify, WooCommerce and more
 Source: https://citedby.eu/guides/cms
@@ -2820,6 +2821,7 @@ AI crawlers: what each one does and how to allow or block it
 AI visibility audit: what it is and what to check
 Who ChatGPT linked, by niche
 A sample report
+Findable check: can search engines find your pages? (free)
 
 ## ChatGPT shows my old price: find the source and fix it
 Source: https://citedby.eu/blog/chatgpt-wrong-price
@@ -2917,6 +2919,7 @@ Keep reading
 Check what AI says about your brand, 20 prompts
 Can ChatGPT read my website?
 A sample report
+Profound vs Peec vs Otterly compared
 
 ## What does ChatGPT say about your brand? 20 prompts
 Source: https://citedby.eu/blog/check-what-ai-says-about-your-brand
@@ -3035,6 +3038,7 @@ Keep reading
 A sample report
 Can ChatGPT read my website?
 Who ChatGPT linked, by niche
+Profound vs Peec vs Otterly compared
 
 ## Cloudflare blocking AI crawlers? How to allow them (2026)
 Source: https://citedby.eu/blog/cloudflare-ai-crawlers
@@ -3133,6 +3137,8 @@ Keep reading
 Is GPTBot blocked on my site?
 Can ChatGPT read my website?
 The free crawler check
+Findable check: can search engines find your pages? (free)
+What changed: log of AI-crawler and search changes
 
 ## Does llms.txt work? What the data says (2026)
 Source: https://citedby.eu/blog/does-llms-txt-work
@@ -3223,6 +3229,8 @@ llms.txt checker (free)
 Can ChatGPT read my website?
 GEO vs AEO vs SEO audit
 A sample report
+Findable check: can search engines find your pages? (free)
+What changed: log of AI-crawler and search changes
 
 ## GA4: track traffic from ChatGPT and AI assistants
 Source: https://citedby.eu/blog/ga4-ai-referral-traffic
@@ -3311,6 +3319,7 @@ Keep reading
 Can ChatGPT read my website?
 What AI says about your brand
 The free crawler check
+What changed: log of AI-crawler and search changes
 
 ## GEO vs AEO vs SEO audit: what differs, what you need
 Source: https://citedby.eu/blog/geo-vs-aeo-vs-seo
@@ -3404,6 +3413,8 @@ Keep reading
 Can ChatGPT read my website?
 Check what AI says about your brand
 A sample report
+What changed: log of AI-crawler and search changes
+Profound vs Peec vs Otterly compared
 
 ## How to create an llms.txt file: 6 steps and a template (2026)
 Source: https://citedby.eu/blog/how-to-create-an-llms-txt-file
@@ -3515,6 +3526,7 @@ llms.txt checker (free)
 Does llms.txt work?
 AI-crawler access checker (free)
 Can ChatGPT read my website?
+Findable check: can search engines find your pages? (free)
 
 ## Is GPTBot blocked on your site? 4 ways to check (2026)
 Source: https://citedby.eu/blog/is-gptbot-blocked
@@ -3618,6 +3630,8 @@ AI-crawler access checker (free)
 Can ChatGPT read my website?
 The CitedBy site audit
 A sample report
+Findable check: can search engines find your pages? (free)
+What changed: log of AI-crawler and search changes
 
 ## Is my website cited by ChatGPT? How to check it
 Source: https://citedby.eu/blog/is-my-website-cited-by-chatgpt
@@ -3791,3 +3805,5 @@ Keep reading
 Can ChatGPT read my website?
 Is GPTBot blocked on my site?
 A sample report
+Findable check: can search engines find your pages? (free)
+What changed: log of AI-crawler and search changes
