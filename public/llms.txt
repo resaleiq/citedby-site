@@ -5,6 +5,7 @@
 ## Pages
 - [Home, checks, pricing and FAQ](https://citedby.eu/)
 - [Free CI check for AI crawlers](https://citedby.eu/ci): a shell script and GitHub Action that fail a deploy when GPTBot, ClaudeBot or PerplexityBot see an empty or blocked page
+- [citedby-check on GitHub](https://github.com/resaleiq/citedby-check): open-source command-line tool and GitHub Action (MIT) that run the free AI-search readiness check: robots.txt access for five AI-search crawlers, text in the raw HTML, Organization and Product data, llms.txt; exit codes for CI
 - [AI crawlers: who they are and how to allow or block them](https://citedby.eu/bots): one page per crawler, vendor sentence and read date
 - [AI crawler settings by platform](https://citedby.eu/platforms): Shopify, Squarespace, Wix, Webflow, WordPress.com and Cloudflare, each from the platform's own help page
 - [AI-crawler access checker](https://citedby.eu/tools/ai-crawler-check): free, no account: robots.txt rules and a live request for GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot, with the exact fix
@@ -14,6 +15,7 @@
 - [Free AI visibility check](https://citedby.eu/free-ai-visibility-check): free, no account: we crawl up to 10 pages and show your score, AI crawler access and the 3 issues to fix first
 - [AI visibility audit guide](https://citedby.eu/ai-visibility-audit): what such an audit checks
 - [EU AI-Access Index](https://citedby.eu/data/ai-access-index): which AI crawlers 10,426 popular EU sites block in robots.txt, by country and CMS, with method and CSV
+- [Backlink lookup](https://citedby.eu/backlinks): free, no account: the 20 strongest domains linking to a site, from Common Crawl's open web graph, with method and limits; also in French, German, Spanish and Dutch
 - [Data by niche](https://citedby.eu/data/study-buyer-questions-claude): published study with method and CSV
 
 - [How an audit works (methodology)](https://citedby.eu/methodology): what is crawled, checked and scored, and what we do not claim
