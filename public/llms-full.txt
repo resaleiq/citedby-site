@@ -77,7 +77,7 @@ Links, speed and indexing Broken links, redirect chains, canonicals, sitemap, sl
 Titles, headings and schema Missing and duplicate titles and descriptions, H1s, heading order, Organization, Product, FAQ and Article schema, Open Graph tags.
 Readable content Pages that arrive empty until JavaScript runs, thin pages, noindex tags.
 AI-search readiness Whether OAI-SearchBot (ChatGPT search), GPTBot (OpenAI training), ClaudeBot, PerplexityBot and Google-Extended are allowed in robots.txt, whether your firewall blocks them, and whether your llms.txt exists and works.
-Answer quality Does the page answer the buyer's question near the top, and do you have the FAQ, pricing, comparison and about pages that get quoted?
+Answer quality Do you have the FAQ, pricing, comparison and about pages that get quoted, and does some page answer each question buyers ask?
 The fix for each issue Why it matters, the affected pages, and the exact change to paste. Every issue lists its pages, so you can open each one and check us.
 
 From URL to fix list
@@ -257,7 +257,7 @@ Structured data. JSON-LD for Organization, Product, FAQ and Article, checked for
 
 Titles, headings and links. Missing or duplicate titles and descriptions, H1s, heading order, canonical tags, hreflang, broken internal links.
 
-Answer quality. Whether a page states what it is and answers a buyer's question near the top, and whether the site has FAQ, pricing, comparison and about pages that get quoted.
+Answer quality. Whether the site has FAQ, pricing, comparison and about pages, and whether some page answers each question buyers ask assistants about your category. Before we call a question unanswered we search the title, headings and opening text of every page we crawled.
 
 3. How the score is built
 Each check passes or raises an issue per page. Issues are grouped by severity (Error, Warning, Notice) with the number of pages each one affects. Sections get a letter grade from A+ to F and the site gets one overall grade. Open any issue to see every affected URL with the value we measured on it (for example the word count or the status code) and the date of the crawl, so you can check any count against your own site.
@@ -268,16 +268,16 @@ Where a fix can be pasted, we give it: the robots.txt lines, a JSON-LD block, an
 
 5. What we do not claim
 
-A good score does not guarantee that any assistant will name or link your site. It tells you that nothing on your side is stopping it.
+A good score does not guarantee that any assistant will name or link your site. It tells you what we found on access and readability. Whether Google has indexed your pages is a separate number, Findability, which we show only when Search Console is connected and otherwise mark as not measured.
 
 We do not report a "visibility percentage" from a sample of assistant answers. Anything we have not measured is shown as not measured, never as 0.
 
-Some checks are judgements about quality (is this page quotable). They are marked as such and carry less weight than the access and readability checks, which are exact.
+Some checks are judgements (does any page answer a buyer question). They are marked as such and carry less weight than the access and readability checks, which are exact. We do not score whether a page opens with its answer or is easy to quote: that check is switched off until it passes our accuracy test.
 
 We do not use private or consumer chat interfaces of any vendor.
 
 Changes to the method
-Last updated 18 October 2026. When a check is added or changed, this page changes with it. Who operates CitedBy and which CitedBy this is: About CitedBy . Questions about a result: hello@citedby.eu .
+Last updated 23 October 2026. When a check is added or changed, this page changes with it. Who operates CitedBy and which CitedBy this is: About CitedBy . Questions about a result: hello@citedby.eu .
 
 ## CitedBy data: who AI assistants link for shop questions
 Source: https://citedby.eu/data
@@ -387,6 +387,7 @@ Source: https://citedby.eu/blog
 AI visibility blog for online shops
 Notes and data on how AI assistants treat online shops, plus our step-by-step guides. Each post ends with an audit you can run on your own site.
 The posts cover whether ChatGPT can read your website, whether llms.txt works, how to track AI referral traffic in GA4, how to check what AI says about your brand and what to do when an assistant shows a wrong price.
+Does llms.txt work? What two studies and Google's own documentation say llms.txt is a proposed file for AI assistants. What the Ahrefs and SE Ranking studies found, what Google says, and when it is still worth adding. Reviewed on 2026-10-23
 Is my website cited by ChatGPT? How to check it, step by step Four checks tell you if ChatGPT can reach, index, name and send visitors to your site, with numbers from our crawl of 370 launched sites. Reviewed on 2026-10-23
 How to create an llms.txt file, step by step Write an llms.txt in six steps with a copy-paste template that follows the llmstxt.org format, publish it at your site root and check it with a free tool. Reviewed on 2026-10-21
 AI visibility tools compared by what they cost and do Most AI visibility tools are monthly dashboards. A plain comparison of what CitedBy, Profound, Peec AI, Otterly.ai and free graders cost and do. Reviewed on 2026-10-20
@@ -398,7 +399,6 @@ Is AI traffic converting? How to set up GA4 to see visits from ChatGPT and other
 Can ChatGPT read my website? Three things decide whether ChatGPT and other AI assistants can read your shop: robots.txt, the text in your HTML, and structured data. How to check each. Reviewed on 2026-10-18
 ChatGPT shows my old price. How to find where it read it and fix it ChatGPT quotes a price you changed months ago. The three places it can come from (your page, your feed, other sites), how to trace it and how to re-test. Reviewed on 2026-10-18
 What does ChatGPT say about your brand? 20 prompts to check it by hand A free 20-prompt test of what AI assistants say about your shop: do they name you, link you, name rivals instead, get your facts right? Includes a log sheet. Reviewed on 2026-10-18
-Does llms.txt work? What two studies and Google's own documentation say llms.txt is a proposed file for AI assistants. What the Ahrefs and SE Ranking studies found, what Google says, and when it is still worth adding. Reviewed on 2026-10-18
 GEO audit vs AEO audit vs SEO audit: what is different and which one you need Three names for overlapping checks. What each audit looks at, what Google says about AI features, and a short order of work for a small online shop. Reviewed on 2026-10-18
 Is GPTBot blocked on my site? Four places to check, with a test for each GPTBot can be stopped by robots.txt, your CDN, a firewall rule or your server. How to find out which, in minutes, and what blocking it does and does not change. Reviewed on 2026-10-18
 My Lovable, Bolt or React site looks empty to AI. How to check it and fix it Many AI crawlers do not run JavaScript, so a client-rendered site can look empty to them. A 30-second test, what Lovable says, and the fixes by setup. Reviewed on 2026-10-18
@@ -494,7 +494,7 @@ Add it up: named in 3 of 40 answers is a different situation from 0 of 40.
 
 Do it with the site audit
 
-The CitedBy site audit crawls your site up to your plan's page limit and tells you whether AI crawlers can read it and whether each page answers a buyer's question near the top, with the exact fix for each issue. It does not ask assistants whether they name you; the manual method above does that.
+The CitedBy site audit crawls your site up to your plan's page limit and tells you whether AI crawlers can read it and whether your site answers the questions buyers ask, with the exact fix for each issue. It does not ask assistants whether they name you; the manual method above does that.
 
 Check you are reading the right company
 
@@ -3141,7 +3141,7 @@ Guides / AI visibility basics
 
 Does llms.txt work? What two studies and Google's own documentation say
 
-By the CitedBy editorial team · Reviewed on 2026-10-18 · 5 sources · method
+By the CitedBy editorial team · Reviewed on 2026-10-23 · 5 sources · method
 
 Short answer So far the evidence says llms.txt does not move AI citations. Ahrefs found 97% of valid llms.txt files got zero requests in May 2026, SE Ranking found no clear link to citations across about 300,000 domains, and Google says you do not need AI text files. Adding one is cheap, but do not expect traffic from it.
 
@@ -3163,6 +3163,8 @@ Figures as reported by Ahrefs. Most requests came from audit tools and unknown b
 Does anything fetch it? Ahrefs checked 137,210 domains with its web analytics in May 2026. It found that 97% of valid llms.txt files received zero requests that month. Of the requests that did arrive, 19.5% came from named AI tools. SEO audit tools, unknown bots and general crawlers made up much of the rest. Ahrefs also reports that no AI bot went looking for the file on sites that did not have one ( Ahrefs study ).
 
 Does it change citations? SE Ranking analysed about 300,000 domains and published in November 2025 that having llms.txt showed no clear connection to how often a domain is cited by AI, with 10.13% of domains having the file ( Search Engine Journal on the SE Ranking study ). Their own wording is that it "doesn't seem to directly impact AI citation frequency. At least not yet."
+
+How common is it on launched sites? In our launch crawl of 300 Show HN sites and 70 Lovable builds (20 and 21 October 2026, CitedBot, no JavaScript), 34% of Show HN sites (100/293) and 18% of Lovable sites (12/66) served an llms.txt file. In the same crawl, 16% of Show HN homepages and 74% of Lovable ones sent under 100 words of text in their HTML. We did not measure citations, so the crawl shows how often the file exists, not what it does.
 
 Both studies are correlation or log data from outside parties, run on different samples with different methods. They support "no measurable benefit so far", not "it can never matter".
 
