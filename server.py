@@ -38,7 +38,8 @@ def _deploy_id():  # commit sha from the image build (Dockerfile ARG GIT_SHA); e
     return v or "unknown"
 DEPLOY_ID = _deploy_id()
 SNAPSHOTS = json.load(open(os.path.join(HERE, "data", "snapshots.json")))
-EVENTS = ("check_start", "check_complete", "email_submitted", "fixpack_click", "first_screen_cta_click", "free_tool_start", "offer_view", "free_check_started_wp_plugin")
+CHECK_SOURCES = {"wp-plugin": "free_check_started_wp_plugin", "cli": "free_check_started_cli", "action": "free_check_started_action"}  # who sent a free check: RES-3708 plugin, RES-3749 CLI and GitHub Action
+EVENTS = ("check_start", "check_complete", "email_submitted", "fixpack_click", "first_screen_cta_click", "free_tool_start", "offer_view") + tuple(CHECK_SOURCES.values())
 
 os.makedirs(DATA_DIR, exist_ok=True)
 DB_PATH = os.path.join(DATA_DIR, "check.db")
@@ -197,8 +198,9 @@ def handle_check(data, ip):
         return 503, {"ok": False, "error": "busy"}
     try:
         count_event("check_start", lang, ip)
-        if data.get("source") == "wp-plugin":  # the WordPress plugin's button (RES-3708): counted per source, nothing else stored
-            count_event("free_check_started_wp_plugin", lang, ip)
+        src = data.get("source")
+        if isinstance(src, str) and src in CHECK_SOURCES:  # the WordPress plugin, the CLI and the GitHub Action tag their checks (RES-3708, RES-3749): counted per source, nothing else stored
+            count_event(CHECK_SOURCES[src], lang, ip)
         try:
             res = doorcheck.run(root, lang)
         except safefetch.Blocked:
