@@ -6,7 +6,7 @@ import json, os, re
 SAME_AS = ["https://citedby.eu/about", "https://citedby.eu/methodology", "https://x.com/CitedByEU"]
 MARK = b"data-trust"
 LOCALES = ("en", "fr", "nl", "de", "es")
-_PATH = re.compile(r"^/(?:(fr|nl|de|es)/)?(data|tools)(?:/([a-z0-9-]+))?/?$")
+_PATH = re.compile(r"^/(?:(fr|nl|de|es)/)?(data|tools|bots|platforms)(?:/([a-z0-9-]+))?/?$")
 TOOLS = ("ai-crawler-check", "llms-txt-checker", "findable-check")
 RFC9309 = ("https://www.rfc-editor.org/rfc/rfc9309", "RFC 9309 (robots.txt)")
 SOURCES = {  # slug -> [(url, label)] outside pages that are the authority for what the page counts
@@ -84,9 +84,12 @@ def _patch_ld(body, date):
 
 def inject(body, path):
     m = _PATH.match(path.split("?")[0])
-    if not m or MARK in body or b"<html" not in body[:600].lower() or b"</main>" not in body:
+    if not m or MARK in body or b"<html" not in body[:600].lower():
         return body
     lg0, kind, slug = m.groups()
+    if kind in ("bots", "platforms"):  # these pages carry their own source, date, method and log; they only lack the entity links
+        return _patch_ld(body, "")
+    if b"</main>" not in body: return body
     if kind == "tools" and slug and slug not in TOOLS: return body
     lm = _LANG.search(body[:600]); lg = lm.group(1).decode() if lm and lm.group(1).decode() in LOCALES else "en"
     src_key = slug or ("tools" if kind == "tools" else None)
