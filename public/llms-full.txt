@@ -24,7 +24,7 @@ citedby.eu/sample · plausible.io (real crawl, 21 Oct)
 
 Real crawl of a public site on 21 Oct 2026. plausible.io is not a CitedBy customer.
 
-This is what you get: a real report, not a list of errors
+This is what you get: a real report
 A real crawl of plausible.io, 21 Oct 2026, 403 pages. plausible.io is not a CitedBy customer. Open the full report .
 Health score
 90 / 100
@@ -61,7 +61,7 @@ Fix, ready to paste
 
 Check my site free
 
-Not a list of errors. A list of fixes.
+Every problem comes with its fix
 
 Free one-page checkers Test the page you paste. Your other pages stay unchecked.
 Crawlers you install Give you a spreadsheet of problems. You work out the fixes.
