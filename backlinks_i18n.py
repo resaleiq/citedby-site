@@ -31,9 +31,12 @@ T = {
         index_desc="Free lookup of the strongest domains linking to a site, from Common Crawl's open web graph. Method and limits shown.",
         index_ans="Type a domain to see the 20 strongest domains that link to it in Common Crawl's latest open web graph, with the method shown. No sign-up.",
         form_label="Domain", form_ph="example.com", form_btn="Who links to it?",
-        top_h2="Most-linked EU sites in the data",
+        top_h2="Most-linked sites in the data",
         top_note="Count in brackets: referring domains. The lookup covers {n} domains: our own sites, SEO tools and the most-linked sites under .eu, .fr, .de, .es, .nl, .it, .pt and .be.",
         method_h2="Method and limits",
+        top_note_full="Count in brackets: referring domains. The lookup covers {n} domains: every domain under .eu and the country domains of the EU and the UK with at least 100 referring domains in the graph, plus our own sites and a few SEO tools.",
+        nis_ans_full=("{host} is not in the set we have loaded. The lookup covers {n} domains: every domain under .eu and the country domains of the EU and the UK with at least 100 referring domains in the graph, "
+                      "plus our own sites and a few SEO tools. Sites under .com, .org and other domains are not in it yet. It does not mean the site has no links. The set grows with each quarterly graph."),
         method=("Source: Common Crawl's public domain web graph, built from three monthly crawls ({d} domains, {l} links). We count distinct linking domains, not pages, "
                 "and do not use any third-party backlink index. Common Crawl samples the web, so counts are lower than a full index such as Ahrefs or Semrush; use them to compare sites "
                 "and spot big referrers, not as an exact total. Updated each quarter, last graph: {graph}. Nofollow and link position are not in this data."),
@@ -63,9 +66,12 @@ T = {
         index_desc="Recherche gratuite des domaines qui renvoient le plus vers un site, d'après le graphe web ouvert de Common Crawl. Méthode et limites affichées.",
         index_ans="Saisissez un domaine pour voir les 20 domaines les plus forts qui renvoient vers lui dans le dernier graphe web ouvert de Common Crawl, avec la méthode. Sans inscription.",
         form_label="Domaine", form_ph="example.com", form_btn="Qui renvoie vers lui ?",
-        top_h2="Les sites européens les plus liés dans les données",
+        top_h2="Les sites les plus liés dans les données",
         top_note="Entre parenthèses : le nombre de domaines référents. La recherche couvre {n} domaines : nos propres sites, des outils SEO et les sites les plus liés sous .eu, .fr, .de, .es, .nl, .it, .pt et .be.",
         method_h2="Méthode et limites",
+        top_note_full="Entre parenthèses : le nombre de domaines référents. La recherche couvre {n} domaines : tous les domaines en .eu et sous les domaines nationaux de l'UE et du Royaume-Uni qui ont au moins 100 domaines référents dans le graphe, plus nos propres sites et quelques outils SEO.",
+        nis_ans_full=("{host} ne figure pas dans l'ensemble que nous avons chargé. La recherche couvre {n} domaines : tous les domaines en .eu et sous les domaines nationaux de l'UE et du Royaume-Uni qui ont au moins 100 domaines référents dans le graphe, "
+                      "plus nos propres sites et quelques outils SEO. Les sites en .com, .org et autres extensions n'en font pas encore partie. Cela ne veut pas dire que le site n'a aucun lien. L'ensemble s'élargit à chaque graphe trimestriel."),
         method=("Source : le graphe web de domaines public de Common Crawl, construit à partir de trois explorations mensuelles ({d} domaines, {l} liens). Nous comptons les domaines référents distincts, "
                 "pas les pages, et n'utilisons aucun index de backlinks tiers. Common Crawl échantillonne le web : les chiffres sont donc inférieurs à ceux d'un index complet comme Ahrefs ou Semrush. "
                 "Servez-vous-en pour comparer des sites et repérer les gros référents, pas comme un total exact. Mis à jour chaque trimestre, dernier graphe : {graph}. "
@@ -96,9 +102,12 @@ T = {
         index_desc="Kostenlose Abfrage der stärksten Domains, die auf eine Website verlinken, aus dem offenen Web-Graphen von Common Crawl. Methode und Grenzen inklusive.",
         index_ans="Geben Sie eine Domain ein und sehen Sie die 20 stärksten Domains, die im aktuellen offenen Web-Graphen von Common Crawl auf sie verlinken, samt Methode. Ohne Anmeldung.",
         form_label="Domain", form_ph="example.com", form_btn="Wer verlinkt darauf?",
-        top_h2="Die meistverlinkten EU-Seiten in den Daten",
+        top_h2="Die meistverlinkten Seiten in den Daten",
         top_note="In Klammern: verweisende Domains. Die Abfrage deckt {n} Domains ab: unsere eigenen Seiten, SEO-Tools und die meistverlinkten Seiten unter .eu, .fr, .de, .es, .nl, .it, .pt und .be.",
         method_h2="Methode und Grenzen",
+        top_note_full="In Klammern: verweisende Domains. Die Abfrage deckt {n} Domains ab: alle Domains unter .eu und den Länderendungen der EU und des Vereinigten Königreichs mit mindestens 100 verweisenden Domains im Graphen, dazu unsere eigenen Seiten und einige SEO-Tools.",
+        nis_ans_full=("{host} gehört nicht zu dem Datensatz, den wir geladen haben. Die Abfrage deckt {n} Domains ab: alle Domains unter .eu und den Länderendungen der EU und des Vereinigten Königreichs mit mindestens 100 verweisenden Domains im Graphen, "
+                      "dazu unsere eigenen Seiten und einige SEO-Tools. Seiten unter .com, .org und anderen Endungen sind noch nicht enthalten. Das heißt nicht, dass die Seite keine Links hat. Der Datensatz wächst mit jedem Quartals-Graphen."),
         method=("Quelle: der öffentliche Domain-Web-Graph von Common Crawl, aufgebaut aus drei monatlichen Crawls ({d} Domains, {l} Links). Wir zählen verschiedene verweisende Domains, keine Seiten, "
                 "und nutzen keinen Backlink-Index von Dritten. Common Crawl erfasst das Web nur stichprobenartig, deshalb liegen die Zahlen unter denen eines vollständigen Index wie Ahrefs oder Semrush. "
                 "Nutzen Sie sie, um Seiten zu vergleichen und große Verweisgeber zu finden, nicht als exakte Summe. Aktualisiert jedes Quartal, letzter Graph: {graph}. "
@@ -129,9 +138,12 @@ T = {
         index_desc="Consulta gratuita de los dominios que más enlazan a un sitio, con el grafo web abierto de Common Crawl. Método y límites a la vista.",
         index_ans="Escribe un dominio para ver los 20 dominios más fuertes que enlazan a él en el último grafo web abierto de Common Crawl, con el método. Sin registro.",
         form_label="Dominio", form_ph="example.com", form_btn="¿Quién enlaza?",
-        top_h2="Los sitios de la UE más enlazados en los datos",
+        top_h2="Los sitios más enlazados en los datos",
         top_note="Entre paréntesis: dominios de referencia. La consulta cubre {n} dominios: " + _SCOPE + ".",
         method_h2="Método y límites",
+        top_note_full="Entre paréntesis: dominios de referencia. La consulta cubre {n} dominios: todos los dominios bajo .eu y los dominios de país de la UE y del Reino Unido con al menos 100 dominios de referencia en el grafo, además de nuestros propios sitios y algunas herramientas SEO.",
+        nis_ans_full=("{host} no está en el conjunto que hemos cargado. La consulta cubre {n} dominios: todos los dominios bajo .eu y los dominios de país de la UE y del Reino Unido con al menos 100 dominios de referencia en el grafo, "
+                      "además de nuestros propios sitios y algunas herramientas SEO. Los sitios bajo .com, .org y otras terminaciones aún no están. No significa que el sitio no tenga enlaces. El conjunto crece con cada grafo trimestral."),
         method=("Fuente: el grafo web de dominios público de Common Crawl, construido con tres rastreos mensuales ({d} dominios, {l} enlaces). Contamos dominios de referencia distintos, no páginas, "
                 "y no usamos ningún índice de backlinks de terceros. Common Crawl muestrea la web, así que las cifras son menores que las de un índice completo como Ahrefs o Semrush. "
                 "Úsalas para comparar sitios y detectar a los grandes referentes, no como un total exacto. Se actualiza cada trimestre; último grafo: {graph}. "
@@ -162,9 +174,12 @@ T = {
         index_desc="Zoek gratis de sterkste domeinen op die naar een site linken, uit de open webgraaf van Common Crawl. Methode en beperkingen erbij.",
         index_ans="Typ een domein om de 20 sterkste domeinen te zien die ernaar linken in de nieuwste open webgraaf van Common Crawl, met de methode erbij. Zonder aanmelding.",
         form_label="Domein", form_ph="example.com", form_btn="Wie linkt ernaar?",
-        top_h2="De meest gelinkte EU-sites in de data",
+        top_h2="De meest gelinkte sites in de data",
         top_note="Tussen haakjes: verwijzende domeinen. De zoekfunctie dekt {n} domeinen: onze eigen sites, SEO-tools en de meest gelinkte sites onder .eu, .fr, .de, .es, .nl, .it, .pt en .be.",
         method_h2="Methode en beperkingen",
+        top_note_full="Tussen haakjes: verwijzende domeinen. De zoekfunctie dekt {n} domeinen: alle domeinen onder .eu en de landdomeinen van de EU en het Verenigd Koninkrijk met minstens 100 verwijzende domeinen in de graaf, plus onze eigen sites en enkele SEO-tools.",
+        nis_ans_full=("{host} zit niet in de set die we hebben geladen. De zoekfunctie dekt {n} domeinen: alle domeinen onder .eu en de landdomeinen van de EU en het Verenigd Koninkrijk met minstens 100 verwijzende domeinen in de graaf, "
+                      "plus onze eigen sites en enkele SEO-tools. Sites onder .com, .org en andere extensies zitten er nog niet in. Het betekent niet dat de site geen links heeft. De set groeit met elke kwartaalgraaf."),
         method=("Bron: de openbare domeinwebgraaf van Common Crawl, opgebouwd uit drie maandelijkse crawls ({d} domeinen, {l} links). We tellen unieke verwijzende domeinen, geen pagina's, "
                 "en gebruiken geen backlinkindex van derden. Common Crawl neemt steekproeven van het web, dus de aantallen liggen lager dan bij een volledige index zoals Ahrefs of Semrush. "
                 "Gebruik ze om sites te vergelijken en grote verwijzers te vinden, niet als exact totaal. Elk kwartaal bijgewerkt, laatste graaf: {graph}. "

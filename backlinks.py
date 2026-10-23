@@ -26,6 +26,40 @@ def _q(sql, args=()):
         c.close()
 
 
+FULL_DB = os.environ.get("BACKLINKS_FULL_DB", "/backlinks/backlinks.sqlite")  # RES-3749 part C: Casa's table for every .eu / EU / UK country-domain site with 100+ referring domains, mounted read-only (RES-3706)
+_FULL = {}  # file version -> {"n", "top"} or None: one check per version of the file, so a renamed-in file is picked up without a restart
+
+
+def _qf(sql, args=()):
+    """Rows from the full table, or None when the file is missing, half written or not ours: the pages then use the shipped set only."""
+    try:
+        c = sqlite3.connect("file:%s?mode=ro" % FULL_DB, uri=True, timeout=2)
+    except sqlite3.Error:
+        return None
+    try:
+        return c.execute(sql, args).fetchall()
+    except sqlite3.Error:
+        return None
+    finally:
+        c.close()
+
+
+def full_info():
+    """{"n": domains in the full table, "top": its 24 most-linked (domain, referring_domains)}, or None when there is no usable file."""
+    try:
+        st = os.stat(FULL_DB)
+    except OSError:
+        return None
+    key = (FULL_DB, st.st_mtime_ns, st.st_size, st.st_ino)
+    if key not in _FULL:
+        n = _qf("select count(*) from dom")
+        top = _qf("select domain, referring_domains from dom order by referring_domains desc, domain limit 24") if n and n[0][0] else None
+        ok = top is not None and _qf("select 1 from bl limit 1") is not None
+        _FULL.clear()
+        _FULL[key] = {"n": n[0][0], "top": top} if ok else None
+    return _FULL[key]
+
+
 def norm(raw):
     v = re.sub(r"^[a-z]+://", "", (raw or "").strip().lower()).split("/")[0].split("?")[0].split("#")[0].split(":")[0]
     v = re.sub(r"^www\.", "", v)
@@ -41,11 +75,24 @@ def hosts():
 
 
 def lookup(host):
-    """(referring_domains, [(rank, referrer, referrer_inlinks)]) or None when the host is not in the shipped set."""
+    """(referring_domains, [(rank, referrer, referrer_inlinks)]) for a host in the shipped set (indexable pages), else in the full table (on-demand pages), else None."""
     r = _q("select referring_domains from dom where domain=?", (host,))
+    if r:
+        return r[0][0], _q("select rank, referrer, referrer_inlinks from bl where domain=? order by rank", (host,))
+    if host in OWN_ZERO:
+        return 0, []
+    if not full_info():
+        return None
+    r = _qf("select referring_domains from dom where domain=?", (host,))
     if not r:
-        return (0, []) if host in OWN_ZERO else None
-    return r[0][0], _q("select rank, referrer, referrer_inlinks from bl where domain=? order by rank", (host,))
+        return None
+    rows = _qf("select referrer, referrer_inlinks from bl where domain=? order by referrer_inlinks desc, referrer limit 20", (host,)) or []
+    return r[0][0], [(i, ref, inl) for i, (ref, inl) in enumerate(rows, 1)]
+
+
+def curated(host):
+    """True for the shipped set (own sites, SEO tools, the top .eu/.fr/.de/.es/.nl/.it/.pt/.be domains): those pages are indexable. Everything else comes from the full table and is noindex."""
+    return host in OWN_ZERO or bool(_q("select 1 from dom where domain=?", (host,)))
 
 
 def _alts(tail):
@@ -137,7 +184,9 @@ def _method(lg, m):
 
 def index_page(msg="", lg="en"):
     t, m, p = T[lg], meta(), prefix(lg)
-    top = _q("select domain, referring_domains from dom where tier=2 order by referring_domains desc limit 24")
+    full = full_info()
+    top = full["top"] if full else _q("select domain, referring_domains from dom where tier=2 order by referring_domains desc limit 24")
+    note_text = t["top_note_full"].format(n=fmt(full["n"], lg)) if full else t["top_note"].format(n=fmt(len(hosts()), lg))
     li = "".join(f'<li><a href="{p}/backlinks/{E(d)}">{E(d)}</a> <span class="src">({fmt(n, lg)})</span></li>' for d, n in top)
     note = f'<p class="ans">{E(msg)}</p>' if msg else ""
     body = f'''{_crumb(lg)}
@@ -146,7 +195,7 @@ def index_page(msg="", lg="en"):
 {note}<p class="ans">{E(t["index_ans"])}</p>
 {_form(lg)}
 <section><h2>{E(t["top_h2"])}</h2><ul>{li}</ul>
-<p class="src">{E(t["top_note"].format(n=fmt(len(hosts()), lg)))}</p></section>
+<p class="src">{E(note_text)}</p></section>
 <section><h2>{E(t["method_h2"])}</h2><p>{_method(lg, m)}</p></section>
 {_cta(lg)}'''
     return _shell(lg, t["index_title"], t["index_desc"], f"{p}/backlinks", body, alts=_alts("/backlinks"))
@@ -159,10 +208,12 @@ def host_page(host, lg="en"):
     tail = f"/backlinks/{host}"
     crumb = _crumb(lg, f'<a href="{p}/backlinks">{E(t["crumb_bl"])}</a>', E(host))
     if got is None:
+        full = full_info()
+        nis = t["nis_ans_full"].format(host=host, n=fmt(full["n"], lg)) if full else t["nis_ans"].format(host=host)
         body = f'''{crumb}
 {_switch(lg, tail)}
 <h1>{E(t["host_h1"].format(host=host))}</h1>
-<p class="ans">{E(t["nis_ans"].format(host=host))}</p>
+<p class="ans">{E(nis)}</p>
 {_form(lg, host)}{_cta(lg, host)}'''
         return 200, _shell(lg, t["nis_title"].format(host=host), t["nis_desc"].format(host=host), p + tail, body, noindex=True)
     n, rows = got
@@ -172,12 +223,16 @@ def host_page(host, lg="en"):
     else:
         ans = t["ans_n_one" if one else "ans_n"].format(n=fmt(n, lg), host=host, label=t["graph_label"], k=len(rows))
         desc = t["desc_n_one" if one else "desc_n"].format(n=fmt(n, lg), host=host, label=t["graph_label"])
-        known = {x[0] for x in _q("select domain from dom where domain in (%s)" % ",".join("?" * len(rows)), [r[1] for r in rows])}
+        refs, marks = [r[1] for r in rows], ",".join("?" * len(rows))
+        known = {x[0] for x in _q("select domain from dom where domain in (%s)" % marks, refs)}
+        if full_info():  # a referrer that has a page in either file is a link
+            known |= {x[0] for x in (_qf("select domain from dom where domain in (%s)" % marks, refs) or [])}
         link = lambda ref: f'<a href="{p}/backlinks/{E(ref)}">{E(ref)}</a>' if ref in known else E(ref)
         tr = "".join(f'<tr><td data-label="{E(t["dl_rank"])}">{r}</td><td data-label="{E(t["dl_ref"])}">{link(ref)}</td><td class="n" data-label="{E(t["dl_str"])}">{fmt(inl, lg)}</td></tr>' for r, ref, inl in rows)
         table = (f'<section><h2>{E(t["table_h2"])}</h2><div class="tw"><table><thead><tr><th>{E(t["th_rank"])}</th><th>{E(t["th_ref"])}</th><th class="n">{E(t["th_str"])}</th></tr></thead>'
                  f'<tbody>{tr}</tbody></table></div></section>')
-    ld = {"@context": "https://schema.org", "@type": "Dataset", "name": t["ld_name"].format(host=host, graph=GRAPH), "description": desc,
+    on_demand = not curated(host)  # from the full table: useful to a visitor, not a page we ask search engines to index
+    ld = None if on_demand else {"@context": "https://schema.org", "@type": "Dataset", "name": t["ld_name"].format(host=host, graph=GRAPH), "description": desc,
           "url": f"https://citedby.eu{p}{tail}", "inLanguage": lg, "isAccessibleForFree": True, "license": "https://commoncrawl.org/terms-of-use",
           "creator": {"@type": "Organization", "name": "Common Crawl", "url": "https://commoncrawl.org"}, "temporalCoverage": GRAPH_COVER,
           "publisher": {"@type": "Organization", "name": "CitedBy", "url": "https://citedby.eu"}, "dateModified": m["read_on"],
@@ -191,7 +246,7 @@ def host_page(host, lg="en"):
 <section><h2>{E(t["another_h2"])}</h2>{_form(lg)}</section>
 <section><h2>{E(t["method_h2"])}</h2><p>{_method(lg, m)}</p></section>
 {_cta(lg, host)}'''
-    return 200, _shell(lg, t["host_title"].format(host=host), desc, p + tail, body, ld=ld, alts=_alts(tail))
+    return 200, _shell(lg, t["host_title"].format(host=host), desc, p + tail, body, noindex=on_demand, ld=ld, alts="" if on_demand else _alts(tail))
 
 
 _SITEMAP = []  # (mtime of the data file, xml)
