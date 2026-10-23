@@ -42,3 +42,8 @@ def test_no_date_when_none_is_known_and_other_pages_untouched():
 def test_page_without_organization_gets_one():
     h = trust.inject(b'<html lang="en"><head></head><body><main>x</main></body></html>', "/tools/findable-check").decode()
     assert '"@type": "Organization"' in h and "https://x.com/CitedByEU" in h
+
+
+def test_bots_pages_get_sameas_only():
+    h = run("/bots/gptbot")
+    assert "data-trust" not in h and "https://x.com/CitedByEU" in h
