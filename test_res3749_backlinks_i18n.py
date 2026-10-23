@@ -174,3 +174,23 @@ def test_every_locale_has_every_string():
         assert set(i.T[lg]) == keys, (lg, set(i.T[lg]) ^ keys)
         for k, v in i.T[lg].items():
             assert v and (v != i.T["en"][k] or k in ("form_ph", "form_label", "crumb_home", "crumb_bl", "th_rank", "dl_rank")), (lg, k)
+
+
+def test_independent_language_read_corrections_stay_in(monkeypatch=None):
+    """RES-3749: a second reader found calques and one ambiguous scope sentence; they must not come back."""
+    bad = {"de": ("Verweisgeber", "Quartals-Graphen", "zitierfähig", "unsere eigenen Seiten", "meistverlinkten Seiten"),
+           "es": ("referente", "¿Quién enlaza?", "dominios público"),
+           "nl": ("verwijzer ", "verwijzers", "Sterkte is hoeveel"),
+           "fr": ("gros référents", "ensemble que nous", "L'ensemble s'élargit", "manquent souvent", "domaines public", "domaines nationaux")}
+    for lg, words in bad.items():
+        blob = " ".join(i.T[lg].values())
+        for w in words:
+            assert w not in blob, (lg, w)
+
+
+def test_the_coverage_sentence_puts_the_threshold_before_the_scope_in_every_language():
+    """The Casa selection keeps a domain under .eu or an EU/UK country domain only with 100+ referring domains (select.py); the sentence must not read as "every .eu domain"."""
+    for lg in ALL:
+        for k in ("top_note_full", "nis_ans_full"):
+            t = i.T[lg][k]
+            assert "100" in t and ".eu" in t and t.index("100") < t.index(".eu"), (lg, k)

@@ -94,14 +94,14 @@ def test_a_host_in_neither_file_is_not_a_zero_and_says_what_the_set_covers(full)
     code, h = b.host_page("not-in-either.de")
     t = text(h)
     assert code == 200 and 'content="noindex,follow"' in h
-    assert "every domain under .eu and the country domains of the EU and the UK with at least 100 referring domains" in t
+    assert "every domain with at least 100 referring domains in the graph under .eu or under the country domains of the EU and the UK" in t
     assert "covers 8 domains" in t                                              # the count of the loaded full table, read from the file
     assert ".com" in t and "Common Crawl found no linking domains" not in t     # never a zero
 
 
 def test_index_page_counts_and_lists_from_the_full_table(full):
     t = text(b.index_page())
-    assert "The lookup covers 8 domains: every domain under .eu and the country domains of the EU and the UK with at least 100 referring domains" in t
+    assert "The lookup covers 8 domains: every domain with at least 100 referring domains in the graph under .eu or under the country domains of the EU and the UK" in t
     assert b.index_page().index("zeta-nur-hier.fr") > 0                      # the most-linked list comes from the full table
     assert "Most-linked sites in the data" in t and "Most-linked EU sites" not in t
 
