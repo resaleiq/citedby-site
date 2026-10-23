@@ -22,6 +22,6 @@ class T(unittest.TestCase):
 
     def test_sitemap(self):
         s = open(os.path.join(HERE, "public/sitemap.xml"), encoding="utf-8").read()
-        self.assertEqual(len(re.findall(r"free-ai-visibility-check</loc>", s)), 5)
+        self.assertEqual(len(re.findall(r"free-ai-visibility-check</loc>", s)), 1)  # RES-3269: only the English page is indexed
 
 if __name__ == "__main__": unittest.main()
