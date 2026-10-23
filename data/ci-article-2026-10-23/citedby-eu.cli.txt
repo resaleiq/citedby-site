@@ -1,0 +1,21 @@
+AI-search readiness check for citedby.eu
+citedby.eu loaded the site from outside: plain HTTP, no JavaScript.
+
+  OK          AI crawlers allowed in robots.txt
+              None of OAI-SearchBot, GPTBot, PerplexityBot, Google-Extended or
+              Bingbot is blocked in robots.txt.
+  OK          Text in the page HTML
+              2271 words of text are in the HTML a crawler receives.
+  OK          Organization data (JSON-LD)
+              Organization or business data found (FAQPage, Organization,
+              Question, Service).
+  NOT CHECKED Product data (JSON-LD), Price in product data, Availability in
+              product data, GTIN or barcode in product data
+              No product page was found from the home page, so product data was
+              not checked.
+  OK          llms.txt
+              An llms.txt file exists.
+
+4 of 4 checks passed.
+This is a technical check. It does not tell you whether an AI assistant will
+name your site.

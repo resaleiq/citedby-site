@@ -1,0 +1,57 @@
+{
+  "site": "https://example.com",
+  "checks": [
+    {
+      "id": "crawlers",
+      "status": "pass",
+      "blocked": [],
+      "checked": [
+        "OAI-SearchBot",
+        "GPTBot",
+        "PerplexityBot",
+        "Google-Extended",
+        "Bingbot"
+      ],
+      "robots_found": false
+    },
+    {
+      "id": "raw_text",
+      "status": "fail",
+      "words": 27
+    },
+    {
+      "id": "org_schema",
+      "status": "fail",
+      "found": []
+    },
+    {
+      "id": "product_schema",
+      "status": "na"
+    },
+    {
+      "id": "product_price",
+      "status": "na"
+    },
+    {
+      "id": "product_availability",
+      "status": "na"
+    },
+    {
+      "id": "product_gtin",
+      "status": "na"
+    },
+    {
+      "id": "llms_txt",
+      "status": "info"
+    }
+  ],
+  "reachable": true,
+  "summary": {
+    "pass": 1,
+    "fail": 2,
+    "warn": 0,
+    "na": 4
+  },
+  "ok": true,
+  "snapshot": null
+}

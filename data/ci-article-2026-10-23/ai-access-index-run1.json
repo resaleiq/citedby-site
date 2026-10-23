@@ -1,0 +1,101 @@
+{
+ "source": "https://citedby.eu/data/ai-access-index-2026-10",
+ "fetched_at": "2026-10-23T21:11:12Z",
+ "method": "text of the live page, parsed from the \"By crawler\" table",
+ "sample": {
+  "read": 10426,
+  "listed": 14650,
+  "list": "56Z8N",
+  "robots_read_on": "2026-10-23"
+ },
+ "crawlers": {
+  "GPTBot": {
+   "blocks_pct": 15.3,
+   "blocks_sites": 1596,
+   "names_it_pct": 18.0
+  },
+  "OAI-SearchBot": {
+   "blocks_pct": 5.6,
+   "blocks_sites": 584,
+   "names_it_pct": 8.2
+  },
+  "ChatGPT-User": {
+   "blocks_pct": 7.5,
+   "blocks_sites": 778,
+   "names_it_pct": 10.1
+  },
+  "ClaudeBot": {
+   "blocks_pct": 13.3,
+   "blocks_sites": 1386,
+   "names_it_pct": 15.7
+  },
+  "Claude-SearchBot": {
+   "blocks_pct": 4.2,
+   "blocks_sites": 441,
+   "names_it_pct": 4.7
+  },
+  "Claude-User": {
+   "blocks_pct": 4.1,
+   "blocks_sites": 427,
+   "names_it_pct": 4.2
+  },
+  "PerplexityBot": {
+   "blocks_pct": 7.3,
+   "blocks_sites": 763,
+   "names_it_pct": 10.0
+  },
+  "Perplexity-User": {
+   "blocks_pct": 4.5,
+   "blocks_sites": 466,
+   "names_it_pct": 4.5
+  },
+  "Google-Extended": {
+   "blocks_pct": 11.3,
+   "blocks_sites": 1173,
+   "names_it_pct": 12.8
+  },
+  "Applebot-Extended": {
+   "blocks_pct": 10.6,
+   "blocks_sites": 1110,
+   "names_it_pct": 10.3
+  },
+  "CCBot": {
+   "blocks_pct": 15.1,
+   "blocks_sites": 1579,
+   "names_it_pct": 15.2
+  },
+  "Bytespider": {
+   "blocks_pct": 14.3,
+   "blocks_sites": 1486,
+   "names_it_pct": 13.4
+  },
+  "Amazonbot": {
+   "blocks_pct": 13.6,
+   "blocks_sites": 1414,
+   "names_it_pct": 13.5
+  },
+  "meta-externalagent": {
+   "blocks_pct": 11.9,
+   "blocks_sites": 1243,
+   "names_it_pct": 12.3
+  },
+  "Googlebot": {
+   "blocks_pct": 1.0,
+   "blocks_sites": 108,
+   "names_it_pct": 7.0
+  },
+  "Bingbot": {
+   "blocks_pct": 1.7,
+   "blocks_sites": 176,
+   "names_it_pct": 7.1
+  }
+ },
+ "any_answer_engine_search_crawler": {
+  "pct": 7.9,
+  "sites": 823
+ },
+ "any_of_four_training_crawlers": {
+  "pct": 18.4,
+  "sites": 1920
+ }
+}

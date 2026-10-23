@@ -1,0 +1,28 @@
+AI-search readiness check for example.com
+citedby.eu loaded the site from outside: plain HTTP, no JavaScript.
+
+  OK          AI crawlers allowed in robots.txt
+              No robots.txt found, so nothing is blocked.
+  FIX         Text in the page HTML
+              Only 27 words are readable without JavaScript. Fix: render the
+              homepage text on the server, so a crawler that does not run
+              JavaScript still reads it.
+  FIX         Organization data (JSON-LD)
+              No Organization or LocalBusiness data. Fix: add it as JSON-LD on
+              the homepage with your name, logo, address or contact and social
+              profiles, so assistants get your basic facts from one place.
+  NOT CHECKED Product data (JSON-LD), Price in product data, Availability in
+              product data, GTIN or barcode in product data
+              No product page was found from the home page, so product data was
+              not checked.
+  OPTIONAL    llms.txt
+              No llms.txt. Optional hygiene: it is cheap to add, but we do not
+              expect it to change what AI assistants answer.
+
+1 of 3 checks passed. 2 to fix.
+This is a technical check. It does not tell you whether an AI assistant will
+name your site.
+
+The full audit crawls your site up to your plan's page limit and gives the exact
+fix for each problem:
+https://citedby.eu/?url=example.com
