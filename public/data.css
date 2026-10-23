@@ -24,6 +24,7 @@ ul.lv li{padding:var(--s3) 0;border-top:1px solid var(--rule);margin:0}
 .dp .cta p,.dp .cta .lede{color:var(--text)}
 .dp .cta .lede{margin-bottom:var(--s6)}
 .dp .cta .btn.p{background:var(--navy);color:#fff}
+.dp .cta .actions a.btn:not(.p){background:#fff;color:var(--navy);border:2px solid var(--navy)}
 @media(max-width:600px){
  .doc.wide{padding:0 var(--s4)}
  .dp .tw thead{display:none}
