@@ -199,3 +199,7 @@ def test_res3013_home_faq_parity_and_faqpage_in_every_locale():
         assert any(w in s for w in ("1 seconde", "1 Sekunde", "1 seconde", "1 segundo")), lg
         if lg == "fr":
             assert not re.search(r"[^ \s<>=\"'/;&a-z]? [?:;!]<?", ld[0]["mainEntity"][0]["name"]), lg
+
+def test_help_and_docs_lead_to_the_faq_res3677():
+    import server
+    assert server.LAUNCH_REDIRECTS["/help"] == server.LAUNCH_REDIRECTS["/docs"] == "/#faq"
