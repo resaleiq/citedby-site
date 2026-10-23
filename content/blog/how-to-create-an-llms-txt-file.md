@@ -12,7 +12,7 @@ hero_sub: A # title, a > summary, ## link lists, then a free check
 hero_boxes: # Title|the only required line;> Summary|what the site is;## Sections|lists of links;## Optional|links to skip
 widget: off
 howto: on
-related: /tools/llms-txt-checker|llms.txt checker (free); /blog/does-llms-txt-work|Does llms.txt work?; /tools/ai-crawler-check|AI-crawler access checker (free); /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?
+related: /tools/llms-txt-checker|llms.txt checker (free); /blog/does-llms-txt-work|Does llms.txt work?; /tools/ai-crawler-check|AI-crawler access checker (free); /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /tools/findable-check|Findable check: can search engines find your pages? (free)
 answer: To create an llms.txt file, write a plain-text Markdown file with a # title, a short > summary and ## sections that list your key pages as [name](url): note links, save it as llms.txt and upload it to your site root so it loads at yourshop.com/llms.txt. Then run the free checker to confirm it loads and its links work.
 
 ## What llms.txt is

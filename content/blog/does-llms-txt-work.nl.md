@@ -24,7 +24,7 @@ Op de pagina van het voorstel staat dat documentatieplatforms het bestand gebrui
 
 ## Wat zeggen de cijfers over llms.txt?
 
-Ahrefs onderzocht in mei 2026 met zijn webanalyse 137.210 domeinen. Van de geldige llms.txt-bestanden kreeg 97% die maand geen enkel verzoek. Van de verzoeken die wel binnenkwamen, kwam 19,5% van herkenbare AI-tools. Een groot deel van de rest kwam van SEO-audittools, onbekende bots en algemene crawlers. Ahrefs meldt ook dat geen enkele AI-bot zocht naar het bestand op sites waar het ontbrak ([Ahrefs-onderzoek](https://ahrefs.com/blog/llmstxt-study)).
+Ahrefs onderzocht in mei 2026 met zijn webanalyse 137.210 domeinen. Van de geldige llms.txt-bestanden kreeg 97% die maand geen enkel verzoek. Van de verzoeken die wel binnenkwamen, kwam 19,5% van herkenbare AI-tools. Een groot deel van de rest kwam van SEO-audittools, onbekende bots en algemene crawlers. Ahrefs meldt ook dat geen enkele AI-bot zocht naar het bestand op sites waar het ontbrak ([Ahrefs-onderzoek](https://ahrefs.com/blog/llmstxt-study/)).
 
 SE Ranking analyseerde ongeveer 300.000 domeinen en publiceerde in november 2025 dat het hebben van llms.txt geen duidelijk verband liet zien met hoe vaak een domein door AI wordt geciteerd. 10,13% van de domeinen had het bestand ([SE Ranking](https://seranking.com/blog/llms-txt/)). Hun eigen formulering luidt dat het "doesn't seem to directly impact AI citation frequency. At least not yet."
 
@@ -73,7 +73,7 @@ Nee. robots.txt vertelt crawlers wat ze mogen ophalen. llms.txt is een voorgeste
 ## Sources
 
 - [llmstxt.org: het llms.txt-voorstel](https://llmstxt.org/)
-- [Ahrefs: llms.txt-onderzoek, 137.210 domeinen, mei 2026](https://ahrefs.com/blog/llmstxt-study)
+- [Ahrefs: llms.txt-onderzoek, 137.210 domeinen, mei 2026](https://ahrefs.com/blog/llmstxt-study/)
 - [SE Ranking: llms.txt-onderzoek](https://seranking.com/blog/llms-txt/)
 - [Google Search Central: AI-functies en je website](https://developers.google.com/search/docs/appearance/ai-features)
 - [OpenAI: crawlers en user agents](https://developers.openai.com/api/docs/bots)

@@ -40,7 +40,7 @@ Achten Sie auch auf einen zweiten Preis auf der Seite: einen durchgestrichenen P
 
 ## Stimmt Ihr Produktfeed noch?
 
-Wer über Google Shopping, einen Marktplatz oder den Shopping-Feed von ChatGPT verkauft, hat im Feed eine zweite Kopie des Preises. Die Produktfeed-Spezifikation von OpenAI verlangt den Preis in der Form `79.99 USD`, eine Zeile pro kaufbarem Artikel oder Variante, und sie sagt, dass der Feed aktualisiert werden soll, wenn eine Aktion beginnt oder endet ([OpenAI-Produktfeed-Spezifikation](https://developers.openai.com/commerce/specs/feed)). Eine Aktion, die im Shop schon beendet ist, aber im Feed stehen blieb, ist die klassische Abweichung.
+Wer über Google Shopping, einen Marktplatz oder den Shopping-Feed von ChatGPT verkauft, hat im Feed eine zweite Kopie des Preises. Die Produktfeed-Spezifikation von OpenAI verlangt den Preis in der Form `79.99 USD`, eine Zeile pro kaufbarem Artikel oder Variante, und sie sagt, dass der Feed aktualisiert werden soll, wenn eine Aktion beginnt oder endet ([OpenAI-Produktfeed-Spezifikation](https://developers.openai.com/commerce/specs/file-upload/products)). Eine Aktion, die im Shop schon beendet ist, aber im Feed stehen blieb, ist die klassische Abweichung.
 
 Google beschreibt dieselbe Falle für den eigenen Feed. Weichen Feed und Zielseite ab, gleichen Sie sie an, reichen den Feed erneut ein (Feed-Upload, Content API oder Ihr Shopsystem) und beantragen dann eine Prüfung. Die dauert laut Google 7 Werktage ([Google Merchant Center-Hilfe](https://support.google.com/merchants/answer/9773429)). Einen Weg, bereits eingelesene Daten bei OpenAI anzufechten, beschreibt die Seite nicht. Deshalb versprechen wir auch keinen.
 
@@ -76,7 +76,7 @@ Ja, wenn er veraltet ist. Google schreibt, dass Preis in Markup und Feed zur Zie
 
 ## Sources
 
-- [OpenAI: Produktfeed-Spezifikation](https://developers.openai.com/commerce/specs/feed)
+- [OpenAI: Produktfeed-Spezifikation](https://developers.openai.com/commerce/specs/file-upload/products)
 - [OpenAI: Crawler und User-Agents](https://developers.openai.com/api/docs/bots)
 - [Google Merchant Center-Hilfe: falscher Preis durch Abweichung zwischen Feed und Zielseite](https://support.google.com/merchants/answer/9773429)
 - [CitedBy Website-Audit](https://citedby.eu/de)

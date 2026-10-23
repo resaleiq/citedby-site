@@ -11,12 +11,12 @@ hero_alt: Three gates between a shop page and an AI assistant: robots.txt, page 
 og: can-chatgpt-read-my-website-og.png
 widget: on
 howto: on
-related: /bots|AI crawlers: what each one does and how to allow or block it; /ai-visibility-audit|AI visibility audit: what it is and what to check; /data|Who ChatGPT linked, by niche; /sample|A sample report
+related: /bots|AI crawlers: what each one does and how to allow or block it; /ai-visibility-audit|AI visibility audit: what it is and what to check; /data|Who ChatGPT linked, by niche; /sample|A sample report; /tools/findable-check|Findable check: can search engines find your pages? (free)
 answer: ChatGPT can read your website if three things hold: robots.txt does not block OAI-SearchBot, the page text is in the HTML your server sends rather than added by JavaScript, and your server or firewall does not refuse the crawler. The CitedBy audit tests the first two on every page.
 
 ## The three gates
 
-ChatGPT search uses a crawler called OAI-SearchBot to find pages. OpenAI also runs GPTBot, which collects training data, and ChatGPT-User, which fetches a page when a person asks about it. OpenAI says each is controlled separately in robots.txt, so you can allow one and block another ([OpenAI crawler documentation](https://developers.openai.com/docs/bots)).
+ChatGPT search uses a crawler called OAI-SearchBot to find pages. OpenAI also runs GPTBot, which collects training data, and ChatGPT-User, which fetches a page when a person asks about it. OpenAI says each is controlled separately in robots.txt, so you can allow one and block another ([OpenAI crawler documentation](https://developers.openai.com/api/docs/bots)).
 
 ![Three gates: robots.txt, page response, page content, with what the audit tests at each](/blog/img/three-gates.svg "The audit tests gates 1 and 3. Gate 2 needs your server logs.")
 
@@ -65,5 +65,5 @@ OpenAI says it can take about 24 hours for its systems to adjust after you chang
 
 ## Sources
 
-- [OpenAI: crawlers and user agents](https://developers.openai.com/docs/bots)
+- [OpenAI: crawlers and user agents](https://developers.openai.com/api/docs/bots)
 - [CitedBy site audit](https://citedby.eu/)

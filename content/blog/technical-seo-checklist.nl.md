@@ -23,8 +23,8 @@ Een assistent kan alleen noemen wat hij kan ophalen en lezen. Dat is de technisc
 
 ## De checklist in negen punten
 
-1. robots.txt en AI-crawlers. Open `jouwwebshop.nl/robots.txt`. Zoek groepen voor `OAI-SearchBot`, `GPTBot`, `PerplexityBot` en `Google-Extended`, en kijk of onder `User-agent: *` een `Disallow: /` staat. Zo'n regel geldt voor elke crawler zonder eigen groep ([RFC 9309](https://www.rfc-editor.org/rfc/rfc9309)). Uitleg per laag vind je in [Is GPTBot geblokkeerd op je site?](/nl/blog/is-gptbot-blocked).
-2. HTTP-status van de belangrijkste pagina's. Controleer homepage, een categoriepagina, een productpagina en je verzend- en retourpagina. Ze horen 200 terug te geven. Met `curl -sI https://jouwwebshop.nl/` zie je de statuscode. Een 403, 429 of 503 wijst op een regel of storing die ook crawlers raakt ([Google: HTTP-statuscodes](https://developers.google.com/search/docs/crawling-indexing/http-network-errors)).
+1. robots.txt en AI-crawlers. Open `jouwwebshop.nl/robots.txt`. Zoek groepen voor `OAI-SearchBot`, `GPTBot`, `PerplexityBot` en `Google-Extended`, en kijk of onder `User-agent: *` een `Disallow: /` staat. Zo'n regel geldt voor elke crawler zonder eigen groep ([RFC 9309](https://www.rfc-editor.org/info/rfc9309/)). Uitleg per laag vind je in [Is GPTBot geblokkeerd op je site?](/nl/blog/is-gptbot-blocked).
+2. HTTP-status van de belangrijkste pagina's. Controleer homepage, een categoriepagina, een productpagina en je verzend- en retourpagina. Ze horen 200 terug te geven. Met `curl -sI https://jouwwebshop.nl/` zie je de statuscode. Een 403, 429 of 503 wijst op een regel of storing die ook crawlers raakt ([Google: HTTP-statuscodes](https://developers.google.com/crawling/docs/troubleshooting/http-status-codes)).
 3. sitemap.xml. Open `jouwwebshop.nl/sitemap.xml`. Staan je producten en categorieën erin, en alleen pagina's die 200 teruggeven? Verwijs er ook naar met een `Sitemap:`-regel in robots.txt ([Google: sitemap maken](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)).
 4. Canonical. Bekijk de paginabron van een productpagina en zoek `rel="canonical"`. De URL hoort naar de schone productpagina te wijzen, niet naar een filter- of sorteerversie ([Google: dubbele URL's samenvoegen](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)).
 5. hreflang. Verkoopt je in Nederland en België, of in meer talen, dan horen versies naar elkaar te verwijzen met `rel="alternate" hreflang="nl-NL"` en `hreflang="nl-BE"`. Elke versie noemt zichzelf en de andere ([Google: gelokaliseerde versies](https://developers.google.com/search/docs/specialty/international/localized-versions)). Verkoopt je maar in één taal, sla dit punt over.
@@ -73,8 +73,8 @@ Verkoopt je in één taal en één land, dan is dat prima. Hreflang is bedoeld v
 
 ## Sources
 
-- [IETF RFC 9309: Robots Exclusion Protocol](https://www.rfc-editor.org/rfc/rfc9309)
-- [Google Search Central: HTTP-statuscodes en netwerkfouten](https://developers.google.com/search/docs/crawling-indexing/http-network-errors)
+- [IETF RFC 9309: Robots Exclusion Protocol](https://www.rfc-editor.org/info/rfc9309/)
+- [Google Search Central: HTTP-statuscodes en netwerkfouten](https://developers.google.com/crawling/docs/troubleshooting/http-status-codes)
 - [Google Search Central: een sitemap maken](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
 - [Google Search Central: dubbele URL's samenvoegen (canonical)](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)
 - [Google Search Central: gelokaliseerde versies (hreflang)](https://developers.google.com/search/docs/specialty/international/localized-versions)

@@ -29,7 +29,7 @@ Die Ebenen 2 bis 4 sieht man in der robots.txt nicht. Prüfen Sie sie getrennt.
 
 ## Wie prüfen Sie das Schritt für Schritt?
 
-1. robots.txt lesen: Öffnen Sie `ihr-shop.de/robots.txt` im Browser und suchen Sie eine Gruppe mit `GPTBot`. Gibt es keine, folgt GPTBot der Gruppe `User-agent: *`. Ein pauschales `Disallow: /` darunter sperrt ihn also mit ([RFC 9309](https://www.rfc-editor.org/rfc/rfc9309)).
+1. robots.txt lesen: Öffnen Sie `ihr-shop.de/robots.txt` im Browser und suchen Sie eine Gruppe mit `GPTBot`. Gibt es keine, folgt GPTBot der Gruppe `User-agent: *`. Ein pauschales `Disallow: /` darunter sperrt ihn also mit ([RFC 9309](https://www.rfc-editor.org/info/rfc9309/)).
 2. Audit starten: Das Audit (ab 9 €) liest die robots.txt für GPTBot, OAI-SearchBot, PerplexityBot, Google-Extended und Bingbot und nennt die gesperrten.
 3. Zwei Anfragen vergleichen: Senden Sie zwei Anfragen an Ihre Startseite, eine normale und eine mit dem GPTBot-User-Agent, und vergleichen Sie die Statuscodes. Die Befehle stehen unten.
 4. CDN und Firewall prüfen: Schauen Sie in den KI-Crawler-Einstellungen Ihres CDN nach, und suchen Sie in der Regelliste Ihres Sicherheits-Plugins nach `GPTBot`, `bot`, `AI` und `crawler`.
@@ -89,5 +89,5 @@ Nein. Lesbar zu sein ist die Eintrittskarte. Ob ein Assistent Ihren Shop nennt, 
 - [OpenAI: Crawler und User-Agents, IP-Bereiche](https://developers.openai.com/api/docs/bots)
 - [Cloudflare: AI-Crawler verwalten](https://developers.cloudflare.com/ai-crawl-control/features/manage-ai-crawlers/)
 - [Help Net Security: Cloudflare ändert Zugriffsregeln für KI-Crawler, 2. Juli 2026](https://www.helpnetsecurity.com/2026/07/02/cloudflare-ai-crawler-controls/)
-- [IETF RFC 9309: Robots Exclusion Protocol](https://www.rfc-editor.org/rfc/rfc9309)
+- [IETF RFC 9309: Robots Exclusion Protocol](https://www.rfc-editor.org/info/rfc9309/)
 - [CitedBy Website-Audit](https://citedby.eu/de)

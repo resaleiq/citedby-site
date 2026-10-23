@@ -23,7 +23,7 @@ Auf der Seite des Vorschlags steht, dass Dokumentationsplattformen die Datei üb
 
 ## Was sagen die Daten?
 
-Ahrefs hat im Mai 2026 mit seiner Web-Analytics 137.210 Domains ausgewertet. Ergebnis: 97 % der gültigen llms.txt-Dateien bekamen in dem Monat keine einzige Anfrage. Von den Anfragen, die ankamen, stammten 19,5 % von namentlich erkennbaren KI-Tools. Den Rest machten zu großen Teilen SEO-Audit-Tools, unbekannte Bots und allgemeine Crawler aus. Auf Websites ohne Datei suchte laut Ahrefs auch kein KI-Bot danach ([Ahrefs-Studie](https://ahrefs.com/blog/llmstxt-study)).
+Ahrefs hat im Mai 2026 mit seiner Web-Analytics 137.210 Domains ausgewertet. Ergebnis: 97 % der gültigen llms.txt-Dateien bekamen in dem Monat keine einzige Anfrage. Von den Anfragen, die ankamen, stammten 19,5 % von namentlich erkennbaren KI-Tools. Den Rest machten zu großen Teilen SEO-Audit-Tools, unbekannte Bots und allgemeine Crawler aus. Auf Websites ohne Datei suchte laut Ahrefs auch kein KI-Bot danach ([Ahrefs-Studie](https://ahrefs.com/blog/llmstxt-study/)).
 
 SE Ranking hat rund 300.000 Domains untersucht und im November 2025 veröffentlicht, dass die Datei keinen klaren Zusammenhang damit hat, wie oft eine Domain von KI zitiert wird. 10,13 % der Domains hatten die Datei ([Search Engine Journal zur SE-Ranking-Studie](https://www.searchenginejournal.com/llms-txt-shows-no-clear-effect-on-ai-citations-based-on-300k-domains/561542/)). SE Ranking selbst schreibt sinngemäß, die Datei scheine die Zitierhäufigkeit nicht direkt zu beeinflussen, zumindest noch nicht.
 
@@ -74,7 +74,7 @@ Nein. robots.txt legt fest, was Crawler abrufen dürfen. llms.txt ist eine vorge
 ## Sources
 
 - [llmstxt.org: der llms.txt-Vorschlag](https://llmstxt.org/)
-- [Ahrefs: llms.txt-Studie, 137.210 Domains, Mai 2026](https://ahrefs.com/blog/llmstxt-study)
+- [Ahrefs: llms.txt-Studie, 137.210 Domains, Mai 2026](https://ahrefs.com/blog/llmstxt-study/)
 - [Search Engine Journal: SE-Ranking-Studie zu rund 300.000 Domains, 20. November 2025](https://www.searchenginejournal.com/llms-txt-shows-no-clear-effect-on-ai-citations-based-on-300k-domains/561542/)
 - [Google Search Central: KI-Funktionen und Ihre Website](https://developers.google.com/search/docs/appearance/ai-features)
 - [OpenAI: Crawler und User-Agents](https://developers.openai.com/api/docs/bots)

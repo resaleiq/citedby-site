@@ -18,7 +18,7 @@ answer: ChatGPT puede leer tu web si se cumplen tres cosas: robots.txt no bloque
 
 ## ¿Cuáles son las tres puertas?
 
-La búsqueda de ChatGPT usa un rastreador llamado OAI-SearchBot para encontrar páginas. OpenAI también tiene GPTBot, que recopila datos de entrenamiento, y ChatGPT-User, que visita una página cuando una persona pregunta por ella. Según OpenAI, cada uno se controla por separado en robots.txt, de modo que puedes permitir uno y bloquear otro ([documentación de OpenAI](https://developers.openai.com/docs/bots)).
+La búsqueda de ChatGPT usa un rastreador llamado OAI-SearchBot para encontrar páginas. OpenAI también tiene GPTBot, que recopila datos de entrenamiento, y ChatGPT-User, que visita una página cuando una persona pregunta por ella. Según OpenAI, cada uno se controla por separado en robots.txt, de modo que puedes permitir uno y bloquear otro ([documentación de OpenAI](https://developers.openai.com/api/docs/bots)).
 
 Las tres puertas son: lo que dice robots.txt, lo que responde tu servidor y lo que contiene la página que llega. Si una falla, las otras dos dan igual: un asistente no puede nombrar lo que no ha podido leer.
 
@@ -67,5 +67,5 @@ OpenAI indica que sus sistemas pueden tardar unas 24 horas en ajustarse tras cam
 
 ## Sources
 
-- [OpenAI: rastreadores y agentes de usuario](https://developers.openai.com/docs/bots)
+- [OpenAI: rastreadores y agentes de usuario](https://developers.openai.com/api/docs/bots)
 - [CitedBy: auditoría de tu web](https://citedby.eu/es)

@@ -26,7 +26,7 @@ La propia página de la propuesta recoge su uso en plataformas de documentación
 
 Hay dos preguntas distintas: si alguien lo descarga y si cambia las citas.
 
-¿Lo descarga alguien? Ahrefs analizó 137.210 dominios con su analítica web en mayo de 2026. El 97 % de los archivos llms.txt válidos no recibió ninguna petición ese mes. De las peticiones que sí llegaron, el 19,5 % procedía de herramientas de IA identificadas. Buena parte del resto eran herramientas de auditoría SEO, bots desconocidos y rastreadores generales. Ahrefs también indica que ningún bot de IA fue a buscar el archivo en webs que no lo tenían ([estudio de Ahrefs](https://ahrefs.com/blog/llmstxt-study)).
+¿Lo descarga alguien? Ahrefs analizó 137.210 dominios con su analítica web en mayo de 2026. El 97 % de los archivos llms.txt válidos no recibió ninguna petición ese mes. De las peticiones que sí llegaron, el 19,5 % procedía de herramientas de IA identificadas. Buena parte del resto eran herramientas de auditoría SEO, bots desconocidos y rastreadores generales. Ahrefs también indica que ningún bot de IA fue a buscar el archivo en webs que no lo tenían ([estudio de Ahrefs](https://ahrefs.com/blog/llmstxt-study/)).
 
 ¿Cambia las citas? SE Ranking analizó unos 300.000 dominios y publicó en noviembre de 2025 que tener llms.txt no mostraba una relación clara con la frecuencia con la que la IA cita un dominio. El archivo estaba en el 10,13 % de los dominios ([Search Engine Journal sobre el estudio de SE Ranking](https://www.searchenginejournal.com/llms-txt-shows-no-clear-effect-on-ai-citations-based-on-300k-domains/561542/)). En palabras de SE Ranking, "no parece afectar directamente a la frecuencia de citas de la IA. Al menos todavía" (traducción nuestra del original en inglés).
 
@@ -71,7 +71,7 @@ No. robots.txt indica a los rastreadores qué pueden descargar. llms.txt es un a
 ## Sources
 
 - [llmstxt.org: la propuesta llms.txt](https://llmstxt.org/)
-- [Ahrefs: estudio de llms.txt, 137.210 dominios, mayo de 2026](https://ahrefs.com/blog/llmstxt-study)
+- [Ahrefs: estudio de llms.txt, 137.210 dominios, mayo de 2026](https://ahrefs.com/blog/llmstxt-study/)
 - [Search Engine Journal: estudio de SE Ranking sobre unos 300.000 dominios, 20 de noviembre de 2025](https://www.searchenginejournal.com/llms-txt-shows-no-clear-effect-on-ai-citations-based-on-300k-domains/561542/)
 - [Google Search Central: funciones de IA y tu sitio web](https://developers.google.com/search/docs/appearance/ai-features)
 - [OpenAI: rastreadores y agentes de usuario](https://developers.openai.com/api/docs/bots)

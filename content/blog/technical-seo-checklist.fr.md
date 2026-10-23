@@ -25,7 +25,7 @@ Comptez une heure pour tout passer en revue sur une petite boutique en ligne. Ga
 
 ## Quels sont les 9 contrôles à faire à la main ?
 
-1. Robots.txt et robots IA : ouvrez `votre-boutique.fr/robots.txt` et cherchez `OAI-SearchBot`, `GPTBot`, `PerplexityBot` ou `*` suivi de `Disallow: /`. Un blocage général ferme la porte à tous les robots sans règle propre ([RFC 9309](https://www.rfc-editor.org/rfc/rfc9309)). Le détail est dans notre guide [ChatGPT peut-il lire mon site ?](/fr/blog/can-chatgpt-read-my-website).
+1. Robots.txt et robots IA : ouvrez `votre-boutique.fr/robots.txt` et cherchez `OAI-SearchBot`, `GPTBot`, `PerplexityBot` ou `*` suivi de `Disallow: /`. Un blocage général ferme la porte à tous les robots sans règle propre ([RFC 9309](https://www.rfc-editor.org/info/rfc9309/)). Le détail est dans notre guide [ChatGPT peut-il lire mon site ?](/fr/blog/can-chatgpt-read-my-website).
 2. Codes HTTP des pages clés : ouvrez l'accueil, une catégorie, une fiche produit et la page livraison, et vérifiez qu'elles répondent 200. Une redirection en chaîne, un 404 ou un 403 sur ces pages est à corriger en premier. Avec `curl -sI https://votre-boutique.fr/` la première ligne donne le code.
 3. Sitemap.xml : ouvrez `votre-boutique.fr/sitemap.xml`. Il doit lister les pages que vous voulez faire lire et seulement elles. Google rappelle qu'un sitemap indique aux moteurs quelles pages vous jugez importantes ([Google : qu'est-ce qu'un sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview)).
 4. Balise canonical : affichez le code source d'une fiche produit (clic droit, Afficher le code source de la page) et cherchez `rel="canonical"`. Elle doit pointer vers l'adresse propre de la page, sans paramètres de tri ni de suivi ([Google : canonical](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)).
@@ -66,7 +66,7 @@ Non. Ils rendent vos pages lisibles. Savoir si un assistant vous nomme se mesure
 
 ## Sources
 
-- [IETF RFC 9309 : protocole d'exclusion des robots](https://www.rfc-editor.org/rfc/rfc9309)
+- [IETF RFC 9309 : protocole d'exclusion des robots](https://www.rfc-editor.org/info/rfc9309/)
 - [Google Search Central : qu'est-ce qu'un sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview)
 - [Google Search Central : indiquer une URL canonique](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)
 - [Google Search Central : versions localisées d'une page](https://developers.google.com/search/docs/specialty/international/localized-versions)

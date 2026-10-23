@@ -31,7 +31,7 @@ Meta's page lists five crawlers. FacebookExternalHit fetches a page when someone
 
 In the vendor's words: “The Meta-ExternalAgent crawler crawls the web for use cases such as training foundation AI models or improving products by indexing content directly.”
 
-Source: [Meta for Developers: Meta Web Crawlers](https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/), read on 21 October 2026.
+Source: [Meta for Developers: Meta Web Crawlers](https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers), read on 21 October 2026.
 
 ## What happens if you block it
 
@@ -90,4 +90,4 @@ Meta says to allow up to 24 hours, because crawlers may cache the file for up to
 
 ## Sources
 
-- [Meta for Developers: Meta Web Crawlers](https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/), read 21 October 2026
+- [Meta for Developers: Meta Web Crawlers](https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers), read 21 October 2026

@@ -18,7 +18,7 @@ answer: ChatGPT kann Ihre Website lesen, wenn drei Dinge zutreffen: Die robots.t
 
 ## Welche drei Tore müssen offen sein?
 
-ChatGPT nutzt für seine Suche einen Crawler namens OAI-SearchBot. Daneben betreibt OpenAI den GPTBot, der Trainingsdaten sammelt, und ChatGPT-User, der eine Seite abruft, wenn eine Person danach fragt. Laut OpenAI lässt sich jeder davon in der robots.txt einzeln steuern. Sie können also einen erlauben und einen anderen sperren ([OpenAI-Dokumentation zu Crawlern](https://developers.openai.com/docs/bots)).
+ChatGPT nutzt für seine Suche einen Crawler namens OAI-SearchBot. Daneben betreibt OpenAI den GPTBot, der Trainingsdaten sammelt, und ChatGPT-User, der eine Seite abruft, wenn eine Person danach fragt. Laut OpenAI lässt sich jeder davon in der robots.txt einzeln steuern. Sie können also einen erlauben und einen anderen sperren ([OpenAI-Dokumentation zu Crawlern](https://developers.openai.com/api/docs/bots)).
 
 Daraus ergeben sich drei Tore: Die robots.txt muss den Crawler zulassen, der Server muss ihm antworten, und auf der Seite muss lesbarer Text stehen. Das Audit testet das erste und das dritte Tor. Das zweite sehen nur Ihre Server-Logs.
 
@@ -73,5 +73,5 @@ OpenAI nennt etwa 24 Stunden, bis sich seine Systeme nach einer Änderung der ro
 
 ## Sources
 
-- [OpenAI: Crawler und User-Agents](https://developers.openai.com/docs/bots)
+- [OpenAI: Crawler und User-Agents](https://developers.openai.com/api/docs/bots)
 - [CitedBy Website-Audit](https://citedby.eu/de)

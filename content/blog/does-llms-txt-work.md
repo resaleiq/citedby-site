@@ -11,7 +11,7 @@ hero_alt: Title card: does llms.txt work, with two figures: 97 percent of files 
 og: does-llms-txt-work-og.png
 widget: on
 howto: off
-related: /tools/llms-txt-checker|llms.txt checker (free); /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /blog/geo-vs-aeo-vs-seo|GEO vs AEO vs SEO audit; /sample|A sample report
+related: /tools/llms-txt-checker|llms.txt checker (free); /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /blog/geo-vs-aeo-vs-seo|GEO vs AEO vs SEO audit; /sample|A sample report; /tools/findable-check|Findable check: can search engines find your pages? (free); /changes|What changed: log of AI-crawler and search changes
 answer: So far the evidence says llms.txt does not move AI citations. Ahrefs found 97% of valid llms.txt files got zero requests in May 2026, SE Ranking found no clear link to citations across about 300,000 domains, and Google says you do not need AI text files. Adding one is cheap, but do not expect traffic from it.
 
 ## What llms.txt is
@@ -22,7 +22,7 @@ llms.txt is a proposal by Jeremy Howard, published in September 2024: a Markdown
 
 ![Two bars from the Ahrefs study of 137,210 domains in May 2026: 97 percent of valid llms.txt files got zero requests, and of the requests that arrived, 19.5 percent came from named AI tools](/blog/img/llms-txt-requests.svg "Figures as reported by Ahrefs. Most requests came from audit tools and unknown bots, not assistants.")
 
-**Does anything fetch it?** Ahrefs checked 137,210 domains with its web analytics in May 2026. It found that 97% of valid llms.txt files received zero requests that month. Of the requests that did arrive, 19.5% came from named AI tools. SEO audit tools, unknown bots and general crawlers made up much of the rest. Ahrefs also reports that no AI bot went looking for the file on sites that did not have one ([Ahrefs study](https://ahrefs.com/blog/llmstxt-study)).
+**Does anything fetch it?** Ahrefs checked 137,210 domains with its web analytics in May 2026. It found that 97% of valid llms.txt files received zero requests that month. Of the requests that did arrive, 19.5% came from named AI tools. SEO audit tools, unknown bots and general crawlers made up much of the rest. Ahrefs also reports that no AI bot went looking for the file on sites that did not have one ([Ahrefs study](https://ahrefs.com/blog/llmstxt-study/)).
 
 **Does it change citations?** SE Ranking analysed about 300,000 domains and published in November 2025 that having llms.txt showed no clear connection to how often a domain is cited by AI, with 10.13% of domains having the file ([Search Engine Journal on the SE Ranking study](https://www.searchenginejournal.com/llms-txt-shows-no-clear-effect-on-ai-citations-based-on-300k-domains/561542/)). Their own wording is that it "doesn't seem to directly impact AI citation frequency. At least not yet."
 
@@ -67,7 +67,7 @@ No. robots.txt tells crawlers what they may fetch. llms.txt is a proposed summar
 ## Sources
 
 - [llmstxt.org: the llms.txt proposal](https://llmstxt.org/)
-- [Ahrefs: llms.txt study, 137,210 domains, May 2026](https://ahrefs.com/blog/llmstxt-study)
+- [Ahrefs: llms.txt study, 137,210 domains, May 2026](https://ahrefs.com/blog/llmstxt-study/)
 - [Search Engine Journal: SE Ranking study of about 300,000 domains, 20 November 2025](https://www.searchenginejournal.com/llms-txt-shows-no-clear-effect-on-ai-citations-based-on-300k-domains/561542/)
 - [Google Search Central: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
 - [OpenAI: crawlers and user agents](https://developers.openai.com/api/docs/bots)

@@ -32,7 +32,7 @@ Most pages in this set describe a crawler you can find in a log. This one you ca
 
 In the vendor's words: “Google-Extended is a standalone product token that web publishers can use to manage whether content Google crawls from their sites may be used for training future generations of Gemini models that power Gemini Apps and Vertex AI API for Gemini. Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.”
 
-Source: [Google Search Central: Google's common crawlers (last updated 2026-10-15)](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers), read on 21 October 2026.
+Source: [Google Search Central: Google's common crawlers (last updated 2026-10-15)](https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers), read on 21 October 2026.
 
 ## What happens if you block it
 
@@ -78,4 +78,4 @@ Google says it does not impact a site's inclusion in Google Search and is not us
 
 ## Sources
 
-- [Google Search Central: Google's common crawlers (last updated 2026-10-15)](https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers)
+- [Google Search Central: Google's common crawlers (last updated 2026-10-15)](https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers)

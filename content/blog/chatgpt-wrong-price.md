@@ -11,7 +11,7 @@ hero_alt: Title card: ChatGPT shows my old price, with three boxes: your own pag
 og: chatgpt-wrong-price-og.png
 widget: on
 howto: on
-related: /blog/check-what-ai-says-about-your-brand|Check what AI says about your brand, 20 prompts; /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /sample|A sample report
+related: /blog/check-what-ai-says-about-your-brand|Check what AI says about your brand, 20 prompts; /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /sample|A sample report; /compare/profound-vs-peec-vs-otterly|Profound vs Peec vs Otterly compared
 answer: ChatGPT shows an old price when it read that price from a stale source: your own page, a product feed, or another website. Search for the old price in each place, fix the source, then ask again twice in a new chat. Update your feed whenever a sale starts or ends.
 
 ## Why an assistant quotes a price you changed
@@ -36,7 +36,7 @@ Open a new chat, with web search on if the assistant offers it, and ask: "What d
 
 ## Step 3: check your product feed
 
-If you sell through Google Shopping, a marketplace or ChatGPT's shopping feed, the feed is a second copy of your price. OpenAI's product feed specification asks for a price in the form `79.99 USD`, one row per purchasable item or variant, and says to update the feed when a sale starts or ends ([OpenAI product feed spec](https://developers.openai.com/commerce/specs/feed)). A sale that ended on your site but stayed in the feed is the classic mismatch.
+If you sell through Google Shopping, a marketplace or ChatGPT's shopping feed, the feed is a second copy of your price. OpenAI's product feed specification asks for a price in the form `79.99 USD`, one row per purchasable item or variant, and says to update the feed when a sale starts or ends ([OpenAI product feed spec](https://developers.openai.com/commerce/specs/file-upload/products)). A sale that ended on your site but stayed in the feed is the classic mismatch.
 
 Google describes the same trap for its own feed: when the feed and the landing page disagree, the fix is to match them, resubmit through feed upload, the Content API or your shop platform, and then request a review, which Google says takes 7 business days ([Google Merchant Center help](https://support.google.com/merchants/answer/9773429)). OpenAI's page does not describe a way to dispute data already ingested, so we do not promise one.
 
@@ -74,7 +74,7 @@ Yes, when it is stale. Google says markup and feed price should match the landin
 
 ## Sources
 
-- [OpenAI: product feed specification](https://developers.openai.com/commerce/specs/feed)
+- [OpenAI: product feed specification](https://developers.openai.com/commerce/specs/file-upload/products)
 - [OpenAI: crawlers and user agents](https://developers.openai.com/api/docs/bots)
 - [Google Merchant Center: inaccurate price due to feed and landing page mismatch](https://support.google.com/merchants/answer/9773429)
 - [r/ecommerce, 22 September 2026: ChatGPT recommends a discontinued bundle at the old price](https://old.reddit.com/comments/1wnbg86/)

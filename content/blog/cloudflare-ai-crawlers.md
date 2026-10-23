@@ -11,7 +11,7 @@ hero_alt: Three steps on a card: AI Crawl Control, Security tab, Actions column 
 og: cloudflare-ai-crawlers-og.png
 widget: on
 howto: on
-related: /blog/is-gptbot-blocked|Is GPTBot blocked on my site?; /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /free-ai-visibility-check|The free crawler check
+related: /blog/is-gptbot-blocked|Is GPTBot blocked on my site?; /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /free-ai-visibility-check|The free crawler check; /tools/findable-check|Findable check: can search engines find your pages? (free); /changes|What changed: log of AI-crawler and search changes
 answer: In the Cloudflare dashboard, open your domain, then AI Crawl Control, then the Security tab. Find each crawler, such as GPTBot or ClaudeBot, and choose Allow in the Actions column. Blocking creates a WAF rule, so removing it means switching the crawler back to Allow. Then run a check from outside.
 
 ## Why Cloudflare can block AI crawlers without you touching robots.txt

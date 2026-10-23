@@ -63,5 +63,5 @@ We cannot give a number. It must first be crawled and indexed, and answers chang
 ## Sources
 
 - [CitedBy launch crawl 2026-10: method, limits and CSV](https://citedby.eu/data/launch-crawl-2026-10)
-- [OpenAI: crawlers overview (GPTBot, OAI-SearchBot, ChatGPT-User)](https://platform.openai.com/docs/bots)
+- [OpenAI: crawlers overview (GPTBot, OAI-SearchBot, ChatGPT-User)](https://developers.openai.com/api/docs/bots)
 - [About CitedBy: how we count](https://citedby.eu/about)

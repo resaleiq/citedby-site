@@ -24,7 +24,7 @@ La auditoría de CitedBy, desde 9 €, cubre la primera. Las otras tres pueden d
 
 ## ¿Cómo comprobarlo, paso a paso?
 
-1. Revisa el archivo de robots: abre `tutienda.es/robots.txt` en el navegador y busca un grupo que nombre `GPTBot`. Si no hay ninguno, GPTBot sigue el grupo `User-agent: *`, así que un `Disallow: /` general también le afecta ([RFC 9309](https://www.rfc-editor.org/rfc/rfc9309)).
+1. Revisa el archivo de robots: abre `tutienda.es/robots.txt` en el navegador y busca un grupo que nombre `GPTBot`. Si no hay ninguno, GPTBot sigue el grupo `User-agent: *`, así que un `Disallow: /` general también le afecta ([RFC 9309](https://www.rfc-editor.org/info/rfc9309/)).
 2. Lanza una auditoría: la de CitedBy lee robots.txt para GPTBot, OAI-SearchBot, PerplexityBot, Google-Extended y Bingbot y te dice cuáles están bloqueados.
 3. Compara dos peticiones: envía dos peticiones a tu página de inicio, una normal y otra con el agente de usuario de GPTBot, y compara los códigos de estado. Los comandos están abajo.
 4. Mira tu CDN y tu cortafuegos: entra en el panel de tu CDN y busca los ajustes de rastreadores de IA; en el plugin de seguridad o en la lista de reglas, busca `GPTBot`, `bot`, `AI` y `crawler`.
@@ -84,4 +84,4 @@ No. Que te puedan leer es la entrada, no el resultado. Que un asistente nombre t
 - [OpenAI: rastreadores y agentes de usuario, rangos de IP](https://developers.openai.com/api/docs/bots)
 - [Cloudflare: gestionar rastreadores de IA](https://developers.cloudflare.com/ai-crawl-control/features/manage-ai-crawlers/)
 - [Help Net Security: Cloudflare cambia las reglas de acceso de rastreadores de IA, 2 de julio de 2026](https://www.helpnetsecurity.com/2026/07/02/cloudflare-ai-crawler-controls/)
-- [IETF RFC 9309: protocolo de exclusión de robots](https://www.rfc-editor.org/rfc/rfc9309)
+- [IETF RFC 9309: protocolo de exclusión de robots](https://www.rfc-editor.org/info/rfc9309/)

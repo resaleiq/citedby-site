@@ -32,7 +32,7 @@ Perplexity names two agents. PerplexityBot builds the search index; Perplexity-U
 
 In the vendor's words: “PerplexityBot is designed to surface and link websites in search results on Perplexity. It is not used to crawl content for AI foundation models.”
 
-Source: [Perplexity: Perplexity Crawlers](https://docs.perplexity.ai/guides/bots), read on 21 October 2026.
+Source: [Perplexity: Perplexity Crawlers](https://docs.perplexity.ai/docs/resources/perplexity-crawlers), read on 21 October 2026.
 
 ## What happens if you block it
 
@@ -84,5 +84,5 @@ Perplexity says it is not used to crawl content for AI foundation models.
 
 ## Sources
 
-- [Perplexity: Perplexity Crawlers](https://docs.perplexity.ai/guides/bots)
-- [perplexity.com/perplexitybot.json](https://perplexity.com/perplexitybot.json), read 21 October 2026
+- [Perplexity: Perplexity Crawlers](https://docs.perplexity.ai/docs/resources/perplexity-crawlers)
+- [perplexity.com/perplexitybot.json](https://www.perplexity.ai/perplexitybot.json), read 21 October 2026
