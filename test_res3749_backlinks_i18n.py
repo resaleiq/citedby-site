@@ -251,3 +251,14 @@ def test_the_lookup_input_is_a_design_system_field_with_a_44px_touch_height():
             assert 'for="bl-host"' in h, lg                                                          # still labelled
             head = h[:h.index("</head>")]
             assert ".bl-form{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}.bl-form .fld{flex:1 1 220px;max-width:420px}" in head, lg
+
+
+def test_the_language_row_keeps_its_height_when_the_web_font_swaps_in():
+    """PSI mobile showed CLS 0.277 on every host page (RES-3749): the language row is two lines (42 px) in the fallback font and one line (21 px) once IBM Plex Sans loads, so everything below it jumped 21 px.
+    Its text is right at the wrap boundary for 360 to 412 px phones, so the row reserves two lines on small screens (3em = 2 x the 1.5 line height of 14 px type)."""
+    rule = "@media(max-width:480px){.langs{min-height:3em}}"
+    for lg in ALL:
+        for h in (b.index_page("", lg), b.host_page("semrush.com", lg)[1], b.host_page("citedby.eu", lg)[1], b.host_page("not-in-the-data.example", lg)[1]):
+            head = h[:h.index("</head>")]
+            assert head.count(rule) == 1, lg
+            assert 'class="src langs"' in h, lg
