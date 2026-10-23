@@ -241,3 +241,13 @@ def test_the_outline_cta_button_is_readable_on_the_light_data_css_box():
             assert head.index(rule) > head.rindex('rel="stylesheet"'), lg                 # after the three stylesheet links
     h = b.index_page("", "es")
     assert re.search(r'<a class="btn" href="[^"]*utm_campaign=backlinks">', h)               # the lookup page's CTA is the non-primary anchor this rule is for
+
+
+def test_the_lookup_input_is_a_design_system_field_with_a_44px_touch_height():
+    """Web-design standards pass (RES-3749): the lookup input was a bare browser input, 21 px tall with small type (iOS zooms into inputs under 16 px). saas.css has `.fld`: min-height 44, 16 px type, the site's border and radius."""
+    for lg in ALL:
+        for h in (b.index_page("", lg), b.index_page(i.T[lg]["bad_host"], lg), b.host_page("semrush.com", lg)[1], b.host_page("not-in-the-data.example", lg)[1]):
+            assert re.search(r'<input class="fld" id="bl-host" name="host" type="text"', h), lg
+            assert 'for="bl-host"' in h, lg                                                          # still labelled
+            head = h[:h.index("</head>")]
+            assert ".bl-form{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}.bl-form .fld{flex:1 1 220px;max-width:420px}" in head, lg
