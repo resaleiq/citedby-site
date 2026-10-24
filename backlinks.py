@@ -14,6 +14,8 @@ DB = os.environ.get("BACKLINKS_DB", os.path.join(HERE, "data", "backlinks.sqlite
 HOST = re.compile(r"^(?=.{4,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,24}$")
 ROUTE = re.compile(r"^(?:/(fr|de|es|nl))?/backlinks(?:/(.*))?$")  # group 1: language prefix, group 2: the host part (None = the lookup page)
 LINK_DENY = re.compile(r"porn|xxx|sex|escort|casino|bet(?!a|ter|ween|s)|poker|viagra|cialis|pharma|loan|crypto|slot|lotto|gambl|adult|hentai|nude|dating|vape|cbd|payday")  # RES-3801 (open): a referrer with one of these words is listed as text, never linked or featured; the SEO lead decides whether it is hidden
+HIDE_ADULT = frozenset(l.strip() for l in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "backlinks-hide-adult.txt"), encoding="utf-8")
+                       if l.strip() and not l.startswith("#"))  # RES-3819 (decision RES-3801 B): adult-content referrers left out of every list; exact host match on the stored name, never a keyword rule
 OWN_ZERO = {"citedby.eu", "hexaciv.com", "civiqpass.com", "revalx.eu"}  # METHOD.md sanity check: the graph saw none of them
 GRAPH, GRAPH_COVER = "cc-main-2026-aug-sep-oct", "2026-08/2026-10"
 OG = {**langroutes.OG_LOCALE, "en": "en_IE"}  # English keeps the og:locale it was published with
@@ -80,7 +82,8 @@ def lookup(host):
     """(referring_domains, [(rank, referrer, referrer_inlinks)]) for a host in the shipped set (indexable pages), else in the full table (on-demand pages), else None."""
     r = _q("select referring_domains from dom where domain=?", (host,))
     if r:
-        return r[0][0], _q("select rank, referrer, referrer_inlinks from bl where domain=? order by rank", (host,))
+        rows = [(ref, inl) for _, ref, inl in _q("select rank, referrer, referrer_inlinks from bl where domain=? order by rank", (host,)) if ref not in HIDE_ADULT]
+        return r[0][0], [(i, ref, inl) for i, (ref, inl) in enumerate(rows[:20], 1)]  # ranks close up when a hidden host was in the list
     if host in OWN_ZERO:
         return 0, []
     if not full_info():
@@ -88,8 +91,8 @@ def lookup(host):
     r = _qf("select referring_domains from dom where domain=?", (host,))
     if not r:
         return None
-    rows = _qf("select referrer, referrer_inlinks from bl where domain=? order by referrer_inlinks desc, referrer limit 20", (host,)) or []
-    return r[0][0], [(i, ref, inl) for i, (ref, inl) in enumerate(rows, 1)]
+    rows = [(ref, inl) for ref, inl in _qf("select referrer, referrer_inlinks from bl where domain=? order by referrer_inlinks desc, referrer", (host,)) or [] if ref not in HIDE_ADULT]
+    return r[0][0], [(i, ref, inl) for i, (ref, inl) in enumerate(rows[:20], 1)]  # up to 20 of what is left
 
 
 def curated(host):

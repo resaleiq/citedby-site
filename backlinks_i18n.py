@@ -39,7 +39,7 @@ T = {
                       "plus our own sites and a few SEO tools. Sites under .com, .org and other domains are not in it yet. It does not mean the site has no links. The set grows with each quarterly graph."),
         method=("Source: Common Crawl's public domain web graph, built from three monthly crawls ({d} domains, {l} links). We count distinct linking domains, not pages, "
                 "and do not use any third-party backlink index. Common Crawl samples the web, so counts are lower than a full index such as Ahrefs or Semrush; use them to compare sites "
-                "and spot big referrers, not as an exact total. Updated each quarter, last graph: {graph}. Nofollow and link position are not in this data."),
+                "and spot big referrers, not as an exact total. Updated each quarter, last graph: {graph}. Nofollow and link position are not in this data. Adult-content domains are left out of the list, so a page can show fewer than 20. Spam and link-network domains are shown as they are."),
         bad_host="That does not look like a domain name. Try something like example.com.",
         host_h1="Who links to {host}?", host_title="Who links to {host}? Referring domains | CitedBy",
         desc_n="{n} domains link to {host} in Common Crawl's open web graph ({label}). The 20 strongest, with the method.",
@@ -75,7 +75,7 @@ T = {
         method=("Source : le graphe web public de Common Crawl au niveau des domaines, construit à partir de trois explorations mensuelles ({d} domaines, {l} liens). Nous comptons les domaines référents distincts, "
                 "pas les pages, et n'utilisons aucun index de backlinks tiers. Common Crawl échantillonne le web : les chiffres sont donc inférieurs à ceux d'un index complet comme Ahrefs ou Semrush. "
                 "Servez-vous-en pour comparer des sites et repérer les principaux domaines référents, pas comme un total exact. Mis à jour chaque trimestre, dernier graphe : {graph}. "
-                "Le nofollow et la position du lien ne figurent pas dans ces données."),
+                "Le nofollow et la position du lien ne figurent pas dans ces données. Les domaines de contenu pour adultes sont exclus de la liste : une page peut donc en afficher moins de 20. Les domaines de spam et de réseaux de liens sont affichés tels quels."),
         bad_host="Cela ne ressemble pas à un nom de domaine. Essayez par exemple example.com.",
         host_h1="Qui renvoie vers {host} ?", host_title="Qui renvoie vers {host} ? Domaines référents | CitedBy",
         desc_n="{n} domaines renvoient vers {host} dans le graphe web ouvert de Common Crawl ({label}). Les 20 plus forts, avec la méthode.",
@@ -111,7 +111,7 @@ T = {
         method=("Quelle: der öffentliche Domain-Web-Graph von Common Crawl, aufgebaut aus drei monatlichen Crawls ({d} Domains, {l} Links). Wir zählen verschiedene verweisende Domains, keine Seiten, "
                 "und nutzen keinen Backlink-Index von Dritten. Common Crawl erfasst das Web nur stichprobenartig, deshalb liegen die Zahlen unter denen eines vollständigen Index wie Ahrefs oder Semrush. "
                 "Nutzen Sie sie, um Websites zu vergleichen und große Linkgeber zu finden, nicht als exakte Summe. Aktualisiert jedes Quartal, letzter Graph: {graph}. "
-                "Nofollow und Linkposition sind in diesen Daten nicht enthalten."),
+                "Nofollow und Linkposition sind in diesen Daten nicht enthalten. Domains mit nicht jugendfreien Inhalten werden aus der Liste ausgelassen, daher kann eine Seite weniger als 20 zeigen. Spam- und Linknetzwerk-Domains werden unverändert angezeigt."),
         bad_host="Das sieht nicht nach einem Domainnamen aus. Versuchen Sie es mit etwas wie example.com.",
         host_h1="Wer verlinkt auf {host}?", host_title="Wer verlinkt auf {host}? Verweisende Domains | CitedBy",
         desc_n="{n} Domains verlinken im offenen Web-Graphen von Common Crawl ({label}) auf {host}. Die 20 stärksten, mit Methode.",
@@ -147,7 +147,7 @@ T = {
         method=("Fuente: el grafo web público de Common Crawl a nivel de dominio, construido con tres rastreos mensuales ({d} dominios, {l} enlaces). Contamos dominios de referencia distintos, no páginas, "
                 "y no usamos ningún índice de backlinks de terceros. Common Crawl muestrea la web, así que las cifras son menores que las de un índice completo como Ahrefs o Semrush. "
                 "Úsalas para comparar sitios y detectar los principales dominios de referencia, no como un total exacto. Se actualiza cada trimestre; último grafo: {graph}. "
-                "El nofollow y la posición del enlace no están en estos datos."),
+                "El nofollow y la posición del enlace no están en estos datos. Los dominios de contenido para adultos no aparecen en la lista, así que una página puede mostrar menos de 20. Los dominios de spam y de redes de enlaces se muestran tal cual."),
         bad_host="Eso no parece un nombre de dominio. Prueba con algo como example.com.",
         host_h1="¿Quién enlaza a {host}?", host_title="¿Quién enlaza a {host}? Dominios de referencia | CitedBy",
         desc_n="{n} dominios enlazan a {host} en el grafo web abierto de Common Crawl ({label}). Los 20 más fuertes, con el método.",
@@ -183,7 +183,7 @@ T = {
         method=("Bron: de openbare domeinwebgraaf van Common Crawl, opgebouwd uit drie maandelijkse crawls ({d} domeinen, {l} links). We tellen unieke verwijzende domeinen, geen pagina's, "
                 "en gebruiken geen backlinkindex van derden. Common Crawl neemt steekproeven van het web, dus de aantallen liggen lager dan bij een volledige index zoals Ahrefs of Semrush. "
                 "Gebruik ze om sites te vergelijken en grote verwijzende domeinen te vinden, niet als exact totaal. Elk kwartaal bijgewerkt, laatste graaf: {graph}. "
-                "Nofollow en de plek van de link zitten niet in deze data."),
+                "Nofollow en de plek van de link zitten niet in deze data. Domeinen met inhoud voor volwassenen laten we weg uit de lijst, dus een pagina kan minder dan 20 domeinen tonen. Spam- en linknetwerkdomeinen tonen we zoals ze zijn."),
         bad_host="Dat lijkt niet op een domeinnaam. Probeer iets als example.com.",
         host_h1="Wie linkt naar {host}?", host_title="Wie linkt naar {host}? Verwijzende domeinen | CitedBy",
         desc_n="{n} domeinen linken naar {host} in de open webgraaf van Common Crawl ({label}). De 20 sterkste, met de methode.",
