@@ -76,10 +76,11 @@ def test_form_links_and_cta_stay_in_the_language():
         assert f'<a href="/{lg}">CitedBy</a>' in h and f'<a href="/{lg}/backlinks">Backlinks</a>' in h
         assert f'href="/{lg}?url=semrush.com&amp;utm_source=citedby_backlinks&amp;utm_medium=free_tool&amp;utm_campaign=backlinks"' in h
         for ref in re.findall(r'href="/(?:fr|de|es|nl)/backlinks/([^"]+)"', h):
-            if ref != "semrush.com":
+            if ref not in ("semrush.com", "method"):
                 assert b.lookup(ref) is not None, ref
         assert not re.search(r'href="/backlinks', re.sub(r'<p class="src langs">.*?</p>', "", h))   # no link back into English except the language switch's English entry
-        assert h.count("<tr>") == 21
+        assert h.count("<tr>") == 1 + b.SHOWN
+        assert f'<a href="/{lg}/backlinks/method">' in h and f'<link rel="canonical" href="https://citedby.eu/{lg}/backlinks/method">' in b.method_page(lg)
 
 
 def test_language_switch_links_the_same_page_in_each_language():
@@ -156,7 +157,8 @@ def test_no_ai_engine_wording_and_register():
 
 def test_sitemap_lists_every_locale():
     s = b.sitemap()
-    assert s.count("<url>") == 5 * 5012
+    assert s.count("<url>") == 5 * (2 + len(b.hosts()) - len(b.thin_hosts()))
+    assert all(f"<loc>https://citedby.eu{'' if lg == 'en' else '/' + lg}/backlinks/method</loc>" in s for lg in ALL)
     for lg in LOCALES:
         assert f"<loc>https://citedby.eu/{lg}/backlinks</loc>" in s and f"<loc>https://citedby.eu/{lg}/backlinks/semrush.com</loc>" in s
     assert "<loc>https://citedby.eu/backlinks/semrush.com</loc>" in s

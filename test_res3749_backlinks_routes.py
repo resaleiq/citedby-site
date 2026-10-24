@@ -62,7 +62,7 @@ def test_bad_input_is_a_page_in_the_language_with_a_way_forward():
 
 def test_sitemap_has_every_language_and_unsupported_prefixes_are_not_routes():
     st, hd, body = get("/sitemap-backlinks.xml")
-    assert st == 200 and "xml" in hd["content-type"] and body.count("<url>") == 5 * 5012
+    assert st == 200 and "xml" in hd["content-type"] and body.count("<url>") == 5 * (2 + len(server.backlinks.hosts()) - len(server.backlinks.thin_hosts()))
     assert "https://citedby.eu/nl/backlinks/semrush.com" in body
     for p in ("/it/backlinks", "/xx/backlinks/semrush.com", "/frbacklinks", "/fr/backlinksx"):
         assert get(p)[0] == 404, p
