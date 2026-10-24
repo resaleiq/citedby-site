@@ -769,7 +769,6 @@ The robots.txt lines
 To allow it:
 
 User-agent: Amazonbot
-
 Allow: /
 
 User-agent: Amzn-SearchBot
@@ -1806,7 +1805,6 @@ The robots.txt lines
 To allow it:
 
 User-agent: meta-webindexer
-
 Allow: /
 
 User-agent: meta-externalagent
@@ -1909,7 +1907,6 @@ The robots.txt lines
 To allow it:
 
 User-agent: MistralAI-User
-
 Allow: /
 
 To block it:
@@ -2291,7 +2288,6 @@ The lines to use
 To allow:
 
 # Nothing to add: Shopify's default robots.txt allows crawlers that are not named.
-
 # To name one explicitly, add under the default Liquid block:
 User-agent: OAI-SearchBot
 Allow: /
@@ -2390,7 +2386,6 @@ The lines to use
 To allow:
 
 # Squarespace sites are open to these crawlers while the box is unticked.
-
 # You cannot add lines yourself, so there is nothing to paste.
 
 To block:
@@ -2747,9 +2742,9 @@ Guides / Crawlability
 
 How to fail a deploy when AI crawlers can't read your site
 
-By the CitedBy editorial team · Reviewed on 2026-10-24 · 3 sources · method
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
 
-Short answer Run the free citedby-check command or GitHub Action after each deploy. It loads your live site from outside, without JavaScript. It exits with 1 when robots.txt blocks one of five crawlers, the home page has very little text, or structured data is missing. It checks the home page and at most one product page.
+Short answer Run the free citedby-check command or GitHub Action after each deploy. It loads your live site from outside, without JavaScript. It exits with 1 when robots.txt blocks one of five crawler names, the home page has very little text, or structured data is missing. It checks the home page and at most one product page.
 
 On this page What can shut AI crawlers out after a deploy?
 What does the check look at?
@@ -2779,11 +2774,13 @@ citedby.eu loads robots.txt , your home page and llms.txt with a plain HTTP requ
 
 The check runs from outside your pipeline. Source: README and code of citedby-check 0.1.0.
 Check What it looks at Result
-Crawlers in robots.txt Whether OAI-SearchBot, GPTBot, PerplexityBot, Google-Extended or Bingbot is shut out of the home page OK or Fix
+Crawlers in robots.txt Whether OAI-SearchBot, GPTBot, PerplexityBot, Google-Extended or Bingbot is shut out of the home page. A server error (5xx) on robots.txt counts as shut out, as RFC 9309 says OK, Fix or Not checked
 Text in the HTML Words a crawler reads without running JavaScript: 200 or more is OK, 50 to 199 is Check, 1 to 49 is Fix. No readable text at all is Not checked OK, Check, Fix or Not checked
 Business data Organization, LocalBusiness or a similar business type as JSON-LD on the home page OK, Fix or Not checked
 Product data Product JSON-LD with price, availability and barcode on one product page, when the check finds one OK, Check, Fix or Not checked
 llms.txt Whether the site serves a real text file at /llms.txt: more than 50 characters, not an HTML page OK or Optional
+
+Google-Extended is a robots.txt switch only: no crawler fetches pages under that name, so the check reads whether robots.txt allows it.
 
 A missing llms.txt is reported as Optional and never fails a build. We do not expect the file to change what assistants answer ( Does llms.txt work? ).
 
@@ -2806,7 +2803,6 @@ No robots.txt found, so nothing is blocked.
 FIX Text in the page HTML
 Only 27 words are readable without JavaScript. Fix: render the
 homepage text on the server, so a crawler that does not run
-
 JavaScript still reads it.
 FIX Organization data (JSON-LD)
 No Organization or LocalBusiness data. Fix: add it as JSON-LD on
@@ -2821,12 +2817,18 @@ No llms.txt. Optional hygiene: it is cheap to add, but we do not
 expect it to change what AI assistants answer.
 
 1 of 3 checks passed. 2 to fix.
+This is a technical check. It does not tell you whether an AI assistant will
+name your site.
+
+The full audit crawls your site up to your plan's page limit and gives the exact
+fix for each problem:
+https://citedby.eu/?url=example.com
 $ echo $?
 1
 
 A line that starts with FIX fails the build: the exit code is 1.
 NOT CHECKED is never counted as a pass. No product page was found here, so nothing was scored.
-With no robots.txt file nothing is blocked, so the crawler check is OK.
+With no robots.txt file (HTTP 404) nothing is blocked, so the crawler check is OK. A robots.txt that answers a server error counts as blocked for all five names, as RFC 9309 says, and a robots.txt that cannot be loaded is NOT CHECKED.
 
 The exit codes are:
 
@@ -3627,7 +3629,6 @@ Replace the example text with your own. Keep the shape.
 
 ## Products
 - [Leather bags](https://example.com/bags): all models with prices and sizes
-
 - [Care guide](https://example.com/care): how to clean and store a bag
 
 ## Policies
