@@ -1,9 +1,9 @@
 """RES-1071: cookieless PostHog (EU). The public/riq-a.js client sets no cookies and uses no storage; the project key is public by design.
 POSTHOG_KEY="" switches the tag off (rollback without a redeploy of code)."""
-import os, threading, urllib.request
+import json, os, re, threading, urllib.request
 
 KEY = os.environ.get("POSTHOG_KEY", "phc_r2uexPGqx2dCYjsFKnevTB8rf8Ez9B6twoMXcfFceHzD")
-TAG = ('<script src="/riq-a.js?v=6" data-key="%s" data-site="citedby" data-endpoint="/riq-e" defer></script>' % KEY).encode()  # v changes with the script: it is served with max-age=604800
+TAG = ('<script src="/riq-a.js?v=7" data-key="%s" data-site="citedby" data-endpoint="/riq-e" defer></script>' % KEY).encode()  # v changes with the script: it is served with max-age=604800
 
 
 def inject(body):
@@ -19,10 +19,26 @@ def inject(body):
 
 
 UPSTREAM = "https://eu.i.posthog.com/i/v0/e/"
+TOKEN_PATH = re.compile(r"^((?:/(?:fr|de|es|nl))?/(?:login|reset|start|recount|report|t|r/os|r|trial/cancel))/[^/]+")  # RES-3940 F2: same list as riq-a.js; a copy of the script cached for a week may still send the token
+
+
+def scrub(raw):
+    """Replace a token path segment in $pathname, $current_url and $referrer; a body that is not a capture object passes through untouched."""
+    try:
+        d = json.loads(raw)
+        p = d["properties"]
+        for k in ("$pathname", "$current_url", "$referrer"):
+            if isinstance(p.get(k), str):
+                p[k] = re.sub(r"^(https?://[^/]+)(/.*)$", lambda m: m.group(1) + TOKEN_PATH.sub(r"\1/:token", m.group(2)), p[k]) if p[k].startswith("http") else TOKEN_PATH.sub(r"\1/:token", p[k])
+        return json.dumps(d).encode()
+    except (ValueError, KeyError, TypeError, AttributeError):
+        return raw
 
 
 def relay(raw, ip, ua):
     """Forward one capture body to PostHog in the background (the page never waits). The client IP goes in X-Forwarded-For for PostHog's daily cookieless hash; nothing is stored here."""
+    raw = scrub(raw)
+
     def go():
         try:
             req = urllib.request.Request(UPSTREAM, raw, {"Content-Type": "text/plain", "X-Forwarded-For": ip, "User-Agent": ua or "riq-relay"}, method="POST")
