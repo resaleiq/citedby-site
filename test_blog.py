@@ -1,5 +1,5 @@
 """Blog template (RES-1478): every article builds, has a 40-60 word answer, alt text on images, and its pages are in the sitemap."""
-import glob, os, re, subprocess, sys, unittest
+import glob, html, os, re, subprocess, sys, unittest
 HERE = os.path.dirname(os.path.abspath(__file__))
 class Blog(unittest.TestCase):
     def test_builds(self):
@@ -11,6 +11,23 @@ class Blog(unittest.TestCase):
             for tag in ("pre", "table", "ul", "ol"):
                 for m in re.finditer(r"<%s\b.*?</%s>" % (tag, tag), s, re.S):
                     self.assertNotIn("ad-slot", m.group(0), "%s: ad-slot inside <%s>" % (f, tag))
+    def test_wide_tables_stack_with_labels_on_phones(self):  # RES-4048: 3+ column tables overflowed their column at 390/360 (the last column was cut mid-word)
+        seen = 0
+        for f in glob.glob(os.path.join(HERE, "public/**/*.html"), recursive=True):
+            s = open(f, encoding="utf-8").read()
+            for m in re.finditer(r'<div class="(tw[^"]*)"><table><thead><tr>(.*?)</tr></thead><tbody>(.*?)</tbody></table></div>', s, re.S):
+                cls, head, body = m.groups()
+                if "/blog/" not in f and "/guides/" not in f: continue
+                heads = [re.sub(r"<[^>]+>", "", h) for h in re.findall(r"<th[^>]*>(.*?)</th>", head, re.S)]
+                if len(heads) < 3: self.assertNotIn("stack", cls.split(), f); continue
+                seen += 1
+                self.assertIn("stack", cls.split(), f)
+                for row in re.findall(r"<tr>(.*?)</tr>", body, re.S):
+                    labs = re.findall(r'<td data-label="([^"]*)">', row)
+                    self.assertEqual([html.unescape(l) for l in labs], heads, f)
+        self.assertGreater(seen, 15)
+        css = open(os.path.join(HERE, "public/blog.css"), encoding="utf-8").read()
+        for sel in (".art .tw.stack td::before{content:attr(data-label)", "@media(max-width:480px){.art .tw.stack table"): self.assertIn(sel, css)
     def test_slot_index_only_at_top_level(self):
         sys.path.insert(0, os.path.join(HERE, "tools")); import docshell
         lines = ["<p>a</p>", "<pre><code>x", "", "y</code></pre>", "<ul>", "<li>q</li>", "</ul>", "<p>b</p>", "<p>c</p>"]
