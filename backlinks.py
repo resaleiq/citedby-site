@@ -130,7 +130,7 @@ def _shell(lg, title, desc, canonical, body, noindex=False, ld=None, alts=""):
 <meta name="theme-color" content="#0F1B2D">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/saas.css"><link rel="stylesheet" href="/doc.css?v=bbef868a"><link rel="stylesheet" href="/data.css?v=08430f8c">
-<style>.dc .cta a.btn:not(.p){{background:#fff;color:var(--navy);border:2px solid var(--navy)}}</style>
+<style>.dc .cta a.btn:not(.p){{background:#fff;color:var(--navy);border:2px solid var(--navy)}}.bl-form{{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}}.bl-form .fld{{flex:1 1 220px;max-width:420px}}@media(max-width:480px){{.langs{{min-height:3em}}}}</style>
 {ld_tag}
 </head><body class="cb dc dp">
 {_topbar(lg)}
@@ -170,7 +170,7 @@ def _form(lg, value="", primary=False):
     """The lookup form. Its button is the filled one only on the lookup page; on a host page the free-check link below is the one primary."""
     t = T[lg]
     return (f'<form class="bl-form" action="{prefix(lg)}/backlinks" method="get" role="search"><label for="bl-host">{E(t["form_label"])}</label> '
-            f'<input id="bl-host" name="host" type="text" inputmode="url" autocomplete="off" placeholder="{E(t["form_ph"])}" value="{E(value)}" required maxlength="253"> '
+            f'<input class="fld" id="bl-host" name="host" type="text" inputmode="url" autocomplete="off" placeholder="{E(t["form_ph"])}" value="{E(value)}" required maxlength="253"> '
             f'<button class="btn{" p" if primary else ""}" type="submit">{E(t["form_btn"])}</button></form>')
 
 
