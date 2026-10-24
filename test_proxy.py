@@ -177,6 +177,26 @@ def test_free_tools_paths_are_forwarded_and_only_tool_pages_are_indexable():
     for p in ("/nl/tools/llms-txt-checker", "/es/tools/ai-crawler-check", "/nl/tools/ai-crawler-check", "/fr/sample"): assert not proxy.INDEXABLE.fullmatch(p), p  # RES-3269: noindex translations
     assert not proxy.INDEXABLE.fullmatch("/tools/ai-crawler-check/shop.eu")
 
+def test_res3836_badge_page_and_svg_are_forwarded_and_only_the_page_is_indexable():
+    """RES-3836: /badge in 5 languages and /badge/<host>.svg reach the app; the page is indexable, the image is not."""
+    for p in ("/badge", "/fr/badge", "/nl/badge", "/de/badge", "/es/badge", "/badge/shop.eu.svg", "/badge/www.shop.co.uk.svg"):
+        assert proxy.ROUTES["GET"].fullmatch(p), p
+    for p in ("/badge/", "/xx/badge", "/badge/shop.eu.png", "/badge/a/b.svg", "/badge/a_b.com.svg", "/fr/badge/shop.eu.svg", "/badge/.svg"): assert not proxy.ROUTES["GET"].fullmatch(p), p
+    for p in ("/badge", "/fr/badge", "/nl/badge", "/de/badge", "/es/badge"): assert proxy.INDEXABLE.fullmatch(p), p
+    assert not proxy.INDEXABLE.fullmatch("/badge/shop.eu.svg")
+
+
+def test_res3836_badge_is_in_the_sitemap_with_hreflang_and_in_llms_txt():
+    import os
+    sm = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "public/sitemap.xml"), encoding="utf-8").read()
+    llms = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "public/llms.txt"), encoding="utf-8").read()
+    for l in ("", "/fr", "/nl", "/de", "/es"):
+        assert sm.count(f"<loc>https://citedby.eu{l}/badge</loc>") == 1, l
+        assert f'hreflang="{(l or "/en")[1:]}" href="https://citedby.eu{l}/badge"' in sm
+    assert 'hreflang="x-default" href="https://citedby.eu/badge"' in sm
+    assert llms.count("(https://citedby.eu/badge)") == 1
+
+
 def test_res2423_wrong_mark_is_forwarded():
     import proxy
     assert proxy.ROUTES["POST"].fullmatch("/api/audit/a_k3j2h1/wrong")
