@@ -52,6 +52,7 @@ def test_page_listed_and_honest():
     t = body.decode()
     assert st == 200 and "<h1>CitedBy AI-Search Check for WordPress</h1>" in t and 'rel="canonical" href="https://citedby.eu/wordpress-plugin"' in t
     assert f"citedby-ai-search-check-{version()}.zip" in t and "playground.wordpress.net/?blueprint-url=" in t
+    assert "Only the first table describes that demo site" in t
     assert not re.search(r"AI-powered|powered by AI|\bClaude\b(?!Bot|-SearchBot)", t)
     assert "<loc>https://citedby.eu/wordpress-plugin</loc>" in open(os.path.join(HERE, "public", "sitemap.xml")).read()
     assert "https://citedby.eu/wordpress-plugin" in open(os.path.join(HERE, "public", "llms.txt")).read()
