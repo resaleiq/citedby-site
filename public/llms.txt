@@ -10,6 +10,7 @@
 - [AI crawler settings by platform](https://citedby.eu/platforms): Shopify, Squarespace, Wix, Webflow, WordPress.com and Cloudflare, each from the platform's own help page
 - [AI-crawler access checker](https://citedby.eu/tools/ai-crawler-check): free, no account: robots.txt rules and a live request for GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot, with the exact fix
 - [llms.txt checker](https://citedby.eu/tools/llms-txt-checker): free, no account: is /llms.txt present, valid, working and consistent with robots.txt and the sitemap
+- [llms.txt generator](https://citedby.eu/tools/llms-txt-generator): free, no account: a draft llms.txt for your domain, built from your home page, sitemap and each page's own title and description, to review and publish; also in French, German, Spanish and Dutch
 - [Findable check](https://citedby.eu/tools/findable-check): free, no account: can Google, Bing and the AI assistants' crawlers reach your site, is your sitemap declared, and the next step per engine
 - [AI-crawler check badge](https://citedby.eu/badge): free with attribution: after the AI-crawler check, a small SVG badge for your own site that states how many of the 8 crawlers were allowed and the check date, with the one-line HTML snippet
 - [Guides and articles](https://citedby.eu/blog): how AI assistants find and read websites

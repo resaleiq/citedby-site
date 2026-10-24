@@ -7,7 +7,7 @@ SAME_AS = ["https://citedby.eu/about", "https://citedby.eu/methodology", "https:
 MARK = b"data-trust"
 LOCALES = ("en", "fr", "nl", "de", "es")
 _PATH = re.compile(r"^/(?:(fr|nl|de|es)/)?(data|tools|bots|platforms)(?:/([a-z0-9-]+))?/?$")
-TOOLS = ("ai-crawler-check", "llms-txt-checker", "findable-check")
+TOOLS = ("ai-crawler-check", "llms-txt-checker", "llms-txt-generator", "findable-check")
 RFC9309 = ("https://www.rfc-editor.org/rfc/rfc9309", "RFC 9309 (robots.txt)")
 SOURCES = {  # slug -> [(url, label)] outside pages that are the authority for what the page counts
     "launch-crawl-2026-10": [RFC9309],
@@ -17,6 +17,7 @@ SOURCES = {  # slug -> [(url, label)] outside pages that are the authority for w
     "study-buyer-questions-claude": [("https://support.claude.com/en/articles/10684626-enabling-and-using-web-search", "Claude web search help page")],
     "ai-crawler-check": [RFC9309],
     "llms-txt-checker": [("https://llmstxt.org/", "llmstxt.org proposal"), ("https://www.sitemaps.org/protocol.html", "sitemaps.org protocol")],
+    "llms-txt-generator": [("https://llmstxt.org/", "llmstxt.org proposal"), ("https://www.sitemaps.org/protocol.html", "sitemaps.org protocol")],
     "findable-check": [RFC9309, ("https://www.sitemaps.org/protocol.html", "sitemaps.org protocol")],
     "tools": [RFC9309, ("https://llmstxt.org/", "llmstxt.org proposal")],
 }

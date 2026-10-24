@@ -12,7 +12,7 @@ hero_sub: A # title, a > summary, ## link lists, then a free check
 hero_boxes: # Title|the only required line;> Summary|what the site is;## Sections|lists of links;## Optional|links to skip
 widget: off
 howto: on
-related: /tools/llms-txt-checker|llms.txt checker (free); /blog/does-llms-txt-work|Does llms.txt work?; /tools/ai-crawler-check|AI-crawler access checker (free); /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /tools/findable-check|Findable check: can search engines find your pages? (free)
+related: /tools/llms-txt-generator|llms.txt generator (free); /tools/llms-txt-checker|llms.txt checker (free); /blog/does-llms-txt-work|Does llms.txt work?; /tools/ai-crawler-check|AI-crawler access checker (free); /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?; /tools/findable-check|Findable check: can search engines find your pages? (free)
 answer: To create an llms.txt file, write a plain-text Markdown file with a # title, a short > summary and ## sections that list your key pages as [name](url): note links, save it as llms.txt and upload it to your site root so it loads at yourshop.com/llms.txt. Then run the free checker to confirm it loads and its links work.
 
 ## What llms.txt is
@@ -54,7 +54,7 @@ Replace the example text with your own. Keep the shape.
 
 1. Open a plain-text editor and type the title line: `# Your shop name`. Keep it to the name buyers know you by.
 2. Add one `>` line under it that says what you sell and where, in one sentence. Use facts a page of yours also states.
-3. List your most useful pages under `##` headings such as Products, Help or Policies. Use full URLs, one link per line, and add a short note after a colon saying what the page answers.
+3. List your most useful pages under `##` headings such as Products, Help or Policies. Use full URLs, one link per line, and add a short note after a colon saying what the page answers. Short on time? The [free llms.txt generator](/tools/llms-txt-generator) writes a first draft from your own pages' titles and descriptions for you to edit.
 4. Put pages that are nice to have, such as About or press, under a section named `Optional`.
 5. Save the file as `llms.txt` (plain text, UTF-8) and upload it to the root of your site so that `https://yourshop.com/llms.txt` loads. A file in a subfolder does not count, and the address must answer with text, not a login or an HTML error page.
 6. Run the [free llms.txt checker](/tools/llms-txt-checker) on your domain. It reports whether the file loads, follows the format, links to pages that load, and agrees with your robots.txt and sitemap.
