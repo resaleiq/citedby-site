@@ -169,7 +169,7 @@ def _badge_row(lang):
 
 _BADGE = {  # RES-3959 (RES-3911 L1, L2, N1): the day the 90 days start, the second legal basis, the clearer wording
     "": ("the last day the check or its badge image was requested", "Until 90 days after that day, then deleted.", "Art. 6(1)(f)"),
-    "fr": ("le dernier jour où ce contrôle ou l'image du badge a fait l'objet d'une demande", "Jusqu'à 90 jours après ce jour, puis suppression.", "point f))"),
+    "fr": ("le dernier jour où ce contrôle ou l'image du badge a fait l'objet d'une demande", "Jusqu'à 90 jours après ce jour-là, puis suppression.", "point f))"),
     "de": ("der letzte Tag, an dem die Prüfung oder ihr Badge-Bild abgerufen wurde", "Bis 90 Tage nach diesem Tag, danach gelöscht.", "Buchst. f)"),
     "es": ("el último día en que se solicitó la comprobación o la imagen de la insignia", "Hasta 90 días después de ese día; después se suprime.", "letra f)"),
     "nl": ("de laatste dag waarop de check of de badge-afbeelding is opgevraagd", "Tot 90 dagen na die dag, daarna gewist.", "onder f)"),
@@ -185,8 +185,17 @@ def test_privacy_badge_row_res3959_every_locale():
     assert "waarom u hebt gevraagd" in _badge_row("nl")
 
 
-def test_legal_tables_let_a_long_word_wrap_res3959_l3():
-    """The de table was 688 px in a 680 px wrapper (the last 8 px cut off): a cell may break inside a word instead of widening the table."""
-    for f in pathlib.Path("public").glob("**/privacy.html"):
-        assert ".lt td{overflow-wrap:anywhere}" in f.read_text(encoding="utf-8"), f
-    assert "overflow-wrap:anywhere" in open("tools/build_legal.py", encoding="utf-8").read()
+def test_legal_tables_never_split_a_word_res4093():
+    """RES-3911 r2 R1: `.lt td{overflow-wrap:anywhere}` (RES-3959 L3) cut words mid-word without a hyphen at every desktop width. The de column that
+    was 688 px in 680 now breaks at a soft hyphen in "Buchhaltungs-unterlagen"; no legal page may carry the rule again."""
+    for f in pathlib.Path("public").glob("**/*.html"):
+        if f.name in ("privacy.html", "terms.html", "refund.html") and f.parts[1] not in ("blog", "data", "backlinks"):
+            assert "overflow-wrap:anywhere" not in f.read_text(encoding="utf-8"), f
+    assert "overflow-wrap:anywhere" not in open("tools/build_legal.py", encoding="utf-8").read()
+    de = pathlib.Path("public/de/privacy.html").read_text(encoding="utf-8")
+    assert "Buchhaltungs\u00adunterlagen" in de and "Buchhaltungsunterlagen" not in de and "&shy;" not in de
+
+
+def test_privacy_fr_badge_retention_says_ce_jour_la_res4093_l1():
+    row = _badge_row("fr")
+    assert "Jusqu'à 90 jours après ce jour-là, puis suppression." in row and "après ce jour," not in row
