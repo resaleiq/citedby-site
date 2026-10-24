@@ -25,6 +25,9 @@ class CitedBy_ASC_Local {
 		'Bingbot'          => 'Bing and Copilot',
 	);
 
+	/** Crawlers that feed model training only: blocking them is a normal choice and does not keep a site out of AI answers. */
+	const TRAINING = array( 'GPTBot', 'Google-Extended', 'Applebot-Extended', 'CCBot' );
+
 	/**
 	 * Fetch one URL of this site and return status and body (max 200 KB).
 	 *
@@ -32,15 +35,17 @@ class CitedBy_ASC_Local {
 	 * @return array{status:int,body:string}
 	 */
 	public static function fetch( $url ) {
-		$res = wp_remote_get(
-			$url,
-			array(
-				'timeout'     => 10,
-				'redirection' => 3,
-				'limit_response_size' => 204800,
-				'sslverify'   => apply_filters( 'https_local_ssl_verify', false ),
-			)
+		$args = array(
+			'timeout'             => 10,
+			'redirection'         => 3,
+			'limit_response_size' => 204800,
 		);
+		$res = wp_remote_get( $url, $args );
+		// A host whose own certificate does not verify from itself (common on shared hosting): read the same public file once without verification. Nothing is sent.
+		if ( is_wp_error( $res ) && false !== stripos( $res->get_error_message(), 'ssl' ) ) {
+			$args['sslverify'] = false;
+			$res               = wp_remote_get( $url, $args );
+		}
 		if ( is_wp_error( $res ) ) {
 			return array( 'status' => 0, 'body' => '' );
 		}

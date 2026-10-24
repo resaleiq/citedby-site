@@ -69,9 +69,25 @@ class CitedBy_ASC_Admin {
 		$code = (int) wp_remote_retrieve_response_code( $res );
 		$data = json_decode( wp_remote_retrieve_body( $res ), true );
 		if ( 200 !== $code || ! is_array( $data ) || empty( $data['ok'] ) ) {
-			return new WP_Error( 'citedby_asc_api', 429 === $code ? 'rate_limited' : 'unavailable' );
+			$reason = 'unavailable';
+			if ( 429 === $code ) {
+				$reason = 'rate_limited';
+			} elseif ( is_array( $data ) && isset( $data['error'] ) && 'bad_url' === $data['error'] ) {
+				$reason = 'bad_url';
+			}
+			return new WP_Error( 'citedby_asc_api', $reason );
 		}
 		return $data;
+	}
+
+	private static function remote_error_text( $reason ) {
+		if ( 'rate_limited' === $reason ) {
+			return __( 'citedby.eu allows a few checks an hour per site. Try again later.', 'citedby-ai-search-check' );
+		}
+		if ( 'bad_url' === $reason ) {
+			return __( 'citedby.eu can only check a public address. This site is on a local or private address (localhost, a staging network or an IP), so the page check was skipped. The checks above still stand.', 'citedby-ai-search-check' );
+		}
+		return __( 'citedby.eu did not answer. The checks above still stand. Try again later.', 'citedby-ai-search-check' );
 	}
 
 	private static function status_label( $status ) {
@@ -100,6 +116,11 @@ class CitedBy_ASC_Admin {
 		foreach ( $l['bots'] as $token => $b ) {
 			/* translators: 1: crawler name, 2: what it feeds, e.g. "GPTBot (OpenAI training)" */
 			$name = sprintf( __( '%1$s (%2$s)', 'citedby-ai-search-check' ), $token, $b['label'] );
+			if ( $b['blocked'] && in_array( $token, CitedBy_ASC_Local::TRAINING, true ) ) {
+				/* translators: %s: crawler */
+				self::row( 'info', sprintf( __( '%s is blocked by robots.txt. That is a normal choice: it keeps your pages out of model training and does not remove you from AI search answers.', 'citedby-ai-search-check' ), $name ) );
+				continue;
+			}
 			self::row( $b['blocked'] ? 'fail' : 'pass', $b['blocked'] ? sprintf( /* translators: %s: crawler */ __( '%s is blocked by robots.txt.', 'citedby-ai-search-check' ), $name ) : sprintf( /* translators: %s: crawler */ __( '%s is not blocked.', 'citedby-ai-search-check' ), $name ) );
 		}
 		self::row( $l['llms'] ? 'pass' : 'info', $l['llms'] ? __( 'llms.txt found.', 'citedby-ai-search-check' ) : __( 'No llms.txt. It is optional and no assistant has promised to read it.', 'citedby-ai-search-check' ) );
@@ -142,7 +163,7 @@ class CitedBy_ASC_Admin {
 			self::render_local( CitedBy_ASC_Local::run() );
 			$remote = self::remote_check();
 			if ( is_wp_error( $remote ) ) {
-				echo '<h2>' . esc_html__( 'Checked from outside (citedby.eu)', 'citedby-ai-search-check' ) . '</h2><p>' . esc_html( 'rate_limited' === $remote->get_error_message() ? __( 'citedby.eu allows a few checks an hour per site. Try again later.', 'citedby-ai-search-check' ) : __( 'citedby.eu did not answer. The checks above still stand. Try again later.', 'citedby-ai-search-check' ) ) . '</p>';
+				echo '<h2>' . esc_html__( 'Checked from outside (citedby.eu)', 'citedby-ai-search-check' ) . '</h2><p>' . esc_html( self::remote_error_text( $remote->get_error_message() ) ) . '</p>';
 			} else {
 				self::render_remote( $remote );
 			}

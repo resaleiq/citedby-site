@@ -277,7 +277,8 @@ class H(BaseHTTPRequestHandler):
         if ctype.startswith("text/") or ctype in ("application/xml", "application/javascript"):
             ctype += "; charset=utf-8"
         with open(full, "rb") as f:
-            self.out(200, f.read(), ctype)
+            # RES-3708: the plugin zip and its Playground blueprint are fetched by playground.wordpress.net from the browser, so they carry CORS
+            self.out(200, f.read(), ctype, extra={"Access-Control-Allow-Origin": "*"} if path.startswith("/downloads/") else None)
 
     def backlinks(self, u):
         if u.path == "/sitemap-backlinks.xml":

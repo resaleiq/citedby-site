@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CitedBy AI-Search Check: free WordPress plugin</title><meta name="description" content="A free WordPress plugin: one button in wp-admin shows whether AI-search crawlers can read your site. Download the zip or try it in your browser."><link rel="canonical" href="https://citedby.eu/wordpress-plugin"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="stylesheet" href="/saas.css"><link rel="stylesheet" href="/doc.css?v=bbef868a"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "CitedBy AI-Search Check: free WordPress plugin", "url": "https://citedby.eu/wordpress-plugin", "inLanguage": "en", "description": "A free WordPress plugin: one button in wp-admin shows whether AI-search crawlers can read your site. Download the zip or try it in your browser.", "isPartOf": {"@type": "WebSite", "name": "CitedBy", "url": "https://citedby.eu"}, "publisher": {"@type": "Organization", "name": "CitedBy", "url": "https://citedby.eu"}}</script></head><body class="cb dc"><a class="sr" href="#main">Skip to content</a>
+<header class="topbar"><div class="in"><a class="mark" href="/"><i></i>CitedBy</a><nav aria-label="Main"><a class="opt" href="/#checks">What we check</a><a href="/plans">Pricing</a><a href="/blog">Guides</a><a class="opt" href="/data">Data</a></nav><a class="signin" href="/signin?next=%2Fapp.html">Sign in</a><a class="btn sm go" href="/app.html#/new">Audit a site</a></div></header><main id="main">
+<h1>CitedBy AI-Search Check for WordPress</h1>
+<p class="ans">A free WordPress plugin. Open Tools, AI-Search Check, press one button, and see whether AI-search crawlers can read your site: your robots.txt for ten named crawlers, your llms.txt, your sitemap, and a page check of your home page run from citedby.eu. It reports; it changes nothing on your site.</p>
+<p><a class="btn" href="/downloads/citedby-ai-search-check-0.1.1.zip" download>Download the plugin (zip, version 0.1.1)</a> <a href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fcitedby.eu%2Fdownloads%2Fcitedby-ai-search-check.blueprint.json" rel="noopener">Try it in your browser</a></p>
+<h2>Install</h2>
+<ol>
+<li>In wp-admin open Plugins, Add New Plugin, Upload Plugin, and choose the zip.</li>
+<li>Activate it.</li>
+<li>Open Tools, AI-Search Check, and press "Run the check".</li>
+</ol>
+<p>It needs WordPress 5.8 or newer and PHP 7.4 or newer. It is licensed GPL v2 or later. Until it is in the WordPress plugin directory, install it from the zip.</p>
+<h2>What it checks</h2>
+<ul>
+<li>Whether Settings, Reading has "Discourage search engines" ticked.</li>
+<li>Whether robots.txt closes the whole site to OAI-SearchBot, GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, Claude-SearchBot, Google-Extended, Applebot-Extended, CCBot or Bingbot. Blocking a training-only crawler is shown as a normal choice, not as a fix.</li>
+<li>Whether you have a sitemap and an llms.txt.</li>
+<li>From outside, by CitedBy: whether your home page text is in the HTML a crawler receives, and whether it carries Organization structured data.</li>
+</ul>
+<p>It cannot see a firewall or CDN rule that turns a crawler away. The page check from citedby.eu shows what an outside visitor receives.</p>
+<h2>What it sends</h2>
+<ul>
+<li>Nothing until an administrator presses the button. No front-end code, no cookies, nothing stored in your database.</li>
+<li>On each press: your home page address and your admin language go to citedby.eu, which loads the page and sends the result back. Your server's address is seen by any web service; it is used to rate-limit and is not stored with your site address.</li>
+<li>The "full audit" button is a normal link to <a href="/ai-visibility-audit">our audit</a>. Nothing is sent unless you click it.</li>
+</ul>
+<p>More in <a href="/privacy">Privacy</a> and <a href="/terms">Terms</a>.</p>
+<h2>Try it in your browser</h2>
+<p>The link above opens a throwaway WordPress site in your browser (WordPress Playground) with the plugin installed. Only the first table describes that demo site. The page check in the second table loads the Playground address from outside, not the demo, so ignore its results there. On your own public site both tables describe your site.</p>
+<h2>Checked</h2>
+<p>Run on WordPress 7.1 with the official Plugin Check plugin on 24 October 2026: no errors. The check from the wp-admin page was run once on a public sample site and returned the four page results.</p>
+<p>The same checks are free without WordPress at <a href="/free-ai-visibility-check">the free check</a>. For every page of your site, up to your plan's page limit, with the exact fix per page, see <a href="/plans">the plans page</a>. Questions or something that does not work: hello@citedby.eu.</p></main><footer><div class="w"><span>© 2026 CitedBy · <a href="mailto:hello@citedby.eu">hello@citedby.eu</a></span><a href="/plans">Pricing</a><a href="/blog">Guides</a><a href="/data">Data</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/refund">Refunds</a><a href="/contact">Contact</a><a href="/legal">Legal notice</a></div></footer></body></html>

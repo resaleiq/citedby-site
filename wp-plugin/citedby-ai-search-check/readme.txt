@@ -2,9 +2,9 @@
 Contributors: citedby
 Tags: seo, robots-txt, sitemap, llms-txt, crawlers
 Requires at least: 5.8
-Tested up to: 6.8
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,3 +64,8 @@ No. The check is free and anonymous.
 
 = 0.1.0 =
 * First release.
+
+= 0.1.1 =
+* Tested up to WordPress 7.1 (run in WordPress Playground with the Plugin Check plugin: no errors).
+* A site on a local or private address now gets a clear message instead of "citedby.eu did not answer".
+* A crawler that only feeds model training (GPTBot, Google-Extended, Applebot-Extended, CCBot) shown as blocked is now reported as a normal choice, not as a fix.

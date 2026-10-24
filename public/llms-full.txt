@@ -751,7 +751,7 @@ Operator Amazon
 Job Product improvement, may train Amazon AI models
 robots.txt token Amazonbot
 Follows robots.txt Yes, changes take about 24 hours
-Published address list Published on Amazon's page (developer.amazon.com/amazonbot/ip-addresses)
+Published address list Published on Amazon's page ( developer.amazon.com/amazonbot/ip-addresses )
 Vendor page read 21 October 2026
 
 What the vendor says
@@ -1039,7 +1039,7 @@ Operator OpenAI
 Job User-triggered fetch
 robots.txt token ChatGPT-User
 Follows robots.txt Robots.txt rules may not apply
-Published address list 234 ranges (openai.com/chatgpt-user.json, file dated 2026-10-20)
+Published address list 234 ranges ( openai.com/chatgpt-user.json , file dated 2026-10-20)
 Vendor page read 21 October 2026
 
 What the vendor says
@@ -1408,7 +1408,7 @@ Operator DuckDuckGo
 Job Real-time fetch for AI-assisted answers
 robots.txt token DuckAssistBot
 Follows robots.txt Yes, a change takes effect after 72 hours
-Published address list 486 addresses (duckduckgo.com/duckassistbot.json, file dated 2026-09-01)
+Published address list 486 addresses ( duckduckgo.com/duckassistbot.json , file dated 2026-09-01)
 Vendor page read 21 October 2026
 
 What the vendor says
@@ -1595,7 +1595,7 @@ Operator Google
 Job Search (also Images, Video, News, Discover)
 robots.txt token Googlebot
 Follows robots.txt Yes, always when crawling automatically
-Published address list 317 ranges (developers.google.com/static/search/apis/ipranges/googlebot.json, file dated 2026-10-20)
+Published address list 317 ranges ( developers.google.com/static/search/apis/ipranges/googlebot.json , file dated 2026-10-20)
 Vendor page read 21 October 2026
 
 What the vendor says
@@ -1691,7 +1691,7 @@ Operator OpenAI
 Job Training
 robots.txt token GPTBot
 Follows robots.txt Yes, it follows robots.txt
-Published address list 18 ranges (openai.com/gptbot.json, file dated 2026-09-22)
+Published address list 18 ranges ( openai.com/gptbot.json , file dated 2026-09-22)
 Vendor page read 21 October 2026
 
 What the vendor says
@@ -1889,7 +1889,7 @@ Operator Mistral
 Job User-triggered fetch
 robots.txt token MistralAI-User
 Follows robots.txt Opt-out through robots.txt
-Published address list 4 ranges (mistral.ai/mistralai-user-ips.json, file dated 2025-02-19)
+Published address list 4 ranges ( mistral.ai/mistralai-user-ips.json , file dated 2025-02-19)
 Vendor page read 21 October 2026
 
 What the vendor says
@@ -1988,7 +1988,7 @@ Operator OpenAI
 Job Search
 robots.txt token OAI-SearchBot
 Follows robots.txt Yes, it follows robots.txt
-Published address list 39 ranges (openai.com/searchbot.json, file dated 2026-01-02)
+Published address list 39 ranges ( openai.com/searchbot.json , file dated 2026-01-02)
 Vendor page read 21 October 2026
 
 What the vendor says
@@ -2084,7 +2084,7 @@ Operator Perplexity
 Job Search
 robots.txt token PerplexityBot
 Follows robots.txt Yes, it follows robots.txt
-Published address list 8 ranges (perplexity.com/perplexitybot.json, file dated 2025-02-07)
+Published address list 8 ranges ( perplexity.com/perplexitybot.json , file dated 2025-02-07)
 Vendor page read 21 October 2026
 
 What the vendor says
@@ -3660,7 +3660,7 @@ How to create the file
 
 Open a plain-text editor and type the title line: # Your shop name . Keep it to the name buyers know you by.
 Add one > line under it that says what you sell and where, in one sentence. Use facts a page of yours also states.
-List your most useful pages under ## headings such as Products, Help or Policies. Use full URLs, one link per line, and add a short note after a colon saying what the page answers.
+List your most useful pages under ## headings such as Products, Help or Policies. Use full URLs, one link per line, and add a short note after a colon saying what the page answers. Short on time? The free llms.txt generator writes a first draft from your own pages' titles and descriptions for you to edit.
 Put pages that are nice to have, such as About or press, under a section named Optional .
 Save the file as llms.txt (plain text, UTF-8) and upload it to the root of your site so that https://yourshop.com/llms.txt loads. A file in a subfolder does not count, and the address must answer with text, not a login or an HTML error page.
 Run the free llms.txt checker on your domain. It reports whether the file loads, follows the format, links to pages that load, and agrees with your robots.txt and sitemap.
@@ -3708,6 +3708,7 @@ The audit crawls your site up to your plan's page limit, shows which AI crawlers
 Audit my site Audit from €9, paid once. 14-day money-back guarantee.
 
 Keep reading
+llms.txt generator (free)
 llms.txt checker (free)
 Does llms.txt work?
 AI-crawler access checker (free)
