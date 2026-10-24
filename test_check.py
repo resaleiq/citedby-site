@@ -363,5 +363,53 @@ class Parsing(unittest.TestCase):
         self.assertNotIn("application/json", src)
 
 
+class RobotsStatus(unittest.TestCase):  # RES-3935 F1: RFC 9309 2.3.1.4, a 5xx robots.txt is a complete disallow; no answer is not a pass
+    HOME = "<html><body>" + "word " * 250 + "</body></html>"
+    def crawlers(self, rstatus, rbody="", err=""):
+        def fake(url, **kw):
+            if url.endswith("/robots.txt"):
+                return {"status": rstatus, "url": url, "body": rbody, "error": err}
+            if url.endswith("/llms.txt"):
+                return {"status": 404, "url": url, "body": "", "error": ""}
+            if url.endswith("/products.json?limit=1"):
+                return {"status": 404, "url": url, "body": "", "error": ""}
+            return {"status": 200, "url": url, "body": self.HOME, "error": ""}
+        orig = safefetch.fetch; safefetch.fetch = fake
+        try: out = doorcheck.run("https://shop.example.com")
+        finally: safefetch.fetch = orig
+        return next(c for c in out["checks"] if c["id"] == "crawlers")
+    def test_404_passes(self):
+        c = self.crawlers(404)
+        self.assertEqual((c["status"], c["robots_found"], c["robots_status"]), ("pass", False, 404))
+    def test_500_fails_all_five(self):
+        c = self.crawlers(500)
+        self.assertEqual((c["status"], c["blocked"], c["robots_found"], c["robots_status"]), ("fail", doorcheck.BOTS, False, 500))
+    def test_503_fails(self):
+        self.assertEqual(self.crawlers(503)["status"], "fail")
+    def test_599_fails_600_does_not(self):
+        self.assertEqual(self.crawlers(599)["status"], "fail")
+        self.assertEqual(self.crawlers(403)["status"], "pass")
+    def test_timeout_is_unknown(self):
+        c = self.crawlers(0, err="timeout")
+        self.assertEqual((c["status"], c["blocked"], c["robots_status"]), ("unknown", [], 0))
+    def test_network_error_is_unknown(self):
+        self.assertEqual(self.crawlers(0, err="ConnectionResetError")["status"], "unknown")
+    def test_200_rules_still_read(self):
+        c = self.crawlers(200, "User-agent: GPTBot\nDisallow: /\n")
+        self.assertEqual((c["status"], c["blocked"]), ("fail", ["GPTBot"]))
+        self.assertEqual(self.crawlers(200, "User-agent: *\nDisallow: /private\n")["status"], "pass")
+    def test_web_text_in_en_fr_nl(self):
+        import sys; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "tools"))
+        from i18n import S
+        for lg in ("en", "fr", "nl"):
+            js = S[lg]["js"]
+            self.assertIn("{status}", js["crawlers_fail_5xx"]); self.assertIn("RFC 9309", js["crawlers_fail_5xx"])
+            self.assertTrue(js["crawlers_unknown"])
+        self.assertIn("Disallow: / for the whole site", S["en"]["js"]["crawlers_fail_5xx"])
+    def test_events_counted_for_de_es(self):
+        self.assertTrue({"en", "fr", "nl", "de", "es"} <= set(server.CHECK_LANGS))
+        self.assertEqual(server.LANGS, ("en", "fr", "nl"))  # mail text exists only for these
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

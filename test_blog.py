@@ -5,6 +5,25 @@ class Blog(unittest.TestCase):
     def test_builds(self):
         r = subprocess.run([sys.executable, "tools/build_blog.py", "--check"], cwd=HERE, capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stderr + r.stdout)
+    def test_ad_slot_never_inside_code_table_or_list(self):  # RES-3935 F2: the marker (or the ad) was cut into two <pre> examples
+        for f in glob.glob(os.path.join(HERE, "public/**/*.html"), recursive=True):
+            s = open(f, encoding="utf-8").read()
+            for tag in ("pre", "table", "ul", "ol"):
+                for m in re.finditer(r"<%s\b.*?</%s>" % (tag, tag), s, re.S):
+                    self.assertNotIn("ad-slot", m.group(0), "%s: ad-slot inside <%s>" % (f, tag))
+    def test_slot_index_only_at_top_level(self):
+        sys.path.insert(0, os.path.join(HERE, "tools")); import docshell
+        lines = ["<p>a</p>", "<pre><code>x", "", "y</code></pre>", "<ul>", "<li>q</li>", "</ul>", "<p>b</p>", "<p>c</p>"]
+        for cut in range(1, len(lines)):
+            i = docshell.slot_index(lines, cut)
+            before = "\n".join(lines[:i])
+            self.assertEqual(before.count("<pre"), before.count("</pre>")); self.assertEqual(before.count("<ul"), before.count("</ul>"))
+        self.assertEqual(docshell.slot_index(lines, 2), 4)  # cut inside the code block moves to after it
+        self.assertEqual(docshell.slot_index(lines, 5), 7)  # cut inside the list moves to after it
+        self.assertIsNone(docshell.slot_index(["<ul>", "<li>x</li>", "</ul>"][:2], 1))
+    def test_own_repo_is_not_an_outside_source(self):  # RES-3935 L2: the byline counted github.com/resaleiq/citedby-check
+        art = open(os.path.join(HERE, "public/blog/ai-crawler-check-in-ci.html"), encoding="utf-8").read()
+        self.assertIn("2 sources", art); self.assertNotIn("3 sources", art)
     def test_pages_in_sitemap_and_alt(self):
         sm = open(os.path.join(HERE, "public/sitemap.xml")).read()
         for f in glob.glob(os.path.join(HERE, "public/blog/*.html")):
