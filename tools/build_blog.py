@@ -133,8 +133,11 @@ def render_body(body, fm, loc, state):
                 rows.append([c.strip() for c in lines[i].strip().strip("|").split("|")]); i += 1
             rows = [r for r in rows if not all(re.fullmatch(r":?-{2,}:?", c) for c in r)]
             th = "".join("<th scope=\"col\">%s</th>" % inline(c) for c in rows[0])
-            tb = "".join("<tr>%s</tr>" % "".join("<td>%s</td>" % inline(c) for c in r) for r in rows[1:])
-            out.append('<div class="tw"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (th, tb)); continue
+            # RES-4048: a table of 3+ columns stacks into labelled rows at <=480 px (blog.css .tw.stack); each cell carries its column header
+            stack = len(rows[0]) >= 3
+            lab = ['data-label="%s"' % E(html.unescape(plain(c)), quote=True) for c in rows[0]]
+            tb = "".join("<tr>%s</tr>" % "".join("<td%s>%s</td>" % (" " + (lab[j] if j < len(lab) else 'data-label=""') if stack else "", inline(c)) for j, c in enumerate(r)) for r in rows[1:])
+            out.append('<div class="tw%s"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (" stack" if stack else "", th, tb)); continue
         m = re.match(r'!\[([^\]]*)\]\(([^)\s]+)(?: "([^"]*)")?\)(?:\{(\d+)x(\d+)\})?$', ln.strip())
         if m:
             flush_para(buf); buf = []
@@ -197,7 +200,7 @@ def fr_typo(doc):  # RES-3165: French typography, U+202F before ? ! : ; in text 
     out = []
     for x in parts:
         if x.startswith("<"):
-            if x.startswith(("<meta", "<img")): x = re.sub(r'((?:content|alt)=")([^"]*)', lambda m: m.group(1) + fix(m.group(2)), x)
+            if x.startswith(("<meta", "<img", "<td")): x = re.sub(r'((?:content|alt|data-label)=")([^"]*)', lambda m: m.group(1) + fix(m.group(2)), x)
             out.append(x)
         else: out.append(fix(x))
     return "".join(out)
