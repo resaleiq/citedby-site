@@ -1,0 +1,42 @@
+{
+ "slug": "exauser",
+ "name": "ExaUser",
+ "operator": "Exa",
+ "job": "fetch",
+ "job_en": "User-triggered fetch",
+ "token": "ExaUser",
+ "follows": "partial",
+ "follows_en": "Partial, vendor says robots.txt rules may not apply to user-initiated fetches",
+ "ips": {
+  "kind": "verify_tool",
+  "count": null,
+  "unit": null,
+  "url": "https://crawler.exa.ai/.well-known/http-message-signatures-directory",
+  "file_date": null,
+  "note": "The vendor says every request is signed with Web Bot Auth (RFC 9421) and publishes its keys at a public directory; it does not publish an IP list."
+ },
+ "ua": "Mozilla/5.0 (compatible; ExaUser/1.0; +https://crawler.exa.ai/exauser)",
+ "vendor_quote": "Exa uses ExaUser to fetch a page live when a user, or an application built on the Exa API, asks for its current content.",
+ "vendor_quote_source": {
+  "title": "Exa: ExaUser",
+  "url": "https://crawler.exa.ai/exauser"
+ },
+ "what_en": "ExaUser is the agent Exa uses to fetch a page live when a user, or an application built on the Exa API, asks for its current content. Exa says it is not used to crawl the web automatically; that is ExaSearchBot. It does not try to bypass logins, paywalls or CAPTCHAs, and submits no forms.",
+ "block_en": "Exa says that because fetches are initiated by a user, robots.txt rules may not apply to ExaUser. It also says ExaUser is not used to decide whether content appears in Exa search, and that search opt-outs and automatic crawling are managed with the ExaSearchBot token in robots.txt.",
+ "doc_url": "https://crawler.exa.ai/exauser",
+ "compare": "exasearchbot",
+ "compare_en": "ExaSearchBot crawls automatically to build Exa's search index and follows robots.txt, while ExaUser fetches a page only when a user or application asks and the vendor says robots.txt may not apply.",
+ "sources": [
+  {
+   "title": "Exa: ExaUser",
+   "url": "https://crawler.exa.ai/exauser"
+  },
+  {
+   "title": "Exa: Exa Search Crawler",
+   "url": "https://crawler.exa.ai/"
+  }
+ ],
+ "notes": "Key directory not fetched; no IP list published. The vendor page names no robots.txt token for ExaUser beyond the name itself; token = ExaUser is the name it uses.",
+ "answer_en": "ExaUser is the agent Exa uses to fetch a page live when a user, or an application built on the Exa API, asks for its current content. Exa says robots.txt rules may not apply to such user-initiated fetches. Search opt-outs and automatic crawling are controlled with the ExaSearchBot token instead.",
+ "read": "2026-10-24"
+}

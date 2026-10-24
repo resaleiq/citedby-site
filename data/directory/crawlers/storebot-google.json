@@ -1,0 +1,46 @@
+{
+ "slug": "storebot-google",
+ "name": "Storebot-Google",
+ "operator": "Google",
+ "job": "search",
+ "job_en": "Search (Google Shopping surfaces)",
+ "token": "Storebot-Google",
+ "follows": "yes",
+ "follows_en": "Yes. Google says common crawlers always obey robots.txt rules when crawling automatically.",
+ "ips": {
+  "kind": "json_list",
+  "count": 317,
+  "unit": "ranges",
+  "url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+  "file_date": "2026-10-23",
+  "note": "Google says the common crawlers generally crawl from the ranges in common-crawlers.json, and that the reverse DNS name matches crawl-***-***-***-***.googlebot.com or geo-crawl-***-***-***-***.geo.googlebot.com."
+ },
+ "ua": "Mozilla/5.0 (X11; Linux x86_64; Storebot-Google/1.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Safari/537.36",
+ "vendor_quote": "Crawling preferences addressed to the Storebot-Google user agent affect all surfaces of Google Shopping",
+ "vendor_quote_source": {
+  "title": "Google Search Central: Google's common crawlers",
+  "url": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
+ },
+ "what_en": "Storebot-Google is the Google crawler documented as Google StoreBot among its common crawlers. Google says rules addressed to it affect all surfaces of Google Shopping. Google lists separate desktop and mobile user agent strings for it.",
+ "block_en": "Google says a Disallow addressed to the Storebot-Google token affects all surfaces of Google Shopping, such as the Shopping tab in Google Search and Google Shopping. The page lists Googlebot as a separate token with its own affected products.",
+ "doc_url": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers",
+ "compare": "googlebot",
+ "compare_en": "Googlebot's rules affect Google Search and related products, while Storebot-Google's rules affect Google Shopping surfaces.",
+ "sources": [
+  {
+   "title": "Google Search Central: Google's common crawlers",
+   "url": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
+  },
+  {
+   "title": "Google: common-crawlers.json (read 2026-10-24, creationTime 2026-10-23)",
+   "url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json"
+  },
+  {
+   "title": "Google Search Central: Overview of Google crawlers and fetchers",
+   "url": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
+  }
+ ],
+ "notes": "Not described by Google as an AI crawler; included per assignment. Quote is a sentence fragment because the page's link markup splits the end of the sentence.",
+ "answer_en": "Storebot-Google is the crawler Google documents as Google StoreBot among its common crawlers. Google says a Disallow addressed to its token affects all surfaces of Google Shopping, such as the Shopping tab in Google Search and Google Shopping. Googlebot is a separate token with its own affected products.",
+ "read": "2026-10-24"
+}

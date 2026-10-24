@@ -1,0 +1,40 @@
+{
+ "slug": "claude-user",
+ "name": "Claude-User",
+ "operator": "Anthropic",
+ "job": "fetch",
+ "job_en": "User-triggered fetch",
+ "token": "Claude-User",
+ "follows": "yes",
+ "follows_en": "Yes, Anthropic says its robots respect robots.txt",
+ "ips": {
+  "kind": "advice",
+  "count": null,
+  "unit": null,
+  "url": null,
+  "file_date": null,
+  "note": "Anthropic's help article does not print a user-agent string for the three robots, and it says its source IP addresses are on a list it links. Because Anthropic also says that blocking those addresses can stop its robots reading robots.txt, the article's advice is to control access in robots.txt rather than at the IP layer."
+ },
+ "ua": null,
+ "vendor_quote": "Claude-User supports Claude AI users. When individuals ask questions to Claude, it may access websites using a Claude-User agent. Disabling Claude-User on your site prevents our system from retrieving your content in response to a user query, which may reduce your site's visibility for user-directed web search.",
+ "vendor_quote_source": {
+  "title": "Anthropic Help Center: Does Anthropic crawl data from the web, and how can site owners block the crawler? (7 April 2026)",
+  "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+ },
+ "read": "2026-10-21",
+ "what_en": "Of Anthropic's three robots, Claude-User is the one tied to a person's question. It does not collect training data ([ClaudeBot](/bots/claudebot) does) and it does not build the search index ([Claude-SearchBot](/bots/claude-searchbot) does).\n\n| Fact | Claude-User |\n| --- | --- |\n| Operator | Anthropic |\n| Job | User-triggered fetch |\n| robots.txt token | `Claude-User` |\n| Follows robots.txt | Yes, Anthropic says its robots respect robots.txt |\n| Published address list | Anthropic points to a list but advises against IP blocking |\n| Vendor page read | 21 October 2026 |",
+ "block_en": "This is where Anthropic's wording on cost is most direct: disabling Claude-User prevents retrieval \"in response to a user query\" and \"may reduce your site's visibility for user-directed web search\". A shop that blocks it can still be known to the model from other sources, but Claude cannot open the page when asked.",
+ "doc_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+ "compare": "claude-searchbot",
+ "compare_en": "Search quality robot; its block affects indexing for search, not a user's live question.",
+ "sources": [
+  {
+   "title": "Anthropic Help Center: Does Anthropic crawl data from the web, and how can site owners block the crawler? (7 April 2026)",
+   "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  }
+ ],
+ "answer_en": "Claude-User is the agent Claude may use to access a website when a person asks it a question. Anthropic says disabling it prevents retrieval of your content in response to a user query, which may reduce your visibility for user-directed web search. It is separate from ClaudeBot and Claude-SearchBot.",
+ "en_handwritten": true,
+ "title_en": "Claude-User: fetches pages when someone asks Claude",
+ "h1_en": "Claude-User: the agent that fetches pages when someone asks Claude"
+}

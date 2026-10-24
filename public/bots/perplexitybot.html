@@ -3,7 +3,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PerplexityBot vs Perplexity-User: differences and how to allow it</title>
 <meta name="description" content="PerplexityBot surfaces and links sites in Perplexity search; it is not used for foundation model crawling. User-agent, the 8 IP ranges published, WAF advice.">
-<link rel="canonical" href="https://citedby.eu/bots/perplexitybot">
+<link rel="canonical" href="https://citedby.eu/bots/perplexitybot"><link rel="alternate" hreflang="en" href="https://citedby.eu/bots/perplexitybot"><link rel="alternate" hreflang="de" href="https://citedby.eu/de/bots/perplexitybot"><link rel="alternate" hreflang="es" href="https://citedby.eu/es/bots/perplexitybot"><link rel="alternate" hreflang="fr" href="https://citedby.eu/fr/bots/perplexitybot"><link rel="alternate" hreflang="nl" href="https://citedby.eu/nl/bots/perplexitybot"><link rel="alternate" hreflang="x-default" href="https://citedby.eu/bots/perplexitybot">
 <meta property="og:title" content="PerplexityBot vs Perplexity-User: differences and how to allow it"><meta property="og:description" content="PerplexityBot surfaces and links sites in Perplexity search; it is not used for foundation model crawling. User-agent, the 8 IP ranges published, WAF advice."><meta property="og:url" content="https://citedby.eu/bots/perplexitybot"><meta property="og:type" content="article"><meta property="og:image" content="https://citedby.eu/og-v2.png"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0F1B2D">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -41,7 +41,7 @@ Disallow: /</code></pre>
 <h2 id="how-to-tell-a-real-request-from-a-fake-one">How to tell a real request from a fake one</h2>
 <p>Perplexity's file at perplexity.com/perplexitybot.json held 8 prefixes on 21 October 2026, creation time 2025-02-07. Its WAF section suggests a rule that combines the user-agent with the IP condition, so a request claiming the name from another address does not get through.</p>
 <h2 id="compare-with-perplexity-user">Compare with Perplexity-User</h2>
-<p>Perplexity-User: The user-triggered fetcher; Perplexity says it generally ignores robots.txt.</p>
+<p><a href="/bots/perplexity-user">Perplexity-User</a>: The user-triggered fetcher; Perplexity says it generally ignores robots.txt.</p>
 <h2 id="check-your-own-site">Check your own site</h2>
 <p>The free check in the box above reads robots.txt for the crawlers in this set and sends one live request per crawler, so a rule that robots.txt allows but a firewall refuses shows up. The full list of crawlers is on <a href="/bots">the AI crawler hub</a>.</p>
 <h2 id="faq">Questions people ask</h2>

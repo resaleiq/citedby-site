@@ -1,0 +1,42 @@
+{
+ "slug": "google-gemininotebook",
+ "name": "Google-GeminiNotebook",
+ "operator": "Google",
+ "job": "fetch",
+ "job_en": "User-triggered fetch",
+ "token": "Google-GeminiNotebook",
+ "follows": "partial",
+ "follows_en": "Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch.",
+ "ips": {
+  "kind": "rdns",
+  "count": null,
+  "unit": null,
+  "url": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers",
+  "file_date": null,
+  "note": "Google says user-triggered fetchers publish IP ranges in user-triggered-fetchers.json, user-triggered-fetchers-google.json and user-triggered-agents.json, and that the reverse DNS mask matches ***-***-***-***.gae.googleusercontent.com or google-proxy-***-***-***-***.google.com depending on whether the fetcher is Google or user owned."
+ },
+ "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 (compatible; Google-GeminiNotebook; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-gemininotebook)",
+ "vendor_quote": "The Gemini Notebook fetcher requests individual URLs that Gemini Notebook users have provided as sources for their projects.",
+ "vendor_quote_source": {
+  "title": "Google Search Central: Google user-triggered fetchers",
+  "url": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers"
+ },
+ "what_en": "Google-GeminiNotebook is the user agent of the Gemini Notebook fetcher, which Google lists among its user-triggered fetchers. It requests individual URLs that users have provided as sources for their projects. Google's page lists Google-NotebookLM as the former agent, supported until August 2026.",
+ "block_en": "Google says that because the fetch was requested by a user, user-triggered fetchers generally ignore robots.txt rules. The Google page documents no robots.txt token for this fetcher.",
+ "doc_url": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers",
+ "compare": "chatgpt-user",
+ "compare_en": "Both fetch individual URLs because a user asked an assistant product to use them, and both vendors say these fetches may not follow robots.txt rules.",
+ "sources": [
+  {
+   "title": "Google Search Central: Google user-triggered fetchers",
+   "url": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers"
+  },
+  {
+   "title": "Google Search Central: Overview of Google crawlers and fetchers",
+   "url": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
+  }
+ ],
+ "notes": "ASSIGNED SLUG WAS google-notebooklm. Google's live page (updated 2026-08-19) now names the fetcher Gemini Notebook with UA token Google-GeminiNotebook and lists Google-NotebookLM only as a 'former agent (supported until August 2026)', which is already past. Rename slug back if GM prefers google-notebooklm, but the current token is Google-GeminiNotebook. The per-bot doc link in the UA string resolves to the general fetchers page. Google does not say which of the three JSON files covers this fetcher, so no count given. Google-Agent also uses user-triggered-agents.json.",
+ "answer_en": "Google-GeminiNotebook is the user agent of the Gemini Notebook fetcher. It requests individual URLs that users have added as sources for their projects. Google lists it among user-triggered fetchers, which generally ignore robots.txt because a user requested the fetch. Google's page names Google-NotebookLM as the former agent.",
+ "read": "2026-10-24"
+}

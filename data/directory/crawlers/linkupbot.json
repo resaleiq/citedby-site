@@ -1,0 +1,42 @@
+{
+ "slug": "linkupbot",
+ "name": "LinkupBot",
+ "operator": "Linkup",
+ "job": "search",
+ "job_en": "Search index for AI web search",
+ "token": "LinkupBot",
+ "follows": "yes",
+ "follows_en": "Yes, vendor says it respects applicable robots.txt rules",
+ "ips": {
+  "kind": "html_list",
+  "count": null,
+  "unit": null,
+  "url": "https://www.linkup.so/linkupbot-ips.txt",
+  "file_date": null,
+  "note": "The vendor says requests come from the CIDR ranges in its published list and to verify with both a source IP in that list and a user-agent containing the LinkupBot token."
+ },
+ "ua": "LinkupBot/1.0 (LinkupBot for web indexing; https://www.linkup.so/bot; bot@linkup.so)",
+ "vendor_quote": "LinkupBot is Linkup’s web crawler. It discovers and retrieves publicly accessible webpages to build and maintain the Linkup web search index, which powers search and web grounding for AI applications.",
+ "vendor_quote_source": {
+  "title": "Linkup: LinkupBot",
+  "url": "https://www.linkup.so/bot"
+ },
+ "what_en": "LinkupBot is the web crawler of Linkup. It fetches publicly accessible pages to build and maintain the Linkup search index, which Linkup says powers search and web grounding for AI applications.",
+ "block_en": "Adding User-agent: LinkupBot with Disallow: / to robots.txt blocks the whole site, according to the vendor. The vendor also says robots rules apply per host, that allowing LinkupBot through a firewall does not override robots.txt, and that robots.txt is not an access-control mechanism.",
+ "doc_url": "https://www.linkup.so/bot",
+ "compare": "perplexitybot",
+ "compare_en": "Both build a search index that feeds AI answers; LinkupBot's index serves AI applications through Linkup's search and grounding service, and its IP list is a plain text file rather than JSON.",
+ "sources": [
+  {
+   "title": "Linkup: LinkupBot",
+   "url": "https://www.linkup.so/bot"
+  },
+  {
+   "title": "Linkup: linkupbot-ips.txt (plain text, read 2026-10-24)",
+   "url": "https://www.linkup.so/linkupbot-ips.txt"
+  }
+ ],
+ "notes": "IP list is a plain .txt file (not JSON); on 2026-10-24 it held one line, 35.198.113.100/32. Count left null because the vendor says the list may change. No file date in the file.",
+ "answer_en": "LinkupBot is the web crawler of Linkup. It fetches publicly accessible pages to build the Linkup search index, which Linkup says powers search and web grounding for AI applications. Linkup says User-agent: LinkupBot with Disallow: / blocks the whole site, and that robots.txt is not an access-control mechanism.",
+ "read": "2026-10-24"
+}

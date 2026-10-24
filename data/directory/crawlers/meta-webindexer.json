@@ -1,0 +1,38 @@
+{
+ "slug": "meta-webindexer",
+ "name": "Meta-WebIndexer",
+ "operator": "Meta",
+ "job": "search",
+ "job_en": "Search",
+ "token": "Meta-WebIndexer",
+ "follows": "yes",
+ "follows_en": "Yes, changes may take up to 24 hours",
+ "ips": {
+  "kind": "none",
+  "count": null,
+  "unit": null,
+  "url": null,
+  "file_date": null,
+  "note": "Meta's crawler page does not list IP addresses or a verification method for this crawler; it identifies the crawler by its user-agent string."
+ },
+ "ua": "meta-webindexer/1.1",
+ "vendor_quote": "The Meta-WebIndexer crawler navigates the web to improve Meta AI search result quality for users. In doing so, Meta analyzes online content to enhance the relevance and accuracy of Meta AI.",
+ "vendor_quote_source": {
+  "title": "Meta: Meta Web Crawlers",
+  "url": "https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers"
+ },
+ "what_en": "Meta-WebIndexer is a Meta crawler that navigates the web to improve Meta AI search result quality for users. Meta says allowing it in robots.txt helps Meta cite and link to your content in Meta AI's responses. Meta documents it alongside Meta-ExternalAgent, Meta-ExternalFetcher, Meta-ExternalAds and FacebookExternalHit on one page.",
+ "block_en": "Meta says you can block its crawlers by adding a disallow for the relevant crawler to robots.txt, and that robots.txt changes can take up to 24 hours to take effect. Meta says allowing Meta-WebIndexer helps it cite and link to your content in Meta AI's responses. Meta's page does not say whether a disallow for Meta-WebIndexer affects its other crawlers.",
+ "doc_url": "https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers",
+ "compare": "meta-externalagent",
+ "compare_en": "Meta-WebIndexer is for Meta AI search results and citations, while Meta-ExternalAgent is described by Meta as crawling for uses such as training foundation AI models or indexing content directly.",
+ "sources": [
+  {
+   "title": "Meta: Meta Web Crawlers",
+   "url": "https://developers.facebook.com/documentation/sharing/webmasters/web-crawlers"
+  }
+ ],
+ "notes": "Vendor page gives no explicit statement that Meta-WebIndexer obeys robots.txt beyond the general 'add a disallow for the relevant crawler' sentence; follows=yes rests on that. Page shows UA forms 'meta-webindexer/1.1 (+/documentation/...)' and 'meta-webindexer/1.1'; bare form recorded. No IPs listed. The page's robots.txt example does not include meta-webindexer.",
+ "answer_en": "Meta-WebIndexer is a Meta crawler that navigates the web to improve Meta AI search result quality. Meta says allowing it in robots.txt helps Meta cite and link to your content in Meta AI's responses. Meta says you block its crawlers with a disallow for the relevant crawler, and a change can take up to 24 hours.",
+ "read": "2026-10-24"
+}

@@ -1,0 +1,46 @@
+{
+ "slug": "googleother",
+ "name": "GoogleOther",
+ "operator": "Google",
+ "job": "mixed",
+ "job_en": "Generic crawl for various Google product teams",
+ "token": "GoogleOther",
+ "follows": "yes",
+ "follows_en": "Yes. Google says common crawlers always obey robots.txt rules when crawling automatically.",
+ "ips": {
+  "kind": "json_list",
+  "count": 317,
+  "unit": "ranges",
+  "url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+  "file_date": "2026-10-23",
+  "note": "Google says the common crawlers generally crawl from the ranges in common-crawlers.json, and that the reverse DNS name matches crawl-***-***-***-***.googlebot.com or geo-crawl-***-***-***-***.geo.googlebot.com."
+ },
+ "ua": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GoogleOther) Chrome/W.X.Y.Z Safari/537.36",
+ "vendor_quote": "GoogleOther is the generic crawler that may be used by various product teams for fetching publicly accessible content from sites. For example, it may be used for one-off crawls for internal research and development.",
+ "vendor_quote_source": {
+  "title": "Google Search Central: Google's common crawlers",
+  "url": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
+ },
+ "what_en": "GoogleOther is Google's generic crawler, used by various Google product teams to fetch publicly accessible content, for example in one-off crawls for internal research and development. Google lists it among its common crawlers, next to Googlebot, and also documents GoogleOther-Image and GoogleOther-Video as versions optimized for image and video URLs. The Google page does not say it is used for AI training.",
+ "block_en": "Google says crawling preferences addressed to the GoogleOther user agent do not affect any specific product. Google documents GoogleOther-Image and GoogleOther-Video as separate robots.txt tokens, so a rule for GoogleOther is not stated to cover them, and the Googlebot token is a separate token again.",
+ "doc_url": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers",
+ "compare": "googlebot",
+ "compare_en": "Googlebot crawls for Google Search and related products, while GoogleOther is a generic crawler whose robots.txt rules do not affect any specific Google product.",
+ "sources": [
+  {
+   "title": "Google Search Central: Google's common crawlers",
+   "url": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
+  },
+  {
+   "title": "Google: common-crawlers.json (read 2026-10-24, creationTime 2026-10-23)",
+   "url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json"
+  },
+  {
+   "title": "Google Search Central: Overview of Google crawlers and fetchers",
+   "url": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
+  }
+ ],
+ "notes": "Google page does not say GoogleOther is AI-related; it says generic/R&D. Common-crawlers page also lives at developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers (same content). Chrome/W.X.Y.Z is Google's version placeholder. Page last updated 2026-10-15 per Google.",
+ "answer_en": "GoogleOther is Google's generic crawler. Various Google product teams use it to fetch publicly accessible content, for example in one-off crawls for internal research and development. Google says rules addressed to GoogleOther do not affect any specific product. GoogleOther-Image and GoogleOther-Video are documented as separate tokens.",
+ "read": "2026-10-24"
+}

@@ -340,36 +340,145 @@ Questions or a request to stop crawling: hello@citedby.eu. We reply within 2 wor
 Source: https://citedby.eu/bots
 
 AI crawlers: who they are, what they do, how to allow or block them
-One page per AI crawler, with the operator, the robots.txt token, the vendor's own sentence, what blocking costs and the vendor's published address list, each read from the vendor's page on the date shown.
-An AI crawler is a bot that fetches pages for an assistant such as ChatGPT, Claude, Perplexity or Gemini. Each page below names the operator, the robots.txt token, what blocking costs and the vendor's published address list, so you can decide per bot whether to allow it.
+One page per crawler, with the operator, the robots.txt token, the operator's own sentence, what blocking costs and how to verify a request, each read from the operator's own page on the date shown.
+An AI crawler is a bot that fetches pages for an assistant such as ChatGPT, Claude, Perplexity or Gemini, for a search index or for model training. Each page names the operator, the robots.txt token, what blocking changes and how to verify a request, so you can decide per bot whether to allow it.
+All 40 AI and search crawlers on this page set, with the operator, the job and whether the operator says it follows robots.txt. Crawler Operator Job Follows robots.txt
+Amazonbot Amazon Product improvement, may train Amazon AI models Yes, changes take about 24 hours
+Amzn-SearchBot Amazon Search Yes, changes may take about 24 hours
+Amzn-User Amazon User-triggered fetch Partial, may not follow all robots.txt directives because actions can be user-initiated
+Applebot Apple Search (crawled data may also help train Apple models) Yes, for general search crawls targeted at Applebot
+Applebot-Extended Apple Control token (no requests of its own) Read from robots.txt only
+Baiduspider Baidu Search Yes for Baiduspider; Baiduspider-cpro and Baiduspider-ads do not follow robots.txt records
+Bingbot Microsoft Search crawler Yes
+CCBot Common Crawl Open web crawl archive Yes, via a robots.txt rule for CCBot
+ChatGPT-User OpenAI User-triggered fetch Robots.txt rules may not apply
+Claude-SearchBot Anthropic Search Yes, Anthropic says its robots respect robots.txt
+Claude-User Anthropic User-triggered fetch Yes, Anthropic says its robots respect robots.txt
+ClaudeBot Anthropic Training Yes, it follows robots.txt and Crawl-delay
+Diffbot Diffbot Search (general web crawl) Yes, by default (disallow and crawl-delay directives)
+DuckAssistBot DuckDuckGo Real-time fetch for AI-assisted answers Yes, a change takes effect after 72 hours
+DuckDuckBot DuckDuckGo Search Yes, respects WWW::RobotRules (no timing note published)
+ExaSearchBot Exa Search and retrieval index Yes, vendor says it checks robots.txt before fetching
+ExaUser Exa User-triggered fetch Partial, vendor says robots.txt rules may not apply to user-initiated fetches
+Google-Agent Google User-triggered fetch (agents acting for a user) Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch.
+Google-CloudVertexBot Google Crawl requested by site owners for Vertex AI Agents Yes. Google says common crawlers always obey robots.txt rules when crawling automatically.
+Google-Extended Google Control token (no requests of its own) Read from robots.txt only; there is no separate user agent
+Google-GeminiNotebook Google User-triggered fetch Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch.
+Google-Pinpoint Google User-triggered fetch Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch.
+Googlebot Google Search (also Images, Video, News, Discover) Yes, always when crawling automatically
+GoogleOther Google Generic crawl for various Google product teams Yes. Google says common crawlers always obey robots.txt rules when crawling automatically.
+GPTBot OpenAI Training Yes, it follows robots.txt
+ICC-Crawler NICT (Universal Communication Research Institute) Research data collection (includes AI research and development) Yes, and with a Crawl-Delay it uses the larger of that interval and its own minimum
+ImagesiftBot Hive (ImageSift) Image index for similar-image search Yes, and it supports Crawl-delay
+Kagibot Kagi Search Yes, standard robots.txt directives targeting Kagibot are respected
+LinkupBot Linkup Search index for AI web search Yes, vendor says it respects applicable robots.txt rules
+Meta-ExternalAgent Meta AI model training and content indexing Yes
+Meta-ExternalFetcher Meta User-triggered fetch Partial, may bypass robots.txt because fetches are requested by a user
+Meta-WebIndexer Meta Search Yes, changes may take up to 24 hours
+MistralAI-User Mistral User-triggered fetch Opt-out through robots.txt
+MojeekBot Mojeek Search Yes, obeys the Robots Exclusion Standard; crawl-delay is not supported
+OAI-SearchBot OpenAI Search Yes, it follows robots.txt
+Perplexity-User Perplexity User-triggered fetch Generally ignores robots.txt rules, because a user requested the fetch
+PerplexityBot Perplexity Search Yes, it follows robots.txt
+Storebot-Google Google Search (Google Shopping surfaces) Yes. Google says common crawlers always obey robots.txt rules when crawling automatically.
+YandexBot Yandex Search (main indexing robot) Yes, takes into account the general rules in robots.txt (User-agent: *)
+YouBot You.com Search Yes, robots.txt is cached for 30 minutes, so changes can take up to 30 minutes
+
+Copy-paste robots.txt: opt out of model training, stay in AI search
+Operators that say their crawler may be used to train models: GPTBot, ClaudeBot, Google-Extended, Applebot-Extended, meta-externalagent, Amazonbot. The first block turns those off. The second keeps the search and answer crawlers on: OAI-SearchBot, Claude-SearchBot, PerplexityBot, Amzn-SearchBot, Meta-WebIndexer. This is a choice for your business, and a Disallow only covers well-behaved bots.
+Opt out of training
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+Stay in AI search
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amzn-SearchBot
+Allow: /
+
+User-agent: Meta-WebIndexer
+Allow: /
 Amazonbot, Amzn-SearchBot and Amzn-User: three Amazon agents, three rules Amazon's page now describes three agents with independent robots.txt settings. What each does, which may train Amazon AI models and which may ignore robots.txt. Reviewed on 2026-10-21
+Amzn-SearchBot: what it does and what blocking it changes Amzn-SearchBot (Amazon): search. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
+Amzn-User: what it does and what blocking it changes Amzn-User (Amazon): user-triggered fetch. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
 Applebot-Extended: opting out of Apple's model training without leaving search Applebot-Extended is Apple's opt-out token for generative model training. What it does, why Applebot can still crawl you and what stays in Spotlight and Siri. Reviewed on 2026-10-21
+Applebot: what it does and what blocking it changes Applebot (Apple): several jobs. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
+Baiduspider: what it does and what blocking it changes Baiduspider (Baidu): search. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
 Bingbot: Microsoft's crawler, five user agents, how to verify Bingbot is Bing's standard crawler. The five Microsoft crawler names, how to verify a request and where crawl rate is set, read from Bing's own help page. Reviewed on 2026-10-21
+CCBot: what it does and what blocking it changes CCBot (Common Crawl): several jobs. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
 ChatGPT-User: the fetcher that opens your page when someone asks ChatGPT-User visits a page when a person asks ChatGPT or a custom GPT about it. Why robots.txt may not apply, its user-agent string and 234 published IP ranges. Reviewed on 2026-10-21
 Claude-SearchBot: Anthropic's search crawler and what blocking costs Claude-SearchBot indexes content to improve Claude's search results. Its robots.txt token, what a block does and how it differs from the other Claude robots. Reviewed on 2026-10-21
 Claude-User: the agent that fetches pages when someone asks Claude Claude-User retrieves a page when a person asks Claude something. What Anthropic says disabling it does, and how it differs from ClaudeBot and Claude-SearchBot. Reviewed on 2026-10-21
 ClaudeBot: Anthropic's training crawler, Crawl-delay and blocking ClaudeBot collects web content that could contribute to Anthropic's model training. The robots.txt group, Crawl-delay support and why IP blocking does not work. Reviewed on 2026-10-21
+Diffbot: what it does and what blocking it changes Diffbot (Diffbot): search. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
 DuckAssistBot: DuckDuckGo's real-time answer crawler and its 486 addresses DuckAssistBot fetches pages for DuckDuckGo's AI-assisted answers, which cite sources. Opt-out takes 72 hours; rankings are unaffected; 486 IP addresses listed. Reviewed on 2026-10-21
+DuckDuckBot: what it does and what blocking it changes DuckDuckBot (DuckDuckGo): search. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
+ExaSearchBot: what it does and what blocking it changes ExaSearchBot (Exa): search. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
+ExaUser: what it does and what blocking it changes ExaUser (Exa): user-triggered fetch. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
+Google-Agent: what it does and what blocking it changes Google-Agent (Google): user-triggered fetch. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
+Google-CloudVertexBot: what it does and what blocking it changes Google-CloudVertexBot (Google): several jobs. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
 Google-Extended: the robots.txt token for Gemini, not a crawler Google-Extended is a control token, not a crawler: no user agent, never in server logs. What it controls, what it leaves alone and why IP lists cannot verify it Reviewed on 2026-10-21
+Google-GeminiNotebook: what it does and what blocking it changes Google-GeminiNotebook (Google): user-triggered fetch. Robots.txt token, what a Disallow changes and how to verify a request. Reviewed on 2026-10-24
+Google-Pinpoint: what it does and what blocking it changes Google-Pinpoint (Google): user-triggered fetch. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
 Googlebot: what it covers, its IP ranges and what a block removes Googlebot's robots.txt token controls Google Search and the products built on it. Its user-agent, the 317 IP ranges Google publishes and how to verify one. Reviewed on 2026-10-21
+GoogleOther: what it does and what blocking it changes GoogleOther (Google): several jobs. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
 GPTBot: what it does and what blocking it changes GPTBot crawls content that may be used to train OpenAI models. What a Disallow does, what it leaves alone, its user-agent and the 18 IP ranges OpenAI publishes. Reviewed on 2026-10-21
+ICC-Crawler: what it does and what blocking it changes ICC-Crawler (NICT (Universal Communication Research Institute)): training. Robots.txt token, what a Disallow changes and how to verify a request. Reviewed on 2026-10-24
+ImagesiftBot: what it does and what blocking it changes ImagesiftBot (Hive (ImageSift)): search. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
+Kagibot: what it does and what blocking it changes Kagibot (Kagi): search. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
+LinkupBot: what it does and what blocking it changes LinkupBot (Linkup): search. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
 Meta-ExternalAgent: Meta's AI crawler and its four siblings Meta-ExternalAgent crawls for training foundation AI models or indexing. Meta's page, updated 21 May 2026, lists five agents and says two may bypass robots.txt. Reviewed on 2026-10-21
+Meta-ExternalFetcher: what it does and what blocking it changes Meta-ExternalFetcher (Meta): user-triggered fetch. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
+Meta-WebIndexer: what it does and what blocking it changes Meta-WebIndexer (Meta): search. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
 MistralAI-User, MistralAI-Index and MistralAI-Training explained Mistral documents three robots: a user-action fetcher, a search index agent and a training crawler. What each does, its robots.txt token and published IP files. Reviewed on 2026-10-21
+MojeekBot: what it does and what blocking it changes MojeekBot (Mojeek): search. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
 OAI-SearchBot: what it is and how to allow or block it OAI-SearchBot decides whether your pages can appear in ChatGPT search answers. Its robots.txt token, user-agent, 39 published IP ranges and what a block costs. Reviewed on 2026-10-21
+Perplexity-User: what it does and what blocking it changes Perplexity-User (Perplexity): user-triggered fetch. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
 PerplexityBot: how it differs from Perplexity-User and how to allow it PerplexityBot surfaces and links sites in Perplexity search; it is not used for foundation model crawling. User-agent, the 8 IP ranges published, WAF advice. Reviewed on 2026-10-21
+Storebot-Google: what it does and what blocking it changes Storebot-Google (Google): search. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
+YandexBot: what it does and what blocking it changes YandexBot (Yandex): search. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
+YouBot: what it does and what blocking it changes YouBot (You.com): search. Robots.txt token, what a Disallow changes and how to verify a request, read from the operator's own page. Reviewed on 2026-10-24
 
-## Allow or block AI crawlers on six site platforms. CitedBy
+## Allow or block AI crawlers on 13 site platforms. CitedBy
 Source: https://citedby.eu/platforms
 
-How to allow or block AI crawlers on Shopify, Squarespace, Wix, Webflow, WordPress.com and Cloudflare
+How to allow or block AI crawlers on 13 site platforms
 One page per platform: where its own help page says the setting lives, what it does and does not cover, and the one thing that page says that the others do not, each read on the date shown.
-Each page names the platform's own help page, where the AI-crawler setting sits, what it covers and what it does not: Shopify, Squarespace, Wix, Webflow, WordPress.com and Cloudflare.
+Each page names the platform's own help page, where the AI-crawler setting sits, what it covers and what it does not: Adobe Commerce, Cloudflare, Framer, Ghost, Netlify, PrestaShop, Shopify, Squarespace, Vercel, Webflow, Wix, WordPress.com, WP Engine.
+Adobe Commerce: robots.txt is in Content, Design, Configuration Adobe Commerce edits robots.txt in the Admin under Search Engine Robots. Cloud projects add pub/media steps, and Adobe's pages name no AI crawler. Reviewed on 2026-10-24
 Cloudflare: AI bot policies for Search, Agent and Training Cloudflare's Block AI Bots page splits AI bots into Search, Agent and Training with Block, Block on pages with ads and Allow. New defaults from 15 Sept 2026. Reviewed on 2026-10-21
+Framer: upload your own robots.txt with Static Files Framer generates a robots.txt for every published site. To change it, upload your own through Static Files on Pro or Enterprise, which replaces it. Reviewed on 2026-10-24
+Ghost: add robots.txt to your theme to allow or block AI crawlers Ghost has no robots.txt setting in the admin. Its help says to save a robots.txt in your theme's root, which replaces the default. Plan needed on Ghost(Pro). Reviewed on 2026-10-24
+Netlify: block AI crawlers with robots.txt and User Agent Blocker Netlify has no robots.txt setting: serve a file from your site root, or install the User Agent Blocker extension. Netlify's guide says to use both. Reviewed on 2026-10-24
+PrestaShop: robots.txt generator writes one rule set for all bots PrestaShop's guide describes a Generate robots.txt button that replaces your file and uses User-agent: * only. Add AI crawler rules after generating. Reviewed on 2026-10-24
 Shopify: allow or block AI crawlers, and what robots.txt misses Edit robots.txt.liquid to allow or block AI crawlers on Shopify. Shopify says a block affects open-web discovery only, not product data sent to ChatGPT. Reviewed on 2026-10-21
 Squarespace: the AI crawler box blocks 26 bots but not ChatGPT Squarespace's Crawlers panel has one box blocking known AI crawlers. The 26 names it writes to robots.txt leave out ChatGPT's search and user bots. Reviewed on 2026-10-21
+Vercel: the AI Bots ruleset in the Firewall (Log or Deny) Vercel blocks AI bots with a Firewall ruleset, not a robots.txt line. Where the AI Bots Ruleset is, the Log and Deny actions, and its self-updating bot list. Reviewed on 2026-10-24
 Webflow: robots.txt rules and the Content-Signal header for AI Where Webflow's robots.txt editor is, which plan it needs and how its Content-Signal header separates AI training, search and AI input. Reviewed on 2026-10-21
 Wix: block AI crawlers in the Robots.txt Editor (four names) Wix's help page tells you to paste four user agents into the Robots.txt Editor. Where the editor is, what the example leaves out and the nosnippet option. Reviewed on 2026-10-21
 WordPress.com: AI opt-out is a privacy setting, not robots.txt WordPress.com treats AI opt-out as 'Prevent third-party sharing' under privacy settings. What its site-visibility guide says, reviewed 5 October 2026. Reviewed on 2026-10-21
+WP Engine: robots.txt, 10-second default crawl-delay, Web Rules WP Engine's help page says a physical robots.txt overrides plugin files and sets a 10-second default crawl-delay. Web Rules Engine denies bots by user agent. Reviewed on 2026-10-24
 
 ## AI visibility guides for online shops. CitedBy
 Source: https://citedby.eu/guides
@@ -820,6 +929,302 @@ DuckAssistBot
 Is GPTBot blocked on your site?
 Can ChatGPT read my website?
 
+## Amzn-SearchBot: what it does and what blocking it changes
+Source: https://citedby.eu/bots/amzn-searchbot
+
+AI crawlers / AI crawlers
+
+Amzn-SearchBot: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer Amzn-SearchBot is an Amazon crawler used to improve search experiences such as Alexa. Amazon says allowing it makes your content eligible to appear there, and that it does not crawl for generative AI model training. Its setting is independent of Amazonbot and Amzn-User, and a change can take about 24 hours.
+
+On this page What Amzn-SearchBot is
+What the vendor says
+What happens if you block Amzn-SearchBot
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Amazonbot
+Your own site
+Questions people ask
+Sources
+
+What Amzn-SearchBot is
+
+Amzn-SearchBot is an Amazon crawler used to improve search experiences in Amazon products and services. Amazon says that allowing it makes your content eligible to appear in search experiences such as Alexa, and that it does not crawl content for generative AI model training. It is one of three Amazon user agents (Amazonbot, Amzn-SearchBot, Amzn-User) that Amazon documents on one page.
+
+Fact Amzn-SearchBot
+Operator Amazon
+Job Search
+robots.txt token Amzn-SearchBot
+Follows robots.txt Yes, changes may take about 24 hours
+IP addresses Listed on the vendor's page ( developer.amazon.com/amazonbot/searchbot-ip-addresses )
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “If robots.txt files don’t mention Amzn-SearchBot but allow other search bots, Amzn-SearchBot will crawl in accordance with the robots.txt directives given to other search bots.”
+
+Source: Amazon: About Amazonbot , read on 24 October 2026.
+
+What happens if you block Amzn-SearchBot
+
+Amazon says automated crawling from its listed user agents respects the Robots Exclusion Protocol, honoring the user-agent and allow/disallow directives. Amazon says each user agent setting is independent of the others and may take about 24 hours to take effect. If robots.txt does not mention Amzn-SearchBot but allows other search bots, it follows the directives given to those other search bots.
+
+The robots.txt lines
+
+To allow Amzn-SearchBot:
+
+User-agent: Amzn-SearchBot
+Allow: /
+
+To block Amzn-SearchBot:
+
+User-agent: Amzn-SearchBot
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-SearchBot/0.1) Chrome/W.X.Y.Z Safari/537.36
+
+How to tell a real request from a fake one
+
+Amazon publishes the Amzn-SearchBot IP addresses on a web page that shows the list as JSON, and links it from the Amazonbot documentation page.
+
+Compare with Amazonbot
+
+Amazonbot : Amazonbot is used to improve Amazon products and services and may be used to train Amazon AI models, while Amzn-SearchBot is for search experiences and Amazon says it does not crawl for generative AI model training.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). Amzn-SearchBot is not one of them: read your robots.txt for a Amzn-SearchBot group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Amzn-SearchBot follow robots.txt?
+
+Yes, changes may take about 24 hours. Give Amzn-SearchBot its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know Amzn-SearchBot is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Amazon: About Amazonbot
+Amazon: Amzn-SearchBot IP addresses (read 2026-10-24)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Amazonbot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
+## Amzn-User: what it does and what blocking it changes
+Source: https://citedby.eu/bots/amzn-user
+
+AI crawlers / AI crawlers
+
+Amzn-User: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer Amzn-User is the Amazon user agent that fetches live pages when a customer asks Alexa something that needs current information. Amazon says it does not crawl for generative AI training and may not follow all robots.txt directives, because the action is user-initiated. Amazonbot and Amzn-SearchBot are separate settings.
+
+On this page What Amzn-User is
+What the vendor says
+What happens if you block Amzn-User
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Amzn-SearchBot
+Your own site
+Questions people ask
+Sources
+
+What Amzn-User is
+
+Amzn-User is an Amazon user agent that supports user actions, such as responding to Alexa queries that require up-to-date information. Amazon says that when a customer asks a question, Amzn-User may fetch live information from the web to provide accurate answers on the user's behalf. Amazon says it does not crawl content for generative AI model training.
+
+Fact Amzn-User
+Operator Amazon
+Job User-triggered fetch
+robots.txt token Amzn-User
+Follows robots.txt Partial, may not follow all robots.txt directives because actions can be user-initiated
+IP addresses Listed on the vendor's page ( developer.amazon.com/amazonbot/live-ip-addresses )
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “Because actions taken by Amzn-User can be initiated by a user, it may not follow all robots.txt directives.”
+
+Source: Amazon: About Amazonbot , read on 24 October 2026.
+
+What happens if you block Amzn-User
+
+Amazon says Amzn-User may not follow all robots.txt directives because its actions can be initiated by a user. Amazon also says each of its user agent settings (Amazonbot, Amzn-SearchBot, Amzn-User) is independent of the others and may take about 24 hours to reflect changes.
+
+The robots.txt lines
+
+To allow Amzn-User:
+
+User-agent: Amzn-User
+Allow: /
+
+To block Amzn-User:
+
+User-agent: Amzn-User
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-User/0.1) Chrome/W.X.Y.Z Safari/537.36
+
+How to tell a real request from a fake one
+
+Amazon publishes the Amzn-User IP addresses on a web page that shows the list as JSON, and links it from the Amazonbot documentation page.
+
+Compare with Amzn-SearchBot
+
+Amzn-SearchBot : Amzn-SearchBot is an automated crawler for Amazon search experiences that Amazon says respects robots.txt, while Amzn-User fetches live information when a customer asks and may not follow all directives.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). Amzn-User is not one of them: read your robots.txt for a Amzn-User group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Amzn-User follow robots.txt?
+
+Not always. Partial, may not follow all robots.txt directives because actions can be user-initiated. A rule for Amzn-User in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
+
+How do I know Amzn-User is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Amazon: About Amazonbot
+Amazon: Amzn-User IP addresses (read 2026-10-24)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Amzn-SearchBot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
+## Applebot: what it does and what blocking it changes
+Source: https://citedby.eu/bots/applebot
+
+AI crawlers / AI crawlers
+
+Applebot: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer Applebot is Apple's web crawler. Apple says its data powers search in Spotlight, Siri and Safari and may also help train Apple's foundation models. Disallowing Applebot-Extended opts content out of training only. If robots.txt does not mention Applebot but does mention Googlebot, Applebot follows the Googlebot rules.
+
+On this page What Applebot is
+What the vendor says
+What happens if you block Applebot
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Applebot-Extended
+Your own site
+Questions people ask
+Sources
+
+What Applebot is
+
+Applebot is Apple's web crawler. Apple says its data powers search technology in Spotlight, Siri and Safari, and may also be used to help train Apple foundation models and to provide context when AI models generate output in Apple products. Apple also documents a separate Applebot-Extended token and an iTMS user agent for Apple Podcasts.
+
+Fact Applebot
+Operator Apple
+Job Search (crawled data may also help train Apple models)
+robots.txt token Applebot
+Follows robots.txt Yes, for general search crawls targeted at Applebot
+IP addresses 24 ranges ( search.developer.apple.com/applebot.json , file dated 2026-09-15)
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “Applebot respects standard robots.txt directives in general search crawls that are targeted at Applebot.”
+
+Source: Apple: About Applebot , read on 24 October 2026.
+
+What happens if you block Applebot
+
+Apple says disallowing Applebot-Extended opts content out of training Apple's generative foundation models, but the site may still be crawled by Applebot and stay discoverable through Spotlight, Siri and Safari. A Disallow for Applebot itself applies to general search crawls targeted at Applebot, and Apple says that if robots.txt does not mention Applebot but mentions Googlebot, Applebot follows the Googlebot instructions. Apple says the nosnippet meta tag opts content out of broad world knowledge answers.
+
+The robots.txt lines
+
+To allow Applebot:
+
+User-agent: Applebot
+Allow: /
+
+To block Applebot:
+
+User-agent: Applebot
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)
+
+How to tell a real request from a fake one
+
+The file at search.developer.apple.com/applebot.json held 24 ranges on 24 October 2026, file dated 2026-09-15.
+
+Apple says Applebot traffic is generally identified by reverse DNS in the *.applebot.apple.com domain, or by matching the IP address with a CIDR prefix in its published JSON file.
+
+Compare with Applebot-Extended
+
+Applebot-Extended : Applebot is the crawler that fetches pages for Apple search features, while Applebot-Extended is the robots.txt token that controls whether crawled content is used to train Apple generative models.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). Applebot is not one of them: read your robots.txt for a Applebot group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Applebot follow robots.txt?
+
+Yes, for general search crawls targeted at Applebot. Give Applebot its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know Applebot is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Apple: About Applebot
+Apple: Applebot IP CIDRs JSON (read 2026-10-24)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Applebot-Extended
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
 ## Applebot-Extended: opt out of Apple model training, keep search
 Source: https://citedby.eu/bots/applebot-extended
 
@@ -881,7 +1286,7 @@ No network check exists for a token that sends no requests. Read robots.txt, on 
 
 Compare with Applebot
 
-Applebot: The crawler itself: allowing it keeps you in Spotlight, Siri and Safari search.
+Applebot : The crawler itself: allowing it keeps you in Spotlight, Siri and Safari search.
 
 Check your own site
 
@@ -909,6 +1314,104 @@ Keep reading
 All AI crawlers compared
 Is GPTBot blocked on your site?
 Can ChatGPT read my website?
+
+## Baiduspider: what it does and what blocking it changes
+Source: https://citedby.eu/bots/baiduspider
+
+AI crawlers / AI crawlers
+
+Baiduspider: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer Baiduspider is the crawler of the Baidu search engine. Baidu says it follows the robots.txt protocol and that blocking Baiduspider blocks all Baidu user agents, so pages will not be found in Baidu results. Baiduspider-cpro and Baiduspider-ads work on customer agreements and do not follow robots.txt records.
+
+On this page What Baiduspider is
+What the vendor says
+What happens if you block Baiduspider
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Bingbot
+Your own site
+Questions people ask
+Sources
+
+What Baiduspider is
+
+Baiduspider is the crawler of the Baidu search engine; it visits pages and builds them into the Baidu index. Baidu uses different user agents for different products, for example Baiduspider for PC and mobile search and Baiduspider-image, Baiduspider-video and Baiduspider-news for those searches.
+
+Fact Baiduspider
+Operator Baidu
+Job Search
+robots.txt token Baiduspider
+Follows robots.txt Yes for Baiduspider; Baiduspider-cpro and Baiduspider-ads do not follow robots.txt records
+IP addresses Reverse DNS check
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “Baiduspider is Baidu search engine program which is used to visit pages on the internet and build information into Baidu index.”
+
+Source: Baidu Help Center: FAQs of Baiduspider , read on 24 October 2026.
+
+What happens if you block Baiduspider
+
+Baidu says Baiduspider works on the robots.txt protocol, and that blocking it means your pages will not be found in Baidu search results or in any other results provided by Baidu. You can set different rules for different Baidu user agents, and blocking Baiduspider blocks all Baidu user agents. Baiduspider-cpro and Baiduspider-ads work on agreements with customers and do not follow robots.txt records.
+
+The robots.txt lines
+
+To allow Baiduspider:
+
+User-agent: Baiduspider
+Allow: /
+
+To block Baiduspider:
+
+User-agent: Baiduspider
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Baiduspider
+
+How to tell a real request from a fake one
+
+Baidu recommends a reverse DNS lookup on the visiting IP; the host name of Baiduspider is *.baidu.com or *.baidu.jp, and other host names are fake.
+
+Compare with Bingbot
+
+Bingbot : Both crawl for a search engine; Baidu documents several product-specific user agents (image, video, news, ads) under the Baiduspider name and verifies by reverse DNS host name.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). Baiduspider is not one of them: read your robots.txt for a Baiduspider group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Baiduspider follow robots.txt?
+
+Yes for Baiduspider; Baiduspider-cpro and Baiduspider-ads do not follow robots.txt records. Give Baiduspider its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know Baiduspider is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Baidu Help Center: FAQs of Baiduspider
+Baidu Help Center: How to block the crawling (robots.txt)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Bingbot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
 
 ## Bingbot: Microsoft's crawler, five user agents, how to verify
 Source: https://citedby.eu/bots/bingbot
@@ -1008,6 +1511,103 @@ All AI crawlers compared
 Googlebot
 AI crawler settings by platform
 Can ChatGPT read my website?
+
+## CCBot: what it does and what blocking it changes
+Source: https://citedby.eu/bots/ccbot
+
+AI crawlers / AI crawlers
+
+CCBot: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · method
+
+Short answer CCBot is the crawler of Common Crawl, a non-profit that maintains an open repository of web crawl data anyone can access and analyze. Common Crawl says User-agent: CCBot with Disallow: / stops it crawling a site. It also warns that other crawlers falsely identify themselves as CCBot, so verify requests.
+
+On this page What CCBot is
+What the vendor says
+What happens if you block CCBot
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with GPTBot
+Your own site
+Questions people ask
+Sources
+
+What CCBot is
+
+CCBot is the crawler of Common Crawl, a non-profit foundation that produces and maintains an open repository of web crawl data that anyone can access and analyze. The vendor page says the crawl data is meant to be freely available to organizations, academia and non-profits.
+
+Fact CCBot
+Operator Common Crawl
+Job Open web crawl archive
+robots.txt token CCBot
+Follows robots.txt Yes, via a robots.txt rule for CCBot
+IP addresses Reverse DNS check
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “To prevent Common Crawl from crawling your website, include the following in your robots.txt”
+
+Source: Common Crawl: CCBot , read on 24 October 2026.
+
+What happens if you block CCBot
+
+Common Crawl says that adding User-agent: CCBot with Disallow: / to robots.txt prevents Common Crawl from crawling the site. The page also says it is aware of crawlers falsely identifying themselves as CCBot and recommends verifying user agent strings.
+
+The robots.txt lines
+
+To allow CCBot:
+
+User-agent: CCBot
+Allow: /
+
+To block CCBot:
+
+User-agent: CCBot
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+CCBot/2.0 (https://commoncrawl.org/faq/)
+
+How to tell a real request from a fake one
+
+Common Crawl says CCBot runs on dedicated IP address ranges with reverse DNS (not for IPv6), so a logged request can be checked with a reverse lookup that resolves to a crawl.commoncrawl.org hostname; the ranges are also published as JSON at https://index.commoncrawl.org/ccbot.json.
+
+Compare with GPTBot
+
+GPTBot : CCBot builds a public crawl archive that others can use, while GPTBot collects content for OpenAI's own purposes.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). CCBot is not one of them: read your robots.txt for a CCBot group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does CCBot follow robots.txt?
+
+Yes, via a robots.txt rule for CCBot. Give CCBot its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know CCBot is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Common Crawl: CCBot (read 2026-10-24)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+GPTBot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
 
 ## ChatGPT-User: the fetcher that opens your page when someone asks
 Source: https://citedby.eu/bots/chatgpt-user
@@ -1378,6 +1978,103 @@ Claude-SearchBot
 Is GPTBot blocked on your site?
 Can ChatGPT read my website?
 
+## Diffbot: what it does and what blocking it changes
+Source: https://citedby.eu/bots/diffbot
+
+AI crawlers / AI crawlers
+
+Diffbot: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · method
+
+Short answer Diffbot documents two user agents. Diffbot crawls the web proactively for a general search engine, so sites can be discovered and cited from its Knowledge Graph. Diffbot-User fetches a URL for a person using its software. Diffbot says its crawls follow robots.txt by default, including disallow and crawl-delay.
+
+On this page What Diffbot is
+What the vendor says
+What happens if you block Diffbot
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Bingbot
+Your own site
+Questions people ask
+Sources
+
+What Diffbot is
+
+Diffbot documents two user agents. Diffbot is used for general, proactive web crawling for building a general search engine, so sites can be discovered and cited from the Diffbot Knowledge Graph and web search services. Diffbot-User is used for requests made on behalf of a human user browsing a URL with Diffbot software.
+
+Fact Diffbot
+Operator Diffbot
+Job Search (general web crawl)
+robots.txt token Diffbot
+Follows robots.txt Yes, by default (disallow and crawl-delay directives)
+IP addresses None published
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “By default Diffbot's web crawls adhere to a site’s robots.txt instructions, including the disallow and crawl-delay directives.”
+
+Source: Diffbot: Does Diffbot respect robots.txt? , read on 24 October 2026.
+
+What happens if you block Diffbot
+
+Diffbot says its web crawls follow robots.txt by default, including disallow and crawl-delay, and that a rule can be overridden in specific cases such as a partnership or agreement with the site. It lists Diffbot and Diffbot-User as separate user agents, and says users of its Extract and Crawlbot APIs define their own crawl parameters and can set their own User-Agent.
+
+The robots.txt lines
+
+To allow Diffbot:
+
+User-agent: Diffbot
+Allow: /
+
+To block Diffbot:
+
+User-agent: Diffbot
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Diffbot
+
+How to tell a real request from a fake one
+
+The vendor page does not describe an IP list or verification method.
+
+Compare with Bingbot
+
+Bingbot : Diffbot is described by its operator as similar to Googlebot and Bing, a general crawler for a search index, and the vendor says it is not used for AI training.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). Diffbot is not one of them: read your robots.txt for a Diffbot group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Diffbot follow robots.txt?
+
+Yes, by default (disallow and crawl-delay directives). Give Diffbot its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know Diffbot is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Diffbot: Does Diffbot respect robots.txt? (read 2026-10-24)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Bingbot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
 ## DuckAssistBot: DuckDuckGo's answer crawler and its 486 addresses
 Source: https://citedby.eu/bots/duckassistbot
 
@@ -1474,6 +2171,504 @@ Amazonbot
 Is GPTBot blocked on your site?
 Can ChatGPT read my website?
 
+## DuckDuckBot: what it does and what blocking it changes
+Source: https://citedby.eu/bots/duckduckbot
+
+AI crawlers / AI crawlers
+
+DuckDuckBot: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer DuckDuckBot is the web crawler for DuckDuckGo, whose stated job is to improve DuckDuckGo's search results. DuckDuckGo says it respects WWW::RobotRules and publishes its IP addresses as a list in JSON form. DuckAssistBot, the fetcher for AI-assisted answers, is documented on a separate DuckDuckGo help page.
+
+On this page What DuckDuckBot is
+What the vendor says
+What happens if you block DuckDuckBot
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with DuckAssistBot
+Your own site
+Questions people ask
+Sources
+
+What DuckDuckBot is
+
+DuckDuckBot is the web crawler for DuckDuckGo. DuckDuckGo says its job is to improve DuckDuckGo's search results. DuckDuckGo's help pages list DuckAssistBot on a separate page.
+
+Fact DuckDuckBot
+Operator DuckDuckGo
+Job Search
+robots.txt token DuckDuckBot
+Follows robots.txt Yes, respects WWW::RobotRules (no timing note published)
+IP addresses 486 addresses ( duckduckgo.com/duckduckbot.json , file dated 2026-09-01)
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “DuckDuckBot’s job is to constantly improve our search results and offer users the best and most secure search experience possible.”
+
+Source: DuckDuckGo Help Pages: Is DuckDuckBot related to DuckDuckGo? , read on 24 October 2026.
+
+What happens if you block DuckDuckBot
+
+DuckDuckGo says DuckDuckBot respects WWW::RobotRules, so a Disallow rule addressed to DuckDuckBot in robots.txt applies to this crawler. The page says nothing about what blocking it changes in DuckDuckGo results, and nothing about DuckAssistBot.
+
+The robots.txt lines
+
+To allow DuckDuckBot:
+
+User-agent: DuckDuckBot
+Allow: /
+
+To block DuckDuckBot:
+
+User-agent: DuckDuckBot
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+DuckDuckBot/1.1; (+http://duckduckgo.com/duckduckbot.html)
+
+How to tell a real request from a fake one
+
+The file at duckduckgo.com/duckduckbot.json held 486 addresses on 24 October 2026, file dated 2026-09-01.
+
+DuckDuckGo says the crawler originates from the IP addresses listed on its help page, also available as JSON at duckduckgo.com/duckduckbot.json.
+
+Compare with DuckAssistBot
+
+DuckAssistBot : DuckDuckBot is the crawler for DuckDuckGo search results, while DuckAssistBot is documented by DuckDuckGo on its own help page.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). DuckDuckBot is not one of them: read your robots.txt for a DuckDuckBot group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does DuckDuckBot follow robots.txt?
+
+Yes, respects WWW::RobotRules (no timing note published). Give DuckDuckBot its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know DuckDuckBot is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+DuckDuckGo Help Pages: Is DuckDuckBot related to DuckDuckGo?
+DuckDuckBot IP list (JSON, creationTime 2026-09-01, read 2026-10-24)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+DuckAssistBot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
+## ExaSearchBot: what it does and what blocking it changes
+Source: https://citedby.eu/bots/exasearchbot
+
+AI crawlers / AI crawlers
+
+ExaSearchBot: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer ExaSearchBot is the crawler of Exa, a search engine built for search and retrieval, so pages can be discovered and cited. Exa says it checks robots.txt before fetching and that User-agent: ExaSearchBot with Disallow: / blocks the whole site. Every request is cryptographically signed, so verification does not depend on an IP address.
+
+On this page What ExaSearchBot is
+What the vendor says
+What happens if you block ExaSearchBot
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with PerplexityBot
+Your own site
+Questions people ask
+Sources
+
+What ExaSearchBot is
+
+ExaSearchBot is the crawler of Exa, a search engine. Exa says its purpose is search and retrieval, so pages become discoverable and can be cited. Pages Exa fetches on a user's request rather than by crawling go out as ExaUser.
+
+Fact ExaSearchBot
+Operator Exa
+Job Search and retrieval index
+robots.txt token ExaSearchBot
+Follows robots.txt Yes, vendor says it checks robots.txt before fetching
+IP addresses Verify tool
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “Exa is a search engine. Similar to other search engines, Exa uses a robot (ExaSearchBot) to discover and index pages on the public web.”
+
+Source: Exa: Exa Search Crawler , read on 24 October 2026.
+
+What happens if you block ExaSearchBot
+
+Exa says User-agent: ExaSearchBot with Disallow: / blocks ExaSearchBot from the whole site. If there is no ExaSearchBot group, it follows the rules set for major search engines, otherwise the * group. The vendor says robots.txt controls crawling, not indexing, so already indexed pages are removed with a noindex meta tag or X-Robots-Tag header.
+
+The robots.txt lines
+
+To allow ExaSearchBot:
+
+User-agent: ExaSearchBot
+Allow: /
+
+To block ExaSearchBot:
+
+User-agent: ExaSearchBot
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 (compatible; ExaSearchBot/1.0; +https://crawler.exa.ai/)
+
+How to tell a real request from a fake one
+
+The vendor says every request is cryptographically signed with HTTP Message Signatures (Web Bot Auth) and gives a public key directory to verify against, and that verification holds regardless of IP address.
+
+Compare with PerplexityBot
+
+PerplexityBot : Both are search-index crawlers that feed AI answers with cited sources; ExaSearchBot signs its requests with Web Bot Auth and falls back to major search engines' rules when it has no group of its own.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). ExaSearchBot is not one of them: read your robots.txt for a ExaSearchBot group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does ExaSearchBot follow robots.txt?
+
+Yes, vendor says it checks robots.txt before fetching. Give ExaSearchBot its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know ExaSearchBot is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Exa: Exa Search Crawler
+Exa: FAQs
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+PerplexityBot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
+## ExaUser: what it does and what blocking it changes
+Source: https://citedby.eu/bots/exauser
+
+AI crawlers / AI crawlers
+
+ExaUser: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer ExaUser is the agent Exa uses to fetch a page live when a user, or an application built on the Exa API, asks for its current content. Exa says robots.txt rules may not apply to such user-initiated fetches. Search opt-outs and automatic crawling are controlled with the ExaSearchBot token instead.
+
+On this page What ExaUser is
+What the vendor says
+What happens if you block ExaUser
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with ExaSearchBot
+Your own site
+Questions people ask
+Sources
+
+What ExaUser is
+
+ExaUser is the agent Exa uses to fetch a page live when a user, or an application built on the Exa API, asks for its current content. Exa says it is not used to crawl the web automatically; that is ExaSearchBot. It does not try to bypass logins, paywalls or CAPTCHAs, and submits no forms.
+
+Fact ExaUser
+Operator Exa
+Job User-triggered fetch
+robots.txt token ExaUser
+Follows robots.txt Partial, vendor says robots.txt rules may not apply to user-initiated fetches
+IP addresses Verify tool
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “Exa uses ExaUser to fetch a page live when a user, or an application built on the Exa API, asks for its current content.”
+
+Source: Exa: ExaUser , read on 24 October 2026.
+
+What happens if you block ExaUser
+
+Exa says that because fetches are initiated by a user, robots.txt rules may not apply to ExaUser. It also says ExaUser is not used to decide whether content appears in Exa search, and that search opt-outs and automatic crawling are managed with the ExaSearchBot token in robots.txt.
+
+The robots.txt lines
+
+To allow ExaUser:
+
+User-agent: ExaUser
+Allow: /
+
+To block ExaUser:
+
+User-agent: ExaUser
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 (compatible; ExaUser/1.0; +https://crawler.exa.ai/exauser)
+
+How to tell a real request from a fake one
+
+The vendor says every request is signed with Web Bot Auth (RFC 9421) and publishes its keys at a public directory; it does not publish an IP list.
+
+Compare with ExaSearchBot
+
+ExaSearchBot : ExaSearchBot crawls automatically to build Exa's search index and follows robots.txt, while ExaUser fetches a page only when a user or application asks and the vendor says robots.txt may not apply.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). ExaUser is not one of them: read your robots.txt for a ExaUser group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does ExaUser follow robots.txt?
+
+Not always. Partial, vendor says robots.txt rules may not apply to user-initiated fetches. A rule for ExaUser in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
+
+How do I know ExaUser is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Exa: ExaUser
+Exa: Exa Search Crawler
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+ExaSearchBot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
+## Google-Agent: what it does and what blocking it changes
+Source: https://citedby.eu/bots/google-agent
+
+AI crawlers / AI crawlers
+
+Google-Agent: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 3 sources · method
+
+Short answer Google-Agent is a user-triggered fetcher that Google says is used by agents hosted on Google infrastructure to navigate the web and act on a user's request. Google says user-triggered fetchers generally ignore robots.txt because a user requested the fetch. Google publishes its IP ranges in user-triggered-agents.json.
+
+On this page What Google-Agent is
+What the vendor says
+What happens if you block Google-Agent
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with ChatGPT-User
+Your own site
+Questions people ask
+Sources
+
+What Google-Agent is
+
+Google-Agent is a user-triggered fetcher that Google says is used by agents hosted on Google infrastructure to navigate the web and perform actions upon user request. Google lists separate mobile and desktop user agent strings. Google also says it is experimenting with the Web Bot Auth protocol using the https://agent.bot.goog identity.
+
+Fact Google-Agent
+Operator Google
+Job User-triggered fetch (agents acting for a user)
+robots.txt token Google-Agent
+Follows robots.txt Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch.
+IP addresses 20 ranges ( developers.google.com/static/crawling/ipranges/user-triggered-agents.json , file dated 2026-10-23)
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “Google-Agent is used by agents hosted on Google infrastructure to navigate the web and perform actions upon user request.”
+
+Source: Google Search Central: Google user-triggered fetchers , read on 24 October 2026.
+
+What happens if you block Google-Agent
+
+Google says that because the fetch was requested by a user, user-triggered fetchers generally ignore robots.txt rules. The Google page documents no robots.txt token for Google-Agent.
+
+The robots.txt lines
+
+To allow Google-Agent:
+
+User-agent: Google-Agent
+Allow: /
+
+To block Google-Agent:
+
+User-agent: Google-Agent
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Google-Agent; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent) Chrome/W.X.Y.Z Safari/537.36
+
+How to tell a real request from a fake one
+
+The file at developers.google.com/static/crawling/ipranges/user-triggered-agents.json held 20 ranges on 24 October 2026, file dated 2026-10-23.
+
+Google says Google-Agent uses IP ranges from user-triggered-agents.json, and that user-triggered fetchers' reverse DNS mask matches * - *-* - *.gae.googleusercontent.com or google-proxy-* - *-* - *.google.com depending on whether the fetcher is Google or user owned.
+
+Compare with ChatGPT-User
+
+ChatGPT-User : Both act on a user's request rather than crawling on their own, and Google-Agent is described as navigating the web and performing actions for the user.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). Google-Agent is not one of them: read your robots.txt for a Google-Agent group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Google-Agent follow robots.txt?
+
+Not always. Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch. A rule for Google-Agent in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
+
+How do I know Google-Agent is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Google Search Central: Google user-triggered fetchers
+Google: user-triggered-agents.json (read 2026-10-24, creationTime 2026-10-23)
+Google Search Central: Overview of Google crawlers and fetchers
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+ChatGPT-User
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
+## Google-CloudVertexBot: what it does and what blocking it changes
+Source: https://citedby.eu/bots/google-cloudvertexbot
+
+AI crawlers / AI crawlers
+
+Google-CloudVertexBot: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 3 sources · method
+
+Short answer Google-CloudVertexBot is a Google crawler that performs crawls requested by site owners to build Vertex AI Agents. Google lists it among its common crawlers, which always obey robots.txt when crawling automatically. Google says rules addressed to it have no effect on Google Search or other Google products.
+
+On this page What Google-CloudVertexBot is
+What the vendor says
+What happens if you block Google-CloudVertexBot
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Googlebot
+Your own site
+Questions people ask
+Sources
+
+What Google-CloudVertexBot is
+
+Google-CloudVertexBot is a Google crawler listed among its common crawlers. Google says it performs crawls requested by site owners for building Vertex AI Agents. Google shows it as a user agent substring, not a full user agent string.
+
+Fact Google-CloudVertexBot
+Operator Google
+Job Crawl requested by site owners for Vertex AI Agents
+robots.txt token Google-CloudVertexBot
+Follows robots.txt Yes. Google says common crawlers always obey robots.txt rules when crawling automatically.
+IP addresses 317 ranges ( developers.google.com/static/crawling/ipranges/common-crawlers.json , file dated 2026-10-23)
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “Crawling preferences addressed to the Google-CloudVertexBot user agent affect crawls requested by the site owners' for building Vertex AI Agents”
+
+Source: Google Search Central: Google's common crawlers , read on 24 October 2026.
+
+What happens if you block Google-CloudVertexBot
+
+Google says preferences addressed to the Google-CloudVertexBot user agent affect crawls requested by site owners for building Vertex AI Agents. It says this has no effect on Google Search or other products.
+
+The robots.txt lines
+
+To allow Google-CloudVertexBot:
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+To block Google-CloudVertexBot:
+
+User-agent: Google-CloudVertexBot
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Google-CloudVertexBot
+
+How to tell a real request from a fake one
+
+The file at developers.google.com/static/crawling/ipranges/common-crawlers.json held 317 ranges on 24 October 2026, file dated 2026-10-23.
+
+Google says the common crawlers generally crawl from the ranges in common-crawlers.json, and that the reverse DNS name matches crawl-* - *-* - *.googlebot.com or geo-crawl-* - *-* - *.geo.googlebot.com.
+
+Compare with Googlebot
+
+Googlebot : Googlebot crawls for Google Search, while Google-CloudVertexBot only crawls when a site owner has requested a crawl for building Vertex AI Agents.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). Google-CloudVertexBot is not one of them: read your robots.txt for a Google-CloudVertexBot group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Google-CloudVertexBot follow robots.txt?
+
+Yes. Google says common crawlers always obey robots.txt rules when crawling automatically. Give Google-CloudVertexBot its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know Google-CloudVertexBot is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Google Search Central: Google's common crawlers
+Google: common-crawlers.json (read 2026-10-24, creationTime 2026-10-23)
+Google Search Central: Overview of Google crawlers and fetchers
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Googlebot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
 ## Google-Extended: the robots.txt token for Gemini, not a crawler
 Source: https://citedby.eu/bots/google-extended
 
@@ -1564,6 +2759,202 @@ All AI crawlers compared
 Googlebot
 Is GPTBot blocked on your site?
 Can ChatGPT read my website?
+
+## Google-GeminiNotebook: what it does and what blocking it changes
+Source: https://citedby.eu/bots/google-gemininotebook
+
+AI crawlers / AI crawlers
+
+Google-GeminiNotebook: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer Google-GeminiNotebook is the user agent of the Gemini Notebook fetcher. It requests individual URLs that users have added as sources for their projects. Google lists it among user-triggered fetchers, which generally ignore robots.txt because a user requested the fetch. Google's page names Google-NotebookLM as the former agent.
+
+On this page What Google-GeminiNotebook is
+What the vendor says
+What happens if you block Google-GeminiNotebook
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with ChatGPT-User
+Your own site
+Questions people ask
+Sources
+
+What Google-GeminiNotebook is
+
+Google-GeminiNotebook is the user agent of the Gemini Notebook fetcher, which Google lists among its user-triggered fetchers. It requests individual URLs that users have provided as sources for their projects. Google's page lists Google-NotebookLM as the former agent, supported until August 2026.
+
+Fact Google-GeminiNotebook
+Operator Google
+Job User-triggered fetch
+robots.txt token Google-GeminiNotebook
+Follows robots.txt Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch.
+IP addresses Reverse DNS check
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “The Gemini Notebook fetcher requests individual URLs that Gemini Notebook users have provided as sources for their projects.”
+
+Source: Google Search Central: Google user-triggered fetchers , read on 24 October 2026.
+
+What happens if you block Google-GeminiNotebook
+
+Google says that because the fetch was requested by a user, user-triggered fetchers generally ignore robots.txt rules. The Google page documents no robots.txt token for this fetcher.
+
+The robots.txt lines
+
+To allow Google-GeminiNotebook:
+
+User-agent: Google-GeminiNotebook
+Allow: /
+
+To block Google-GeminiNotebook:
+
+User-agent: Google-GeminiNotebook
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 (compatible; Google-GeminiNotebook; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-gemininotebook)
+
+How to tell a real request from a fake one
+
+Google says user-triggered fetchers publish IP ranges in user-triggered-fetchers.json, user-triggered-fetchers-google.json and user-triggered-agents.json, and that the reverse DNS mask matches * - *-* - *.gae.googleusercontent.com or google-proxy-* - *-* - *.google.com depending on whether the fetcher is Google or user owned.
+
+Compare with ChatGPT-User
+
+ChatGPT-User : Both fetch individual URLs because a user asked an assistant product to use them, and both vendors say these fetches may not follow robots.txt rules.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). Google-GeminiNotebook is not one of them: read your robots.txt for a Google-GeminiNotebook group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Google-GeminiNotebook follow robots.txt?
+
+Not always. Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch. A rule for Google-GeminiNotebook in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
+
+How do I know Google-GeminiNotebook is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Google Search Central: Google user-triggered fetchers
+Google Search Central: Overview of Google crawlers and fetchers
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+ChatGPT-User
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
+## Google-Pinpoint: what it does and what blocking it changes
+Source: https://citedby.eu/bots/google-pinpoint
+
+AI crawlers / AI crawlers
+
+Google-Pinpoint: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer Google-Pinpoint is a user-triggered fetcher listed by Google. It requests individual URLs that Pinpoint users specified as sources for their personal collections of documents. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch, and documents no robots.txt token for it.
+
+On this page What Google-Pinpoint is
+What the vendor says
+What happens if you block Google-Pinpoint
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Google-GeminiNotebook
+Your own site
+Questions people ask
+Sources
+
+What Google-Pinpoint is
+
+Google-Pinpoint is a user-triggered fetcher listed by Google. It requests individual URLs that Pinpoint users specified as sources for their personal collections of documents. Google lists it with the user agent Google-Pinpoint.
+
+Fact Google-Pinpoint
+Operator Google
+Job User-triggered fetch
+robots.txt token Google-Pinpoint
+Follows robots.txt Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch.
+IP addresses Reverse DNS check
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “The Google-Pinpoint fetcher requests individual URLs that Pinpoint users specified as sources for their personal collections of documents.”
+
+Source: Google Search Central: Google user-triggered fetchers , read on 24 October 2026.
+
+What happens if you block Google-Pinpoint
+
+Google says that because the fetch was requested by a user, user-triggered fetchers generally ignore robots.txt rules. The Google page documents no robots.txt token for Google-Pinpoint.
+
+The robots.txt lines
+
+To allow Google-Pinpoint:
+
+User-agent: Google-Pinpoint
+Allow: /
+
+To block Google-Pinpoint:
+
+User-agent: Google-Pinpoint
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Google-Pinpoint
+
+How to tell a real request from a fake one
+
+Google says user-triggered fetchers publish IP ranges in user-triggered-fetchers.json, user-triggered-fetchers-google.json and user-triggered-agents.json, and that the reverse DNS mask matches * - *-* - *.gae.googleusercontent.com or google-proxy-* - *-* - *.google.com depending on whether the fetcher is Google or user owned.
+
+Compare with Google-GeminiNotebook
+
+Google-GeminiNotebook : Both fetch URLs that users supplied as sources in a Google product, and both fall under Google's user-triggered fetcher rules.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). Google-Pinpoint is not one of them: read your robots.txt for a Google-Pinpoint group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Google-Pinpoint follow robots.txt?
+
+Not always. Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch. A rule for Google-Pinpoint in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
+
+How do I know Google-Pinpoint is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Google Search Central: Google user-triggered fetchers
+Google Search Central: Overview of Google crawlers and fetchers
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Google-GeminiNotebook
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
 
 ## Googlebot: what it covers, its IP ranges and what a block removes
 Source: https://citedby.eu/bots/googlebot
@@ -1661,6 +3052,107 @@ Google-Extended
 Is GPTBot blocked on your site?
 Can ChatGPT read my website?
 
+## GoogleOther: what it does and what blocking it changes
+Source: https://citedby.eu/bots/googleother
+
+AI crawlers / AI crawlers
+
+GoogleOther: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 3 sources · method
+
+Short answer GoogleOther is Google's generic crawler. Various Google product teams use it to fetch publicly accessible content, for example in one-off crawls for internal research and development. Google says rules addressed to GoogleOther do not affect any specific product. GoogleOther-Image and GoogleOther-Video are documented as separate tokens.
+
+On this page What GoogleOther is
+What the vendor says
+What happens if you block GoogleOther
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Googlebot
+Your own site
+Questions people ask
+Sources
+
+What GoogleOther is
+
+GoogleOther is Google's generic crawler, used by various Google product teams to fetch publicly accessible content, for example in one-off crawls for internal research and development. Google lists it among its common crawlers, next to Googlebot, and also documents GoogleOther-Image and GoogleOther-Video as versions optimized for image and video URLs. The Google page does not say it is used for AI training.
+
+Fact GoogleOther
+Operator Google
+Job Generic crawl for various Google product teams
+robots.txt token GoogleOther
+Follows robots.txt Yes. Google says common crawlers always obey robots.txt rules when crawling automatically.
+IP addresses 317 ranges ( developers.google.com/static/crawling/ipranges/common-crawlers.json , file dated 2026-10-23)
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “GoogleOther is the generic crawler that may be used by various product teams for fetching publicly accessible content from sites. For example, it may be used for one-off crawls for internal research and development.”
+
+Source: Google Search Central: Google's common crawlers , read on 24 October 2026.
+
+What happens if you block GoogleOther
+
+Google says crawling preferences addressed to the GoogleOther user agent do not affect any specific product. Google documents GoogleOther-Image and GoogleOther-Video as separate robots.txt tokens, so a rule for GoogleOther is not stated to cover them, and the Googlebot token is a separate token again.
+
+The robots.txt lines
+
+To allow GoogleOther:
+
+User-agent: GoogleOther
+Allow: /
+
+To block GoogleOther:
+
+User-agent: GoogleOther
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GoogleOther) Chrome/W.X.Y.Z Safari/537.36
+
+How to tell a real request from a fake one
+
+The file at developers.google.com/static/crawling/ipranges/common-crawlers.json held 317 ranges on 24 October 2026, file dated 2026-10-23.
+
+Google says the common crawlers generally crawl from the ranges in common-crawlers.json, and that the reverse DNS name matches crawl-* - *-* - *.googlebot.com or geo-crawl-* - *-* - *.geo.googlebot.com.
+
+Compare with Googlebot
+
+Googlebot : Googlebot crawls for Google Search and related products, while GoogleOther is a generic crawler whose robots.txt rules do not affect any specific Google product.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). GoogleOther is not one of them: read your robots.txt for a GoogleOther group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does GoogleOther follow robots.txt?
+
+Yes. Google says common crawlers always obey robots.txt rules when crawling automatically. Give GoogleOther its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know GoogleOther is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Google Search Central: Google's common crawlers
+Google: common-crawlers.json (read 2026-10-24, creationTime 2026-10-23)
+Google Search Central: Overview of Google crawlers and fetchers
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Googlebot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
 ## GPTBot: what it does and what blocking it changes
 Source: https://citedby.eu/bots/gptbot
 
@@ -1756,6 +3248,393 @@ All AI crawlers compared
 OAI-SearchBot
 Is GPTBot blocked on your site?
 Can ChatGPT read my website?
+
+## ICC-Crawler: what it does and what blocking it changes
+Source: https://citedby.eu/bots/icc-crawler
+
+AI crawlers / AI crawlers
+
+ICC-Crawler: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · method
+
+Short answer ICC-Crawler is run by the Universal Communication Research Institute at Japan's NICT. NICT says it uses collected pages for research on information processing, including multilingual translation, information analysis and artificial intelligence. It supports the Robots Exclusion Protocol: User-agent: ICC-Crawler with Disallow: / could disable collection from all pages.
+
+On this page What ICC-Crawler is
+What the vendor says
+What happens if you block ICC-Crawler
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with GPTBot
+Your own site
+Questions people ask
+Sources
+
+What ICC-Crawler is
+
+ICC-Crawler is a crawler run by the Universal Communication Research Institute at Japan's National Institute of Information and Communications Technology (NICT). NICT says it uses collected pages for research and development of information processing technologies, including multilingual translation, information analysis and artificial intelligence. NICT may also provide collected information or research products to third parties, to the extent permitted by law.
+
+Fact ICC-Crawler
+Operator NICT (Universal Communication Research Institute)
+Job Research data collection (includes AI research and development)
+robots.txt token ICC-Crawler
+Follows robots.txt Yes, and with a Crawl-Delay it uses the larger of that interval and its own minimum
+IP addresses Listed on the vendor's page ( ucri.nict.go.jp/en/icccrawler.html )
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “NICT uses the information it collects for research and development of advanced information processing technologies including multilingual translation, information analysis, and artificial intelligence technologies.”
+
+Source: NICT Universal Communication Research Institute: ICC-Crawler , read on 24 October 2026.
+
+What happens if you block ICC-Crawler
+
+NICT says ICC-Crawler supports the Robots Exclusion Protocol and that adding User-agent: ICC-Crawler with Disallow: / to robots.txt could disable collection from all pages. It also lets site owners block a path or file type, or allow selected paths under a full Disallow. If access continues after that, NICT asks site owners to contact it so it can stop collecting from the host.
+
+The robots.txt lines
+
+To allow ICC-Crawler:
+
+User-agent: ICC-Crawler
+Allow: /
+
+To block ICC-Crawler:
+
+User-agent: ICC-Crawler
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The vendor's page shows no full user-agent string for ICC-Crawler.
+
+How to tell a real request from a fake one
+
+The vendor page lists the crawler's IP addresses in plain text; it does not publish a machine-readable list.
+
+Compare with GPTBot
+
+GPTBot : Both collect pages that feed AI development, but ICC-Crawler is run by a Japanese public research institute for its own research and publishes two crawler IP addresses on its page, while GPTBot is run by a commercial company.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). ICC-Crawler is not one of them: read your robots.txt for a ICC-Crawler group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does ICC-Crawler follow robots.txt?
+
+Yes, and with a Crawl-Delay it uses the larger of that interval and its own minimum. Give ICC-Crawler its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know ICC-Crawler is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+NICT Universal Communication Research Institute: ICC-Crawler
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+GPTBot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
+## ImagesiftBot: what it does and what blocking it changes
+Source: https://citedby.eu/bots/imagesiftbot
+
+AI crawlers / AI crawlers
+
+ImagesiftBot: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · method
+
+Short answer ImagesiftBot is the crawler of ImageSift, a Hive product. It collects publicly available images with the host URL, page text and image alt text for an index used to search for similar images. The vendor says it respects robots.txt and Crawl-delay, and follows the Googlebot rules when none target it.
+
+On this page What ImagesiftBot is
+What the vendor says
+What happens if you block ImagesiftBot
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Googlebot
+Your own site
+Questions people ask
+Sources
+
+What ImagesiftBot is
+
+ImageSiftBot is the crawler of ImageSift, a Hive product. It collects publicly available images, along with the host URL, page text and image alt text. ImageSift stores the data in an index that its products use for search and retrieval of similar images.
+
+Fact ImagesiftBot
+Operator Hive (ImageSift)
+Job Image index for similar-image search
+robots.txt token ImagesiftBot
+Follows robots.txt Yes, and it supports Crawl-delay
+IP addresses None published
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “ImageSiftBot is a web crawler that scrapes the internet for publicly available images to support our suite of web intelligence products”
+
+Source: Imagesift by Hive: ImageSift Bot , read on 24 October 2026.
+
+What happens if you block ImagesiftBot
+
+The vendor says standard robots.txt directives that target ImagesiftBot are respected, and that it supports Crawl-delay. If no rule targets ImagesiftBot but a rule targets Googlebot, it follows the Googlebot rules. The page also gives support@imagesift.com for opt-out requests.
+
+The robots.txt lines
+
+To allow ImagesiftBot:
+
+User-agent: ImagesiftBot
+Allow: /
+
+To block ImagesiftBot:
+
+User-agent: ImagesiftBot
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 (compatible; ImagesiftBot; +imagesift.com)
+
+How to tell a real request from a fake one
+
+The vendor page does not publish an IP list or a verification method.
+
+Compare with Googlebot
+
+Googlebot : ImagesiftBot falls back to Googlebot's robots.txt rules when it has none of its own, and it collects images for a similar-image index rather than for a general web search.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). ImagesiftBot is not one of them: read your robots.txt for a ImagesiftBot group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does ImagesiftBot follow robots.txt?
+
+Yes, and it supports Crawl-delay. Give ImagesiftBot its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know ImagesiftBot is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Imagesift by Hive: ImageSift Bot
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Googlebot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
+## Kagibot: what it does and what blocking it changes
+Source: https://citedby.eu/bots/kagibot
+
+AI crawlers / AI crawlers
+
+Kagibot: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · method
+
+Short answer Kagibot is the web crawler for the Kagi search engine. Kagi says standard robots.txt directives that target Kagibot are respected, and that when no rule targets Kagibot but one targets Googlebot, Kagibot follows the Googlebot directives. Kagi publishes its user-agent string and the IP addresses its requests come from.
+
+On this page What Kagibot is
+What the vendor says
+What happens if you block Kagibot
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Googlebot
+Your own site
+Questions people ask
+Sources
+
+What Kagibot is
+
+Kagibot is the web crawler for the Kagi search engine. Kagi publishes its user-agent string and the IP addresses that Kagibot requests originate from.
+
+Fact Kagibot
+Operator Kagi
+Job Search
+robots.txt token Kagibot
+Follows robots.txt Yes, standard robots.txt directives targeting Kagibot are respected
+IP addresses Listed on the vendor's page ( kagi.com/bot )
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “Standard directives in robots.txt that target Kagibot are respected.”
+
+Source: Kagi: About KagiBot , read on 24 October 2026.
+
+What happens if you block Kagibot
+
+Kagi says standard robots.txt directives that target Kagibot are respected, for example Disallow rules for a path. If there is no rule for Kagibot but there is one for Googlebot, Kagibot follows the Googlebot directives.
+
+The robots.txt lines
+
+To allow Kagibot:
+
+User-agent: Kagibot
+Allow: /
+
+To block Kagibot:
+
+User-agent: Kagibot
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 (compatible; Kagibot/1.0; +https://kagi.com/bot)
+
+How to tell a real request from a fake one
+
+Kagi lists the IP addresses (with kagibot.org hostnames) that requests from Kagibot originate from on its bot page.
+
+Compare with Googlebot
+
+Googlebot : Kagibot follows its own robots.txt rules, and falls back to the Googlebot rules when none target Kagibot.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). Kagibot is not one of them: read your robots.txt for a Kagibot group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Kagibot follow robots.txt?
+
+Yes, standard robots.txt directives targeting Kagibot are respected. Give Kagibot its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know Kagibot is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Kagi: About KagiBot (read 2026-10-24)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Googlebot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
+## LinkupBot: what it does and what blocking it changes
+Source: https://citedby.eu/bots/linkupbot
+
+AI crawlers / AI crawlers
+
+LinkupBot: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer LinkupBot is the web crawler of Linkup. It fetches publicly accessible pages to build the Linkup search index, which Linkup says powers search and web grounding for AI applications. Linkup says User-agent: LinkupBot with Disallow: / blocks the whole site, and that robots.txt is not an access-control mechanism.
+
+On this page What LinkupBot is
+What the vendor says
+What happens if you block LinkupBot
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with PerplexityBot
+Your own site
+Questions people ask
+Sources
+
+What LinkupBot is
+
+LinkupBot is the web crawler of Linkup. It fetches publicly accessible pages to build and maintain the Linkup search index, which Linkup says powers search and web grounding for AI applications.
+
+Fact LinkupBot
+Operator Linkup
+Job Search index for AI web search
+robots.txt token LinkupBot
+Follows robots.txt Yes, vendor says it respects applicable robots.txt rules
+IP addresses Listed on the vendor's page ( www.linkup.so/linkupbot-ips.txt )
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “LinkupBot is Linkup’s web crawler. It discovers and retrieves publicly accessible webpages to build and maintain the Linkup web search index, which powers search and web grounding for AI applications.”
+
+Source: Linkup: LinkupBot , read on 24 October 2026.
+
+What happens if you block LinkupBot
+
+Adding User-agent: LinkupBot with Disallow: / to robots.txt blocks the whole site, according to the vendor. The vendor also says robots rules apply per host, that allowing LinkupBot through a firewall does not override robots.txt, and that robots.txt is not an access-control mechanism.
+
+The robots.txt lines
+
+To allow LinkupBot:
+
+User-agent: LinkupBot
+Allow: /
+
+To block LinkupBot:
+
+User-agent: LinkupBot
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+LinkupBot/1.0 (LinkupBot for web indexing; https://www.linkup.so/bot; bot@linkup.so)
+
+How to tell a real request from a fake one
+
+The vendor says requests come from the CIDR ranges in its published list and to verify with both a source IP in that list and a user-agent containing the LinkupBot token.
+
+Compare with PerplexityBot
+
+PerplexityBot : Both build a search index that feeds AI answers; LinkupBot's index serves AI applications through Linkup's search and grounding service, and its IP list is a plain text file rather than JSON.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). LinkupBot is not one of them: read your robots.txt for a LinkupBot group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does LinkupBot follow robots.txt?
+
+Yes, vendor says it respects applicable robots.txt rules. Give LinkupBot its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know LinkupBot is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Linkup: LinkupBot
+Linkup: linkupbot-ips.txt (plain text, read 2026-10-24)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+PerplexityBot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
 
 ## Meta-ExternalAgent: Meta's AI crawler and its four siblings
 Source: https://citedby.eu/bots/meta-externalagent
@@ -1859,6 +3738,200 @@ GPTBot
 AI crawler settings by platform
 Can ChatGPT read my website?
 
+## Meta-ExternalFetcher: what it does and what blocking it changes
+Source: https://citedby.eu/bots/meta-externalfetcher
+
+AI crawlers / AI crawlers
+
+Meta-ExternalFetcher: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · method
+
+Short answer Meta-ExternalFetcher is a Meta crawler that fetches individual links at a user's request. Meta says it supports product functions such as helping AI navigate websites to complete tasks for users, and that it may bypass robots.txt because the fetches are requested by a user. Robots.txt changes can take up to 24 hours.
+
+On this page What Meta-ExternalFetcher is
+What the vendor says
+What happens if you block Meta-ExternalFetcher
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Meta-ExternalAgent
+Your own site
+Questions people ask
+Sources
+
+What Meta-ExternalFetcher is
+
+Meta-ExternalFetcher is a Meta crawler that fetches individual links at a user's request. Meta says it supports product functions such as evaluating and improving agentic AI capabilities, including helping AI navigate websites to complete tasks for users. Meta documents it alongside Meta-ExternalAgent, Meta-WebIndexer, Meta-ExternalAds and FacebookExternalHit on one page.
+
+Fact Meta-ExternalFetcher
+Operator Meta
+Job User-triggered fetch
+robots.txt token Meta-ExternalFetcher
+Follows robots.txt Partial, may bypass robots.txt because fetches are requested by a user
+IP addresses None published
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “The Meta-ExternalFetcher crawler fetches individual links at a user's request and supports product functions such as evaluating and improving agentic AI capabilities—including helping AI navigate websites to complete tasks for users. Accordingly, this crawler may bypass robots.txt rules.”
+
+Source: Meta: Meta Web Crawlers , read on 24 October 2026.
+
+What happens if you block Meta-ExternalFetcher
+
+Meta says you can block its crawlers by adding a disallow for the relevant crawler to robots.txt. Meta also says Meta-ExternalFetcher may bypass robots.txt because it performs fetches that were requested by the user. Meta says changes to robots.txt can take up to 24 hours to take effect because crawlers may cache the file for up to 24 hours.
+
+The robots.txt lines
+
+To allow Meta-ExternalFetcher:
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+To block Meta-ExternalFetcher:
+
+User-agent: Meta-ExternalFetcher
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+meta-externalfetcher/1.1
+
+How to tell a real request from a fake one
+
+Meta's crawler page does not list IP addresses or a verification method for this crawler; it identifies the crawler by its user-agent string.
+
+Compare with Meta-ExternalAgent
+
+Meta-ExternalAgent : Meta-ExternalAgent crawls the web in the background, including for training foundation AI models, while Meta-ExternalFetcher fetches single links a user asked for and may bypass robots.txt.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). Meta-ExternalFetcher is not one of them: read your robots.txt for a Meta-ExternalFetcher group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Meta-ExternalFetcher follow robots.txt?
+
+Not always. Partial, may bypass robots.txt because fetches are requested by a user. A rule for Meta-ExternalFetcher in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
+
+How do I know Meta-ExternalFetcher is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Meta: Meta Web Crawlers
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Meta-ExternalAgent
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
+## Meta-WebIndexer: what it does and what blocking it changes
+Source: https://citedby.eu/bots/meta-webindexer
+
+AI crawlers / AI crawlers
+
+Meta-WebIndexer: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · method
+
+Short answer Meta-WebIndexer is a Meta crawler that navigates the web to improve Meta AI search result quality. Meta says allowing it in robots.txt helps Meta cite and link to your content in Meta AI's responses. Meta says you block its crawlers with a disallow for the relevant crawler, and a change can take up to 24 hours.
+
+On this page What Meta-WebIndexer is
+What the vendor says
+What happens if you block Meta-WebIndexer
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Meta-ExternalAgent
+Your own site
+Questions people ask
+Sources
+
+What Meta-WebIndexer is
+
+Meta-WebIndexer is a Meta crawler that navigates the web to improve Meta AI search result quality for users. Meta says allowing it in robots.txt helps Meta cite and link to your content in Meta AI's responses. Meta documents it alongside Meta-ExternalAgent, Meta-ExternalFetcher, Meta-ExternalAds and FacebookExternalHit on one page.
+
+Fact Meta-WebIndexer
+Operator Meta
+Job Search
+robots.txt token Meta-WebIndexer
+Follows robots.txt Yes, changes may take up to 24 hours
+IP addresses None published
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “The Meta-WebIndexer crawler navigates the web to improve Meta AI search result quality for users. In doing so, Meta analyzes online content to enhance the relevance and accuracy of Meta AI.”
+
+Source: Meta: Meta Web Crawlers , read on 24 October 2026.
+
+What happens if you block Meta-WebIndexer
+
+Meta says you can block its crawlers by adding a disallow for the relevant crawler to robots.txt, and that robots.txt changes can take up to 24 hours to take effect. Meta says allowing Meta-WebIndexer helps it cite and link to your content in Meta AI's responses. Meta's page does not say whether a disallow for Meta-WebIndexer affects its other crawlers.
+
+The robots.txt lines
+
+To allow Meta-WebIndexer:
+
+User-agent: Meta-WebIndexer
+Allow: /
+
+To block Meta-WebIndexer:
+
+User-agent: Meta-WebIndexer
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+meta-webindexer/1.1
+
+How to tell a real request from a fake one
+
+Meta's crawler page does not list IP addresses or a verification method for this crawler; it identifies the crawler by its user-agent string.
+
+Compare with Meta-ExternalAgent
+
+Meta-ExternalAgent : Meta-WebIndexer is for Meta AI search results and citations, while Meta-ExternalAgent is described by Meta as crawling for uses such as training foundation AI models or indexing content directly.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). Meta-WebIndexer is not one of them: read your robots.txt for a Meta-WebIndexer group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Meta-WebIndexer follow robots.txt?
+
+Yes, changes may take up to 24 hours. Give Meta-WebIndexer its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know Meta-WebIndexer is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Meta: Meta Web Crawlers
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Meta-ExternalAgent
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
 ## MistralAI-User, MistralAI-Index and MistralAI-Training explained
 Source: https://citedby.eu/bots/mistralai-user
 
@@ -1958,6 +4031,106 @@ ChatGPT-User
 Is GPTBot blocked on your site?
 Can ChatGPT read my website?
 
+## MojeekBot: what it does and what blocking it changes
+Source: https://citedby.eu/bots/mojeekbot
+
+AI crawlers / AI crawlers
+
+MojeekBot: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer MojeekBot is the web crawler for the Mojeek search engine. Mojeek says it obeys the Robots Exclusion Standard, using the first record whose User-Agent contains MojeekBot, and does not support the nonstandard crawl-delay directive. It should not request more than one page from a site in the same second.
+
+On this page What MojeekBot is
+What the vendor says
+What happens if you block MojeekBot
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Bingbot
+Your own site
+Questions people ask
+Sources
+
+What MojeekBot is
+
+MojeekBot is the web crawler for the Mojeek search engine. Mojeek says it should not request more than one page from a site within the same 1 second period. It obeys the noindex, nocache and nofollow meta tags.
+
+Fact MojeekBot
+Operator Mojeek
+Job Search
+robots.txt token MojeekBot
+Follows robots.txt Yes, obeys the Robots Exclusion Standard; crawl-delay is not supported
+IP addresses 1 ranges ( www.mojeek.com/mojeekbot.json , file dated 2025-05-14)
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “MojeekBot is the web crawler for the Mojeek search engine.”
+
+Source: Mojeek: MojeekBot , read on 24 October 2026.
+
+What happens if you block MojeekBot
+
+Mojeek says MojeekBot obeys the first robots.txt record whose User-Agent contains MojeekBot, and otherwise the first record for User-Agent *. It will not retrieve URLs containing a disallowed string. It does not support the nonstandard crawl-delay directive.
+
+The robots.txt lines
+
+To allow MojeekBot:
+
+User-agent: MojeekBot
+Allow: /
+
+To block MojeekBot:
+
+User-agent: MojeekBot
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+MojeekBot
+
+How to tell a real request from a fake one
+
+The file at www.mojeek.com/mojeekbot.json held 1 ranges on 24 October 2026, file dated 2025-05-14.
+
+Mojeek says to reverse-resolve the visiting IP to a name in the mojeek.com domain and forward-resolve it back to the same IP, or to match the IP against its published list of MojeekBot IP addresses.
+
+Compare with Bingbot
+
+Bingbot : Both crawl for a search engine; Mojeek publishes a one-range IP list and a reverse DNS check, and does not support crawl-delay.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). MojeekBot is not one of them: read your robots.txt for a MojeekBot group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does MojeekBot follow robots.txt?
+
+Yes, obeys the Robots Exclusion Standard; crawl-delay is not supported. Give MojeekBot its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know MojeekBot is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Mojeek: MojeekBot
+MojeekBot IP list (JSON, creationTime 2025-05-14, read 2026-10-24)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Bingbot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
 ## OAI-SearchBot: what it is and how to allow or block it
 Source: https://citedby.eu/bots/oai-searchbot
 
@@ -2054,6 +4227,106 @@ GPTBot
 Is GPTBot blocked on your site?
 Can ChatGPT read my website?
 
+## Perplexity-User: what it does and what blocking it changes
+Source: https://citedby.eu/bots/perplexity-user
+
+AI crawlers / AI crawlers
+
+Perplexity-User: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer Perplexity-User is Perplexity's user-action fetcher: when a user asks a question, it may visit a page to answer accurately and link to it. Perplexity says it is not used for web crawling or for training AI models, and that it generally ignores robots.txt rules because a user requested the fetch.
+
+On this page What Perplexity-User is
+What the vendor says
+What happens if you block Perplexity-User
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with PerplexityBot
+Your own site
+Questions people ask
+Sources
+
+What Perplexity-User is
+
+Perplexity-User is Perplexity's user-action fetcher. When a user asks Perplexity a question, it might visit a web page to help provide an accurate answer and include a link to the page in its response. Perplexity says it is not used for web crawling or to collect content for training AI foundation models, and it is separate from PerplexityBot, which surfaces and links websites in Perplexity search results.
+
+Fact Perplexity-User
+Operator Perplexity
+Job User-triggered fetch
+robots.txt token Perplexity-User
+Follows robots.txt Generally ignores robots.txt rules, because a user requested the fetch
+IP addresses 4 ranges ( www.perplexity.com/perplexity-user.json , file dated 2025-10-17)
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “Since a user requested the fetch, this fetcher generally ignores robots.txt rules.”
+
+Source: Perplexity: Perplexity Crawlers , read on 24 October 2026.
+
+What happens if you block Perplexity-User
+
+Perplexity lists Perplexity-User as a robots.txt token and says it controls which sites these user requests can access. Perplexity also says this fetcher generally ignores robots.txt rules because a user requested the fetch. Perplexity says each of its robots.txt settings works independently and changes may take up to 24 hours to take effect.
+
+The robots.txt lines
+
+To allow Perplexity-User:
+
+User-agent: Perplexity-User
+Allow: /
+
+To block Perplexity-User:
+
+User-agent: Perplexity-User
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Perplexity-User/1.0; +https://perplexity.ai/perplexity-user)
+
+How to tell a real request from a fake one
+
+The file at www.perplexity.com/perplexity-user.json held 4 ranges on 24 October 2026, file dated 2025-10-17.
+
+Perplexity publishes the Perplexity-User IP addresses as a JSON file and says to use it as the source of truth for allow rules, combined with the user-agent string.
+
+Compare with PerplexityBot
+
+PerplexityBot : PerplexityBot surfaces and links sites in Perplexity search results, while Perplexity-User fetches a page when a user's question needs it and generally ignores robots.txt.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). Perplexity-User is not one of them: read your robots.txt for a Perplexity-User group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Perplexity-User follow robots.txt?
+
+Not always. Generally ignores robots.txt rules, because a user requested the fetch. A rule for Perplexity-User in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
+
+How do I know Perplexity-User is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Perplexity: Perplexity Crawlers
+Perplexity: Perplexity-User IP addresses JSON (read 2026-10-24)
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+PerplexityBot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
 ## PerplexityBot vs Perplexity-User: differences and how to allow it
 Source: https://citedby.eu/bots/perplexitybot
 
@@ -2119,7 +4392,7 @@ Perplexity's file at perplexity.com/perplexitybot.json held 8 prefixes on 21 Oct
 
 Compare with Perplexity-User
 
-Perplexity-User: The user-triggered fetcher; Perplexity says it generally ignores robots.txt.
+Perplexity-User : The user-triggered fetcher; Perplexity says it generally ignores robots.txt.
 
 Check your own site
 
@@ -2148,6 +4421,404 @@ Keep reading
 All AI crawlers compared
 Is GPTBot blocked on your site?
 Can ChatGPT read my website?
+
+## Storebot-Google: what it does and what blocking it changes
+Source: https://citedby.eu/bots/storebot-google
+
+AI crawlers / AI crawlers
+
+Storebot-Google: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 3 sources · method
+
+Short answer Storebot-Google is the crawler Google documents as Google StoreBot among its common crawlers. Google says a Disallow addressed to its token affects all surfaces of Google Shopping, such as the Shopping tab in Google Search and Google Shopping. Googlebot is a separate token with its own affected products.
+
+On this page What Storebot-Google is
+What the vendor says
+What happens if you block Storebot-Google
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Googlebot
+Your own site
+Questions people ask
+Sources
+
+What Storebot-Google is
+
+Storebot-Google is the Google crawler documented as Google StoreBot among its common crawlers. Google says rules addressed to it affect all surfaces of Google Shopping. Google lists separate desktop and mobile user agent strings for it.
+
+Fact Storebot-Google
+Operator Google
+Job Search (Google Shopping surfaces)
+robots.txt token Storebot-Google
+Follows robots.txt Yes. Google says common crawlers always obey robots.txt rules when crawling automatically.
+IP addresses 317 ranges ( developers.google.com/static/crawling/ipranges/common-crawlers.json , file dated 2026-10-23)
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “Crawling preferences addressed to the Storebot-Google user agent affect all surfaces of Google Shopping”
+
+Source: Google Search Central: Google's common crawlers , read on 24 October 2026.
+
+What happens if you block Storebot-Google
+
+Google says a Disallow addressed to the Storebot-Google token affects all surfaces of Google Shopping, such as the Shopping tab in Google Search and Google Shopping. The page lists Googlebot as a separate token with its own affected products.
+
+The robots.txt lines
+
+To allow Storebot-Google:
+
+User-agent: Storebot-Google
+Allow: /
+
+To block Storebot-Google:
+
+User-agent: Storebot-Google
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 (X11; Linux x86_64; Storebot-Google/1.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Safari/537.36
+
+How to tell a real request from a fake one
+
+The file at developers.google.com/static/crawling/ipranges/common-crawlers.json held 317 ranges on 24 October 2026, file dated 2026-10-23.
+
+Google says the common crawlers generally crawl from the ranges in common-crawlers.json, and that the reverse DNS name matches crawl-* - *-* - *.googlebot.com or geo-crawl-* - *-* - *.geo.googlebot.com.
+
+Compare with Googlebot
+
+Googlebot : Googlebot's rules affect Google Search and related products, while Storebot-Google's rules affect Google Shopping surfaces.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). Storebot-Google is not one of them: read your robots.txt for a Storebot-Google group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Storebot-Google follow robots.txt?
+
+Yes. Google says common crawlers always obey robots.txt rules when crawling automatically. Give Storebot-Google its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know Storebot-Google is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Google Search Central: Google's common crawlers
+Google: common-crawlers.json (read 2026-10-24, creationTime 2026-10-23)
+Google Search Central: Overview of Google crawlers and fetchers
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Googlebot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
+## YandexBot: what it does and what blocking it changes
+Source: https://citedby.eu/bots/yandexbot
+
+AI crawlers / AI crawlers
+
+YandexBot: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer YandexBot is listed by Yandex as its main indexing robot, one of many Yandex robots with their own user agents. Yandex says some of them download pages for purposes other than indexing and may ignore restrictive rules written for all robots (User-agent: *). Yandex does not publish an IP list.
+
+On this page What YandexBot is
+What the vendor says
+What happens if you block YandexBot
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with Googlebot
+Your own site
+Questions people ask
+Sources
+
+What YandexBot is
+
+YandexBot is listed by Yandex as the main indexing robot. Yandex runs many other robots with their own user agents (for images, video, advertising, mobile pages, favicons and more), listed on the same page. Yandex does not publish an IP list for its bots.
+
+Fact YandexBot
+Operator Yandex
+Job Search (main indexing robot)
+robots.txt token Yandex
+Follows robots.txt Yes, takes into account the general rules in robots.txt (User-agent: *)
+IP addresses Reverse DNS check
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “Some robots can disguise themselves as Yandex robots by indicating the relevant User Agent. You can check the authenticity of a robot using a reverse DNS lookup.”
+
+Source: Yandex Webmaster: How to check that a robot belongs to Yandex , read on 24 October 2026.
+
+What happens if you block YandexBot
+
+Yandex says a number of its robots download pages for purposes other than indexing and may ignore restrictive rules written for all robots (User-agent: *). To restrict those robots you need directives written specifically for them, for example User-agent: YandexCalendar. Yandex adds that a document the main Yandex robot cannot access will never be indexed or found in search results.
+
+The robots.txt lines
+
+To allow YandexBot:
+
+User-agent: Yandex
+Allow: /
+
+To block YandexBot:
+
+User-agent: Yandex
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
+
+How to tell a real request from a fake one
+
+Yandex says to run a reverse DNS lookup on the IP, check that the host name ends in yandex.ru, yandex.net or yandex.com, then confirm with a forward lookup; it also offers an IP address check tool.
+
+Compare with Googlebot
+
+Googlebot : Both are the main search indexing crawler of their operator; Yandex lists many separate robots, some of which ignore general robots.txt rules, and states it does not publish an IP list.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). YandexBot is not one of them: read your robots.txt for a Yandex group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does YandexBot follow robots.txt?
+
+Yes, takes into account the general rules in robots.txt (User-agent: *). Give Yandex its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know YandexBot is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+Yandex Webmaster: How to check that a robot belongs to Yandex
+Yandex Webmaster: Using robots.txt
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+Googlebot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
+## YouBot: what it does and what blocking it changes
+Source: https://citedby.eu/bots/youbot
+
+AI crawlers / AI crawlers
+
+YouBot: what it does and what blocking it changes
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · method
+
+Short answer YouBot is the web crawler that powers the You.com search engine, discovering and indexing pages for its results. You.com says it respects robots.txt, honors Crawl-delay and caches robots.txt for 30 minutes. User-agent: YouBot with Disallow: / blocks it from the whole site.
+
+On this page What YouBot is
+What the vendor says
+What happens if you block YouBot
+The robots.txt lines
+How to tell a real request from a fake one
+Compare with MojeekBot
+Your own site
+Questions people ask
+Sources
+
+What YouBot is
+
+YouBot is the web crawler that powers the You.com search engine. It discovers and indexes web pages for You.com search results. You.com says X.X.X.X in the user agent stands for the Google Chrome version number.
+
+Fact YouBot
+Operator You.com
+Job Search
+robots.txt token YouBot
+Follows robots.txt Yes, robots.txt is cached for 30 minutes, so changes can take up to 30 minutes
+IP addresses Listed on the vendor's page ( you.com/docs/youbot )
+Vendor page read 24 October 2026
+
+What the vendor says
+
+In the vendor's words (English original): “YouBot is the web crawler that powers the You.com search engine.”
+
+Source: You.com Docs: YouBot: You.com's Web Crawler , read on 24 October 2026.
+
+What happens if you block YouBot
+
+You.com says YouBot respects robots.txt and shows User-agent: YouBot with Disallow: / as the way to block it from the whole site. It also honors Crawl-delay and caches robots.txt for 30 minutes. The page does not describe any other You.com agents.
+
+The robots.txt lines
+
+To allow YouBot:
+
+User-agent: YouBot
+Allow: /
+
+To block YouBot:
+
+User-agent: YouBot
+Disallow: /
+
+Paste a block into the robots.txt at the root of your host, for example https://example.com/robots.txt. A group for one token does not cover the operator's other crawlers.
+
+The user-agent string the vendor shows:
+
+Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; YouBot/1.0; +https://docs.you.com/youbot; env:prod) Chrome/X.X.X.X Safari/537.36
+
+How to tell a real request from a fake one
+
+You.com says requests originate from 68.67.112.0/24, hosts resolve as youbot-{octets-with-hyphens}.search.you.com, and requests carry Cloudflare Web Bot Auth signatures with public keys at you.com/.well-known/http-message-signatures-directory.
+
+Compare with MojeekBot
+
+MojeekBot : Both are search-engine crawlers that follow robots.txt; You.com supports Crawl-delay and signs requests with Web Bot Auth, while Mojeek does not support Crawl-delay.
+
+Your own site
+
+The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot). YouBot is not one of them: read your robots.txt for a YouBot group and look for the user agent in your server log. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does YouBot follow robots.txt?
+
+Yes, robots.txt is cached for 30 minutes, so changes can take up to 30 minutes. Give YouBot its own User-agent group in robots.txt: the operator's other crawlers have their own settings.
+
+How do I know YouBot is really blocked?
+
+robots.txt is only one layer: a CDN or firewall rule can also turn a crawler away, and a crawler can ignore the file. Check your server log for the user agent, and test the address from outside your network.
+
+Sources
+
+You.com Docs: YouBot: You.com's Web Crawler
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All AI crawlers compared
+MojeekBot
+AI crawler settings by platform
+Can ChatGPT read my website? What decides it
+
+## Adobe Commerce: robots.txt is in Content, Design, Configuration
+Source: https://citedby.eu/platforms/adobe-commerce
+
+AI crawler settings by platform / AI crawlers by platform
+
+Adobe Commerce: robots.txt is in Content, Design, Configuration
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 3 sources · method
+
+Short answer In Adobe Commerce you edit robots.txt in the Admin: Content, Design, Configuration, the Global row, then Search Engine Robots and the custom instruction box. Adobe's pages speak of web crawlers and bots in general and name no AI crawler, so any AI user agents are yours to add. Cloud projects have extra file-path steps.
+
+On this page Where the setting is on Adobe Commerce
+The one thing Adobe Commerce's pages say that the other platforms do not
+The steps
+The lines to use
+Gotchas
+Compare with Shopify
+Check your own site
+Questions people ask
+Sources
+
+Where the setting is on Adobe Commerce
+
+On the Admin sidebar go to Content, then Design, then Configuration. Adobe's SEO overview says to find the Global configuration in the first row of the grid, click Edit, and expand the Search Engine Robots section. The Edit Custom instruction of robots.txt file box is there, with a Reset to Default button.
+
+The one thing Adobe Commerce's pages say that the other platforms do not
+
+On Adobe Commerce on cloud infrastructure the robots.txt file has a location problem that the other platforms do not have. Adobe's implementation playbook says to add the content in the Admin, but the file system is read-only, so the file has to live under pub/media and a custom Fastly VCL snippet redirects /robots.txt there. For several sites in one project, the playbook names the files per site, for example domainone_robots.txt. For on-premises installs it says to write the files to /path/to/commerce/pub/media/ or /path/to/commerce/media, whichever is right for your installation.
+
+In the vendor's words: “Due to the read-only file system on Adobe Commerce on cloud infrastructure projects, you must specify the pub/media path before generating the file.”
+
+Source: Adobe Commerce Implementation Playbook: Best practices for configuring web crawlers , read on 24 October 2026.
+
+The steps
+
+On the Admin sidebar go to Content, then Design, then Configuration.
+Find the Global configuration in the first row of the grid and click Edit.
+Scroll down and expand Search Engine Robots.
+Set Default Robots to INDEX, FOLLOW, NOINDEX, FOLLOW, INDEX, NOFOLLOW or NOINDEX, NOFOLLOW. Adobe describes these as instructions to crawlers about indexing and following links.
+If needed, enter your own rules in the Edit Custom instruction of robots.txt file box. Reset to Default restores Adobe's instructions.
+Click Save Configuration, then open your store's /robots.txt to see the result. Adobe's playbook tips that you can view the auto-generated file there.
+
+The lines to use
+
+Adobe's own examples use User-agent: * for all crawlers. To allow or block one named crawler, add a group for its name:
+
+To allow:
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+To block:
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+Adobe's pages do not say whether text you type is added to or replaces its default instructions. Save, then read /robots.txt to confirm what is served.
+
+Gotchas
+
+Adobe's playbook says not to expose your Admin path in robots.txt, because that is a vulnerability for site hacking and potential loss of data, and to remove it. Adobe's default instructions start with User-agent: * and a list of Disallow lines such as /checkout/ and /catalog/, so check what you keep. On cloud, a knowledge base article dated 18 August 2026 says robots.txt content is generated from Admin configuration and stored in the database, with no physical file needed in that scenario, while the playbook describes the pub/media redirect. The two pages read differently, so confirm with Adobe Commerce Support which applies to your project. The playbook also says its advice covers the native Adobe Commerce storefront only, not headless or Adobe Experience Manager storefronts.
+
+Compare with Shopify
+
+Shopify : A theme template instead of an Admin box, and Support will not fix edits to it.
+
+Check your own site
+
+The free check in the box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Why does my custom robots.txt not change on Adobe Commerce cloud?
+
+Adobe's knowledge base says the usual cause is that indexing by search engines is disabled, which stops custom robots.txt content being applied. Fix it in the Cloud Console or with the magento-cloud CLI restrict_robots setting. The article adds that Staging environments have indexing disabled by default and it cannot be enabled there.
+
+Does Adobe Commerce list AI crawlers for robots.txt?
+
+Not in the pages we read. They talk about web crawlers and bots, and their examples use User-agent: * only. Add each AI user agent you want to allow or block as its own group.
+
+Sources
+
+Adobe Commerce Implementation Playbook: Best practices for configuring web crawlers , read 24 October 2026
+Adobe Commerce Admin guide: SEO overview , read 24 October 2026
+Adobe Commerce knowledge base: Resolve robots.txt not updating or displaying default settings , read 24 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All platforms compared
+Shopify
+AI crawlers compared
+AI visibility checklist for Shopify, WooCommerce and more
 
 ## Cloudflare: AI bot policies for Search, Agent and Training
 Source: https://citedby.eu/platforms/cloudflare
@@ -2231,6 +4902,389 @@ Cloudflare marks it as deprecating on 15 September 2026. Its page was still writ
 Sources
 
 Cloudflare Docs: Block AI Bots , read 21 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All platforms compared
+Shopify
+AI crawlers compared
+AI visibility checklist for Shopify, WooCommerce and more
+
+## Framer: upload your own robots.txt with Static Files
+Source: https://citedby.eu/platforms/framer
+
+AI crawler settings by platform / AI crawlers by platform
+
+Framer: upload your own robots.txt with Static Files
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · method
+
+Short answer Framer generates a robots.txt for every published site. To allow or block AI crawlers you upload your own file through Static Files, with the path set to /. Framer says this is available on Pro and Enterprise plans, and that your upload replaces the generated file rather than adding to it.
+
+On this page Where the setting is on Framer
+The one thing Framer's page says that the other platforms do not
+The steps
+The lines to use
+Gotchas
+Compare with Webflow
+Check your own site
+Questions people ask
+Sources
+
+Where the setting is on Framer
+
+In your project dashboard, select your domain, open the Files tab and upload your file with the path set to /. Framer's help page calls this Static Files. To see the live file first, add /robots.txt to your site's domain in a browser.
+
+The one thing Framer's page says that the other platforms do not
+
+Framer gives you no robots.txt editor. The file is generated for you, and the only way to change it is to upload a replacement, which is limited by plan. Framer's page says that if you need a custom robots.txt you can upload one using Static Files, and that the new file replaces the automatically generated one. The plan limit comes straight after.
+
+In the vendor's words: “This is available on Pro and Enterprise plans.”
+
+Source: Framer Help: Access your robots.txt file , read on 24 October 2026.
+
+The steps
+
+Write your robots.txt as a plain text file on your computer.
+Go to your project dashboard and select your domain.
+Open the Files tab.
+Upload your file with the path set to /.
+Open yourdomain.com/robots.txt in a browser to confirm the live file is yours.
+
+The lines to use
+
+To allow:
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+To block:
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+Gotchas
+
+Because your upload replaces the generated file, anything the generated file contained is gone unless you copy it first. Framer's page does not say what the generated file contains, so read yourdomain.com/robots.txt before you upload and keep any lines you want, such as a sitemap line. The page is about robots.txt in general and does not mention AI crawlers by name, so the user agents above are examples to check against each vendor's own page. It was last updated on 15 September 2026.
+
+Compare with Webflow
+
+Webflow : Rules are typed into a settings field rather than uploaded as a file, plus a Content-Signal header.
+
+Check your own site
+
+The free check in the box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Can I edit the robots.txt file in Framer?
+
+Yes, by upload. Framer's page says to open the Files tab for your domain in the project dashboard and upload your file with the path set to /. It says this is available on Pro and Enterprise plans.
+
+Does Framer create a robots.txt automatically?
+
+Yes. Framer's page says it generates a robots.txt file for every published site, and that a custom file uploaded through Static Files replaces the default one.
+
+Sources
+
+Framer Help: Access your robots.txt file , read 24 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All platforms compared
+Webflow
+AI crawlers compared
+AI visibility checklist for Shopify, WooCommerce and more
+
+## Ghost: add robots.txt to your theme to allow or block AI crawlers
+Source: https://citedby.eu/platforms/ghost
+
+AI crawler settings by platform / AI crawlers by platform
+
+Ghost: add robots.txt to your theme to allow or block AI crawlers
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer Ghost serves a default robots.txt. To change it, save your own robots.txt at the root of your theme, then install and activate the new theme version. Ghost's help page says custom themes on Ghost(Pro) need the Creator plan or higher, so your plan decides whether you can edit it.
+
+On this page Where the setting is on Ghost
+The one thing Ghost's page says that the other platforms do not
+The steps
+The lines to use
+Gotchas
+Compare with WordPress.com
+Check your own site
+Questions people ask
+Sources
+
+Where the setting is on Ghost
+
+There is no robots.txt field in the admin. Ghost's help page says the file lives inside your site's theme: write your robots.txt and save it to the root of the theme. Ghost's theme documentation says the same in one line: themes can include a robots.txt which overrides the default robots.txt provided by Ghost.
+
+The one thing Ghost's page says that the other platforms do not
+
+On Ghost the file travels with the theme, so the plan you are on decides whether you can change it. Ghost's help page says it requires you to be comfortable writing your own robots.txt and installing a new version of your theme. It then adds a plan limit for Ghost(Pro), Ghost's hosted service: installing a custom theme requires the Creator plan or higher. The page describes what happens next in these terms.
+
+In the vendor's words: “Once the new version of the theme is installed and activated, the theme's robots.txt will be used in place of Ghost's default robots.txt.”
+
+Source: Ghost Help: Modifying robots.txt , read on 24 October 2026.
+
+The steps
+
+Write your robots.txt file.
+Save it to the root of your theme.
+Install the new version of the theme, then activate it. Ghost says the theme's robots.txt is used in place of its default once the new version is installed and activated.
+On Ghost(Pro), check your plan first: Ghost says installing a custom theme requires the Creator plan or higher.
+
+The lines to use
+
+To allow:
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+To block:
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+Gotchas
+
+The theme's file is used in place of Ghost's default, not added to it. Ghost's pages do not say what the default contains, so open yoursite.com/robots.txt before you replace it and copy across any lines you want to keep, such as a sitemap line. The page also warns that this route needs you to be comfortable writing the file yourself, and it does not cover AI crawlers by name.
+
+Compare with WordPress.com
+
+WordPress.com : Its AI opt-out is a sharing setting, not a file you write.
+
+Check your own site
+
+The free check in the box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Where do I put a custom robots.txt on Ghost?
+
+At the root of your theme. Ghost's help page says that once the new theme version is installed and activated, the theme's robots.txt is used in place of Ghost's default.
+
+Do I need a paid plan to edit robots.txt on Ghost(Pro)?
+
+Ghost's page says installing a custom theme on Ghost(Pro) requires a subscription to the Creator plan or higher. Because the file is part of the theme, that applies to a custom robots.txt too.
+
+Sources
+
+Ghost Help: Modifying robots.txt , read 24 October 2026
+Ghost Docs: Theme structure , read 24 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All platforms compared
+WordPress.com
+AI crawlers compared
+AI visibility checklist for Shopify, WooCommerce and more
+
+## Netlify: block AI crawlers with robots.txt and User Agent Blocker
+Source: https://citedby.eu/platforms/netlify
+
+AI crawler settings by platform / AI crawlers by platform
+
+Netlify: block AI crawlers with robots.txt and User Agent Blocker
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer Netlify gives you two routes. One is a robots.txt file served from the root of your site. The other is the User Agent Blocker extension, which uses a Netlify Edge Function to block requests by user agent. Netlify's developer guide says robots.txt alone is not enough, because some AI products ignore it.
+
+On this page Where the setting is on Netlify
+The one thing Netlify's pages say that the other platforms do not
+The steps
+The lines to use
+Gotchas
+Compare with Cloudflare
+Check your own site
+Questions people ask
+Sources
+
+Where the setting is on Netlify
+
+There is no robots.txt editor in the dashboard pages we read. Netlify's developer guide says to state your rules in a robots.txt file "served from the root of your site". The separate docs page on blocking AI crawlers covers the User Agent Blocker extension, which you find under Extensions in your project's left navigation after installing it.
+
+The one thing Netlify's pages say that the other platforms do not
+
+Netlify's own guide treats robots.txt as the first of two layers, not the whole answer. It shows a robots.txt with one User-agent and Disallow block per bot, generated from a JSON list of names, and then adds an Edge Function that compares each request's User-Agent header with the same list and returns HTTP 401 to a match. It says some AI products do not respect robots.txt, and then adds that the user agent check has a gap of its own.
+
+In the vendor's words: “Sadly, some bots have been found to mis-report their names in their User Agent strings, so we can’t rely on that technique alone either.”
+
+Source: Netlify Developers: Blocking AI bots and controlling crawlers , read on 24 October 2026.
+
+The steps
+
+Write a robots.txt with a User-agent line and Disallow: / for each bot you want to block, and serve it from the root of your site. The guide generates the file from a list of names with a small build script, to avoid typos.
+Deploy the site. The guide notes that AI crawlers "should" honor the file, which is why it adds a second layer.
+For the extension: in your Netlify project dashboard select Extensions in the left sidebar, search for User Agent Blocker, select it, and select Install. This makes it available for all projects on your Netlify team.
+Go to the project where you want it active. You can only activate the extension for one project at a time. Under Extensions in the left navigation, select User Agent Blocker.
+Under Block User Agents, select the traffic to block. To target AI crawlers and bots, select all of the AI crawler options.
+Select Redeploy site and confirm with Save, then select Enable analytics and deploy site. Netlify says blocking starts working immediately once the deploy succeeds.
+
+The lines to use
+
+To allow:
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+To block:
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+Netlify's pages only show Disallow rules. The Allow lines above are standard robots.txt, not something Netlify documents.
+
+Gotchas
+
+Netlify says the extension's preset list "does not include all possible AI crawlers and AI bots", so a crawler missing from the list is not blocked. The same page lists SEO and search crawlers alongside the AI ones, so select only the AI options if you still want search traffic. The guide's example Edge Function answers with a 401 for every matching request, across the whole site.
+
+Compare with Cloudflare
+
+Cloudflare : A network-level switch that works whatever the site platform is, where Netlify's extension is per project.
+
+Check your own site
+
+The free check in the box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Is robots.txt enough to block AI bots on Netlify?
+
+Netlify's guide says no. It says not all AI products respect robots.txt and recommends adding an Edge Function, or the User Agent Blocker extension, that blocks by user agent. It also says some bots mis-report their user agent, so the two layers together are its answer.
+
+Can I turn on the User Agent Blocker for every project at once?
+
+Not according to Netlify's docs. Installing it makes the extension available for all projects on your team, but you can only activate it for one project at a time.
+
+Sources
+
+Netlify Developers: Blocking AI bots and controlling crawlers , read 24 October 2026
+Netlify Docs: Block AI crawlers and bots , read 24 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All platforms compared
+Cloudflare
+AI crawlers compared
+AI visibility checklist for Shopify, WooCommerce and more
+
+## PrestaShop: robots.txt generator writes one rule set for all bots
+Source: https://citedby.eu/platforms/prestashop
+
+AI crawler settings by platform / AI crawlers by platform
+
+PrestaShop: robots.txt generator writes one rule set for all bots
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · method
+
+Short answer PrestaShop's user guide describes a Robots file generation tool under Shop Parameters, Traffic, SEO and URLs. It writes exclusion directives for non-public files with User-agent: *, so it names no AI crawler. Clicking Generate robots.txt replaces any existing file, so add your own AI crawler rules only after generating.
+
+On this page Where the setting is on PrestaShop
+The one thing PrestaShop's page says that the other platforms do not
+The steps
+The lines to use
+Gotchas
+Compare with Shopify
+Check your own site
+Questions people ask
+Sources
+
+Where the setting is on PrestaShop
+
+PrestaShop 8's user guide places it under Configuring your Shop Parameters, then Traffic, then SEO and URLs. The section is called Robots file generation. The page does not name a menu path inside the back office beyond that, and it shows "Last updated 4 years ago" at the foot.
+
+The one thing PrestaShop's page says that the other platforms do not
+
+PrestaShop does not give you a box to type rules into. It gives you a button that writes the whole file. The guide says the generator "simply creates a file with exclusion directives for files and directories that are not meant to be public", applied to all bots through the "User-agent: *" string. It also says the worst bots ignore the file, because it is "purely advisory". The consequence for AI crawlers is in the last two sentences of the section: regenerating wipes whatever you added.
+
+In the vendor's words: “Clicking on the "Generate robots.txt" button replaces any existing robots.txt file with a new one. Therefore, if you want to add your own rules, do it after PrestaShop has generated its version of the file.”
+
+Source: PrestaShop 8 User Guide: SEO and URLs , read on 24 October 2026.
+
+The steps
+
+Open SEO and URLs in the Traffic section of Shop Parameters.
+Go to Robots file generation.
+Click Generate robots.txt. This replaces any existing robots.txt file.
+Add your own rules after PrestaShop has generated its version. The page does not say how to edit the generated file, so use whatever file access your hosting gives you.
+Open /robots.txt on your shop to check that your rules are still there. Repeat step 4 every time you click the button again.
+
+The lines to use
+
+To allow:
+
+# Nothing to add: the generated file only lists files and directories that are not public.
+# To name one explicitly, add after the generated block:
+User-agent: OAI-SearchBot
+Allow: /
+
+To block:
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+Gotchas
+
+The generated file speaks to every bot the same way, because it uses User-agent: * and nothing else, so PrestaShop's tool gives you no per-crawler choice. The guide says some bots you want to have full access, such as Google's, and others you do not, such as spam bots and content thieves, which is a decision you make in your own added groups. The guide does not mention AI crawlers by name at all, and it points to no setting or module for them.
+
+Compare with Shopify
+
+Shopify : A robots.txt.liquid template that keeps your additions, where PrestaShop's button overwrites them.
+
+Check your own site
+
+The free check in the box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Will regenerating robots.txt in PrestaShop delete my AI crawler rules?
+
+Yes, if you added them to the generated file. PrestaShop's guide says the button replaces any existing robots.txt with a new one, and that you should add your own rules after it has generated its version.
+
+Does PrestaShop block AI crawlers by default?
+
+The guide does not say so. It describes a generated file with exclusion directives for non-public files and directories under User-agent: *, and it names no AI crawler.
+
+Sources
+
+PrestaShop 8 User Guide: SEO and URLs , read 24 October 2026
 
 See what AI answers about your shop
 The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
@@ -2433,6 +5487,95 @@ Audit my site Audit from €9, paid once. 14-day money-back guarantee.
 Keep reading
 All platforms compared
 Wix
+AI crawlers compared
+AI visibility checklist for Shopify, WooCommerce and more
+
+## Vercel: the AI Bots ruleset in the Firewall (Log or Deny)
+Source: https://citedby.eu/platforms/vercel
+
+AI crawler settings by platform / AI crawlers by platform
+
+Vercel: the AI Bots ruleset in the Firewall (Log or Deny)
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer Vercel handles AI bots with a Firewall ruleset, not a robots.txt line. In your project open Firewall, then Rules, and set the AI Bots Ruleset to Log or Deny. It is available on all plans and starts inactive, shown as Allow, so nothing is blocked until you change it.
+
+On this page Where the setting is on Vercel
+The one thing Vercel's page says that the other platforms do not
+The steps
+The lines to use
+Gotchas
+Compare with Cloudflare
+Check your own site
+Questions people ask
+Sources
+
+Where the setting is on Vercel
+
+From your project's dashboard, open Firewall in the sidebar, then Rules. In the Bot Management section you will find the AI Bots Ruleset rule. Vercel's docs say the ruleset is available on all plans.
+
+The one thing Vercel's page says that the other platforms do not
+
+Vercel's list of AI bots is not yours to maintain. The ruleset covers AI bots that crawl for training data, search purposes or user-generated fetches, and Vercel keeps the list current. The same page says the ruleset is inactive by default and labelled Allow in the dashboard, so matching traffic is not evaluated and reaches your application. The control is one action for the whole ruleset, Log or Deny, applied at the Firewall.
+
+In the vendor's words: “When new AI bots emerge, Vercel automatically adds them to its managed list and handles them according to your existing configured action without requiring any changes on your part.”
+
+Source: Vercel Docs: Bot Management , read on 24 October 2026.
+
+The steps
+
+From your project's dashboard, open Firewall in the sidebar.
+Open Rules in the sidebar.
+In the Bot Management section, select Log or Deny on the AI Bots Ruleset rule. Log records AI bot traffic without blocking it and is useful for monitoring. Deny blocks all traffic identified as coming from AI bots.
+When you make a change, a Review Changes button appears with the number of changes. Select Review Changes, check them, then select Publish to apply the changes to your production deployment.
+
+The lines to use
+
+Vercel's pages describe this as a Firewall setting, so there is no robots.txt line to add. The two states are:
+
+To allow:
+
+AI Bots Ruleset: Allow (the default, ruleset inactive)
+
+To block:
+
+AI Bots Ruleset: Deny
+
+Gotchas
+
+Deny blocks all traffic identified as coming from AI bots, and the ruleset's scope is training, search and user-generated fetches together, so it is not a way to block training bots while keeping search bots. Log is the safer first step. Vercel's page does not say how the ruleset relates to your robots.txt, so check what your own file says separately. For individual bots, the same page says you can block some or all of the bots in its verified bots directory with WAF custom rules that use the User Agent match condition or the Signature-Agent header.
+
+Compare with Cloudflare
+
+Cloudflare : Also a network-level switch, with three actions for each of Search, Agent and Training.
+
+Check your own site
+
+The free check in the box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Does Vercel block AI bots by default?
+
+No. Vercel's docs say the AI Bots Ruleset is inactive by default, labelled Allow in the dashboard, and that matching traffic is not evaluated and reaches your application.
+
+Do I have to keep Vercel's list of AI bots up to date?
+
+No. Vercel says the list of known AI bots is automatically maintained and updated by Vercel, and that new bots are handled according to the action you have already set.
+
+Sources
+
+Vercel Docs: Bot Management , read 24 October 2026
+Vercel Docs: WAF Managed Rulesets , read 24 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All platforms compared
+Cloudflare
 AI crawlers compared
 AI visibility checklist for Shopify, WooCommerce and more
 
@@ -2732,6 +5875,105 @@ Audit my site Audit from €9, paid once. 14-day money-back guarantee.
 Keep reading
 All platforms compared
 Cloudflare
+AI crawlers compared
+AI visibility checklist for Shopify, WooCommerce and more
+
+## WP Engine: robots.txt, 10-second default crawl-delay, Web Rules
+Source: https://citedby.eu/platforms/wp-engine
+
+AI crawler settings by platform / AI crawlers by platform
+
+WP Engine: robots.txt, 10-second default crawl-delay, Web Rules
+
+By the CitedBy editorial team · Reviewed on 2026-10-24 · 2 sources · method
+
+Short answer WP Engine's robots.txt page says a physical robots.txt in your site root overrides any file a plugin or theme generates. Its default file sets a crawl-delay of 10 seconds, and sites on a wpengine.com address get a disallow-all file. To deny a bot by user agent, WP Engine points to its Web Rules Engine.
+
+On this page Where the setting is on WP Engine
+The one thing WP Engine's page says that the other platforms do not
+The steps
+The lines to use
+Gotchas
+Compare with WordPress.com
+Check your own site
+Questions people ask
+Sources
+
+Where the setting is on WP Engine
+
+WP Engine's page gives two ways to make the file. With the Yoast SEO plugin installed, go to SEO, then Tools, choose the file editor and select Create robots.txt file. Or create a robots.txt file yourself and upload it with SFTP or the SSH Gateway to the root directory of your site. For blocking by user agent, the page sends you to access rules in the Web Rules Engine in the User Portal.
+
+The one thing WP Engine's page says that the other platforms do not
+
+WP Engine ships a default robots.txt, and the page says what is in it. Its note says the default crawl-delay for all sites is 10 seconds, and any environment on a wpengine.com address gets a file that disallows everything, to stop a site being indexed on the wrong domain before launch. Only environments using a custom domain will see changes made to robots.txt. A physical file you upload also takes priority over a file made by a plugin or theme.
+
+In the vendor's words: “This is what’s in the server’s default robots.txt file and can be overridden when you add a custom robots.txt file with one of the methods outlined in this article.”
+
+Source: WP Engine Support: Robots.txt and WordPress , read on 24 October 2026.
+
+The steps
+
+Create a file named robots.txt. The name must be lowercase and the extension .txt, not .html.
+Add your directives and save. For a plugin route instead, use Yoast SEO, Tools, then Create robots.txt file.
+Upload the file with SFTP or the SSH Gateway to the root directory of your site.
+Open /robots.txt on your live custom domain to check it. A copy on a wpengine.com address will not show your changes.
+To deny a bot at the server instead, open the Sites page in the User Portal, select the environment, click Web Rules in the secondary left menu (you may have to expand Advanced), choose Access rules and click Add Rule.
+Set Action to Deny, IP to All, and add a condition with Type Header, Name User-Agent, Operator Regex matches (~) and the user agent name as Value. Click Add Rule to save.
+
+The lines to use
+
+To allow:
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+To block:
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+WP Engine's page says directive values are case-sensitive and that globbing and regular expressions are not fully supported in robots.txt.
+
+Gotchas
+
+The page names no AI crawlers: its examples use BadBotName, Googlebot, bingbot and SEMrush. It also says robots do not have to follow robots.txt, and recommends a firewall such as Sucuri WAF or Cloudflare, or contacting Support, to stop bad actors before they reach the site. A request denied by a Web Rules access rule gets a 403 Forbidden response and is not counted towards billable visits, per the Web Rules Engine page. Your custom robots.txt overrides the default file, including its 10-second crawl-delay line, so add a Crawl-delay line yourself if you want to keep one.
+
+Compare with WordPress.com
+
+WordPress.com : An AI opt-out in privacy settings rather than a robots.txt file you write.
+
+Check your own site
+
+The free check in the box above reads robots.txt for the AI crawlers and sends one live request per crawler, so a rule that your platform's settings allow but a firewall refuses shows up. The full list of crawlers is on the AI crawler hub .
+
+Questions people ask
+
+Why does my staging site on WP Engine ignore my robots.txt?
+
+WP Engine says sites on an environment.wpengine.com address get a disallow-all robots.txt automatically, and only environments with a custom domain see changes to the file. Shared accounts can add a custom domain only to Production, so Staging and Development usually will not show your edits.
+
+Does a robots.txt plugin override a file I upload to WP Engine?
+
+No, the other way round. WP Engine says a physical robots.txt in the root of your site overwrites any dynamically generated file created by a plugin or theme.
+
+Sources
+
+WP Engine Support: Robots.txt and WordPress , read 24 October 2026
+WP Engine Support: Web Rules Engine , read 24 October 2026
+
+See what AI answers about your shop
+The audit crawls your site up to your plan's page limit, shows which AI crawlers it lets in and gives the exact fix for each issue. From €9, 14-day money-back guarantee.
+Audit my site Audit from €9, paid once. 14-day money-back guarantee.
+
+Keep reading
+All platforms compared
+WordPress.com
 AI crawlers compared
 AI visibility checklist for Shopify, WooCommerce and more
 

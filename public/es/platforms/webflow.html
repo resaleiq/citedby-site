@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Webflow: robots.txt y la cabecera Content-Signal para la IA</title>
+<meta name="description" content="Dónde está el editor de robots.txt de Webflow, qué plan necesita y cómo su cabecera Content-Signal separa entrenamiento de IA, búsqueda y entrada de IA.">
+<link rel="canonical" href="https://citedby.eu/es/platforms/webflow"><link rel="alternate" hreflang="es" href="https://citedby.eu/es/platforms/webflow"><link rel="alternate" hreflang="en" href="https://citedby.eu/platforms/webflow"><link rel="alternate" hreflang="de" href="https://citedby.eu/de/platforms/webflow"><link rel="alternate" hreflang="fr" href="https://citedby.eu/fr/platforms/webflow"><link rel="alternate" hreflang="nl" href="https://citedby.eu/nl/platforms/webflow"><link rel="alternate" hreflang="x-default" href="https://citedby.eu/platforms/webflow">
+<meta property="og:title" content="Webflow: robots.txt y la cabecera Content-Signal para la IA"><meta property="og:description" content="Dónde está el editor de robots.txt de Webflow, qué plan necesita y cómo su cabecera Content-Signal separa entrenamiento de IA, búsqueda y entrada de IA."><meta property="og:url" content="https://citedby.eu/es/platforms/webflow"><meta property="og:type" content="article"><meta property="og:image" content="https://citedby.eu/og-v2.png"><meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0F1B2D">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/newsreader-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/saas.css"><link rel="stylesheet" href="/doc.css?v=bbef868a"><link rel="stylesheet" href="/blog.css?v=5752986d"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Webflow: robots.txt y la cabecera Content-Signal para la IA", "description": "Dónde está el editor de robots.txt de Webflow, qué plan necesita y cómo su cabecera Content-Signal separa entrenamiento de IA, búsqueda y entrada de IA.", "inLanguage": "es", "datePublished": "2026-10-21", "dateModified": "2026-10-21", "author": {"@type": "Organization", "name": "CitedBy editorial team", "url": "https://citedby.eu/es/about#editorial"}, "publisher": {"@type": "Organization", "name": "CitedBy", "url": "https://citedby.eu/"}, "mainEntityOfPage": "https://citedby.eu/es/platforms/webflow", "image": ["https://citedby.eu/og-v2.png", "https://citedby.eu/blog/img/webflow-es-hero.svg"]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://citedby.eu/es"}, {"@type": "ListItem", "position": 2, "name": "Ajustes de rastreadores de IA por plataforma", "item": "https://citedby.eu/es/platforms"}, {"@type": "ListItem", "position": 3, "name": "Webflow: robots.txt y la cabecera Content-Signal para la IA", "item": "https://citedby.eu/es/platforms/webflow"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Necesito un plan de pago para robots.txt en Webflow?", "acceptedAnswer": {"@type": "Answer", "text": "Una página de ayuda de Webflow dice que necesitas un plan Site o un plan Workspace de pago para añadir un archivo robots.txt a tu sitio."}}, {"@type": "Question", "name": "¿Qué es Content-Signal?", "acceptedAnswer": {"@type": "Answer", "text": "Una extensión propuesta de la RFC 9309 que Webflow puede enviar como cabecera: ai-train, search y ai-input, cada uno establecido en yes o no."}}, {"@type": "Question", "name": "¿Webflow bloquea por mí a los bots malos?", "acceptedAnswer": {"@type": "Answer", "text": "Su página de ayuda muestra cómo escribir una regla para un bot con nombre. Dice que algunos bots, sobre todo los maliciosos, no siguen robots.txt."}}]}</script>
+</head><body class="cb dc">
+<a class="sr" href="#main">Saltar al contenido</a>
+<header class="topbar"><div class="in"><a class="mark" href="/es"><i></i>CitedBy</a><nav aria-label="Principal"><a class="opt" href="/es#checks">Qué comprobamos</a><a href="/es/plans">Precios</a><a href="/es/blog">Guías</a><a class="opt" href="/data">Datos</a></nav><a class="signin" href="/signin?next=%2Fapp.html">Iniciar sesión</a><a class="btn sm go" href="/app.html#/new">Auditar un sitio</a></div></header>
+<main id="main" class="art"><article>
+<p class="dateline"><a href="/es/platforms">Ajustes de rastreadores de IA por plataforma</a> / Rastreadores de IA por plataforma</p>
+<h1>Webflow: robots.txt y la cabecera Content-Signal para la IA</h1>
+<p class="byline"><a href="/es/about#editorial">Por la redacción de CitedBy</a> · Revisado el <time datetime="2026-10-21">2026-10-21</time> · <a href="/methodology">2 fuentes · método</a> (EN)</p>
+<aside class="answer" aria-label="Respuesta corta"><b>Respuesta corta</b><p>Webflow pone robots.txt en Site settings, luego SEO y luego Indexing, y una de sus páginas de ayuda dice que necesitas un plan Site o un plan Workspace de pago. También puede enviar una cabecera Content-Signal que establece por separado ai-train, search y ai-input. Webflow la llama extensión propuesta, no un estándar aceptado.</p></aside>
+<form class="bw bwf" action="/es" method="get" aria-labelledby="fw-h"><h2 id="fw-h">Revisa tu web gratis: 10 páginas, sin cuenta</h2><input type="hidden" name="utm_source" value="blog"><input type="hidden" name="utm_medium" value="article"><input type="hidden" name="utm_campaign" value="webflow"><input type="hidden" name="utm_content" value="free-box"><div class="bwr"><label class="sr" for="fw-u">URL</label><input id="fw-u" name="url" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="tutienda.es" required><button class="btn p" type="submit">Revisar mi web gratis</button></div><p class="gloss">Resultado en segundos. Sin cuenta, sin tarjeta.</p></form>
+<figure class="hero"><img src="/blog/img/webflow-es-hero.svg" alt="Cuatro datos sobre Webflow: Dónde Site settings, SEO, Requiere Plan Site o Workspace de pago, Extra Content-Signal, Estado Extensión propuesta" width="1200" height="630" fetchpriority="high" decoding="async"></figure>
+<nav class="toc" aria-label="En este artículo"><b>En este artículo</b><ol><li><a href="#d-nde-est-el-ajuste-en-webflow">Dónde está el ajuste en Webflow</a></li><li><a href="#una-cabecera-que-separa-entrenamiento-b-squeda-y">Una cabecera que separa entrenamiento, búsqueda y respuestas de IA</a></li><li><a href="#los-pasos">Los pasos</a></li><li><a href="#las-l-neas-que-debes-usar">Las líneas que debes usar</a></li><li><a href="#cosas-a-tener-en-cuenta">Cosas a tener en cuenta</a></li><li><a href="#compara-con-wix">Compara con Wix</a></li><li><a href="#comprueba-tu-propio-sitio">Comprueba tu propio sitio</a></li><li><a href="#faq">Preguntas frecuentes</a></li><li><a href="#sources">Fuentes</a></li></ol></nav>
+<h2 id="d-nde-est-el-ajuste-en-webflow">Dónde está el ajuste en Webflow</h2>
+<p>Ve a Site settings, luego a SEO y después a Indexing, añade la regla o reglas de robots.txt que quieras, haz clic en Save y publica tu sitio. Webflow añade por defecto una línea de sitemap; un interruptor la quita.</p>
+<h2 id="una-cabecera-que-separa-entrenamiento-b-squeda-y">Una cabecera que separa entrenamiento, búsqueda y respuestas de IA</h2>
+<p>Además de robots.txt, la página de Webflow dice que un sitio puede servir una cabecera HTTP Content-Signal, que se configura en la misma zona de Indexing, para dar instrucciones más detalladas a los rastreadores de IA. Su ejemplo es <code>Content-Signal: ai-train=no, search=yes, ai-input=no</code>. Webflow explica la separación: robots.txt controla si los bots pueden acceder a tus páginas, mientras que Content-Signal indica, por separado, si el contenido se puede usar para entrenar IA, para indexar en buscadores o para respuestas generadas por IA. Webflow añade él mismo la salvedad: se basa en una extensión propuesta de la RFC 9309 y todavía no es un estándar aceptado. Es decir, expresa una preferencia; no detiene a un rastreador, y la página de Webflow no dice qué rastreadores la leen.</p>
+<p>En palabras del proveedor (original en inglés): “This is based on a proposed extension to RFC 9309 and is not yet an accepted standard.”</p>
+<p>Fuente: <a href="https://help.webflow.com/hc/en-us/articles/41954080897683-Set-robots-txt-rules" rel="noopener">Webflow Help: Set robots.txt rules</a>, leído el 21 de octubre de 2026.</p>
+<h2 id="los-pasos">Los pasos</h2>
+<ol class="steps"><li>Abre Site settings y ve a SEO, luego a Indexing.</li><li>Escribe en el campo de reglas las reglas de robots.txt que quieras.</li><li>Si quieres, configura la cabecera Content-Signal en la misma zona.</li><li>Haz clic en Save y publica tu sitio, y luego abre tudominio.com/robots.txt para comprobar el archivo activo.</li></ol>
+<h2 id="las-l-neas-que-debes-usar">Las líneas que debes usar</h2>
+<p>Para permitir:</p>
+<pre><code>User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: *
+Allow: /</code></pre>
+<!-- ad-slot:in-article (off) -->
+<p>Para bloquear:</p>
+<pre><code>User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+Content-Signal: ai-train=no, search=yes, ai-input=no</code></pre>
+<h2 id="cosas-a-tener-en-cuenta">Cosas a tener en cuenta</h2>
+<p>La página de Webflow dice que tu robots.txt es visible públicamente, así que no cuentes con él para ocultar páginas privadas, y que no todos los bots lo siguen.</p>
+<h2 id="compara-con-wix">Compara con Wix</h2>
+<p><a href="/es/platforms/wix">Wix</a>: una ruta de edición más larga y un ejemplo con cuatro nombres.</p>
+<h2 id="comprueba-tu-propio-sitio">Comprueba tu propio sitio</h2>
+<p>La comprobación gratuita del cuadro de arriba lee robots.txt para los rastreadores de IA y envía una petición real por rastreador, así que aparece cualquier regla que los ajustes de tu plataforma permiten pero que un cortafuegos rechaza. La lista completa de rastreadores está en <a href="/es/bots">el centro de rastreadores de IA</a>.</p>
+<h2 id="faq">Preguntas frecuentes</h2>
+<h3>¿Necesito un plan de pago para robots.txt en Webflow?</h3>
+<p>Una página de ayuda de Webflow dice que necesitas un plan Site o un plan Workspace de pago para añadir un archivo robots.txt a tu sitio.</p>
+<h3>¿Qué es Content-Signal?</h3>
+<p>Una extensión propuesta de la RFC 9309 que Webflow puede enviar como cabecera: ai-train, search y ai-input, cada uno establecido en yes o no.</p>
+<h3>¿Webflow bloquea por mí a los bots malos?</h3>
+<p>Su página de ayuda muestra cómo escribir una regla para un bot con nombre. Dice que algunos bots, sobre todo los maliciosos, no siguen robots.txt.</p>
+<h2 id="sources">Fuentes</h2>
+<ul><li><a href="https://help.webflow.com/hc/en-us/articles/41954080897683-Set-robots-txt-rules" rel="noopener">Webflow Help: Set robots.txt rules</a>, leído el 21 de octubre de 2026</li><li><a href="https://help.webflow.com/hc/en-us/articles/41954183592851-Request-to-block-specific-bots-from-visiting-your-site" rel="noopener">Webflow Help: Request to block specific bots from visiting your site</a>, leído el 21 de octubre de 2026</li></ul>
+<form class="bw" action="/app.html#/new" method="get" aria-labelledby="bw-h"><h2 id="bw-h">Audita tu web (desde 9 €, garantía de 14 días)</h2><input type="hidden" name="utm_source" value="blog"><input type="hidden" name="utm_medium" value="article"><input type="hidden" name="utm_campaign" value="webflow"><div class="bwr"><label class="sr" for="bw-u">URL</label><input id="bw-u" name="url" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="tutienda.es" required><button class="btn p" type="submit">Auditar mi web</button></div><p class="gloss">Rastreamos tu web hasta el límite de páginas de tu plan y te damos la corrección exacta. Se paga antes del rastreo.</p></form>
+<section class="cta2"><h2>Mira qué responde la IA sobre tu tienda</h2><p>La auditoría rastrea tu web hasta el límite de páginas de tu plan, muestra qué rastreadores de IA entran y da la corrección exacta. Desde 9 €, garantía de 14 días.</p><a class="btn p" href="/es?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=webflow&amp;utm_content=cta">Auditar mi web</a><p class="gloss">Auditoría desde 9 €, pago único. Garantía de 14 días.</p></section>
+<nav class="rel" aria-label="Sigue leyendo"><h2>Sigue leyendo</h2><ul><li><a href="/es/platforms">Todas las plataformas comparadas</a></li><li><a href="/es/platforms/wix">Wix</a></li><li><a href="/es/bots">Rastreadores de IA comparados</a></li><li><a href="/es/guides/cms">Lista de comprobación de visibilidad en IA para Shopify, WooCommerce y más</a></li></ul></nav>
+</article></main>
+<footer><div class="w"><span>© 2026 CitedBy · <a href="mailto:hello@citedby.eu">hello@citedby.eu</a></span><a href="/es/plans">Precios</a><a href="/es/blog">Guías</a><a href="/data">Datos</a><a href="/methodology">Método</a><a href="/es/about">Sobre nosotros</a><a href="/es/terms">Condiciones</a><a href="/es/privacy">Privacidad</a><a href="/es/refund">Reembolsos</a><a href="/contact">Contacto</a><a href="/legal">Aviso legal</a></div></footer>
+</body></html>

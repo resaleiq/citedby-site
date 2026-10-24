@@ -1,0 +1,42 @@
+{
+ "slug": "google-pinpoint",
+ "name": "Google-Pinpoint",
+ "operator": "Google",
+ "job": "fetch",
+ "job_en": "User-triggered fetch",
+ "token": "Google-Pinpoint",
+ "follows": "partial",
+ "follows_en": "Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch.",
+ "ips": {
+  "kind": "rdns",
+  "count": null,
+  "unit": null,
+  "url": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers",
+  "file_date": null,
+  "note": "Google says user-triggered fetchers publish IP ranges in user-triggered-fetchers.json, user-triggered-fetchers-google.json and user-triggered-agents.json, and that the reverse DNS mask matches ***-***-***-***.gae.googleusercontent.com or google-proxy-***-***-***-***.google.com depending on whether the fetcher is Google or user owned."
+ },
+ "ua": "Google-Pinpoint",
+ "vendor_quote": "The Google-Pinpoint fetcher requests individual URLs that Pinpoint users specified as sources for their personal collections of documents.",
+ "vendor_quote_source": {
+  "title": "Google Search Central: Google user-triggered fetchers",
+  "url": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers"
+ },
+ "what_en": "Google-Pinpoint is a user-triggered fetcher listed by Google. It requests individual URLs that Pinpoint users specified as sources for their personal collections of documents. Google lists it with the user agent Google-Pinpoint.",
+ "block_en": "Google says that because the fetch was requested by a user, user-triggered fetchers generally ignore robots.txt rules. The Google page documents no robots.txt token for Google-Pinpoint.",
+ "doc_url": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers",
+ "compare": "google-gemininotebook",
+ "compare_en": "Both fetch URLs that users supplied as sources in a Google product, and both fall under Google's user-triggered fetcher rules.",
+ "sources": [
+  {
+   "title": "Google Search Central: Google user-triggered fetchers",
+   "url": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers"
+  },
+  {
+   "title": "Google Search Central: Overview of Google crawlers and fetchers",
+   "url": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
+  }
+ ],
+ "notes": "Google does not say which of the three user-triggered JSON files covers Pinpoint, so no IP count. Google's page does not call it an AI crawler. The token is shown as the HTTP user agent; no robots.txt token is documented.",
+ "answer_en": "Google-Pinpoint is a user-triggered fetcher listed by Google. It requests individual URLs that Pinpoint users specified as sources for their personal collections of documents. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch, and documents no robots.txt token for it.",
+ "read": "2026-10-24"
+}

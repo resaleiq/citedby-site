@@ -6,8 +6,8 @@
 - [Home, checks, pricing and FAQ](https://citedby.eu/)
 - [Free CI check for AI crawlers](https://citedby.eu/ci): a shell script and GitHub Action that fail a deploy when GPTBot, ClaudeBot or PerplexityBot see an empty or blocked page
 - [citedby-check on GitHub](https://github.com/resaleiq/citedby-check): open-source command-line tool and GitHub Action (MIT) that run the free AI-search readiness check: robots.txt access for five AI-search crawlers, text in the raw HTML, Organization and Product data, llms.txt; exit codes for CI
-- [AI crawlers: who they are and how to allow or block them](https://citedby.eu/bots): one page per crawler, vendor sentence and read date
-- [AI crawler settings by platform](https://citedby.eu/platforms): Shopify, Squarespace, Wix, Webflow, WordPress.com and Cloudflare, each from the platform's own help page
+- [AI crawlers: who they are and how to allow or block them](https://citedby.eu/bots): one page per crawler (40 of them, with robots.txt lines to copy), vendor sentence and read date; also in French, German, Spanish and Dutch under /fr/bots, /de/bots, /es/bots and /nl/bots
+- [AI crawler settings by platform](https://citedby.eu/platforms): 13 platforms (Shopify, Squarespace, Wix, Webflow, WordPress.com, Cloudflare, Vercel, Netlify, Ghost, Framer, PrestaShop, Adobe Commerce, WP Engine), each from the platform's own help page; also in French, German, Spanish and Dutch
 - [AI-crawler access checker](https://citedby.eu/tools/ai-crawler-check): free, no account: robots.txt rules and a live request for GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot, with the exact fix
 - [llms.txt checker](https://citedby.eu/tools/llms-txt-checker): free, no account: is /llms.txt present, valid, working and consistent with robots.txt and the sitemap
 - [llms.txt generator](https://citedby.eu/tools/llms-txt-generator): free, no account: a draft llms.txt for your domain, built from your home page, sitemap and each page's own title and description, to review and publish; also in French, German, Spanish and Dutch

@@ -1,0 +1,42 @@
+{
+ "slug": "perplexity-user",
+ "name": "Perplexity-User",
+ "operator": "Perplexity",
+ "job": "fetch",
+ "job_en": "User-triggered fetch",
+ "token": "Perplexity-User",
+ "follows": "partial",
+ "follows_en": "Generally ignores robots.txt rules, because a user requested the fetch",
+ "ips": {
+  "kind": "json_list",
+  "count": 4,
+  "unit": "ranges",
+  "url": "https://www.perplexity.com/perplexity-user.json",
+  "file_date": "2025-10-17",
+  "note": "Perplexity publishes the Perplexity-User IP addresses as a JSON file and says to use it as the source of truth for allow rules, combined with the user-agent string."
+ },
+ "ua": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Perplexity-User/1.0; +https://perplexity.ai/perplexity-user)",
+ "vendor_quote": "Since a user requested the fetch, this fetcher generally ignores robots.txt rules.",
+ "vendor_quote_source": {
+  "title": "Perplexity: Perplexity Crawlers",
+  "url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers"
+ },
+ "what_en": "Perplexity-User is Perplexity's user-action fetcher. When a user asks Perplexity a question, it might visit a web page to help provide an accurate answer and include a link to the page in its response. Perplexity says it is not used for web crawling or to collect content for training AI foundation models, and it is separate from PerplexityBot, which surfaces and links websites in Perplexity search results.",
+ "block_en": "Perplexity lists Perplexity-User as a robots.txt token and says it controls which sites these user requests can access. Perplexity also says this fetcher generally ignores robots.txt rules because a user requested the fetch. Perplexity says each of its robots.txt settings works independently and changes may take up to 24 hours to take effect.",
+ "doc_url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+ "compare": "perplexitybot",
+ "compare_en": "PerplexityBot surfaces and links sites in Perplexity search results, while Perplexity-User fetches a page when a user's question needs it and generally ignores robots.txt.",
+ "sources": [
+  {
+   "title": "Perplexity: Perplexity Crawlers",
+   "url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers"
+  },
+  {
+   "title": "Perplexity: Perplexity-User IP addresses JSON (read 2026-10-24)",
+   "url": "https://www.perplexity.com/perplexity-user.json"
+  }
+ ],
+ "notes": "Brief hint URL docs.perplexity.ai/guides/bots redirects to the URL used here. Vendor wording is 'generally ignores', so follows=partial rather than no. IP file has 4 prefixes, creationTime 2025-10-17.",
+ "answer_en": "Perplexity-User is Perplexity's user-action fetcher: when a user asks a question, it may visit a page to answer accurately and link to it. Perplexity says it is not used for web crawling or for training AI models, and that it generally ignores robots.txt rules because a user requested the fetch.",
+ "read": "2026-10-24"
+}

@@ -1,0 +1,40 @@
+{
+ "slug": "bingbot",
+ "name": "Bingbot",
+ "operator": "Microsoft",
+ "job": "search",
+ "job_en": "Search crawler",
+ "token": "bingbot",
+ "follows": "yes",
+ "follows_en": "Yes",
+ "ips": {
+  "kind": "verify_tool",
+  "count": null,
+  "unit": null,
+  "url": null,
+  "file_date": null,
+  "note": "Bing says user agent strings are easy to spoof, so not every request with them comes from a real Bing crawler. To check the address, use the Verify Bingbot tool, or one of the other verification methods Bing describes. In the user-agent string, W.X.Y.Z stands for the Microsoft Edge version Bing renders with, which Bing says it updates regularly. We did not read an IP list on that page, so we state no count."
+ },
+ "ua": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/W.X.Y.Z Safari/537.36",
+ "vendor_quote": "Bingbot is our standard crawler and handles most of our crawling needs each day.",
+ "vendor_quote_source": {
+  "title": "Microsoft Bing Webmaster help: Which Crawlers Does Bing Use?",
+  "url": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0"
+ },
+ "read": "2026-10-21",
+ "what_en": "Bing's page is titled \"Overview of Bing crawlers (user agents)\" and says Bing operates these main crawlers today: Bingbot (the standard crawler), AdIdxBot (used by Bing Ads, which crawls ads and follows their websites for quality control), BingPreview (page snapshots for Bing), MicrosoftPreview (snapshots for Microsoft products) and BingVideoPreview (video previews, in Bing only). Bingbot, AdIdxBot, BingPreview and BingVideoPreview have desktop and mobile variants. The page does not name a separate AI crawler. The same help section includes \"How To Permanently Remove a URL or Page from Bing or Copilot\", which is the page to read if the goal is removal rather than access.\n\n| Fact | Bingbot |\n| --- | --- |\n| Operator | Microsoft |\n| Job | Search crawler |\n| robots.txt token | `bingbot` |\n| Follows robots.txt | Yes |\n| Published address list | Verify tool, no list read |\n| Vendor page read | 21 October 2026 |",
+ "block_en": "Bing's page does not say what a block costs; this is our reading, not Bing's. Bingbot is the crawler that feeds Bing, so disallowing it in robots.txt stops Bing crawling those pages, and anything that relies on Bing's index loses them too. Bing gives you two controls: robots.txt tells its crawlers how to interact with your site, and Bing Webmaster Tools has a Crawl control tool that sets the crawl rate by the hour.",
+ "doc_url": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0",
+ "compare": "googlebot",
+ "compare_en": "The other main search crawler: a different token and different verification.",
+ "sources": [
+  {
+   "title": "Microsoft Bing Webmaster help: Which Crawlers Does Bing Use?",
+   "url": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0"
+  }
+ ],
+ "answer_en": "Bingbot is Microsoft's standard crawler and handles most of Bing's crawling. Bing's help page lists five crawlers: Bingbot, AdIdxBot, BingPreview, MicrosoftPreview and BingVideoPreview. You control them through robots.txt, and crawl rate through the Crawl control tool in Bing Webmaster Tools, not through robots.txt.",
+ "en_handwritten": true,
+ "title_en": "Bingbot: Microsoft's crawler, five user agents, how to verify",
+ "h1_en": "Bingbot: Microsoft's crawler, five user agents, how to verify"
+}

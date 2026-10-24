@@ -1,0 +1,44 @@
+{
+ "slug": "chatgpt-user",
+ "name": "ChatGPT-User",
+ "operator": "OpenAI",
+ "job": "fetch",
+ "job_en": "User-triggered fetch",
+ "token": "ChatGPT-User",
+ "follows": "partial",
+ "follows_en": "Robots.txt rules may not apply",
+ "ips": {
+  "kind": "json_list",
+  "count": 234,
+  "unit": "ranges",
+  "url": "https://openai.com/chatgpt-user.json",
+  "file_date": "2026-10-20",
+  "note": "Its address list is the longest of the three OpenAI files we counted: openai.com/chatgpt-user.json held 234 prefixes on 21 October 2026, creation time 2026-10-20, the day before this page. A list that long is a reason to fetch it again when you check a log line, not to copy it once into a firewall."
+ },
+ "ua": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot",
+ "vendor_quote": "ChatGPT-User is not used for crawling the web in an automatic fashion. Because these actions are initiated by a user, robots.txt rules may not apply.",
+ "vendor_quote_source": {
+  "title": "OpenAI: Overview of OpenAI Crawlers",
+  "url": "https://developers.openai.com/api/docs/bots"
+ },
+ "read": "2026-10-21",
+ "what_en": "Unlike the other OpenAI robots, ChatGPT-User does not roam the web by itself. OpenAI describes it as the agent used for certain user actions in ChatGPT and custom GPTs, including pages a custom GPT reaches through GPT Actions. A person typed something, and a request to your server followed.\n\n| Fact | ChatGPT-User |\n| --- | --- |\n| Operator | OpenAI |\n| Job | User-triggered fetch |\n| robots.txt token | `ChatGPT-User` |\n| Follows robots.txt | Robots.txt rules may not apply |\n| Published address list | 234 ranges (openai.com/chatgpt-user.json, file dated 2026-10-20) |\n| Vendor page read | 21 October 2026 |",
+ "block_en": "Because the visit is user-initiated, OpenAI warns that robots.txt rules may not apply, so a `Disallow` line for ChatGPT-User is not a guaranteed stop. OpenAI also says ChatGPT-User is not used to decide whether content appears in search and sends search opt-outs to OAI-SearchBot. If you need to stop these requests, the control is on your server or CDN, not in robots.txt alone.",
+ "doc_url": "https://developers.openai.com/api/docs/bots",
+ "compare": "oai-searchbot",
+ "compare_en": "OAI-SearchBot is the search crawler and does obey robots.txt.",
+ "sources": [
+  {
+   "title": "OpenAI: Overview of OpenAI Crawlers",
+   "url": "https://developers.openai.com/api/docs/bots"
+  },
+  {
+   "title": "openai.com/chatgpt-user.json",
+   "url": "https://openai.com/chatgpt-user.json"
+  }
+ ],
+ "answer_en": "ChatGPT-User visits a web page when a person asks ChatGPT or a custom GPT a question that needs it. OpenAI says it is not used to crawl automatically and that, because a user starts the request, robots.txt rules may not apply. OpenAI lists 234 IP ranges for it.",
+ "en_handwritten": true,
+ "title_en": "ChatGPT-User: the fetcher that opens your page when someone asks",
+ "h1_en": "ChatGPT-User: the fetcher that opens your page when someone asks"
+}

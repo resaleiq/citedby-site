@@ -1,0 +1,42 @@
+{
+ "slug": "duckduckbot",
+ "name": "DuckDuckBot",
+ "operator": "DuckDuckGo",
+ "job": "search",
+ "job_en": "Search",
+ "token": "DuckDuckBot",
+ "follows": "yes",
+ "follows_en": "Yes, respects WWW::RobotRules (no timing note published)",
+ "ips": {
+  "kind": "json_list",
+  "count": 486,
+  "unit": "addresses",
+  "url": "https://duckduckgo.com/duckduckbot.json",
+  "file_date": "2026-09-01",
+  "note": "DuckDuckGo says the crawler originates from the IP addresses listed on its help page, also available as JSON at duckduckgo.com/duckduckbot.json."
+ },
+ "ua": "DuckDuckBot/1.1; (+http://duckduckgo.com/duckduckbot.html)",
+ "vendor_quote": "DuckDuckBot’s job is to constantly improve our search results and offer users the best and most secure search experience possible.",
+ "vendor_quote_source": {
+  "title": "DuckDuckGo Help Pages: Is DuckDuckBot related to DuckDuckGo?",
+  "url": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot"
+ },
+ "what_en": "DuckDuckBot is the web crawler for DuckDuckGo. DuckDuckGo says its job is to improve DuckDuckGo's search results. DuckDuckGo's help pages list DuckAssistBot on a separate page.",
+ "block_en": "DuckDuckGo says DuckDuckBot respects WWW::RobotRules, so a Disallow rule addressed to DuckDuckBot in robots.txt applies to this crawler. The page says nothing about what blocking it changes in DuckDuckGo results, and nothing about DuckAssistBot.",
+ "doc_url": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot",
+ "compare": "duckassistbot",
+ "compare_en": "DuckDuckBot is the crawler for DuckDuckGo search results, while DuckAssistBot is documented by DuckDuckGo on its own help page.",
+ "sources": [
+  {
+   "title": "DuckDuckGo Help Pages: Is DuckDuckBot related to DuckDuckGo?",
+   "url": "https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot"
+  },
+  {
+   "title": "DuckDuckBot IP list (JSON, creationTime 2026-09-01, read 2026-10-24)",
+   "url": "https://duckduckgo.com/duckduckbot.json"
+  }
+ ],
+ "notes": "The help page does not state a robots.txt token by name; it says the user agent appears as DuckDuckBot/1.1 and that it respects WWW::RobotRules, so the token DuckDuckBot is inferred from the UA product name. The JSON has 486 prefixes, all /32 (single IPv4 addresses). The 'ua' value is exactly the fragment the vendor page shows, without the Mozilla prefix. The vendor page has no robots.txt change-timing note.",
+ "answer_en": "DuckDuckBot is the web crawler for DuckDuckGo, whose stated job is to improve DuckDuckGo's search results. DuckDuckGo says it respects WWW::RobotRules and publishes its IP addresses as a list in JSON form. DuckAssistBot, the fetcher for AI-assisted answers, is documented on a separate DuckDuckGo help page.",
+ "read": "2026-10-24"
+}

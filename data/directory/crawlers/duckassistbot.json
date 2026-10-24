@@ -1,0 +1,44 @@
+{
+ "slug": "duckassistbot",
+ "name": "DuckAssistBot",
+ "operator": "DuckDuckGo",
+ "job": "fetch",
+ "job_en": "Real-time fetch for AI-assisted answers",
+ "token": "DuckAssistBot",
+ "follows": "yes",
+ "follows_en": "Yes, a change takes effect after 72 hours",
+ "ips": {
+  "kind": "json_list",
+  "count": 486,
+  "unit": "addresses",
+  "url": "https://duckduckgo.com/duckassistbot.json",
+  "file_date": "2026-09-01",
+  "note": "DuckDuckGo lists the addresses in the help article and as JSON at duckduckgo.com/duckassistbot.json. The file held 486 entries on 21 October 2026, creation time 2026-09-01, longer than any other address list we counted for this set, and it holds single addresses where the others publish CIDR ranges. The user agent appears as `DuckAssistBot/1.2`."
+ },
+ "ua": "DuckAssistBot/1.2; (+http://duckduckgo.com/duckassistbot.html)",
+ "vendor_quote": "DuckAssistBot is a web crawler for DuckDuckGo Search that crawls pages in real-time for our AI-assisted answers, which prominently cite their sources. This data is not used in any way to train AI models.",
+ "vendor_quote_source": {
+  "title": "DuckDuckGo Help Pages: About DuckAssistBot",
+  "url": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot"
+ },
+ "read": "2026-10-21",
+ "what_en": "DuckDuckGo runs two bots that people confuse. DuckDuckBot is the search crawler; DuckAssistBot is the one behind AI-assisted answers. DuckDuckGo's help page says the answers prominently cite their sources and that the crawled data is not used to train AI models.\n\n| Fact | DuckAssistBot |\n| --- | --- |\n| Operator | DuckDuckGo |\n| Job | Real-time fetch for AI-assisted answers |\n| robots.txt token | `DuckAssistBot` |\n| Follows robots.txt | Yes, a change takes effect after 72 hours |\n| Published address list | 486 addresses (duckduckgo.com/duckassistbot.json, file dated 2026-09-01) |\n| Vendor page read | 21 October 2026 |",
+ "block_en": "DuckDuckGo says that once you disallow DuckAssistBot the change takes effect after 72 hours, and that opting out does not impact organic search rankings and will not affect whether sites appear in its search results. The cost of a block is therefore limited to the assisted answers and their citations. Opt-out problems go to the address the page gives, crawling@duckduckgo.com.",
+ "doc_url": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot",
+ "compare": "amazonbot",
+ "compare_en": "Amazon's family of three agents, one of which may ignore robots.txt.",
+ "sources": [
+  {
+   "title": "DuckDuckGo Help Pages: About DuckAssistBot",
+   "url": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot"
+  },
+  {
+   "title": "duckduckgo.com/duckassistbot.json",
+   "url": "https://duckduckgo.com/duckassistbot.json"
+  }
+ ],
+ "answer_en": "DuckAssistBot crawls pages in real time for DuckDuckGo's AI-assisted answers, which cite their sources. DuckDuckGo says the data is not used to train AI models. A robots.txt Disallow takes effect after 72 hours and does not affect organic search rankings. It lists 486 IP addresses.",
+ "en_handwritten": true,
+ "title_en": "DuckAssistBot: DuckDuckGo's answer crawler and its 486 addresses",
+ "h1_en": "DuckAssistBot: DuckDuckGo's real-time answer crawler and its 486 addresses"
+}

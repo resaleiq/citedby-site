@@ -1,0 +1,362 @@
+{
+ "amazonbot": {
+  "answer": "Amazonbot wordt gebruikt om de producten en diensten van Amazon te verbeteren en kan ook worden gebruikt om Amazon-AI-modellen te trainen. Op de pagina van Amazon staan ook Amzn-SearchBot, die content geschikt maakt voor zoekervaringen zoals Alexa, en Amzn-User, die mogelijk niet alle robots.txt-regels volgt. Elke instelling staat los van de andere.",
+  "what": "Amazon beschrijft op zijn pagina drie user agents: Amazonbot, Amzn-SearchBot en Amzn-User. Amazon zegt dat elke instelling los staat van de andere en dat het ongeveer 24 uur kan duren voordat een wijziging werkt. Alleen de eerste wordt beschreven als mogelijk training van Amazon-AI-modellen.\n\n| Gegeven | Amazonbot |\n| --- | --- |\n| Aanbieder | Amazon |\n| Taak | Productverbetering, kan Amazon-AI-modellen trainen |\n| robots.txt-token | `Amazonbot` |\n| Volgt robots.txt | Ja, wijzigingen duren ongeveer 24 uur |\n| Gepubliceerde adreslijst | Gepubliceerd op de pagina van Amazon (developer.amazon.com/amazonbot/ip-addresses) |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "Amzn-SearchBot is bedoeld voor zoekervaringen zoals Alexa: sta je hem toe, dan komt je content in aanmerking om daar te verschijnen. Amzn-User beantwoordt live Alexa-vragen die actuele informatie nodig hebben. Amazon zegt dat deze mogelijk niet alle robots.txt-regels volgt en niet crawlt voor het trainen van generatieve AI. Een robots.txt die alleen Amazonbot noemt, beschrijft dus je beleid voor de andere twee niet.",
+  "compare": "Nog een ophaalrobot voor AI-antwoorden, met een vermelde opt-out en een vertraging van 72 uur.",
+  "job": "Productverbetering, kan Amazon-AI-modellen trainen",
+  "follows": "Ja, wijzigingen duren ongeveer 24 uur",
+  "ipnote": "Amazon publiceert de adressen voor Amazonbot en, op aparte pagina's, voor Amzn-SearchBot en voor live ophaalverzoeken. De lijsten zijn HTML-pagina's, geen JSON-bestand, dus we noemen geen aantal. Amazon zegt ook dat Amzn-SearchBot de regels in robots.txt volgt als dat bestand Amzn-SearchBot niet noemt maar andere zoekbots wel toestaat."
+ },
+ "amzn-searchbot": {
+  "answer": "Amzn-SearchBot is een Amazon-crawler die wordt gebruikt om zoekervaringen zoals Alexa te verbeteren. Amazon zegt dat je content in aanmerking komt om daar te verschijnen als je de crawler toestaat, en dat hij niet crawlt voor het trainen van generatieve AI-modellen. De instelling staat los van Amazonbot en Amzn-User. Een wijziging kan ongeveer 24 uur duren.",
+  "what": "Amzn-SearchBot is een Amazon-crawler die wordt gebruikt om zoekervaringen in producten en diensten van Amazon te verbeteren. Amazon zegt dat je content in aanmerking komt om te verschijnen in zoekervaringen zoals Alexa als je de crawler toestaat, en dat hij content niet crawlt voor het trainen van generatieve AI-modellen. Het is een van drie Amazon-user agents (Amazonbot, Amzn-SearchBot, Amzn-User) die Amazon op één pagina beschrijft.",
+  "block": "Amazon zegt dat geautomatiseerd crawlen door zijn genoemde user agents het Robots Exclusion Protocol respecteert, inclusief de user-agent- en allow/disallow-regels. Amazon zegt dat de instelling van elke user agent los staat van de andere en dat het ongeveer 24 uur kan duren voordat een wijziging werkt. Noemt robots.txt Amzn-SearchBot niet maar staat het andere zoekbots toe, dan volgt Amzn-SearchBot de regels die voor die andere zoekbots gelden.",
+  "compare": "Amazonbot wordt gebruikt om producten en diensten van Amazon te verbeteren en kan worden gebruikt om Amazon-AI-modellen te trainen. Amzn-SearchBot is bedoeld voor zoekervaringen en volgens Amazon crawlt die niet voor het trainen van generatieve AI-modellen.",
+  "job": "Zoeken",
+  "follows": "Ja, wijzigingen kunnen ongeveer 24 uur duren",
+  "ipnote": "Amazon publiceert de IP-adressen van Amzn-SearchBot op een webpagina die de lijst als JSON toont, en verwijst ernaar vanaf de documentatiepagina van Amazonbot."
+ },
+ "amzn-user": {
+  "answer": "Amzn-User is de Amazon-user agent die live pagina's ophaalt als een klant Alexa iets vraagt waarvoor actuele informatie nodig is. Amazon zegt dat hij niet crawlt voor het trainen van generatieve AI en mogelijk niet alle robots.txt-regels volgt, omdat de actie door de gebruiker wordt gestart. Amazonbot en Amzn-SearchBot hebben aparte instellingen.",
+  "what": "Amzn-User is een Amazon-user agent die acties van gebruikers ondersteunt, zoals het beantwoorden van Alexa-vragen die actuele informatie nodig hebben. Amazon zegt dat Amzn-User live informatie van het web kan ophalen als een klant een vraag stelt, om namens de gebruiker nauwkeurige antwoorden te geven. Amazon zegt dat hij content niet crawlt voor het trainen van generatieve AI-modellen.",
+  "block": "Amazon zegt dat Amzn-User mogelijk niet alle robots.txt-regels volgt, omdat zijn acties door een gebruiker kunnen worden gestart. Amazon zegt ook dat de instelling van elke user agent (Amazonbot, Amzn-SearchBot, Amzn-User) los staat van de andere en dat het ongeveer 24 uur kan duren voordat wijzigingen doorwerken.",
+  "compare": "Amzn-SearchBot is een geautomatiseerde crawler voor zoekervaringen van Amazon die volgens Amazon robots.txt respecteert. Amzn-User haalt live informatie op als een klant erom vraagt en volgt mogelijk niet alle regels.",
+  "job": "Door de gebruiker gestart ophalen",
+  "follows": "Gedeeltelijk, volgt mogelijk niet alle robots.txt-regels omdat acties door de gebruiker kunnen worden gestart",
+  "ipnote": "Amazon publiceert de IP-adressen van Amzn-User op een webpagina die de lijst als JSON toont, en verwijst ernaar vanaf de documentatiepagina van Amazonbot."
+ },
+ "applebot-extended": {
+  "answer": "Applebot-Extended is een robots.txt-token. Apple zegt dat uitgevers kunnen voorkomen dat hun content wordt gebruikt om generatieve foundation-modellen te trainen, door het token met Disallow uit te sluiten. Applebot kan de pagina nog steeds crawlen, dus de content blijft vindbaar in Spotlight, Siri en Safari. Het token doet zelf geen verzoeken.",
+  "what": "Op de pagina van Apple staat Applebot-Extended als de manier om content buiten de training van de foundation-modellen achter Apple Intelligence, diensten en ontwikkelaarstools te houden. Net als [Google-Extended](/bots/google-extended) is het een controletoken: je vindt het niet in een log.\n\n| Gegeven | Applebot-Extended |\n| --- | --- |\n| Aanbieder | Apple |\n| Taak | Controletoken (doet zelf geen verzoeken) |\n| robots.txt-token | `Applebot-Extended` |\n| Volgt robots.txt | Wordt alleen uit robots.txt gelezen |\n| Gepubliceerde adreslijst | Geen: het haalt nooit iets op |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "Apple benoemt de grens zelf: als je Applebot-Extended met Disallow uitsluit en content ook markeert met de meta-tag nosnippet, kunnen jouw instructies Applebot nog steeds toestaan de pagina te crawlen, en blijft de content vindbaar via Spotlight, Siri en Safari. Op dezelfde pagina staat dat uitgevers zich kunnen afmelden voor gebruik in brede wereldkennis-antwoorden met deze robots.txt-instelling.",
+  "compare": "De crawler zelf: als je die toestaat, blijf je opgenomen in de zoekresultaten van Spotlight, Siri en Safari.",
+  "job": "Controletoken (doet zelf geen verzoeken)",
+  "follows": "Wordt alleen uit robots.txt gelezen",
+  "ipnote": "Voor een token dat geen verzoeken stuurt, bestaat geen netwerkcontrole. Lees robots.txt, op elke host, en controleer Applebot apart. De twee tokens staan los van elkaar en één groep `User-agent: Applebot-Extended` zegt niets over Applebot."
+ },
+ "applebot": {
+  "answer": "Applebot is de webcrawler van Apple. Apple zegt dat de data zoeken in Spotlight, Siri en Safari mogelijk maakt en ook kan helpen bij het trainen van de foundation-modellen van Apple. Met Disallow voor Applebot-Extended sluit je content alleen uit van training. Noemt robots.txt Applebot niet maar wel Googlebot, dan volgt Applebot de Googlebot-regels.",
+  "what": "Applebot is de webcrawler van Apple. Apple zegt dat de data zoektechnologie in Spotlight, Siri en Safari mogelijk maakt, en ook kan worden gebruikt om foundation-modellen van Apple te trainen en om context te geven als AI-modellen in Apple-producten uitvoer genereren. Apple beschrijft ook een apart token Applebot-Extended en een iTMS-user agent voor Apple Podcasts.",
+  "block": "Apple zegt dat je met Disallow voor Applebot-Extended content uitsluit van de training van de generatieve foundation-modellen van Apple, maar dat Applebot de site nog steeds kan crawlen en dat die vindbaar blijft via Spotlight, Siri en Safari. Een Disallow voor Applebot zelf geldt voor algemene zoekcrawls die op Applebot gericht zijn. Apple zegt dat Applebot de Googlebot-instructies volgt als robots.txt Applebot niet noemt maar Googlebot wel. Apple zegt dat de meta-tag nosnippet content uitsluit van antwoorden op basis van brede wereldkennis.",
+  "compare": "Applebot is de crawler die pagina's ophaalt voor de zoekfuncties van Apple. Applebot-Extended is het robots.txt-token dat bepaalt of gecrawlde content wordt gebruikt om de generatieve modellen van Apple te trainen.",
+  "job": "Zoeken (gecrawlde data kan ook helpen bij het trainen van Apple-modellen)",
+  "follows": "Ja, voor algemene zoekcrawls die op Applebot gericht zijn",
+  "ipnote": "Apple zegt dat Applebot-verkeer meestal te herkennen is via reverse DNS in het domein *.applebot.apple.com, of door het IP-adres te vergelijken met een CIDR-prefix in het gepubliceerde JSON-bestand."
+ },
+ "baiduspider": {
+  "answer": "Baiduspider is de crawler van de zoekmachine Baidu. Baidu zegt dat hij het robots.txt-protocol volgt en dat het blokkeren van Baiduspider alle Baidu-user agents blokkeert, zodat je pagina's niet in Baidu-resultaten te vinden zijn. Baiduspider-cpro en Baiduspider-ads werken op basis van klantafspraken en volgen robots.txt-records niet.",
+  "what": "Baiduspider is de crawler van de zoekmachine Baidu. Hij bezoekt pagina's en neemt ze op in de Baidu-index. Baidu gebruikt verschillende user agents voor verschillende producten, bijvoorbeeld Baiduspider voor pc- en mobiel zoeken en Baiduspider-image, Baiduspider-video en Baiduspider-news voor die zoekopdrachten.",
+  "block": "Baidu zegt dat Baiduspider werkt op basis van het robots.txt-protocol en dat je pagina's bij blokkeren niet te vinden zijn in Baidu-zoekresultaten of in andere resultaten die Baidu levert. Je kunt verschillende regels instellen voor verschillende Baidu-user agents. Als je Baiduspider blokkeert, blokkeer je alle Baidu-user agents. Baiduspider-cpro en Baiduspider-ads werken op basis van afspraken met klanten en volgen robots.txt-records niet.",
+  "compare": "Beide crawlen voor een zoekmachine. Baidu beschrijft meerdere productspecifieke user agents (afbeeldingen, video, nieuws, advertenties) onder de naam Baiduspider en verifieert via de hostnaam van reverse DNS.",
+  "job": "Zoeken",
+  "follows": "Ja voor Baiduspider; Baiduspider-cpro en Baiduspider-ads volgen robots.txt-records niet",
+  "ipnote": "Baidu raadt een reverse DNS-lookup op het bezoekende IP-adres aan. De hostnaam van Baiduspider is *.baidu.com of *.baidu.jp. Andere hostnamen zijn nep."
+ },
+ "bingbot": {
+  "answer": "Bingbot is de standaardcrawler van Microsoft en doet het meeste crawlwerk voor Bing. Op de helppagina van Bing staan vijf crawlers: Bingbot, AdIdxBot, BingPreview, MicrosoftPreview en BingVideoPreview. Je stuurt ze aan via robots.txt. De crawlsnelheid stel je in met de tool Crawl control in Bing Webmaster Tools, niet in robots.txt.",
+  "what": "De pagina van Bing heet „Overview of Bing crawlers (user agents)“ en zegt dat Bing nu deze belangrijkste crawlers gebruikt: Bingbot (de standaardcrawler), AdIdxBot (gebruikt door Bing Ads, die advertenties crawlt en de bijbehorende websites volgt voor kwaliteitscontrole), BingPreview (paginasnapshots voor Bing), MicrosoftPreview (snapshots voor Microsoft-producten) en BingVideoPreview (videovoorbeelden, alleen in Bing). Bingbot, AdIdxBot, BingPreview en BingVideoPreview hebben desktop- en mobiele varianten. De pagina noemt geen aparte AI-crawler. Hetzelfde helpgedeelte bevat „How To Permanently Remove a URL or Page from Bing or Copilot“. Lees die pagina als je een pagina wilt laten verwijderen in plaats van de toegang te regelen.\n\n| Gegeven | Bingbot |\n| --- | --- |\n| Aanbieder | Microsoft |\n| Taak | Zoekcrawler |\n| robots.txt-token | `bingbot` |\n| Volgt robots.txt | Ja |\n| Gepubliceerde adreslijst | Verificatietool, geen lijst gelezen |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "De pagina van Bing zegt niet wat blokkeren kost. Dit is onze lezing, niet die van Bing. Bingbot is de crawler die Bing voedt. Sluit je hem in robots.txt uit met Disallow, dan stopt Bing met het crawlen van die pagina's en verliest alles wat op de index van Bing leunt ze ook. Bing geeft je twee instellingen: robots.txt vertelt zijn crawlers hoe ze met je site omgaan, en Bing Webmaster Tools heeft een tool Crawl control waarmee je de crawlsnelheid per uur instelt.",
+  "compare": "De andere belangrijke zoekcrawler: een ander token en een andere verificatie.",
+  "job": "Zoekcrawler",
+  "follows": "Ja",
+  "ipnote": "Bing zegt dat user-agent-strings gemakkelijk te vervalsen zijn, dus niet elk verzoek met zo'n string komt van een echte Bing-crawler. Gebruik de tool Verify Bingbot om het adres te controleren, of een van de andere verificatiemethoden die Bing beschrijft. In de user-agent-string staat W.X.Y.Z voor de Microsoft Edge-versie waarmee Bing rendert en die Bing naar eigen zeggen regelmatig bijwerkt. Op die pagina hebben we geen IP-lijst gelezen, dus we noemen geen aantal."
+ },
+ "ccbot": {
+  "answer": "CCBot is de crawler van Common Crawl, een non-profitorganisatie die een open archief van webcrawldata bijhoudt dat iedereen kan raadplegen en analyseren. Common Crawl zegt dat User-agent: CCBot met Disallow: / voorkomt dat de crawler een site bezoekt. Het waarschuwt ook dat andere crawlers zich ten onrechte als CCBot voordoen, dus controleer verzoeken.",
+  "what": "CCBot is de crawler van Common Crawl, een non-profitstichting die een open archief van webcrawldata maakt en bijhoudt dat iedereen kan raadplegen en analyseren. Volgens de pagina van de aanbieder moet de crawldata vrij beschikbaar zijn voor organisaties, de academische wereld en non-profitorganisaties.",
+  "block": "Common Crawl zegt dat je met User-agent: CCBot en Disallow: / in robots.txt voorkomt dat Common Crawl de site crawlt. Op de pagina staat ook dat Common Crawl weet dat crawlers zich ten onrechte als CCBot voordoen, en het raadt aan user-agent-strings te verifiëren.",
+  "compare": "CCBot bouwt een openbaar crawlarchief dat anderen kunnen gebruiken, terwijl GPTBot content verzamelt voor de eigen doeleinden van OpenAI.",
+  "job": "Open webcrawlarchief",
+  "follows": "Ja, via een robots.txt-regel voor CCBot",
+  "ipnote": "Common Crawl zegt dat CCBot draait op eigen IP-adresbereiken met reverse DNS (niet voor IPv6). Een gelogd verzoek kun je dus controleren met een reverse lookup die uitkomt op een hostnaam onder crawl.commoncrawl.org. De bereiken staan ook als JSON op https://index.commoncrawl.org/ccbot.json."
+ },
+ "chatgpt-user": {
+  "answer": "ChatGPT-User bezoekt een webpagina als iemand ChatGPT of een aangepaste GPT een vraag stelt waarvoor die pagina nodig is. OpenAI zegt dat hij niet automatisch crawlt en dat robots.txt-regels mogelijk niet gelden, omdat een gebruiker het verzoek start. OpenAI vermeldt 234 IP-bereiken voor deze agent.",
+  "what": "In tegenstelling tot de andere OpenAI-robots struint ChatGPT-User niet zelf over het web. OpenAI beschrijft hem als de agent voor bepaalde gebruikersacties in ChatGPT en aangepaste GPT's, ook voor pagina's die een aangepaste GPT bereikt via GPT Actions. Iemand typte iets en daarna kwam er een verzoek bij je server binnen.\n\n| Gegeven | ChatGPT-User |\n| --- | --- |\n| Aanbieder | OpenAI |\n| Taak | Door de gebruiker gestart ophalen |\n| robots.txt-token | `ChatGPT-User` |\n| Volgt robots.txt | Robots.txt-regels gelden mogelijk niet |\n| Gepubliceerde adreslijst | 234 bereiken (openai.com/chatgpt-user.json, bestand van 2026-10-20) |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "Omdat het bezoek door een gebruiker wordt gestart, waarschuwt OpenAI dat robots.txt-regels mogelijk niet gelden. Een regel `Disallow` voor ChatGPT-User is dus geen gegarandeerde stop. OpenAI zegt ook dat ChatGPT-User niet wordt gebruikt om te bepalen of content in zoekresultaten verschijnt, en verwijst opt-outs voor zoeken naar OAI-SearchBot. Wil je deze verzoeken stoppen, dan regel je dat op je server of CDN, niet alleen in robots.txt.",
+  "compare": "OAI-SearchBot is de zoekcrawler en volgt robots.txt wel.",
+  "job": "Door de gebruiker gestart ophalen",
+  "follows": "Robots.txt-regels gelden mogelijk niet",
+  "ipnote": "De adreslijst is de langste van de drie OpenAI-bestanden die we hebben geteld: openai.com/chatgpt-user.json bevatte op 21 oktober 2026 234 prefixen, met aanmaaktijd 2026-10-20, de dag voor deze pagina. Bij zo'n lange lijst haal je het bestand opnieuw op als je een logregel controleert. Kopieer hem niet eenmalig in een firewall."
+ },
+ "claude-searchbot": {
+  "answer": "Claude-SearchBot is de Anthropic-robot die het web doorzoekt om de kwaliteit van zoekresultaten te verbeteren. Anthropic zegt dat uitschakelen voorkomt dat je content wordt geïndexeerd voor zoekoptimalisatie. Dat kan je zichtbaarheid en de nauwkeurigheid in zoekresultaten van gebruikers verminderen. Het robots.txt-token is Claude-SearchBot.",
+  "what": "Claude-SearchBot is de indexerende kant van de zoekfunctie van Anthropic. Anthropic beschrijft hem als een robot die online content analyseert om de relevantie en nauwkeurigheid van zoekantwoorden te verbeteren. [ClaudeBot](/bots/claudebot) verzamelt voor training en [Claude-User](/bots/claude-user) beantwoordt een live vraag.\n\n| Gegeven | Claude-SearchBot |\n| --- | --- |\n| Aanbieder | Anthropic |\n| Taak | Zoeken |\n| robots.txt-token | `Claude-SearchBot` |\n| Volgt robots.txt | Ja, Anthropic zegt dat zijn robots robots.txt respecteren |\n| Gepubliceerde adreslijst | Anthropic verwijst naar een lijst maar raadt IP-blokkering af |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "Anthropic noemt twee gevolgen van uitschakelen: je content wordt niet geïndexeerd voor zoekoptimalisatie, en de zichtbaarheid en nauwkeurigheid van je site in zoekresultaten van gebruikers kunnen dalen.",
+  "compare": "Als je ClaudeBot blokkeert, sluit je je alleen uit van training. Je verdwijnt niet uit de zoekindex van Claude.",
+  "job": "Zoeken",
+  "follows": "Ja, Anthropic zegt dat zijn robots robots.txt respecteren",
+  "ipnote": "Het helpartikel is gedateerd 7 april 2026. Er staat geen user-agent-string in, dus een logregel die Claude-SearchBot noemt, is een bewering die je niet alleen met het artikel kunt bevestigen. Anthropic zegt dat verkeer vanaf een adres op de gelinkte lijst van Anthropic is. Het vraagt site-eigenaren die denken dat een robot zich misdraagt om te mailen vanaf een e-mailadres op het betreffende domein."
+ },
+ "claude-user": {
+  "answer": "Claude-User is de agent die Claude kan gebruiken om een website te openen als iemand een vraag stelt. Anthropic zegt dat uitschakelen voorkomt dat je content wordt opgehaald als antwoord op een vraag van een gebruiker. Dat kan je zichtbaarheid voor door gebruikers gestuurd zoeken op het web verminderen. Hij staat los van ClaudeBot en Claude-SearchBot.",
+  "what": "Van de drie robots van Anthropic is Claude-User degene die aan de vraag van een persoon gekoppeld is. Hij verzamelt geen trainingsdata (dat doet [ClaudeBot](/bots/claudebot)) en bouwt de zoekindex niet op (dat doet [Claude-SearchBot](/bots/claude-searchbot)).\n\n| Gegeven | Claude-User |\n| --- | --- |\n| Aanbieder | Anthropic |\n| Taak | Door de gebruiker gestart ophalen |\n| robots.txt-token | `Claude-User` |\n| Volgt robots.txt | Ja, Anthropic zegt dat zijn robots robots.txt respecteren |\n| Gepubliceerde adreslijst | Anthropic verwijst naar een lijst maar raadt IP-blokkering af |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "Hier is Anthropic het directst over de kosten: uitschakelen van Claude-User voorkomt ophalen „als antwoord op een vraag van een gebruiker“ en „kan de zichtbaarheid van je site voor door gebruikers gestuurd zoeken op het web verminderen“. Een shop die hem blokkeert, kan nog steeds uit andere bronnen bij het model bekend zijn, maar Claude kan de pagina niet openen als erom gevraagd wordt.",
+  "compare": "Robot voor zoekkwaliteit. Blokkeren raakt de indexering voor zoeken, niet de live vraag van een gebruiker.",
+  "job": "Door de gebruiker gestart ophalen",
+  "follows": "Ja, Anthropic zegt dat zijn robots robots.txt respecteren",
+  "ipnote": "Het helpartikel van Anthropic noemt geen user-agent-string voor de drie robots en zegt dat de bron-IP-adressen op een gelinkte lijst staan. Anthropic zegt ook dat het blokkeren van die adressen kan voorkomen dat zijn robots robots.txt lezen. Het artikel adviseert daarom de toegang te regelen in robots.txt en niet op IP-niveau."
+ },
+ "claudebot": {
+  "answer": "ClaudeBot is de crawler van Anthropic voor content die kan bijdragen aan modeltraining. Een Disallow in robots.txt geeft aan dat toekomstig materiaal van een site buiten de trainingsdatasets moet blijven. Anthropic honoreert Crawl-delay en waarschuwt dat het blokkeren van zijn IP-adressen kan voorkomen dat de crawler robots.txt leest. Gebruik daarom robots.txt.",
+  "what": "Anthropic noemt in zijn helpartikel drie robots: ClaudeBot voor trainingsdata, [Claude-User](/bots/claude-user) voor pagina's die op verzoek van een gebruiker worden opgehaald en [Claude-SearchBot](/bots/claude-searchbot) voor zoekkwaliteit. ClaudeBot is die voor training. Het artikel is gedateerd 7 april 2026.\n\n| Gegeven | ClaudeBot |\n| --- | --- |\n| Aanbieder | Anthropic |\n| Taak | Training |\n| robots.txt-token | `ClaudeBot` |\n| Volgt robots.txt | Ja, volgt robots.txt en Crawl-delay |\n| Gepubliceerde adreslijst | Anthropic verwijst naar een lijst maar raadt IP-blokkering af |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "Anthropic zegt dat een beperking aangeeft dat toekomstig materiaal van de site buiten zijn trainingsdatasets moet blijven. De formulering is „toekomstig materiaal“. Er staat niet wat er gebeurt met content die al is verzameld. De andere twee Claude-robots staan los hiervan, dus hun regels veranderen niet als je ClaudeBot blokkeert.",
+  "compare": "Een aparte zoekrobot: als je ClaudeBot blokkeert, verandert er niets voor die robot.",
+  "job": "Training",
+  "follows": "Ja, volgt robots.txt en Crawl-delay",
+  "ipnote": "Volgens het artikel van Anthropic respecteren zijn robots „niet crawlen“-signalen in robots.txt en proberen ze CAPTCHA's niet te omzeilen. Anthropic ondersteunt de niet-standaard Crawl-delay-regel, bijvoorbeeld `User-agent: ClaudeBot` gevolgd door `Crawl-delay: 1`. Anthropic zegt ook dat blokkeren op IP-adres mogelijk geen blijvende opt-out geeft, omdat de robot dan robots.txt niet meer kan lezen. Volgens het artikel van Anthropic moet je robots.txt instellen voor elk subdomein dat je wilt uitsluiten."
+ },
+ "diffbot": {
+  "answer": "Diffbot beschrijft twee user agents. Diffbot crawlt het web proactief voor een algemene zoekmachine, zodat sites kunnen worden gevonden en geciteerd vanuit de Knowledge Graph. Diffbot-User haalt een URL op voor iemand die de software gebruikt. Diffbot zegt dat zijn crawls standaard robots.txt volgen, inclusief disallow en crawl-delay.",
+  "what": "Diffbot beschrijft twee user agents. Diffbot wordt gebruikt voor algemeen, proactief crawlen van het web om een algemene zoekmachine te bouwen, zodat sites kunnen worden gevonden en geciteerd vanuit de Diffbot Knowledge Graph en webzoekdiensten. Diffbot-User wordt gebruikt voor verzoeken namens een mens die met Diffbot-software een URL bekijkt.",
+  "block": "Diffbot zegt dat zijn webcrawls standaard robots.txt volgen, inclusief disallow en crawl-delay, en dat een regel in specifieke gevallen kan worden overschreven, zoals bij een partnerschap of overeenkomst met de site. Diffbot en Diffbot-User staan als aparte user agents vermeld. Gebruikers van de Extract- en Crawlbot-API's stellen volgens Diffbot hun eigen crawlparameters in en kunnen hun eigen User-Agent instellen.",
+  "compare": "Diffbot wordt door de aanbieder omschreven als vergelijkbaar met Googlebot en Bing: een algemene crawler voor een zoekindex. Volgens de aanbieder wordt hij niet gebruikt voor AI-training.",
+  "job": "Zoeken (algemene webcrawl)",
+  "follows": "Ja, standaard (disallow- en crawl-delay-regels)",
+  "ipnote": "Op de pagina van de aanbieder staat geen IP-lijst of verificatiemethode."
+ },
+ "duckassistbot": {
+  "answer": "DuckAssistBot crawlt pagina's in realtime voor de AI-ondersteunde antwoorden van DuckDuckGo, die hun bronnen vermelden. DuckDuckGo zegt dat de data niet wordt gebruikt om AI-modellen te trainen. Een Disallow in robots.txt werkt na 72 uur en heeft geen invloed op organische zoekrangschikking. DuckDuckGo vermeldt 486 IP-adressen.",
+  "what": "DuckDuckGo heeft twee bots die mensen door elkaar halen. DuckDuckBot is de zoekcrawler en DuckAssistBot hoort bij de AI-ondersteunde antwoorden. Op de helppagina van DuckDuckGo staat dat de antwoorden duidelijk hun bronnen vermelden en dat de gecrawlde data niet wordt gebruikt om AI-modellen te trainen.\n\n| Gegeven | DuckAssistBot |\n| --- | --- |\n| Aanbieder | DuckDuckGo |\n| Taak | Realtime ophalen voor AI-ondersteunde antwoorden |\n| robots.txt-token | `DuckAssistBot` |\n| Volgt robots.txt | Ja, een wijziging werkt na 72 uur |\n| Gepubliceerde adreslijst | 486 adressen (duckduckgo.com/duckassistbot.json, bestand van 2026-09-01) |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "DuckDuckGo zegt dat een wijziging na 72 uur ingaat zodra je DuckAssistBot met Disallow uitsluit, en dat een opt-out geen invloed heeft op de organische zoekrangschikking en niet bepaalt of sites in de zoekresultaten verschijnen. De kosten van blokkeren beperken zich dus tot de ondersteunde antwoorden en hun bronvermeldingen. Problemen met opt-outs gaan naar het adres dat de pagina noemt: crawling@duckduckgo.com.",
+  "compare": "Amazons familie van drie agents, waarvan er één robots.txt mogelijk negeert.",
+  "job": "Realtime ophalen voor AI-ondersteunde antwoorden",
+  "follows": "Ja, een wijziging werkt na 72 uur",
+  "ipnote": "DuckDuckGo vermeldt de adressen in het helpartikel en als JSON op duckduckgo.com/duckassistbot.json. Het bestand bevatte op 21 oktober 2026 486 vermeldingen, met aanmaaktijd 2026-09-01. Dat is langer dan elke andere adreslijst die we voor deze set hebben geteld. Het bevat losse adressen, waar de andere CIDR-bereiken publiceren. De user agent verschijnt als `DuckAssistBot/1.2`."
+ },
+ "duckduckbot": {
+  "answer": "DuckDuckBot is de webcrawler van DuckDuckGo. Volgens DuckDuckGo is zijn taak de zoekresultaten van DuckDuckGo te verbeteren. DuckDuckGo zegt dat hij WWW::RobotRules respecteert en zijn IP-adressen als lijst in JSON-vorm publiceert. DuckAssistBot, de ophaalrobot voor AI-ondersteunde antwoorden, staat op een aparte helppagina van DuckDuckGo.",
+  "what": "DuckDuckBot is de webcrawler van DuckDuckGo. DuckDuckGo zegt dat zijn taak is de zoekresultaten van DuckDuckGo te verbeteren. In de helppagina's van DuckDuckGo staat DuckAssistBot op een aparte pagina.",
+  "block": "DuckDuckGo zegt dat DuckDuckBot WWW::RobotRules respecteert, dus een Disallow-regel voor DuckDuckBot in robots.txt geldt voor deze crawler. De pagina zegt niets over wat blokkeren verandert in de resultaten van DuckDuckGo, en niets over DuckAssistBot.",
+  "compare": "DuckDuckBot is de crawler voor de zoekresultaten van DuckDuckGo, terwijl DuckAssistBot door DuckDuckGo op een eigen helppagina wordt beschreven.",
+  "job": "Zoeken",
+  "follows": "Ja, respecteert WWW::RobotRules (geen opmerking over timing gepubliceerd)",
+  "ipnote": "DuckDuckGo zegt dat de crawler afkomstig is van de IP-adressen op zijn helppagina, ook beschikbaar als JSON op duckduckgo.com/duckduckbot.json."
+ },
+ "exasearchbot": {
+  "answer": "ExaSearchBot is de crawler van Exa, een zoekmachine voor zoeken en ophalen, zodat pagina's kunnen worden gevonden en geciteerd. Exa zegt dat hij robots.txt controleert voordat hij iets ophaalt en dat User-agent: ExaSearchBot met Disallow: / de hele site blokkeert. Elk verzoek is cryptografisch ondertekend, dus verificatie hangt niet af van een IP-adres.",
+  "what": "ExaSearchBot is de crawler van Exa, een zoekmachine. Exa zegt dat het doel zoeken en ophalen is, zodat pagina's vindbaar worden en kunnen worden geciteerd. Pagina's die Exa op verzoek van een gebruiker ophaalt in plaats van te crawlen, gaan uit als ExaUser.",
+  "block": "Exa zegt dat User-agent: ExaSearchBot met Disallow: / ExaSearchBot van de hele site weert. Is er geen groep voor ExaSearchBot, dan volgt hij de regels voor grote zoekmachines, en anders de *-groep. Volgens de aanbieder regelt robots.txt het crawlen, niet het indexeren. Pagina's die al geïndexeerd zijn, haal je weg met een noindex-meta-tag of een X-Robots-Tag-header.",
+  "compare": "Beide zijn crawlers voor een zoekindex die AI-antwoorden voeden met geciteerde bronnen. ExaSearchBot ondertekent zijn verzoeken met Web Bot Auth en valt terug op de regels van grote zoekmachines als hij geen eigen groep heeft.",
+  "job": "Zoek- en ophaalindex",
+  "follows": "Ja, de aanbieder zegt dat hij robots.txt controleert voordat hij iets ophaalt",
+  "ipnote": "De aanbieder zegt dat elk verzoek cryptografisch is ondertekend met HTTP Message Signatures (Web Bot Auth) en geeft een openbare sleuteldirectory om tegen te verifiëren. Volgens de aanbieder geldt die verificatie ongeacht het IP-adres."
+ },
+ "exauser": {
+  "answer": "ExaUser is de agent waarmee Exa live een pagina ophaalt als een gebruiker, of een toepassing op basis van de Exa API, vraagt om de actuele content. Exa zegt dat robots.txt-regels mogelijk niet gelden voor zulke door de gebruiker gestarte verzoeken. Opt-outs voor zoeken en automatisch crawlen regel je met het token ExaSearchBot.",
+  "what": "ExaUser is de agent waarmee Exa live een pagina ophaalt als een gebruiker, of een toepassing op basis van de Exa API, vraagt om de actuele content. Exa zegt dat hij niet wordt gebruikt om het web automatisch te crawlen. Dat doet ExaSearchBot. Hij probeert geen logins, paywalls of CAPTCHA's te omzeilen en verstuurt geen formulieren.",
+  "block": "Exa zegt dat robots.txt-regels mogelijk niet gelden voor ExaUser, omdat gebruikers de verzoeken starten. Exa zegt ook dat ExaUser niet wordt gebruikt om te bepalen of content in het zoeken van Exa verschijnt, en dat opt-outs voor zoeken en automatisch crawlen worden geregeld met het token ExaSearchBot in robots.txt.",
+  "compare": "ExaSearchBot crawlt automatisch om de zoekindex van Exa op te bouwen en volgt robots.txt. ExaUser haalt een pagina alleen op als een gebruiker of toepassing erom vraagt, en volgens de aanbieder geldt robots.txt dan mogelijk niet.",
+  "job": "Door de gebruiker gestart ophalen",
+  "follows": "Gedeeltelijk, de aanbieder zegt dat robots.txt-regels mogelijk niet gelden voor door de gebruiker gestarte verzoeken",
+  "ipnote": "De aanbieder zegt dat elk verzoek is ondertekend met Web Bot Auth (RFC 9421) en publiceert zijn sleutels in een openbare directory. Een IP-lijst publiceert hij niet."
+ },
+ "google-agent": {
+  "answer": "Google-Agent is een door de gebruiker gestarte fetcher. Google zegt dat agents die op de infrastructuur van Google draaien hem gebruiken om het web te doorzoeken en namens een gebruiker te handelen. Volgens Google negeren zulke fetchers robots.txt meestal, omdat een gebruiker het ophalen vroeg. Google publiceert zijn IP-bereiken in user-triggered-agents.json.",
+  "what": "Google-Agent is een door de gebruiker gestarte fetcher. Volgens Google gebruiken agents die op de infrastructuur van Google draaien hem om het web te doorzoeken en acties uit te voeren op verzoek van een gebruiker. Google geeft aparte user-agent-strings voor mobiel en desktop. Google zegt ook dat het experimenteert met het Web Bot Auth-protocol met de identiteit https://agent.bot.goog.",
+  "block": "Google zegt dat door de gebruiker gestarte fetchers robots.txt-regels meestal negeren, omdat een gebruiker het ophalen heeft gevraagd. De pagina van Google beschrijft geen robots.txt-token voor Google-Agent.",
+  "compare": "Beide handelen op verzoek van een gebruiker in plaats van zelf te crawlen. Google-Agent wordt omschreven als een fetcher die het web doorzoekt en acties voor de gebruiker uitvoert.",
+  "job": "Door de gebruiker gestart ophalen (agents die namens een gebruiker handelen)",
+  "follows": "Gedeeltelijk. Google zegt dat door de gebruiker gestarte fetchers robots.txt-regels meestal negeren, omdat een gebruiker het ophalen heeft gevraagd.",
+  "ipnote": "Google zegt dat Google-Agent IP-bereiken uit user-triggered-agents.json gebruikt en dat het reverse DNS-masker van door de gebruiker gestarte fetchers overeenkomt met ***-***-***-***.gae.googleusercontent.com of google-proxy-***-***-***-***.google.com, afhankelijk van of de fetcher van Google is of van een gebruiker."
+ },
+ "google-cloudvertexbot": {
+  "answer": "Google-CloudVertexBot is een Google-crawler die crawls uitvoert die site-eigenaren aanvragen om Vertex AI Agents te bouwen. Google rekent hem tot zijn algemene crawlers, die bij automatisch crawlen altijd robots.txt volgen. Google zegt dat regels voor deze crawler geen effect hebben op Google Search of andere Google-producten.",
+  "what": "Google-CloudVertexBot is een Google-crawler die tot de algemene crawlers van Google hoort. Google zegt dat hij crawls uitvoert die site-eigenaren aanvragen om Vertex AI Agents te bouwen. Google toont hem als een deelstring van de user agent, niet als volledige user-agent-string.",
+  "block": "Google zegt dat voorkeuren voor de user agent Google-CloudVertexBot gelden voor crawls die site-eigenaren aanvragen om Vertex AI Agents te bouwen. Volgens Google heeft dit geen effect op Google Search of andere producten.",
+  "compare": "Googlebot crawlt voor Google Search, terwijl Google-CloudVertexBot alleen crawlt als een site-eigenaar een crawl heeft aangevraagd om Vertex AI Agents te bouwen.",
+  "job": "Crawl aangevraagd door site-eigenaren voor Vertex AI Agents",
+  "follows": "Ja. Google zegt dat algemene crawlers bij automatisch crawlen altijd robots.txt-regels volgen.",
+  "ipnote": "Google zegt dat de algemene crawlers meestal crawlen vanuit de bereiken in common-crawlers.json en dat de reverse DNS-naam overeenkomt met crawl-***-***-***-***.googlebot.com of geo-crawl-***-***-***-***.geo.googlebot.com."
+ },
+ "google-extended": {
+  "answer": "Google-Extended is een robots.txt-producttoken waarmee uitgevers bepalen of content die Google crawlt mag worden gebruikt om toekomstige Gemini-modellen te trainen. Het heeft geen eigen HTTP-user-agent, dus je ziet het nooit in je logs. Google zegt dat het geen invloed heeft op opname in Search of op de rangschikking.",
+  "what": "De meeste pagina's in deze set beschrijven een crawler die je in een log kunt vinden. Deze niet. Google zegt dat Google-Extended „geen aparte HTTP-user-agent-string heeft“: het crawlen gebeurt met bestaande Google-user agents en het robots.txt-token heeft een controlerende functie.\n\n| Gegeven | Google-Extended |\n| --- | --- |\n| Aanbieder | Google |\n| Taak | Controletoken (doet zelf geen verzoeken) |\n| robots.txt-token | `Google-Extended` |\n| Volgt robots.txt | Wordt alleen uit robots.txt gelezen; er is geen aparte user agent |\n| Gepubliceerde adreslijst | Geen: het haalt nooit iets op |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "Met `Disallow: /` onder Google-Extended laat je Google weten dat de content niet mag worden gebruikt om toekomstige Gemini-modellen achter Gemini Apps en de Vertex AI API for Gemini te trainen. Google zegt ook dat het geen invloed heeft op opname in Google Search en geen rangschikkingssignaal is. Onze audit leest dit token in robots.txt als een van de controles. Het is het enige signaal dat er is.",
+  "compare": "De crawler die je pagina's echt ophaalt voor Search.",
+  "job": "Controletoken (doet zelf geen verzoeken)",
+  "follows": "Wordt alleen uit robots.txt gelezen; er is geen aparte user agent",
+  "ipnote": "Op netwerkniveau valt hier niets te verifiëren: geen user agent, geen adreslijst. Controleer robots.txt zelf, op elke host, en onthoud dat een zoekopdracht in je log naar Google-Extended niets vindt, of je het token nu blokkeert of niet. In het eigen voorbeeld van Google krijgt het token een allow-pad en een disallow-pad, net als elk ander token."
+ },
+ "google-gemininotebook": {
+  "answer": "Google-GeminiNotebook is de user agent van de Gemini Notebook-fetcher. Hij vraagt losse URL's op die gebruikers als bron aan hun projecten hebben toegevoegd. Google rekent hem tot de door de gebruiker gestarte fetchers, die robots.txt meestal negeren omdat een gebruiker het ophalen vroeg. Op de pagina van Google staat Google-NotebookLM als vroegere agent.",
+  "what": "Google-GeminiNotebook is de user agent van de Gemini Notebook-fetcher, die Google tot zijn door de gebruiker gestarte fetchers rekent. Hij vraagt losse URL's op die gebruikers als bron voor hun projecten hebben opgegeven. Op de pagina van Google staat Google-NotebookLM als vroegere agent, ondersteund tot augustus 2026.",
+  "block": "Google zegt dat door de gebruiker gestarte fetchers robots.txt-regels meestal negeren, omdat een gebruiker het ophalen heeft gevraagd. De pagina van Google beschrijft geen robots.txt-token voor deze fetcher.",
+  "compare": "Beide halen losse URL's op omdat een gebruiker een assistentproduct vroeg ze te gebruiken, en beide aanbieders zeggen dat deze verzoeken robots.txt-regels mogelijk niet volgen.",
+  "job": "Door de gebruiker gestart ophalen",
+  "follows": "Gedeeltelijk. Google zegt dat door de gebruiker gestarte fetchers robots.txt-regels meestal negeren, omdat een gebruiker het ophalen heeft gevraagd.",
+  "ipnote": "Google zegt dat door de gebruiker gestarte fetchers IP-bereiken publiceren in user-triggered-fetchers.json, user-triggered-fetchers-google.json en user-triggered-agents.json, en dat het reverse DNS-masker overeenkomt met ***-***-***-***.gae.googleusercontent.com of google-proxy-***-***-***-***.google.com, afhankelijk van of de fetcher van Google is of van een gebruiker."
+ },
+ "google-pinpoint": {
+  "answer": "Google-Pinpoint is een door de gebruiker gestarte fetcher die Google vermeldt. Hij vraagt losse URL's op die Pinpoint-gebruikers hebben opgegeven als bron voor hun persoonlijke documentverzamelingen. Google zegt dat zulke fetchers robots.txt-regels meestal negeren omdat een gebruiker het ophalen vroeg, en beschrijft er geen robots.txt-token voor.",
+  "what": "Google-Pinpoint is een door de gebruiker gestarte fetcher die Google vermeldt. Hij vraagt losse URL's op die Pinpoint-gebruikers hebben opgegeven als bron voor hun persoonlijke documentverzamelingen. Google vermeldt hem met de user agent Google-Pinpoint.",
+  "block": "Google zegt dat door de gebruiker gestarte fetchers robots.txt-regels meestal negeren, omdat een gebruiker het ophalen heeft gevraagd. De pagina van Google beschrijft geen robots.txt-token voor Google-Pinpoint.",
+  "compare": "Beide halen URL's op die gebruikers als bron hebben opgegeven in een Google-product, en beide vallen onder de regels van Google voor door de gebruiker gestarte fetchers.",
+  "job": "Door de gebruiker gestart ophalen",
+  "follows": "Gedeeltelijk. Google zegt dat door de gebruiker gestarte fetchers robots.txt-regels meestal negeren, omdat een gebruiker het ophalen heeft gevraagd.",
+  "ipnote": "Google zegt dat door de gebruiker gestarte fetchers IP-bereiken publiceren in user-triggered-fetchers.json, user-triggered-fetchers-google.json en user-triggered-agents.json, en dat het reverse DNS-masker overeenkomt met ***-***-***-***.gae.googleusercontent.com of google-proxy-***-***-***-***.google.com, afhankelijk van of de fetcher van Google is of van een gebruiker."
+ },
+ "googlebot": {
+  "answer": "Googlebot is de belangrijkste crawler van Google voor Search. Google zegt dat zijn algemene crawlers bij automatisch crawlen altijd robots.txt-regels volgen. Crawlvoorkeuren voor het token Googlebot gelden voor Google Search, inclusief Discover, en voor producten zoals Images, Video en News. Google publiceert 317 IP-bereiken voor Googlebot.",
+  "what": "Googlebot is de crawler waar elke controle voor Search mee begint. Op de pagina van Google staan meerdere crawlers. Het ene token Googlebot bepaalt Search, Discover en de producten die op dezelfde crawl leunen, zoals Images, de Video-modus en News.\n\n| Gegeven | Googlebot |\n| --- | --- |\n| Aanbieder | Google |\n| Taak | Zoeken (ook Images, Video, News, Discover) |\n| robots.txt-token | `Googlebot` |\n| Volgt robots.txt | Ja, altijd bij automatisch crawlen |\n| Gepubliceerde adreslijst | 317 bereiken (developers.google.com/static/search/apis/ipranges/googlebot.json, bestand van 2026-10-20) |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "Een Disallow voor Googlebot is geen smalle AI-opt-out. Het raakt Google Search zelf, inclusief Discover en de functies die erop bouwen, volgens de lijst van getroffen producten van Google. De smallere instelling voor Gemini-training is het aparte token [Google-Extended](/bots/google-extended).",
+  "compare": "Een controletoken voor Gemini-training. Het haalt nooit een pagina op.",
+  "job": "Zoeken (ook Images, Video, News, Discover)",
+  "follows": "Ja, altijd bij automatisch crawlen",
+  "ipnote": "Google publiceert de bereiken die zijn algemene crawlers gebruiken. Het Googlebot-bestand bevatte op 21 oktober 2026 317 prefixen, met aanmaaktijd 2026-10-20 14:46 UTC. Google beschrijft ook een reverse DNS-masker om een hostnaam te bevestigen. Een verzoek controleer je dus op twee manieren: het adres tegen het bestand en de reverse lookup tegen het masker. De pagina zelf is voor het laatst bijgewerkt op 2026-10-15."
+ },
+ "googleother": {
+  "answer": "GoogleOther is de generieke crawler van Google. Verschillende productteams van Google gebruiken hem om openbaar toegankelijke content op te halen, bijvoorbeeld bij eenmalige crawls voor intern onderzoek en ontwikkeling. Google zegt dat regels voor GoogleOther geen invloed hebben op een specifiek product. GoogleOther-Image en GoogleOther-Video staan als aparte tokens beschreven.",
+  "what": "GoogleOther is de generieke crawler van Google, die verschillende productteams van Google gebruiken om openbaar toegankelijke content op te halen, bijvoorbeeld bij eenmalige crawls voor intern onderzoek en ontwikkeling. Google rekent hem tot zijn algemene crawlers, naast Googlebot, en beschrijft ook GoogleOther-Image en GoogleOther-Video als versies die zijn geoptimaliseerd voor afbeeldings- en video-URL's. Op de pagina van Google staat niet dat hij voor AI-training wordt gebruikt.",
+  "block": "Google zegt dat crawlvoorkeuren voor de user agent GoogleOther geen invloed hebben op een specifiek product. Google beschrijft GoogleOther-Image en GoogleOther-Video als aparte robots.txt-tokens. Er staat dus nergens dat een regel voor GoogleOther ze dekt, en het token Googlebot is weer een ander token.",
+  "compare": "Googlebot crawlt voor Google Search en gerelateerde producten, terwijl GoogleOther een generieke crawler is waarvan de robots.txt-regels geen invloed hebben op een specifiek Google-product.",
+  "job": "Generieke crawl voor verschillende productteams van Google",
+  "follows": "Ja. Google zegt dat algemene crawlers bij automatisch crawlen altijd robots.txt-regels volgen.",
+  "ipnote": "Google zegt dat de algemene crawlers meestal crawlen vanuit de bereiken in common-crawlers.json en dat de reverse DNS-naam overeenkomt met crawl-***-***-***-***.googlebot.com of geo-crawl-***-***-***-***.geo.googlebot.com."
+ },
+ "gptbot": {
+  "answer": "GPTBot is de trainingscrawler van OpenAI. Met een Disallow in robots.txt laat je OpenAI weten dat de content van de site niet mag worden gebruikt om zijn generatieve AI-foundation-modellen te trainen. Het regelt het zoeken in ChatGPT niet, want dat gebruikt OAI-SearchBot. OpenAI publiceert 18 IP-bereiken voor GPTBot.",
+  "what": "GPTBot is de crawler die mensen meestal bedoelen als ze zeggen „blokkeer OpenAI“. Volgens de pagina van OpenAI wordt hij gebruikt om content te crawlen die kan worden gebruikt bij het trainen van zijn modellen. Hij is een van de drie crawlers in de OpenAI-documentatie voor de ChatGPT-productfamilie, naast [OAI-SearchBot](/bots/oai-searchbot) en [ChatGPT-User](/bots/chatgpt-user).\n\n| Gegeven | GPTBot |\n| --- | --- |\n| Aanbieder | OpenAI |\n| Taak | Training |\n| robots.txt-token | `GPTBot` |\n| Volgt robots.txt | Ja, volgt robots.txt |\n| Gepubliceerde adreslijst | 18 bereiken (openai.com/gptbot.json, bestand van 2026-09-22) |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "OpenAI ziet een Disallow voor GPTBot als een signaal over training: de content mag niet worden gebruikt om generatieve AI-foundation-modellen te trainen. Op dezelfde pagina staat een voorbeeld van een site die OAI-SearchBot toestaat om in zoekresultaten te verschijnen en GPTBot uitsluit. Een blokkade hier haalt je dus niet vanzelf uit de zoekantwoorden van ChatGPT. Of je blokkeert, is een zakelijke keuze. Beide zijn legitiem.",
+  "compare": "Sta die toe en sluit GPTBot uit om in het zoeken van ChatGPT te blijven en je af te melden voor training.",
+  "job": "Training",
+  "follows": "Ja, volgt robots.txt",
+  "ipnote": "De GPTBot-lijst op openai.com/gptbot.json is de kortste van de drie OpenAI-bestanden die we hebben geteld: 18 prefixen op 21 oktober 2026, met aanmaaktijd 2026-09-22. Komt een verzoek met de naam GPTBot van een adres buiten die lijst, dan bewijst de naam alleen niets."
+ },
+ "icc-crawler": {
+  "answer": "ICC-Crawler wordt beheerd door het Universal Communication Research Institute van het Japanse NICT. NICT zegt dat het verzamelde pagina's gebruikt voor onderzoek naar informatieverwerking, waaronder meertalige vertaling, informatieanalyse en kunstmatige intelligentie. Het ondersteunt het Robots Exclusion Protocol: User-agent: ICC-Crawler met Disallow: / kan het verzamelen van alle pagina's uitschakelen.",
+  "what": "ICC-Crawler is een crawler die wordt beheerd door het Universal Communication Research Institute van het Japanse National Institute of Information and Communications Technology (NICT). NICT zegt dat het verzamelde pagina's gebruikt voor onderzoek en ontwikkeling van informatieverwerkingstechnologieën, waaronder meertalige vertaling, informatieanalyse en kunstmatige intelligentie. NICT kan verzamelde informatie of onderzoeksresultaten ook aan derden verstrekken, voor zover de wet dat toestaat.",
+  "block": "NICT zegt dat ICC-Crawler het Robots Exclusion Protocol ondersteunt en dat User-agent: ICC-Crawler met Disallow: / in robots.txt het verzamelen van alle pagina's kan uitschakelen. Site-eigenaren kunnen ook een pad of bestandstype blokkeren, of geselecteerde paden toestaan onder een volledige Disallow. Blijft de toegang daarna doorgaan, dan vraagt NICT site-eigenaren contact op te nemen, zodat het kan stoppen met verzamelen van de host.",
+  "compare": "Beide verzamelen pagina's die bijdragen aan AI-ontwikkeling. ICC-Crawler wordt echter beheerd door een Japans publiek onderzoeksinstituut voor eigen onderzoek en publiceert twee IP-adressen van de crawler op zijn pagina. GPTBot wordt beheerd door een commercieel bedrijf.",
+  "job": "Onderzoeksdata verzamelen (inclusief AI-onderzoek en -ontwikkeling)",
+  "follows": "Ja, en bij een Crawl-Delay gebruikt hij het grootste van dat interval en zijn eigen minimum",
+  "ipnote": "De pagina van de aanbieder vermeldt de IP-adressen van de crawler als platte tekst. Er is geen machineleesbare lijst."
+ },
+ "imagesiftbot": {
+  "answer": "ImagesiftBot is de crawler van ImageSift, een product van Hive. Hij verzamelt openbaar beschikbare afbeeldingen met de host-URL, paginatekst en alt-tekst van de afbeelding voor een index waarmee je op vergelijkbare afbeeldingen zoekt. De aanbieder zegt dat hij robots.txt en Crawl-delay respecteert en de Googlebot-regels volgt als er geen regels voor hem zijn.",
+  "what": "ImageSiftBot is de crawler van ImageSift, een product van Hive. Hij verzamelt openbaar beschikbare afbeeldingen, samen met de host-URL, paginatekst en alt-tekst van de afbeelding. ImageSift slaat de data op in een index die zijn producten gebruiken om vergelijkbare afbeeldingen te zoeken en op te halen.",
+  "block": "De aanbieder zegt dat standaard robots.txt-regels die op ImagesiftBot gericht zijn worden gerespecteerd en dat Crawl-delay wordt ondersteund. Is er geen regel voor ImagesiftBot maar wel voor Googlebot, dan volgt hij de Googlebot-regels. Op de pagina staat ook support@imagesift.com voor opt-outverzoeken.",
+  "compare": "ImagesiftBot valt terug op de robots.txt-regels van Googlebot als hij geen eigen regels heeft, en hij verzamelt afbeeldingen voor een index van vergelijkbare afbeeldingen, niet voor algemeen zoeken op het web.",
+  "job": "Afbeeldingsindex voor zoeken naar vergelijkbare afbeeldingen",
+  "follows": "Ja, en hij ondersteunt Crawl-delay",
+  "ipnote": "De pagina van de aanbieder publiceert geen IP-lijst of verificatiemethode."
+ },
+ "kagibot": {
+  "answer": "Kagibot is de webcrawler van de zoekmachine Kagi. Kagi zegt dat standaard robots.txt-regels die op Kagibot gericht zijn worden gerespecteerd en dat Kagibot de Googlebot-regels volgt als er geen regel voor Kagibot is maar wel een voor Googlebot. Kagi publiceert zijn user-agent-string en de IP-adressen waarvan zijn verzoeken afkomstig zijn.",
+  "what": "Kagibot is de webcrawler van de zoekmachine Kagi. Kagi publiceert zijn user-agent-string en de IP-adressen waarvan de verzoeken van Kagibot afkomstig zijn.",
+  "block": "Kagi zegt dat standaard robots.txt-regels die op Kagibot gericht zijn worden gerespecteerd, bijvoorbeeld Disallow-regels voor een pad. Is er geen regel voor Kagibot maar wel een voor Googlebot, dan volgt Kagibot de Googlebot-regels.",
+  "compare": "Kagibot volgt zijn eigen robots.txt-regels en valt terug op de Googlebot-regels als er geen op Kagibot gericht zijn.",
+  "job": "Zoeken",
+  "follows": "Ja, standaard robots.txt-regels die op Kagibot gericht zijn worden gerespecteerd",
+  "ipnote": "Kagi vermeldt op zijn botpagina de IP-adressen (met hostnamen onder kagibot.org) waarvan de verzoeken van Kagibot afkomstig zijn."
+ },
+ "linkupbot": {
+  "answer": "LinkupBot is de webcrawler van Linkup. Hij haalt openbaar toegankelijke pagina's op om de zoekindex van Linkup te bouwen, die volgens Linkup zoeken en web grounding voor AI-toepassingen mogelijk maakt. Linkup zegt dat User-agent: LinkupBot met Disallow: / de hele site blokkeert en dat robots.txt geen toegangscontrolemechanisme is.",
+  "what": "LinkupBot is de webcrawler van Linkup. Hij haalt openbaar toegankelijke pagina's op om de zoekindex van Linkup te bouwen en bij te houden, die volgens Linkup zoeken en web grounding voor AI-toepassingen mogelijk maakt.",
+  "block": "Volgens de aanbieder blokkeert User-agent: LinkupBot met Disallow: / in robots.txt de hele site. De aanbieder zegt ook dat robots-regels per host gelden, dat LinkupBot toestaan via een firewall robots.txt niet overschrijft en dat robots.txt geen toegangscontrolemechanisme is.",
+  "compare": "Beide bouwen een zoekindex die AI-antwoorden voedt. De index van LinkupBot bedient AI-toepassingen via de zoek- en grounding-dienst van Linkup, en de IP-lijst is een tekstbestand, geen JSON.",
+  "job": "Zoekindex voor AI-webzoeken",
+  "follows": "Ja, de aanbieder zegt dat hij toepasselijke robots.txt-regels respecteert",
+  "ipnote": "De aanbieder zegt dat verzoeken afkomstig zijn van de CIDR-bereiken in zijn gepubliceerde lijst, en dat je moet verifiëren met zowel een bron-IP uit die lijst als een user agent met het token LinkupBot."
+ },
+ "meta-externalagent": {
+  "answer": "Meta-ExternalAgent is de crawler van Meta voor toepassingen zoals het trainen van AI-foundation-modellen of het verbeteren van producten door content rechtstreeks te indexeren. Op de pagina van Meta, bijgewerkt op 21 mei 2026, staan vijf agents. Meta zegt dat Meta-ExternalFetcher en FacebookExternalHit robots.txt kunnen omzeilen en dat wijzigingen tot 24 uur kunnen duren.",
+  "what": "Op de pagina van Meta staan vijf crawlers. FacebookExternalHit haalt een pagina op als iemand een link deelt op Facebook, Instagram of Messenger, om titel, beschrijving en thumbnail te cachen. Meta-WebIndexer verbetert de zoekresultaten van Meta AI. Meta zegt dat het toestaan ervan Meta helpt je content te citeren en ernaar te linken in de antwoorden van Meta AI. Meta-ExternalAds crawlt voor advertentie- en zakelijke producten. Meta-ExternalAgent is die voor het trainen van AI-foundation-modellen of indexeren. Meta-ExternalFetcher haalt losse links op verzoek van een gebruiker op, ook om AI te helpen websites te doorlopen en taken voor gebruikers af te ronden.\n\n| Gegeven | Meta-ExternalAgent |\n| --- | --- |\n| Aanbieder | Meta |\n| Taak | AI-modeltraining en contentindexering |\n| robots.txt-token | `meta-externalagent` |\n| Volgt robots.txt | Ja |\n| Gepubliceerde adreslijst | Geen gelezen |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "Als je meta-externalagent met Disallow uitsluit, geldt dat alleen voor die agent. In de voorbeelden van Meta heeft elk token een eigen groep, en de andere vier hebben er ook een. Het duurste om per ongeluk te blokkeren is FacebookExternalHit, want die bouwt het linkvoorbeeld als iemand je pagina deelt. Twee van de vijf negeren je robots.txt mogelijk: Meta zegt dat Meta-ExternalFetcher robots.txt kan omzeilen omdat hij ophaalacties uitvoert die de gebruiker vraagt, en dat FacebookExternalHit het kan omzeilen voor veiligheids- of integriteitscontroles, zoals malwarecontroles.",
+  "compare": "De trainingscrawler van OpenAI, die robots.txt respecteert zonder de omzeilgevallen van Meta.",
+  "job": "AI-modeltraining en contentindexering",
+  "follows": "Ja",
+  "ipnote": "De pagina van Meta geeft de user-agent-strings (meta-externalagent/1.1 en de versie met een link) en publiceert in de tekst die we lazen geen IP-lijst, dus we noemen geen aantal. Voor FacebookExternalHit zegt Meta dat je óf de user-agent-strings óf de IP-adressen op de allowlist moet zetten, en noemt de adressen de veiligere optie. Meta zegt dat crawlers robots.txt tot 24 uur kunnen cachen. Wacht dus zo lang voordat je een wijziging beoordeelt. Vragen gaan naar webmasters@meta.com."
+ },
+ "meta-externalfetcher": {
+  "answer": "Meta-ExternalFetcher is een Meta-crawler die losse links ophaalt op verzoek van een gebruiker. Meta zegt dat hij productfuncties ondersteunt, zoals AI helpen websites te doorlopen om taken voor gebruikers af te ronden, en dat hij robots.txt kan omzeilen omdat een gebruiker de ophaalacties vraagt. Wijzigingen in robots.txt kunnen tot 24 uur duren.",
+  "what": "Meta-ExternalFetcher is een Meta-crawler die losse links ophaalt op verzoek van een gebruiker. Meta zegt dat hij productfuncties ondersteunt, zoals het beoordelen en verbeteren van agentische AI-mogelijkheden, waaronder AI helpen websites te doorlopen om taken voor gebruikers af te ronden. Meta beschrijft hem op één pagina samen met Meta-ExternalAgent, Meta-WebIndexer, Meta-ExternalAds en FacebookExternalHit.",
+  "block": "Meta zegt dat je zijn crawlers kunt blokkeren door een disallow voor de betreffende crawler aan robots.txt toe te voegen. Meta zegt ook dat Meta-ExternalFetcher robots.txt kan omzeilen, omdat hij ophaalacties uitvoert die de gebruiker heeft gevraagd. Volgens Meta kunnen wijzigingen in robots.txt tot 24 uur duren, omdat crawlers het bestand tot 24 uur kunnen cachen.",
+  "compare": "Meta-ExternalAgent crawlt op de achtergrond het web, ook voor het trainen van AI-foundation-modellen, terwijl Meta-ExternalFetcher losse links ophaalt waar een gebruiker om vroeg en robots.txt kan omzeilen.",
+  "job": "Door de gebruiker gestart ophalen",
+  "follows": "Gedeeltelijk, kan robots.txt omzeilen omdat een gebruiker de ophaalacties vraagt",
+  "ipnote": "De crawlerpagina van Meta noemt voor deze crawler geen IP-adressen of verificatiemethode. De crawler wordt herkend aan zijn user-agent-string."
+ },
+ "meta-webindexer": {
+  "answer": "Meta-WebIndexer is een Meta-crawler die het web doorzoekt om de kwaliteit van de zoekresultaten van Meta AI te verbeteren. Meta zegt dat het toestaan ervan in robots.txt Meta helpt je content te citeren en ernaar te linken in de antwoorden van Meta AI. Je blokkeert een crawler met een disallow voor die crawler. Een wijziging kan tot 24 uur duren.",
+  "what": "Meta-WebIndexer is een Meta-crawler die het web doorzoekt om de kwaliteit van de zoekresultaten van Meta AI voor gebruikers te verbeteren. Meta zegt dat het toestaan ervan in robots.txt Meta helpt je content te citeren en ernaar te linken in de antwoorden van Meta AI. Meta beschrijft hem op één pagina samen met Meta-ExternalAgent, Meta-ExternalFetcher, Meta-ExternalAds en FacebookExternalHit.",
+  "block": "Meta zegt dat je zijn crawlers kunt blokkeren door een disallow voor de betreffende crawler aan robots.txt toe te voegen, en dat wijzigingen in robots.txt tot 24 uur kunnen duren. Meta zegt dat het toestaan van Meta-WebIndexer Meta helpt je content te citeren en ernaar te linken in de antwoorden van Meta AI. De pagina van Meta zegt niet of een disallow voor Meta-WebIndexer invloed heeft op zijn andere crawlers.",
+  "compare": "Meta-WebIndexer is voor zoekresultaten en bronvermeldingen van Meta AI, terwijl Meta Meta-ExternalAgent omschrijft als crawlen voor toepassingen zoals het trainen van AI-foundation-modellen of het rechtstreeks indexeren van content.",
+  "job": "Zoeken",
+  "follows": "Ja, wijzigingen kunnen tot 24 uur duren",
+  "ipnote": "De crawlerpagina van Meta noemt voor deze crawler geen IP-adressen of verificatiemethode. De crawler wordt herkend aan zijn user-agent-string."
+ },
+ "mistralai-user": {
+  "answer": "MistralAI-User is de Mistral-agent die een pagina kan bezoeken als een gebruiker Vibe een vraag stelt en in het antwoord naar de bron linkt. Mistral zegt dat hij niet wordt gebruikt om automatisch te crawlen of voor het trainen van generatieve AI. Op de pagina van Mistral staan ook MistralAI-Index en MistralAI-Training, elk met een eigen token.",
+  "what": "Op de crawlerpagina van Mistral staan drie agents: MistralAI-User voor gebruikersacties in Vibe, MistralAI-Index voor het indexeren van content voor het zoeken van Mistral, en MistralAI-Training, dat webcontent crawlt om datasets op te bouwen voor het trainen van generatieve AI-modellen van Mistral. Webmasters kunnen elk daarvan in robots.txt uitsluiten met Disallow.\n\n| Gegeven | MistralAI-User |\n| --- | --- |\n| Aanbieder | Mistral |\n| Taak | Door de gebruiker gestart ophalen |\n| robots.txt-token | `MistralAI-User` |\n| Volgt robots.txt | Opt-out via robots.txt |\n| Gepubliceerde adreslijst | 4 bereiken (mistral.ai/mistralai-user-ips.json, bestand van 2025-02-19) |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "Als je MistralAI-User uitsluit, opent die agent je pagina niet meer voor de vraag van een Vibe-gebruiker. De index- en trainingsagents blijven buiten schot, want die hebben eigen tokens. Mistral zegt dat de user agent niet wordt gebruikt om het web automatisch te crawlen, ook niet om content te crawlen voor het trainen van generatieve AI, en dat content die de indexagent crawlt niet wordt gebruikt voor generatieve AI-training van welke aard dan ook.",
+  "compare": "Dezelfde taak als bij OpenAI, met een andere robots.txt-belofte.",
+  "job": "Door de gebruiker gestart ophalen",
+  "follows": "Opt-out via robots.txt",
+  "ipnote": "Mistral publiceert aparte adresbestanden voor de agents. mistral.ai/mistralai-user-ips.json bevatte op 21 oktober 2026 4 prefixen (aanmaaktijd 2025-02-19) en het indexbestand 2 prefixen (aanmaaktijd 2026-04-19). Twee vermeldingen voor een indexcrawler is een lijst die een firewallregel precies kan bevatten."
+ },
+ "mojeekbot": {
+  "answer": "MojeekBot is de webcrawler van de zoekmachine Mojeek. Mojeek zegt dat hij de Robots Exclusion Standard volgt, het eerste record gebruikt waarvan de User-Agent MojeekBot bevat en de niet-standaard crawl-delay-regel niet ondersteunt. Hij hoort niet meer dan één pagina per seconde van een site op te vragen.",
+  "what": "MojeekBot is de webcrawler van de zoekmachine Mojeek. Mojeek zegt dat hij niet meer dan één pagina van een site binnen dezelfde periode van 1 seconde hoort op te vragen. Hij volgt de meta-tags noindex, nocache en nofollow.",
+  "block": "Mojeek zegt dat MojeekBot het eerste robots.txt-record volgt waarvan de User-Agent MojeekBot bevat, en anders het eerste record voor User-Agent *. Hij haalt geen URL's op die een uitgesloten tekenreeks bevatten. Hij ondersteunt de niet-standaard crawl-delay-regel niet.",
+  "compare": "Beide crawlen voor een zoekmachine. Mojeek publiceert een IP-lijst met één bereik en een reverse DNS-controle, en ondersteunt crawl-delay niet.",
+  "job": "Zoeken",
+  "follows": "Ja, volgt de Robots Exclusion Standard; crawl-delay wordt niet ondersteund",
+  "ipnote": "Mojeek zegt dat je het bezoekende IP-adres reverse moet opzoeken naar een naam in het domein mojeek.com en die naam weer forward moet opzoeken naar hetzelfde IP-adres, of het IP-adres moet vergelijken met de gepubliceerde lijst met MojeekBot-IP-adressen."
+ },
+ "oai-searchbot": {
+  "answer": "OAI-SearchBot is de crawler van OpenAI voor het zoeken in ChatGPT. Sites die zich ervoor afmelden, worden niet getoond in de zoekantwoorden van ChatGPT, al kunnen ze nog wel als navigatielinks verschijnen. Hij volgt robots.txt onder het token OAI-SearchBot en OpenAI publiceert 39 IP-bereiken voor de crawler.",
+  "what": "OpenAI heeft meerdere crawlers en zegt dat elke instelling los staat van de andere. OAI-SearchBot bepaalt of je pagina's kunnen worden getoond in de zoekfuncties van ChatGPT. Hij is niet de trainingscrawler (dat is [GPTBot](/bots/gptbot)) en ook niet de fetcher die een pagina opent als iemand erom vraagt (dat is [ChatGPT-User](/bots/chatgpt-user)).\n\n| Gegeven | OAI-SearchBot |\n| --- | --- |\n| Aanbieder | OpenAI |\n| Taak | Zoeken |\n| robots.txt-token | `OAI-SearchBot` |\n| Volgt robots.txt | Ja, volgt robots.txt |\n| Gepubliceerde adreslijst | 39 bereiken (openai.com/searchbot.json, bestand van 2026-01-02) |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "OpenAI zegt zelf dat sites die zich afmelden „niet worden getoond in de zoekantwoorden van ChatGPT“. Dat zijn de kosten: een shop die OAI-SearchBot blokkeert, laat het deel van ChatGPT liggen dat naar bronnen linkt. Voor sites die willen verschijnen, adviseert OpenAI het omgekeerde: sta OAI-SearchBot toe in robots.txt en sta verzoeken van de gepubliceerde IP-bereiken toe.",
+  "compare": "GPTBot is voor training. Als je hem blokkeert, verdwijn je niet uit het zoeken van ChatGPT, omdat de instellingen los van elkaar staan.",
+  "job": "Zoeken",
+  "follows": "Ja, volgt robots.txt",
+  "ipnote": "OpenAI publiceert de adressen die OAI-SearchBot gebruikt op openai.com/searchbot.json. Dat bestand bevatte op 21 oktober 2026 39 prefixen en had aanmaaktijd 2026-01-02. Vergelijk het adres in je serverlog met die prefixen voordat je een verzoek vertrouwt dat alleen de naam in zijn user agent claimt. OpenAI zegt ook dat het een `robots.txt`-markering aan de user-agent-string kan toevoegen als het robots.txt ophaalt. Zulke verzoeken zijn in logs zonder paden dus makkelijk te onderscheiden."
+ },
+ "perplexity-user": {
+  "answer": "Perplexity-User is de fetcher van Perplexity voor gebruikersacties: als een gebruiker een vraag stelt, kan hij een pagina bezoeken om nauwkeurig te antwoorden en ernaar te linken. Perplexity zegt dat hij niet wordt gebruikt om het web te crawlen of AI-modellen te trainen, en dat hij robots.txt-regels meestal negeert omdat een gebruiker het ophalen vroeg.",
+  "what": "Perplexity-User is de fetcher van Perplexity voor gebruikersacties. Als een gebruiker Perplexity een vraag stelt, kan hij een webpagina bezoeken voor een nauwkeurig antwoord en een link naar de pagina in het antwoord opnemen. Perplexity zegt dat hij niet wordt gebruikt voor webcrawling of om content te verzamelen voor het trainen van AI-foundation-modellen, en dat hij los staat van PerplexityBot, die websites toont en linkt in de zoekresultaten van Perplexity.",
+  "block": "Perplexity noemt Perplexity-User als robots.txt-token en zegt dat het bepaalt tot welke sites deze gebruikersverzoeken toegang hebben. Perplexity zegt ook dat deze fetcher robots.txt-regels meestal negeert omdat een gebruiker het ophalen vroeg. Volgens Perplexity werkt elke robots.txt-instelling onafhankelijk en kunnen wijzigingen tot 24 uur duren.",
+  "compare": "PerplexityBot toont en linkt sites in de zoekresultaten van Perplexity, terwijl Perplexity-User een pagina ophaalt als de vraag van een gebruiker dat nodig heeft en robots.txt meestal negeert.",
+  "job": "Door de gebruiker gestart ophalen",
+  "follows": "Negeert robots.txt-regels meestal, omdat een gebruiker het ophalen vroeg",
+  "ipnote": "Perplexity publiceert de IP-adressen van Perplexity-User als JSON-bestand en zegt dat je dat moet gebruiken als bron van waarheid voor allow-regels, in combinatie met de user-agent-string."
+ },
+ "perplexitybot": {
+  "answer": "PerplexityBot is de crawler van Perplexity om websites te tonen en te linken in zijn zoekresultaten. Perplexity zegt dat hij niet wordt gebruikt om content te crawlen voor AI-foundation-modellen. Hij volgt robots.txt, wijzigingen kunnen tot 24 uur duren en Perplexity publiceert 8 IP-bereiken voor de crawler.",
+  "what": "Perplexity noemt twee agents. PerplexityBot bouwt de zoekindex en Perplexity-User bezoekt een pagina als iemand erom vraagt. De pagina van Perplexity bevat configuratierichtlijnen voor populaire WAF-aanbieders, omdat een firewall de crawler kan stoppen voordat robots.txt ertoe doet.\n\n| Gegeven | PerplexityBot |\n| --- | --- |\n| Aanbieder | Perplexity |\n| Taak | Zoeken |\n| robots.txt-token | `PerplexityBot` |\n| Volgt robots.txt | Ja, volgt robots.txt |\n| Gepubliceerde adreslijst | 8 bereiken (perplexity.com/perplexitybot.json, bestand van 2025-02-07) |\n| Pagina van aanbieder gelezen | 21 oktober 2026 |",
+  "block": "Perplexity adviseert PerplexityBot toe te staan in robots.txt en verzoeken van de gepubliceerde IP-bereiken toe te laten als je in de zoekresultaten wilt verschijnen. Perplexity zegt ook dat het tot 24 uur kan duren voordat wijzigingen in je robots.txt in zijn systemen zijn doorgevoerd. Een controle een uur na een aanpassing zegt dus weinig.",
+  "compare": "De door de gebruiker gestarte fetcher. Perplexity zegt dat die robots.txt meestal negeert.",
+  "job": "Zoeken",
+  "follows": "Ja, volgt robots.txt",
+  "ipnote": "Het bestand van Perplexity op perplexity.com/perplexitybot.json bevatte op 21 oktober 2026 8 prefixen, met aanmaaktijd 2025-02-07. In het WAF-gedeelte stelt Perplexity een regel voor die de user agent combineert met de IP-voorwaarde, zodat een verzoek dat de naam claimt vanaf een ander adres niet doorkomt."
+ },
+ "storebot-google": {
+  "answer": "Storebot-Google is de crawler die Google tussen zijn algemene crawlers beschrijft als Google StoreBot. Google zegt dat een Disallow voor zijn token alle onderdelen van Google Shopping raakt, zoals het tabblad Shopping in Google Search en Google Shopping. Googlebot is een apart token met eigen getroffen producten.",
+  "what": "Storebot-Google is de Google-crawler die tussen de algemene crawlers wordt beschreven als Google StoreBot. Google zegt dat regels voor deze crawler alle onderdelen van Google Shopping raken. Google geeft aparte user-agent-strings voor desktop en mobiel.",
+  "block": "Google zegt dat een Disallow voor het token Storebot-Google alle onderdelen van Google Shopping raakt, zoals het tabblad Shopping in Google Search en Google Shopping. Op de pagina staat Googlebot als apart token met eigen getroffen producten.",
+  "compare": "De regels voor Googlebot raken Google Search en gerelateerde producten, terwijl de regels voor Storebot-Google onderdelen van Google Shopping raken.",
+  "job": "Zoeken (onderdelen van Google Shopping)",
+  "follows": "Ja. Google zegt dat algemene crawlers bij automatisch crawlen altijd robots.txt-regels volgen.",
+  "ipnote": "Google zegt dat de algemene crawlers meestal crawlen vanuit de bereiken in common-crawlers.json en dat de reverse DNS-naam overeenkomt met crawl-***-***-***-***.googlebot.com of geo-crawl-***-***-***-***.geo.googlebot.com."
+ },
+ "yandexbot": {
+  "answer": "YandexBot is door Yandex aangemerkt als zijn belangrijkste indexeringsrobot, een van de vele Yandex-robots met een eigen user agent. Yandex zegt dat sommige ervan pagina's downloaden voor andere doelen dan indexering en beperkende regels voor alle robots (User-agent: *) kunnen negeren. Yandex publiceert geen IP-lijst.",
+  "what": "Yandex noemt YandexBot de belangrijkste indexeringsrobot. Yandex heeft veel andere robots met eigen user agents (voor afbeeldingen, video, advertenties, mobiele pagina's, favicons en meer), die op dezelfde pagina staan. Yandex publiceert geen IP-lijst voor zijn bots.",
+  "block": "Yandex zegt dat een aantal van zijn robots pagina's downloadt voor andere doelen dan indexering en beperkende regels voor alle robots (User-agent: *) kan negeren. Om die robots te beperken heb je regels nodig die speciaal voor hen zijn geschreven, bijvoorbeeld User-agent: YandexCalendar. Yandex voegt toe dat een document waar de belangrijkste Yandex-robot niet bij kan, nooit wordt geïndexeerd of in zoekresultaten te vinden is.",
+  "compare": "Beide zijn de belangrijkste crawler voor zoekindexering van hun aanbieder. Yandex noemt veel aparte robots, waarvan sommige algemene robots.txt-regels negeren, en zegt geen IP-lijst te publiceren.",
+  "job": "Zoeken (belangrijkste indexeringsrobot)",
+  "follows": "Ja, houdt rekening met de algemene regels in robots.txt (User-agent: *)",
+  "ipnote": "Yandex zegt dat je een reverse DNS-lookup op het IP-adres moet doen, moet controleren of de hostnaam eindigt op yandex.ru, yandex.net of yandex.com, en dat moet bevestigen met een forward lookup. Yandex biedt ook een tool om IP-adressen te controleren."
+ },
+ "youbot": {
+  "answer": "YouBot is de webcrawler achter de zoekmachine You.com. Hij ontdekt en indexeert pagina's voor de resultaten. You.com zegt dat hij robots.txt respecteert, Crawl-delay honoreert en robots.txt 30 minuten cachet. User-agent: YouBot met Disallow: / blokkeert hem voor de hele site.",
+  "what": "YouBot is de webcrawler achter de zoekmachine You.com. Hij ontdekt en indexeert webpagina's voor de zoekresultaten van You.com. You.com zegt dat X.X.X.X in de user agent staat voor het versienummer van Google Chrome.",
+  "block": "You.com zegt dat YouBot robots.txt respecteert en noemt User-agent: YouBot met Disallow: / als manier om hem van de hele site te blokkeren. Hij honoreert ook Crawl-delay en cachet robots.txt 30 minuten. De pagina beschrijft geen andere agents van You.com.",
+  "compare": "Beide zijn crawlers van een zoekmachine die robots.txt volgen. You.com ondersteunt Crawl-delay en ondertekent verzoeken met Web Bot Auth, terwijl Mojeek Crawl-delay niet ondersteunt.",
+  "job": "Zoeken",
+  "follows": "Ja, robots.txt wordt 30 minuten gecachet, dus wijzigingen kunnen tot 30 minuten duren",
+  "ipnote": "You.com zegt dat verzoeken afkomstig zijn van 68.67.112.0/24, dat hosts worden omgezet naar youbot-{octets-with-hyphens}.search.you.com en dat verzoeken Cloudflare Web Bot Auth-handtekeningen dragen, met openbare sleutels op you.com/.well-known/http-message-signatures-directory."
+ }
+}

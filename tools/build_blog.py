@@ -12,6 +12,7 @@ Ads: ADS_ENABLED stays False until the CEO switches a cluster on (needs real tra
 import datetime, glob, hashlib, html, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import docshell
+import directory_i18n  # RES-4194: hub strings of /bots and /platforms in five locales
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 PUB, SRC = os.path.join(ROOT, "public"), os.path.join(ROOT, "content", "blog")
 SITE, E = "https://citedby.eu", html.escape
@@ -253,7 +254,7 @@ def build_article(fm, body, arts):
            "image": [SITE + og] + ([SITE + "/blog/img/" + hero] if hero else [])}
     ld = [art, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": t["home"], "item": SITE + (prefix(loc) or "/")},
-        {"@type": "ListItem", "position": 2, "name": SECT_NAME.get(fm.get("section"), t["blog"]), "item": SITE + prefix(loc) + "/" + SECT_PATH.get(fm.get("section"), "blog")},
+        {"@type": "ListItem", "position": 2, "name": sect_name(fm.get("section"), loc), "item": SITE + prefix(loc) + "/" + SECT_PATH.get(fm.get("section"), "blog")},
         {"@type": "ListItem", "position": 3, "name": fm["h1"], "item": SITE + path}]}]
     if faq: ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": html.unescape(plain(" ".join(a)))}} for q, a in faq]})
     if fm.get("howto") == "on" and steps: ld.append({"@context": "https://schema.org", "@type": "HowTo", "name": fm["h1"], "step": [{"@type": "HowToStep", "position": n + 1, "text": html.unescape(plain(s))} for n, s in enumerate(steps)]})
@@ -274,7 +275,7 @@ def build_article(fm, body, arts):
     meth = t["src_n"].format(n=n_ext) if n_ext >= 2 else t["src_n"].split(" · ")[-1]  # RES-3165: keep the bare method link when the count is hidden
     srcn = ' · <a href="/methodology">%s</a>%s' % (E(meth), en_tag)
     main = f'''<main id="main" class="art"><article>
-<p class="dateline"><a href="{prefix(loc)}/{SECT_PATH.get(fm.get("section"), "blog")}">{E(SECT_NAME.get(fm.get("section"), t["blog"]))}</a> / {E(fm.get("cluster", ""))}</p>
+<p class="dateline"><a href="{prefix(loc)}/{SECT_PATH.get(fm.get("section"), "blog")}">{E(sect_name(fm.get("section"), loc))}</a> / {E(fm.get("cluster", ""))}</p>
 <h1>{E(fm["h1"])}</h1>
 <p class="byline">{byline}{E(t["rev"])} <time datetime="{fm["reviewed"]}">{fm["reviewed"]}</time>{srcn}</p>
 {ans}
@@ -288,10 +289,9 @@ def build_article(fm, body, arts):
 </article></main>'''
     return path, shell(loc, fm["title"], fm["description"], path, alts, og, ld, main, '<meta name="robots" content="noindex,follow">' if (loc, slug) in NOINDEX else "")
 
-INDEX_LOCALES = {"blog": ("en", "fr", "nl", "de", "es"), "guides": ("en", "fr", "nl", "de", "es"), "bots": ("en",), "platforms": ("en",)}
-SECT_NAME, SECT_PATH = {"bots": "AI crawlers", "platforms": "AI crawler settings by platform"}, {"bots": "bots", "platforms": "platforms"}  # sections that have their own hub (H3 page sets)
-BOTS_IDX = ("AI crawlers: who they are, what they do, how to allow or block them", "One page per AI crawler, with the operator, the robots.txt token, the vendor's own sentence, what blocking costs and the vendor's published address list, each read from the vendor's page on the date shown.")
-PLATFORMS_IDX = ("How to allow or block AI crawlers on Shopify, Squarespace, Wix, Webflow, WordPress.com and Cloudflare", "One page per platform: where its own help page says the setting lives, what it does and does not cover, and the one thing that page says that the others do not, each read on the date shown.")
+INDEX_LOCALES = {"blog": ("en", "fr", "nl", "de", "es"), "guides": ("en", "fr", "nl", "de", "es"), "bots": ("en", "fr", "nl", "de", "es"), "platforms": ("en", "fr", "nl", "de", "es")}
+SECT_PATH = {"bots": "bots", "platforms": "platforms"}
+def sect_name(sect, loc): return directory_i18n.HUB[sect][loc]["name"] if sect in directory_i18n.HUB else UI[loc]["blog"]  # sections that have their own hub (H3 page sets)
 BLOG_IDX = {'en': ('AI visibility blog for online shops', 'Notes and data on how AI assistants treat online shops, plus our step-by-step guides. Each post ends with an audit you can run on your own site.'), 'fr': ('Blog visibilité IA pour boutiques en ligne', 'Notes et données sur la façon dont les assistants IA traitent les boutiques en ligne, et nos guides pas à pas. Chaque article mène à un audit de votre site.'), 'nl': ('Blog AI-zichtbaarheid voor webshops', 'Notities en data over hoe AI-assistenten webshops behandelen, plus onze stap-voor-stap-gidsen. Elk artikel leidt naar een audit van je site.'), 'de': ('Blog zur KI-Sichtbarkeit für Online-Shops', 'Notizen und Daten dazu, wie KI-Assistenten Online-Shops behandeln, plus unsere Schritt-für-Schritt-Ratgeber. Jeder Beitrag führt zu einem Audit Ihrer Seite.'), 'es': ('Blog de visibilidad en IA para tiendas online', 'Notas y datos sobre cómo los asistentes de IA tratan las tiendas online, más nuestras guías paso a paso. Cada artículo lleva a una auditoría de tu web.')}
 
 IDX_INTRO = {  # RES-2935: a second paragraph that says what the hub holds, with facts only from the pages it lists (a hub of titles alone is thin and gives an assistant nothing to quote)
@@ -305,25 +305,27 @@ IDX_INTRO = {  # RES-2935: a second paragraph that says what the hub holds, with
     ("blog", "nl"): "De artikelen gaan over of ChatGPT je website kan lezen, of llms.txt werkt, hoe je AI-verwijzingsverkeer in GA4 volgt, hoe je controleert wat AI over je merk zegt en wat te doen als een assistent een verkeerde prijs toont.",
     ("blog", "de"): "Die Beiträge behandeln, ob ChatGPT Ihre Website lesen kann, ob llms.txt funktioniert, wie Sie KI-Verweisverkehr in GA4 verfolgen, wie Sie prüfen, was KI über Ihre Marke sagt, und was bei einem falschen Preis in einem Assistenten zu tun ist.",
     ("blog", "es"): "Los artículos tratan si ChatGPT puede leer tu web, si funciona llms.txt, cómo medir el tráfico de referencia de IA en GA4, cómo comprobar qué dice la IA de tu marca y qué hacer cuando un asistente muestra un precio equivocado.",
-    ("bots", "en"): "An AI crawler is a bot that fetches pages for an assistant such as ChatGPT, Claude, Perplexity or Gemini. Each page below names the operator, the robots.txt token, what blocking costs and the vendor's published address list, so you can decide per bot whether to allow it.",
-    ("platforms", "en"): "Each page names the platform's own help page, where the AI-crawler setting sits, what it covers and what it does not: Shopify, Squarespace, Wix, Webflow, WordPress.com and Cloudflare.",
 }
 
-IDX_META = {"bots": ("AI crawlers: what they do, how to allow or block them", "One page per AI crawler: operator, robots.txt token, what blocking costs and the vendor's published address list, each read from the vendor's page."),
-            "platforms": ("Allow or block AI crawlers on six site platforms", "One page per platform: where its help page says the setting lives, what it covers and does not cover, and what only that page says, each read on a stated date.")}  # RES-2935: title 15-65 and description 50-160, not the long H1 and lede
+IDX_META = {}  # blog and guides use the H1 and lede (RES-2935); bots and platforms read directory_i18n.HUB
 
 def build_index(loc, arts, sect="blog"):
     t = dict(UI[loc])  # /blog and /guides get their own title, H1 and description (RES-2210)
     if sect == "blog": t["idx_h1"], t["idx_lede"] = BLOG_IDX[loc]
-    if sect == "bots": t["idx_h1"], t["idx_lede"] = BOTS_IDX
-    if sect == "platforms": t["idx_h1"], t["idx_lede"] = PLATFORMS_IDX
+    hub = directory_i18n.HUB.get(sect, {}).get(loc)
+    if hub:
+        names = ", ".join(a["h1"].split(":")[0] for a in sorted(arts, key=lambda a: a["h1"].lower())) if sect == "platforms" else ""
+        n = len(arts); t["idx_h1"], t["idx_lede"] = hub["h1"].format(n=n), hub["lede"]
+    else: n, names = 0, ""
     path = prefix(loc) + "/" + sect
-    cards = "".join('<li><a href="%s/%s/%s"><b>%s</b><span>%s</span><time datetime="%s">%s %s</time></a></li>' % (prefix(loc), a.get("section", "blog"), a["slug"], E(a["h1"]), E(a["description"]), a["reviewed"], E(t["rev"]), a["reviewed"]) for a in sorted(arts, key=lambda a: a["reviewed"], reverse=True))
+    cards = "".join('<li><a href="%s/%s/%s"><b>%s</b><span>%s</span><time datetime="%s">%s %s</time></a></li>' % (prefix(loc), a.get("section", "blog"), a["slug"], E(a["h1"]), E(a["description"]), a["reviewed"], E(t["rev"]), a["reviewed"]) for a in sorted(arts, key=(lambda a: a["h1"].lower()) if hub else (lambda a: a["reviewed"]), reverse=not hub))
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": t["idx_h1"], "inLanguage": loc, "url": SITE + path},
           {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": n + 1, "url": "%s%s/%s/%s" % (SITE, prefix(loc), a.get("section", "blog"), a["slug"])} for n, a in enumerate(arts)]}]
-    main = '<main id="main" class="art idx"><h1>%s</h1><p class="lede">%s</p>%s<ul class="cards">%s</ul></main>' % (E(t["idx_h1"]), E(t["idx_lede"]), ("<p>%s</p>" % E(IDX_INTRO[(sect, loc)])) if (sect, loc) in IDX_INTRO else "", cards)
+    intro = hub["intro"].format(n=n, names=names) if hub else IDX_INTRO.get((sect, loc))
+    extra = __import__("build_directory").hub_extra(loc) if sect == "bots" else ""
+    main = '<main id="main" class="art idx"><h1>%s</h1><p class="lede">%s</p>%s%s<ul class="cards">%s</ul></main>' % (E(t["idx_h1"]), E(t["idx_lede"]), ("<p>%s</p>" % E(intro)) if intro else "", extra, cards)
     alts = [(l, prefix(l) + "/" + sect) for l in UI if l in INDEX_LOCALES[sect]] + [("x-default", "/" + sect)]  # reciprocal hreflang across the 5 indexes (RES-2210)
-    ti, de = IDX_META.get(sect, (t["idx_h1"], t["idx_lede"]))
+    ti, de = (hub["title"].format(n=n), hub["meta"].format(n=n)) if hub else IDX_META.get(sect, (t["idx_h1"], t["idx_lede"]))
     return path, shell(loc, ti + ". CitedBy", de, path, alts, "/og-v2.png", ld, main)
 
 def main():

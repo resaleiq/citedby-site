@@ -1,0 +1,40 @@
+{
+ "slug": "claudebot",
+ "name": "ClaudeBot",
+ "operator": "Anthropic",
+ "job": "training",
+ "job_en": "Training",
+ "token": "ClaudeBot",
+ "follows": "yes",
+ "follows_en": "Yes, it follows robots.txt and Crawl-delay",
+ "ips": {
+  "kind": "advice",
+  "count": null,
+  "unit": null,
+  "url": null,
+  "file_date": null,
+  "note": "Anthropic's article says its robots respect \"do not crawl\" signals in robots.txt and will not try to bypass CAPTCHAs. It supports the non-standard Crawl-delay directive, for example `User-agent: ClaudeBot` followed by `Crawl-delay: 1`. It also says that blocking by IP address may not give a lasting opt-out, because it stops the robot from reading robots.txt. Anthropic's article states that robots.txt must be set for every subdomain you want to opt out."
+ },
+ "ua": null,
+ "vendor_quote": "ClaudeBot helps enhance the utility and safety of our generative AI models by collecting web content that could potentially contribute to their training. When a site restricts ClaudeBot access, it signals that the site's future materials should be excluded from our AI model training datasets.",
+ "vendor_quote_source": {
+  "title": "Anthropic Help Center: Does Anthropic crawl data from the web, and how can site owners block the crawler? (7 April 2026)",
+  "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+ },
+ "read": "2026-10-21",
+ "what_en": "Anthropic names three robots in its help article: ClaudeBot for training data, [Claude-User](/bots/claude-user) for pages fetched at a user's request, and [Claude-SearchBot](/bots/claude-searchbot) for search quality. ClaudeBot is the training one. The article is dated 7 April 2026.\n\n| Fact | ClaudeBot |\n| --- | --- |\n| Operator | Anthropic |\n| Job | Training |\n| robots.txt token | `ClaudeBot` |\n| Follows robots.txt | Yes, it follows robots.txt and Crawl-delay |\n| Published address list | Anthropic points to a list but advises against IP blocking |\n| Vendor page read | 21 October 2026 |",
+ "block_en": "Anthropic says a restriction signals that the site's future materials should be excluded from its training datasets. The wording says \"future materials\"; it does not say what happens to content already collected. The other two Claude robots are separate, so blocking ClaudeBot leaves their rules untouched.",
+ "doc_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+ "compare": "claude-searchbot",
+ "compare_en": "A separate search robot: blocking ClaudeBot does not touch it.",
+ "sources": [
+  {
+   "title": "Anthropic Help Center: Does Anthropic crawl data from the web, and how can site owners block the crawler? (7 April 2026)",
+   "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  }
+ ],
+ "answer_en": "ClaudeBot is Anthropic's crawler for content that could contribute to model training. A robots.txt Disallow signals that a site's future materials should be excluded from training datasets. Anthropic honours Crawl-delay, and warns that blocking its IP addresses can stop it reading robots.txt, so use robots.txt instead.",
+ "en_handwritten": true,
+ "title_en": "ClaudeBot: Anthropic's training crawler, Crawl-delay and blocking",
+ "h1_en": "ClaudeBot: Anthropic's training crawler, Crawl-delay and blocking"
+}

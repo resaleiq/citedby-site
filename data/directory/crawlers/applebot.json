@@ -1,0 +1,42 @@
+{
+ "slug": "applebot",
+ "name": "Applebot",
+ "operator": "Apple",
+ "job": "mixed",
+ "job_en": "Search (crawled data may also help train Apple models)",
+ "token": "Applebot",
+ "follows": "yes",
+ "follows_en": "Yes, for general search crawls targeted at Applebot",
+ "ips": {
+  "kind": "json_list",
+  "count": 24,
+  "unit": "ranges",
+  "url": "https://search.developer.apple.com/applebot.json",
+  "file_date": "2026-09-15",
+  "note": "Apple says Applebot traffic is generally identified by reverse DNS in the *.applebot.apple.com domain, or by matching the IP address with a CIDR prefix in its published JSON file."
+ },
+ "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)",
+ "vendor_quote": "Applebot respects standard robots.txt directives in general search crawls that are targeted at Applebot.",
+ "vendor_quote_source": {
+  "title": "Apple: About Applebot",
+  "url": "https://support.apple.com/en-us/119829"
+ },
+ "what_en": "Applebot is Apple's web crawler. Apple says its data powers search technology in Spotlight, Siri and Safari, and may also be used to help train Apple foundation models and to provide context when AI models generate output in Apple products. Apple also documents a separate Applebot-Extended token and an iTMS user agent for Apple Podcasts.",
+ "block_en": "Apple says disallowing Applebot-Extended opts content out of training Apple's generative foundation models, but the site may still be crawled by Applebot and stay discoverable through Spotlight, Siri and Safari. A Disallow for Applebot itself applies to general search crawls targeted at Applebot, and Apple says that if robots.txt does not mention Applebot but mentions Googlebot, Applebot follows the Googlebot instructions. Apple says the nosnippet meta tag opts content out of broad world knowledge answers.",
+ "doc_url": "https://support.apple.com/en-us/119829",
+ "compare": "applebot-extended",
+ "compare_en": "Applebot is the crawler that fetches pages for Apple search features, while Applebot-Extended is the robots.txt token that controls whether crawled content is used to train Apple generative models.",
+ "sources": [
+  {
+   "title": "Apple: About Applebot",
+   "url": "https://support.apple.com/en-us/119829"
+  },
+  {
+   "title": "Apple: Applebot IP CIDRs JSON (read 2026-10-24)",
+   "url": "https://search.developer.apple.com/applebot.json"
+  }
+ ],
+ "notes": "Apple page states no robots.txt delay time, so none is given. Apple says Applebot does not follow crawl-delay. UA is the desktop example from the page; the page also gives a mobile example. IP file: 24 prefixes, creationTime 2026-09-15.",
+ "answer_en": "Applebot is Apple's web crawler. Apple says its data powers search in Spotlight, Siri and Safari and may also help train Apple's foundation models. Disallowing Applebot-Extended opts content out of training only. If robots.txt does not mention Applebot but does mention Googlebot, Applebot follows the Googlebot rules.",
+ "read": "2026-10-24"
+}

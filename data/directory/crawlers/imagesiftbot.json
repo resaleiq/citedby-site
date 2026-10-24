@@ -1,0 +1,38 @@
+{
+ "slug": "imagesiftbot",
+ "name": "ImagesiftBot",
+ "operator": "Hive (ImageSift)",
+ "job": "search",
+ "job_en": "Image index for similar-image search",
+ "token": "ImagesiftBot",
+ "follows": "yes",
+ "follows_en": "Yes, and it supports Crawl-delay",
+ "ips": {
+  "kind": "none",
+  "count": null,
+  "unit": null,
+  "url": null,
+  "file_date": null,
+  "note": "The vendor page does not publish an IP list or a verification method."
+ },
+ "ua": "Mozilla/5.0 (compatible; ImagesiftBot; +imagesift.com)",
+ "vendor_quote": "ImageSiftBot is a web crawler that scrapes the internet for publicly available images to support our suite of web intelligence products",
+ "vendor_quote_source": {
+  "title": "Imagesift by Hive: ImageSift Bot",
+  "url": "https://imagesift.com/about"
+ },
+ "what_en": "ImageSiftBot is the crawler of ImageSift, a Hive product. It collects publicly available images, along with the host URL, page text and image alt text. ImageSift stores the data in an index that its products use for search and retrieval of similar images.",
+ "block_en": "The vendor says standard robots.txt directives that target ImagesiftBot are respected, and that it supports Crawl-delay. If no rule targets ImagesiftBot but a rule targets Googlebot, it follows the Googlebot rules. The page also gives support@imagesift.com for opt-out requests.",
+ "doc_url": "https://imagesift.com/about",
+ "compare": "googlebot",
+ "compare_en": "ImagesiftBot falls back to Googlebot's robots.txt rules when it has none of its own, and it collects images for a similar-image index rather than for a general web search.",
+ "sources": [
+  {
+   "title": "Imagesift by Hive: ImageSift Bot",
+   "url": "https://imagesift.com/about"
+  }
+ ],
+ "notes": "Vendor does not mention AI training; 'job' = search is based on its described similar-image search index. Operator named on page only as 'Imagesift by Hive'.",
+ "answer_en": "ImagesiftBot is the crawler of ImageSift, a Hive product. It collects publicly available images with the host URL, page text and image alt text for an index used to search for similar images. The vendor says it respects robots.txt and Crawl-delay, and follows the Googlebot rules when none target it.",
+ "read": "2026-10-24"
+}
