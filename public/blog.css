@@ -33,5 +33,5 @@
 .toc ol{margin:0;padding-left:var(--s6)}.toc li{padding:2px 0}
 .cta2 .gloss{margin-top:var(--s3)}
 .author-card{display:flex;gap:var(--s4);align-items:center}.author-card img{width:96px;height:96px;object-fit:cover}
-.art td,.art th{overflow-wrap:anywhere}
+.art td,.art th{overflow-wrap:break-word}
 .art li,.art p{overflow-wrap:anywhere}

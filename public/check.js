@@ -10,10 +10,11 @@
   function checkText(c, res) {
     var id = c.id, st = c.status;
     if (st === "na") return T.na;
-    if (st === "unknown") return T.unknown;
+    if (st === "unknown" && id !== "crawlers") return T.unknown;
     var key = id + "_" + st;
     if (id === "crawlers" && st === "pass" && !c.robots_found) key = "crawlers_pass_norobots";
-    return fmt(T[key] || "", { bots: (c.blocked || []).join(", "), words: c.words, found: (c.found || []).join(", ") });
+    if (id === "crawlers" && st === "fail" && c.robots_status >= 500) key = "crawlers_fail_5xx";
+    return fmt(T[key] || "", { bots: (c.blocked || []).join(", "), words: c.words, found: (c.found || []).join(", "), status: c.robots_status });
   }
   function render(res) {
     resEl.textContent = ""; var col = el("div", "col"), margin = el("aside", "margin"); margin.appendChild(el("b", null, T.m_h)); margin.appendChild(document.createTextNode(T.method));

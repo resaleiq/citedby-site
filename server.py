@@ -27,6 +27,7 @@ DAILY_CAP = int(os.environ.get("DAILY_CAP", "20"))
 MAILS_PER_ADDR_DAY = 2
 INTERNAL_IPS = {x.split("#")[0].strip() for k in ("INTERNAL_CLIENT_IPS", "INTERNAL_IPS") for x in os.environ.get(k, "").split(",")} - {""}  # RES-2134: one own-traffic list (INTERNAL_CLIENT_IPS, same value in every container); the old name still works
 LANGS = ("en", "fr", "nl")
+CHECK_LANGS = LANGS + ("de", "es")  # RES-3935: the check is asked for in these (Accept-Language) and its events counted; mail text exists only for LANGS
 COUNTRIES = ("BE", "FR", "NL", "IE", "DE", "ES", "GB", "OTHER")
 NICHES = ("coffee", "tea", "beauty", "mattress", "supplements", "other")
 EMAIL_RE = re.compile(r"^[^@\s]{1,64}@[^@\s]{1,255}\.[^@\s]{2,}$")
@@ -135,7 +136,7 @@ def retention_loop():
 
 
 def count_event(etype, lang, ip=""):
-    if etype not in EVENTS or lang not in LANGS or ip in INTERNAL_IPS:
+    if etype not in EVENTS or lang not in CHECK_LANGS or ip in INTERNAL_IPS:
         return
     day = time.strftime("%Y-%m-%d", time.gmtime())
     with _lock:
@@ -185,7 +186,7 @@ def snapshot(country, lang, niche):
 
 def handle_check(data, ip):
     """Returns (http_status, body_dict)."""
-    lang = data.get("lang") if data.get("lang") in LANGS else "en"
+    lang = data.get("lang") if data.get("lang") in CHECK_LANGS else "en"
     country = data.get("country") if data.get("country") in COUNTRIES else "OTHER"
     niche = data.get("niche") if data.get("niche") in NICHES else "other"
     try:

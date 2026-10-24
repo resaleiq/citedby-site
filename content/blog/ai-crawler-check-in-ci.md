@@ -7,14 +7,14 @@ cluster: Crawlability
 date: 2026-10-24
 reviewed: 2026-10-24
 hero: auto
-hero_boxes: robots.txt|Five crawlers; HTML text|Readable without JavaScript; JSON-LD|Organization and product data; Exit code|1 fails the build
+hero_boxes: robots.txt|Five crawler names; HTML text|Readable without JavaScript; JSON-LD|Organization and product data; Exit code|1 fails the build
 hero_sub: A free command and GitHub Action
 hero_alt: Four boxes: robots.txt, HTML text, JSON-LD and the exit code that fails a build
 og: ai-crawler-check-in-ci-og.png
 widget: on
 howto: on
 related: /ci|Free AI crawler check for CI (shell script); /blog/is-gptbot-blocked|Is GPTBot blocked on my site?; /tools/ai-crawler-check|AI-crawler access checker (free); /data/ai-access-index-2026-10|EU AI-Access Index, run 1; /blog/can-chatgpt-read-my-website|Can ChatGPT read my website?
-answer: Run the free citedby-check command or GitHub Action after each deploy. It loads your live site from outside, without JavaScript. It exits with 1 when robots.txt blocks one of five crawlers, the home page has very little text, or structured data is missing. It checks the home page and at most one product page.
+answer: Run the free citedby-check command or GitHub Action after each deploy. It loads your live site from outside, without JavaScript. It exits with 1 when robots.txt blocks one of five crawler names, the home page has very little text, or structured data is missing. It checks the home page and at most one product page.
 
 ## What can shut AI crawlers out after a deploy?
 
@@ -38,11 +38,13 @@ citedby.eu loads `robots.txt`, your home page and `llms.txt` with a plain HTTP r
 
 | Check | What it looks at | Result |
 | --- | --- | --- |
-| Crawlers in robots.txt | Whether OAI-SearchBot, GPTBot, PerplexityBot, Google-Extended or Bingbot is shut out of the home page | OK or Fix |
+| Crawlers in robots.txt | Whether OAI-SearchBot, GPTBot, PerplexityBot, Google-Extended or Bingbot is shut out of the home page. A server error (5xx) on robots.txt counts as shut out, as RFC 9309 says | OK, Fix or Not checked |
 | Text in the HTML | Words a crawler reads without running JavaScript: 200 or more is OK, 50 to 199 is Check, 1 to 49 is Fix. No readable text at all is Not checked | OK, Check, Fix or Not checked |
 | Business data | Organization, LocalBusiness or a similar business type as JSON-LD on the home page | OK, Fix or Not checked |
 | Product data | Product JSON-LD with price, availability and barcode on one product page, when the check finds one | OK, Check, Fix or Not checked |
 | llms.txt | Whether the site serves a real text file at /llms.txt: more than 50 characters, not an HTML page | OK or Optional |
+
+Google-Extended is a robots.txt switch only: no crawler fetches pages under that name, so the check reads whether robots.txt allows it.
 
 A missing `llms.txt` is reported as Optional and never fails a build. We do not expect the file to change what assistants answer ([Does llms.txt work?](/blog/does-llms-txt-work)).
 
@@ -82,13 +84,19 @@ citedby.eu loaded the site from outside: plain HTTP, no JavaScript.
               expect it to change what AI assistants answer.
 
 1 of 3 checks passed. 2 to fix.
+This is a technical check. It does not tell you whether an AI assistant will
+name your site.
+
+The full audit crawls your site up to your plan's page limit and gives the exact
+fix for each problem:
+https://citedby.eu/?url=example.com
 $ echo $?
 1
 ```
 
 - A line that starts with FIX fails the build: the exit code is 1.
 - NOT CHECKED is never counted as a pass. No product page was found here, so nothing was scored.
-- With no robots.txt file nothing is blocked, so the crawler check is OK.
+- With no robots.txt file (HTTP 404) nothing is blocked, so the crawler check is OK. A robots.txt that answers a server error counts as blocked for all five names, as RFC 9309 says, and a robots.txt that cannot be loaded is NOT CHECKED.
 
 The exit codes are:
 

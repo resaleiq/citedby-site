@@ -104,10 +104,17 @@ def run(raw_url, lang="en", timeout=18):
     if final_host != urlsplit(root).netloc:
         out["redirected_to"] = f"{urlsplit(home['url']).scheme}://{final_host}"
     # 1. AI crawlers in robots.txt
-    rp = urllib.robotparser.RobotFileParser()
-    rp.parse(robots["body"].splitlines() if robots["status"] == 200 else [])
-    blocked = [b for b in BOTS if robots["status"] == 200 and not rp.can_fetch(b, root + "/")]
-    add("crawlers", "fail" if blocked else "pass", blocked=blocked, checked=BOTS, robots_found=robots["status"] == 200)
+    # RFC 9309 2.3.1.4: a robots.txt that answers 5xx is unreachable, and a crawler must assume complete disallow. A network error or our own timeout says nothing about the site: not checked, never a pass.
+    rst = robots["status"]
+    if 500 <= rst <= 599:
+        add("crawlers", "fail", blocked=list(BOTS), checked=BOTS, robots_found=False, robots_status=rst)
+    elif rst == 0:
+        add("crawlers", "unknown", blocked=[], checked=BOTS, robots_found=False, robots_status=0)
+    else:
+        rp = urllib.robotparser.RobotFileParser()
+        rp.parse(robots["body"].splitlines() if rst == 200 else [])
+        blocked = [b for b in BOTS if rst == 200 and not rp.can_fetch(b, root + "/")]
+        add("crawlers", "fail" if blocked else "pass", blocked=blocked, checked=BOTS, robots_found=rst == 200, robots_status=rst)
     # 2. text in the raw HTML. A 200 with no readable text is a fetch we cannot judge (server answered us an empty body), never a verdict on the shop.
     words = len(visible_text(home["body"]).split())
     unreadable = words == 0

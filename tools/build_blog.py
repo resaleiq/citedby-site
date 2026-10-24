@@ -251,7 +251,8 @@ def build_article(fm, body, arts):
     if fm.get("howto") == "on" and steps: ld.append({"@context": "https://schema.org", "@type": "HowTo", "name": fm["h1"], "step": [{"@type": "HowToStep", "position": n + 1, "text": html.unescape(plain(s))} for n, s in enumerate(steps)]})
     # ad slot sits after the first third of the body, never beside the widget or CTA
     parts = html_body.split("\n"); cut = max(1, len(parts) // 3)
-    body_h = "\n".join(parts[:cut] + [ad] + parts[cut:])
+    cut = docshell.slot_index(parts, cut)  # RES-3935 F2: only between top-level blocks, never inside a pre, table or list
+    body_h = "\n".join(parts[:cut] + [ad] + parts[cut:]) if cut is not None else html_body
     heads = re.findall(r'<h2 id="([^"]+)">(.+?)</h2>', html_body)
     toc = '<nav class="toc" aria-label="%s"><b>%s</b><ol>%s</ol></nav>' % (E(t["toc"]), E(t["toc"]), "".join('<li><a href="#%s">%s</a></li>' % (i, h) for i, h in heads)) if len(heads) >= 3 else ""
     au = authors().get(fm.get("author", ""))
@@ -259,7 +260,7 @@ def build_article(fm, body, arts):
     if au: art["author"] = {"@type": "Person", "name": au["name"], "jobTitle": au["role"]["en"], "url": SITE + "/authors/" + fm["author"]}
     def own_src(x):  # RES-3141: our own pages stay in the list but are not an outside check
         m = re.search(r'\]\(([^)\s]+)', x); u = m.group(1) if m else ""
-        return u.startswith("/") or re.match(r"https?://(www\.)?citedby\.eu(/|$)", u) is not None
+        return u.startswith("/") or re.match(r"https?://((www\.)?citedby\.eu|github\.com/resaleiq)(/|$)", u) is not None  # RES-3935 L2: our citedby-check repo is ours too
     n_ext = sum(1 for x in srcs if not own_src(x))
     en_tag = "" if loc == "en" else " (EN)"  # RES-3165: /methodology exists in English only
     meth = t["src_n"].format(n=n_ext) if n_ext >= 2 else t["src_n"].split(" · ")[-1]  # RES-3165: keep the bare method link when the count is hidden

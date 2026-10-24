@@ -77,3 +77,17 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+SLOT_BLOCKS = ("pre", "table", "ul", "ol", "blockquote", "figure", "details", "aside", "section", "nav")
+def slot_index(lines, cut):
+    """First line index at or after cut where every pre/table/list opened before it is closed again (the ad slot or its placeholder comment goes there); the nearest one before cut if none after; None if the body has no top-level boundary."""
+    depth = [0]
+    for ln in lines:
+        d = depth[-1]
+        for m in re.finditer(r"<(/?)(%s)\b" % "|".join(SLOT_BLOCKS), ln):
+            d += -1 if m.group(1) else 1
+        depth.append(d)
+    after = [i for i in range(cut, len(lines)) if depth[i] == 0]
+    if after: return after[0]
+    before = [i for i in range(cut - 1, 0, -1) if depth[i] == 0]
+    return before[0] if before else None
