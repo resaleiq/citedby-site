@@ -140,3 +140,22 @@ def test_llms_txt_and_sitemap_list_the_page_and_bot_page_names_the_new_way_it_is
     base = os.path.join(os.path.dirname(__file__), "public")
     assert "https://citedby.eu/mcp-server" in open(os.path.join(base, "llms.txt")).read() and "<loc>https://citedby.eu/mcp-server</loc>" in open(os.path.join(base, "sitemap.xml")).read()
     assert 'href="/mcp-server"' in open(os.path.join(base, "bot.html")).read()
+
+
+def test_res4110_backlinks_counts_are_domains_not_links_and_an_empty_result_keeps_the_page_caveat(monkeypatch):
+    monkeypatch.setattr(mcp.backlinks, "split", lambda h: (7, [(1, "nytimes.com", 5498221)], []))
+    r = rpc("tools/call", {"name": "backlinks", "arguments": {"domain": "acme.example"}})[2]["result"]
+    assert "1. nytimes.com (itself linked from 5,498,221 domains)" in r["content"][0]["text"] and "links to it" not in r["content"][0]["text"]
+    assert r["structuredContent"]["referrers"] == [{"rank": 1, "domain": "nytimes.com", "domains_linking_to_referrer": 5498221}]
+    monkeypatch.setattr(mcp.backlinks, "split", lambda h: (0, [], []))
+    r = rpc("tools/call", {"name": "backlinks", "arguments": {"domain": "citedby.eu"}})[2]["result"]
+    t = r["content"][0]["text"]
+    assert "has 0 referring domain(s)" in t and "No referrers are listed for it. New or small sites are often missing from the graph; it does not mean you have none." in t
+
+
+def test_res4110_mcp_page_promises_only_tools_that_have_a_connect_step():
+    base = os.path.join(os.path.dirname(os.path.abspath(__file__)), "public")
+    page, llms = open(os.path.join(base, "mcp-server.html"), encoding="utf-8").read(), open(os.path.join(base, "llms.txt"), encoding="utf-8").read()
+    head = page.split("<main", 1)[0] + page.split("<main", 1)[1].split("</p>", 1)[0]   # title, JSON-LD and the intro paragraph
+    assert "ChatGPT" not in head.replace("ChatGPT-User", "") and "Claude, Cursor and Codex" in page
+    assert "Claude, ChatGPT" not in llms and "add CitedBy to Claude, Cursor or Codex" in llms

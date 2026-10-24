@@ -66,12 +66,12 @@ def _backlinks(domain):
     n, rows, folded = got
     shown = [r for r in rows if not backlinks.LINK_DENY.search(r[1])][:LISTED]
     cut = len(rows) - len([r for r in rows if not backlinks.LINK_DENY.search(r[1])])
-    lines = [f"{h} has {n:,} referring domain(s) in the {src}." + ("" if shown else " No referrers are listed for it.")]
-    lines += [f"{rank}. {ref} ({inl:,} links to it)" for rank, ref, inl in shown]
+    lines = [f"{h} has {n:,} referring domain(s) in the {src}." + ("" if shown else " No referrers are listed for it.") + (" New or small sites are often missing from the graph; it does not mean you have none." if n == 0 else "")]
+    lines += [f"{rank}. {ref} (itself linked from {inl:,} domains)" for rank, ref, inl in shown]
     if cut: lines.append(f"({cut} referrer(s) with adult- or gambling-looking names are left out of the list.)")
     if folded: lines.append("Referrers common to most sites in the set (folded): " + ", ".join(folded) + ".")
     lines.append(f"Method and the page for this domain: {url}\nAudit the site itself, free for one page: https://citedby.eu/?url={h}&utm_source=mcp&utm_medium=assistant&utm_campaign=mcp_server")
-    return _result("\n".join(lines), {"domain": h, "in_data": True, "referring_domains": n, "referrers": [{"rank": r, "domain": d, "links": i} for r, d, i in shown], "omitted_by_name": cut, "folded_common_referrers": list(folded or []), "source": src, "page": url})
+    return _result("\n".join(lines), {"domain": h, "in_data": True, "referring_domains": n, "referrers": [{"rank": r, "domain": d, "domains_linking_to_referrer": i} for r, d, i in shown], "omitted_by_name": cut, "folded_common_referrers": list(folded or []), "source": src, "page": url})
 
 
 def call_tool(name, args, ip):
