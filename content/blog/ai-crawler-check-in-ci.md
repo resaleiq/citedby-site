@@ -165,6 +165,20 @@ The address, the language code and a tag (`cli`, or `action` in the Action) go t
 
 The shell script on that CI page requests your site with each crawler's own user-agent string. It runs on your machine or in your CI, calls no AI model and sends nothing to CitedBy. It does not read JSON-LD or llms.txt.
 
+## FAQ
+
+### Does the check run my JavaScript?
+No. It loads robots.txt, the home page and llms.txt with a plain HTTP request and counts the words a crawler reads without running JavaScript: 200 or more is OK, 50 to 199 is Check, 1 to 49 is Fix.
+
+### Does a pass mean AI assistants will cite my site?
+No. A pass means a crawler can read the pages the check loads, which are the home page and at most one product page. It does not say that an assistant will mention or cite your site.
+
+### Can I block GPTBot and still pass the check?
+Not by default. The crawler check reports Fix on every run while GPTBot is blocked, because the command has no setting to ignore one crawler. The section on limits shows a jq filter that fails the build only on other checks.
+
+### Does the check need an account?
+No. The command has no account, no cookies and no telemetry, and writes no files. The address, the language code and a tag go to citedby.eu, which loads your site from its own servers.
+
 ## Sources
 
 - [citedby-check on GitHub: README and source, version 0.1.0](https://github.com/resaleiq/citedby-check)

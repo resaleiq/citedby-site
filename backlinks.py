@@ -70,12 +70,37 @@ def norm(raw):
     return v if HOST.match(v) else ""
 
 
+TITLE_MAX, DESC_MAX = 65, 160  # the crawl's own limits (citedby-app sa_checks: title 15-65, description 50-160)
+
+
+def fit_title(t, host, *keys):
+    """The first wording of the title that fits in TITLE_MAX characters, never a cut one: the full title, the short one, "<host> backlinks | CitedBy", then "<host> | CitedBy" (a host is at most 44 characters here)."""
+    for c in [t[k].format(host=host) for k in keys] + [f"{host} backlinks | CitedBy", f"{host} | CitedBy"]:
+        if len(c) <= TITLE_MAX:
+            return c
+    return host
+
+
+def fit_desc(t, key, **kw):
+    """The description in full if it fits in DESC_MAX, else the shorter wording that still ends at a sentence end (key + "_s")."""
+    d = t[key].format(**kw)
+    return d if len(d) <= DESC_MAX or key + "_s" not in t else t[key + "_s"].format(**kw)
+
+
 def meta():
     return dict(_q("select k, v from meta"))
 
 
 def hosts():
-    return [r[0] for r in _q("select domain from dom where tier in (1,2) order by tier, referring_domains desc")]
+    """The hosts that get a page of their own, each by the address the server answers on: norm() sends www.<host> to <host> with a 301, which the sitemap must not list, so the data's www.cci.fr is listed as cci.fr (RES-3973)."""
+    return [norm(r[0]) or r[0] for r in _q("select domain from dom where tier in (1,2) order by tier, referring_domains desc")]
+
+
+def stored(host):
+    """The name the shipped set stores for a requested host: the data lists www.cci.fr, and norm() turns every request into cci.fr."""
+    if _q("select 1 from dom where domain=?", (host,)):
+        return host
+    return "www." + host if _q("select 1 from dom where domain=?", ("www." + host,)) else host
 
 
 _COMMON = []  # (file version, frozenset): the referrers folded into one line (RES-3899)
@@ -122,6 +147,7 @@ SHOWN, FOLD_MAX = 30, 10  # rows in the table; names in the folded line
 def split(host):
     """(referring_domains, rows, folded) or None. rows = [(rank, referrer, referrer_inlinks)]: up to 30 of the host's own strongest referrers once adult-content hosts (RES-3819) and the common referrers are taken out, ranks closed up;
     folded = up to 10 common referrers of this host, strongest first. A host in the shipped set (indexable pages) first, else the full table (on-demand pages), else None."""
+    host = stored(host)
     r = _q("select referring_domains from dom where domain=?", (host,))
     if r:
         n, got = r[0][0], _q("select referrer, referrer_inlinks from bl where domain=? order by rank", (host,))
@@ -148,7 +174,7 @@ def lookup(host):
 
 def curated(host):
     """True for the shipped set (own sites, SEO tools, the top .eu/.fr/.de/.es/.nl/.it/.pt/.be domains): those pages are indexable. Everything else comes from the full table and is noindex."""
-    return host in OWN_ZERO or bool(_q("select 1 from dom where domain=?", (host,)))
+    return host in OWN_ZERO or bool(_q("select 1 from dom where domain=?", (stored(host),)))
 
 
 def _alts(tail):
@@ -220,6 +246,15 @@ def _crumb(lg, *rest):
     return f'<p class="crumb"><a href="{HOME[lg]}">{E(t["crumb_home"])}</a> / ' + " / ".join(rest or (E(t["crumb_bl"]),)) + "</p>"
 
 
+def _page_ld(lg, title, desc, tail, *crumbs):
+    """JSON-LD for the lookup page and the method page (the crawl flagged them as having none: RES-3973): a WebPage of the CitedBy site with its breadcrumb. crumbs = (name, path) after the home page."""
+    base, home = "https://citedby.eu", T[lg]["crumb_home"]
+    items = [(home, HOME[lg])] + list(crumbs)
+    return {"@context": "https://schema.org", "@type": "WebPage", "name": title, "description": desc, "url": f"{base}{prefix(lg)}{tail}", "inLanguage": lg,
+            "isPartOf": {"@type": "WebSite", "name": "CitedBy", "url": base},
+            "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i, "name": n, "item": base + (path if path != "/" else "/")} for i, (n, path) in enumerate(items, 1)]}}
+
+
 def _form(lg, value="", primary=False):
     """The lookup form. Its button is the filled one only on the lookup page; on a host page the free-check link below is the one primary."""
     t = T[lg]
@@ -258,7 +293,8 @@ def method_page(lg="en"):
 {fold}
 <section><h2>{E(t["another_h2"])}</h2>{_form(lg, primary=True)}</section>
 {_cta(lg, primary=False)}'''
-    return _shell(lg, t["method_title"], t["method_desc"], f"{p}/backlinks/method", body, alts=_alts("/backlinks/method"))
+    ld = _page_ld(lg, t["method_title"], t["method_desc"], "/backlinks/method", (t["crumb_bl"], f"{p}/backlinks"), (t["method_h2"], f"{p}/backlinks/method"))
+    return _shell(lg, t["method_title"], t["method_desc"], f"{p}/backlinks/method", body, ld=ld, alts=_alts("/backlinks/method"))
 
 
 def index_page(msg="", lg="en"):
@@ -277,7 +313,8 @@ def index_page(msg="", lg="en"):
 <p class="src">{E(note_text)}</p></section>
 {_method_link(lg)}
 {_cta(lg, primary=False)}'''
-    return _shell(lg, t["index_title"], t["index_desc"], f"{p}/backlinks", body, alts=_alts("/backlinks"))
+    ld = _page_ld(lg, t["index_title"], t["index_desc"], "/backlinks", (t["crumb_bl"], f"{p}/backlinks"))
+    return _shell(lg, t["index_title"], t["index_desc"], f"{p}/backlinks", body, ld=ld, alts=_alts("/backlinks"))
 
 
 def host_page(host, lg="en"):
@@ -294,14 +331,14 @@ def host_page(host, lg="en"):
 <h1>{E(t["host_h1"].format(host=host))}</h1>
 <p class="ans">{E(nis)}</p>
 {_form(lg, host)}{_cta(lg, host)}'''
-        return 200, _shell(lg, t["nis_title"].format(host=host), t["nis_desc"].format(host=host), p + tail, body, noindex=True)
+        return 200, _shell(lg, fit_title(t, host, "nis_title", "host_title2"), t["nis_desc"].format(host=host), p + tail, body, noindex=True)
     n, rows, folded = got
     one = plural_key(n) == "one"
     if n == 0:
         ans, table, desc = t["ans_0"].format(host=host), "", t["desc_0"].format(host=host)
     else:
         ans = t["ans_n_one" if one else "ans_n_none" if folded and not rows else "ans_n"].format(n=fmt(n, lg), host=host, label=t["graph_label"], k=len(rows))
-        desc = t["desc_n_one" if one else "desc_n"].format(n=fmt(n, lg), host=host, label=t["graph_label"])
+        desc = fit_desc(t, "desc_n_one" if one else "desc_n", n=fmt(n, lg), host=host, label=t["graph_label"])
         refs, marks = [r[1] for r in rows], ",".join("?" * len(rows))
         known = {x[0] for x in _q("select domain from dom where domain in (%s)" % marks, refs)}
         if full_info():  # a referrer that has a page in either file is a link
@@ -312,7 +349,7 @@ def host_page(host, lg="en"):
         table = (f'<section><h2>{E(t["table_h2"])}</h2>'
                  + (f'<div class="tw"><table><thead><tr><th>{E(t["th_rank"])}</th><th>{E(t["th_ref"])}</th><th class="n">{E(t["th_str"])}</th></tr></thead><tbody>{tr}</tbody></table></div>' if rows else "")  # no empty table when every referrer was folded
                  + (f'<p class="src">{E(t["folded"].format(list=", ".join(folded)))}</p>' if folded else "") + "</section>")
-    on_demand = not curated(host) or host in thin_hosts()  # from the full table, or a page that says what a stronger host's says (RES-3899): useful to a visitor, not a page we ask search engines to index
+    on_demand = not curated(host) or stored(host) in thin_hosts()  # from the full table, or a page that says what a stronger host's says (RES-3899): useful to a visitor, not a page we ask search engines to index
     ld = None if on_demand else {"@context": "https://schema.org", "@type": "Dataset", "name": t["ld_name"].format(host=host, graph=GRAPH), "description": desc,
           "url": f"https://citedby.eu{p}{tail}", "inLanguage": lg, "isAccessibleForFree": True, "license": "https://commoncrawl.org/terms-of-use",
           "creator": {"@type": "Organization", "name": "Common Crawl", "url": "https://commoncrawl.org"}, "temporalCoverage": GRAPH_COVER,
@@ -327,7 +364,7 @@ def host_page(host, lg="en"):
 <section><h2>{E(t["another_h2"])}</h2>{_form(lg)}</section>
 {_method_link(lg)}
 {_cta(lg, host)}'''
-    return 200, _shell(lg, t["host_title"].format(host=host), desc, p + tail, body, noindex=on_demand, ld=ld, alts="" if on_demand else _alts(tail))
+    return 200, _shell(lg, fit_title(t, host, "host_title", "host_title2"), desc, p + tail, body, noindex=on_demand, ld=ld, alts="" if on_demand else _alts(tail))
 
 
 _SITEMAP = []  # (mtime of the data file, xml)
@@ -339,7 +376,7 @@ def sitemap():
     if _SITEMAP and _SITEMAP[0] == mt:
         return _SITEMAP[1]
     thin = thin_hosts()
-    ds, m = [h for h in hosts() if h not in thin], meta()
+    ds, m = [h for h in hosts() if stored(h) not in thin], meta()
     u = "".join(f"<url><loc>https://citedby.eu{prefix(l)}/backlinks</loc><lastmod>{m['read_on']}</lastmod></url>"
                 f"<url><loc>https://citedby.eu{prefix(l)}/backlinks/method</loc><lastmod>{m['read_on']}</lastmod></url>"
                 + "".join(f"<url><loc>https://citedby.eu{prefix(l)}/backlinks/{d}</loc><lastmod>{m['read_on']}</lastmod></url>" for d in ds) for l in LANGS)
