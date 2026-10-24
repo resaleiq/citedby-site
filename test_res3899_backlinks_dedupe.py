@@ -67,7 +67,7 @@ def test_common_referrers_leave_the_table_and_are_named_in_one_line(small):
     t = visible(h)
     assert "google.com</td>" not in h and "wikipedia.org</td>" not in h
     assert "Left out of the table because they link to many domains in this data, for example: google.com, wikipedia.org." in t
-    assert "Below are 30 of the strongest." in t and "Strength is how many" not in t
+    assert "The table lists 30 of them, strongest first." in t and "Strength is how many" not in t
 
 
 def test_a_host_with_no_common_referrer_gets_no_folded_line(small):
@@ -138,3 +138,13 @@ def test_every_indexable_shipped_host_has_enough_referrers_of_its_own():
         if h not in th and not tier1:
             assert len(rows) >= 8, (h, len(rows))
         assert len(rows) <= b.SHOWN and len(folded) <= b.FOLD_MAX and not set(folded) & {r for _, r, _ in rows}, h
+
+
+def test_a_host_whose_every_referrer_is_folded_gets_no_empty_table(small, tmp_path):
+    c = sqlite3.connect(small)
+    c.execute("insert into dom values ('e.de', 77, 2)"); c.executemany("insert into bl values ('e.de', ?, ?, 1)", [(1, "google.com"), (2, "blogspot.com")]); c.commit(); c.close()
+    for lg in LOCALES:
+        h = b.host_page("e.de", lg)[1]
+        assert "<table" not in h and "google.com, blogspot.com" in visible(h) and "{" not in visible(h), lg
+        want = re.sub(r"\s+", " ", i.T[lg]["ans_n_none"].format(n=i.fmt(77, lg), host="e.de", label=i.T[lg]["graph_label"]))
+        assert want in visible(h), lg

@@ -62,7 +62,7 @@ def test_full_table_pages_drop_hidden_hosts_and_show_up_to_30_of_the_rest(tmp_pa
     n, rows = b.lookup("wenige.de")
     assert rows == [(1, "pornic.com", 8)]
     t = text(b.host_page("wenige.de")[1])
-    assert "xxxbold.com" not in t and "pornic.com" in t and "Below are 1 of the strongest" in t
+    assert "xxxbold.com" not in t and "pornic.com" in t and "The table lists 1 of them, strongest first." in t
 
 
 def test_match_is_exact_not_a_keyword_or_substring(tmp_path, monkeypatch):

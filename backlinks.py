@@ -300,7 +300,7 @@ def host_page(host, lg="en"):
     if n == 0:
         ans, table, desc = t["ans_0"].format(host=host), "", t["desc_0"].format(host=host)
     else:
-        ans = t["ans_n_one" if one else "ans_n"].format(n=fmt(n, lg), host=host, label=t["graph_label"], k=len(rows))
+        ans = t["ans_n_one" if one else "ans_n_none" if folded and not rows else "ans_n"].format(n=fmt(n, lg), host=host, label=t["graph_label"], k=len(rows))
         desc = t["desc_n_one" if one else "desc_n"].format(n=fmt(n, lg), host=host, label=t["graph_label"])
         refs, marks = [r[1] for r in rows], ",".join("?" * len(rows))
         known = {x[0] for x in _q("select domain from dom where domain in (%s)" % marks, refs)}
@@ -309,8 +309,8 @@ def host_page(host, lg="en"):
         known = {k for k in known if not LINK_DENY.search(k)}  # gambling and adult names stay text (RES-3801)
         link = lambda ref: f'<a href="{p}/backlinks/{E(ref)}">{E(ref)}</a>' if ref in known else E(ref)
         tr = "".join(f'<tr><td data-label="{E(t["dl_rank"])}">{r}</td><td data-label="{E(t["dl_ref"])}">{link(ref)}</td><td class="n" data-label="{E(t["dl_str"])}">{fmt(inl, lg)}</td></tr>' for r, ref, inl in rows)
-        table = (f'<section><h2>{E(t["table_h2"])}</h2><div class="tw"><table><thead><tr><th>{E(t["th_rank"])}</th><th>{E(t["th_ref"])}</th><th class="n">{E(t["th_str"])}</th></tr></thead>'
-                 f'<tbody>{tr}</tbody></table></div>'
+        table = (f'<section><h2>{E(t["table_h2"])}</h2>'
+                 + (f'<div class="tw"><table><thead><tr><th>{E(t["th_rank"])}</th><th>{E(t["th_ref"])}</th><th class="n">{E(t["th_str"])}</th></tr></thead><tbody>{tr}</tbody></table></div>' if rows else "")  # no empty table when every referrer was folded
                  + (f'<p class="src">{E(t["folded"].format(list=", ".join(folded)))}</p>' if folded else "") + "</section>")
     on_demand = not curated(host) or host in thin_hosts()  # from the full table, or a page that says what a stronger host's says (RES-3899): useful to a visitor, not a page we ask search engines to index
     ld = None if on_demand else {"@context": "https://schema.org", "@type": "Dataset", "name": t["ld_name"].format(host=host, graph=GRAPH), "description": desc,
