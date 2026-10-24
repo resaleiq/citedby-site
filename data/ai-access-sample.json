@@ -1,0 +1,91 @@
+{
+  "api_version": "1",
+  "site": "theguardian.com",
+  "checked_at": "2026-10-24T17:27:07Z",
+  "robots_txt": {
+    "state": "found",
+    "status": 200,
+    "blocks_all_crawlers": false
+  },
+  "summary": {
+    "total": 8,
+    "allowed": 6,
+    "blocked": [
+      "PerplexityBot",
+      "ClaudeBot"
+    ]
+  },
+  "crawlers": [
+    {
+      "id": "GPTBot",
+      "role": "training",
+      "robots_txt": "allowed",
+      "robots_txt_rule": null,
+      "server": "ok",
+      "access": "allowed"
+    },
+    {
+      "id": "OAI-SearchBot",
+      "role": "search",
+      "robots_txt": "allowed",
+      "robots_txt_rule": null,
+      "server": "ok",
+      "access": "allowed"
+    },
+    {
+      "id": "ChatGPT-User",
+      "role": "user_fetch",
+      "robots_txt": "allowed",
+      "robots_txt_rule": null,
+      "server": "ok",
+      "access": "allowed"
+    },
+    {
+      "id": "PerplexityBot",
+      "role": "search",
+      "robots_txt": "disallowed",
+      "robots_txt_rule": "Disallow: /",
+      "server": "blocked",
+      "access": "blocked_by_robots_txt_and_server"
+    },
+    {
+      "id": "ClaudeBot",
+      "role": "training",
+      "robots_txt": "disallowed",
+      "robots_txt_rule": "Disallow: /",
+      "server": "blocked",
+      "access": "blocked_by_robots_txt_and_server"
+    },
+    {
+      "id": "Google-Extended",
+      "role": "training",
+      "robots_txt": "allowed",
+      "robots_txt_rule": null,
+      "server": "not_tested",
+      "access": "allowed"
+    },
+    {
+      "id": "Bingbot",
+      "role": "search",
+      "robots_txt": "allowed",
+      "robots_txt_rule": null,
+      "server": "ok",
+      "access": "allowed"
+    },
+    {
+      "id": "Googlebot",
+      "role": "search",
+      "robots_txt": "allowed",
+      "robots_txt_rule": null,
+      "server": "ok",
+      "access": "allowed"
+    }
+  ],
+  "report_url": "https://citedby.eu/tools/ai-crawler-check/theguardian.com?utm_source=api&utm_medium=api&utm_campaign=ai_access_api",
+  "audit_url": "https://citedby.eu/?url=theguardian.com&source=api&utm_source=api&utm_medium=api&utm_campaign=ai_access_api",
+  "attribution": {
+    "text": "AI crawler access by CitedBy",
+    "url": "https://citedby.eu/ai-access-api"
+  },
+  "docs": "https://citedby.eu/ai-access-api"
+}

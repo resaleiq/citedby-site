@@ -5,10 +5,10 @@ import re
 _LANG = re.compile(rb'<html[^>]*\blang="?([a-z]{2})')
 MARK = b"data-hub-links"
 LOCALES = ("en", "fr", "nl", "de", "es")
-LABELS = {  # (guides, blog, tools, audit, changes, findable check)
-    "en": ("Guides", "Blog", "Free tools", "AI visibility audit", "What changed", "Findable check"), "fr": ("Guides", "Blog", "Outils gratuits", "Audit de visibilité IA", "Ce qui a changé", "Contrôle de visibilité"),
-    "nl": ("Gidsen", "Blog", "Gratis tools", "AI-zichtbaarheidsaudit", "Wat er veranderde", "Vindbaarheidscheck"), "de": ("Ratgeber", "Blog", "Kostenlose Tools", "KI-Sichtbarkeits-Audit", "Was sich geändert hat", "Auffindbarkeits-Check"),
-    "es": ("Guías", "Blog", "Herramientas gratis", "Auditoría de visibilidad en IA", "Qué ha cambiado", "Comprobación de visibilidad")}
+LABELS = {  # (guides, blog, tools, audit, changes, findable check, AI access API)
+    "en": ("Guides", "Blog", "Free tools", "AI visibility audit", "What changed", "Findable check", "AI access API"), "fr": ("Guides", "Blog", "Outils gratuits", "Audit de visibilité IA", "Ce qui a changé", "Contrôle de visibilité", "API d'accès des robots IA"),
+    "nl": ("Gidsen", "Blog", "Gratis tools", "AI-zichtbaarheidsaudit", "Wat er veranderde", "Vindbaarheidscheck", "API voor AI-crawlertoegang"), "de": ("Ratgeber", "Blog", "Kostenlose Tools", "KI-Sichtbarkeits-Audit", "Was sich geändert hat", "Auffindbarkeits-Check", "API für KI-Crawler"),
+    "es": ("Guías", "Blog", "Herramientas gratis", "Auditoría de visibilidad en IA", "Qué ha cambiado", "Comprobación de visibilidad", "API de rastreadores de IA")}
 ENGLISH_ONLY = (("/bots", "AI bots"), ("/platforms", "Platforms"), ("/data", "Data"), ("/compare/profound-vs-peec-vs-otterly", "Tool comparison"), ("/bot", "Our crawler"), ("/ci", "Free CI check"))
 ENGLISH_ONLY_LABELS = {  # RES-3013: the five links go to English-only pages, so each other language names them in its own words and says "(in English)"
     "fr": ("Robots IA (en anglais)", "Plateformes (en anglais)", "Données (en anglais)", "Comparatif d'outils (en anglais)", "Notre robot (en anglais)", "Contrôle CI gratuit (en anglais)"),
@@ -21,8 +21,8 @@ _BLOCK = '<p class="hub-links" data-hub-links style="margin:.75rem 0 0;padding:0
 
 def links(lg):
     p = "" if lg == "en" else "/" + lg
-    g, b, t, a, c, f = LABELS[lg]
-    out = [(f"{p}/guides", g, lg), (f"{p}/blog", b, lg), (f"{p}/tools", t, lg), (f"{p}/ai-visibility-audit", a, lg), (f"{p}/changes", c, lg), (f"{p}/tools/findable-check", f, lg)]
+    g, b, t, a, c, f, api = LABELS[lg]
+    out = [(f"{p}/guides", g, lg), (f"{p}/blog", b, lg), (f"{p}/tools", t, lg), (f"{p}/ai-visibility-audit", a, lg), (f"{p}/changes", c, lg), (f"{p}/tools/findable-check", f, lg), (f"{p}/ai-access-api", api, lg)]
     out += [(h, ENGLISH_ONLY_LABELS[lg][i] if lg in ENGLISH_ONLY_LABELS else l, "en") for i, (h, l) in enumerate(ENGLISH_ONLY)]
     return out
 

@@ -7,7 +7,7 @@ import base64, hashlib, hmac, html, json, mimetypes, os, re, sqlite3, threading,
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 
-import analytics, backlinks, mcp, doorcheck, follow_link, home, hub_links, langroutes, legal_links, pages, proxy, safefetch, social, trust, withdraw_link
+import analytics, api_v1, backlinks, mcp, doorcheck, follow_link, home, hub_links, langroutes, legal_links, pages, proxy, safefetch, social, trust, withdraw_link
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SECRET = os.environ["OPTIN_SECRET"].encode()  # crash if missing (fail-secure)
@@ -33,7 +33,7 @@ def _deploy_id():  # commit sha from the image build (Dockerfile ARG GIT_SHA); e
 DEPLOY_ID = _deploy_id()
 SNAPSHOTS = json.load(open(os.path.join(HERE, "data", "snapshots.json")))
 CHECK_SOURCES = {"wp-plugin": "free_check_started_wp_plugin", "cli": "free_check_started_cli", "action": "free_check_started_action"}  # who sent a free check: RES-3708 plugin, RES-3749 CLI and GitHub Action
-EVENTS = ("check_start", "check_complete", "email_submitted", "fixpack_click", "first_screen_cta_click", "free_tool_start", "offer_view") + tuple(CHECK_SOURCES.values())
+EVENTS = ("check_start", "check_complete", "email_submitted", "fixpack_click", "first_screen_cta_click", "free_tool_start", "offer_view", "api_ai_access") + tuple(CHECK_SOURCES.values())  # api_ai_access: a result returned by GET /api/v1/ai-access (RES-4195)
 
 os.makedirs(DATA_DIR, exist_ok=True)
 DB_PATH = os.path.join(DATA_DIR, "check.db")
@@ -278,7 +278,7 @@ class H(BaseHTTPRequestHandler):
             ctype += "; charset=utf-8"
         with open(full, "rb") as f:
             # RES-3708: the plugin zip and its Playground blueprint are fetched by playground.wordpress.net from the browser, so they carry CORS
-            self.out(200, f.read(), ctype, extra={"Access-Control-Allow-Origin": "*"} if path.startswith("/downloads/") else None)
+            self.out(200, f.read(), ctype, extra={"Access-Control-Allow-Origin": "*"} if path.startswith("/downloads/") or path == "/openapi.json" else None)
 
     def backlinks(self, u):
         if u.path == "/sitemap-backlinks.xml":
@@ -311,7 +311,8 @@ class H(BaseHTTPRequestHandler):
 
     MCP_CORS = {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Content-Type, Accept, Mcp-Session-Id, Mcp-Protocol-Version, Authorization", "Access-Control-Allow-Methods": "POST, GET, OPTIONS", "Access-Control-Expose-Headers": "Mcp-Session-Id", "X-Robots-Tag": "noindex"}
 
-    def do_OPTIONS(self):  # RES-3798: the CORS preflight of a browser-based MCP client
+    def do_OPTIONS(self):  # RES-3798: the CORS preflight of a browser-based MCP client; RES-4195: and of a browser calling the AI-access API
+        if urlparse(self.path).path == api_v1.PATH: return self.out(204, b"", "application/json", extra=api_v1.PREFLIGHT)
         if urlparse(self.path).path != "/mcp": return self.out(404, not_found_page())
         self.out(204, b"", "application/json", extra=self.MCP_CORS)
 
@@ -346,6 +347,11 @@ class H(BaseHTTPRequestHandler):
             return self.out(200, b'{"ok":true}', "application/json")
         if u.path in ("/api/confirm", "/api/unsubscribe"):  # links in mails sent before the form was retired (RES-3940 F3): nothing is stored any more
             return self.out(410, page(GONE_TXT))
+        if u.path == api_v1.PATH:  # RES-4195: the free public AI-access API
+            if self.command == "HEAD": return self.out(200, b"", "application/json", extra=api_v1.CORS)
+            code, body, hdr = api_v1.call((parse_qs(u.query).get("url") or [None])[0], self.ip())
+            if code == 200: count_event("api_ai_access", "en", self.ip())
+            return self.out(code, body, "application/json", extra={**api_v1.CORS, **hdr})
         if u.path.startswith("/api/"):
             return self.out(404, b'{"ok":false}', "application/json")
         self.static(u.path)
