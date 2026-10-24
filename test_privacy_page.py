@@ -116,4 +116,64 @@ def test_privacy_anthropic_agent_tools_res3875():
         assert tools in t and note in t, lang
         entry = t[t.index("Anthropic Ireland, Limited"):]
         assert tools in entry[: entry.index("OpenRouter")], lang  # the tools use sits in the Anthropic entry
-        assert "data processing addendum" not in t.lower() and "avenant" not in t.lower(), lang
+        assert t.lower().count("data processing addendum") <= 1 and "avenant" not in t.lower(), lang  # RES-3940 F1: named once, for the Team accounts only (test_privacy_res3940)
+
+
+# RES-3940 (QA HOLD on RES-3883): every statement the page makes about the code, per locale.
+_R = {  # lang: (consumer-plan words in the intro, Team clause, step counts sent either way, account number to Stripe, 3 other pages, ~15 days, payment-alert row, riq_internal flag, ten pages)
+    "": ("when our software tools run on a consumer plan (see its entry)", "business (Team) accounts it is our processor under its data processing addendum", "sent from our server either way", "our account number for you and your language", "your home page and up to 3 other pages", "about 15 days", "Payment and withdrawal alerts", "?internal=1", "up to ten pages"),
+    "fr": ("lorsque nos outils logiciels fonctionnent sur un abonnement grand public (voir sa mention)", "comptes professionnels (Team), Anthropic est notre sous-traitant", "dans tous les cas", "le numéro de votre compte chez nous et votre langue", "votre page d'accueil et jusqu'à 3 autres pages", "environ 15 jours", "Alertes de paiement et de rétractation", "?internal=1", "dix pages au plus"),
+    "de": ("wenn unsere Softwaretools auf einem Verbraucher-Abo laufen (siehe den Eintrag zu Anthropic)", "Business-Konten (Team) ist Anthropic unser Auftragsverarbeiter", "in jedem Fall", "die Nummer Ihres Kontos bei uns und Ihre Sprache", "Ihre Startseite und bis zu 3 weitere Seiten", "etwa 15 Tage", "Zahlungs- und Widerrufswarnungen", "?internal=1", "bis zu zehn Seiten"),
+    "es": ("cuando nuestras herramientas de software se ejecutan en un plan para consumidores (véase su entrada)", "cuentas de empresa (Team) es nuestro encargado del tratamiento", "en cualquier caso", "el número de su cuenta con nosotros y su idioma", "su página de inicio y hasta 3 páginas más", "unos 15 días", "Alertas de pago y de desistimiento", "?internal=1", "hasta diez páginas"),
+    "nl": ("wanneer onze softwaretools op een consumentenabonnement draaien (zie de vermelding van Anthropic)", "zakelijke (Team-)accounts is Anthropic onze verwerker", "in alle gevallen", "uw accountnummer bij ons en uw taal", "uw homepage en maximaal 3 andere pagina's", "ongeveer 15 dagen", "Betalings- en herroepingsmeldingen", "?internal=1", "maximaal tien pagina's"),
+}
+
+
+def test_privacy_res3940_every_locale():
+    root = pathlib.Path(__file__).parent / "public"
+    for lang, (intro, team, steps, acct, pages, days, alerts, flag, ten) in _R.items():
+        t = (root / lang / "privacy.html").read_text(encoding="utf-8")
+        i4 = t[t.index("<h2>4."):]
+        assert intro in i4[: i4.index("</p>")] and "Anthropic" in i4[: i4.index("</p>")], lang          # F1: Anthropic is in the intro's independent-controller list
+        entry = i4[i4.index("Anthropic Ireland, Limited"): i4.index("OpenRouter")]
+        assert entry.count("anthropic.com/legal/privacy") == 1 and team in entry and "Claude Pro" in entry and "Max" in entry, lang   # F1: form A inside the Anthropic entry
+        assert t.count("anthropic.com/legal/privacy") == 1, lang
+        assert steps in i4 and acct in i4[:i4.index("Resend")], lang                                       # F7, F11
+        assert "rdap.org" in i4 and "rdap.org" not in t[: t.index("<h2>4.")], lang                          # F5: a recipient entry
+        assert pages in t and days in t and alerts in t and ten in t, lang                                 # F9, F10, F8b, F4
+        assert "riq_internal" in t[t.index("<h2>3."): t.index("<h2>4.")] and flag in t, lang               # F6
+        assert t.count("<tr>") == len(re.findall("<tr>", (root / "privacy.html").read_text())), lang      # same table rows everywhere
+    en = (root / "privacy.html").read_text()
+    assert "up to five pages" not in en and "up to 5 page URLs" not in en and "once as each major AI crawler" not in en
+
+
+def _badge_row(lang):
+    t = (pathlib.Path(__file__).parent / "public" / lang / "privacy.html").read_text(encoding="utf-8")
+    rows = [r for r in re.findall(r"<tr>.*?</tr>", t, re.S) if "<strong>Badge" in r or "<strong>Insignia" in r]
+    assert len(rows) == 1, lang
+    return rows[0]
+
+
+_BADGE = {  # RES-3959 (RES-3911 L1, L2, N1): the day the 90 days start, the second legal basis, the clearer wording
+    "": ("the last day the check or its badge image was requested", "Until 90 days after that day, then deleted.", "Art. 6(1)(f)"),
+    "fr": ("le dernier jour où ce contrôle ou l'image du badge a fait l'objet d'une demande", "Jusqu'à 90 jours après ce jour, puis suppression.", "point f))"),
+    "de": ("der letzte Tag, an dem die Prüfung oder ihr Badge-Bild abgerufen wurde", "Bis 90 Tage nach diesem Tag, danach gelöscht.", "Buchst. f)"),
+    "es": ("el último día en que se solicitó la comprobación o la imagen de la insignia", "Hasta 90 días después de ese día; después se suprime.", "letra f)"),
+    "nl": ("de laatste dag waarop de check of de badge-afbeelding is opgevraagd", "Tot 90 dagen na die dag, daarna gewist.", "onder f)"),
+}
+
+
+def test_privacy_badge_row_res3959_every_locale():
+    for lang, (day, keep, f) in _BADGE.items():
+        row = _badge_row(lang or ".")
+        assert day in row and keep in row and f in row, lang
+        assert "last requested" not in row and "dernière demande" not in row and "zuletzt abgerufen" not in row and "se pidió" not in row and "voor het laatst" not in row, lang
+    assert "combien des 8 robots" in _badge_row("fr") and "le nombre des 8" not in _badge_row("fr")
+    assert "waarom u hebt gevraagd" in _badge_row("nl")
+
+
+def test_legal_tables_let_a_long_word_wrap_res3959_l3():
+    """The de table was 688 px in a 680 px wrapper (the last 8 px cut off): a cell may break inside a word instead of widening the table."""
+    for f in pathlib.Path("public").glob("**/privacy.html"):
+        assert ".lt td{overflow-wrap:anywhere}" in f.read_text(encoding="utf-8"), f
+    assert "overflow-wrap:anywhere" in open("tools/build_legal.py", encoding="utf-8").read()

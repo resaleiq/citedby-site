@@ -80,4 +80,4 @@ def test_the_kind_is_optional_and_capped():
 
 def test_the_tag_carries_a_new_version_because_the_script_is_cached_for_a_week():
     """/riq-a.js is served with Cache-Control max-age=604800: a changed script under the old ?v=5 URL would not reach returning visitors."""
-    assert b'src="/riq-a.js?v=6"' in analytics.TAG and b"?v=5" not in analytics.TAG
+    assert b'src="/riq-a.js?v=7"' in analytics.TAG and b"?v=6" not in analytics.TAG

@@ -1,6 +1,6 @@
 /* riq-a.js: cookieless PostHog (EU) client, RES-1071. One copy per site, served from the site's own origin.
    No cookies, no localStorage/sessionStorage: PostHog's server-side cookieless hash ties a visitor's events for one day.
-   Honours Do Not Track and Global Privacy Control. Sends the path only (never the query string) and never an email or name.
+   Honours Do Not Track and Global Privacy Control. Sends the path only (never the query string, and a token segment such as /login/<token> becomes /login/:token) and never an email or name.
    Install: <script src="/riq-a.js" data-key="phc_..." data-site="resaleiq" defer></script>
    Events: window.riq("check_started", {kind: "..."}). Allowed names are listed in EVENTS. */
 (function () {
@@ -13,15 +13,18 @@
   var off = !key || internal || navigator.doNotTrack === "1" || window.doNotTrack === "1" || navigator.msDoNotTrack === "1" || navigator.globalPrivacyControl === true;
   var EVENTS = { check_started: 1, check_finished: 1, signup: 1, checkout_started: 1, paid: 1, mock_started: 1, mock_finished: 1, checkout_completed: 1, cta_click: 1 };
   var URL_ = (s && s.getAttribute("data-endpoint")) || "https://eu.i.posthog.com/i/v0/e/";  // same-origin relay (/riq-e) so blockers do not drop it and CSP stays connect-src self
+  // RES-3940 F2: these pages carry a one-use or private token as a path segment, so the token never leaves the browser: "/login/<token>" is sent as "/login/:token".
+  var TOKEN_PATH = /^((?:\/(?:fr|de|es|nl))?\/(?:login|reset|start|recount|report|t|r\/os|r|trial\/cancel))\/[^\/]+/;
+  function clean(path) { return path.replace(TOKEN_PATH, "$1/:token"); }
   function base() {
-    var q = new URLSearchParams(location.search), p = {
+    var q = new URLSearchParams(location.search), path = clean(location.pathname), p = {
       $cookieless_mode: true, $raw_user_agent: navigator.userAgent, $lib: "riq-a", $lib_version: "1",
-      $host: location.host, $pathname: location.pathname, $current_url: location.origin + location.pathname,
+      $host: location.host, $pathname: path, $current_url: location.origin + path,
       $screen_width: screen.width, $screen_height: screen.height, $viewport_width: innerWidth, $viewport_height: innerHeight,
       $timezone: (Intl.DateTimeFormat().resolvedOptions() || {}).timeZone, $language: navigator.language, site: site
     };
     ["utm_source", "utm_medium", "utm_campaign", "utm_content", "ref"].forEach(function (k) { if (q.get(k)) p[k] = String(q.get(k)).slice(0, 80); });
-    if (document.referrer) { try { var r = new URL(document.referrer); p.$referrer = r.origin + r.pathname; p.$referring_domain = r.host; } catch (e) {} }
+    if (document.referrer) { try { var r = new URL(document.referrer); p.$referrer = r.origin + clean(r.pathname); p.$referring_domain = r.host; } catch (e) {} }
     return p;
   }
   function send(event, extra) {
