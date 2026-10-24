@@ -23,7 +23,7 @@ UI = {  # masthead and footer labels, per language
     "es": dict(check="Qué comprobamos", plans="Precios", blog="Guías", data="Datos", signin="Iniciar sesión", cta="Auditar un sitio", skip="Saltar al contenido", main="Principal",
                terms="Condiciones", privacy="Privacidad", refund="Reembolsos", contact="Contacto", legal="Aviso legal", home="/es", plans_h="/es/plans", blog_h="/es/blog", sw="Idioma"),
 }
-TABLE_CSS = (".lt{overflow-x:auto}@media(min-width:641px){.lt table{min-width:620px}}"
+TABLE_CSS = (".lt{overflow-x:auto}@media(min-width:641px){.lt table{min-width:620px}.lt td{overflow-wrap:anywhere}}"
              "@media(max-width:640px){.lt table,.lt tbody,.lt tr,.lt td{display:block;width:100%}.lt thead{position:absolute;left:-9999px}"
              ".lt tr{border-bottom:2px solid var(--rule);padding:10px 0}.lt td{border:0;padding:6px 0}"
              ".lt td::before{content:attr(data-label);display:block;font-weight:600;color:var(--navy);font-size:13px}}")

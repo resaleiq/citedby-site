@@ -145,3 +145,35 @@ def test_privacy_res3940_every_locale():
         assert t.count("<tr>") == len(re.findall("<tr>", (root / "privacy.html").read_text())), lang      # same table rows everywhere
     en = (root / "privacy.html").read_text()
     assert "up to five pages" not in en and "up to 5 page URLs" not in en and "once as each major AI crawler" not in en
+
+
+def _badge_row(lang):
+    t = (pathlib.Path(__file__).parent / "public" / lang / "privacy.html").read_text(encoding="utf-8")
+    rows = [r for r in re.findall(r"<tr>.*?</tr>", t, re.S) if "<strong>Badge" in r or "<strong>Insignia" in r]
+    assert len(rows) == 1, lang
+    return rows[0]
+
+
+_BADGE = {  # RES-3959 (RES-3911 L1, L2, N1): the day the 90 days start, the second legal basis, the clearer wording
+    "": ("the last day the check or its badge image was requested", "Until 90 days after that day, then deleted.", "Art. 6(1)(f)"),
+    "fr": ("le dernier jour où ce contrôle ou l'image du badge a fait l'objet d'une demande", "Jusqu'à 90 jours après ce jour, puis suppression.", "point f))"),
+    "de": ("der letzte Tag, an dem die Prüfung oder ihr Badge-Bild abgerufen wurde", "Bis 90 Tage nach diesem Tag, danach gelöscht.", "Buchst. f)"),
+    "es": ("el último día en que se solicitó la comprobación o la imagen de la insignia", "Hasta 90 días después de ese día; después se suprime.", "letra f)"),
+    "nl": ("de laatste dag waarop de check of de badge-afbeelding is opgevraagd", "Tot 90 dagen na die dag, daarna gewist.", "onder f)"),
+}
+
+
+def test_privacy_badge_row_res3959_every_locale():
+    for lang, (day, keep, f) in _BADGE.items():
+        row = _badge_row(lang or ".")
+        assert day in row and keep in row and f in row, lang
+        assert "last requested" not in row and "dernière demande" not in row and "zuletzt abgerufen" not in row and "se pidió" not in row and "voor het laatst" not in row, lang
+    assert "combien des 8 robots" in _badge_row("fr") and "le nombre des 8" not in _badge_row("fr")
+    assert "waarom u hebt gevraagd" in _badge_row("nl")
+
+
+def test_legal_tables_let_a_long_word_wrap_res3959_l3():
+    """The de table was 688 px in a 680 px wrapper (the last 8 px cut off): a cell may break inside a word instead of widening the table."""
+    for f in pathlib.Path("public").glob("**/privacy.html"):
+        assert ".lt td{overflow-wrap:anywhere}" in f.read_text(encoding="utf-8"), f
+    assert "overflow-wrap:anywhere" in open("tools/build_legal.py", encoding="utf-8").read()
