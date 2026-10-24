@@ -92,3 +92,28 @@ def test_res2797_every_locale_names_the_search_engine_recipients_and_rows():
         assert "Search Console" in t and "4" in t
     assert "and keep no name, photo, contacts or Google token." not in pages[""] and "for sign-in, keep no name" in pages[""]
     assert "We never show the key or token again" not in pages[""] and "last 4 characters" in pages[""]
+
+
+# RES-3875: agents read logs, support mail and prod records through Claude, so Anthropic gets personal data.
+_LOC = {
+    "": ("software tools to read server logs, support mail and, read-only, account and payment records", "goes to no one except the processors listed"),
+    "fr": ("journaux du serveur, le courrier d'assistance et, en lecture seule, les données de compte et de paiement", "personne d'autre qu'aux sous-traitants énumérés"),
+    "de": ("Serverprotokolle, Support-E-Mails und – nur lesend – Konto- und Zahlungsdaten", "niemanden außer die aufgeführten Auftragsverarbeiter"),
+    "es": ("registros del servidor, el correo de soporte y, en solo lectura, los registros de cuenta y de pago", "salvo a los encargados del tratamiento enumerados"),
+    "nl": ("serverlogboeken, supportmail en, alleen-lezen, account- en betalingsgegevens", "niemand behalve de genoemde verwerkers"),
+}
+_FALSE = ("It does not receive your email address", "not shared with anyone", "Il ne reçoit ni votre adresse", "rien n'est transmis à des tiers",
+          "Es erhält weder Ihre E-Mail", "an niemanden weitergegeben", "No recibe su dirección de correo", "no se comparte con nadie",
+          "Ontvangt uw e-mailadres of accountgegevens niet", "met niemand gedeeld")
+
+
+def test_privacy_anthropic_agent_tools_res3875():
+    root = pathlib.Path(__file__).parent / "public"
+    for lang, (tools, note) in _LOC.items():
+        t = (root / lang / "privacy.html").read_text(encoding="utf-8")
+        for bad in _FALSE:
+            assert bad not in t, (lang, bad)
+        assert tools in t and note in t, lang
+        entry = t[t.index("Anthropic Ireland, Limited"):]
+        assert tools in entry[: entry.index("OpenRouter")], lang  # the tools use sits in the Anthropic entry
+        assert "data processing addendum" not in t.lower() and "avenant" not in t.lower(), lang
