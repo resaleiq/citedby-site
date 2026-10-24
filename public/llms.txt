@@ -16,6 +16,7 @@
 - [Free AI visibility check](https://citedby.eu/free-ai-visibility-check): free, no account: we crawl up to 10 pages and show your score, AI crawler access and the 3 issues to fix first
 - [AI visibility audit guide](https://citedby.eu/ai-visibility-audit): what such an audit checks
 - [EU AI-Access Index](https://citedby.eu/data/ai-access-index): which AI crawlers 10,426 popular EU sites block in robots.txt, by country and CMS, with method and CSV
+- [CitedBy MCP server](https://citedby.eu/mcp-server): add CitedBy to Claude, ChatGPT, Cursor or Codex, address citedby.eu/mcp: check a page, AI-crawler access, llms.txt and a domain's referring domains; free, no account, read-only
 - [Backlink lookup](https://citedby.eu/backlinks): free, no account: the 20 strongest domains linking to a site, from Common Crawl's open web graph, with method and limits; also in French, German, Spanish and Dutch
 - [Data by niche](https://citedby.eu/data/study-buyer-questions-claude): published study with method and CSV
 

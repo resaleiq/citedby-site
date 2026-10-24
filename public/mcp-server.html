@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CitedBy in Claude, ChatGPT, Cursor and Codex (MCP server)</title><meta name="description" content="Connect CitedBy to your AI tool: check a page, a site&#x27;s AI-crawler access, its llms.txt and a domain&#x27;s backlinks from the chat. Free, no account, read-only."><link rel="canonical" href="https://citedby.eu/mcp-server"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="stylesheet" href="/saas.css"><link rel="stylesheet" href="/doc.css?v=bbef868a"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "CitedBy in Claude, ChatGPT, Cursor and Codex (MCP server)", "url": "https://citedby.eu/mcp-server", "inLanguage": "en", "description": "Connect CitedBy to your AI tool: check a page, a site's AI-crawler access, its llms.txt and a domain's backlinks from the chat. Free, no account, read-only.", "isPartOf": {"@type": "WebSite", "name": "CitedBy", "url": "https://citedby.eu"}, "publisher": {"@type": "Organization", "name": "CitedBy", "url": "https://citedby.eu"}}</script></head><body class="cb dc"><a class="sr" href="#main">Skip to content</a>
+<header class="topbar"><div class="in"><a class="mark" href="/"><i></i>CitedBy</a><nav aria-label="Main"><a class="opt" href="/#checks">What we check</a><a href="/plans">Pricing</a><a href="/blog">Guides</a><a class="opt" href="/data">Data</a></nav><a class="signin" href="/signin?next=%2Fapp.html">Sign in</a><a class="btn sm go" href="/app.html#/new">Audit a site</a></div></header><main id="main">
+<h1>CitedBy in your AI tools</h1>
+<p class="ans">CitedBy runs as an MCP server. Add it to Claude, ChatGPT, Cursor or Codex and ask the assistant to check a page, see which AI crawlers a site lets in, read its llms.txt, or list the domains that link to it. It is free, needs no account and only reads.</p>
+<h2>Connect it</h2>
+<p>The server address is <code>https://citedby.eu/mcp</code> (MCP Streamable HTTP, no sign-in).</p>
+<ul>
+<li><strong>Claude Code:</strong> <code>claude mcp add --transport http citedby https://citedby.eu/mcp</code></li>
+<li><strong>Claude on the web and desktop:</strong> Settings, Connectors, Add custom connector, and paste the address.</li>
+<li><strong>Cursor:</strong> <a href="cursor://anysphere.cursor-deeplink/mcp/install?name=citedby&amp;config=eyJ1cmwiOiJodHRwczovL2NpdGVkYnkuZXUvbWNwIn0=">add CitedBy to Cursor</a>, or put <code>{"mcpServers":{"citedby":{"url":"https://citedby.eu/mcp"}}}</code> in <code>~/.cursor/mcp.json</code>.</li>
+<li><strong>Codex:</strong> <code>codex mcp add citedby --url https://citedby.eu/mcp</code></li>
+<li><strong>Any other MCP client:</strong> add a remote server with the address above.</li>
+</ul>
+<h2>What it can do</h2>
+<table><thead><tr><th>Tool</th><th>What you get</th></tr></thead><tbody>
+<tr><td><code>check_page</code></td><td>One page, fetched as CitedBot: what is wrong for AI answers and search (title, description, headings, structured data, canonical, language, links), each with why it matters and the exact fix.</td></tr>
+<tr><td><code>check_ai_crawler_access</code></td><td>For GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Bingbot and Googlebot: allowed by robots.txt, and answered by the server, or not.</td></tr>
+<tr><td><code>check_llms_txt</code></td><td>Whether <code>/llms.txt</code> exists, whether its links work, and whether <code>/llms-full.txt</code> exists.</td></tr>
+<tr><td><code>backlinks</code></td><td>How many domains link to a domain, and the strongest ones, from the Common Crawl web graph. It says when a domain is not in the data.</td></tr>
+</tbody></table>
+<h2>Ask it like this</h2>
+<ul>
+<li>"Check https://example.com/pricing with CitedBy and tell me what to fix first."</li>
+<li>"Can GPTBot and PerplexityBot read example.com?"</li>
+<li>"Does example.com have a working llms.txt?"</li>
+<li>"Which domains link to example.com?"</li>
+</ul>
+<h2>Limits and rules</h2>
+<ul>
+<li>Pages are fetched as <a href="/bot">CitedBot</a>. It reads robots.txt first and obeys it; a page it may not fetch is reported as not fetched, never guessed.</li>
+<li>When a site refuses the crawler or does not answer, the tool says that instead of scoring the page.</li>
+<li><code>check_page</code> is one page with deterministic checks. A whole-site audit, with every page up to your plan's limit and the exact fix for each, is on <a href="/plans">the plans page</a>.</li>
+<li>40 checks an hour from one address. Results are kept for an hour.</li>
+<li>Nothing is written to your site, and nothing here asks who you are.</li>
+</ul>
+<p>Questions or something that does not work: hello@citedby.eu.</p></main><footer><div class="w"><span>© 2026 CitedBy · <a href="mailto:hello@citedby.eu">hello@citedby.eu</a></span><a href="/plans">Pricing</a><a href="/blog">Guides</a><a href="/data">Data</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/refund">Refunds</a><a href="/contact">Contact</a><a href="/legal">Legal notice</a></div></footer></body></html>

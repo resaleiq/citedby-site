@@ -311,7 +311,7 @@ Mozilla/5.0 (compatible; CitedBot/1.0; +https://citedby.eu/bot)
 
 When it visits
 
-Only when a site owner or a visitor asks CitedBy to audit that site. It does not crawl on its own, and it does not build an index of the web.
+Only when a site owner or a visitor asks CitedBy to audit that site, or asks their AI tool to check one page through the CitedBy MCP server (one page, the same rules). It does not crawl on its own, and it does not build an index of the web.
 
 How it behaves
 

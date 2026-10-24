@@ -7,7 +7,7 @@ import base64, hashlib, hmac, html, json, mimetypes, os, re, sqlite3, threading,
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 
-import analytics, backlinks, doorcheck, follow_link, home, hub_links, langroutes, legal_links, pages, proxy, safefetch, social, trust, withdraw_link
+import analytics, backlinks, mcp, doorcheck, follow_link, home, hub_links, langroutes, legal_links, pages, proxy, safefetch, social, trust, withdraw_link
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CONSENT_VERSION = "2026-10-15.v1"
@@ -360,7 +360,7 @@ class H(BaseHTTPRequestHandler):
         elif code == 404 and ctype.startswith("text/html"):
             body = withdraw_link.inject(body)  # RES-2199: the EU withdrawal link is on every page, error pages included (no analytics or share tags there)
         cache = "no-store"
-        if code == 200 and not self.path.startswith(("/api/", "/health", "/deploy-id")):
+        if code == 200 and not self.path.startswith(("/api/", "/health", "/deploy-id", "/mcp")):
             cache = "public, max-age=604800" if self.path.split("?")[0].endswith((".css", ".js", ".svg", ".png", ".ico", ".woff2")) and not self.path.startswith(("/saas.", "/landing.", "/sample.")) else "public, max-age=300"
         etag = None
         if cache != "no-store" and self.command in ("GET", "HEAD"):  # RES-3284: conditional requests for pages and assets (crawlers re-fetch with If-None-Match)
@@ -453,9 +453,19 @@ class H(BaseHTTPRequestHandler):
 
     def do_HEAD(self): self.do_GET()
 
+    MCP_CORS = {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Content-Type, Accept, Mcp-Session-Id, Mcp-Protocol-Version, Authorization", "Access-Control-Allow-Methods": "POST, GET, OPTIONS", "Access-Control-Expose-Headers": "Mcp-Session-Id", "X-Robots-Tag": "noindex"}
+
+    def do_OPTIONS(self):  # RES-3798: the CORS preflight of a browser-based MCP client
+        if urlparse(self.path).path != "/mcp": return self.out(404, not_found_page())
+        self.out(204, b"", "application/json", extra=self.MCP_CORS)
+
     def do_GET(self):
         if proxy.handle(self, "GET"): return
         u = urlparse(self.path)
+        if u.path == "/mcp":  # RES-3798: the MCP endpoint answers POST; a person who opens it in a browser is sent to the page that explains it, a client asking for an event stream is told there is none
+            if "text/html" in (self.headers.get("Accept") or "") and "text/event-stream" not in (self.headers.get("Accept") or ""):
+                return self.out(302, b"", extra={"Location": "/mcp-server", "X-Robots-Tag": "noindex"})
+            return self.out(405, json.dumps({"error": "Use POST with a JSON-RPC message (MCP Streamable HTTP). There is no event stream."}).encode(), "application/json", extra={**self.MCP_CORS, "Allow": "POST, OPTIONS"})
         tok = (parse_qs(u.query).get("t") or [""])[0]
         if backlinks.ROUTE.match(u.path) or u.path == "/sitemap-backlinks.xml":  # RES-3699: open-data referring-domain lookup; RES-3749: in fr, de, es and nl too
             return self.backlinks(u)
@@ -501,6 +511,12 @@ class H(BaseHTTPRequestHandler):
     def do_POST(self):
         if proxy.handle(self, "POST"): return
         u = urlparse(self.path)
+        if u.path == "/mcp":  # RES-3798
+            try: n = int(self.headers.get("Content-Length") or 0)
+            except ValueError: n = -1
+            if n < 0 or n > 16384: return self.out(413, json.dumps({"error": "message too large"}).encode(), "application/json", extra=self.MCP_CORS)
+            code, body = mcp.handle(self.rfile.read(n) if n else b"", self.ip())
+            return self.out(code, body, "application/json", extra=self.MCP_CORS)
         try:
             n = int(self.headers.get("Content-Length") or 0)
         except ValueError:

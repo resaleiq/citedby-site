@@ -3,7 +3,7 @@
 <p>CitedBot is the crawler behind CitedBy site audits: it crawls your pages, analyses them and reports what to fix. Its User-Agent header is:</p>
 <p><code>Mozilla/5.0 (compatible; CitedBot/1.0; +https://citedby.eu/bot)</code></p>
 <h2>When it visits</h2>
-<p>Only when a site owner or a visitor asks CitedBy to audit that site. It does not crawl on its own, and it does not build an index of the web.</p>
+<p>Only when a site owner or a visitor asks CitedBy to audit that site, or asks their AI tool to check one page through the <a href="/mcp-server">CitedBy MCP server</a> (one page, the same rules). It does not crawl on its own, and it does not build an index of the web.</p>
 <h2>How it behaves</h2>
 <ul>
 <li>It reads your robots.txt first and obeys it. It follows the group <code>User-agent: CitedBot</code> and, if there is none, the group <code>User-agent: *</code>.</li>
