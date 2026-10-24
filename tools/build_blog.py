@@ -34,6 +34,11 @@ def inline(s):
     s = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", lambda m: '<a href="%s"%s>%s</a>' % (m.group(2), ' rel="noopener"' if m.group(2).startswith("http") else "", m.group(1)), s)
     s = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", s)
     return re.sub(r"\x00(\d+)\x00", lambda m: codes[int(m.group(1))], s)
+# RES-4124: a bare host.tld/path in a table cell is wrapped in span.u (blog.css lets only these break inside the address)
+BARE_URL = re.compile(r"(?<![\w./@-])[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,}/[^\s<>,;)]*[^\s<>,;).]")
+def cell(s):
+    parts = re.split(r"(<a\b.*?</a>|<code>.*?</code>|<[^>]+>)", inline(s))
+    return "".join(x if x.startswith("<") else BARE_URL.sub(lambda m: '<span class="u">%s</span>' % m.group(0), x) for x in parts)
 def plain(s): return re.sub(r"<[^>]+>", "", inline(s))
 def slugify(s): return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")[:48]
 
@@ -136,7 +141,7 @@ def render_body(body, fm, loc, state):
             # RES-4048: a table of 3+ columns stacks into labelled rows at <=480 px (blog.css .tw.stack); each cell carries its column header
             stack = len(rows[0]) >= 3
             lab = ['data-label="%s"' % E(html.unescape(plain(c)), quote=True) for c in rows[0]]
-            tb = "".join("<tr>%s</tr>" % "".join("<td%s>%s</td>" % (" " + (lab[j] if j < len(lab) else 'data-label=""') if stack else "", inline(c)) for j, c in enumerate(r)) for r in rows[1:])
+            tb = "".join("<tr>%s</tr>" % "".join("<td%s>%s</td>" % (" " + (lab[j] if j < len(lab) else 'data-label=""') if stack else "", cell(c)) for j, c in enumerate(r)) for r in rows[1:])
             out.append('<div class="tw%s"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (" stack" if stack else "", th, tb)); continue
         m = re.match(r'!\[([^\]]*)\]\(([^)\s]+)(?: "([^"]*)")?\)(?:\{(\d+)x(\d+)\})?$', ln.strip())
         if m:
