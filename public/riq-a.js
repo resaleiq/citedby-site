@@ -35,6 +35,14 @@
   }
   window.riq = function (name, props) { if (EVENTS[name]) send(name, props); };
   send("$pageview");
+  // a server-rendered result page marks its <main data-riq-event="check_started" data-riq-kind="crawlers"> and the event goes out once per page view (RES-3795: the tool pages send script-src 'self', so they cannot call window.riq inline).
+  // Free-check events only: a marker fires on every view and refresh, so it can never send a money or sign-up event.
+  var MARKED = { check_started: 1, check_finished: 1 };
+  function marked() {
+    var el = document.querySelector("[data-riq-event]"), name = el && el.getAttribute("data-riq-event");
+    if (name && Object.prototype.hasOwnProperty.call(MARKED, name)) send(name, { kind: el.getAttribute("data-riq-kind") || undefined });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", marked); else marked();
   // single-page apps: one pageview per client-side route change
   var last = location.pathname;
   function route() { if (location.pathname !== last) { last = location.pathname; send("$pageview"); } }

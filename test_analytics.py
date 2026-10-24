@@ -22,7 +22,7 @@ def test_inject_implied_head_goes_before_body():  # RES-2130: citedby.eu / and /
 
 
 def test_no_query_or_email_in_tag():
-    assert b"@" not in analytics.TAG and b"?" not in analytics.TAG.replace(b"riq-a.js?v=5", b"")
+    assert b"@" not in analytics.TAG and b"?" not in analytics.TAG.replace(b"riq-a.js?v=6", b"")
 
 
 def test_relay_ignores_empty_and_oversize_bodies(monkeypatch):
