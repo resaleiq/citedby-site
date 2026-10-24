@@ -78,7 +78,7 @@ La comprobación gratuita del recuadro de arriba prueba ocho rastreadores (GPTBo
 
 ### ¿Meta-ExternalFetcher respeta robots.txt?
 
-No siempre. Parcial, puede saltarse robots.txt porque las consultas las pide un usuario. Por eso una regla para Meta-ExternalFetcher en robots.txt puede no detenerlo. Para rechazarlo con seguridad, usa una regla de cortafuegos o de CDN que combine el user agent y las direcciones publicadas.
+No siempre: puede saltarse robots.txt porque las consultas las pide un usuario. Por eso una regla para Meta-ExternalFetcher en robots.txt puede no detenerlo. Para rechazarlo con seguridad, usa una regla de cortafuegos o de CDN que combine el user agent y las direcciones publicadas.
 
 ### ¿Cómo sé que Meta-ExternalFetcher está realmente bloqueado?
 

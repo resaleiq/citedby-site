@@ -78,7 +78,7 @@ La comprobación gratuita del recuadro de arriba prueba ocho rastreadores (GPTBo
 
 ### ¿Amzn-User respeta robots.txt?
 
-No siempre. Parcial, puede no seguir todas las directivas de robots.txt porque las acciones pueden ser iniciadas por el usuario. Por eso una regla para Amzn-User en robots.txt puede no detenerlo. Para rechazarlo con seguridad, usa una regla de cortafuegos o de CDN que combine el user agent y las direcciones publicadas.
+No siempre: puede no seguir todas las directivas de robots.txt porque las acciones pueden ser iniciadas por el usuario. Por eso una regla para Amzn-User en robots.txt puede no detenerlo. Para rechazarlo con seguridad, usa una regla de cortafuegos o de CDN que combine el user agent y las direcciones publicadas.
 
 ### ¿Cómo sé que Amzn-User está realmente bloqueado?
 

@@ -44,6 +44,15 @@ def ip_short(d, s):
     return {"html_list": s["ip_short_html"], "verify_tool": s["ip_short_verify"], "rdns": s["ip_short_rdns"], "advice": s["ip_short_advice"]}.get(k, s["ip_short_none"])
 def has_ua(d): return bool(d.get("ua")) and not d["ua"].startswith("Not published")
 
+def a1_follows(d, tx, s, co):
+    """The FAQ answer for a partial follower opens with the table cell; a leading 'Partial.' or 'Partial,' becomes 'Not always.' or 'Not always:' so the answer reads as a sentence."""
+    f = " ".join(tx["follows"].split()).rstrip(".")
+    m = re.match(r"(Partial|Partiel|Teilweise|Parcial|Gedeeltelijk)([.,]) ", f) if d["follows"] in ("partial", "no") else None
+    if not m: return f
+    rest = f[m.end():]
+    return s["partial"] + (". " + rest[0].upper() + rest[1:] if m.group(2) == "." else co + " " + rest)
+
+
 def page(d, loc, tx, ents, art_titles):
     s, slug, name = S[loc], d["slug"], d["name"]; co = " :" if loc == "fr" else ":"  # French puts a space before the colon (the build turns it into U+202F)
     jobs = s["jobs"][d["job"]]; obey = s[d["follows"]]; pre = prefix(loc)
@@ -75,7 +84,7 @@ def page(d, loc, tx, ents, art_titles):
     if d["job"] == "control": body += [s["ctl"].format(name=name), ""]
     if comp: body += ["## " + s["h_compare"].format(name=comp["name"]), "", "[%s](%s/bots/%s)%s %s" % (comp["name"], pre, comp["slug"], co, " ".join(tx["compare"].split())), ""]
     body += ["## " + s["h_check"], "", (s["check_in"] if slug in CHECKED else s["check_out"]).format(name=name, token=d["token"]), "", "## FAQ", "", "### " + s["q1"].format(name=name), "",
-             s["a1_" + {"yes": "yes", "partial": "partial", "token_only": "token_only", "no": "partial", "unknown": "yes"}[d["follows"]]].format(name=name, token=d["token"], follows=" ".join(tx["follows"].split()).rstrip(".")), "",
+             s["a1_" + {"yes": "yes", "partial": "partial", "token_only": "token_only", "no": "partial", "unknown": "yes"}[d["follows"]]].format(name=name, token=d["token"], follows=a1_follows(d, tx, s, co)), "",
              "### " + s["q2"].format(name=name), "", s["a2"], "", "## Sources", ""]
     seen = set()
     for x in d["sources"] + [{"title": q["title"], "url": q["url"]}]:

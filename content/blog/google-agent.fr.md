@@ -80,7 +80,7 @@ Le contrôle gratuit dans l'encadré ci-dessus teste huit robots (GPTBot, OAI-Se
 
 ### Google-Agent respecte-t-il robots.txt ?
 
-Pas toujours. Partiel. Google indique que les agents de récupération déclenchée par l’utilisateur ignorent généralement les règles robots.txt, car un utilisateur a demandé la récupération. Une règle pour Google-Agent dans robots.txt peut donc ne pas l'arrêter. Pour le refuser à coup sûr, utilisez une règle de pare-feu ou de CDN qui combine le user agent et les adresses publiées.
+Pas toujours. Google indique que les agents de récupération déclenchée par l’utilisateur ignorent généralement les règles robots.txt, car un utilisateur a demandé la récupération. Une règle pour Google-Agent dans robots.txt peut donc ne pas l'arrêter. Pour le refuser à coup sûr, utilisez une règle de pare-feu ou de CDN qui combine le user agent et les adresses publiées.
 
 ### Comment savoir si Google-Agent est vraiment bloqué ?
 

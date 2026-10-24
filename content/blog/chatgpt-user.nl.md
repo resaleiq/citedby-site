@@ -78,7 +78,7 @@ De gratis check in het kader hierboven test ChatGPT-User met een echt verzoek en
 
 ### Volgt ChatGPT-User robots.txt?
 
-Niet altijd. Robots.txt-regels gelden mogelijk niet. Een regel voor ChatGPT-User in robots.txt houdt het dus mogelijk niet tegen. Wil je het zeker weigeren, gebruik dan een firewall- of CDN-regel die user agent en gepubliceerde adressen combineert.
+Robots.txt-regels gelden mogelijk niet. Een regel voor ChatGPT-User in robots.txt houdt het dus mogelijk niet tegen. Wil je het zeker weigeren, gebruik dan een firewall- of CDN-regel die user agent en gepubliceerde adressen combineert.
 
 ### Hoe weet ik dat ChatGPT-User echt geblokkeerd is?
 

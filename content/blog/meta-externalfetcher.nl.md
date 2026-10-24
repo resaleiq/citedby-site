@@ -78,7 +78,7 @@ De gratis check in het kader hierboven test acht crawlers (GPTBot, OAI-SearchBot
 
 ### Volgt Meta-ExternalFetcher robots.txt?
 
-Niet altijd. Gedeeltelijk, kan robots.txt omzeilen omdat een gebruiker de ophaalacties vraagt. Een regel voor Meta-ExternalFetcher in robots.txt houdt het dus mogelijk niet tegen. Wil je het zeker weigeren, gebruik dan een firewall- of CDN-regel die user agent en gepubliceerde adressen combineert.
+Niet altijd: kan robots.txt omzeilen omdat een gebruiker de ophaalacties vraagt. Een regel voor Meta-ExternalFetcher in robots.txt houdt het dus mogelijk niet tegen. Wil je het zeker weigeren, gebruik dan een firewall- of CDN-regel die user agent en gepubliceerde adressen combineert.
 
 ### Hoe weet ik dat Meta-ExternalFetcher echt geblokkeerd is?
 

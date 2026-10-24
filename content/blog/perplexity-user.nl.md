@@ -80,7 +80,7 @@ De gratis check in het kader hierboven test acht crawlers (GPTBot, OAI-SearchBot
 
 ### Volgt Perplexity-User robots.txt?
 
-Niet altijd. Negeert robots.txt-regels meestal, omdat een gebruiker het ophalen vroeg. Een regel voor Perplexity-User in robots.txt houdt het dus mogelijk niet tegen. Wil je het zeker weigeren, gebruik dan een firewall- of CDN-regel die user agent en gepubliceerde adressen combineert.
+Negeert robots.txt-regels meestal, omdat een gebruiker het ophalen vroeg. Een regel voor Perplexity-User in robots.txt houdt het dus mogelijk niet tegen. Wil je het zeker weigeren, gebruik dan een firewall- of CDN-regel die user agent en gepubliceerde adressen combineert.
 
 ### Hoe weet ik dat Perplexity-User echt geblokkeerd is?
 

@@ -78,7 +78,7 @@ Der kostenlose Check im Kasten oben testet ChatGPT-User mit einer echten Anfrage
 
 ### Befolgt ChatGPT-User die robots.txt?
 
-Nicht immer. robots.txt-Regeln gelten möglicherweise nicht. Eine Regel für ChatGPT-User in der robots.txt hält ihn deshalb möglicherweise nicht auf. Um ihn sicher abzuweisen, nutzen Sie eine Firewall- oder CDN-Regel, die User-Agent und veröffentlichte Adressen kombiniert.
+robots.txt-Regeln gelten möglicherweise nicht. Eine Regel für ChatGPT-User in der robots.txt hält ihn deshalb möglicherweise nicht auf. Um ihn sicher abzuweisen, nutzen Sie eine Firewall- oder CDN-Regel, die User-Agent und veröffentlichte Adressen kombiniert.
 
 ### Woher weiß ich, dass ChatGPT-User wirklich gesperrt ist?
 

@@ -80,7 +80,7 @@ La comprobación gratuita del recuadro de arriba prueba ocho rastreadores (GPTBo
 
 ### ¿Google-Agent respeta robots.txt?
 
-No siempre. Parcial. Google dice que los agentes de consultas iniciadas por el usuario por lo general ignoran las reglas de robots.txt porque la consulta la pidió un usuario. Por eso una regla para Google-Agent en robots.txt puede no detenerlo. Para rechazarlo con seguridad, usa una regla de cortafuegos o de CDN que combine el user agent y las direcciones publicadas.
+No siempre. Google dice que los agentes de consultas iniciadas por el usuario por lo general ignoran las reglas de robots.txt porque la consulta la pidió un usuario. Por eso una regla para Google-Agent en robots.txt puede no detenerlo. Para rechazarlo con seguridad, usa una regla de cortafuegos o de CDN que combine el user agent y las direcciones publicadas.
 
 ### ¿Cómo sé que Google-Agent está realmente bloqueado?
 

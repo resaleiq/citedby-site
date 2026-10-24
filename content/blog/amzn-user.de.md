@@ -78,7 +78,7 @@ Der kostenlose Check im Kasten oben testet acht Crawler (GPTBot, OAI-SearchBot, 
 
 ### Befolgt Amzn-User die robots.txt?
 
-Nicht immer. Teilweise, befolgt möglicherweise nicht alle robots.txt-Anweisungen, weil Aktionen vom Nutzer ausgehen können. Eine Regel für Amzn-User in der robots.txt hält ihn deshalb möglicherweise nicht auf. Um ihn sicher abzuweisen, nutzen Sie eine Firewall- oder CDN-Regel, die User-Agent und veröffentlichte Adressen kombiniert.
+Nicht immer: befolgt möglicherweise nicht alle robots.txt-Anweisungen, weil Aktionen vom Nutzer ausgehen können. Eine Regel für Amzn-User in der robots.txt hält ihn deshalb möglicherweise nicht auf. Um ihn sicher abzuweisen, nutzen Sie eine Firewall- oder CDN-Regel, die User-Agent und veröffentlichte Adressen kombiniert.
 
 ### Woher weiß ich, dass Amzn-User wirklich gesperrt ist?
 

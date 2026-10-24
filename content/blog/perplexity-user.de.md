@@ -80,7 +80,7 @@ Der kostenlose Check im Kasten oben testet acht Crawler (GPTBot, OAI-SearchBot, 
 
 ### Befolgt Perplexity-User die robots.txt?
 
-Nicht immer. Ignoriert robots.txt-Regeln in der Regel, weil ein Nutzer den Abruf angefordert hat. Eine Regel für Perplexity-User in der robots.txt hält ihn deshalb möglicherweise nicht auf. Um ihn sicher abzuweisen, nutzen Sie eine Firewall- oder CDN-Regel, die User-Agent und veröffentlichte Adressen kombiniert.
+Ignoriert robots.txt-Regeln in der Regel, weil ein Nutzer den Abruf angefordert hat. Eine Regel für Perplexity-User in der robots.txt hält ihn deshalb möglicherweise nicht auf. Um ihn sicher abzuweisen, nutzen Sie eine Firewall- oder CDN-Regel, die User-Agent und veröffentlichte Adressen kombiniert.
 
 ### Woher weiß ich, dass Perplexity-User wirklich gesperrt ist?
 

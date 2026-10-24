@@ -78,7 +78,7 @@ Le contrôle gratuit dans l'encadré ci-dessus teste ChatGPT-User avec une requ�
 
 ### ChatGPT-User respecte-t-il robots.txt ?
 
-Pas toujours. Les règles robots.txt peuvent ne pas s’appliquer. Une règle pour ChatGPT-User dans robots.txt peut donc ne pas l'arrêter. Pour le refuser à coup sûr, utilisez une règle de pare-feu ou de CDN qui combine le user agent et les adresses publiées.
+Les règles robots.txt peuvent ne pas s’appliquer. Une règle pour ChatGPT-User dans robots.txt peut donc ne pas l'arrêter. Pour le refuser à coup sûr, utilisez une règle de pare-feu ou de CDN qui combine le user agent et les adresses publiées.
 
 ### Comment savoir si ChatGPT-User est vraiment bloqué ?
 

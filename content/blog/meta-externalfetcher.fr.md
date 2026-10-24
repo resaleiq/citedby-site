@@ -78,7 +78,7 @@ Le contrôle gratuit dans l'encadré ci-dessus teste huit robots (GPTBot, OAI-Se
 
 ### Meta-ExternalFetcher respecte-t-il robots.txt ?
 
-Pas toujours. Partiel, peut contourner robots.txt car les récupérations sont demandées par un utilisateur. Une règle pour Meta-ExternalFetcher dans robots.txt peut donc ne pas l'arrêter. Pour le refuser à coup sûr, utilisez une règle de pare-feu ou de CDN qui combine le user agent et les adresses publiées.
+Pas toujours : peut contourner robots.txt car les récupérations sont demandées par un utilisateur. Une règle pour Meta-ExternalFetcher dans robots.txt peut donc ne pas l'arrêter. Pour le refuser à coup sûr, utilisez une règle de pare-feu ou de CDN qui combine le user agent et les adresses publiées.
 
 ### Comment savoir si Meta-ExternalFetcher est vraiment bloqué ?
 

@@ -80,7 +80,7 @@ La comprobación gratuita del recuadro de arriba prueba ocho rastreadores (GPTBo
 
 ### ¿Perplexity-User respeta robots.txt?
 
-No siempre. Por lo general ignora las reglas de robots.txt, porque la consulta la pidió un usuario. Por eso una regla para Perplexity-User en robots.txt puede no detenerlo. Para rechazarlo con seguridad, usa una regla de cortafuegos o de CDN que combine el user agent y las direcciones publicadas.
+Por lo general ignora las reglas de robots.txt, porque la consulta la pidió un usuario. Por eso una regla para Perplexity-User en robots.txt puede no detenerlo. Para rechazarlo con seguridad, usa una regla de cortafuegos o de CDN que combine el user agent y las direcciones publicadas.
 
 ### ¿Cómo sé que Perplexity-User está realmente bloqueado?
 

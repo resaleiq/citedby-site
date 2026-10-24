@@ -78,7 +78,7 @@ De gratis check in het kader hierboven test acht crawlers (GPTBot, OAI-SearchBot
 
 ### Volgt ExaUser robots.txt?
 
-Niet altijd. Gedeeltelijk, de aanbieder zegt dat robots.txt-regels mogelijk niet gelden voor door de gebruiker gestarte verzoeken. Een regel voor ExaUser in robots.txt houdt het dus mogelijk niet tegen. Wil je het zeker weigeren, gebruik dan een firewall- of CDN-regel die user agent en gepubliceerde adressen combineert.
+Niet altijd: de aanbieder zegt dat robots.txt-regels mogelijk niet gelden voor door de gebruiker gestarte verzoeken. Een regel voor ExaUser in robots.txt houdt het dus mogelijk niet tegen. Wil je het zeker weigeren, gebruik dan een firewall- of CDN-regel die user agent en gepubliceerde adressen combineert.
 
 ### Hoe weet ik dat ExaUser echt geblokkeerd is?
 

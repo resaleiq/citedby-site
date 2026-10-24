@@ -78,7 +78,7 @@ De gratis check in het kader hierboven test acht crawlers (GPTBot, OAI-SearchBot
 
 ### Volgt Amzn-User robots.txt?
 
-Niet altijd. Gedeeltelijk, volgt mogelijk niet alle robots.txt-regels omdat acties door de gebruiker kunnen worden gestart. Een regel voor Amzn-User in robots.txt houdt het dus mogelijk niet tegen. Wil je het zeker weigeren, gebruik dan een firewall- of CDN-regel die user agent en gepubliceerde adressen combineert.
+Niet altijd: volgt mogelijk niet alle robots.txt-regels omdat acties door de gebruiker kunnen worden gestart. Een regel voor Amzn-User in robots.txt houdt het dus mogelijk niet tegen. Wil je het zeker weigeren, gebruik dan een firewall- of CDN-regel die user agent en gepubliceerde adressen combineert.
 
 ### Hoe weet ik dat Amzn-User echt geblokkeerd is?
 

@@ -78,7 +78,7 @@ Der kostenlose Check im Kasten oben testet acht Crawler (GPTBot, OAI-SearchBot, 
 
 ### Befolgt Google-Pinpoint die robots.txt?
 
-Nicht immer. Teilweise. Google sagt, vom Nutzer ausgelöste Fetcher ignorieren robots.txt-Regeln in der Regel, weil ein Nutzer den Abruf angefordert hat. Eine Regel für Google-Pinpoint in der robots.txt hält ihn deshalb möglicherweise nicht auf. Um ihn sicher abzuweisen, nutzen Sie eine Firewall- oder CDN-Regel, die User-Agent und veröffentlichte Adressen kombiniert.
+Nicht immer. Google sagt, vom Nutzer ausgelöste Fetcher ignorieren robots.txt-Regeln in der Regel, weil ein Nutzer den Abruf angefordert hat. Eine Regel für Google-Pinpoint in der robots.txt hält ihn deshalb möglicherweise nicht auf. Um ihn sicher abzuweisen, nutzen Sie eine Firewall- oder CDN-Regel, die User-Agent und veröffentlichte Adressen kombiniert.
 
 ### Woher weiß ich, dass Google-Pinpoint wirklich gesperrt ist?
 

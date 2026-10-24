@@ -78,7 +78,7 @@ Der kostenlose Check im Kasten oben testet acht Crawler (GPTBot, OAI-SearchBot, 
 
 ### Befolgt ExaUser die robots.txt?
 
-Nicht immer. Teilweise, laut Anbieter gelten robots.txt-Regeln für vom Nutzer ausgelöste Abrufe möglicherweise nicht. Eine Regel für ExaUser in der robots.txt hält ihn deshalb möglicherweise nicht auf. Um ihn sicher abzuweisen, nutzen Sie eine Firewall- oder CDN-Regel, die User-Agent und veröffentlichte Adressen kombiniert.
+Nicht immer: laut Anbieter gelten robots.txt-Regeln für vom Nutzer ausgelöste Abrufe möglicherweise nicht. Eine Regel für ExaUser in der robots.txt hält ihn deshalb möglicherweise nicht auf. Um ihn sicher abzuweisen, nutzen Sie eine Firewall- oder CDN-Regel, die User-Agent und veröffentlichte Adressen kombiniert.
 
 ### Woher weiß ich, dass ExaUser wirklich gesperrt ist?
 

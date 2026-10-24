@@ -78,7 +78,7 @@ The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, Cha
 
 ### Does Amzn-User follow robots.txt?
 
-Not always. Partial, may not follow all robots.txt directives because actions can be user-initiated. A rule for Amzn-User in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
+Not always: may not follow all robots.txt directives because actions can be user-initiated. A rule for Amzn-User in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
 
 ### How do I know Amzn-User is really blocked?
 

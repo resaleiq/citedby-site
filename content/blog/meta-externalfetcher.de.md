@@ -78,7 +78,7 @@ Der kostenlose Check im Kasten oben testet acht Crawler (GPTBot, OAI-SearchBot, 
 
 ### Befolgt Meta-ExternalFetcher die robots.txt?
 
-Nicht immer. Teilweise, kann robots.txt umgehen, weil die Abrufe von einem Nutzer angefordert werden. Eine Regel für Meta-ExternalFetcher in der robots.txt hält ihn deshalb möglicherweise nicht auf. Um ihn sicher abzuweisen, nutzen Sie eine Firewall- oder CDN-Regel, die User-Agent und veröffentlichte Adressen kombiniert.
+Nicht immer: kann robots.txt umgehen, weil die Abrufe von einem Nutzer angefordert werden. Eine Regel für Meta-ExternalFetcher in der robots.txt hält ihn deshalb möglicherweise nicht auf. Um ihn sicher abzuweisen, nutzen Sie eine Firewall- oder CDN-Regel, die User-Agent und veröffentlichte Adressen kombiniert.
 
 ### Woher weiß ich, dass Meta-ExternalFetcher wirklich gesperrt ist?
 

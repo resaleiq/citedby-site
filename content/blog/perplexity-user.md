@@ -80,7 +80,7 @@ The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, Cha
 
 ### Does Perplexity-User follow robots.txt?
 
-Not always. Generally ignores robots.txt rules, because a user requested the fetch. A rule for Perplexity-User in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
+Generally ignores robots.txt rules, because a user requested the fetch. A rule for Perplexity-User in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
 
 ### How do I know Perplexity-User is really blocked?
 

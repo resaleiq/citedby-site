@@ -78,7 +78,7 @@ Le contrôle gratuit dans l'encadré ci-dessus teste huit robots (GPTBot, OAI-Se
 
 ### ExaUser respecte-t-il robots.txt ?
 
-Pas toujours. Partiel, l’opérateur indique que les règles robots.txt peuvent ne pas s’appliquer aux récupérations lancées par l’utilisateur. Une règle pour ExaUser dans robots.txt peut donc ne pas l'arrêter. Pour le refuser à coup sûr, utilisez une règle de pare-feu ou de CDN qui combine le user agent et les adresses publiées.
+Pas toujours : l’opérateur indique que les règles robots.txt peuvent ne pas s’appliquer aux récupérations lancées par l’utilisateur. Une règle pour ExaUser dans robots.txt peut donc ne pas l'arrêter. Pour le refuser à coup sûr, utilisez une règle de pare-feu ou de CDN qui combine le user agent et les adresses publiées.
 
 ### Comment savoir si ExaUser est vraiment bloqué ?
 

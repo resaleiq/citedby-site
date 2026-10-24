@@ -78,7 +78,7 @@ La comprobación gratuita del recuadro de arriba prueba ocho rastreadores (GPTBo
 
 ### ¿ExaUser respeta robots.txt?
 
-No siempre. Parcial, el proveedor dice que es posible que las reglas de robots.txt no se apliquen a las consultas iniciadas por el usuario. Por eso una regla para ExaUser en robots.txt puede no detenerlo. Para rechazarlo con seguridad, usa una regla de cortafuegos o de CDN que combine el user agent y las direcciones publicadas.
+No siempre: el proveedor dice que es posible que las reglas de robots.txt no se apliquen a las consultas iniciadas por el usuario. Por eso una regla para ExaUser en robots.txt puede no detenerlo. Para rechazarlo con seguridad, usa una regla de cortafuegos o de CDN que combine el user agent y las direcciones publicadas.
 
 ### ¿Cómo sé que ExaUser está realmente bloqueado?
 

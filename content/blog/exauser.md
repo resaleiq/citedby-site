@@ -78,7 +78,7 @@ The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, Cha
 
 ### Does ExaUser follow robots.txt?
 
-Not always. Partial, vendor says robots.txt rules may not apply to user-initiated fetches. A rule for ExaUser in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
+Not always: vendor says robots.txt rules may not apply to user-initiated fetches. A rule for ExaUser in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
 
 ### How do I know ExaUser is really blocked?
 

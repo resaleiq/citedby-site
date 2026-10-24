@@ -78,7 +78,7 @@ The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, Cha
 
 ### Does Google-GeminiNotebook follow robots.txt?
 
-Not always. Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch. A rule for Google-GeminiNotebook in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
+Not always. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch. A rule for Google-GeminiNotebook in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
 
 ### How do I know Google-GeminiNotebook is really blocked?
 

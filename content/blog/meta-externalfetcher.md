@@ -78,7 +78,7 @@ The free check in the box above tests eight crawlers (GPTBot, OAI-SearchBot, Cha
 
 ### Does Meta-ExternalFetcher follow robots.txt?
 
-Not always. Partial, may bypass robots.txt because fetches are requested by a user. A rule for Meta-ExternalFetcher in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
+Not always: may bypass robots.txt because fetches are requested by a user. A rule for Meta-ExternalFetcher in robots.txt may therefore not stop it. To refuse it for certain, use a firewall or CDN rule that matches both the user agent and the published addresses.
 
 ### How do I know Meta-ExternalFetcher is really blocked?
 
