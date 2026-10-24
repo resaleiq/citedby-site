@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """tools/verify_directory.py [dir] (RES-4194): for each data/directory/crawlers/<slug>.json, re-fetch vendor_quote_source.url and check the quote is in the raw page text; for ips.kind json_list re-count prefixes.
-Exit 1 if any fails. Known limits: a vendor page rendered by JavaScript (bingbot) cannot be read by curl and fails; markup that puts a space before punctuation (duckassistbot, mistralai-user) fails the byte match although the words are the vendor's. Fetch with a plain research UA."""
+Exit 1 if any fails. Known limit: a vendor page rendered by JavaScript (bingbot) cannot be read by curl and fails; markup that puts a space before punctuation (handled by norm()). Fetch with a plain research UA."""
 import json, sys, os, re, html, urllib.request, glob
 UA = "CitedBy-research/1.0 (+https://citedby.eu/bot)"
 def get(url):
@@ -10,7 +10,8 @@ def norm(s):
     s = re.sub(r"<(script|style)\b.*?</\1>", " ", s, flags=re.S | re.I)
     s = re.sub(r"<[^>]+>", " ", s); s = html.unescape(s)
     s = s.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"').replace(" ", " ").replace("‑", "-").replace("–", "-").replace("—", "-")
-    return re.sub(r"\s+", " ", s).strip().lower()
+    s = re.sub(r"\s+", " ", s).strip().lower()
+    return re.sub(r" ([.,;:)!?])", r"\1", re.sub(r"\( ", "(", s))  # markup around links leaves a space before punctuation
 def count(j):
     n = 0
     def walk(x):
