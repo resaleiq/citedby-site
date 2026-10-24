@@ -115,12 +115,6 @@ class SSRF(unittest.TestCase):
         dt, r = self._timed_fetch(b"HTTP/1.1 200 OK\r\n" + b"X-A: b\r\n" * 200)
         self.assertLess(dt, 4); self.assertEqual(r["error"], "timeout")
 
-    def test_inbox_key(self):                                                               # R2
-        k = server.inbox_key
-        self.assertEqual({k("victim@gmail.com"), k("Victim+1@gmail.com"), k("v.ictim@googlemail.com")}, {"victim@gmail.com"})
-        self.assertNotEqual(k("a+x@example.com"), k("b@example.com")); self.assertEqual(k("a+x@example.com"), "a@example.com")
-        self.assertNotEqual(k("a.b@example.com"), k("ab@example.com"))                       # dots count outside Gmail
-
     def test_tls_context_matches_http_client(self):                                         # prod OpenSSL 3.5 + Shopify: bare ClientHello gets 429
         self.assertTrue(safefetch.CTX.post_handshake_auth)
 
@@ -204,47 +198,24 @@ class Api(unittest.TestCase):
         self.assertEqual(server.snapshot("BE", "en", "coffee")["other_language"], "fr")
         self.assertIsNone(server.snapshot("DE", "en", "coffee"))
 
-    def test_optin_flow(self):
-        d = {"email": "A@Example.com", "url": "example.com", "lang": "fr", "country": "BE", "niche": "coffee", "consent": True}
-        self.assertEqual(self.post("/api/request", {**d, "consent": False})[0], 400)       # no consent
-        self.assertEqual(self.post("/api/request", {**d, "email": "nope"})[0], 400)
-        self.assertEqual(self.post("/api/request", {**d, "url": "http://127.0.0.1"})[0], 400)
-        self.assertEqual(self.post("/api/request", {**d, "website": "spam.com"})[0], 200)   # honeypot: silent
-        self.assertEqual(self.post("/api/request", d)[0], 200)
-        self.assertEqual(self.post("/api/request", d)[0], 200)                              # duplicate within 10 min: no second mail
-        mails = [m for m in (json.loads(l) for l in open("/tmp/cbt-outbox.jsonl")) if "a@example.com" in m["to"]]
-        self.assertEqual(len(mails), 1); self.assertIn("a@example.com", mails[0]["to"])
-        self.assertIn("Confirmez", mails[0]["subject"]); self.assertIn("List-Unsubscribe", mails[0]["headers"])
-        import re
-        link = re.search(r"(http://t/api/confirm\?t=\S+)", mails[0]["text"]).group(1).replace("http://t", self.base)
-        r = urllib.request.urlopen(link); self.assertEqual(r.status, 200)
-        self.assertEqual(r.headers["Cache-Control"], "no-store")                              # H3: /api never cached
-        self.assertIsNone(server._db.execute("SELECT confirmed_ts FROM request WHERE email='a@example.com'").fetchone()[0])  # GET (mail scanner) does not confirm
-        self.assertIn(b"<form", r.read())
-        self.assertEqual(urllib.request.urlopen(urllib.request.Request(link, b"", method="POST")).status, 200)
-        row = server._db.execute("SELECT confirmed_ts FROM request WHERE email='a@example.com'").fetchone(); self.assertIsNotNone(row[0])
-        self.assertEqual(self.get_status(self.base + "/api/confirm?t=bad.token"), 400)
-        unsub = re.search(r"(http://t/api/unsubscribe\?t=\S+)", mails[0]["text"]).group(1).replace("http://t", self.base)
-        self.assertEqual(urllib.request.urlopen(unsub).status, 200)                         # GET only shows the confirm form
-        self.assertIsNotNone(server._db.execute("SELECT 1 FROM request WHERE email='a@example.com'").fetchone())
-        self.assertEqual(urllib.request.urlopen(urllib.request.Request(unsub, b"", method="POST")).status, 200)
-        self.assertIsNone(server._db.execute("SELECT 1 FROM request WHERE email='a@example.com'").fetchone())
+    def test_the_email_mini_audit_form_is_retired(self):                                    # RES-3940 F3: /privacy never listed what it stored, so the route is closed
+        d = {"email": "a@example.com", "url": "example.com", "lang": "fr", "country": "BE", "niche": "coffee", "consent": True}
+        for body in (d, {}, {**d, "website": "spam.com"}):
+            self.assertEqual(self.post("/api/request", body)[0], 410)
+        self.assertFalse(os.path.exists("/tmp/cbt-outbox.jsonl") and [l for l in open("/tmp/cbt-outbox.jsonl") if "a@example.com" in l and "mini-audit" in l])
+        for path in ("/api/confirm?t=x.y", "/api/unsubscribe?t=x.y"):
+            self.assertEqual(self.get_status(self.base + path), 410)
+            self.assertEqual(self.post(path, {})[0], 404)   # POST of the old forms: no route, nothing stored
+        for page in ("/check.html", "/fr/check.html", "/nl/check.html", "/check.js"):
+            self.assertEqual(self.get_status(self.base + page), 404, page)
 
-    def test_mail_cap_per_address(self):                                                     # H4: 2 mails per address per 24 h across URLs
-        for host in ("example.com", "example.org", "example.net", "iana.org"):
-            self.assertEqual(self.post("/api/request", {"email": "cap@example.com", "url": host, "lang": "en", "consent": True})[0], 200)
-        self.assertEqual(len([l for l in open("/tmp/cbt-outbox.jsonl") if "cap@example.com" in l]), server.MAILS_PER_ADDR_DAY)  # outbox is shared across tests; filtered by recipient
-
-    def test_mail_cap_same_inbox(self):                                                      # R2: +tag and Gmail dots share one cap
-        for addr in ("victim@gmail.com", "victim+1@gmail.com", "v.ictim@gmail.com", "vi.ctim+z@gmail.com"):
-            self.assertEqual(self.post("/api/request", {"email": addr, "url": "example.com", "lang": "en", "consent": True})[0], 200)
-        sent = [l for l in open("/tmp/cbt-outbox.jsonl") if "ictim" in l]
-        self.assertEqual(len(sent), server.MAILS_PER_ADDR_DAY)
-
-    def test_trailing_dot_email_rejected(self):                                             # RES-464: victim@gmail.com. must not get its own cap bucket
-        for addr in ("zdot@gmail.com.", "zdot@gmail..com", "zdot@.gmail.com"):
-            self.assertEqual(self.post("/api/request", {"email": addr, "url": "example.com", "lang": "en", "consent": True})[0], 400, addr)
-        self.assertFalse([l for l in open("/tmp/cbt-outbox.jsonl") if "zdot" in l])
+    def test_the_retired_form_stored_data_is_dropped_at_start(self):
+        server._db.execute("CREATE TABLE IF NOT EXISTS request(id INTEGER PRIMARY KEY, email TEXT)"); server._db.execute("CREATE TABLE IF NOT EXISTS mail_log(email TEXT, ts INTEGER)")
+        server._db.execute("INSERT INTO request(email) VALUES('keep-me-not@example.com')"); server._db.execute("INSERT INTO mail_log VALUES('keep-me-not@example.com', 1)"); server._db.commit()
+        server.retire_mini_audit()
+        self.assertEqual(server._db.execute("SELECT count(*) FROM sqlite_master WHERE name IN ('request','mail_log')").fetchone()[0], 0)
+        server.retire_mini_audit()                                                               # second boot: nothing to drop, no error
+        self.assertNotIn(b"keep-me-not", open(server.DB_PATH, "rb").read())                        # compacted: not left in free pages
 
     def test_clean_url_fallback(self):                                                       # S3: nginx try_files parity
         os.makedirs(os.path.join(server.SITE_DIR, "zz-test"), exist_ok=True)
