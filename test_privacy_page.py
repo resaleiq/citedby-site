@@ -96,15 +96,28 @@ def test_res2797_every_locale_names_the_search_engine_recipients_and_rows():
 
 # RES-3875: agents read logs, support mail and prod records through Claude, so Anthropic gets personal data.
 _LOC = {
-    "": ("software tools to read server logs, support mail and, read-only, account and payment records", "goes to no one except the processors listed"),
-    "fr": ("journaux du serveur, le courrier d'assistance et, en lecture seule, les données de compte et de paiement", "personne d'autre qu'aux sous-traitants énumérés"),
-    "de": ("Serverprotokolle, Support-E-Mails und – mit reinem Lesezugriff – Konto- und Zahlungsdaten", "niemanden außer an die aufgeführten Auftragsverarbeiter"),
-    "es": ("registros del servidor, el correo de soporte y, con acceso de solo lectura, los datos de cuenta y de pago", "salvo a los encargados del tratamiento indicados"),
-    "nl": ("serverlogboeken, supportmail en, met alleen-leestoegang, account- en betalingsgegevens", "aan niemand verstrekt, behalve aan de genoemde verwerkers"),
+    "": ("software tools to read server logs, support mail and, read-only, account and payment records", "goes to no one except the recipients listed"),
+    "fr": ("journaux du serveur, le courrier d'assistance et, en lecture seule, les données de compte et de paiement", "personne d'autre qu'aux destinataires énumérés"),
+    "de": ("Serverprotokolle, Support-E-Mails und – mit reinem Lesezugriff – Konto- und Zahlungsdaten", "niemanden außer an die aufgeführten Empfänger weitergegeben"),
+    "es": ("registros del servidor, el correo de soporte y, con acceso de solo lectura, los datos de cuenta y de pago", "salvo a los destinatarios indicados"),
+    "nl": ("serverlogboeken, supportmail en, met alleen-leestoegang, account- en betalingsgegevens", "aan niemand verstrekt, behalve aan de genoemde ontvangers"),
 }
 _FALSE = ("It does not receive your email address", "not shared with anyone", "Il ne reçoit ni votre adresse", "rien n'est transmis à des tiers",
           "Es erhält weder Ihre E-Mail", "an niemanden weitergegeben", "No recibe su dirección de correo", "no se comparte con nadie",
           "Ontvangt uw e-mailadres of accountgegevens niet", "met niemand gedeeld")
+
+
+_L1 = {"": "take part in IndexNow, and Anthropic when our", "fr": "participent à IndexNow, ainsi qu'Anthropic lorsque", "de": "an IndexNow teilnehmen, und Anthropic, wenn", "es": "participan en IndexNow, y Anthropic cuando", "nl": "deelnemen, en Anthropic wanneer"}
+
+
+def test_privacy_recipients_not_processors_res4083():
+    # CEO ruling RES-4010: section 4 also lists independent controllers, so the first-page note says recipients; QA L1: Anthropic is not an IndexNow engine
+    root = pathlib.Path(__file__).parent / "public"
+    for lang, needle in _L1.items():
+        t = (root / lang / "privacy.html").read_text(encoding="utf-8")
+        assert needle in t, lang
+        for old in ("processors listed", "sous-traitants énumérés", "aufgeführten Auftragsverarbeiter", "encargados del tratamiento indicados", "genoemde verwerkers"):
+            assert old not in t, (lang, old)
 
 
 def test_privacy_anthropic_agent_tools_res3875():
