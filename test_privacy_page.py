@@ -99,7 +99,7 @@ _LOC = {
     "": ("software tools to read server logs, support mail and, read-only, account and payment records", "goes to no one except the processors listed"),
     "fr": ("journaux du serveur, le courrier d'assistance et, en lecture seule, les données de compte et de paiement", "personne d'autre qu'aux sous-traitants énumérés"),
     "de": ("Serverprotokolle, Support-E-Mails und – mit reinem Lesezugriff – Konto- und Zahlungsdaten", "niemanden außer an die aufgeführten Auftragsverarbeiter"),
-    "es": ("registros del servidor, el correo de soporte y, con acceso de solo lectura, los datos de cuenta y de pago", "salvo a los encargados del tratamiento enumerados"),
+    "es": ("registros del servidor, el correo de soporte y, con acceso de solo lectura, los datos de cuenta y de pago", "salvo a los encargados del tratamiento indicados"),
     "nl": ("serverlogboeken, supportmail en, met alleen-leestoegang, account- en betalingsgegevens", "aan niemand verstrekt, behalve aan de genoemde verwerkers"),
 }
 _FALSE = ("It does not receive your email address", "not shared with anyone", "Il ne reçoit ni votre adresse", "rien n'est transmis à des tiers",
