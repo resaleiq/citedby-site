@@ -11,6 +11,7 @@ class T(unittest.TestCase):
         finally: c.close()
 
     def test_source_counted(self):
+        self.addCleanup(setattr, doorcheck, "run", doorcheck.run)  # other test files in the same process need the real one
         doorcheck.run = lambda root, lang: {"site": root, "checks": [], "reachable": True}
         b = self.n()
         server.handle_check({"url": "example.com", "lang": "en"}, "9.9.9.1")
