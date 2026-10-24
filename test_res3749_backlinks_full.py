@@ -40,18 +40,20 @@ def text(h):
 
 
 def test_lookup_reads_the_full_table_when_the_shipped_file_has_no_row(full):
+    assert "google.de" in b.commons()   # RES-3899: one of the referrers that go into the folded line, whatever host lists it
     n, rows = b.lookup("mittelstand-beispiel.de")
     assert n == 130
-    # strongest first; equal strength alphabetical, so the page does not reshuffle between requests
-    assert rows == [(1, "google.de", 400087), (2, "semrush.com", 68317), (3, "unbekannt-irgendwo.com", 9000), (4, "alpha-nur-hier.es", 500), (5, "zeta-nur-hier.fr", 500),
-                    (6, "slotmark1055.de", 300), (7, "lotto-beispiel.fr", 200)]
+    # strongest first; equal strength alphabetical, so the page does not reshuffle between requests; google.de is folded, ranks close up
+    assert rows == [(1, "semrush.com", 68317), (2, "unbekannt-irgendwo.com", 9000), (3, "alpha-nur-hier.es", 500), (4, "zeta-nur-hier.fr", 500),
+                    (5, "slotmark1055.de", 300), (6, "lotto-beispiel.fr", 200)]
+    assert b.split("mittelstand-beispiel.de")[2] == ["google.de"]
     assert b.lookup("einzelner-link.se") == (100, [])
     assert b.lookup("not-in-either.de") is None
 
 
 def test_the_shipped_set_wins_and_stays_indexable(full):
     n, rows = b.lookup("semrush.com")
-    assert n == 68317 and len(rows) == 20             # not the 999 of the fixture
+    assert n == 68317 and len(rows) == b.SHOWN             # not the 999 of the fixture
     code, h = b.host_page("semrush.com")
     assert 'name="robots"' not in h and 'type="application/ld+json"' in h and 'hreflang="fr"' in h
 
@@ -63,16 +65,17 @@ def test_on_demand_page_answers_like_the_others_but_is_noindex_without_schema_or
     assert "130 domains link to mittelstand-beispiel.de in the latest Common Crawl web graph" in t and t.index("130 domains") < 0.35 * len(t)
     assert 'type="application/ld+json"' not in h and 'rel="alternate" hreflang' not in h
     assert '<link rel="canonical" href="https://citedby.eu/backlinks/mittelstand-beispiel.de">' in h
-    assert h.count("<tr>") == 1 + 7 and "Common Crawl samples the web" in t
+    assert h.count("<tr>") == 1 + 6 and "Common Crawl samples the web" not in t and 'href="/backlinks/method">Method and limits</a>' in h
+    assert "Left out of the table because they link to many domains in this data, for example: google.de." in t
     assert 'href="/?url=mittelstand-beispiel.de&amp;utm_source=citedby_backlinks' in h
     assert '<a href="/backlinks/mittelstand-beispiel.de" hreflang="en" lang="en" aria-current="true">English</a>' in h     # the language switch stays
 
 
 def test_referrers_link_when_the_page_exists_in_either_file(full):
     h = b.host_page("mittelstand-beispiel.de")[1]
-    assert '<a href="/backlinks/google.de">google.de</a>' in h                # shipped file
+    assert '<a href="/backlinks/semrush.com">semrush.com</a>' in h              # shipped file
+    assert '<a href="/backlinks/google.de">' not in h and "<td data-label=\"Referring domain\">google.de" not in h   # folded: named in one line, not a row
     assert '<a href="/backlinks/zeta-nur-hier.fr">zeta-nur-hier.fr</a>' in h   # full file only
-    assert '<a href="/backlinks/semrush.com">semrush.com</a>' in h
     assert "unbekannt-irgendwo.com</td>" in h and "/backlinks/unbekannt-irgendwo.com" not in h   # in neither: plain text, no dead link
 
 
@@ -159,7 +162,7 @@ def test_every_language_gets_the_on_demand_texts(full):
 
 def test_the_sitemap_lists_only_the_shipped_hosts(full):
     s = b.sitemap()
-    assert s.count("<url>") == 5 * 5012 and "mittelstand-beispiel.de" not in s
+    assert s.count("<url>") == 5 * (2 + len(b.hosts()) - len(b.thin_hosts())) and "mittelstand-beispiel.de" not in s
 
 
 def test_the_full_file_is_only_ever_opened_read_only(full):

@@ -33,13 +33,14 @@ def test_shipped_pages_never_list_a_hidden_host_and_keep_the_rest_in_order():
     for d, r, inl in c.execute("select domain, referrer, referrer_inlinks from bl order by domain, rank"):
         raw.setdefault(d, []).append((r, inl))
     hit = [d for d, rows in raw.items() if any(r in HIDE for r, _ in rows)]
-    assert len(hit) == 73
+    assert len(hit) == 103   # RES-3899: the file holds each host's 80 strongest referrers now (73 hosts had one in the first 20)
+    com = b.commons()
     for d in hit:
         n, rows = b.lookup(d)
         assert not [r for _, r, _ in rows if r in HIDE]
-        assert [(r, x) for _, r, x in rows] == [(r, x) for r, x in raw[d] if r not in HIDE]     # same order, nothing else dropped
+        assert [(r, x) for _, r, x in rows] == [(r, x) for r, x in raw[d] if r not in HIDE and r not in com][:b.SHOWN]     # same order, only the hidden and the folded (common) hosts dropped
         assert [k for k, _, _ in rows] == list(range(1, len(rows) + 1))                        # ranks close up
-        assert len(rows) == len(raw[d]) - 1
+        assert not [r for r in b.split(d)[2] if r in HIDE]                                      # nor does the folded line name one
         h = b.host_page(d)[1]
         assert not [x for x in HIDE if re.search(r"(?<![a-z0-9.-])%s(?![a-z0-9-])" % re.escape(x), text(h))]
 
@@ -51,17 +52,17 @@ def test_a_reviewed_false_positive_still_shows():
     assert "pornic.com</td>" in b.host_page(d)[1]
 
 
-def test_full_table_pages_drop_hidden_hosts_and_show_up_to_20_of_the_rest(tmp_path, monkeypatch):
+def test_full_table_pages_drop_hidden_hosts_and_show_up_to_30_of_the_rest(tmp_path, monkeypatch):
     p = str(tmp_path / "backlinks.sqlite")
     ok = [("ok%02d.de" % k, 1000 - k) for k in range(25)]
     full_db(p, {"viele.de": (400, [("xxxbold.com", 5000), ("1st4bdsm.com", 4999)] + ok), "wenige.de": (150, [("xxxbold.com", 9), ("pornic.com", 8)])})
     monkeypatch.setattr(b, "FULL_DB", p)
     n, rows = b.lookup("viele.de")
-    assert n == 400 and [r for _, r, _ in rows] == [r for r, _ in ok[:20]] and [k for k, _, _ in rows] == list(range(1, 21))
+    assert n == 400 and [r for _, r, _ in rows] == [r for r, _ in ok[:25]] and [k for k, _, _ in rows] == list(range(1, 26))
     n, rows = b.lookup("wenige.de")
     assert rows == [(1, "pornic.com", 8)]
     t = text(b.host_page("wenige.de")[1])
-    assert "xxxbold.com" not in t and "pornic.com" in t and "Below are the 1 strongest" in t
+    assert "xxxbold.com" not in t and "pornic.com" in t and "Below are 1 of the strongest" in t
 
 
 def test_match_is_exact_not_a_keyword_or_substring(tmp_path, monkeypatch):
@@ -74,7 +75,6 @@ def test_match_is_exact_not_a_keyword_or_substring(tmp_path, monkeypatch):
 def test_every_locale_says_it():
     for lg in ("en", "fr", "de", "es", "nl"):
         m = i.T[lg]["method"]
-        assert "20" in m and "{graph}" in m, lg
-    assert "Adult-content domains are left out of the list, so a page can show fewer than 20. Spam and link-network domains are shown as they are." in i.T["en"]["method"]
-    code, h = b.host_page("semrush.com", "fr")
-    assert "moins de 20" in h
+        assert "30" in m and "{graph}" in m, lg
+    assert "Adult-content domains are left out of the list, so a page can show fewer than 30. Spam and link-network domains are shown as they are." in i.T["en"]["method"]
+    assert "moins de 30" in b.method_page("fr")   # RES-3899: the method text is on /fr/backlinks/method only

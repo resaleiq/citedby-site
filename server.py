@@ -438,6 +438,8 @@ class H(BaseHTTPRequestHandler):
                 return self.out(302, b"", extra={"Location": p + "/backlinks/" + h, **no_index})
             return self.out(200, backlinks.index_page(backlinks.T[lg]["bad_host"], lg).encode(), extra=no_index)
         raw = rest.rstrip("/")
+        if raw == "method":  # RES-3899: the method text, once
+            return self.out(200, backlinks.method_page(lg).encode())
         h = backlinks.norm(raw)
         if not h:
             if lg == "en":
