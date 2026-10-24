@@ -111,13 +111,32 @@ def shell(lang, page, title, desc, body_html):
             f'<a href="/contact">{E(t["contact"])}</a><a href="/legal">{E(t["legal"])}</a><span class="langsw" role="group" aria-label="{E(t["sw"])}">{sw}</span></div></footer></body></html>\n')
 
 
+DESC = {  # RES-3275 S6: the search snippet of each legal page, whole sentences of 70-155 characters; the first paragraph, cut to fit, read as a broken sentence
+    ('en', 'refund'): 'You can withdraw from any purchase within 14 days of paying, with no reason needed. Here is how the money-back guarantee works.',
+    ('fr', 'refund'): 'Vous pouvez vous rétracter de tout achat dans les 14 jours suivant le paiement, sans motif. Voici comment fonctionne notre garantie de remboursement.',
+    ('nl', 'refund'): 'U kunt elke aankoop binnen 14 dagen na betaling herroepen, zonder reden. Zo werkt onze geld-terug-garantie.',
+    ('de', 'refund'): 'Sie können jeden Kauf innerhalb von 14 Tagen nach der Zahlung ohne Begründung widerrufen. So funktioniert unsere Geld-zurück-Garantie.',
+    ('es', 'refund'): 'Puede desistir de cualquier compra en un plazo de 14 días desde el pago, sin dar motivos. Así funciona nuestra garantía de devolución.',
+    ('en', 'terms'): 'CitedBy audits websites: you enter your address, we crawl the pages we can reach, and report what to fix. These are the terms.',
+    ('fr', 'terms'): 'CitedBy audite des sites web : vous saisissez votre adresse, nous explorons les pages accessibles et indiquons quoi corriger. Voici les conditions.',
+    ('nl', 'terms'): "CitedBy auditeert websites: u voert uw adres in, wij crawlen de bereikbare pagina's en melden wat u moet herstellen. Dit zijn de voorwaarden.",
+    ('de', 'terms'): 'CitedBy prüft Websites: Sie geben Ihre Adresse ein, wir crawlen die erreichbaren Seiten und nennen, was zu beheben ist. Das sind die AGB.',
+    ('es', 'terms'): 'CitedBy audita sitios web: usted introduce su dirección, rastreamos las páginas accesibles e indicamos qué corregir. Estas son las condiciones.',
+    ('en', 'privacy'): 'What personal data CitedBy (citedby.eu) handles, why, on what legal basis, how long we keep it and who receives it.',
+    ('fr', 'privacy'): 'Quelles données personnelles CitedBy (citedby.eu) traite, pourquoi, sur quelle base juridique, combien de temps nous les gardons et qui les reçoit.',
+    ('nl', 'privacy'): 'Welke persoonsgegevens CitedBy (citedby.eu) verwerkt, waarom, op welke rechtsgrond, hoe lang wij ze bewaren en wie ze ontvangt.',
+    ('de', 'privacy'): 'Welche personenbezogenen Daten CitedBy (citedby.eu) verarbeitet, warum, auf welcher Rechtsgrundlage, wie lange wir sie speichern und wer sie erhält.',
+    ('es', 'privacy'): 'Qué datos personales trata CitedBy (citedby.eu), con qué finalidad, sobre qué base jurídica, cuánto tiempo los conservamos y quién los recibe.',
+}
+
+
 def build(lang, page):
     md = open(os.path.join(SRC, lang, page + ".md"), encoding="utf-8").read()
     m = re.match(r"# (.*)\n", md)
     title, rest = m.group(1).strip(), md[m.end():]
     body = f"<h1>{E(title)}</h1>\n" + render_md(rest, lang)
     first = next(p for p in re.findall(r"<p>(.*?)</p>", body, flags=re.S) if len(re.sub(r"<[^>]+>", "", p)) > 60)
-    desc = html.unescape(re.sub(r"<[^>]+>", "", first)); desc = desc if len(desc) <= 155 else desc[:152].rsplit(" ", 1)[0] + "..."
+    desc = DESC[(lang, page)]
     return shell(lang, page, title, desc, body)
 
 
