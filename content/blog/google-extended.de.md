@@ -30,13 +30,13 @@ Die meisten Seiten dieser Auswahl beschreiben einen Crawler, den Sie in einem Lo
 
 ## Was der Betreiber sagt
 
-Die Worte des Betreibers (englisches Original): “Google-Extended is a standalone product token that web publishers can use to manage whether content Google crawls from their sites may be used for training future generations of Gemini models that power Gemini Apps and Vertex AI API for Gemini. Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.”
+Die Worte des Betreibers (englisches Original): “Google-Extended is a standalone product token that web publishers can use to manage whether content Google crawls from their sites may be used for training future generations of Gemini models that power Gemini Apps and Vertex AI API for Gemini and for grounding (providing content from the Google Search index to the model at prompt time to improve factuality and relevancy) in Gemini Apps and Grounding with Google Search on Vertex AI. Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.”
 
 Quelle: [Google Search Central: Google's common crawlers (last updated 2026-10-15)](https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers), gelesen am 21. Oktober 2026.
 
 ## Was passiert, wenn Sie Google-Extended sperren
 
-Wenn Sie `Disallow: /` unter Google-Extended eintragen, sagen Sie Google, dass es die Inhalte nicht zum Training künftiger Gemini-Modelle hinter den Gemini Apps und der Vertex AI API für Gemini verwenden darf. Google sagt außerdem, dass das die Aufnahme in die Google Suche nicht beeinflusst und kein Ranking-Signal ist. Unser Audit liest dieses Token in robots.txt als eine seiner Prüfungen; es ist das einzige Signal, das es gibt.
+Wenn Sie `Disallow: /` unter Google-Extended eintragen, sagen Sie Google, dass es die Inhalte nicht zum Training künftiger Gemini-Modelle hinter den Gemini Apps und der Vertex AI API für Gemini verwenden darf. Google sagt außerdem, dass das die Aufnahme in die Google Suche nicht beeinflusst und kein Ranking-Signal ist. Unser Audit liest dieses Token in robots.txt als eine seiner Prüfungen; es ist das einzige Signal, das es gibt. Googles Seite nennt außerdem Grounding, also Inhalte aus dem Google-Suchindex, die dem Modell zum Zeitpunkt der Anfrage mitgegeben werden, als etwas, das dieses Token steuert.
 
 ## Die robots.txt-Zeilen
 

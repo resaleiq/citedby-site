@@ -30,13 +30,13 @@ La mayoría de las páginas de este conjunto describen un rastreador que puedes 
 
 ## Qué dice el proveedor
 
-En palabras del proveedor (original en inglés): “Google-Extended is a standalone product token that web publishers can use to manage whether content Google crawls from their sites may be used for training future generations of Gemini models that power Gemini Apps and Vertex AI API for Gemini. Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.”
+En palabras del proveedor (original en inglés): “Google-Extended is a standalone product token that web publishers can use to manage whether content Google crawls from their sites may be used for training future generations of Gemini models that power Gemini Apps and Vertex AI API for Gemini and for grounding (providing content from the Google Search index to the model at prompt time to improve factuality and relevancy) in Gemini Apps and Grounding with Google Search on Vertex AI. Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.”
 
 Fuente: [Google Search Central: Google's common crawlers (last updated 2026-10-15)](https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers), leído el 21 de octubre de 2026.
 
 ## Qué pasa si bloqueas Google-Extended
 
-Añadir `Disallow: /` bajo Google-Extended le indica a Google que no puede usar el contenido para entrenar futuros modelos de Gemini que hay detrás de Gemini Apps y de la API de Vertex AI para Gemini. Google dice también que no afecta a la inclusión en Google Search y que no es una señal de posicionamiento. Nuestra auditoría lee este token en robots.txt como una de sus comprobaciones; es la única señal que hay.
+Añadir `Disallow: /` bajo Google-Extended le indica a Google que no puede usar el contenido para entrenar futuros modelos de Gemini que hay detrás de Gemini Apps y de la API de Vertex AI para Gemini. Google dice también que no afecta a la inclusión en Google Search y que no es una señal de posicionamiento. Nuestra auditoría lee este token en robots.txt como una de sus comprobaciones; es la única señal que hay. La página de Google también indica que este token gestiona el grounding (fundamentación), es decir, el contenido del índice de Google Search que se entrega al modelo en el momento de la consulta.
 
 ## Las líneas de robots.txt
 

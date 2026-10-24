@@ -30,13 +30,13 @@ De meeste pagina's in deze set beschrijven een crawler die je in een log kunt vi
 
 ## Wat de aanbieder zegt
 
-De woorden van de aanbieder (Engels origineel): “Google-Extended is a standalone product token that web publishers can use to manage whether content Google crawls from their sites may be used for training future generations of Gemini models that power Gemini Apps and Vertex AI API for Gemini. Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.”
+De woorden van de aanbieder (Engels origineel): “Google-Extended is a standalone product token that web publishers can use to manage whether content Google crawls from their sites may be used for training future generations of Gemini models that power Gemini Apps and Vertex AI API for Gemini and for grounding (providing content from the Google Search index to the model at prompt time to improve factuality and relevancy) in Gemini Apps and Grounding with Google Search on Vertex AI. Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.”
 
 Bron: [Google Search Central: Google's common crawlers (last updated 2026-10-15)](https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers), gelezen op 21 oktober 2026.
 
 ## Wat gebeurt er als je Google-Extended blokkeert
 
-Met `Disallow: /` onder Google-Extended laat je Google weten dat de content niet mag worden gebruikt om toekomstige Gemini-modellen achter Gemini Apps en de Vertex AI API for Gemini te trainen. Google zegt ook dat het geen invloed heeft op opname in Google Search en geen rangschikkingssignaal is. Onze audit leest dit token in robots.txt als een van de controles. Het is het enige signaal dat er is.
+Met `Disallow: /` onder Google-Extended laat je Google weten dat de content niet mag worden gebruikt om toekomstige Gemini-modellen achter Gemini Apps en de Vertex AI API for Gemini te trainen. Google zegt ook dat het geen invloed heeft op opname in Google Search en geen rangschikkingssignaal is. Onze audit leest dit token in robots.txt als een van de controles. Het is het enige signaal dat er is. De pagina van Google noemt ook grounding, dat wil zeggen content uit de Google Search-index die het model op het moment van de vraag krijgt, als iets wat dit token regelt.
 
 ## De robots.txt-regels
 
