@@ -161,6 +161,14 @@ def test_trial_cancel_paths_are_forwarded():
     assert proxy.ROUTES["GET"].fullmatch(p) and proxy.ROUTES["POST"].fullmatch(p)
 
 
+def test_unsub_paths_are_forwarded_res3688():
+    import proxy
+    p = "/unsub/" + "ab" * 32 + "." + "0" * 32   # the app's UNSUB: sha256 hex of the address, then the 32-hex signature (no address in the URL)
+    assert proxy.ROUTES["GET"].fullmatch(p) and proxy.ROUTES["POST"].fullmatch(p)
+    assert not proxy.ROUTES["GET"].fullmatch("/unsub/x") and not proxy.ROUTES["GET"].fullmatch("/unsub/") and not proxy.ROUTES["GET"].fullmatch("/unsub/" + "ab" * 32)
+    assert not proxy.ROUTES["POST"].fullmatch("/unsub/" + "6a6f686e40".ljust(64, "0") + "." + "0" * 31)
+
+
 def test_app_v2_routes_are_forwarded():
     import proxy
     for p in ("/app/app.css", "/app/report2.js", "/api/usage", "/api/account", "/api/brand", "/api/team", "/api/audit/a_k3j2h1/structure", "/api/audit/a_k3j2h1/compare", "/api/audit/a_k3j2h1/discovery"): assert proxy.ROUTES["GET"].fullmatch(p), p
