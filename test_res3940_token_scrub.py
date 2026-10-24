@@ -58,7 +58,7 @@ def test_ordinary_paths_and_other_sites_referrers_are_sent_unchanged():
 
 
 def test_the_tag_version_moved_so_cached_copies_of_the_old_script_are_replaced():
-    assert b"riq-a.js?v=7" in analytics.TAG
+    assert b"riq-a.js?v=8" in analytics.TAG
 
 
 def test_the_relay_scrubs_an_old_cached_script_too(monkeypatch):

@@ -1,0 +1,40 @@
+{
+ "slug": "google-extended",
+ "name": "Google-Extended",
+ "operator": "Google",
+ "job": "control",
+ "job_en": "Control token (no requests of its own)",
+ "token": "Google-Extended",
+ "follows": "token_only",
+ "follows_en": "Read from robots.txt only; there is no separate user agent",
+ "ips": {
+  "kind": "none",
+  "count": null,
+  "unit": null,
+  "url": null,
+  "file_date": null,
+  "note": "There is nothing to verify at the network layer: no user agent, no address list. Check the robots.txt itself, on every host, and remember that a log search for Google-Extended finds nothing whether you block it or not. Google's own example group shows the token taking an allow path and a disallow path like any other."
+ },
+ "ua": null,
+ "vendor_quote": "Google-Extended is a standalone product token that web publishers can use to manage whether content Google crawls from their sites may be used for training future generations of Gemini models that power Gemini Apps and Vertex AI API for Gemini and for grounding (providing content from the Google Search index to the model at prompt time to improve factuality and relevancy) in Gemini Apps and Grounding with Google Search on Vertex AI. Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.",
+ "vendor_quote_source": {
+  "title": "Google Search Central: Google's common crawlers (last updated 2026-10-15)",
+  "url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers"
+ },
+ "read": "2026-10-21",
+ "what_en": "Most pages in this set describe a crawler you can find in a log. This one you cannot. Google states that Google-Extended \"doesn't have a separate HTTP request user agent string\": crawling happens with existing Google user agents, and the robots.txt token is used in a control capacity.\n\n| Fact | Google-Extended |\n| --- | --- |\n| Operator | Google |\n| Job | Control token (no requests of its own) |\n| robots.txt token | `Google-Extended` |\n| Follows robots.txt | Read from robots.txt only; there is no separate user agent |\n| Published address list | None: it never fetches |\n| Vendor page read | 21 October 2026 |",
+ "block_en": "Adding `Disallow: /` under Google-Extended tells Google it may not use the content for training future Gemini models behind Gemini Apps and the Vertex AI API for Gemini. Google also says it does not impact inclusion in Google Search and is not a ranking signal. Our audit reads this token in robots.txt as one of its checks; it is the only signal there is.",
+ "doc_url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+ "compare": "googlebot",
+ "compare_en": "The crawler that actually fetches your pages for Search.",
+ "sources": [
+  {
+   "title": "Google Search Central: Google's common crawlers (last updated 2026-10-15)",
+   "url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers"
+  }
+ ],
+ "answer_en": "Google-Extended is a robots.txt product token that lets publishers manage whether content Google crawls may be used to train future Gemini models. It has no HTTP user agent of its own, so it never shows in your logs. Google says it does not affect inclusion in Search or ranking.",
+ "en_handwritten": true,
+ "title_en": "Google-Extended: the robots.txt token for Gemini, not a crawler",
+ "h1_en": "Google-Extended: the robots.txt token for Gemini, not a crawler"
+}

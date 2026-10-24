@@ -1,0 +1,44 @@
+{
+ "slug": "googlebot",
+ "name": "Googlebot",
+ "operator": "Google",
+ "job": "search",
+ "job_en": "Search (also Images, Video, News, Discover)",
+ "token": "Googlebot",
+ "follows": "yes",
+ "follows_en": "Yes, always when crawling automatically",
+ "ips": {
+  "kind": "json_list",
+  "count": 317,
+  "unit": "ranges",
+  "url": "https://developers.google.com/static/search/apis/ipranges/googlebot.json",
+  "file_date": "2026-10-20",
+  "note": "Google publishes the ranges its common crawlers use. The Googlebot file held 317 prefixes on 21 October 2026, creation time 2026-10-20 14:46 UTC. Google also documents a reverse DNS mask for confirming a hostname, so a request is checked two ways: the address against the file, and the reverse lookup against the mask. The page itself was last updated 2026-10-15."
+ },
+ "ua": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+ "vendor_quote": "Google's common crawlers are used to find information for building Google's search indexes, perform other product specific crawls, and for analysis. They always obey robots.txt rules when crawling automatically.",
+ "vendor_quote_source": {
+  "title": "Google Search Central: Google's common crawlers (last updated 2026-10-15)",
+  "url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers"
+ },
+ "read": "2026-10-21",
+ "what_en": "Googlebot is the crawler every Search check starts from. Google's page lists several crawlers, and the single token Googlebot governs Search, Discover and the products that draw on the same crawl, such as Images, Video mode and News.\n\n| Fact | Googlebot |\n| --- | --- |\n| Operator | Google |\n| Job | Search (also Images, Video, News, Discover) |\n| robots.txt token | `Googlebot` |\n| Follows robots.txt | Yes, always when crawling automatically |\n| Published address list | 317 ranges (developers.google.com/static/search/apis/ipranges/googlebot.json, file dated 2026-10-20) |\n| Vendor page read | 21 October 2026 |",
+ "block_en": "A Disallow for Googlebot is not a narrow AI opt-out; it affects Google Search itself, including Discover and the features built on it, per Google's list of affected products. The narrower control for Gemini training is the separate token [Google-Extended](/bots/google-extended).",
+ "doc_url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+ "compare": "google-extended",
+ "compare_en": "A control token for Gemini training; it never fetches a page.",
+ "sources": [
+  {
+   "title": "Google Search Central: Google's common crawlers (last updated 2026-10-15)",
+   "url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers"
+  },
+  {
+   "title": "developers.google.com/static/search/apis/ipranges/googlebot.json",
+   "url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json"
+  }
+ ],
+ "answer_en": "Googlebot is Google's main crawler for Search. Google says its common crawlers always obey robots.txt rules when crawling automatically. Crawling preferences for the Googlebot token affect Google Search, including Discover, and products such as Images, Video and News. Google publishes 317 IP ranges for it.",
+ "en_handwritten": true,
+ "title_en": "Googlebot: what it covers, its IP ranges and what a block removes",
+ "h1_en": "Googlebot: what it covers, its IP ranges and what a block removes"
+}

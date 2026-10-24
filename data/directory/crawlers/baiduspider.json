@@ -1,0 +1,42 @@
+{
+ "slug": "baiduspider",
+ "name": "Baiduspider",
+ "operator": "Baidu",
+ "job": "search",
+ "job_en": "Search",
+ "token": "Baiduspider",
+ "follows": "yes",
+ "follows_en": "Yes for Baiduspider; Baiduspider-cpro and Baiduspider-ads do not follow robots.txt records",
+ "ips": {
+  "kind": "rdns",
+  "count": null,
+  "unit": null,
+  "url": "https://help.baidu.com/question?prod_id=99&class=0&id=3001",
+  "file_date": null,
+  "note": "Baidu recommends a reverse DNS lookup on the visiting IP; the host name of Baiduspider is *.baidu.com or *.baidu.jp, and other host names are fake."
+ },
+ "ua": "Baiduspider",
+ "vendor_quote": "Baiduspider is Baidu search engine program which is used to visit pages on the internet and build information into Baidu index.",
+ "vendor_quote_source": {
+  "title": "Baidu Help Center: FAQs of Baiduspider",
+  "url": "https://help.baidu.com/question?prod_id=99&class=0&id=3001"
+ },
+ "what_en": "Baiduspider is the crawler of the Baidu search engine; it visits pages and builds them into the Baidu index. Baidu uses different user agents for different products, for example Baiduspider for PC and mobile search and Baiduspider-image, Baiduspider-video and Baiduspider-news for those searches.",
+ "block_en": "Baidu says Baiduspider works on the robots.txt protocol, and that blocking it means your pages will not be found in Baidu search results or in any other results provided by Baidu. You can set different rules for different Baidu user agents, and blocking Baiduspider blocks all Baidu user agents. Baiduspider-cpro and Baiduspider-ads work on agreements with customers and do not follow robots.txt records.",
+ "doc_url": "https://help.baidu.com/question?prod_id=99&class=0&id=3001",
+ "compare": "bingbot",
+ "compare_en": "Both crawl for a search engine; Baidu documents several product-specific user agents (image, video, news, ads) under the Baiduspider name and verifies by reverse DNS host name.",
+ "sources": [
+  {
+   "title": "Baidu Help Center: FAQs of Baiduspider",
+   "url": "https://help.baidu.com/question?prod_id=99&class=0&id=3001"
+  },
+  {
+   "title": "Baidu Help Center: How to block the crawling (robots.txt)",
+   "url": "https://www.baidu.com/search/robots_english.html"
+  }
+ ],
+ "notes": "Baidu's English help pages name the user-agent tokens (Baiduspider, Baiduspider-image, etc.) but do not show a full Mozilla/5.0 user-agent string, so 'ua' is the token only. Other (non-vendor) sites show Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html); that was not used because it was not read on a Baidu page. Baidu's English page says previously built index entries take several months to be removed. No IP list is published on the pages read. The English FAQ says Baiduspider-video does not support the rules currently.",
+ "answer_en": "Baiduspider is the crawler of the Baidu search engine. Baidu says it follows the robots.txt protocol and that blocking Baiduspider blocks all Baidu user agents, so pages will not be found in Baidu results. Baiduspider-cpro and Baiduspider-ads work on customer agreements and do not follow robots.txt records.",
+ "read": "2026-10-24"
+}

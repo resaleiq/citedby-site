@@ -1,0 +1,42 @@
+{
+ "slug": "yandexbot",
+ "name": "YandexBot",
+ "operator": "Yandex",
+ "job": "search",
+ "job_en": "Search (main indexing robot)",
+ "token": "Yandex",
+ "follows": "yes",
+ "follows_en": "Yes, takes into account the general rules in robots.txt (User-agent: *)",
+ "ips": {
+  "kind": "rdns",
+  "count": null,
+  "unit": null,
+  "url": "https://yandex.com/support/webmaster/en/robot-workings/check-yandex-robots",
+  "file_date": null,
+  "note": "Yandex says to run a reverse DNS lookup on the IP, check that the host name ends in yandex.ru, yandex.net or yandex.com, then confirm with a forward lookup; it also offers an IP address check tool."
+ },
+ "ua": "Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)",
+ "vendor_quote": "Some robots can disguise themselves as Yandex robots by indicating the relevant User Agent. You can check the authenticity of a robot using a reverse DNS lookup.",
+ "vendor_quote_source": {
+  "title": "Yandex Webmaster: How to check that a robot belongs to Yandex",
+  "url": "https://yandex.com/support/webmaster/en/robot-workings/check-yandex-robots"
+ },
+ "what_en": "YandexBot is listed by Yandex as the main indexing robot. Yandex runs many other robots with their own user agents (for images, video, advertising, mobile pages, favicons and more), listed on the same page. Yandex does not publish an IP list for its bots.",
+ "block_en": "Yandex says a number of its robots download pages for purposes other than indexing and may ignore restrictive rules written for all robots (User-agent: *). To restrict those robots you need directives written specifically for them, for example User-agent: YandexCalendar. Yandex adds that a document the main Yandex robot cannot access will never be indexed or found in search results.",
+ "doc_url": "https://yandex.com/support/webmaster/en/robot-workings/check-yandex-robots",
+ "compare": "googlebot",
+ "compare_en": "Both are the main search indexing crawler of their operator; Yandex lists many separate robots, some of which ignore general robots.txt rules, and states it does not publish an IP list.",
+ "sources": [
+  {
+   "title": "Yandex Webmaster: How to check that a robot belongs to Yandex",
+   "url": "https://yandex.com/support/webmaster/en/robot-workings/check-yandex-robots"
+  },
+  {
+   "title": "Yandex Webmaster: Using robots.txt",
+   "url": "https://yandex.com/support/webmaster/en/controlling-robot/robots-txt"
+  }
+ ],
+ "notes": "The yandex.com/support/webmaster/en/robot-workings/ URL in the hint returns 404; the live page is check-yandex-robots. The page lists YandexBot/3.0 with 'Yes' in the column 'Takes into account the General rules specified in robots.txt' but never states the robots.txt token for YandexBot by name (Yandex's own robots.txt examples use User-agent: Yandex, YandexCalendar, YandexMobileBot). Token YandexBot is inferred from the UA product name. The page says the offline-network bots (AS13238, AS208722, AS212066) have undisclosed IP lists; that statement is about those bots, not YandexBot specifically, so it was not used for YandexBot. The page's UA example may also show an appended AppleWebKit/Chrome version, which Yandex says changes.",
+ "answer_en": "YandexBot is listed by Yandex as its main indexing robot, one of many Yandex robots with their own user agents. Yandex says some of them download pages for purposes other than indexing and may ignore restrictive rules written for all robots (User-agent: *). Yandex does not publish an IP list.",
+ "read": "2026-10-24"
+}

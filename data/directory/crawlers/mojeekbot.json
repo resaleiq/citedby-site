@@ -1,0 +1,42 @@
+{
+ "slug": "mojeekbot",
+ "name": "MojeekBot",
+ "operator": "Mojeek",
+ "job": "search",
+ "job_en": "Search",
+ "token": "MojeekBot",
+ "follows": "yes",
+ "follows_en": "Yes, obeys the Robots Exclusion Standard; crawl-delay is not supported",
+ "ips": {
+  "kind": "json_list",
+  "count": 1,
+  "unit": "ranges",
+  "url": "https://www.mojeek.com/mojeekbot.json",
+  "file_date": "2025-05-14",
+  "note": "Mojeek says to reverse-resolve the visiting IP to a name in the mojeek.com domain and forward-resolve it back to the same IP, or to match the IP against its published list of MojeekBot IP addresses."
+ },
+ "ua": "MojeekBot",
+ "vendor_quote": "MojeekBot is the web crawler for the Mojeek search engine.",
+ "vendor_quote_source": {
+  "title": "Mojeek: MojeekBot",
+  "url": "https://www.mojeek.com/bot.html"
+ },
+ "what_en": "MojeekBot is the web crawler for the Mojeek search engine. Mojeek says it should not request more than one page from a site within the same 1 second period. It obeys the noindex, nocache and nofollow meta tags.",
+ "block_en": "Mojeek says MojeekBot obeys the first robots.txt record whose User-Agent contains MojeekBot, and otherwise the first record for User-Agent *. It will not retrieve URLs containing a disallowed string. It does not support the nonstandard crawl-delay directive.",
+ "doc_url": "https://www.mojeek.com/bot.html",
+ "compare": "bingbot",
+ "compare_en": "Both crawl for a search engine; Mojeek publishes a one-range IP list and a reverse DNS check, and does not support crawl-delay.",
+ "sources": [
+  {
+   "title": "Mojeek: MojeekBot",
+   "url": "https://www.mojeek.com/bot.html"
+  },
+  {
+   "title": "MojeekBot IP list (JSON, creationTime 2025-05-14, read 2026-10-24)",
+   "url": "https://www.mojeek.com/mojeekbot.json"
+  }
+ ],
+ "notes": "The vendor page does not show a full user-agent string, only the name MojeekBot, so 'ua' is the name. The IP JSON has one prefix (5.102.173.64/28); Mojeek says the list can be updated at any time. The page says a noindex page is retrieved but not indexed.",
+ "answer_en": "MojeekBot is the web crawler for the Mojeek search engine. Mojeek says it obeys the Robots Exclusion Standard, using the first record whose User-Agent contains MojeekBot, and does not support the nonstandard crawl-delay directive. It should not request more than one page from a site in the same second.",
+ "read": "2026-10-24"
+}

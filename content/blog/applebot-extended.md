@@ -60,7 +60,7 @@ No network check exists for a token that sends no requests. Read robots.txt, on 
 
 ## Compare with Applebot
 
-Applebot: The crawler itself: allowing it keeps you in Spotlight, Siri and Safari search.
+[Applebot](/bots/applebot): The crawler itself: allowing it keeps you in Spotlight, Siri and Safari search.
 
 ## Check your own site
 

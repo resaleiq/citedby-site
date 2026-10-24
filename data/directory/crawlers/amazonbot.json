@@ -1,0 +1,44 @@
+{
+ "slug": "amazonbot",
+ "name": "Amazonbot",
+ "operator": "Amazon",
+ "job": "mixed",
+ "job_en": "Product improvement, may train Amazon AI models",
+ "token": "Amazonbot",
+ "follows": "yes",
+ "follows_en": "Yes, changes take about 24 hours",
+ "ips": {
+  "kind": "html_list",
+  "count": null,
+  "unit": null,
+  "url": "https://developer.amazon.com/amazonbot/ip-addresses",
+  "file_date": null,
+  "note": "Amazon publishes the addresses for Amazonbot and, on separate pages, for Amzn-SearchBot and for live fetches; the lists are HTML pages, not a JSON file, so we do not state a count. Amazon also says that if robots.txt does not mention Amzn-SearchBot but allows other search bots, Amzn-SearchBot crawls in accordance with that file."
+ },
+ "ua": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amazonbot/0.1) Chrome/W.X.Y.Z Safari/537.36",
+ "vendor_quote": "Amazonbot is used to improve our products and services. This helps us provide more accurate information to customers and may be used to train Amazon AI models.",
+ "vendor_quote_source": {
+  "title": "Amazon: About Amazonbot",
+  "url": "https://developer.amazon.com/amazonbot"
+ },
+ "read": "2026-10-21",
+ "what_en": "Amazon's page covers three user agents and says each setting is independent of the others and can take about 24 hours to take effect: Amazonbot, Amzn-SearchBot and Amzn-User. Only the first is described as possibly training Amazon AI models.\n\n| Fact | Amazonbot |\n| --- | --- |\n| Operator | Amazon |\n| Job | Product improvement, may train Amazon AI models |\n| robots.txt token | `Amazonbot` |\n| Follows robots.txt | Yes, changes take about 24 hours |\n| Published address list | Published on Amazon's page (developer.amazon.com/amazonbot/ip-addresses) |\n| Vendor page read | 21 October 2026 |",
+ "block_en": "Amzn-SearchBot is for search experiences such as Alexa: allow it and the content is eligible to appear there. Amzn-User answers live Alexa queries that need up-to-date information; Amazon says it may not follow all robots.txt directives and does not crawl for generative AI training. A robots.txt that lists only Amazonbot therefore does not describe your policy for the other two.",
+ "doc_url": "https://developer.amazon.com/amazonbot",
+ "compare": "duckassistbot",
+ "compare_en": "Another answer-engine fetcher with a stated opt-out and a 72-hour delay.",
+ "sources": [
+  {
+   "title": "Amazon: About Amazonbot",
+   "url": "https://developer.amazon.com/amazonbot"
+  },
+  {
+   "title": "developer.amazon.com/amazonbot/ip-addresses",
+   "url": "https://developer.amazon.com/amazonbot/ip-addresses"
+  }
+ ],
+ "answer_en": "Amazonbot is used to improve Amazon's products and services and may be used to train Amazon AI models. Amazon's page also covers Amzn-SearchBot, which makes content eligible for search experiences such as Alexa, and Amzn-User, which may not follow all robots.txt directives. Each setting is independent.",
+ "en_handwritten": true,
+ "title_en": "Amazonbot, Amzn-SearchBot and Amzn-User: three Amazon agents",
+ "h1_en": "Amazonbot, Amzn-SearchBot and Amzn-User: three Amazon agents, three rules"
+}

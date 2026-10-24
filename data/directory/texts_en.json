@@ -1,0 +1,362 @@
+{
+ "amazonbot": {
+  "answer": "Amazonbot is used to improve Amazon's products and services and may be used to train Amazon AI models. Amazon's page also covers Amzn-SearchBot, which makes content eligible for search experiences such as Alexa, and Amzn-User, which may not follow all robots.txt directives. Each setting is independent.",
+  "what": "Amazon's page covers three user agents and says each setting is independent of the others and can take about 24 hours to take effect: Amazonbot, Amzn-SearchBot and Amzn-User. Only the first is described as possibly training Amazon AI models.\n\n| Fact | Amazonbot |\n| --- | --- |\n| Operator | Amazon |\n| Job | Product improvement, may train Amazon AI models |\n| robots.txt token | `Amazonbot` |\n| Follows robots.txt | Yes, changes take about 24 hours |\n| Published address list | Published on Amazon's page (developer.amazon.com/amazonbot/ip-addresses) |\n| Vendor page read | 21 October 2026 |",
+  "block": "Amzn-SearchBot is for search experiences such as Alexa: allow it and the content is eligible to appear there. Amzn-User answers live Alexa queries that need up-to-date information; Amazon says it may not follow all robots.txt directives and does not crawl for generative AI training. A robots.txt that lists only Amazonbot therefore does not describe your policy for the other two.",
+  "compare": "Another answer-engine fetcher with a stated opt-out and a 72-hour delay.",
+  "job": "Product improvement, may train Amazon AI models",
+  "follows": "Yes, changes take about 24 hours",
+  "ipnote": "Amazon publishes the addresses for Amazonbot and, on separate pages, for Amzn-SearchBot and for live fetches; the lists are HTML pages, not a JSON file, so we do not state a count. Amazon also says that if robots.txt does not mention Amzn-SearchBot but allows other search bots, Amzn-SearchBot crawls in accordance with that file."
+ },
+ "amzn-searchbot": {
+  "answer": "Amzn-SearchBot is an Amazon crawler used to improve search experiences such as Alexa. Amazon says allowing it makes your content eligible to appear there, and that it does not crawl for generative AI model training. Its setting is independent of Amazonbot and Amzn-User, and a change can take about 24 hours.",
+  "what": "Amzn-SearchBot is an Amazon crawler used to improve search experiences in Amazon products and services. Amazon says that allowing it makes your content eligible to appear in search experiences such as Alexa, and that it does not crawl content for generative AI model training. It is one of three Amazon user agents (Amazonbot, Amzn-SearchBot, Amzn-User) that Amazon documents on one page.",
+  "block": "Amazon says automated crawling from its listed user agents respects the Robots Exclusion Protocol, honoring the user-agent and allow/disallow directives. Amazon says each user agent setting is independent of the others and may take about 24 hours to take effect. If robots.txt does not mention Amzn-SearchBot but allows other search bots, it follows the directives given to those other search bots.",
+  "compare": "Amazonbot is used to improve Amazon products and services and may be used to train Amazon AI models, while Amzn-SearchBot is for search experiences and Amazon says it does not crawl for generative AI model training.",
+  "job": "Search",
+  "follows": "Yes, changes may take about 24 hours",
+  "ipnote": "Amazon publishes the Amzn-SearchBot IP addresses on a web page that shows the list as JSON, and links it from the Amazonbot documentation page."
+ },
+ "amzn-user": {
+  "answer": "Amzn-User is the Amazon user agent that fetches live pages when a customer asks Alexa something that needs current information. Amazon says it does not crawl for generative AI training and may not follow all robots.txt directives, because the action is user-initiated. Amazonbot and Amzn-SearchBot are separate settings.",
+  "what": "Amzn-User is an Amazon user agent that supports user actions, such as responding to Alexa queries that require up-to-date information. Amazon says that when a customer asks a question, Amzn-User may fetch live information from the web to provide accurate answers on the user's behalf. Amazon says it does not crawl content for generative AI model training.",
+  "block": "Amazon says Amzn-User may not follow all robots.txt directives because its actions can be initiated by a user. Amazon also says each of its user agent settings (Amazonbot, Amzn-SearchBot, Amzn-User) is independent of the others and may take about 24 hours to reflect changes.",
+  "compare": "Amzn-SearchBot is an automated crawler for Amazon search experiences that Amazon says respects robots.txt, while Amzn-User fetches live information when a customer asks and may not follow all directives.",
+  "job": "User-triggered fetch",
+  "follows": "Partial, may not follow all robots.txt directives because actions can be user-initiated",
+  "ipnote": "Amazon publishes the Amzn-User IP addresses on a web page that shows the list as JSON, and links it from the Amazonbot documentation page."
+ },
+ "applebot-extended": {
+  "answer": "Applebot-Extended is a robots.txt token. Apple says publishers can opt out of having their content used to train generative foundation models by disallowing it. Applebot may still crawl the page, so the content stays discoverable in Spotlight, Siri and Safari. It makes no requests of its own.",
+  "what": "Apple's page describes Applebot-Extended as the way to keep content out of training for foundation models behind Apple Intelligence, services and developer tools. Like [Google-Extended](/bots/google-extended) it is a control token: you will not find it in a log.\n\n| Fact | Applebot-Extended |\n| --- | --- |\n| Operator | Apple |\n| Job | Control token (no requests of its own) |\n| robots.txt token | `Applebot-Extended` |\n| Follows robots.txt | Read from robots.txt only |\n| Published address list | None: it never fetches |\n| Vendor page read | 21 October 2026 |",
+  "block": "Apple spells out the limit: if you disallow Applebot-Extended and also tag content with the nosnippet meta tag, your instructions may still allow Applebot to crawl the page, and the content remains discoverable through Spotlight, Siri and Safari. The same page says publishers can opt out of use in broad world-knowledge answers by applying this robots.txt control.",
+  "compare": "The crawler itself: allowing it keeps you in Spotlight, Siri and Safari search.",
+  "job": "Control token (no requests of its own)",
+  "follows": "Read from robots.txt only",
+  "ipnote": "No network check exists for a token that sends no requests. Read robots.txt, on each host, and check Applebot separately, because the two tokens are independent and a single `User-agent: Applebot-Extended` group says nothing about Applebot."
+ },
+ "applebot": {
+  "answer": "Applebot is Apple's web crawler. Apple says its data powers search in Spotlight, Siri and Safari and may also help train Apple's foundation models. Disallowing Applebot-Extended opts content out of training only. If robots.txt does not mention Applebot but does mention Googlebot, Applebot follows the Googlebot rules.",
+  "what": "Applebot is Apple's web crawler. Apple says its data powers search technology in Spotlight, Siri and Safari, and may also be used to help train Apple foundation models and to provide context when AI models generate output in Apple products. Apple also documents a separate Applebot-Extended token and an iTMS user agent for Apple Podcasts.",
+  "block": "Apple says disallowing Applebot-Extended opts content out of training Apple's generative foundation models, but the site may still be crawled by Applebot and stay discoverable through Spotlight, Siri and Safari. A Disallow for Applebot itself applies to general search crawls targeted at Applebot, and Apple says that if robots.txt does not mention Applebot but mentions Googlebot, Applebot follows the Googlebot instructions. Apple says the nosnippet meta tag opts content out of broad world knowledge answers.",
+  "compare": "Applebot is the crawler that fetches pages for Apple search features, while Applebot-Extended is the robots.txt token that controls whether crawled content is used to train Apple generative models.",
+  "job": "Search (crawled data may also help train Apple models)",
+  "follows": "Yes, for general search crawls targeted at Applebot",
+  "ipnote": "Apple says Applebot traffic is generally identified by reverse DNS in the *.applebot.apple.com domain, or by matching the IP address with a CIDR prefix in its published JSON file."
+ },
+ "baiduspider": {
+  "answer": "Baiduspider is the crawler of the Baidu search engine. Baidu says it follows the robots.txt protocol and that blocking Baiduspider blocks all Baidu user agents, so pages will not be found in Baidu results. Baiduspider-cpro and Baiduspider-ads work on customer agreements and do not follow robots.txt records.",
+  "what": "Baiduspider is the crawler of the Baidu search engine; it visits pages and builds them into the Baidu index. Baidu uses different user agents for different products, for example Baiduspider for PC and mobile search and Baiduspider-image, Baiduspider-video and Baiduspider-news for those searches.",
+  "block": "Baidu says Baiduspider works on the robots.txt protocol, and that blocking it means your pages will not be found in Baidu search results or in any other results provided by Baidu. You can set different rules for different Baidu user agents, and blocking Baiduspider blocks all Baidu user agents. Baiduspider-cpro and Baiduspider-ads work on agreements with customers and do not follow robots.txt records.",
+  "compare": "Both crawl for a search engine; Baidu documents several product-specific user agents (image, video, news, ads) under the Baiduspider name and verifies by reverse DNS host name.",
+  "job": "Search",
+  "follows": "Yes for Baiduspider; Baiduspider-cpro and Baiduspider-ads do not follow robots.txt records",
+  "ipnote": "Baidu recommends a reverse DNS lookup on the visiting IP; the host name of Baiduspider is *.baidu.com or *.baidu.jp, and other host names are fake."
+ },
+ "bingbot": {
+  "answer": "Bingbot is Microsoft's standard crawler and handles most of Bing's crawling. Bing's help page lists five crawlers: Bingbot, AdIdxBot, BingPreview, MicrosoftPreview and BingVideoPreview. You control them through robots.txt, and crawl rate through the Crawl control tool in Bing Webmaster Tools, not through robots.txt.",
+  "what": "Bing's page is titled \"Overview of Bing crawlers (user agents)\" and says Bing operates these main crawlers today: Bingbot (the standard crawler), AdIdxBot (used by Bing Ads, which crawls ads and follows their websites for quality control), BingPreview (page snapshots for Bing), MicrosoftPreview (snapshots for Microsoft products) and BingVideoPreview (video previews, in Bing only). Bingbot, AdIdxBot, BingPreview and BingVideoPreview have desktop and mobile variants. The page does not name a separate AI crawler. The same help section includes \"How To Permanently Remove a URL or Page from Bing or Copilot\", which is the page to read if the goal is removal rather than access.\n\n| Fact | Bingbot |\n| --- | --- |\n| Operator | Microsoft |\n| Job | Search crawler |\n| robots.txt token | `bingbot` |\n| Follows robots.txt | Yes |\n| Published address list | Verify tool, no list read |\n| Vendor page read | 21 October 2026 |",
+  "block": "Bing's page does not say what a block costs; this is our reading, not Bing's. Bingbot is the crawler that feeds Bing, so disallowing it in robots.txt stops Bing crawling those pages, and anything that relies on Bing's index loses them too. Bing gives you two controls: robots.txt tells its crawlers how to interact with your site, and Bing Webmaster Tools has a Crawl control tool that sets the crawl rate by the hour.",
+  "compare": "The other main search crawler: a different token and different verification.",
+  "job": "Search crawler",
+  "follows": "Yes",
+  "ipnote": "Bing says user agent strings are easy to spoof, so not every request with them comes from a real Bing crawler. To check the address, use the Verify Bingbot tool, or one of the other verification methods Bing describes. In the user-agent string, W.X.Y.Z stands for the Microsoft Edge version Bing renders with, which Bing says it updates regularly. We did not read an IP list on that page, so we state no count."
+ },
+ "ccbot": {
+  "answer": "CCBot is the crawler of Common Crawl, a non-profit that maintains an open repository of web crawl data anyone can access and analyze. Common Crawl says User-agent: CCBot with Disallow: / stops it crawling a site. It also warns that other crawlers falsely identify themselves as CCBot, so verify requests.",
+  "what": "CCBot is the crawler of Common Crawl, a non-profit foundation that produces and maintains an open repository of web crawl data that anyone can access and analyze. The vendor page says the crawl data is meant to be freely available to organizations, academia and non-profits.",
+  "block": "Common Crawl says that adding User-agent: CCBot with Disallow: / to robots.txt prevents Common Crawl from crawling the site. The page also says it is aware of crawlers falsely identifying themselves as CCBot and recommends verifying user agent strings.",
+  "compare": "CCBot builds a public crawl archive that others can use, while GPTBot collects content for OpenAI's own purposes.",
+  "job": "Open web crawl archive",
+  "follows": "Yes, via a robots.txt rule for CCBot",
+  "ipnote": "Common Crawl says CCBot runs on dedicated IP address ranges with reverse DNS (not for IPv6), so a logged request can be checked with a reverse lookup that resolves to a crawl.commoncrawl.org hostname; the ranges are also published as JSON at https://index.commoncrawl.org/ccbot.json."
+ },
+ "chatgpt-user": {
+  "answer": "ChatGPT-User visits a web page when a person asks ChatGPT or a custom GPT a question that needs it. OpenAI says it is not used to crawl automatically and that, because a user starts the request, robots.txt rules may not apply. OpenAI lists 234 IP ranges for it.",
+  "what": "Unlike the other OpenAI robots, ChatGPT-User does not roam the web by itself. OpenAI describes it as the agent used for certain user actions in ChatGPT and custom GPTs, including pages a custom GPT reaches through GPT Actions. A person typed something, and a request to your server followed.\n\n| Fact | ChatGPT-User |\n| --- | --- |\n| Operator | OpenAI |\n| Job | User-triggered fetch |\n| robots.txt token | `ChatGPT-User` |\n| Follows robots.txt | Robots.txt rules may not apply |\n| Published address list | 234 ranges (openai.com/chatgpt-user.json, file dated 2026-10-20) |\n| Vendor page read | 21 October 2026 |",
+  "block": "Because the visit is user-initiated, OpenAI warns that robots.txt rules may not apply, so a `Disallow` line for ChatGPT-User is not a guaranteed stop. OpenAI also says ChatGPT-User is not used to decide whether content appears in search and sends search opt-outs to OAI-SearchBot. If you need to stop these requests, the control is on your server or CDN, not in robots.txt alone.",
+  "compare": "OAI-SearchBot is the search crawler and does obey robots.txt.",
+  "job": "User-triggered fetch",
+  "follows": "Robots.txt rules may not apply",
+  "ipnote": "Its address list is the longest of the three OpenAI files we counted: openai.com/chatgpt-user.json held 234 prefixes on 21 October 2026, creation time 2026-10-20, the day before this page. A list that long is a reason to fetch it again when you check a log line, not to copy it once into a firewall."
+ },
+ "claude-searchbot": {
+  "answer": "Claude-SearchBot is the Anthropic robot that navigates the web to improve search result quality. Anthropic says disabling it prevents indexing of your content for search optimization, which may reduce your visibility and accuracy in user search results. Its robots.txt token is Claude-SearchBot.",
+  "what": "Claude-SearchBot is the indexing side of Anthropic's search. Anthropic describes it as analysing online content to improve relevance and accuracy of search responses. [ClaudeBot](/bots/claudebot) collects for training and [Claude-User](/bots/claude-user) answers a live question.\n\n| Fact | Claude-SearchBot |\n| --- | --- |\n| Operator | Anthropic |\n| Job | Search |\n| robots.txt token | `Claude-SearchBot` |\n| Follows robots.txt | Yes, Anthropic says its robots respect robots.txt |\n| Published address list | Anthropic points to a list but advises against IP blocking |\n| Vendor page read | 21 October 2026 |",
+  "block": "Anthropic names two effects of disabling it: your content is not indexed for search optimization, and your site's visibility and accuracy in user search results may fall.",
+  "compare": "Blocking ClaudeBot opts out of training only; it does not remove you from Claude's search index.",
+  "job": "Search",
+  "follows": "Yes, Anthropic says its robots respect robots.txt",
+  "ipnote": "The help article is dated 7 April 2026. It lists no user-agent string, so a log line that names Claude-SearchBot is a claim you cannot confirm from the article alone. Anthropic says traffic from an address on its linked list is Anthropic's, and it asks site owners who think a robot is misbehaving to write from an email on the domain concerned."
+ },
+ "claude-user": {
+  "answer": "Claude-User is the agent Claude may use to access a website when a person asks it a question. Anthropic says disabling it prevents retrieval of your content in response to a user query, which may reduce your visibility for user-directed web search. It is separate from ClaudeBot and Claude-SearchBot.",
+  "what": "Of Anthropic's three robots, Claude-User is the one tied to a person's question. It does not collect training data ([ClaudeBot](/bots/claudebot) does) and it does not build the search index ([Claude-SearchBot](/bots/claude-searchbot) does).\n\n| Fact | Claude-User |\n| --- | --- |\n| Operator | Anthropic |\n| Job | User-triggered fetch |\n| robots.txt token | `Claude-User` |\n| Follows robots.txt | Yes, Anthropic says its robots respect robots.txt |\n| Published address list | Anthropic points to a list but advises against IP blocking |\n| Vendor page read | 21 October 2026 |",
+  "block": "This is where Anthropic's wording on cost is most direct: disabling Claude-User prevents retrieval \"in response to a user query\" and \"may reduce your site's visibility for user-directed web search\". A shop that blocks it can still be known to the model from other sources, but Claude cannot open the page when asked.",
+  "compare": "Search quality robot; its block affects indexing for search, not a user's live question.",
+  "job": "User-triggered fetch",
+  "follows": "Yes, Anthropic says its robots respect robots.txt",
+  "ipnote": "Anthropic's help article does not print a user-agent string for the three robots, and it says its source IP addresses are on a list it links. Because Anthropic also says that blocking those addresses can stop its robots reading robots.txt, the article's advice is to control access in robots.txt rather than at the IP layer."
+ },
+ "claudebot": {
+  "answer": "ClaudeBot is Anthropic's crawler for content that could contribute to model training. A robots.txt Disallow signals that a site's future materials should be excluded from training datasets. Anthropic honours Crawl-delay, and warns that blocking its IP addresses can stop it reading robots.txt, so use robots.txt instead.",
+  "what": "Anthropic names three robots in its help article: ClaudeBot for training data, [Claude-User](/bots/claude-user) for pages fetched at a user's request, and [Claude-SearchBot](/bots/claude-searchbot) for search quality. ClaudeBot is the training one. The article is dated 7 April 2026.\n\n| Fact | ClaudeBot |\n| --- | --- |\n| Operator | Anthropic |\n| Job | Training |\n| robots.txt token | `ClaudeBot` |\n| Follows robots.txt | Yes, it follows robots.txt and Crawl-delay |\n| Published address list | Anthropic points to a list but advises against IP blocking |\n| Vendor page read | 21 October 2026 |",
+  "block": "Anthropic says a restriction signals that the site's future materials should be excluded from its training datasets. The wording says \"future materials\"; it does not say what happens to content already collected. The other two Claude robots are separate, so blocking ClaudeBot leaves their rules untouched.",
+  "compare": "A separate search robot: blocking ClaudeBot does not touch it.",
+  "job": "Training",
+  "follows": "Yes, it follows robots.txt and Crawl-delay",
+  "ipnote": "Anthropic's article says its robots respect \"do not crawl\" signals in robots.txt and will not try to bypass CAPTCHAs. It supports the non-standard Crawl-delay directive, for example `User-agent: ClaudeBot` followed by `Crawl-delay: 1`. It also says that blocking by IP address may not give a lasting opt-out, because it stops the robot from reading robots.txt. Anthropic's article states that robots.txt must be set for every subdomain you want to opt out."
+ },
+ "diffbot": {
+  "answer": "Diffbot documents two user agents. Diffbot crawls the web proactively for a general search engine, so sites can be discovered and cited from its Knowledge Graph. Diffbot-User fetches a URL for a person using its software. Diffbot says its crawls follow robots.txt by default, including disallow and crawl-delay.",
+  "what": "Diffbot documents two user agents. Diffbot is used for general, proactive web crawling for building a general search engine, so sites can be discovered and cited from the Diffbot Knowledge Graph and web search services. Diffbot-User is used for requests made on behalf of a human user browsing a URL with Diffbot software.",
+  "block": "Diffbot says its web crawls follow robots.txt by default, including disallow and crawl-delay, and that a rule can be overridden in specific cases such as a partnership or agreement with the site. It lists Diffbot and Diffbot-User as separate user agents, and says users of its Extract and Crawlbot APIs define their own crawl parameters and can set their own User-Agent.",
+  "compare": "Diffbot is described by its operator as similar to Googlebot and Bing, a general crawler for a search index, and the vendor says it is not used for AI training.",
+  "job": "Search (general web crawl)",
+  "follows": "Yes, by default (disallow and crawl-delay directives)",
+  "ipnote": "The vendor page does not describe an IP list or verification method."
+ },
+ "duckassistbot": {
+  "answer": "DuckAssistBot crawls pages in real time for DuckDuckGo's AI-assisted answers, which cite their sources. DuckDuckGo says the data is not used to train AI models. A robots.txt Disallow takes effect after 72 hours and does not affect organic search rankings. It lists 486 IP addresses.",
+  "what": "DuckDuckGo runs two bots that people confuse. DuckDuckBot is the search crawler; DuckAssistBot is the one behind AI-assisted answers. DuckDuckGo's help page says the answers prominently cite their sources and that the crawled data is not used to train AI models.\n\n| Fact | DuckAssistBot |\n| --- | --- |\n| Operator | DuckDuckGo |\n| Job | Real-time fetch for AI-assisted answers |\n| robots.txt token | `DuckAssistBot` |\n| Follows robots.txt | Yes, a change takes effect after 72 hours |\n| Published address list | 486 addresses (duckduckgo.com/duckassistbot.json, file dated 2026-09-01) |\n| Vendor page read | 21 October 2026 |",
+  "block": "DuckDuckGo says that once you disallow DuckAssistBot the change takes effect after 72 hours, and that opting out does not impact organic search rankings and will not affect whether sites appear in its search results. The cost of a block is therefore limited to the assisted answers and their citations. Opt-out problems go to the address the page gives, crawling@duckduckgo.com.",
+  "compare": "Amazon's family of three agents, one of which may ignore robots.txt.",
+  "job": "Real-time fetch for AI-assisted answers",
+  "follows": "Yes, a change takes effect after 72 hours",
+  "ipnote": "DuckDuckGo lists the addresses in the help article and as JSON at duckduckgo.com/duckassistbot.json. The file held 486 entries on 21 October 2026, creation time 2026-09-01, longer than any other address list we counted for this set, and it holds single addresses where the others publish CIDR ranges. The user agent appears as `DuckAssistBot/1.2`."
+ },
+ "duckduckbot": {
+  "answer": "DuckDuckBot is the web crawler for DuckDuckGo, whose stated job is to improve DuckDuckGo's search results. DuckDuckGo says it respects WWW::RobotRules and publishes its IP addresses as a list in JSON form. DuckAssistBot, the fetcher for AI-assisted answers, is documented on a separate DuckDuckGo help page.",
+  "what": "DuckDuckBot is the web crawler for DuckDuckGo. DuckDuckGo says its job is to improve DuckDuckGo's search results. DuckDuckGo's help pages list DuckAssistBot on a separate page.",
+  "block": "DuckDuckGo says DuckDuckBot respects WWW::RobotRules, so a Disallow rule addressed to DuckDuckBot in robots.txt applies to this crawler. The page says nothing about what blocking it changes in DuckDuckGo results, and nothing about DuckAssistBot.",
+  "compare": "DuckDuckBot is the crawler for DuckDuckGo search results, while DuckAssistBot is documented by DuckDuckGo on its own help page.",
+  "job": "Search",
+  "follows": "Yes, respects WWW::RobotRules (no timing note published)",
+  "ipnote": "DuckDuckGo says the crawler originates from the IP addresses listed on its help page, also available as JSON at duckduckgo.com/duckduckbot.json."
+ },
+ "exasearchbot": {
+  "answer": "ExaSearchBot is the crawler of Exa, a search engine built for search and retrieval, so pages can be discovered and cited. Exa says it checks robots.txt before fetching and that User-agent: ExaSearchBot with Disallow: / blocks the whole site. Every request is cryptographically signed, so verification does not depend on an IP address.",
+  "what": "ExaSearchBot is the crawler of Exa, a search engine. Exa says its purpose is search and retrieval, so pages become discoverable and can be cited. Pages Exa fetches on a user's request rather than by crawling go out as ExaUser.",
+  "block": "Exa says User-agent: ExaSearchBot with Disallow: / blocks ExaSearchBot from the whole site. If there is no ExaSearchBot group, it follows the rules set for major search engines, otherwise the * group. The vendor says robots.txt controls crawling, not indexing, so already indexed pages are removed with a noindex meta tag or X-Robots-Tag header.",
+  "compare": "Both are search-index crawlers that feed AI answers with cited sources; ExaSearchBot signs its requests with Web Bot Auth and falls back to major search engines' rules when it has no group of its own.",
+  "job": "Search and retrieval index",
+  "follows": "Yes, vendor says it checks robots.txt before fetching",
+  "ipnote": "The vendor says every request is cryptographically signed with HTTP Message Signatures (Web Bot Auth) and gives a public key directory to verify against, and that verification holds regardless of IP address."
+ },
+ "exauser": {
+  "answer": "ExaUser is the agent Exa uses to fetch a page live when a user, or an application built on the Exa API, asks for its current content. Exa says robots.txt rules may not apply to such user-initiated fetches. Search opt-outs and automatic crawling are controlled with the ExaSearchBot token instead.",
+  "what": "ExaUser is the agent Exa uses to fetch a page live when a user, or an application built on the Exa API, asks for its current content. Exa says it is not used to crawl the web automatically; that is ExaSearchBot. It does not try to bypass logins, paywalls or CAPTCHAs, and submits no forms.",
+  "block": "Exa says that because fetches are initiated by a user, robots.txt rules may not apply to ExaUser. It also says ExaUser is not used to decide whether content appears in Exa search, and that search opt-outs and automatic crawling are managed with the ExaSearchBot token in robots.txt.",
+  "compare": "ExaSearchBot crawls automatically to build Exa's search index and follows robots.txt, while ExaUser fetches a page only when a user or application asks and the vendor says robots.txt may not apply.",
+  "job": "User-triggered fetch",
+  "follows": "Partial, vendor says robots.txt rules may not apply to user-initiated fetches",
+  "ipnote": "The vendor says every request is signed with Web Bot Auth (RFC 9421) and publishes its keys at a public directory; it does not publish an IP list."
+ },
+ "google-agent": {
+  "answer": "Google-Agent is a user-triggered fetcher that Google says is used by agents hosted on Google infrastructure to navigate the web and act on a user's request. Google says user-triggered fetchers generally ignore robots.txt because a user requested the fetch. Google publishes its IP ranges in user-triggered-agents.json.",
+  "what": "Google-Agent is a user-triggered fetcher that Google says is used by agents hosted on Google infrastructure to navigate the web and perform actions upon user request. Google lists separate mobile and desktop user agent strings. Google also says it is experimenting with the Web Bot Auth protocol using the https://agent.bot.goog identity.",
+  "block": "Google says that because the fetch was requested by a user, user-triggered fetchers generally ignore robots.txt rules. The Google page documents no robots.txt token for Google-Agent.",
+  "compare": "Both act on a user's request rather than crawling on their own, and Google-Agent is described as navigating the web and performing actions for the user.",
+  "job": "User-triggered fetch (agents acting for a user)",
+  "follows": "Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch.",
+  "ipnote": "Google says Google-Agent uses IP ranges from user-triggered-agents.json, and that user-triggered fetchers' reverse DNS mask matches ***-***-***-***.gae.googleusercontent.com or google-proxy-***-***-***-***.google.com depending on whether the fetcher is Google or user owned."
+ },
+ "google-cloudvertexbot": {
+  "answer": "Google-CloudVertexBot is a Google crawler that performs crawls requested by site owners to build Vertex AI Agents. Google lists it among its common crawlers, which always obey robots.txt when crawling automatically. Google says rules addressed to it have no effect on Google Search or other Google products.",
+  "what": "Google-CloudVertexBot is a Google crawler listed among its common crawlers. Google says it performs crawls requested by site owners for building Vertex AI Agents. Google shows it as a user agent substring, not a full user agent string.",
+  "block": "Google says preferences addressed to the Google-CloudVertexBot user agent affect crawls requested by site owners for building Vertex AI Agents. It says this has no effect on Google Search or other products.",
+  "compare": "Googlebot crawls for Google Search, while Google-CloudVertexBot only crawls when a site owner has requested a crawl for building Vertex AI Agents.",
+  "job": "Crawl requested by site owners for Vertex AI Agents",
+  "follows": "Yes. Google says common crawlers always obey robots.txt rules when crawling automatically.",
+  "ipnote": "Google says the common crawlers generally crawl from the ranges in common-crawlers.json, and that the reverse DNS name matches crawl-***-***-***-***.googlebot.com or geo-crawl-***-***-***-***.geo.googlebot.com."
+ },
+ "google-extended": {
+  "answer": "Google-Extended is a robots.txt product token that lets publishers manage whether content Google crawls may be used to train future Gemini models. It has no HTTP user agent of its own, so it never shows in your logs. Google says it does not affect inclusion in Search or ranking.",
+  "what": "Most pages in this set describe a crawler you can find in a log. This one you cannot. Google states that Google-Extended \"doesn't have a separate HTTP request user agent string\": crawling happens with existing Google user agents, and the robots.txt token is used in a control capacity.\n\n| Fact | Google-Extended |\n| --- | --- |\n| Operator | Google |\n| Job | Control token (no requests of its own) |\n| robots.txt token | `Google-Extended` |\n| Follows robots.txt | Read from robots.txt only; there is no separate user agent |\n| Published address list | None: it never fetches |\n| Vendor page read | 21 October 2026 |",
+  "block": "Adding `Disallow: /` under Google-Extended tells Google it may not use the content for training future Gemini models behind Gemini Apps and the Vertex AI API for Gemini. Google also says it does not impact inclusion in Google Search and is not a ranking signal. Our audit reads this token in robots.txt as one of its checks; it is the only signal there is. Google's page also names grounding, meaning content from the Google Search index given to the model at prompt time, as something this token manages.",
+  "compare": "The crawler that actually fetches your pages for Search.",
+  "job": "Control token (no requests of its own)",
+  "follows": "Read from robots.txt only; there is no separate user agent",
+  "ipnote": "There is nothing to verify at the network layer: no user agent, no address list. Check the robots.txt itself, on every host, and remember that a log search for Google-Extended finds nothing whether you block it or not. Google's own example group shows the token taking an allow path and a disallow path like any other."
+ },
+ "google-gemininotebook": {
+  "answer": "Google-GeminiNotebook is the user agent of the Gemini Notebook fetcher. It requests individual URLs that users have added as sources for their projects. Google lists it among user-triggered fetchers, which generally ignore robots.txt because a user requested the fetch. Google's page names Google-NotebookLM as the former agent.",
+  "what": "Google-GeminiNotebook is the user agent of the Gemini Notebook fetcher, which Google lists among its user-triggered fetchers. It requests individual URLs that users have provided as sources for their projects. Google's page lists Google-NotebookLM as the former agent, supported until August 2026.",
+  "block": "Google says that because the fetch was requested by a user, user-triggered fetchers generally ignore robots.txt rules. The Google page documents no robots.txt token for this fetcher.",
+  "compare": "Both fetch individual URLs because a user asked an assistant product to use them, and both vendors say these fetches may not follow robots.txt rules.",
+  "job": "User-triggered fetch",
+  "follows": "Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch.",
+  "ipnote": "Google says user-triggered fetchers publish IP ranges in user-triggered-fetchers.json, user-triggered-fetchers-google.json and user-triggered-agents.json, and that the reverse DNS mask matches ***-***-***-***.gae.googleusercontent.com or google-proxy-***-***-***-***.google.com depending on whether the fetcher is Google or user owned."
+ },
+ "google-pinpoint": {
+  "answer": "Google-Pinpoint is a user-triggered fetcher listed by Google. It requests individual URLs that Pinpoint users specified as sources for their personal collections of documents. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch, and documents no robots.txt token for it.",
+  "what": "Google-Pinpoint is a user-triggered fetcher listed by Google. It requests individual URLs that Pinpoint users specified as sources for their personal collections of documents. Google lists it with the user agent Google-Pinpoint.",
+  "block": "Google says that because the fetch was requested by a user, user-triggered fetchers generally ignore robots.txt rules. The Google page documents no robots.txt token for Google-Pinpoint.",
+  "compare": "Both fetch URLs that users supplied as sources in a Google product, and both fall under Google's user-triggered fetcher rules.",
+  "job": "User-triggered fetch",
+  "follows": "Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch.",
+  "ipnote": "Google says user-triggered fetchers publish IP ranges in user-triggered-fetchers.json, user-triggered-fetchers-google.json and user-triggered-agents.json, and that the reverse DNS mask matches ***-***-***-***.gae.googleusercontent.com or google-proxy-***-***-***-***.google.com depending on whether the fetcher is Google or user owned."
+ },
+ "googlebot": {
+  "answer": "Googlebot is Google's main crawler for Search. Google says its common crawlers always obey robots.txt rules when crawling automatically. Crawling preferences for the Googlebot token affect Google Search, including Discover, and products such as Images, Video and News. Google publishes 317 IP ranges for it.",
+  "what": "Googlebot is the crawler every Search check starts from. Google's page lists several crawlers, and the single token Googlebot governs Search, Discover and the products that draw on the same crawl, such as Images, Video mode and News.\n\n| Fact | Googlebot |\n| --- | --- |\n| Operator | Google |\n| Job | Search (also Images, Video, News, Discover) |\n| robots.txt token | `Googlebot` |\n| Follows robots.txt | Yes, always when crawling automatically |\n| Published address list | 317 ranges (developers.google.com/static/search/apis/ipranges/googlebot.json, file dated 2026-10-20) |\n| Vendor page read | 21 October 2026 |",
+  "block": "A Disallow for Googlebot is not a narrow AI opt-out; it affects Google Search itself, including Discover and the features built on it, per Google's list of affected products. The narrower control for Gemini training is the separate token [Google-Extended](/bots/google-extended).",
+  "compare": "A control token for Gemini training; it never fetches a page.",
+  "job": "Search (also Images, Video, News, Discover)",
+  "follows": "Yes, always when crawling automatically",
+  "ipnote": "Google publishes the ranges its common crawlers use. The Googlebot file held 317 prefixes on 21 October 2026, creation time 2026-10-20 14:46 UTC. Google also documents a reverse DNS mask for confirming a hostname, so a request is checked two ways: the address against the file, and the reverse lookup against the mask. The page itself was last updated 2026-10-15."
+ },
+ "googleother": {
+  "answer": "GoogleOther is Google's generic crawler. Various Google product teams use it to fetch publicly accessible content, for example in one-off crawls for internal research and development. Google says rules addressed to GoogleOther do not affect any specific product. GoogleOther-Image and GoogleOther-Video are documented as separate tokens.",
+  "what": "GoogleOther is Google's generic crawler, used by various Google product teams to fetch publicly accessible content, for example in one-off crawls for internal research and development. Google lists it among its common crawlers, next to Googlebot, and also documents GoogleOther-Image and GoogleOther-Video as versions optimized for image and video URLs. The Google page does not say it is used for AI training.",
+  "block": "Google says crawling preferences addressed to the GoogleOther user agent do not affect any specific product. Google documents GoogleOther-Image and GoogleOther-Video as separate robots.txt tokens, so a rule for GoogleOther is not stated to cover them, and the Googlebot token is a separate token again.",
+  "compare": "Googlebot crawls for Google Search and related products, while GoogleOther is a generic crawler whose robots.txt rules do not affect any specific Google product.",
+  "job": "Generic crawl for various Google product teams",
+  "follows": "Yes. Google says common crawlers always obey robots.txt rules when crawling automatically.",
+  "ipnote": "Google says the common crawlers generally crawl from the ranges in common-crawlers.json, and that the reverse DNS name matches crawl-***-***-***-***.googlebot.com or geo-crawl-***-***-***-***.geo.googlebot.com."
+ },
+ "gptbot": {
+  "answer": "GPTBot is OpenAI's training crawler. Disallowing it in robots.txt tells OpenAI the site's content should not be used to train its generative AI foundation models. It does not control ChatGPT search, which uses OAI-SearchBot. OpenAI publishes 18 IP ranges for GPTBot.",
+  "what": "GPTBot is the crawler people usually mean when they say \"block OpenAI\". OpenAI's page says it is used to crawl content that may be used in training its models. It is one of three crawlers named in the OpenAI documentation for the ChatGPT product family, next to [OAI-SearchBot](/bots/oai-searchbot) and [ChatGPT-User](/bots/chatgpt-user).\n\n| Fact | GPTBot |\n| --- | --- |\n| Operator | OpenAI |\n| Job | Training |\n| robots.txt token | `GPTBot` |\n| Follows robots.txt | Yes, it follows robots.txt |\n| Published address list | 18 ranges (openai.com/gptbot.json, file dated 2026-09-22) |\n| Vendor page read | 21 October 2026 |",
+  "block": "OpenAI frames a GPTBot Disallow as a signal about training: the content should not be used in training generative AI foundation models. The same page gives an example of a site allowing OAI-SearchBot to appear in search results while disallowing GPTBot, so a block here does not by itself take you out of ChatGPT's search answers. Whether to block is a business choice; both are legitimate.",
+  "compare": "Allow it and disallow GPTBot to stay in ChatGPT search while opting out of training.",
+  "job": "Training",
+  "follows": "Yes, it follows robots.txt",
+  "ipnote": "The GPTBot list at openai.com/gptbot.json is the shortest of the three OpenAI files we counted: 18 prefixes on 21 October 2026, creation time 2026-09-22. When a request names GPTBot but comes from an address outside that list, the name alone proves nothing."
+ },
+ "icc-crawler": {
+  "answer": "ICC-Crawler is run by the Universal Communication Research Institute at Japan's NICT. NICT says it uses collected pages for research on information processing, including multilingual translation, information analysis and artificial intelligence. It supports the Robots Exclusion Protocol: User-agent: ICC-Crawler with Disallow: / could disable collection from all pages.",
+  "what": "ICC-Crawler is a crawler run by the Universal Communication Research Institute at Japan's National Institute of Information and Communications Technology (NICT). NICT says it uses collected pages for research and development of information processing technologies, including multilingual translation, information analysis and artificial intelligence. NICT may also provide collected information or research products to third parties, to the extent permitted by law.",
+  "block": "NICT says ICC-Crawler supports the Robots Exclusion Protocol and that adding User-agent: ICC-Crawler with Disallow: / to robots.txt could disable collection from all pages. It also lets site owners block a path or file type, or allow selected paths under a full Disallow. If access continues after that, NICT asks site owners to contact it so it can stop collecting from the host.",
+  "compare": "Both collect pages that feed AI development, but ICC-Crawler is run by a Japanese public research institute for its own research and publishes two crawler IP addresses on its page, while GPTBot is run by a commercial company.",
+  "job": "Research data collection (includes AI research and development)",
+  "follows": "Yes, and with a Crawl-Delay it uses the larger of that interval and its own minimum",
+  "ipnote": "The vendor page lists the crawler's IP addresses in plain text; it does not publish a machine-readable list."
+ },
+ "imagesiftbot": {
+  "answer": "ImagesiftBot is the crawler of ImageSift, a Hive product. It collects publicly available images with the host URL, page text and image alt text for an index used to search for similar images. The vendor says it respects robots.txt and Crawl-delay, and follows the Googlebot rules when none target it.",
+  "what": "ImageSiftBot is the crawler of ImageSift, a Hive product. It collects publicly available images, along with the host URL, page text and image alt text. ImageSift stores the data in an index that its products use for search and retrieval of similar images.",
+  "block": "The vendor says standard robots.txt directives that target ImagesiftBot are respected, and that it supports Crawl-delay. If no rule targets ImagesiftBot but a rule targets Googlebot, it follows the Googlebot rules. The page also gives support@imagesift.com for opt-out requests.",
+  "compare": "ImagesiftBot falls back to Googlebot's robots.txt rules when it has none of its own, and it collects images for a similar-image index rather than for a general web search.",
+  "job": "Image index for similar-image search",
+  "follows": "Yes, and it supports Crawl-delay",
+  "ipnote": "The vendor page does not publish an IP list or a verification method."
+ },
+ "kagibot": {
+  "answer": "Kagibot is the web crawler for the Kagi search engine. Kagi says standard robots.txt directives that target Kagibot are respected, and that when no rule targets Kagibot but one targets Googlebot, Kagibot follows the Googlebot directives. Kagi publishes its user-agent string and the IP addresses its requests come from.",
+  "what": "Kagibot is the web crawler for the Kagi search engine. Kagi publishes its user-agent string and the IP addresses that Kagibot requests originate from.",
+  "block": "Kagi says standard robots.txt directives that target Kagibot are respected, for example Disallow rules for a path. If there is no rule for Kagibot but there is one for Googlebot, Kagibot follows the Googlebot directives.",
+  "compare": "Kagibot follows its own robots.txt rules, and falls back to the Googlebot rules when none target Kagibot.",
+  "job": "Search",
+  "follows": "Yes, standard robots.txt directives targeting Kagibot are respected",
+  "ipnote": "Kagi lists the IP addresses (with kagibot.org hostnames) that requests from Kagibot originate from on its bot page."
+ },
+ "linkupbot": {
+  "answer": "LinkupBot is the web crawler of Linkup. It fetches publicly accessible pages to build the Linkup search index, which Linkup says powers search and web grounding for AI applications. Linkup says User-agent: LinkupBot with Disallow: / blocks the whole site, and that robots.txt is not an access-control mechanism.",
+  "what": "LinkupBot is the web crawler of Linkup. It fetches publicly accessible pages to build and maintain the Linkup search index, which Linkup says powers search and web grounding for AI applications.",
+  "block": "Adding User-agent: LinkupBot with Disallow: / to robots.txt blocks the whole site, according to the vendor. The vendor also says robots rules apply per host, that allowing LinkupBot through a firewall does not override robots.txt, and that robots.txt is not an access-control mechanism.",
+  "compare": "Both build a search index that feeds AI answers; LinkupBot's index serves AI applications through Linkup's search and grounding service, and its IP list is a plain text file rather than JSON.",
+  "job": "Search index for AI web search",
+  "follows": "Yes, vendor says it respects applicable robots.txt rules",
+  "ipnote": "The vendor says requests come from the CIDR ranges in its published list and to verify with both a source IP in that list and a user-agent containing the LinkupBot token."
+ },
+ "meta-externalagent": {
+  "answer": "Meta-ExternalAgent is Meta's crawler for use cases such as training foundation AI models or improving products by indexing content directly. Meta's page, updated 21 May 2026, lists five agents. It says Meta-ExternalFetcher and FacebookExternalHit may bypass robots.txt, and that changes can take up to 24 hours.",
+  "what": "Meta's page lists five crawlers. FacebookExternalHit fetches a page when someone shares a link on Facebook, Instagram or Messenger, to cache its title, description and thumbnail. Meta-WebIndexer improves Meta AI search results, and Meta says allowing it helps Meta cite and link to your content in Meta AI's responses. Meta-ExternalAds crawls for advertising and business products. Meta-ExternalAgent is the one for training foundation AI models or indexing. Meta-ExternalFetcher fetches individual links at a user's request, including helping AI navigate websites to complete tasks for users.\n\n| Fact | Meta-ExternalAgent |\n| --- | --- |\n| Operator | Meta |\n| Job | AI model training and content indexing |\n| robots.txt token | `meta-externalagent` |\n| Follows robots.txt | Yes |\n| Published address list | None read |\n| Vendor page read | 21 October 2026 |",
+  "block": "Disallowing meta-externalagent affects that agent only: Meta's own examples give a separate group for each token, and the other four have their own. The costly one to block by mistake is FacebookExternalHit, because it builds the link preview when someone shares your page. Two of the five may ignore your robots.txt: Meta says Meta-ExternalFetcher may bypass robots.txt because it performs fetches requested by the user, and FacebookExternalHit may bypass it for security or integrity checks such as malware checks.",
+  "compare": "OpenAI's training crawler, which honours robots.txt without Meta's bypass cases.",
+  "job": "AI model training and content indexing",
+  "follows": "Yes",
+  "ipnote": "Meta's page gives the user-agent strings (meta-externalagent/1.1 and the version with a link) and does not publish an IP list in the text we read, so we state no count. For FacebookExternalHit Meta says to allow-list either the user-agent strings or the IP addresses, and calls the addresses the more secure option. Meta says crawlers may cache robots.txt for up to 24 hours, so allow that long before judging a change. Questions go to webmasters@meta.com."
+ },
+ "meta-externalfetcher": {
+  "answer": "Meta-ExternalFetcher is a Meta crawler that fetches individual links at a user's request. Meta says it supports product functions such as helping AI navigate websites to complete tasks for users, and that it may bypass robots.txt because the fetches are requested by a user. Robots.txt changes can take up to 24 hours.",
+  "what": "Meta-ExternalFetcher is a Meta crawler that fetches individual links at a user's request. Meta says it supports product functions such as evaluating and improving agentic AI capabilities, including helping AI navigate websites to complete tasks for users. Meta documents it alongside Meta-ExternalAgent, Meta-WebIndexer, Meta-ExternalAds and FacebookExternalHit on one page.",
+  "block": "Meta says you can block its crawlers by adding a disallow for the relevant crawler to robots.txt. Meta also says Meta-ExternalFetcher may bypass robots.txt because it performs fetches that were requested by the user. Meta says changes to robots.txt can take up to 24 hours to take effect because crawlers may cache the file for up to 24 hours.",
+  "compare": "Meta-ExternalAgent crawls the web in the background, including for training foundation AI models, while Meta-ExternalFetcher fetches single links a user asked for and may bypass robots.txt.",
+  "job": "User-triggered fetch",
+  "follows": "Partial, may bypass robots.txt because fetches are requested by a user",
+  "ipnote": "Meta's crawler page does not list IP addresses or a verification method for this crawler; it identifies the crawler by its user-agent string."
+ },
+ "meta-webindexer": {
+  "answer": "Meta-WebIndexer is a Meta crawler that navigates the web to improve Meta AI search result quality. Meta says allowing it in robots.txt helps Meta cite and link to your content in Meta AI's responses. Meta says you block its crawlers with a disallow for the relevant crawler, and a change can take up to 24 hours.",
+  "what": "Meta-WebIndexer is a Meta crawler that navigates the web to improve Meta AI search result quality for users. Meta says allowing it in robots.txt helps Meta cite and link to your content in Meta AI's responses. Meta documents it alongside Meta-ExternalAgent, Meta-ExternalFetcher, Meta-ExternalAds and FacebookExternalHit on one page.",
+  "block": "Meta says you can block its crawlers by adding a disallow for the relevant crawler to robots.txt, and that robots.txt changes can take up to 24 hours to take effect. Meta says allowing Meta-WebIndexer helps it cite and link to your content in Meta AI's responses. Meta's page does not say whether a disallow for Meta-WebIndexer affects its other crawlers.",
+  "compare": "Meta-WebIndexer is for Meta AI search results and citations, while Meta-ExternalAgent is described by Meta as crawling for uses such as training foundation AI models or indexing content directly.",
+  "job": "Search",
+  "follows": "Yes, changes may take up to 24 hours",
+  "ipnote": "Meta's crawler page does not list IP addresses or a verification method for this crawler; it identifies the crawler by its user-agent string."
+ },
+ "mistralai-user": {
+  "answer": "MistralAI-User is the Mistral agent that may visit a page when a user asks Vibe a question and link the source in its answer. Mistral says it is not used to crawl automatically or for generative AI training. Mistral's page also lists MistralAI-Index and MistralAI-Training, each with its own token.",
+  "what": "Mistral's crawler page lists three agents: MistralAI-User for user actions in Vibe, MistralAI-Index for indexing content for Mistral search, and MistralAI-Training, which crawls web content to help build datasets for training Mistral generative AI models. Webmasters can disallow each in robots.txt.\n\n| Fact | MistralAI-User |\n| --- | --- |\n| Operator | Mistral |\n| Job | User-triggered fetch |\n| robots.txt token | `MistralAI-User` |\n| Follows robots.txt | Opt-out through robots.txt |\n| Published address list | 4 ranges (mistral.ai/mistralai-user-ips.json, file dated 2025-02-19) |\n| Vendor page read | 21 October 2026 |",
+  "block": "Disallowing MistralAI-User stops that agent opening your page for a Vibe user's question; it leaves the index and training agents alone, which have their own tokens. Mistral says the user agent is not used for crawling the web in any automatic fashion, nor to crawl content for generative AI training, and that content crawled by the index agent is not used for generative AI training of any kind.",
+  "compare": "The same job at OpenAI, with a different robots.txt promise.",
+  "job": "User-triggered fetch",
+  "follows": "Opt-out through robots.txt",
+  "ipnote": "Mistral publishes separate address files for the agents. mistral.ai/mistralai-user-ips.json held 4 prefixes (creation time 2025-02-19) and the index file 2 prefixes (creation time 2026-04-19) on 21 October 2026. Two entries for an index crawler is a list a firewall rule can hold exactly."
+ },
+ "mojeekbot": {
+  "answer": "MojeekBot is the web crawler for the Mojeek search engine. Mojeek says it obeys the Robots Exclusion Standard, using the first record whose User-Agent contains MojeekBot, and does not support the nonstandard crawl-delay directive. It should not request more than one page from a site in the same second.",
+  "what": "MojeekBot is the web crawler for the Mojeek search engine. Mojeek says it should not request more than one page from a site within the same 1 second period. It obeys the noindex, nocache and nofollow meta tags.",
+  "block": "Mojeek says MojeekBot obeys the first robots.txt record whose User-Agent contains MojeekBot, and otherwise the first record for User-Agent *. It will not retrieve URLs containing a disallowed string. It does not support the nonstandard crawl-delay directive.",
+  "compare": "Both crawl for a search engine; Mojeek publishes a one-range IP list and a reverse DNS check, and does not support crawl-delay.",
+  "job": "Search",
+  "follows": "Yes, obeys the Robots Exclusion Standard; crawl-delay is not supported",
+  "ipnote": "Mojeek says to reverse-resolve the visiting IP to a name in the mojeek.com domain and forward-resolve it back to the same IP, or to match the IP against its published list of MojeekBot IP addresses."
+ },
+ "oai-searchbot": {
+  "answer": "OAI-SearchBot is OpenAI's crawler for ChatGPT search. Sites that opt out of it will not be shown in ChatGPT search answers, though they can still appear as navigational links. It obeys robots.txt under the token OAI-SearchBot, and OpenAI publishes 39 IP ranges for it.",
+  "what": "OpenAI runs several crawlers and says each setting is independent of the others. OAI-SearchBot is the one that decides whether your pages can be surfaced in ChatGPT's search features. It is not the training crawler (that is [GPTBot](/bots/gptbot)) and it is not the fetcher that opens a page when a person asks about it (that is [ChatGPT-User](/bots/chatgpt-user)).\n\n| Fact | OAI-SearchBot |\n| --- | --- |\n| Operator | OpenAI |\n| Job | Search |\n| robots.txt token | `OAI-SearchBot` |\n| Follows robots.txt | Yes, it follows robots.txt |\n| Published address list | 39 ranges (openai.com/searchbot.json, file dated 2026-01-02) |\n| Vendor page read | 21 October 2026 |",
+  "block": "OpenAI's own wording is that opted-out sites \"will not be shown in ChatGPT search answers\". That is the cost: a shop that blocks OAI-SearchBot gives up the part of ChatGPT that links to sources. OpenAI recommends the opposite for sites that want to appear: allow OAI-SearchBot in robots.txt and allow requests from its published IP ranges.",
+  "compare": "GPTBot is for training; blocking it does not remove you from ChatGPT search because the settings are independent.",
+  "job": "Search",
+  "follows": "Yes, it follows robots.txt",
+  "ipnote": "OpenAI publishes the addresses OAI-SearchBot uses at openai.com/searchbot.json. On 21 October 2026 that file held 39 prefixes and carried the creation time 2026-01-02. Match the address in your server log against those prefixes before you trust a request that only claims the name in its user-agent. OpenAI also says that when it fetches robots.txt it may add a `robots.txt` marker to the user-agent string, so those requests are easy to tell apart in logs without paths."
+ },
+ "perplexity-user": {
+  "answer": "Perplexity-User is Perplexity's user-action fetcher: when a user asks a question, it may visit a page to answer accurately and link to it. Perplexity says it is not used for web crawling or for training AI models, and that it generally ignores robots.txt rules because a user requested the fetch.",
+  "what": "Perplexity-User is Perplexity's user-action fetcher. When a user asks Perplexity a question, it might visit a web page to help provide an accurate answer and include a link to the page in its response. Perplexity says it is not used for web crawling or to collect content for training AI foundation models, and it is separate from PerplexityBot, which surfaces and links websites in Perplexity search results.",
+  "block": "Perplexity lists Perplexity-User as a robots.txt token and says it controls which sites these user requests can access. Perplexity also says this fetcher generally ignores robots.txt rules because a user requested the fetch. Perplexity says each of its robots.txt settings works independently and changes may take up to 24 hours to take effect.",
+  "compare": "PerplexityBot surfaces and links sites in Perplexity search results, while Perplexity-User fetches a page when a user's question needs it and generally ignores robots.txt.",
+  "job": "User-triggered fetch",
+  "follows": "Generally ignores robots.txt rules, because a user requested the fetch",
+  "ipnote": "Perplexity publishes the Perplexity-User IP addresses as a JSON file and says to use it as the source of truth for allow rules, combined with the user-agent string."
+ },
+ "perplexitybot": {
+  "answer": "PerplexityBot is Perplexity's crawler for surfacing and linking websites in its search results. Perplexity says it is not used to crawl content for AI foundation models. It follows robots.txt, changes can take up to 24 hours to apply, and Perplexity publishes 8 IP ranges for it.",
+  "what": "Perplexity names two agents. PerplexityBot builds the search index; Perplexity-User visits a page when a person asks. Perplexity's page contains configuration guidelines for popular WAF providers because a firewall can stop the crawler before robots.txt matters.\n\n| Fact | PerplexityBot |\n| --- | --- |\n| Operator | Perplexity |\n| Job | Search |\n| robots.txt token | `PerplexityBot` |\n| Follows robots.txt | Yes, it follows robots.txt |\n| Published address list | 8 ranges (perplexity.com/perplexitybot.json, file dated 2025-02-07) |\n| Vendor page read | 21 October 2026 |",
+  "block": "Perplexity recommends allowing PerplexityBot in robots.txt and permitting requests from its published IP ranges if you want to appear in its search results. It also says changes to your robots.txt can take up to 24 hours to be reflected in its systems, so a check made an hour after an edit proves little.",
+  "compare": "The user-triggered fetcher; Perplexity says it generally ignores robots.txt.",
+  "job": "Search",
+  "follows": "Yes, it follows robots.txt",
+  "ipnote": "Perplexity's file at perplexity.com/perplexitybot.json held 8 prefixes on 21 October 2026, creation time 2025-02-07. Its WAF section suggests a rule that combines the user-agent with the IP condition, so a request claiming the name from another address does not get through."
+ },
+ "storebot-google": {
+  "answer": "Storebot-Google is the crawler Google documents as Google StoreBot among its common crawlers. Google says a Disallow addressed to its token affects all surfaces of Google Shopping, such as the Shopping tab in Google Search and Google Shopping. Googlebot is a separate token with its own affected products.",
+  "what": "Storebot-Google is the Google crawler documented as Google StoreBot among its common crawlers. Google says rules addressed to it affect all surfaces of Google Shopping. Google lists separate desktop and mobile user agent strings for it.",
+  "block": "Google says a Disallow addressed to the Storebot-Google token affects all surfaces of Google Shopping, such as the Shopping tab in Google Search and Google Shopping. The page lists Googlebot as a separate token with its own affected products.",
+  "compare": "Googlebot's rules affect Google Search and related products, while Storebot-Google's rules affect Google Shopping surfaces.",
+  "job": "Search (Google Shopping surfaces)",
+  "follows": "Yes. Google says common crawlers always obey robots.txt rules when crawling automatically.",
+  "ipnote": "Google says the common crawlers generally crawl from the ranges in common-crawlers.json, and that the reverse DNS name matches crawl-***-***-***-***.googlebot.com or geo-crawl-***-***-***-***.geo.googlebot.com."
+ },
+ "yandexbot": {
+  "answer": "YandexBot is listed by Yandex as its main indexing robot, one of many Yandex robots with their own user agents. Yandex says some of them download pages for purposes other than indexing and may ignore restrictive rules written for all robots (User-agent: *). Yandex does not publish an IP list.",
+  "what": "YandexBot is listed by Yandex as the main indexing robot. Yandex runs many other robots with their own user agents (for images, video, advertising, mobile pages, favicons and more), listed on the same page. Yandex does not publish an IP list for its bots.",
+  "block": "Yandex says a number of its robots download pages for purposes other than indexing and may ignore restrictive rules written for all robots (User-agent: *). To restrict those robots you need directives written specifically for them, for example User-agent: YandexCalendar. Yandex adds that a document the main Yandex robot cannot access will never be indexed or found in search results.",
+  "compare": "Both are the main search indexing crawler of their operator; Yandex lists many separate robots, some of which ignore general robots.txt rules, and states it does not publish an IP list.",
+  "job": "Search (main indexing robot)",
+  "follows": "Yes, takes into account the general rules in robots.txt (User-agent: *)",
+  "ipnote": "Yandex says to run a reverse DNS lookup on the IP, check that the host name ends in yandex.ru, yandex.net or yandex.com, then confirm with a forward lookup; it also offers an IP address check tool."
+ },
+ "youbot": {
+  "answer": "YouBot is the web crawler that powers the You.com search engine, discovering and indexing pages for its results. You.com says it respects robots.txt, honors Crawl-delay and caches robots.txt for 30 minutes. User-agent: YouBot with Disallow: / blocks it from the whole site.",
+  "what": "YouBot is the web crawler that powers the You.com search engine. It discovers and indexes web pages for You.com search results. You.com says X.X.X.X in the user agent stands for the Google Chrome version number.",
+  "block": "You.com says YouBot respects robots.txt and shows User-agent: YouBot with Disallow: / as the way to block it from the whole site. It also honors Crawl-delay and caches robots.txt for 30 minutes. The page does not describe any other You.com agents.",
+  "compare": "Both are search-engine crawlers that follow robots.txt; You.com supports Crawl-delay and signs requests with Web Bot Auth, while Mojeek does not support Crawl-delay.",
+  "job": "Search",
+  "follows": "Yes, robots.txt is cached for 30 minutes, so changes can take up to 30 minutes",
+  "ipnote": "You.com says requests originate from 68.67.112.0/24, hosts resolve as youbot-{octets-with-hyphens}.search.you.com, and requests carry Cloudflare Web Bot Auth signatures with public keys at you.com/.well-known/http-message-signatures-directory."
+ }
+}

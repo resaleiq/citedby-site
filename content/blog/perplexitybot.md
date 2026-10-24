@@ -66,7 +66,7 @@ Perplexity's file at perplexity.com/perplexitybot.json held 8 prefixes on 21 Oct
 
 ## Compare with Perplexity-User
 
-Perplexity-User: The user-triggered fetcher; Perplexity says it generally ignores robots.txt.
+[Perplexity-User](/bots/perplexity-user): The user-triggered fetcher; Perplexity says it generally ignores robots.txt.
 
 ## Check your own site
 

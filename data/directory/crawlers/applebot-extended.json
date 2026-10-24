@@ -1,0 +1,40 @@
+{
+ "slug": "applebot-extended",
+ "name": "Applebot-Extended",
+ "operator": "Apple",
+ "job": "control",
+ "job_en": "Control token (no requests of its own)",
+ "token": "Applebot-Extended",
+ "follows": "token_only",
+ "follows_en": "Read from robots.txt only",
+ "ips": {
+  "kind": "none",
+  "count": null,
+  "unit": null,
+  "url": null,
+  "file_date": null,
+  "note": "No network check exists for a token that sends no requests. Read robots.txt, on each host, and check Applebot separately, because the two tokens are independent and a single `User-agent: Applebot-Extended` group says nothing about Applebot."
+ },
+ "ua": null,
+ "vendor_quote": "Web publishers can opt-out from having their content used to train generative foundation models by disallowing Applebot-Extended in the robots.txt file.",
+ "vendor_quote_source": {
+  "title": "Apple Support: About Applebot",
+  "url": "https://support.apple.com/en-us/119829"
+ },
+ "read": "2026-10-21",
+ "what_en": "Apple's page describes Applebot-Extended as the way to keep content out of training for foundation models behind Apple Intelligence, services and developer tools. Like [Google-Extended](/bots/google-extended) it is a control token: you will not find it in a log.\n\n| Fact | Applebot-Extended |\n| --- | --- |\n| Operator | Apple |\n| Job | Control token (no requests of its own) |\n| robots.txt token | `Applebot-Extended` |\n| Follows robots.txt | Read from robots.txt only |\n| Published address list | None: it never fetches |\n| Vendor page read | 21 October 2026 |",
+ "block_en": "Apple spells out the limit: if you disallow Applebot-Extended and also tag content with the nosnippet meta tag, your instructions may still allow Applebot to crawl the page, and the content remains discoverable through Spotlight, Siri and Safari. The same page says publishers can opt out of use in broad world-knowledge answers by applying this robots.txt control.",
+ "doc_url": "https://support.apple.com/en-us/119829",
+ "compare": "applebot",
+ "compare_en": "The crawler itself: allowing it keeps you in Spotlight, Siri and Safari search.",
+ "sources": [
+  {
+   "title": "Apple Support: About Applebot",
+   "url": "https://support.apple.com/en-us/119829"
+  }
+ ],
+ "answer_en": "Applebot-Extended is a robots.txt token. Apple says publishers can opt out of having their content used to train generative foundation models by disallowing it. Applebot may still crawl the page, so the content stays discoverable in Spotlight, Siri and Safari. It makes no requests of its own.",
+ "en_handwritten": true,
+ "title_en": "Applebot-Extended: opt out of Apple model training, keep search",
+ "h1_en": "Applebot-Extended: opting out of Apple's model training without leaving search"
+}

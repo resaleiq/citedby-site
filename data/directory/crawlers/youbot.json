@@ -1,0 +1,38 @@
+{
+ "slug": "youbot",
+ "name": "YouBot",
+ "operator": "You.com",
+ "job": "search",
+ "job_en": "Search",
+ "token": "YouBot",
+ "follows": "yes",
+ "follows_en": "Yes, robots.txt is cached for 30 minutes, so changes can take up to 30 minutes",
+ "ips": {
+  "kind": "html_list",
+  "count": null,
+  "unit": null,
+  "url": "https://you.com/docs/youbot",
+  "file_date": null,
+  "note": "You.com says requests originate from 68.67.112.0/24, hosts resolve as youbot-{octets-with-hyphens}.search.you.com, and requests carry Cloudflare Web Bot Auth signatures with public keys at you.com/.well-known/http-message-signatures-directory."
+ },
+ "ua": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; YouBot/1.0; +https://docs.you.com/youbot; env:prod) Chrome/X.X.X.X Safari/537.36",
+ "vendor_quote": "YouBot is the web crawler that powers the You.com search engine.",
+ "vendor_quote_source": {
+  "title": "You.com Docs: YouBot: You.com's Web Crawler",
+  "url": "https://docs.you.com/youbot"
+ },
+ "what_en": "YouBot is the web crawler that powers the You.com search engine. It discovers and indexes web pages for You.com search results. You.com says X.X.X.X in the user agent stands for the Google Chrome version number.",
+ "block_en": "You.com says YouBot respects robots.txt and shows User-agent: YouBot with Disallow: / as the way to block it from the whole site. It also honors Crawl-delay and caches robots.txt for 30 minutes. The page does not describe any other You.com agents.",
+ "doc_url": "https://docs.you.com/youbot",
+ "compare": "mojeekbot",
+ "compare_en": "Both are search-engine crawlers that follow robots.txt; You.com supports Crawl-delay and signs requests with Web Bot Auth, while Mojeek does not support Crawl-delay.",
+ "sources": [
+  {
+   "title": "You.com Docs: YouBot: You.com's Web Crawler",
+   "url": "https://docs.you.com/youbot"
+  }
+ ],
+ "notes": "docs.you.com/youbot redirects to you.com/docs/youbot. The vendor page gives 68.67.112.0/24 as a single stated range, not a downloadable list, so count is null. The page's reverse DNS example also shows a googlebot.com line for illustration; only the YouBot hostname pattern was used. Contact address given by vendor: spider@you.com.",
+ "answer_en": "YouBot is the web crawler that powers the You.com search engine, discovering and indexing pages for its results. You.com says it respects robots.txt, honors Crawl-delay and caches robots.txt for 30 minutes. User-agent: YouBot with Disallow: / blocks it from the whole site.",
+ "read": "2026-10-24"
+}

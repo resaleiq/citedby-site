@@ -1,0 +1,40 @@
+{
+ "slug": "claude-searchbot",
+ "name": "Claude-SearchBot",
+ "operator": "Anthropic",
+ "job": "search",
+ "job_en": "Search",
+ "token": "Claude-SearchBot",
+ "follows": "yes",
+ "follows_en": "Yes, Anthropic says its robots respect robots.txt",
+ "ips": {
+  "kind": "advice",
+  "count": null,
+  "unit": null,
+  "url": null,
+  "file_date": null,
+  "note": "The help article is dated 7 April 2026. It lists no user-agent string, so a log line that names Claude-SearchBot is a claim you cannot confirm from the article alone. Anthropic says traffic from an address on its linked list is Anthropic's, and it asks site owners who think a robot is misbehaving to write from an email on the domain concerned."
+ },
+ "ua": null,
+ "vendor_quote": "Claude-SearchBot navigates the web to improve search result quality for users. It analyzes online content specifically to enhance the relevance and accuracy of search responses. Disabling Claude-SearchBot on your site prevents our system from indexing your content for search optimization, which may reduce your site's visibility and accuracy in user search results.",
+ "vendor_quote_source": {
+  "title": "Anthropic Help Center: Does Anthropic crawl data from the web, and how can site owners block the crawler? (7 April 2026)",
+  "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+ },
+ "read": "2026-10-21",
+ "what_en": "Claude-SearchBot is the indexing side of Anthropic's search. Anthropic describes it as analysing online content to improve relevance and accuracy of search responses. [ClaudeBot](/bots/claudebot) collects for training and [Claude-User](/bots/claude-user) answers a live question.\n\n| Fact | Claude-SearchBot |\n| --- | --- |\n| Operator | Anthropic |\n| Job | Search |\n| robots.txt token | `Claude-SearchBot` |\n| Follows robots.txt | Yes, Anthropic says its robots respect robots.txt |\n| Published address list | Anthropic points to a list but advises against IP blocking |\n| Vendor page read | 21 October 2026 |",
+ "block_en": "Anthropic names two effects of disabling it: your content is not indexed for search optimization, and your site's visibility and accuracy in user search results may fall.",
+ "doc_url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+ "compare": "claudebot",
+ "compare_en": "Blocking ClaudeBot opts out of training only; it does not remove you from Claude's search index.",
+ "sources": [
+  {
+   "title": "Anthropic Help Center: Does Anthropic crawl data from the web, and how can site owners block the crawler? (7 April 2026)",
+   "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  }
+ ],
+ "answer_en": "Claude-SearchBot is the Anthropic robot that navigates the web to improve search result quality. Anthropic says disabling it prevents indexing of your content for search optimization, which may reduce your visibility and accuracy in user search results. Its robots.txt token is Claude-SearchBot.",
+ "en_handwritten": true,
+ "title_en": "Claude-SearchBot: Anthropic's search crawler and blocking it",
+ "h1_en": "Claude-SearchBot: Anthropic's search crawler and what blocking costs"
+}

@@ -1,5 +1,5 @@
 """RES-2935: every HTML page links to the site's hubs from its footer, so no page is an orphan or more than 3 clicks from the home page (the crawl found 98 deep pages and the 5 /guides hubs with no link).
-Added at serve time like withdraw_link, so static, generated and app pages all get it, in the page's language. Hubs that exist in one language only (bots, platforms, data) link to that page."""
+Added at serve time like withdraw_link, so static, generated and app pages all get it, in the page's language. Hubs that exist in one language only (data, tool comparison, our crawler, CI check) link to that page."""
 import re
 
 _LANG = re.compile(rb'<html[^>]*\blang="?([a-z]{2})')
@@ -9,12 +9,14 @@ LABELS = {  # (guides, blog, tools, audit, changes, findable check, AI access AP
     "en": ("Guides", "Blog", "Free tools", "AI visibility audit", "What changed", "Findable check", "AI access API"), "fr": ("Guides", "Blog", "Outils gratuits", "Audit de visibilité IA", "Ce qui a changé", "Contrôle de visibilité", "API d'accès des robots IA"),
     "nl": ("Gidsen", "Blog", "Gratis tools", "AI-zichtbaarheidsaudit", "Wat er veranderde", "Vindbaarheidscheck", "API voor AI-crawlertoegang"), "de": ("Ratgeber", "Blog", "Kostenlose Tools", "KI-Sichtbarkeits-Audit", "Was sich geändert hat", "Auffindbarkeits-Check", "API für KI-Crawler"),
     "es": ("Guías", "Blog", "Herramientas gratis", "Auditoría de visibilidad en IA", "Qué ha cambiado", "Comprobación de visibilidad", "API de rastreadores de IA")}
-ENGLISH_ONLY = (("/bots", "AI bots"), ("/platforms", "Platforms"), ("/data", "Data"), ("/compare/profound-vs-peec-vs-otterly", "Tool comparison"), ("/bot", "Our crawler"), ("/ci", "Free CI check"))
-ENGLISH_ONLY_LABELS = {  # RES-3013: the five links go to English-only pages, so each other language names them in its own words and says "(in English)"
-    "fr": ("Robots IA (en anglais)", "Plateformes (en anglais)", "Données (en anglais)", "Comparatif d'outils (en anglais)", "Notre robot (en anglais)", "Contrôle CI gratuit (en anglais)"),
-    "nl": ("AI-bots (in het Engels)", "Platforms (in het Engels)", "Data (in het Engels)", "Toolvergelijking (in het Engels)", "Onze crawler (in het Engels)", "Gratis CI-check (in het Engels)"),
-    "de": ("KI-Bots (auf Englisch)", "Plattformen (auf Englisch)", "Daten (auf Englisch)", "Tool-Vergleich (auf Englisch)", "Unser Crawler (auf Englisch)", "Kostenloser CI-Check (auf Englisch)"),
-    "es": ("Bots de IA (en inglés)", "Plataformas (en inglés)", "Datos (en inglés)", "Comparativa de herramientas (en inglés)", "Nuestro rastreador (en inglés)", "Comprobación CI gratis (en inglés)")}
+LOCAL_HUBS = {  # RES-4194: /bots and /platforms now exist in all five languages
+    "en": ("AI bots", "Platforms"), "fr": ("Robots IA", "Plateformes"), "nl": ("AI-bots", "Platforms"), "de": ("KI-Bots", "Plattformen"), "es": ("Bots de IA", "Plataformas")}
+ENGLISH_ONLY = (("/data", "Data"), ("/compare/profound-vs-peec-vs-otterly", "Tool comparison"), ("/bot", "Our crawler"), ("/ci", "Free CI check"))
+ENGLISH_ONLY_LABELS = {  # RES-3013: these links go to English-only pages, so each other language names them in its own words and says "(in English)"
+    "fr": ("Données (en anglais)", "Comparatif d'outils (en anglais)", "Notre robot (en anglais)", "Contrôle CI gratuit (en anglais)"),
+    "nl": ("Data (in het Engels)", "Toolvergelijking (in het Engels)", "Onze crawler (in het Engels)", "Gratis CI-check (in het Engels)"),
+    "de": ("Daten (auf Englisch)", "Tool-Vergleich (auf Englisch)", "Unser Crawler (auf Englisch)", "Kostenloser CI-Check (auf Englisch)"),
+    "es": ("Datos (en inglés)", "Comparativa de herramientas (en inglés)", "Nuestro rastreador (en inglés)", "Comprobación CI gratis (en inglés)")}
 HOMES = (("en", "/", "English"), ("fr", "/fr", "Français"), ("nl", "/nl", "Nederlands"), ("de", "/de", "Deutsch"), ("es", "/es", "Español"))  # the home pages in each language: the only <a> path to /fr, /nl, /de, /es
 _BLOCK = '<p class="hub-links" data-hub-links style="margin:.75rem 0 0;padding:0 16px;text-align:center;font-size:14px">{links}</p>'
 
@@ -23,6 +25,7 @@ def links(lg):
     p = "" if lg == "en" else "/" + lg
     g, b, t, a, c, f, api = LABELS[lg]
     out = [(f"{p}/guides", g, lg), (f"{p}/blog", b, lg), (f"{p}/tools", t, lg), (f"{p}/ai-visibility-audit", a, lg), (f"{p}/changes", c, lg), (f"{p}/tools/findable-check", f, lg), (f"{p}/ai-access-api", api, lg)]
+    out += [(f"{p}/bots", LOCAL_HUBS[lg][0], lg), (f"{p}/platforms", LOCAL_HUBS[lg][1], lg)]
     out += [(h, ENGLISH_ONLY_LABELS[lg][i] if lg in ENGLISH_ONLY_LABELS else l, "en") for i, (h, l) in enumerate(ENGLISH_ONLY)]
     return out
 

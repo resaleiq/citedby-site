@@ -1,0 +1,42 @@
+{
+ "slug": "exasearchbot",
+ "name": "ExaSearchBot",
+ "operator": "Exa",
+ "job": "search",
+ "job_en": "Search and retrieval index",
+ "token": "ExaSearchBot",
+ "follows": "yes",
+ "follows_en": "Yes, vendor says it checks robots.txt before fetching",
+ "ips": {
+  "kind": "verify_tool",
+  "count": null,
+  "unit": null,
+  "url": "https://crawler.exa.ai/.well-known/http-message-signatures-directory",
+  "file_date": null,
+  "note": "The vendor says every request is cryptographically signed with HTTP Message Signatures (Web Bot Auth) and gives a public key directory to verify against, and that verification holds regardless of IP address."
+ },
+ "ua": "Mozilla/5.0 (compatible; ExaSearchBot/1.0; +https://crawler.exa.ai/)",
+ "vendor_quote": "Exa is a search engine. Similar to other search engines, Exa uses a robot (ExaSearchBot) to discover and index pages on the public web.",
+ "vendor_quote_source": {
+  "title": "Exa: Exa Search Crawler",
+  "url": "https://crawler.exa.ai/"
+ },
+ "what_en": "ExaSearchBot is the crawler of Exa, a search engine. Exa says its purpose is search and retrieval, so pages become discoverable and can be cited. Pages Exa fetches on a user's request rather than by crawling go out as ExaUser.",
+ "block_en": "Exa says User-agent: ExaSearchBot with Disallow: / blocks ExaSearchBot from the whole site. If there is no ExaSearchBot group, it follows the rules set for major search engines, otherwise the * group. The vendor says robots.txt controls crawling, not indexing, so already indexed pages are removed with a noindex meta tag or X-Robots-Tag header.",
+ "doc_url": "https://crawler.exa.ai/",
+ "compare": "perplexitybot",
+ "compare_en": "Both are search-index crawlers that feed AI answers with cited sources; ExaSearchBot signs its requests with Web Bot Auth and falls back to major search engines' rules when it has no group of its own.",
+ "sources": [
+  {
+   "title": "Exa: Exa Search Crawler",
+   "url": "https://crawler.exa.ai/"
+  },
+  {
+   "title": "Exa: FAQs",
+   "url": "https://exa.ai/docs/admin/faqs"
+  }
+ ],
+ "notes": "ExaUser (user-triggered fetch) has its own page at https://crawler.exa.ai/exauser; not read or covered here. Key directory not fetched; no IP list published on the page.",
+ "answer_en": "ExaSearchBot is the crawler of Exa, a search engine built for search and retrieval, so pages can be discovered and cited. Exa says it checks robots.txt before fetching and that User-agent: ExaSearchBot with Disallow: / blocks the whole site. Every request is cryptographically signed, so verification does not depend on an IP address.",
+ "read": "2026-10-24"
+}

@@ -1,0 +1,44 @@
+{
+ "slug": "mistralai-user",
+ "name": "MistralAI-User",
+ "operator": "Mistral",
+ "job": "fetch",
+ "job_en": "User-triggered fetch",
+ "token": "MistralAI-User",
+ "follows": "yes",
+ "follows_en": "Opt-out through robots.txt",
+ "ips": {
+  "kind": "json_list",
+  "count": 4,
+  "unit": "ranges",
+  "url": "https://mistral.ai/mistralai-user-ips.json",
+  "file_date": "2025-02-19",
+  "note": "Mistral publishes separate address files for the agents. mistral.ai/mistralai-user-ips.json held 4 prefixes (creation time 2025-02-19) and the index file 2 prefixes (creation time 2026-04-19) on 21 October 2026. Two entries for an index crawler is a list a firewall rule can hold exactly."
+ },
+ "ua": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-User/1.0; +https://docs.mistral.ai/robots)",
+ "vendor_quote": "MistralAI-User is for user actions in Vibe. When users ask Vibe a question, it may visit a web page to help answer and include a link to the source in its response.",
+ "vendor_quote_source": {
+  "title": "Mistral Docs: Mistral crawlers",
+  "url": "https://docs.mistral.ai/robots"
+ },
+ "read": "2026-10-21",
+ "what_en": "Mistral's crawler page lists three agents: MistralAI-User for user actions in Vibe, MistralAI-Index for indexing content for Mistral search, and MistralAI-Training, which crawls web content to help build datasets for training Mistral generative AI models. Webmasters can disallow each in robots.txt.\n\n| Fact | MistralAI-User |\n| --- | --- |\n| Operator | Mistral |\n| Job | User-triggered fetch |\n| robots.txt token | `MistralAI-User` |\n| Follows robots.txt | Opt-out through robots.txt |\n| Published address list | 4 ranges (mistral.ai/mistralai-user-ips.json, file dated 2025-02-19) |\n| Vendor page read | 21 October 2026 |",
+ "block_en": "Disallowing MistralAI-User stops that agent opening your page for a Vibe user's question; it leaves the index and training agents alone, which have their own tokens. Mistral says the user agent is not used for crawling the web in any automatic fashion, nor to crawl content for generative AI training, and that content crawled by the index agent is not used for generative AI training of any kind.",
+ "doc_url": "https://docs.mistral.ai/robots",
+ "compare": "chatgpt-user",
+ "compare_en": "The same job at OpenAI, with a different robots.txt promise.",
+ "sources": [
+  {
+   "title": "Mistral Docs: Mistral crawlers",
+   "url": "https://docs.mistral.ai/robots"
+  },
+  {
+   "title": "mistral.ai/mistralai-user-ips.json",
+   "url": "https://mistral.ai/mistralai-user-ips.json"
+  }
+ ],
+ "answer_en": "MistralAI-User is the Mistral agent that may visit a page when a user asks Vibe a question and link the source in its answer. Mistral says it is not used to crawl automatically or for generative AI training. Mistral's page also lists MistralAI-Index and MistralAI-Training, each with its own token.",
+ "en_handwritten": true,
+ "title_en": "MistralAI-User, MistralAI-Index and MistralAI-Training explained",
+ "h1_en": "MistralAI-User, MistralAI-Index and MistralAI-Training explained"
+}

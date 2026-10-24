@@ -1,0 +1,38 @@
+{
+ "slug": "diffbot",
+ "name": "Diffbot",
+ "operator": "Diffbot",
+ "job": "search",
+ "job_en": "Search (general web crawl)",
+ "token": "Diffbot",
+ "follows": "yes",
+ "follows_en": "Yes, by default (disallow and crawl-delay directives)",
+ "ips": {
+  "kind": "none",
+  "count": null,
+  "unit": null,
+  "url": null,
+  "file_date": null,
+  "note": "The vendor page does not describe an IP list or verification method."
+ },
+ "ua": "Diffbot",
+ "vendor_quote": "By default Diffbot's web crawls adhere to a site’s robots.txt instructions, including the disallow and crawl-delay directives.",
+ "vendor_quote_source": {
+  "title": "Diffbot: Does Diffbot respect robots.txt?",
+  "url": "https://www.diffbot.com/docs/crawl/faq/robots-txt"
+ },
+ "what_en": "Diffbot documents two user agents. Diffbot is used for general, proactive web crawling for building a general search engine, so sites can be discovered and cited from the Diffbot Knowledge Graph and web search services. Diffbot-User is used for requests made on behalf of a human user browsing a URL with Diffbot software.",
+ "block_en": "Diffbot says its web crawls follow robots.txt by default, including disallow and crawl-delay, and that a rule can be overridden in specific cases such as a partnership or agreement with the site. It lists Diffbot and Diffbot-User as separate user agents, and says users of its Extract and Crawlbot APIs define their own crawl parameters and can set their own User-Agent.",
+ "doc_url": "https://www.diffbot.com/docs/crawl/faq/robots-txt",
+ "compare": "bingbot",
+ "compare_en": "Diffbot is described by its operator as similar to Googlebot and Bing, a general crawler for a search index, and the vendor says it is not used for AI training.",
+ "sources": [
+  {
+   "title": "Diffbot: Does Diffbot respect robots.txt? (read 2026-10-24)",
+   "url": "https://www.diffbot.com/docs/crawl/faq/robots-txt"
+  }
+ ],
+ "notes": "The vendor page lists only the tokens Diffbot and Diffbot-User, not a full user-agent string, so ua holds the token. The page also says Diffbot does not crawl pages for training generative AI foundation models. job set to search from the Diffbot row; Diffbot-User (user-initiated) is mentioned but not given its own file. Old URL docs.diffbot.com/docs/does-crawl-respect-robotstxt redirects to this one.",
+ "answer_en": "Diffbot documents two user agents. Diffbot crawls the web proactively for a general search engine, so sites can be discovered and cited from its Knowledge Graph. Diffbot-User fetches a URL for a person using its software. Diffbot says its crawls follow robots.txt by default, including disallow and crawl-delay.",
+ "read": "2026-10-24"
+}

@@ -1,0 +1,46 @@
+{
+ "slug": "google-agent",
+ "name": "Google-Agent",
+ "operator": "Google",
+ "job": "fetch",
+ "job_en": "User-triggered fetch (agents acting for a user)",
+ "token": "Google-Agent",
+ "follows": "partial",
+ "follows_en": "Partial. Google says user-triggered fetchers generally ignore robots.txt rules because a user requested the fetch.",
+ "ips": {
+  "kind": "json_list",
+  "count": 20,
+  "unit": "ranges",
+  "url": "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json",
+  "file_date": "2026-10-23",
+  "note": "Google says Google-Agent uses IP ranges from user-triggered-agents.json, and that user-triggered fetchers' reverse DNS mask matches ***-***-***-***.gae.googleusercontent.com or google-proxy-***-***-***-***.google.com depending on whether the fetcher is Google or user owned."
+ },
+ "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Google-Agent; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent) Chrome/W.X.Y.Z Safari/537.36",
+ "vendor_quote": "Google-Agent is used by agents hosted on Google infrastructure to navigate the web and perform actions upon user request.",
+ "vendor_quote_source": {
+  "title": "Google Search Central: Google user-triggered fetchers",
+  "url": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers"
+ },
+ "what_en": "Google-Agent is a user-triggered fetcher that Google says is used by agents hosted on Google infrastructure to navigate the web and perform actions upon user request. Google lists separate mobile and desktop user agent strings. Google also says it is experimenting with the Web Bot Auth protocol using the https://agent.bot.goog identity.",
+ "block_en": "Google says that because the fetch was requested by a user, user-triggered fetchers generally ignore robots.txt rules. The Google page documents no robots.txt token for Google-Agent.",
+ "doc_url": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers",
+ "compare": "chatgpt-user",
+ "compare_en": "Both act on a user's request rather than crawling on their own, and Google-Agent is described as navigating the web and performing actions for the user.",
+ "sources": [
+  {
+   "title": "Google Search Central: Google user-triggered fetchers",
+   "url": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers"
+  },
+  {
+   "title": "Google: user-triggered-agents.json (read 2026-10-24, creationTime 2026-10-23)",
+   "url": "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json"
+  },
+  {
+   "title": "Google Search Central: Overview of Google crawlers and fetchers",
+   "url": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
+  }
+ ],
+ "notes": "Google-Pinpoint (token Google-Pinpoint, fetches URLs users specify as sources for Pinpoint collections) is also on the same page; not written up (brief allowed one extra). The per-bot doc link in the UA string resolves to the general fetchers page.",
+ "answer_en": "Google-Agent is a user-triggered fetcher that Google says is used by agents hosted on Google infrastructure to navigate the web and act on a user's request. Google says user-triggered fetchers generally ignore robots.txt because a user requested the fetch. Google publishes its IP ranges in user-triggered-agents.json.",
+ "read": "2026-10-24"
+}

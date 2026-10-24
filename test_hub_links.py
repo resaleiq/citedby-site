@@ -7,7 +7,7 @@ def test_links_in_footer_per_language_and_once():
     for lg in h.LOCALES:
         out = h.inject(f'<!doctype html><html lang="{lg}"><body><main>x</main><footer>f</footer></body></html>'.encode()).decode()
         p = "" if lg == "en" else "/" + lg
-        for href in (f"{p}/guides", f"{p}/blog", f"{p}/tools", f"{p}/ai-visibility-audit", "/bots", "/platforms", "/data", "/bot"):
+        for href in (f"{p}/guides", f"{p}/blog", f"{p}/tools", f"{p}/ai-visibility-audit", f"{p}/bots", f"{p}/platforms", "/data", "/bot"):
             assert f'href="{href}"' in out, (lg, href)
         assert out.count("data-hub-links") == 1 and out.index("data-hub-links") < out.index("</footer>")
         assert f'href="/{lg}"' not in out or lg == "en"  # a page does not link its own language home as a switch target
@@ -31,7 +31,7 @@ def test_every_static_page_gets_exactly_one_block():
 def test_res3013_english_only_labels_localized_and_marked():
     for lg in ("fr", "nl", "de", "es"):
         out = h.inject(f'<!doctype html><html lang="{lg}"><body><footer>f</footer></body></html>'.encode()).decode()
-        for en in ("AI bots", "Tool comparison", "Our crawler"):  # "Platforms" and "Data" are also Dutch words
+        for en in ("Tool comparison", "Our crawler"):  # "Platforms" and "Data" are also Dutch words
             assert en not in out, (lg, en)
-        assert out.count('hreflang="en"') == 7, lg
-    assert ">Robots IA (en anglais)<" in h.inject(b'<html lang="fr"><body><footer></footer></body></html>').decode()
+        assert out.count('hreflang="en"') == 5, lg
+    assert ">Robots IA<" in h.inject(b'<html lang="fr"><body><footer></footer></body></html>').decode()

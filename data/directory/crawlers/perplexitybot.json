@@ -1,0 +1,44 @@
+{
+ "slug": "perplexitybot",
+ "name": "PerplexityBot",
+ "operator": "Perplexity",
+ "job": "search",
+ "job_en": "Search",
+ "token": "PerplexityBot",
+ "follows": "yes",
+ "follows_en": "Yes, it follows robots.txt",
+ "ips": {
+  "kind": "json_list",
+  "count": 8,
+  "unit": "ranges",
+  "url": "https://perplexity.com/perplexitybot.json",
+  "file_date": "2025-02-07",
+  "note": "Perplexity's file at perplexity.com/perplexitybot.json held 8 prefixes on 21 October 2026, creation time 2025-02-07. Its WAF section suggests a rule that combines the user-agent with the IP condition, so a request claiming the name from another address does not get through."
+ },
+ "ua": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)",
+ "vendor_quote": "PerplexityBot is designed to surface and link websites in search results on Perplexity. It is not used to crawl content for AI foundation models.",
+ "vendor_quote_source": {
+  "title": "Perplexity: Perplexity Crawlers",
+  "url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers"
+ },
+ "read": "2026-10-21",
+ "what_en": "Perplexity names two agents. PerplexityBot builds the search index; Perplexity-User visits a page when a person asks. Perplexity's page contains configuration guidelines for popular WAF providers because a firewall can stop the crawler before robots.txt matters.\n\n| Fact | PerplexityBot |\n| --- | --- |\n| Operator | Perplexity |\n| Job | Search |\n| robots.txt token | `PerplexityBot` |\n| Follows robots.txt | Yes, it follows robots.txt |\n| Published address list | 8 ranges (perplexity.com/perplexitybot.json, file dated 2025-02-07) |\n| Vendor page read | 21 October 2026 |",
+ "block_en": "Perplexity recommends allowing PerplexityBot in robots.txt and permitting requests from its published IP ranges if you want to appear in its search results. It also says changes to your robots.txt can take up to 24 hours to be reflected in its systems, so a check made an hour after an edit proves little.",
+ "doc_url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+ "compare": "perplexity-user",
+ "compare_en": "The user-triggered fetcher; Perplexity says it generally ignores robots.txt.",
+ "sources": [
+  {
+   "title": "Perplexity: Perplexity Crawlers",
+   "url": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers"
+  },
+  {
+   "title": "perplexity.com/perplexitybot.json",
+   "url": "https://www.perplexity.ai/perplexitybot.json"
+  }
+ ],
+ "answer_en": "PerplexityBot is Perplexity's crawler for surfacing and linking websites in its search results. Perplexity says it is not used to crawl content for AI foundation models. It follows robots.txt, changes can take up to 24 hours to apply, and Perplexity publishes 8 IP ranges for it.",
+ "en_handwritten": true,
+ "title_en": "PerplexityBot vs Perplexity-User: differences and how to allow it",
+ "h1_en": "PerplexityBot: how it differs from Perplexity-User and how to allow it"
+}

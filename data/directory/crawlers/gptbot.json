@@ -1,0 +1,44 @@
+{
+ "slug": "gptbot",
+ "name": "GPTBot",
+ "operator": "OpenAI",
+ "job": "training",
+ "job_en": "Training",
+ "token": "GPTBot",
+ "follows": "yes",
+ "follows_en": "Yes, it follows robots.txt",
+ "ips": {
+  "kind": "json_list",
+  "count": 18,
+  "unit": "ranges",
+  "url": "https://openai.com/gptbot.json",
+  "file_date": "2026-09-22",
+  "note": "The GPTBot list at openai.com/gptbot.json is the shortest of the three OpenAI files we counted: 18 prefixes on 21 October 2026, creation time 2026-09-22. When a request names GPTBot but comes from an address outside that list, the name alone proves nothing."
+ },
+ "ua": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.4; +https://openai.com/gptbot",
+ "vendor_quote": "GPTBot is used to make our generative AI foundation models more useful and safe. It is used to crawl content that may be used in training our generative AI foundation models. Disallowing GPTBot indicates a site's content should not be used in training generative AI foundation models.",
+ "vendor_quote_source": {
+  "title": "OpenAI: Overview of OpenAI Crawlers",
+  "url": "https://developers.openai.com/api/docs/bots"
+ },
+ "read": "2026-10-21",
+ "what_en": "GPTBot is the crawler people usually mean when they say \"block OpenAI\". OpenAI's page says it is used to crawl content that may be used in training its models. It is one of three crawlers named in the OpenAI documentation for the ChatGPT product family, next to [OAI-SearchBot](/bots/oai-searchbot) and [ChatGPT-User](/bots/chatgpt-user).\n\n| Fact | GPTBot |\n| --- | --- |\n| Operator | OpenAI |\n| Job | Training |\n| robots.txt token | `GPTBot` |\n| Follows robots.txt | Yes, it follows robots.txt |\n| Published address list | 18 ranges (openai.com/gptbot.json, file dated 2026-09-22) |\n| Vendor page read | 21 October 2026 |",
+ "block_en": "OpenAI frames a GPTBot Disallow as a signal about training: the content should not be used in training generative AI foundation models. The same page gives an example of a site allowing OAI-SearchBot to appear in search results while disallowing GPTBot, so a block here does not by itself take you out of ChatGPT's search answers. Whether to block is a business choice; both are legitimate.",
+ "doc_url": "https://developers.openai.com/api/docs/bots",
+ "compare": "oai-searchbot",
+ "compare_en": "Allow it and disallow GPTBot to stay in ChatGPT search while opting out of training.",
+ "sources": [
+  {
+   "title": "OpenAI: Overview of OpenAI Crawlers",
+   "url": "https://developers.openai.com/api/docs/bots"
+  },
+  {
+   "title": "openai.com/gptbot.json",
+   "url": "https://openai.com/gptbot.json"
+  }
+ ],
+ "answer_en": "GPTBot is OpenAI's training crawler. Disallowing it in robots.txt tells OpenAI the site's content should not be used to train its generative AI foundation models. It does not control ChatGPT search, which uses OAI-SearchBot. OpenAI publishes 18 IP ranges for GPTBot.",
+ "en_handwritten": true,
+ "title_en": "GPTBot: what it does and what blocking it changes",
+ "h1_en": "GPTBot: what it does and what blocking it changes"
+}

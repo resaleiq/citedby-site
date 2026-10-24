@@ -1,0 +1,38 @@
+{
+ "slug": "kagibot",
+ "name": "Kagibot",
+ "operator": "Kagi",
+ "job": "search",
+ "job_en": "Search",
+ "token": "Kagibot",
+ "follows": "yes",
+ "follows_en": "Yes, standard robots.txt directives targeting Kagibot are respected",
+ "ips": {
+  "kind": "html_list",
+  "count": null,
+  "unit": null,
+  "url": "https://kagi.com/bot",
+  "file_date": null,
+  "note": "Kagi lists the IP addresses (with kagibot.org hostnames) that requests from Kagibot originate from on its bot page."
+ },
+ "ua": "Mozilla/5.0 (compatible; Kagibot/1.0; +https://kagi.com/bot)",
+ "vendor_quote": "Standard directives in robots.txt that target Kagibot are respected.",
+ "vendor_quote_source": {
+  "title": "Kagi: About KagiBot",
+  "url": "https://kagi.com/bot"
+ },
+ "what_en": "Kagibot is the web crawler for the Kagi search engine. Kagi publishes its user-agent string and the IP addresses that Kagibot requests originate from.",
+ "block_en": "Kagi says standard robots.txt directives that target Kagibot are respected, for example Disallow rules for a path. If there is no rule for Kagibot but there is one for Googlebot, Kagibot follows the Googlebot directives.",
+ "doc_url": "https://kagi.com/bot",
+ "compare": "googlebot",
+ "compare_en": "Kagibot follows its own robots.txt rules, and falls back to the Googlebot rules when none target Kagibot.",
+ "sources": [
+  {
+   "title": "Kagi: About KagiBot (read 2026-10-24)",
+   "url": "https://kagi.com/bot"
+  }
+ ],
+ "notes": "IP list is HTML (four addresses at read time), so count is null per brief. Page text is the vendor's; contact email omitted.",
+ "answer_en": "Kagibot is the web crawler for the Kagi search engine. Kagi says standard robots.txt directives that target Kagibot are respected, and that when no rule targets Kagibot but one targets Googlebot, Kagibot follows the Googlebot directives. Kagi publishes its user-agent string and the IP addresses its requests come from.",
+ "read": "2026-10-24"
+}

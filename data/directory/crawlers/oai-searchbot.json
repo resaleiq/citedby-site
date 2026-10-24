@@ -1,0 +1,44 @@
+{
+ "slug": "oai-searchbot",
+ "name": "OAI-SearchBot",
+ "operator": "OpenAI",
+ "job": "search",
+ "job_en": "Search",
+ "token": "OAI-SearchBot",
+ "follows": "yes",
+ "follows_en": "Yes, it follows robots.txt",
+ "ips": {
+  "kind": "json_list",
+  "count": 39,
+  "unit": "ranges",
+  "url": "https://openai.com/searchbot.json",
+  "file_date": "2026-01-02",
+  "note": "OpenAI publishes the addresses OAI-SearchBot uses at openai.com/searchbot.json. On 21 October 2026 that file held 39 prefixes and carried the creation time 2026-01-02. Match the address in your server log against those prefixes before you trust a request that only claims the name in its user-agent. OpenAI also says that when it fetches robots.txt it may add a `robots.txt` marker to the user-agent string, so those requests are easy to tell apart in logs without paths."
+ },
+ "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot",
+ "vendor_quote": "OAI-SearchBot is used to surface websites in search results in ChatGPT's search features. Sites that are opted out of OAI-SearchBot will not be shown in ChatGPT search answers, though can still appear as navigational links.",
+ "vendor_quote_source": {
+  "title": "OpenAI: Overview of OpenAI Crawlers",
+  "url": "https://developers.openai.com/api/docs/bots"
+ },
+ "read": "2026-10-21",
+ "what_en": "OpenAI runs several crawlers and says each setting is independent of the others. OAI-SearchBot is the one that decides whether your pages can be surfaced in ChatGPT's search features. It is not the training crawler (that is [GPTBot](/bots/gptbot)) and it is not the fetcher that opens a page when a person asks about it (that is [ChatGPT-User](/bots/chatgpt-user)).\n\n| Fact | OAI-SearchBot |\n| --- | --- |\n| Operator | OpenAI |\n| Job | Search |\n| robots.txt token | `OAI-SearchBot` |\n| Follows robots.txt | Yes, it follows robots.txt |\n| Published address list | 39 ranges (openai.com/searchbot.json, file dated 2026-01-02) |\n| Vendor page read | 21 October 2026 |",
+ "block_en": "OpenAI's own wording is that opted-out sites \"will not be shown in ChatGPT search answers\". That is the cost: a shop that blocks OAI-SearchBot gives up the part of ChatGPT that links to sources. OpenAI recommends the opposite for sites that want to appear: allow OAI-SearchBot in robots.txt and allow requests from its published IP ranges.",
+ "doc_url": "https://developers.openai.com/api/docs/bots",
+ "compare": "gptbot",
+ "compare_en": "GPTBot is for training; blocking it does not remove you from ChatGPT search because the settings are independent.",
+ "sources": [
+  {
+   "title": "OpenAI: Overview of OpenAI Crawlers",
+   "url": "https://developers.openai.com/api/docs/bots"
+  },
+  {
+   "title": "openai.com/searchbot.json",
+   "url": "https://openai.com/searchbot.json"
+  }
+ ],
+ "answer_en": "OAI-SearchBot is OpenAI's crawler for ChatGPT search. Sites that opt out of it will not be shown in ChatGPT search answers, though they can still appear as navigational links. It obeys robots.txt under the token OAI-SearchBot, and OpenAI publishes 39 IP ranges for it.",
+ "en_handwritten": true,
+ "title_en": "OAI-SearchBot: what it is and how to allow or block it",
+ "h1_en": "OAI-SearchBot: what it is and how to allow or block it"
+}

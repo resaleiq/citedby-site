@@ -25,6 +25,7 @@
     };
     ["utm_source", "utm_medium", "utm_campaign", "utm_content", "ref"].forEach(function (k) { if (q.get(k)) p[k] = String(q.get(k)).slice(0, 80); });
     if (document.referrer) { try { var r = new URL(document.referrer); p.$referrer = r.origin + clean(r.pathname); p.$referring_domain = r.host; } catch (e) {} }
+    if (navigator.webdriver === true) p.automation = true;  // Playwright, Selenium and headless Chromium set it: tag, never drop, so QA checks that assert an event still pass (RES-4201)
     return p;
   }
   function send(event, extra) {

@@ -1,0 +1,38 @@
+{
+ "slug": "ccbot",
+ "name": "CCBot",
+ "operator": "Common Crawl",
+ "job": "mixed",
+ "job_en": "Open web crawl archive",
+ "token": "CCBot",
+ "follows": "yes",
+ "follows_en": "Yes, via a robots.txt rule for CCBot",
+ "ips": {
+  "kind": "rdns",
+  "count": null,
+  "unit": null,
+  "url": "https://commoncrawl.org/ccbot",
+  "file_date": null,
+  "note": "Common Crawl says CCBot runs on dedicated IP address ranges with reverse DNS (not for IPv6), so a logged request can be checked with a reverse lookup that resolves to a crawl.commoncrawl.org hostname; the ranges are also published as JSON at https://index.commoncrawl.org/ccbot.json."
+ },
+ "ua": "CCBot/2.0 (https://commoncrawl.org/faq/)",
+ "vendor_quote": "To prevent Common Crawl from crawling your website, include the following in your robots.txt",
+ "vendor_quote_source": {
+  "title": "Common Crawl: CCBot",
+  "url": "https://commoncrawl.org/ccbot"
+ },
+ "what_en": "CCBot is the crawler of Common Crawl, a non-profit foundation that produces and maintains an open repository of web crawl data that anyone can access and analyze. The vendor page says the crawl data is meant to be freely available to organizations, academia and non-profits.",
+ "block_en": "Common Crawl says that adding User-agent: CCBot with Disallow: / to robots.txt prevents Common Crawl from crawling the site. The page also says it is aware of crawlers falsely identifying themselves as CCBot and recommends verifying user agent strings.",
+ "doc_url": "https://commoncrawl.org/ccbot",
+ "compare": "gptbot",
+ "compare_en": "CCBot builds a public crawl archive that others can use, while GPTBot collects content for OpenAI's own purposes.",
+ "sources": [
+  {
+   "title": "Common Crawl: CCBot (read 2026-10-24)",
+   "url": "https://commoncrawl.org/ccbot"
+  }
+ ],
+ "notes": "index.commoncrawl.org/ccbot.json refused connections (port 443) on 2026-10-24 from curl and WebFetch, so no IP count or file date; ips.kind set to rdns so verify.py does not need the JSON. The CCBot page does not state a purpose such as AI training or search, so job is 'mixed' with neutral wording. The compare_en line about GPTBot is not from the CCBot page; re-check against the existing gptbot page or change it. UA on the page is shown with spaces inside the parentheses due to HTML formatting; stored without. vendor_quote is a sentence prefix because the robots.txt example lines are in a code block and do not match contiguous text.",
+ "answer_en": "CCBot is the crawler of Common Crawl, a non-profit that maintains an open repository of web crawl data anyone can access and analyze. Common Crawl says User-agent: CCBot with Disallow: / stops it crawling a site. It also warns that other crawlers falsely identify themselves as CCBot, so verify requests.",
+ "read": "2026-10-24"
+}

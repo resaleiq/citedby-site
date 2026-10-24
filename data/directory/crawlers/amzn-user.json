@@ -1,0 +1,42 @@
+{
+ "slug": "amzn-user",
+ "name": "Amzn-User",
+ "operator": "Amazon",
+ "job": "fetch",
+ "job_en": "User-triggered fetch",
+ "token": "Amzn-User",
+ "follows": "partial",
+ "follows_en": "Partial, may not follow all robots.txt directives because actions can be user-initiated",
+ "ips": {
+  "kind": "html_list",
+  "count": null,
+  "unit": null,
+  "url": "https://developer.amazon.com/amazonbot/live-ip-addresses/",
+  "file_date": null,
+  "note": "Amazon publishes the Amzn-User IP addresses on a web page that shows the list as JSON, and links it from the Amazonbot documentation page."
+ },
+ "ua": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-User/0.1) Chrome/W.X.Y.Z Safari/537.36",
+ "vendor_quote": "Because actions taken by Amzn-User can be initiated by a user, it may not follow all robots.txt directives.",
+ "vendor_quote_source": {
+  "title": "Amazon: About Amazonbot",
+  "url": "https://developer.amazon.com/amazonbot"
+ },
+ "what_en": "Amzn-User is an Amazon user agent that supports user actions, such as responding to Alexa queries that require up-to-date information. Amazon says that when a customer asks a question, Amzn-User may fetch live information from the web to provide accurate answers on the user's behalf. Amazon says it does not crawl content for generative AI model training.",
+ "block_en": "Amazon says Amzn-User may not follow all robots.txt directives because its actions can be initiated by a user. Amazon also says each of its user agent settings (Amazonbot, Amzn-SearchBot, Amzn-User) is independent of the others and may take about 24 hours to reflect changes.",
+ "doc_url": "https://developer.amazon.com/amazonbot",
+ "compare": "amzn-searchbot",
+ "compare_en": "Amzn-SearchBot is an automated crawler for Amazon search experiences that Amazon says respects robots.txt, while Amzn-User fetches live information when a customer asks and may not follow all directives.",
+ "sources": [
+  {
+   "title": "Amazon: About Amazonbot",
+   "url": "https://developer.amazon.com/amazonbot"
+  },
+  {
+   "title": "Amazon: Amzn-User IP addresses (read 2026-10-24)",
+   "url": "https://developer.amazon.com/amazonbot/live-ip-addresses/"
+  }
+ ],
+ "notes": "Page says 'Chrome/W.X.Y.Z' as a placeholder; kept verbatim. IP page (live-ip-addresses) is HTML wrapping a JSON list: 1023 entries with no CIDR mask (single addresses), creationTime 2025-11-04, per our parse; not stated in JSON fields because brief says no count for HTML.",
+ "answer_en": "Amzn-User is the Amazon user agent that fetches live pages when a customer asks Alexa something that needs current information. Amazon says it does not crawl for generative AI training and may not follow all robots.txt directives, because the action is user-initiated. Amazonbot and Amzn-SearchBot are separate settings.",
+ "read": "2026-10-24"
+}

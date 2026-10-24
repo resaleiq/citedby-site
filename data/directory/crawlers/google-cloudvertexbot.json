@@ -1,0 +1,46 @@
+{
+ "slug": "google-cloudvertexbot",
+ "name": "Google-CloudVertexBot",
+ "operator": "Google",
+ "job": "mixed",
+ "job_en": "Crawl requested by site owners for Vertex AI Agents",
+ "token": "Google-CloudVertexBot",
+ "follows": "yes",
+ "follows_en": "Yes. Google says common crawlers always obey robots.txt rules when crawling automatically.",
+ "ips": {
+  "kind": "json_list",
+  "count": 317,
+  "unit": "ranges",
+  "url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+  "file_date": "2026-10-23",
+  "note": "Google says the common crawlers generally crawl from the ranges in common-crawlers.json, and that the reverse DNS name matches crawl-***-***-***-***.googlebot.com or geo-crawl-***-***-***-***.geo.googlebot.com."
+ },
+ "ua": "Google-CloudVertexBot",
+ "vendor_quote": "Crawling preferences addressed to the Google-CloudVertexBot user agent affect crawls requested by the site owners' for building Vertex AI Agents",
+ "vendor_quote_source": {
+  "title": "Google Search Central: Google's common crawlers",
+  "url": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
+ },
+ "what_en": "Google-CloudVertexBot is a Google crawler listed among its common crawlers. Google says it performs crawls requested by site owners for building Vertex AI Agents. Google shows it as a user agent substring, not a full user agent string.",
+ "block_en": "Google says preferences addressed to the Google-CloudVertexBot user agent affect crawls requested by site owners for building Vertex AI Agents. It says this has no effect on Google Search or other products.",
+ "doc_url": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers",
+ "compare": "googlebot",
+ "compare_en": "Googlebot crawls for Google Search, while Google-CloudVertexBot only crawls when a site owner has requested a crawl for building Vertex AI Agents.",
+ "sources": [
+  {
+   "title": "Google Search Central: Google's common crawlers",
+   "url": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers"
+  },
+  {
+   "title": "Google: common-crawlers.json (read 2026-10-24, creationTime 2026-10-23)",
+   "url": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json"
+  },
+  {
+   "title": "Google Search Central: Overview of Google crawlers and fetchers",
+   "url": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
+  }
+ ],
+ "notes": "Google shows only the substring 'Google-CloudVertexBot' (labelled 'User-Agent substring in HTTP requests'), so ua is that substring. Job set to 'mixed' because the Google page does not say training/search; consider relabelling in the table. Quote is a sentence fragment (link markup splits the sentence end); the page's next sentence is 'It has no effect on Google Search or other products.'",
+ "answer_en": "Google-CloudVertexBot is a Google crawler that performs crawls requested by site owners to build Vertex AI Agents. Google lists it among its common crawlers, which always obey robots.txt when crawling automatically. Google says rules addressed to it have no effect on Google Search or other Google products.",
+ "read": "2026-10-24"
+}
